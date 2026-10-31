@@ -3,6 +3,7 @@ import Base from '../../../layouts/Base.astro';
 import books from '@data/books.json';
 import chaptersAll from '@data/chapters.json';
 import dossiers from '@data/dossiers.json';
+import { B } from '@lib/base';
 
 export function getStaticPaths() {
   const paths = [];
@@ -26,14 +27,14 @@ const CONF = { high: '●●', medium: '●○', low: '○○' };
 
 <Base title={`${w.book} 第${c.no}回`} description={`${w.book} ${c.title}：出场人物、叙事事件流，均带原著定位符。`}>
   <p class="crumb">
-    <a href="/books/">作品库</a> / <a href={`/books/${w.book}/`}>{w.book}</a> / 第{c.no}回
+    <a href={`${B}books/`}>作品库</a> / <a href={`${B}books/${w.book}/`}>{w.book}</a> / 第{c.no}回
   </p>
   <h1>{c.title}</h1>
 
   <p class="nav">
-    {prev ? <a href={`/books/${w.book}/${String(prev.no).padStart(3, '0')}/`}>← 第{prev.no}回</a> : <span class="dim">已是首回</span>}
+    {prev ? <a href={`${B}books/${w.book}/${String(prev.no).padStart(3, '0')}/`}>← 第{prev.no}回</a> : <span class="dim">已是首回</span>}
     <span class="dim">｜</span>
-    {next ? <a href={`/books/${w.book}/${String(next.no).padStart(3, '0')}/`}>第{next.no}回 →</a> : <span class="dim">已是末回</span>}
+    {next ? <a href={`${B}books/${w.book}/${String(next.no).padStart(3, '0')}/`}>第{next.no}回 →</a> : <span class="dim">已是末回</span>}
   </p>
 
   {c.chars.length > 0 && (
@@ -42,7 +43,7 @@ const CONF = { high: '●●', medium: '●○', low: '○○' };
       <p class="chips">
         {c.chars.map((p) => (
           dossierNames.has(p.name)
-            ? <a class="chip link" href={`/characters/${p.name}/`}>{p.name}<small>×{p.n}</small></a>
+            ? <a class="chip link" href={`${B}characters/${p.name}/`}>{p.name}<small>×{p.n}</small></a>
             : <span class="chip">{p.name}<small>×{p.n}</small></span>
         ))}
       </p>

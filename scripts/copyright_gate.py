@@ -88,6 +88,17 @@ def main() -> int:
         if bad in text:
             violations.append((f'路径引用: {bad}', '（dist 文本）'))
 
+    # 规则 3：内部链接必须带 base 前缀（项目子路径部署，href="/x" 会 404）
+    import re as _re
+    base_seg = (sys.argv[2].strip('/') if len(sys.argv) > 2 else '')
+    skip = f'href="/{base_seg}' if base_seg else None
+    for m in _re.finditer(r'href="/(?!/)([^"]{0,40})"', text):
+        if skip and m.group(0).startswith(skip):
+            continue
+        violations.append((f'内部链接缺 base 前缀: href="/{m.group(1)}"', '（dist HTML）'))
+        if len(violations) >= 10:
+            break
+
     if violations:
         print(f'\n✗ 版权闸门未通过：{len(violations)} 处违规（最多显示 10 条）')
         for v, ctx in violations:

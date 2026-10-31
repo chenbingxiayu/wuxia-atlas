@@ -4,6 +4,7 @@ import Sparkbars from '../../components/Sparkbars.astro';
 import books from '@data/books.json';
 import characters from '@data/characters.json';
 import chaptersAll from '@data/chapters.json';
+import { B } from '@lib/base';
 
 export function getStaticPaths() {
   return books.books.map((w) => ({ params: { slug: w.book }, props: { w } }));
@@ -23,7 +24,7 @@ const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
 ---
 
 <Base title={w.book} description={`${w.book}：${w.leads.join('、')}。${w.era}。回数 ${w.chapters}，初刊 ${w.year} 年。`}>
-  <p class="crumb"><a href="/books/">作品库</a> / {w.book}</p>
+  <p class="crumb"><a href={`${B}books/`}>作品库</a> / {w.book}</p>
   <h1>{w.book}
     {w.kb_status === '已点亮' && <span class="badge badge-lit">已点亮</span>}
     {w.kb_status === '标注中' && <span class="badge" style="color:var(--gold)">标注中</span>}
@@ -106,7 +107,7 @@ const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
       {ch.chapters.map((c) => (
         <li>
           {lit ? (
-            <a href={`/books/${w.book}/${String(c.no).padStart(3, '0')}/`}>
+            <a href={`${B}books/${w.book}/${String(c.no).padStart(3, '0')}/`}>
               <span class="loc">{String(c.no).padStart(3, '0')}</span> {c.title}
               <small class="dim">（{c.events} 事件）</small>
             </a>

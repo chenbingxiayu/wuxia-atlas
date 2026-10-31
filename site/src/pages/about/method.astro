@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { B } from '@lib/base';
 ---
 
 <Base title="方法论" description="标注→实体→事件→关系 管线、九步法溯源与评分口径。">
@@ -39,7 +40,7 @@ import Base from '../../layouts/Base.astro';
     <p>
       Glicko-2 引擎（参数公开），对局取自交战/杀伐/擒控事件的场景级聚合；胜负词表+状态修正系数（中毒/偷袭/放水）
       降低剧情噪声；长尾角色向先验收缩；旁白明文做先验与 holdout 校准，冲突页并列展示"数据 vs 原文"。
-      全部口径与版本号在 <a href="/ratings/method">侠谱方法论页</a> 公开（模块 M4 上线）。
+      全部口径与版本号在 <a href={`${B}ratings/method`}>侠谱方法论页</a> 公开（模块 M4 上线）。
     </p>
   </section>
 

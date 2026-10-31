@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import dossiersJson from '@data/dossiers.json';
+import { B } from '@lib/base';
 
 export function getStaticPaths() {
   return dossiersJson.dossiers.map((d) => ({ params: { slug: d.canonical }, props: { d } }));
@@ -15,14 +16,14 @@ const maxBar = Math.max(
 ---
 
 <Base title={d.canonical} description={`${d.canonical}：别名、师承传人、武功、战绩、出场曲线——梁羽生武侠宇宙人物档案。`}>
-  <p class="crumb"><a href="/characters/">人物谱</a> / {d.canonical}</p>
+  <p class="crumb"><a href={`${B}characters/`}>人物谱</a> / {d.canonical}</p>
   <h1>
     {d.canonical}
     {d.cross_book && <span class="badge badge-cross">跨书换乘</span>}
   </h1>
   <p class="meta">
     出场 <b>{d.appearance_total.toLocaleString()}</b> 次 ·
-    行经 {d.books.map((b) => <a class="bookchip" href={`/books/${b}/`}>{b}</a>)}
+    行经 {d.books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}
   </p>
 
   {d.aliases.length > 0 && (
@@ -41,7 +42,7 @@ const maxBar = Math.max(
       <h2>门派线索 <span class="dim">（derived：修习武功 ∩ 门派武功，非正式归属）</span></h2>
       <p class="chips">
         {d.sect_affinity.map((s) => (
-          <a class={`chip t-${s.tier}`} href={`/sects/${encodeURIComponent(s.sect)}/`}>
+          <a class={`chip t-${s.tier}`} href={`${B}sects/${encodeURIComponent(s.sect)}/`}>
             {s.sect}
             <small>{TIER_LABEL[s.tier]}{s.tier === 'strong' ? '·镇山' : ''}</small>
           </a>
@@ -57,7 +58,7 @@ const maxBar = Math.max(
         <p class="chips">
           <span class="dim">师承：</span>
           {d.lineage.masters.map((m) => (
-            <a class="chip" href={`/characters/${encodeURIComponent(m.person)}/`}>
+            <a class="chip" href={`${B}characters/${encodeURIComponent(m.person)}/`}>
               {m.person}<small>{m.tier === 'weak' ? '点拨' : '传授'} · {m.locs[0]}</small>
             </a>
           ))}
@@ -67,7 +68,7 @@ const maxBar = Math.max(
         <p class="chips">
           <span class="dim">传人：</span>
           {d.lineage.disciples.map((m) => (
-            <a class="chip" href={`/characters/${encodeURIComponent(m.person)}/`}>
+            <a class="chip" href={`${B}characters/${encodeURIComponent(m.person)}/`}>
               {m.person}<small>{m.tier === 'weak' ? '点拨' : '传授'} · {m.locs[0]}</small>
             </a>
           ))}
@@ -90,7 +91,7 @@ const maxBar = Math.max(
       <h2>武功</h2>
       <p class="chips">
         {d.arts.map((a) => (
-          <a class="chip" href={`/arts/${encodeURIComponent(a.art)}/`}>
+          <a class="chip" href={`${B}arts/${encodeURIComponent(a.art)}/`}>
             {a.art}<small>{a.predicates.join('/')}</small>
           </a>
         ))}
@@ -122,7 +123,7 @@ const maxBar = Math.max(
       <p class="chips">
         <span class="dim">高频对手：</span>
         {d.combat.top_opponents.map((o) => (
-          <a class="chip" href={`/characters/${encodeURIComponent(o.person)}/`}>
+          <a class="chip" href={`${B}characters/${encodeURIComponent(o.person)}/`}>
             {o.person}<small>×{o.n}</small>
           </a>
         ))}
@@ -173,7 +174,7 @@ const maxBar = Math.max(
 
   <section class="card note">
     <b>侠谱评分</b> <span class="badge badge-todo">M4 上线</span>
-    <p class="dim">Glicko-2 战力评分、档位与成长曲线将在此展示，口径见 <a href="/ratings/method">侠谱方法论</a>。</p>
+    <p class="dim">Glicko-2 战力评分、档位与成长曲线将在此展示，口径见 <a href={`${B}ratings/method`}>侠谱方法论</a>。</p>
   </section>
 </Base>
 

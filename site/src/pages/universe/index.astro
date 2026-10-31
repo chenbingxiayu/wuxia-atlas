@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import Metro from '../../components/Metro.astro';
 import universe from '@data/universe.json';
+import { B } from '@lib/base';
 
 const lines = universe.lines.map((ln) => ({
   ...ln,
@@ -29,7 +30,7 @@ const lines = universe.lines.map((ln) => ({
           <b>{s.name}</b>
           <span class="dim">行经：</span>
           {s.books.map((b, i) => (
-            <>{i > 0 && ' · '}<a href={`/books/${b}/`}>{b}</a></>
+            <>{i > 0 && ' · '}<a href={`${B}books/${b}/`}>{b}</a></>
           ))}
           <span class="fine">（{s.note}）</span>
         </li>
@@ -51,7 +52,7 @@ const lines = universe.lines.map((ln) => ({
                   {i > 0 && <span class="dim"> → </span>}
                   {b.endsWith('*')
                     ? <span class="dim">{b.slice(0, -1)}*</span>
-                    : <a href={`/books/${b}/`}>{b}</a>}
+                    : <a href={`${B}books/${b}/`}>{b}</a>}
                 </>
               ))}
             </td>

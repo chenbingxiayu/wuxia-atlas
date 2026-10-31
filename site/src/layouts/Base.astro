@@ -1,5 +1,6 @@
 ---
 import '../styles/tokens.css';
+import { B } from '@lib/base';
 
 interface Props {
   title: string;
@@ -8,14 +9,14 @@ interface Props {
 const { title, description = '基于梁羽生小说图谱数据的原创研究站点：人物谱、武功志、宇宙地图，每条结论可溯源到原著定位符。' } = Astro.props;
 
 const nav = [
-  { href: '/books', label: '作品' },
-  { href: '/universe', label: '宇宙' },
-  { href: '/characters', label: '人物' },
-  { href: '/arts', label: '武功' },
-  { href: '/ratings', label: '侠谱' },
-  { href: '/games', label: '游戏' },
-  { href: '/search', label: '搜索' },
-  { href: '/about', label: '关于' },
+  { href: B + 'books', label: '作品' },
+  { href: B + 'universe', label: '宇宙' },
+  { href: B + 'characters', label: '人物' },
+  { href: B + 'arts', label: '武功' },
+  { href: B + 'ratings', label: '侠谱' },
+  { href: B + 'games', label: '游戏' },
+  { href: B + 'search', label: '搜索' },
+  { href: B + 'about', label: '关于' },
 ];
 const year = new Date().getFullYear();
 ---
@@ -30,7 +31,7 @@ const year = new Date().getFullYear();
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/">江湖图志</a>
+      <a class="brand" href={`${B}`}>江湖图志</a>
       <nav>
         {nav.map((n) => <a href={n.href}>{n.label}</a>)}
       </nav>
@@ -41,7 +42,7 @@ const year = new Date().getFullYear();
     <footer class="site-footer">
       <p>
         本站为基于原著图谱数据的原创研究站点，严格限于小说文本、不做史料考证；
-        引用内容（定位符与短引文）版权归原作权利人所有。数据版本见 <a href="/about">关于页</a>。
+        引用内容（定位符与短引文）版权归原作权利人所有。数据版本见 <a href={`${B}about`}>关于页</a>。
       </p>
       <p class="fine">© {year} 江湖图志 · 图谱层内容以 CC BY-NC-SA 授权转载，语料层仅限本地。</p>
     </footer>

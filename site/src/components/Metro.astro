@@ -2,6 +2,7 @@
 // 宇宙地铁图 v0：构建期纯 SVG，零 JS（交互版 M3）
 // 系列为线路，书目为站点：实心=已点亮，空心=待建，虚线=缺佚；点击进入书页。
 import Base from '../layouts/Base.astro';
+import { B } from '@lib/base';
 
 interface Props {
   lines: Array<{
@@ -45,7 +46,7 @@ const H = lines.length * LH + (compact ? 8 : 46);
             const label = m.book + (m.missing ? '（缺佚）' : '');
             return (
               <g>
-                <a href={`/books/${m.book}`}>
+                <a href={`${B}books/${m.book}`}>
                   <title>{`${label} · ${m.kb_status}`}</title>
                   <circle
                     cx={x}

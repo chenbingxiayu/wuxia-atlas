@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import { B } from '@lib/base';
 const version = '2026-10-31';
 ---
 
@@ -33,10 +34,10 @@ const version = '2026-10-31';
   <section>
     <h2>深入</h2>
     <ul>
-      <li><a href="/about/method">方法论</a> —— 管线、标注语法、校订闭环、评分口径；</li>
-      <li><a href="/about/copyright">版权边界</a> —— 图谱层/语料层、引用三档位；</li>
-      <li><a href="/about/data">开放数据</a> —— 下载与 schema；</li>
-      <li><a href="/search">搜索</a> —— 全站全文检索。</li>
+      <li><a href={`${B}about/method`}>方法论</a> —— 管线、标注语法、校订闭环、评分口径；</li>
+      <li><a href={`${B}about/copyright`}>版权边界</a> —— 图谱层/语料层、引用三档位；</li>
+      <li><a href={`${B}about/data`}>开放数据</a> —— 下载与 schema；</li>
+      <li><a href={`${B}search`}>搜索</a> —— 全站全文检索。</li>
     </ul>
   </section>
 </Base>

@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import sectsJson from '@data/sects.json';
+import { B } from '@lib/base';
 ---
 
 <Base title="门派志" description="梁羽生武侠宇宙门派与组织：武功册、成员册、事件参与。">
@@ -11,7 +12,7 @@ import sectsJson from '@data/sects.json';
   </p>
   <div class="grid">
     {sectsJson.sects.map((s) => (
-      <a class="card entry" href={`/sects/${encodeURIComponent(s.canonical)}/`}>
+      <a class="card entry" href={`${B}sects/${encodeURIComponent(s.canonical)}/`}>
         <h2>{s.canonical}
           {s.cross_book && <span class="badge badge-cross">跨书</span>}
         </h2>

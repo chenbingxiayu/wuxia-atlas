@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import books from '@data/books.json';
+import { B } from '@lib/base';
 
 const works = [...books.books].sort((a, b) => a.no - b.no);
 const byStatus = (s: string) => works.filter((w) => w.kb_status === s).length;
@@ -23,7 +24,7 @@ const tagging = byStatus('标注中');
       {works.map((w) => (
         <tr>
           <td class="dim">{w.no}</td>
-          <td><a href={`/books/${w.book}/`} class="title">{w.book}</a></td>
+          <td><a href={`${B}books/${w.book}/`} class="title">{w.book}</a></td>
           <td>{w.year}{w.year_conf === 'approx' ? '*' : ''}</td>
           <td class="dim">{w.era}</td>
           <td class="dim">{w.series}</td>

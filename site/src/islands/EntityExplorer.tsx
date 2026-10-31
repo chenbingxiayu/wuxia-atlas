@@ -9,7 +9,10 @@ export interface Ent {
 }
 
 const TYPE_LABEL: Record<string, string> = { '@': '人物', '☆': '武功', '◆': '门派组织' };
-const BASE: Record<string, string> = { '@': '/characters/', '☆': '/arts/', '◆': '/sects/' };
+// 部署在项目子路径下：内部链接统一带 base 前缀
+const RAW = import.meta.env.BASE_URL || '/';
+const B = RAW.endsWith('/') ? RAW : RAW + '/';
+const BASE: Record<string, string> = { '@': B + 'characters/', '☆': B + 'arts/', '◆': B + 'sects/' };
 const PAGE_SIZE = 300;
 
 export default function EntityExplorer({

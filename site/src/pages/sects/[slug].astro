@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import sectsJson from '@data/sects.json';
+import { B } from '@lib/base';
 
 export function getStaticPaths() {
   return sectsJson.sects.map((s) => ({ params: { slug: s.canonical }, props: { s } }));
@@ -14,11 +15,11 @@ const preds = Object.keys(s.arts_by_pred).sort((x, y) => {
 ---
 
 <Base title={s.canonical} description={`${s.canonical}：武功册、成员册与事件参与——梁羽生武侠宇宙门派志。`}>
-  <p class="crumb"><a href="/sects/">门派志</a> / {s.canonical}</p>
+  <p class="crumb"><a href={`${B}sects/`}>门派志</a> / {s.canonical}</p>
   <h1>{s.canonical}
     {s.cross_book && <span class="badge badge-cross">跨书</span>}
   </h1>
-  <p class="meta">事件参与 <b>{s.ev_total}</b> · 见于 {s.books.map((b) => <a class="bookchip" href={`/books/${b}/`}>{b}</a>)}</p>
+  <p class="meta">事件参与 <b>{s.ev_total}</b> · 见于 {s.books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}</p>
 
   {preds.length > 0 && (
     <section>
@@ -28,7 +29,7 @@ const preds = Object.keys(s.arts_by_pred).sort((x, y) => {
           <h3 class="sub">{pred}（{s.arts_by_pred[pred].length}）</h3>
           <p class="chips">
             {s.arts_by_pred[pred].map((a) => (
-              <a class="chip" href={`/arts/${encodeURIComponent(a.art)}/`}>
+              <a class="chip" href={`${B}arts/${encodeURIComponent(a.art)}/`}>
                 {a.art}<small>·{a.book}</small>
               </a>
             ))}
@@ -50,7 +51,7 @@ const preds = Object.keys(s.arts_by_pred).sort((x, y) => {
       <h2>成员册 <span class="dim">（derived：强证/确证级门派线索）</span></h2>
       <p class="chips">
         {s.members.map((m) => (
-          <a class="chip" href={`/characters/${encodeURIComponent(m.name)}/`}>
+          <a class="chip" href={`${B}characters/${encodeURIComponent(m.name)}/`}>
             {m.name}<small>{m.tier === 'strong' ? '强证' : '确证'} · 经{m.via.slice(0, 2).join('、')}</small>
           </a>
         ))}

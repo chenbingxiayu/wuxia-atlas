@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import artsJson from '@data/arts.json';
+import { B } from '@lib/base';
 
 export function getStaticPaths() {
   return artsJson.arts.map((a) => ({ params: { slug: a.canonical }, props: { a } }));
@@ -28,11 +29,11 @@ for (const [book, b] of Object.entries(a.relations)) {
 ---
 
 <Base title={a.canonical} description={`${a.canonical}（${a.category}）：门派归属、修习者、别名与证据定位符。`}>
-  <p class="crumb"><a href="/arts/">武功谱</a> / {a.canonical}</p>
+  <p class="crumb"><a href={`${B}arts/`}>武功谱</a> / {a.canonical}</p>
   <h1>{a.canonical} <span class="badge" style="color:var(--azure)">{a.category}</span>
     {a.cross_book && <span class="badge badge-cross">跨书</span>}
   </h1>
-  <p class="meta">证据合计 <b>{a.ev_total}</b> · 见于 {a.books.map((b) => <a class="bookchip" href={`/books/${b}/`}>{b}</a>)}</p>
+  <p class="meta">证据合计 <b>{a.ev_total}</b> · 见于 {a.books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}</p>
 
   {a.aliases.length > 0 && (
     <p class="meta">别名/变体：{a.aliases.map((x) => <span class="chip">{x}</span>)}</p>
@@ -44,7 +45,7 @@ for (const [book, b] of Object.entries(a.relations)) {
       {[...sects.entries()].map(([s, rs]) => (
         <p class="chips">
           {rs.map((r) => (
-            <a class="chip" href={`/sects/${encodeURIComponent(s)}/`}>
+            <a class="chip" href={`${B}sects/${encodeURIComponent(s)}/`}>
               {s}<small>{r.pred} · {r.book}·{r.locs[0]}</small>
             </a>
           ))}
@@ -58,7 +59,7 @@ for (const [book, b] of Object.entries(a.relations)) {
       <h2>修习 / 传授 / 独门者</h2>
       <p class="chips">
         {[...persons.entries()].map(([p, rs]) => (
-          <a class="chip" href={`/characters/${encodeURIComponent(p)}/`}>
+          <a class="chip" href={`${B}characters/${encodeURIComponent(p)}/`}>
             {p}<small>{rs.map((r) => r.pred).join('/')} · {rs[0].book}·{rs[0].locs[0]}</small>
           </a>
         ))}

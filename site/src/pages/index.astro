@@ -5,6 +5,7 @@ import books from '@data/books.json';
 import universe from '@data/universe.json';
 import characters from '@data/characters.json';
 import chapters from '@data/chapters.json';
+import { B } from '@lib/base';
 
 const works = books.books;
 const litN = works.filter((w) => w.kb_status === '已点亮').length;
@@ -23,17 +24,17 @@ const stats = [
 ];
 
 const sections = [
-  { href: '/universe', title: '宇宙地铁图', desc: '系列为线路，人物为站点，跨书人物是换乘站。天山线已亮，其余幽灵线随管线生长。', live: true },
-  { href: '/books', title: '作品库', desc: '34 部书页：回目、节奏指纹、互文引用。未点亮的书也有完整档案。', live: true },
-  { href: '/search', title: '搜索', desc: '全站全文检索（Pagefind）。', live: true },
-  { href: '/characters', title: '人物谱', desc: '全部 436 位规范人物档案：别名、师承、武功、战绩、出场曲线——每条可展开定位符。', live: true },
-  { href: '/arts', title: '武功谱', desc: '品类、门派归属、修习者、传承证据链。', live: true },
-  { href: '/ratings', title: '侠谱评分', desc: 'Glicko-2 战力榜，旁白明文做先验，每条分数可"出示原文"。', live: false, m: 'M4' },
-  { href: '/stories', title: '数据说书', desc: '用图谱证明武侠命题：卓练温度曲线、梁氏悲剧公式、食物链。', live: false, m: 'M5' },
-  { href: '/qa', title: '江湖问答 · AB 路径', desc: '谁杀了金独异？卓一航怎么认识凌未风？答案带定位符。', live: false, m: 'M5' },
-  { href: '/games', title: '侠客游戏', desc: '武林二十问答、每日一谜、排位竞猜——题库零幻觉，争议可对质。', live: false, m: 'M5' },
-  { href: '/atlas', title: '行踪地图', desc: '侠客轨迹生长动画与叙事空间河流图。', live: false, m: 'M6' },
-  { href: '/about', title: '关于 · 开放数据', desc: '方法论、标注规范、图谱下载（CC BY-NC-SA）。', live: true },
+  { href: B + 'universe', title: '宇宙地铁图', desc: '系列为线路，人物为站点，跨书人物是换乘站。天山线已亮，其余幽灵线随管线生长。', live: true },
+  { href: B + 'books', title: '作品库', desc: '34 部书页：回目、节奏指纹、互文引用。未点亮的书也有完整档案。', live: true },
+  { href: B + 'search', title: '搜索', desc: '全站全文检索（Pagefind）。', live: true },
+  { href: B + 'characters', title: '人物谱', desc: '全部 436 位规范人物档案：别名、师承、武功、战绩、出场曲线——每条可展开定位符。', live: true },
+  { href: B + 'arts', title: '武功谱', desc: '品类、门派归属、修习者、传承证据链。', live: true },
+  { href: B + 'ratings', title: '侠谱评分', desc: 'Glicko-2 战力榜，旁白明文做先验，每条分数可"出示原文"。', live: false, m: 'M4' },
+  { href: B + 'stories', title: '数据说书', desc: '用图谱证明武侠命题：卓练温度曲线、梁氏悲剧公式、食物链。', live: false, m: 'M5' },
+  { href: B + 'qa', title: '江湖问答 · AB 路径', desc: '谁杀了金独异？卓一航怎么认识凌未风？答案带定位符。', live: false, m: 'M5' },
+  { href: B + 'games', title: '侠客游戏', desc: '武林二十问答、每日一谜、排位竞猜——题库零幻觉，争议可对质。', live: false, m: 'M5' },
+  { href: B + 'atlas', title: '行踪地图', desc: '侠客轨迹生长动画与叙事空间河流图。', live: false, m: 'M6' },
+  { href: B + 'about', title: '关于 · 开放数据', desc: '方法论、标注规范、图谱下载（CC BY-NC-SA）。', live: true },
 ];
 const metroLines = universe.lines.map((ln) => ({
   ...ln,
@@ -64,7 +65,7 @@ const metroLines = universe.lines.map((ln) => ({
   </section>
 
   <section class="card metrobox">
-    <h2 class="mh">宇宙地铁图 <a class="more" href="/universe/">全图与换乘站 →</a></h2>
+    <h2 class="mh">宇宙地铁图 <a class="more" href={`${B}universe/`}>全图与换乘站 →</a></h2>
     <Metro lines={metroLines} compact />
   </section>
 
