@@ -39,13 +39,15 @@ jobs:
       # - name: Copyright gate (L0 assertion)
       #   run: python scripts/copyright_gate.py site/dist
 
-      - name: Deploy to Cloudflare Pages
-        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy site/dist --project-name=wuxia-atlas
+      # ---- Cloudflare Pages（可选通道）----
+      # 注意：GitHub 的 if 条件表达式中不可使用 secrets 上下文（workflow 文件级校验会失败），
+      # 配置好 secrets 后请改为独立 job + environment 守卫，或先用脚本探测再条件执行。
+      # - name: Deploy to Cloudflare Pages
+      #   uses: cloudflare/wrangler-action@v3
+      #   with:
+      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      #     command: pages deploy site/dist --project-name=wuxia-atlas
 
       # 镜像：GitHub Pages（primary 通道，无需 secrets；推送 gh-pages 分支）
       - name: Deploy mirror to GitHub Pages
