@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Base title="搜索" description="全站全文检索（Pagefind）。">
+  <h1>搜索</h1>
+  <link rel="stylesheet" href={`${base}pagefind/pagefind-ui.css`} />
+  <div id="search"></div>
+  <noscript>搜索需要启用 JavaScript。</noscript>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      const el = document.getElementById('search');
+      if (window.PagefindUI) {
+        new window.PagefindUI({ element: '#search', showSubResults: true, translations: {
+          placeholder: '搜索人物、武功、书目、回目……',
+          search: '搜索',
+        }});
+      } else {
+        el.innerHTML = '<p class="dim">搜索索引未构建：本地请先 <code>npm run build && npm run pagefind</code>。</p>';
+      }
+    });
+  </script>
+</Base>
+
+<style>
+  .dim { color: var(--ink-faint); }
+  :global(.pagefind-ui__search-input) {
+    font-family: var(--font-body);
+    border-color: var(--line-strong);
+    border-radius: var(--radius);
+  }
+  :global(.pagefind-ui__search-clear) { color: var(--ink-faint); }
+  :global(.pagefind-ui__result-link) { color: var(--azure); font-weight: 700; }
+  :global(.pagefind-ui__result-excerpt mark) { background: rgba(166, 58, 43, .16); color: var(--seal); }
+</style>

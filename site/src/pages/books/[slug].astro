@@ -1,0 +1,145 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sparkbars from '../../components/Sparkbars.astro';
+import books from '@data/books.json';
+import characters from '@data/characters.json';
+import chaptersAll from '@data/chapters.json';
+
+export function getStaticPaths() {
+  return books.books.map((w) => ({ params: { slug: w.book }, props: { w } }));
+}
+const { w } = Astro.props;
+const ch = chaptersAll[w.book];
+const lit = ch?.lit === true;
+const line = 'thin';
+
+// 本书 Top 人物（全部类型中取 @，按频次）
+const topChars = characters.entities
+  .filter((e) => e.type === '@' && e.books[w.book])
+  .sort((a, b) => b.books[w.book].count - a.books[w.book].count)
+  .slice(0, 12);
+
+const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
+---
+
+<Base title={w.book} description={`${w.book}：${w.leads.join('、')}。${w.era}。回数 ${w.chapters}，初刊 ${w.year} 年。`}>
+  <p class="crumb"><a href="/books/">作品库</a> / {w.book}</p>
+  <h1>{w.book}
+    {w.kb_status === '已点亮' && <span class="badge badge-lit">已点亮</span>}
+    {w.kb_status === '标注中' && <span class="badge" style="color:var(--gold)">标注中</span>}
+    {w.kb_status === '待建' && <span class="badge badge-todo">待点亮</span>}
+  </h1>
+
+  <p class="meta">
+    初刊 {w.year}{w.year_conf === 'approx' ? '（约）' : ''} 年 ·
+    背景年代：{w.era} · 系列：{w.series}
+  </p>
+  {w.leads.length > 0 && (
+    <p class="meta">主角：{w.leads.map((l) => <span class="chip">{l}</span>)}</p>
+  )}
+
+  <section class="stats card">
+    <span><b>{w.chapters}</b> 回</span>
+    <span><b>{w.chars.toLocaleString()}</b> 字</span>
+    {lit && <span><b>{ch.kb.entities.toLocaleString()}</b> 规范实体</span>}
+    {lit && <span><b>{ch.kb.events_narrative.toLocaleString()}</b> 叙事事件</span>}
+    {lit && <span><b>{ch.kb.relations}</b> 武功关系</span>}
+    <span>互文 <b>{w.intertext_out}</b> 出 / <b>{w.intertext_in}</b> 入</span>
+  </section>
+
+  {lit && ch.chapters[0]?.verbs && (
+    <section>
+      <h2>章节节奏指纹</h2>
+      <Sparkbars chapters={ch.chapters} />
+    </section>
+  )}
+
+  {topChars.length > 0 && (
+    <section>
+      <h2>本书高频人物</h2>
+      <p class="chips">
+        {topChars.map((c) => (
+          <span class="chip">{c.canonical}<small>×{c.books[w.book].count}</small>
+            {c.cross_book && <em class="badge badge-cross" style="font-size:.68em">跨书</em>}
+          </span>
+        ))}
+      </p>
+    </section>
+  )}
+
+  {(w.out_refs.length > 0 || w.in_refs.length > 0) && (
+    <section>
+      <h2>互文引用 <span class="dim">（作者明示/书名引用，{KIND_LABEL.authorial}/{KIND_LABEL.quoted}）</span></h2>
+      {w.out_refs.length > 0 && (
+        <>
+          <h3 class="sub">本书引用他人（出边 {w.intertext_out} 处）</h3>
+          <ul class="refs">
+            {w.out_refs.slice(0, 10).map((r) => (
+              <li>
+                《{r.book}》×{r.count} <span class="dim">[{KIND_LABEL[r.kind] ?? r.kind}]</span>
+                {r.locs.length > 0 && <span class="loc">{r.locs[0]}</span>}
+                <span class="dim">「{r.sample}」</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      {w.in_refs.length > 0 && (
+        <>
+          <h3 class="sub">被他人引用（入边 {w.intertext_in} 处）</h3>
+          <ul class="refs">
+            {w.in_refs.slice(0, 10).map((r) => (
+              <li>
+                《{r.book}》×{r.count} <span class="dim">[{KIND_LABEL[r.kind] ?? r.kind}]</span>
+                {r.locs.length > 0 && <span class="loc">{r.locs[0]}</span>}
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </section>
+  )}
+
+  <section>
+    <h2>回目 {lit && <span class="dim">（点击进入回目页·事件流）</span>}</h2>
+    <ol class="chapters">
+      {ch.chapters.map((c) => (
+        <li>
+          {lit ? (
+            <a href={`/books/${w.book}/${String(c.no).padStart(3, '0')}/`}>
+              <span class="loc">{String(c.no).padStart(3, '0')}</span> {c.title}
+              <small class="dim">（{c.events} 事件）</small>
+            </a>
+          ) : (
+            <span><span class="loc">{String(c.no).padStart(3, '0')}</span> {c.title}</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  {!lit && (
+    <p class="note">本书知识库尚未点亮：管线（标注→登记→事件→关系）完成后，本页将自动追加实体/事件/关系统计与回目页。</p>
+  )}
+</Base>
+
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .meta { color: var(--ink-light); }
+  .chip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .05em .7em; margin: .15em .25em;
+    font-size: .88rem; background: rgba(255,255,255,.5);
+  }
+  .chip small { color: var(--ink-faint); margin-left: .3em; }
+  .stats { display: flex; gap: var(--space-4); flex-wrap: wrap; margin: var(--space-4) 0; }
+  .stats b { font-family: var(--font-title); color: var(--azure); font-size: 1.05rem; }
+  .sub { font-size: .95rem; color: var(--ink-light); }
+  .refs { padding-left: 1.2em; font-size: .9rem; }
+  .refs li { margin: .3em 0; }
+  .chapters { columns: 2 auto; padding-left: 1.4em; font-size: .9rem; }
+  .chapters li { margin: .22em 0; break-inside: avoid; }
+  .note { color: var(--ink-faint); border-left: 3px solid var(--ghost); padding-left: var(--space-3); }
+  h2 { margin-top: var(--space-5); }
+  .dim { color: var(--ink-faint); font-weight: 400; }
+</style>

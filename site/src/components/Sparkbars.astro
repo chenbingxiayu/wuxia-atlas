@@ -1,0 +1,76 @@
+---
+// 章节节奏指纹：逐回动词密度堆叠柱（构建期 SVG，零 JS）
+// ◈交战=印红 · ◉杀伐=深红 · ▲擒控=黛青 · ◇传艺=竹青 · ○结盟=泥金
+interface Chapter {
+  no: number;
+  events: number;
+  verbs: Record<string, number>;
+}
+interface Props {
+  chapters: Chapter[];
+}
+const { chapters } = Astro.props;
+
+const COLORS: Record<string, string> = {
+  '◈': '#a63a2b',
+  '◉': '#7f2c21',
+  '▲': '#34546e',
+  '◇': '#5e7d5a',
+  '○': '#b8860b',
+};
+const ORDER = ['◈', '◉', '▲', '◇', '○'];
+const NAMES: Record<string, string> = {
+  '◈': '交战', '◉': '杀伐', '▲': '擒控', '◇': '传艺', '○': '结盟',
+};
+
+const BW = 10;   // 柱宽
+const GAP = 4;   // 间隙
+const HMAX = 46; // 最大柱高
+const maxTotal = Math.max(...chapters.map((c) => ORDER.reduce((s, v) => s + (c.verbs[v] || 0), 0)), 1);
+const W = chapters.length * (BW + GAP) + 16;
+const H = HMAX + 30;
+---
+
+<svg viewBox={`0 0 ${W} ${H}`} class="spark" role="img" aria-label="逐回事件密度">
+  {
+    chapters.map((c, i) => {
+      const x = 8 + i * (BW + GAP);
+      let y = HMAX + 8;
+      const total = ORDER.reduce((s, v) => s + (c.verbs[v] || 0), 0);
+      return (
+        <g>
+          <title>{`第${c.no}回 · 全事件 ${total}（叙事流 ${c.events}）`}</title>
+          {ORDER.map((v) => {
+            const n = c.verbs[v] || 0;
+            if (!n) return null;
+            const h = Math.max(1, Math.round((n / maxTotal) * HMAX));
+            y -= h;
+            return <rect x={x} y={y} width={BW} height={h} fill={COLORS[v]}>
+              <title>{`第${c.no}回 · ${NAMES[v]} ${n}`}</title>
+            </rect>;
+          })}
+          {(c.no - 1) % 5 === 0 && (
+            <text x={x + BW / 2} y={H - 2} text-anchor="middle" font-size="8.5" class="tick">
+              {String(c.no).padStart(3, '0')}
+            </text>
+          )}
+        </g>
+      );
+    })
+  }
+</svg>
+
+<div class="legend">
+  {ORDER.map((v) => (
+    <span><i style={`background:${COLORS[v]}`} />{NAMES[v]}</span>
+  ))}
+  <span class="dim">逐回全部事件（含对话内）</span>
+</div>
+
+<style>
+  .spark { width: 100%; max-width: 640px; height: auto; }
+  .tick { fill: var(--ink-faint); }
+  .legend { display: flex; gap: var(--space-3); font-size: .8rem; color: var(--ink-light); margin-top: var(--space-2); flex-wrap: wrap; }
+  .legend i { display: inline-block; width: 10px; height: 10px; margin-right: 4px; vertical-align: -1px; }
+  .dim { color: var(--ink-faint); }
+</style>

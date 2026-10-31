@@ -1,0 +1,62 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="方法论" description="标注→实体→事件→关系 管线、九步法溯源与评分口径。">
+  <h1>方法论</h1>
+  <p class="lead">本站内容不是编辑写的词条，而是管线算出来的图谱。口径全部公开，结论可以复算。</p>
+
+  <section>
+    <h2>一、语料到图谱：七步管线</h2>
+    <p>
+      校勘拆分（章回版）→ 逐回标注（12 类实体 + 5 类动词，"标注不改正文"，lint 强制与原文逐字一致）
+      → 实体登记（别名归并）→ 事件抽取与 LLM 逐条校订（correct/fix/drop 全留痕）
+      → 关系考订 → 跨书谱系 → 站点数据切片。
+      每一步产物都在知识库仓库中，可复核、可回滚、可重跑。
+    </p>
+  </section>
+
+  <section>
+    <h2>二、定位符</h2>
+    <p>
+      站点所有引用采用 <span class="loc">书·回:行</span> 定位符（如 <span class="loc">白发魔女传·026:53</span>），
+      指向标注语料中的行——原文与图谱永远可对账。公网站展示图谱事实与短引文（L1，单句且注明出处）；
+      长引文与标注全文仅存在于本地阅读器（L2）。
+    </p>
+  </section>
+
+  <section>
+    <h2>三、谱系与宇宙层</h2>
+    <p>
+      跨书顺序不由印象决定：作者"（全书完，请续看《X》）"式接力边为最强证据（strong），
+      "（事详拙著《X》）"回指与编年互证次之（ok），存疑处一律标注 todo。
+      转移到站点上的每个换乘站、每条线路都有证据定位符。
+    </p>
+  </section>
+
+  <section>
+    <h2>四、侠谱评分口径（上线后）</h2>
+    <p>
+      Glicko-2 引擎（参数公开），对局取自交战/杀伐/擒控事件的场景级聚合；胜负词表+状态修正系数（中毒/偷袭/放水）
+      降低剧情噪声；长尾角色向先验收缩；旁白明文做先验与 holdout 校准，冲突页并列展示"数据 vs 原文"。
+      全部口径与版本号在 <a href="/ratings/method">侠谱方法论页</a> 公开（模块 M4 上线）。
+    </p>
+  </section>
+
+  <section>
+    <h2>五、已知边界</h2>
+    <ul>
+      <li>本站严格限于小说文本，<b>不做史料考证</b>——历史人物（康熙、吕四娘等）的条目只覆盖小说内的形象；</li>
+      <li>部分书目初刊年为通行年表值（待复核，字段级标注 approx）；</li>
+      <li>事件抽取经逐条校订但不敢称无错——发现错误欢迎提 issue，修正后全站重算。</li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .lead { color: var(--ink-light); }
+  .loc { color: var(--ink-faint); border-bottom: 1px dotted var(--ghost); font-family: var(--font-mono); font-size: .92em; }
+  b { color: var(--seal); }
+  li { margin: .3em 0; }
+  section { margin-top: var(--space-5); }
+</style>

@@ -1,26 +1,44 @@
 ---
 import Base from '../layouts/Base.astro';
+import Metro from '../components/Metro.astro';
+import books from '@data/books.json';
+import universe from '@data/universe.json';
+import characters from '@data/characters.json';
+import chapters from '@data/chapters.json';
 
-// M0 骨架：数字为构建时快照（数据版本 2026-10-31）；M1 起改为从 site/data 读取
+const works = books.books;
+const litN = works.filter((w) => w.kb_status === '已点亮').length;
+const totalChapters = books.meta.totals.chapters;
+const intertextN = works.reduce((s, w) => s + w.intertext_in + w.intertext_out, 0);
+const litBookChapters = Object.values(chapters)
+  .filter((b: any) => b.lit)
+  .reduce((s: number, b: any) => s + b.chapters.length, 0);
+
 const stats = [
-  { n: '34', label: '部作品' },
-  { n: '3 / 34', label: '已点亮' },
-  { n: '2,390', label: '规范实体' },
-  { n: '1,378', label: '回目' },
-  { n: '259', label: '侠客对局图' },
+  { n: String(books.meta.totals.books), label: '部作品' },
+  { n: `${litN} / 34`, label: '已点亮' },
+  { n: characters.meta.totals.merged_entities.toLocaleString(), label: '规范实体' },
+  { n: totalChapters.toLocaleString(), label: '回目' },
+  { n: String(intertextN), label: '互文边' },
 ];
 
 const sections = [
-  { href: '/universe', title: '宇宙地铁图', desc: '系列为线路，人物为站点，跨书人物是换乘站。天山线已亮，其余幽灵线随管线生长。', status: '待建 · M3' },
-  { href: '/books', title: '作品库', desc: '34 部书页：回目、节奏指纹、互文引用。未点亮的书也有"待点亮"档案。', status: '待建 · M1' },
-  { href: '/characters', title: '人物谱', desc: 'SKU 档案：别名、师承、武功、战绩、出场曲线——每条可展开定位符。', status: '待建 · M2' },
-  { href: '/arts', title: '武功谱', desc: '品类、归属、传承树、招式意象图鉴。', status: '待建 · M2' },
-  { href: '/ratings', title: '侠谱评分', desc: 'Glicko-2 战力榜，旁白明文做先验，每条分数可"出示原文"。', status: '待建 · M4' },
-  { href: '/stories', title: '数据说书', desc: '用图谱证明武侠命题：卓练温度曲线、梁氏悲剧公式、食物链。', status: '待建 · M5' },
-  { href: '/qa', title: '江湖问答 · AB 路径', desc: '谁杀了金独异？卓一航怎么认识凌未风？答案带定位符。', status: '待建 · M5' },
-  { href: '/games', title: '侠客游戏', desc: '武林二十问答、每日一谜、排位竞猜——题库零幻觉，争议可对质。', status: '待建 · M5' },
-  { href: '/about', title: '关于 · 开放数据', desc: '方法论、标注规范、图谱下载（CC BY-NC-SA）。', status: '待建 · M1' },
+  { href: '/universe', title: '宇宙地铁图', desc: '系列为线路，人物为站点，跨书人物是换乘站。天山线已亮，其余幽灵线随管线生长。', live: true },
+  { href: '/books', title: '作品库', desc: '34 部书页：回目、节奏指纹、互文引用。未点亮的书也有完整档案。', live: true },
+  { href: '/search', title: '搜索', desc: '全站全文检索（Pagefind）。', live: true },
+  { href: '/characters', title: '人物谱', desc: 'SKU 档案：别名、师承、武功、战绩、出场曲线——每条可展开定位符。', live: false, m: 'M2' },
+  { href: '/arts', title: '武功谱', desc: '品类、归属、传承树、招式意象图鉴。', live: false, m: 'M2' },
+  { href: '/ratings', title: '侠谱评分', desc: 'Glicko-2 战力榜，旁白明文做先验，每条分数可"出示原文"。', live: false, m: 'M4' },
+  { href: '/stories', title: '数据说书', desc: '用图谱证明武侠命题：卓练温度曲线、梁氏悲剧公式、食物链。', live: false, m: 'M5' },
+  { href: '/qa', title: '江湖问答 · AB 路径', desc: '谁杀了金独异？卓一航怎么认识凌未风？答案带定位符。', live: false, m: 'M5' },
+  { href: '/games', title: '侠客游戏', desc: '武林二十问答、每日一谜、排位竞猜——题库零幻觉，争议可对质。', live: false, m: 'M5' },
+  { href: '/atlas', title: '行踪地图', desc: '侠客轨迹生长动画与叙事空间河流图。', live: false, m: 'M6' },
+  { href: '/about', title: '关于 · 开放数据', desc: '方法论、标注规范、图谱下载（CC BY-NC-SA）。', live: true },
 ];
+const metroLines = universe.lines.map((ln) => ({
+  ...ln,
+  members: [...ln.members].sort((a, b) => a.order - b.order),
+}));
 ---
 
 <Base title="首页">
@@ -36,18 +54,27 @@ const sections = [
       ))}
     </ul>
     <p class="note">
-      天山三部曲知识库已点亮：<span class="badge badge-lit">白发魔女传</span>
+      天山三部曲已点亮（{litBookChapters} 回回目页可浏览）：
+      <span class="badge badge-lit">白发魔女传</span>
       <span class="badge badge-lit">塞外奇侠传</span>
       <span class="badge badge-lit">七剑下天山</span>
-      <span class="badge badge-todo">江湖三女侠（标注中）</span>
+      <span class="badge" style="color:var(--gold)">江湖三女侠（标注中）</span>
       ——管线每打通一部书，图集自动生长一部。
     </p>
+  </section>
+
+  <section class="card metrobox">
+    <h2 class="mh">宇宙地铁图 <a class="more" href="/universe/">全图与换乘站 →</a></h2>
+    <Metro lines={metroLines} compact />
   </section>
 
   <section class="grid">
     {sections.map((s) => (
       <a class="card entry" href={s.href}>
-        <h2>{s.title} <span class="badge badge-todo">{s.status}</span></h2>
+        <h2>
+          {s.title}
+          {s.live ? <span class="badge badge-lit">已上线</span> : <span class="badge badge-todo">待建 · {s.m}</span>}
+        </h2>
         <p>{s.desc}</p>
       </a>
     ))}
@@ -55,7 +82,7 @@ const sections = [
 </Base>
 
 <style>
-  .hero { text-align: center; padding: var(--space-6) 0 var(--space-5); }
+  .hero { text-align: center; padding: var(--space-5) 0 var(--space-4); }
   .hero h1 {
     font-size: 2.2rem;
     color: var(--ink);
@@ -73,6 +100,9 @@ const sections = [
   .stats b { font-size: 1.6rem; font-family: var(--font-title); color: var(--azure); }
   .stats span { font-size: .85rem; color: var(--ink-faint); }
   .note { color: var(--ink-faint); font-size: .9rem; }
+  .metrobox { margin: var(--space-4) 0 var(--space-5); }
+  .mh { margin: 0 0 var(--space-2); font-size: 1.05rem; }
+  .more { float: right; font-size: .85rem; font-weight: 400; }
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
@@ -81,5 +111,6 @@ const sections = [
   .entry { color: inherit; transition: transform .15s ease, border-color .15s ease; }
   .entry:hover { transform: translateY(-2px); border-color: var(--seal); }
   .entry h2 { font-size: 1.05rem; margin: 0 0 var(--space-2); }
+  .entry .badge { margin-left: .4em; }
   .entry p { margin: 0; font-size: .9rem; color: var(--ink-light); }
 </style>

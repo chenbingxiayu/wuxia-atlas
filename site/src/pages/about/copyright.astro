@@ -1,0 +1,58 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+
+<Base title="版权边界" description="图谱层公开、语料层仅本地的分层架构与引用三档位。">
+  <h1>版权边界</h1>
+  <p class="lead">
+    梁羽生作品受版权保护（作者 2009 年逝世，中国境内保护期至 2059 年底）。
+    本站采用<b>分层架构</b>：图谱层公开，语料层仅限本地。
+  </p>
+
+  <table>
+    <thead><tr><th>层</th><th>内容</th><th>发布</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><b>图谱层</b></td>
+        <td>实体/关系/事件三元组、统计、定位符、回目结构、原创分析、考订结论</td>
+        <td><span class="badge badge-lit">本站全部公开</span></td>
+      </tr>
+      <tr>
+        <td><b>语料层</b></td>
+        <td>标注全文、原文长引文、章节正文</td>
+        <td><span class="badge badge-todo">仅限本地阅读器，永不部署</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>引用三档位</h2>
+  <ul>
+    <li><b>L0 纯定位符</b>（默认对外）：只显示 <span class="loc">书·回:行</span>；</li>
+    <li><b>L1 短引文</b>：悬浮/内联显示单句摘录，注明出处（评论与介绍性质的合理引用），数据说书与互文证据采用此档；</li>
+    <li><b>L2 长引文</b>：仅本地阅读器。</li>
+  </ul>
+
+  <h2>机器保证</h2>
+  <p>
+    档位不在编辑流程里靠自觉：构建期版权闸门会校验发布产物——语料文件路径引用、超过阈值的连续引文、
+    本地阅读器产物，任一出现即构建失败。全部语料目录不进入代码仓库。
+  </p>
+
+  <h2>边界声明</h2>
+  <p>
+    本站严格限于<b>小说文本</b>，不做史料考证；页面中的历史人物条目只覆盖小说内的形象。
+    本站图谱层内容采用 CC BY-NC-SA 授权（署名-非商业-相同方式共享）；
+    引用的原作文字版权归原作权利人所有。
+  </p>
+</Base>
+
+<style>
+  .lead { color: var(--ink-light); }
+  .loc { color: var(--ink-faint); border-bottom: 1px dotted var(--ghost); font-family: var(--font-mono); font-size: .92em; }
+  b { color: var(--seal); }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  th, td { text-align: left; padding: .5em .7em; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--ink-faint); }
+  li { margin: .35em 0; }
+  h2 { margin-top: var(--space-5); }
+</style>

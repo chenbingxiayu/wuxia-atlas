@@ -1,0 +1,49 @@
+---
+import Base from '../../layouts/Base.astro';
+const version = '2026-10-31';
+---
+
+<Base title="关于" description="江湖图志：方法论、版权边界与开放数据。">
+  <h1>关于 · 江湖图志</h1>
+  <p class="lead">
+    「江湖图志」是一座<b>生长中的武侠宇宙图集</b>：以梁羽生 34 部作品的机器可读知识库（kb）为唯一事实源，
+    用"标注→实体→事件→关系"管线产出图谱，再由图谱生成站点的每一个页面。
+    <b>站点是 kb 的纯函数</b>——管线每点亮一部书，图集自动生长一部。
+  </p>
+
+  <section>
+    <h2>四条立站原则</h2>
+    <ol>
+      <li><b>可溯源</b>：每个结论挂 <span class="loc">书·回:行</span> 定位符，争论可以"出示原文"；</li>
+      <li><b>宇宙性</b>：组织轴心是系列谱系与跨书人物（换乘站），不是孤立词条；</li>
+      <li><b>数据先行</b>：凡离开图谱也能做到的（普通百科内容）低优先级；只有图谱才能算的（路径、指纹、评分）才是本站灵魂；</li>
+      <li><b>版权分层</b>：图谱层公开（本站全部内容），语料层仅限本地（阅读器），引用三档位由构建期裁剪保证。</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>当前数据版本（{version}）</h2>
+    <ul>
+      <li>已点亮：白发魔女传 / 塞外奇侠传 / 七剑下天山（天山三部曲），江湖三女侠标注中；</li>
+      <li>图谱：2,390 规范实体（405 跨书）· 2,293 校订事件 · 187 武功关系 · 259 人对局图；</li>
+      <li>宇宙层：六线谱系（7 条作者亲证接力边）· 98 处作者明示互文 · 22 个换乘站。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>深入</h2>
+    <ul>
+      <li><a href="/about/method">方法论</a> —— 管线、标注语法、校订闭环、评分口径；</li>
+      <li><a href="/about/copyright">版权边界</a> —— 图谱层/语料层、引用三档位；</li>
+      <li><a href="/about/data">开放数据</a> —— 下载与 schema；</li>
+      <li><a href="/search">搜索</a> —— 全站全文检索。</li>
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .lead { color: var(--ink-light); }
+  .loc { color: var(--ink-faint); border-bottom: 1px dotted var(--ghost); }
+  b { color: var(--seal); }
+  li { margin: .3em 0; }
+</style>

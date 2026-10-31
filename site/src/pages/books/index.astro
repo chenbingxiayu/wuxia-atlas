@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import books from '@data/books.json';
+
+const works = [...books.books].sort((a, b) => a.no - b.no);
+const byStatus = (s: string) => works.filter((w) => w.kb_status === s).length;
+const lit = byStatus('已点亮');
+const tagging = byStatus('标注中');
+---
+
+<Base title="作品库" description="梁羽生 34 部作品总目：初刊年、背景年代、系列归属、主角、互文引用计数——未点亮的书也有完整档案。">
+  <h1>作品库 <span class="badge badge-lit">已上线</span></h1>
+  <p class="lead">
+    共 {books.meta.totals.books} 部 / {books.meta.totals.chapters} 回 / {books.meta.totals.chars.toLocaleString()} 字（非空白实测）。
+    已点亮 <b>{lit}</b> 部、标注中 <b>{tagging}</b> 部；互文出/入边为作者明示与书名引用（authorial+quoted）。
+  </p>
+
+  <table class="booktable">
+    <thead>
+      <tr><th>序</th><th>书名</th><th>初刊年</th><th>背景年代</th><th>系列</th><th>主角</th><th>回数</th><th>互文出/入</th><th>状态</th></tr>
+    </thead>
+    <tbody>
+      {works.map((w) => (
+        <tr>
+          <td class="dim">{w.no}</td>
+          <td><a href={`/books/${w.book}/`} class="title">{w.book}</a></td>
+          <td>{w.year}{w.year_conf === 'approx' ? '*' : ''}</td>
+          <td class="dim">{w.era}</td>
+          <td class="dim">{w.series}</td>
+          <td class="dim">{w.leads.join('、') || '—'}</td>
+          <td>{w.chapters}</td>
+          <td class="dim">{w.intertext_out}/{w.intertext_in}</td>
+          <td>
+            {w.kb_status === '已点亮' && <span class="badge badge-lit">已点亮</span>}
+            {w.kb_status === '标注中' && <span class="badge" style="color:var(--gold)">标注中</span>}
+            {w.kb_status === '待建' && <span class="badge badge-todo">待点亮</span>}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+  <p class="fine">\\* 初刊年为通行年表值待复核；完整字段与待考清单见 <a href="https://github.com/chenbingxiayu/wuxia-atlas/blob/main/site/data/books.json">books.json</a>。</p>
+
+  <h2>缺佚作品（3 部）</h2>
+  <ul>
+    {books.missing_works.map((m) => (
+      <li><b>{m.book}</b> —— {m.note}（<span class="dim">背景年代：{m.era}）</span></li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .lead { color: var(--ink-light); }
+  .booktable { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  .booktable th, .booktable td { text-align: left; padding: .38rem .5rem; border-bottom: 1px solid var(--line); }
+  .booktable th { color: var(--ink-faint); font-weight: 600; position: sticky; top: 0; background: var(--paper); }
+  .title { font-weight: 700; }
+  .dim { color: var(--ink-light); }
+  .fine { font-size: .8rem; color: var(--ink-faint); }
+</style>

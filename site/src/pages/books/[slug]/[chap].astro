@@ -1,0 +1,93 @@
+---
+import Base from '../../../layouts/Base.astro';
+import books from '@data/books.json';
+import chaptersAll from '@data/chapters.json';
+import dossiers from '@data/dossiers.json';
+
+export function getStaticPaths() {
+  const paths = [];
+  for (const w of books.books) {
+    const ch = chaptersAll[w.book];
+    if (!ch?.lit) continue;
+    for (const c of ch.chapters) {
+      paths.push({ params: { slug: w.book, chap: String(c.no).padStart(3, '0') }, props: { w, c } });
+    }
+  }
+  return paths;
+}
+const { w, c } = Astro.props;
+const ch = chaptersAll[w.book];
+const idx = ch.chapters.findIndex((x) => x.no === c.no);
+const prev = ch.chapters[idx - 1];
+const next = ch.chapters[idx + 1];
+const dossierNames = new Set(dossiers.dossiers.map((d) => d.canonical));
+const CONF = { high: '●●', medium: '●○', low: '○○' };
+---
+
+<Base title={`${w.book} 第${c.no}回`} description={`${w.book} ${c.title}：出场人物、叙事事件流，均带原著定位符。`}>
+  <p class="crumb">
+    <a href="/books/">作品库</a> / <a href={`/books/${w.book}/`}>{w.book}</a> / 第{c.no}回
+  </p>
+  <h1>{c.title}</h1>
+
+  <p class="nav">
+    {prev ? <a href={`/books/${w.book}/${String(prev.no).padStart(3, '0')}/`}>← 第{prev.no}回</a> : <span class="dim">已是首回</span>}
+    <span class="dim">｜</span>
+    {next ? <a href={`/books/${w.book}/${String(next.no).padStart(3, '0')}/`}>第{next.no}回 →</a> : <span class="dim">已是末回</span>}
+  </p>
+
+  {c.chars.length > 0 && (
+    <section>
+      <h2>出场人物 <span class="dim">（按出场频次，含对话提及）</span></h2>
+      <p class="chips">
+        {c.chars.map((p) => (
+          dossierNames.has(p.name)
+            ? <a class="chip link" href={`/characters/${p.name}/`}>{p.name}<small>×{p.n}</small></a>
+            : <span class="chip">{p.name}<small>×{p.n}</small></span>
+        ))}
+      </p>
+    </section>
+  )}
+
+  <section>
+    <h2>叙事事件流 <span class="dim">（{c.events} 条 · 主—动词—宾，均为图谱事实；点定位符见原书）</span></h2>
+    <ul class="stream">
+      {c.stream.map((e) => (
+        <li>
+          <span class="who">{e.s}</span>
+          <span class="verb">{e.v}</span>
+          <span class="who">{e.o}</span>
+          <span class="conf" title={`置信 ${e.c}`}>{CONF[e.c] ?? ''}</span>
+          <span class="loc">{w.book}·{e.loc}</span>
+        </li>
+      ))}
+    </ul>
+    {c.events === 0 && <p class="dim">本回无符合条件的叙事事件（全部为对话内或未收录）。</p>}
+  </section>
+</Base>
+
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  h1 { letter-spacing: .04em; }
+  .nav { color: var(--ink-faint); }
+  .dim { color: var(--ink-faint); font-weight: 400; }
+  .chips { line-height: 2.2; }
+  .chip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .05em .7em; margin: 0 .25em;
+    font-size: .88rem; background: rgba(255,255,255,.5); color: var(--ink);
+  }
+  a.chip.link { border-color: var(--azure); color: var(--azure); }
+  a.chip.link:hover { border-color: var(--seal); color: var(--seal); }
+  .chip small { color: var(--ink-faint); margin-left: .3em; }
+  .stream { list-style: none; padding: 0; columns: 1; font-size: .95rem; }
+  .stream li { margin: .28em 0; }
+  .who { font-weight: 700; }
+  .verb {
+    display: inline-block; min-width: 2.2em; text-align: center;
+    color: var(--seal); border-bottom: 1px solid var(--line-strong); margin: 0 .5em;
+  }
+  .conf { color: var(--ghost); font-size: .7em; margin-left: .6em; letter-spacing: -1px; }
+  .stream .loc { color: var(--ink-faint); font-size: .8rem; margin-left: .8em; }
+  h2 { margin-top: var(--space-5); }
+</style>

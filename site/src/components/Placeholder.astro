@@ -1,0 +1,22 @@
+---
+// 模块占位页：里程碑排期内逐个替换为正式页面
+interface Props {
+  title: string;
+  milestone: string;
+  desc: string;
+}
+const { title, milestone, desc } = Astro.props;
+---
+
+<div class="card empty">
+  <h2>{title}</h2>
+  <p>{desc}</p>
+  <p class="m"><span class="badge badge-todo">{milestone}</span> 本模块在里程碑排期内，数据管线已就绪。</p>
+</div>
+
+<style>
+  .empty { text-align: center; padding: var(--space-6) var(--space-4); }
+  h2 { margin: 0 0 var(--space-2); }
+  p { color: var(--ink-light); margin: .4em 0; }
+  .m { font-size: .85rem; color: var(--ink-faint); }
+</style>

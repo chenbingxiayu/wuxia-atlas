@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import Metro from '../../components/Metro.astro';
+import universe from '@data/universe.json';
+
+const lines = universe.lines.map((ln) => ({
+  ...ln,
+  members: [...ln.members].sort((a, b) => a.order - b.order),
+}));
+---
+
+<Base title="宇宙" description="梁羽生武侠宇宙：六条系列线路、换乘站种子与编年主线——地铁图 v0。">
+  <h1>宇宙 <span class="badge badge-lit">v0 已上线</span></h1>
+  <p class="lead">
+    系列为线路、书目为站点、跨书人物为换乘站。排序依据：作者"请续看"接力边（strong）＞互文回指＋编年（ok）；
+    完整证据链见《<a href="https://github.com/chenbingxiayu/wuxia-atlas/blob/main/kb/系列谱系考订表.md">系列谱系考订表</a>》（语料仓库另存）。
+    交互版（缩放/换乘高亮）见 M3。
+  </p>
+
+  <div class="card">
+    <Metro lines={lines} />
+  </div>
+
+  <section>
+    <h2>换乘站种子 <span class="dim">（互文实证的跨书人物，{universe.interchange_seeds.length} 人）</span></h2>
+    <ul class="seeds">
+      {universe.interchange_seeds.map((s) => (
+        <li>
+          <b>{s.name}</b>
+          <span class="dim">行经：</span>
+          {s.books.map((b, i) => (
+            <>{i > 0 && ' · '}<a href={`/books/${b}/`}>{b}</a></>
+          ))}
+          <span class="fine">（{s.note}）</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section>
+    <h2>宇宙编年主线 <span class="dim">（故事时间轴，跨线排布）</span></h2>
+    <table>
+      <thead><tr><th>故事年代</th><th>作品（→ = 接力边/承前）</th></tr></thead>
+      <tbody>
+        {universe.chronology_spine.map((sp) => (
+          <tr>
+            <td class="era">{sp.era}</td>
+            <td>
+              {sp.books.map((b, i) => (
+                <>
+                  {i > 0 && <span class="dim"> → </span>}
+                  {b.endsWith('*')
+                    ? <span class="dim">{b.slice(0, -1)}*</span>
+                    : <a href={`/books/${b}/`}>{b}</a>}
+                </>
+              ))}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="fine">\\* = 缺佚或年代待考；逐线排序置信（strong/ok/todo）见谱系考订表。</p>
+  </section>
+</Base>
+
+<style>
+  .lead { color: var(--ink-light); }
+  .seeds { list-style: none; padding: 0; font-size: .92rem; }
+  .seeds li { margin: .45em 0; }
+  .fine { color: var(--ink-faint); font-size: .82rem; }
+  .era { white-space: nowrap; color: var(--azure); font-weight: 700; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+  th, td { text-align: left; padding: .45em .6em; border-bottom: 1px solid var(--line); }
+  th { color: var(--ink-faint); }
+  .dim { color: var(--ink-faint); }
+  h2 { margin-top: var(--space-5); }
+</style>

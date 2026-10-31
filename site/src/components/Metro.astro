@@ -1,0 +1,100 @@
+---
+// 宇宙地铁图 v0：构建期纯 SVG，零 JS（交互版 M3）
+// 系列为线路，书目为站点：实心=已点亮，空心=待建，虚线=缺佚；点击进入书页。
+import Base from '../layouts/Base.astro';
+
+interface Props {
+  lines: Array<{
+    line: string;
+    color: string;
+    members: Array<{ book: string; order: number; kb_status: string; missing?: boolean }>;
+  }>;
+  compact?: boolean;
+}
+const { lines, compact = false } = Astro.props;
+
+const SP = 62;                 // 站距
+const X0 = 86;                 // 首站 x
+const LH = compact ? 58 : 66;  // 线距
+const W = Math.max(...lines.map((l) => X0 + (l.members.length - 1) * SP)) + 30;
+const H = lines.length * LH + (compact ? 8 : 46);
+---
+
+<svg
+  viewBox={`0 0 ${W} ${H}`}
+  class="metro"
+  role="img"
+  aria-label="梁羽生宇宙地铁图：系列为线路，书目为站点"
+>
+  {
+    lines.map((ln, li) => {
+      const y = li * LH + 30;
+      const x1 = X0 - 26;
+      const x2 = X0 + (ln.members.length - 1) * SP + 14;
+      return (
+        <g>
+          <text x={4} y={y + 4} class="linename" fill={ln.color}>
+            {ln.line.replace('（清代主脉）', '').replace('系列', '')}
+          </text>
+          <line x1={x1} y1={y} x2={x2} y2={y} stroke={ln.color} stroke-width="5" stroke-linecap="round" />
+          {ln.members.map((m, si) => {
+            const x = X0 + si * SP;
+            const lit = m.kb_status === '已点亮';
+            const labeling = m.kb_status === '标注中';
+            const dash = m.missing ? '4 3' : undefined;
+            const label = m.book + (m.missing ? '（缺佚）' : '');
+            return (
+              <g>
+                <a href={`/books/${m.book}`}>
+                  <title>{`${label} · ${m.kb_status}`}</title>
+                  <circle
+                    cx={x}
+                    cy={y}
+                    r={lit ? 9 : 7}
+                    fill={lit ? 'var(--jade)' : labeling ? 'var(--gold)' : 'var(--paper)'}
+                    stroke={m.missing ? 'var(--ghost)' : ln.color}
+                    stroke-width="3"
+                    stroke-dasharray={dash}
+                  />
+                </a>
+                <text
+                  x={x}
+                  y={y + (si % 2 === 0 ? 22 : 34)}
+                  text-anchor="middle"
+                  font-size="10.5"
+                  class={lit ? 'stlit' : 'sttodo'}
+                >
+                  {label}
+                </text>
+              </g>
+            );
+          })}
+        </g>
+      );
+    })
+  }
+  {
+    !compact && (
+      <g transform={`translate(4, ${H - 26})`} class="legend">
+        <circle cx="4" cy="-4" r="7" fill="var(--jade)" />
+        <text x="16" y="0">已点亮</text>
+        <circle cx="72" cy="-4" r="7" fill="var(--gold)" />
+        <text x="84" y="0">标注中</text>
+        <circle cx="140" cy="-4" r="7" fill="var(--paper)" stroke="var(--ghost)" stroke-width="3" />
+        <text x="152" y="0">待建</text>
+        <circle cx="208" cy="-4" r="7" fill="var(--paper)" stroke="var(--ghost)" stroke-width="3" stroke-dasharray="4 3" />
+        <text x="220" y="0">缺佚</text>
+      </g>
+    )
+  }
+</svg>
+
+<style>
+  .metro { width: 100%; height: auto; }
+  .linename { font-size: 12px; font-weight: 700; }
+  .stlit { fill: var(--ink); }
+  .sttodo { fill: var(--ink-faint); }
+  .legend text { font-size: 11px; fill: var(--ink-light); }
+  g a { cursor: pointer; }
+  g a:hover circle { stroke-width: 5; }
+</style>

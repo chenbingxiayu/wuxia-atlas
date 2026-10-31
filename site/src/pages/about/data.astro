@@ -1,0 +1,50 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const files = [
+  { f: 'books.json', s: '34 部作品元数据＋互文出入边（site-books-v1）' },
+  { f: 'universe.json', s: '六线谱系＋编年主线＋换乘站（site-universe-v1）' },
+  { f: 'characters.json', s: '2,390 规范实体索引，405 跨书（site-characters-v1）' },
+  { f: 'dossiers.json', s: 'Top40 人物档案 SKU（site-dossiers-v1）' },
+  { f: 'chapters.json', s: '34 部回目＋三部曲逐章事件流/动词密度（chapters-v1）' },
+];
+const repo = 'https://github.com/chenbingxiayu/wuxia-atlas';
+---
+
+<Base title="开放数据" description="L0 图谱层数据下载：books/universe/characters/dossiers/chapters。">
+  <h1>开放数据</h1>
+  <p class="lead">
+    本站全部页面由下列构建期数据生成——<b>站点是数据的纯函数</b>。数据为 L0 图谱层（无原文摘录），以
+    CC BY-NC-SA 授权开放；引用请注明"江湖图志（wuxia-atlas）"与数据版本日期。
+  </p>
+
+  <table>
+    <thead><tr><th>文件</th><th>内容</th></tr></thead>
+    <tbody>
+      {files.map((x) => (
+        <tr>
+          <td><a href={`${repo}/blob/main/site/data/${x.f}`}>{x.f}</a></td>
+          <td>{x.s}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
+  <h2>使用</h2>
+  <ul>
+    <li>直接下载：点击上表文件 → GitHub 页面右上角下载按钮（或 <code>raw.githubusercontent.com</code> 直链）；</li>
+    <li>整站克隆：<code>git clone {repo}</code> —— 数据在 <code>site/data/</code>；</li>
+    <li>schema 文档：<a href={`${repo}/blob/main/site/README.md`}>site/README.md</a>（各 schema 字段级说明与重建命令）。</li>
+  </ul>
+
+  <p class="fine">更新节奏：kb 管线每点亮一部书 / 修复数据后重跑，版本日期见各文件 <code>meta.generated</code>。</p>
+</Base>
+
+<style>
+  .lead { color: var(--ink-light); }
+  table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+  th, td { text-align: left; padding: .5em .7em; border-bottom: 1px solid var(--line); }
+  th { color: var(--ink-faint); }
+  .fine { color: var(--ink-faint); font-size: .85rem; }
+  h2 { margin-top: var(--space-5); }
+</style>
