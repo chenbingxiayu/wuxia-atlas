@@ -1,0 +1,1829 @@
+{
+ "meta": {
+  "generated": "2026-10-31",
+  "schema": "site-books-v1",
+  "totals": {
+   "books": 34,
+   "chapters": 1378,
+   "chars": 17004547
+  }
+ },
+ "missing_works": [
+  {
+   "book": "挑灯看剑录",
+   "era": "南宋（狂侠天骄魔女前作）",
+   "note": "正文 authorial/quoted 引用 20 处（鸣镝风云录×13、风云雷电×7），传主檀羽冲（武林天骄）、耿照"
+  },
+  {
+   "book": "折戟沉沙录",
+   "era": "待考",
+   "note": "全量 grep 零引用；仅《牧野流星》末回回目含\"折戟消兵/沉沙洗甲\"字样"
+  },
+  {
+   "book": "武林三绝",
+   "era": "待考",
+   "note": "全量 grep 零引用；两处 bare 命中均为\"并称武林三绝\"词组误中"
+  }
+ ],
+ "books": [
+  {
+   "no": 1,
+   "book": "龙虎斗京华",
+   "year": 1954,
+   "year_conf": "verified",
+   "era": "清末·庚子事变前后",
+   "era_conf": "ok",
+   "series": "晚清民国",
+   "series_conf": "ok",
+   "leads": [
+    "柳梦蝶",
+    "娄无畏",
+    "丁晓"
+   ],
+   "leads_conf": "ok",
+   "chapters": 13,
+   "chars": 202348,
+   "kb_status": "待建",
+   "intertext_out": 0,
+   "intertext_in": 10,
+   "out_refs": [],
+   "in_refs": [
+    {
+     "book": "草莽龙蛇传",
+     "kind": "authorial",
+     "count": 10,
+     "locs": [
+      "草莽龙蛇传·001:96",
+      "草莽龙蛇传·004:329",
+      "草莽龙蛇传·005:177",
+      "草莽龙蛇传·008:95",
+      "草莽龙蛇传·009:67"
+     ],
+     "sample": "…。（丁剑鸣和索家的“恩”仇关系，事详拙著《龙虎斗京华》。）"
+    }
+   ]
+  },
+  {
+   "no": 2,
+   "book": "草莽龙蛇传",
+   "year": 1954,
+   "year_conf": "verified",
+   "era": "清末民初",
+   "era_conf": "ok",
+   "series": "晚清民国",
+   "series_conf": "ok",
+   "leads": [
+    "丁晓"
+   ],
+   "leads_conf": "ok",
+   "chapters": 12,
+   "chars": 174659,
+   "kb_status": "待建",
+   "intertext_out": 10,
+   "intertext_in": 0,
+   "out_refs": [
+    {
+     "book": "龙虎斗京华",
+     "kind": "authorial",
+     "count": 10,
+     "locs": [
+      "草莽龙蛇传·001:96",
+      "草莽龙蛇传·004:329",
+      "草莽龙蛇传·005:177",
+      "草莽龙蛇传·008:95",
+      "草莽龙蛇传·009:67"
+     ],
+     "sample": "…。（丁剑鸣和索家的“恩”仇关系，事详拙著《龙虎斗京华》。）"
+    }
+   ],
+   "in_refs": []
+  },
+  {
+   "no": 3,
+   "book": "塞外奇侠传",
+   "year": 1955,
+   "year_conf": "verified",
+   "era": "清初·顺治—康熙间",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "杨云骢",
+    "纳兰明慧",
+    "飞红巾"
+   ],
+   "leads_conf": "ok",
+   "chapters": 28,
+   "chars": 92367,
+   "kb_status": "已点亮",
+   "intertext_out": 2,
+   "intertext_in": 6,
+   "out_refs": [
+    {
+     "book": "白发魔女传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "塞外奇侠传·027:5"
+     ],
+     "sample": "…公子。白发魔女和卓一航感情牵连（参见拙著《白发魔女传》〕，罗铁臂全都知道。白发魔女因卓一航的师叔们阻挠婚事，引起争执，"
+    },
+    {
+     "book": "七剑下天山",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "塞外奇侠传·028:39"
+     ],
+     "sample": "…杨云骢是否甘心让纳兰明慧出嫁，请续看拙作《七剑下天山》。"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "七剑下天山",
+     "kind": "authorial",
+     "count": 5,
+     "locs": [
+      "七剑下天山·016:11",
+      "七剑下天山·017:67",
+      "七剑下天山·018:27",
+      "七剑下天山·023:97",
+      "七剑下天山·025:7"
+     ],
+     "sample": "…逢，草原订盟，杭州死别等等往事（详见拙著《塞外奇侠传》一书）。这些往事，铭心刻骨，永不能忘！多铎见她低垂粉颈，轻掩玉容"
+    },
+    {
+     "book": "冰川天女传",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "冰川天女传·009:71"
+     ],
+     "sample": "…遂被打破。（诸事详见拙著《白发魔女传》与《塞外奇侠传》）这已经是差不多一百年以前的事情，其后到桂仲明作武当派掌门，在回"
+    }
+   ]
+  },
+  {
+   "no": 4,
+   "book": "七剑下天山",
+   "year": 1956,
+   "year_conf": "verified",
+   "era": "清·康熙",
+   "era_conf": "ok",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "凌未风",
+    "易兰珠"
+   ],
+   "leads_conf": "ok",
+   "chapters": 31,
+   "chars": 392670,
+   "kb_status": "已点亮",
+   "intertext_out": 6,
+   "intertext_in": 11,
+   "out_refs": [
+    {
+     "book": "塞外奇侠传",
+     "kind": "authorial",
+     "count": 5,
+     "locs": [
+      "七剑下天山·016:11",
+      "七剑下天山·017:67",
+      "七剑下天山·018:27",
+      "七剑下天山·023:97",
+      "七剑下天山·025:7"
+     ],
+     "sample": "…逢，草原订盟，杭州死别等等往事（详见拙著《塞外奇侠传》一书）。这些往事，铭心刻骨，永不能忘！多铎见她低垂粉颈，轻掩玉容"
+    },
+    {
+     "book": "白发魔女传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "七剑下天山·021:93"
+     ],
+     "sample": "…发魔女（他们两人之间的恩恩怨怨，详见拙著《白发魔女传》）。"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "江湖三女侠",
+     "kind": "authorial",
+     "count": 8,
+     "locs": [
+      "江湖三女侠·001:113",
+      "江湖三女侠·003:101",
+      "江湖三女侠·009:5",
+      "江湖三女侠·014:27",
+      "江湖三女侠·016:5"
+     ],
+     "sample": "…掌故，武林中的前辈大多知道（按：详见拙著《七剑下天山》），冯英奇却还是第一次听说，张大嘴巴，说不出话，想不到自己父亲，"
+    },
+    {
+     "book": "冰川天女传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "冰川天女传·004:79"
+     ],
+     "sample": "…子复得（辛龙子复得达摩剑法之事，详见拙著《七剑下天山》），再传至桂仲明，桂仲明也因此而成为武当北支的开山祖。但因达摩剑"
+    },
+    {
+     "book": "冰魄寒光剑",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "冰魄寒光剑·004:21"
+     ],
+     "sample": "…冒浣莲（羽生按：桂华生父母的故事详见拙著《七剑下天山》），桂华生幼承家学，对于经史、词章、音乐、图画，无不出色当行，与"
+    },
+    {
+     "book": "塞外奇侠传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "塞外奇侠传·028:39"
+     ],
+     "sample": "…杨云骢是否甘心让纳兰明慧出嫁，请续看拙作《七剑下天山》。"
+    }
+   ]
+  },
+  {
+   "no": 5,
+   "book": "江湖三女侠",
+   "year": 1957,
+   "year_conf": "approx",
+   "era": "清·雍正",
+   "era_conf": "ok",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "吕四娘",
+    "冯瑛",
+    "冯琳"
+   ],
+   "leads_conf": "ok",
+   "chapters": 48,
+   "chars": 603107,
+   "kb_status": "标注中",
+   "intertext_out": 8,
+   "intertext_in": 2,
+   "out_refs": [
+    {
+     "book": "七剑下天山",
+     "kind": "authorial",
+     "count": 8,
+     "locs": [
+      "江湖三女侠·001:113",
+      "江湖三女侠·003:101",
+      "江湖三女侠·009:5",
+      "江湖三女侠·014:27",
+      "江湖三女侠·016:5"
+     ],
+     "sample": "…掌故，武林中的前辈大多知道（按：详见拙著《七剑下天山》），冯英奇却还是第一次听说，张大嘴巴，说不出话，想不到自己父亲，"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "冰川天女传",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "冰川天女传·003:43",
+      "冰川天女传·038:61"
+     ],
+     "sample": "…掷，插入邙山石壁，（按：此段情事详见拙著《江湖三女侠》，此处不赘。）甘风池后来将它取下，传与爱徒，想是为了念及当年了因"
+    }
+   ]
+  },
+  {
+   "no": 6,
+   "book": "白发魔女传",
+   "year": 1957,
+   "year_conf": "verified",
+   "era": "明末·万历—崇祯（001回梃击案=万历四十三年）",
+   "era_conf": "ok",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "卓一航",
+    "练霓裳"
+   ],
+   "leads_conf": "ok",
+   "chapters": 32,
+   "chars": 399824,
+   "kb_status": "已点亮",
+   "intertext_out": 0,
+   "intertext_in": 3,
+   "out_refs": [],
+   "in_refs": [
+    {
+     "book": "七剑下天山",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "七剑下天山·021:93"
+     ],
+     "sample": "…发魔女（他们两人之间的恩恩怨怨，详见拙著《白发魔女传》）。"
+    },
+    {
+     "book": "冰川天女传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "冰川天女传·009:71"
+     ],
+     "sample": "…是武当派的门规，遂被打破。（诸事详见拙著《白发魔女传》与《塞外奇侠传》）这已经是差不多一百年以前的事情，其后到桂仲明作"
+    },
+    {
+     "book": "塞外奇侠传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "塞外奇侠传·027:5"
+     ],
+     "sample": "…公子。白发魔女和卓一航感情牵连（参见拙著《白发魔女传》〕，罗铁臂全都知道。白发魔女因卓一航的师叔们阻挠婚事，引起争执，"
+    }
+   ]
+  },
+  {
+   "no": 7,
+   "book": "冰川天女传",
+   "year": 1959,
+   "year_conf": "verified",
+   "era": "清·乾隆",
+   "era_conf": "ok",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "唐经天",
+    "桂冰娥"
+   ],
+   "leads_conf": "ok",
+   "chapters": 40,
+   "chars": 488404,
+   "kb_status": "待建",
+   "intertext_out": 5,
+   "intertext_in": 12,
+   "out_refs": [
+    {
+     "book": "江湖三女侠",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "冰川天女传·003:43",
+      "冰川天女传·038:61"
+     ],
+     "sample": "…掷，插入邙山石壁，（按：此段情事详见拙著《江湖三女侠》，此处不赘。）甘风池后来将它取下，传与爱徒，想是为了念及当年了因"
+    },
+    {
+     "book": "七剑下天山",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "冰川天女传·004:79"
+     ],
+     "sample": "…子复得（辛龙子复得达摩剑法之事，详见拙著《七剑下天山》），再传至桂仲明，桂仲明也因此而成为武当北支的开山祖。但因达摩剑"
+    },
+    {
+     "book": "塞外奇侠传",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "冰川天女传·009:71"
+     ],
+     "sample": "…遂被打破。（诸事详见拙著《白发魔女传》与《塞外奇侠传》）这已经是差不多一百年以前的事情，其后到桂仲明作武当派掌门，在回"
+    },
+    {
+     "book": "白发魔女传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "冰川天女传·009:71"
+     ],
+     "sample": "…是武当派的门规，遂被打破。（诸事详见拙著《白发魔女传》与《塞外奇侠传》）这已经是差不多一百年以前的事情，其后到桂仲明作"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "冰河洗剑录",
+     "kind": "quoted",
+     "count": 4,
+     "locs": [
+      "冰河洗剑录·002:195",
+      "冰河洗剑录·026:97",
+      "冰河洗剑录·028:61",
+      "冰河洗剑录·049:115"
+     ],
+     "sample": "…，官居原职，不久他也就告老退休了。（事详《冰川天女传》）那时，江南是陈天宇的书童，陈定基就是因为怀念江南故乡，才给他起"
+    },
+    {
+     "book": "云海玉弓缘",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "云海玉弓缘·002:95",
+      "云海玉弓缘·007:113"
+     ],
+     "sample": "…草，还未望见珠峰，已在冰川里冻毙了（事见《冰川天女传》）。这件事情是陈天宇告诉江南的，因为那一次上珠峰探险，唐经天与金"
+    },
+    {
+     "book": "冰魄寒光剑",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "冰魄寒光剑·012:77",
+      "冰魄寒光剑·012:147"
+     ],
+     "sample": "…名联（这两题目及考试的经过情形，详见拙著《冰川天女传》第九回，这里不赘），幸而桂华生也有点急才，终于也通过了。当国王亲"
+    },
+    {
+     "book": "牧野流星",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "牧野流星·031:257",
+      "牧野流星·038:291"
+     ],
+     "sample": "…”（按：唐提二人比赛攀登珠峰之事，见拙著《冰川天女传》。）"
+    },
+    {
+     "book": "弹指惊雷",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "弹指惊雷·019:351"
+     ],
+     "sample": "…不会回来了。”（按：龙灵矫故事，事详拙著《冰川天女传》。）"
+    },
+    {
+     "book": "风雷震九州",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "风雷震九州·001:31"
+     ],
+     "sample": "…峰可说是江海天之父江南的第一个师父（事详《冰川天女传》），所以算起来，萧志远和江海天是平辈。但萧志远随即说道：“这位江"
+    }
+   ]
+  },
+  {
+   "no": 8,
+   "book": "萍踪侠影录",
+   "year": 1959,
+   "year_conf": "verified",
+   "era": "明·正统—景泰（土木堡之变前后）",
+   "era_conf": "ok",
+   "series": "明代系列",
+   "series_conf": "ok",
+   "leads": [
+    "张丹枫",
+    "云蕾"
+   ],
+   "leads_conf": "ok",
+   "chapters": 32,
+   "chars": 408754,
+   "kb_status": "待建",
+   "intertext_out": 0,
+   "intertext_in": 13,
+   "out_refs": [],
+   "in_refs": [
+    {
+     "book": "散花女侠",
+     "kind": "authorial",
+     "count": 9,
+     "locs": [
+      "散花女侠·001:152",
+      "散花女侠·005:75",
+      "散花女侠·006:27",
+      "散花女侠·006:47",
+      "散花女侠·009:57"
+     ],
+     "sample": "…在擂台之上，与云重决战，争夺武状元（事见《萍踪侠影录》），大战数百回合，不分胜负，后来亏了张丹枫的暗助，云重才夺得武状"
+    },
+    {
+     "book": "广陵剑",
+     "kind": "authorial",
+     "count": 4,
+     "locs": [
+      "广陵剑·001:184",
+      "广陵剑·002:13",
+      "广陵剑·010:41",
+      "广陵剑·014:171"
+     ],
+     "sample": "…已经是天下无敌了。（张丹枫故事，详见拙著《萍踪侠影录》。）"
+    }
+   ]
+  },
+  {
+   "no": 9,
+   "book": "还剑奇情录",
+   "year": 1959,
+   "year_conf": "verified",
+   "era": "元末明初",
+   "era_conf": "ok",
+   "series": "明代系列·序篇",
+   "series_conf": "ok",
+   "leads": [
+    "陈玄机"
+   ],
+   "leads_conf": "ok",
+   "chapters": 14,
+   "chars": 120638,
+   "kb_status": "待建",
+   "intertext_out": 0,
+   "intertext_in": 1,
+   "out_refs": [],
+   "in_refs": [
+    {
+     "book": "武当一剑",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "武当一剑·003:809"
+     ],
+     "sample": "…子正是牟沧浪的祖先牟独逸（牟独逸事详拙著《还剑奇情录》），但武当派开创至今，一共有十七个掌门，也只是一个例外而已。牟独"
+    }
+   ]
+  },
+  {
+   "no": 10,
+   "book": "冰魄寒光剑",
+   "year": 1960,
+   "year_conf": "verified",
+   "era": "清·康熙—雍正间（待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "桂华生"
+   ],
+   "leads_conf": "ok",
+   "chapters": 12,
+   "chars": 111973,
+   "kb_status": "待建",
+   "intertext_out": 3,
+   "intertext_in": 2,
+   "out_refs": [
+    {
+     "book": "冰川天女传",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "冰魄寒光剑·012:77",
+      "冰魄寒光剑·012:147"
+     ],
+     "sample": "…名联（这两题目及考试的经过情形，详见拙著《冰川天女传》第九回，这里不赘），幸而桂华生也有点急才，终于也通过了。当国王亲"
+    },
+    {
+     "book": "七剑下天山",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "冰魄寒光剑·004:21"
+     ],
+     "sample": "…冒浣莲（羽生按：桂华生父母的故事详见拙著《七剑下天山》），桂华生幼承家学，对于经史、词章、音乐、图画，无不出色当行，与"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "弹指惊雷",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "弹指惊雷·001:491",
+      "弹指惊雷·002:71"
+     ],
+     "sample": "…密建筑的一个基地。（桂华生故事，详见拙著《冰魄寒光剑》。）"
+    }
+   ]
+  },
+  {
+   "no": 11,
+   "book": "散花女侠",
+   "year": 1960,
+   "year_conf": "verified",
+   "era": "明·景泰后",
+   "era_conf": "ok",
+   "series": "明代系列",
+   "series_conf": "ok",
+   "leads": [
+    "于承珠",
+    "铁镜心"
+   ],
+   "leads_conf": "ok",
+   "chapters": 36,
+   "chars": 448579,
+   "kb_status": "待建",
+   "intertext_out": 9,
+   "intertext_in": 2,
+   "out_refs": [
+    {
+     "book": "萍踪侠影录",
+     "kind": "authorial",
+     "count": 9,
+     "locs": [
+      "散花女侠·001:152",
+      "散花女侠·005:75",
+      "散花女侠·006:27",
+      "散花女侠·006:47",
+      "散花女侠·009:57"
+     ],
+     "sample": "…在擂台之上，与云重决战，争夺武状元（事见《萍踪侠影录》），大战数百回合，不分胜负，后来亏了张丹枫的暗助，云重才夺得武状"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "游剑江湖",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "游剑江湖·062:49"
+     ],
+     "sample": "…”（按：张丹枫和段沐两家的关系，详见拙著《散花女侠》。）"
+    },
+    {
+     "book": "联剑风云录",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "联剑风云录·016:83"
+     ],
+     "sample": "…在毕擎天之处，见过贯居一次。（诸事见拙著《散花女侠》）"
+    }
+   ]
+  },
+  {
+   "no": 12,
+   "book": "云海玉弓缘",
+   "year": 1961,
+   "year_conf": "verified",
+   "era": "清·乾隆",
+   "era_conf": "ok",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "金世遗",
+    "厉胜男",
+    "谷之华"
+   ],
+   "leads_conf": "ok",
+   "chapters": 52,
+   "chars": 608437,
+   "kb_status": "待建",
+   "intertext_out": 2,
+   "intertext_in": 6,
+   "out_refs": [
+    {
+     "book": "冰川天女传",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "云海玉弓缘·002:95",
+      "云海玉弓缘·007:113"
+     ],
+     "sample": "…草，还未望见珠峰，已在冰川里冻毙了（事见《冰川天女传》）。这件事情是陈天宇告诉江南的，因为那一次上珠峰探险，唐经天与金"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "冰河洗剑录",
+     "kind": "quoted",
+     "count": 5,
+     "locs": [
+      "冰河洗剑录·005:97",
+      "冰河洗剑录·005:271",
+      "冰河洗剑录·012:155",
+      "冰河洗剑录·038:73",
+      "冰河洗剑录·040:211"
+     ],
+     "sample": "…他们同是佛门弟子，这才将他们释放的（事详《云海玉弓缘》）。"
+    },
+    {
+     "book": "牧野流星",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "牧野流星·021:339"
+     ],
+     "sample": "…几乎败在连家“四笔点八脉”之下（事详拙著《云海玉弓缘》）。不过“四笔点八脉”是必须两人合使的，一个人就只能使“双笔点四"
+    }
+   ]
+  },
+  {
+   "no": 13,
+   "book": "女帝奇英传",
+   "year": 1961,
+   "year_conf": "verified",
+   "era": "唐·武周",
+   "era_conf": "ok",
+   "series": "唐代·武周篇（独立）",
+   "series_conf": "ok",
+   "leads": [
+    "李逸",
+    "武玄霜",
+    "上官婉儿"
+   ],
+   "leads_conf": "ok",
+   "chapters": 32,
+   "chars": 383627,
+   "kb_status": "待建",
+   "intertext_out": 0,
+   "intertext_in": 0,
+   "out_refs": [],
+   "in_refs": []
+  },
+  {
+   "no": 14,
+   "book": "联剑风云录",
+   "year": 1961,
+   "year_conf": "approx",
+   "era": "明·成化",
+   "era_conf": "ok",
+   "series": "明代系列",
+   "series_conf": "ok",
+   "leads": [
+    "张玉虎",
+    "龙剑虹"
+   ],
+   "leads_conf": "ok",
+   "chapters": 40,
+   "chars": 472212,
+   "kb_status": "待建",
+   "intertext_out": 1,
+   "intertext_in": 0,
+   "out_refs": [
+    {
+     "book": "散花女侠",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "联剑风云录·016:83"
+     ],
+     "sample": "…在毕擎天之处，见过贯居一次。（诸事见拙著《散花女侠》）"
+    }
+   ],
+   "in_refs": []
+  },
+  {
+   "no": 15,
+   "book": "冰河洗剑录",
+   "year": 1963,
+   "year_conf": "approx",
+   "era": "清·乾隆末（待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "江海天"
+   ],
+   "leads_conf": "ok",
+   "chapters": 56,
+   "chars": 638065,
+   "kb_status": "待建",
+   "intertext_out": 9,
+   "intertext_in": 6,
+   "out_refs": [
+    {
+     "book": "云海玉弓缘",
+     "kind": "quoted",
+     "count": 5,
+     "locs": [
+      "冰河洗剑录·005:97",
+      "冰河洗剑录·005:271",
+      "冰河洗剑录·012:155",
+      "冰河洗剑录·038:73",
+      "冰河洗剑录·040:211"
+     ],
+     "sample": "…他们同是佛门弟子，这才将他们释放的（事详《云海玉弓缘》）。"
+    },
+    {
+     "book": "冰川天女传",
+     "kind": "quoted",
+     "count": 4,
+     "locs": [
+      "冰河洗剑录·002:195",
+      "冰河洗剑录·026:97",
+      "冰河洗剑录·028:61",
+      "冰河洗剑录·049:115"
+     ],
+     "sample": "…，官居原职，不久他也就告老退休了。（事详《冰川天女传》）那时，江南是陈天宇的书童，陈定基就是因为怀念江南故乡，才给他起"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "侠骨丹心",
+     "kind": "authorial",
+     "count": 4,
+     "locs": [
+      "侠骨丹心·002:9",
+      "侠骨丹心·011:219",
+      "侠骨丹心·045:109",
+      "侠骨丹心·046:51"
+     ],
+     "sample": "…文廷壁叔侄与金世遗师徒结怨之事，事详拙著《冰河洗剑录》。）"
+    },
+    {
+     "book": "风雷震九州",
+     "kind": "quoted",
+     "count": 2,
+     "locs": [
+      "风雷震九州·004:145",
+      "风雷震九州·047:155"
+     ],
+     "sample": "…次，但乱事过后，他们夫妇又逃走了。（事详《冰河洗剑录》。）"
+    }
+   ]
+  },
+  {
+   "no": 16,
+   "book": "大唐游侠传",
+   "year": 1963,
+   "year_conf": "verified",
+   "era": "唐·天宝（安史之乱）",
+   "era_conf": "ok",
+   "series": "大唐三部曲",
+   "series_conf": "ok",
+   "leads": [
+    "段珪璋",
+    "南霁云",
+    "铁摩勒"
+   ],
+   "leads_conf": "ok",
+   "chapters": 40,
+   "chars": 452684,
+   "kb_status": "待建",
+   "intertext_out": 1,
+   "intertext_in": 2,
+   "out_refs": [
+    {
+     "book": "龙凤宝钗缘",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "大唐游侠传·040:291"
+     ],
+     "sample": "…后如何？是否能与史若梅结成佳偶，请看续集《龙凤宝钗缘》。"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "侠骨丹心",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "侠骨丹心·045:129"
+     ],
+     "sample": "…儿铁摩勒二人不相上下，鼎足称雄（事详拙著《大唐游侠传》）。牟沧浪之后，经过宋、元、明、清四个朝代，也不知在什么时候早已"
+    },
+    {
+     "book": "慧剑心魔",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "慧剑心魔·026:125"
+     ],
+     "sample": "…忙，窦家五虎则请来了妹婿段珪璋助阵（事详《大唐游侠传》），空空儿出头邀斗段珪璋，说好了他们之间单打独斗，谁赢谁输都不许"
+    }
+   ]
+  },
+  {
+   "no": 17,
+   "book": "狂侠天骄魔女",
+   "year": 1964,
+   "year_conf": "approx",
+   "era": "南宋·孝宗—光宗间（辛弃疾时代）",
+   "era_conf": "ok",
+   "series": "宋代系列",
+   "series_conf": "ok",
+   "leads": [
+    "柳清瑶",
+    "华谷涵",
+    "檀羽冲"
+   ],
+   "leads_conf": "ok",
+   "chapters": 120,
+   "chars": 1357357,
+   "kb_status": "待建",
+   "intertext_out": 0,
+   "intertext_in": 0,
+   "out_refs": [],
+   "in_refs": []
+  },
+  {
+   "no": 18,
+   "book": "龙凤宝钗缘",
+   "year": 1964,
+   "year_conf": "approx",
+   "era": "唐·安史乱后",
+   "era_conf": "ok",
+   "series": "大唐三部曲",
+   "series_conf": "ok",
+   "leads": [
+    "段克邪",
+    "史若梅"
+   ],
+   "leads_conf": "ok",
+   "chapters": 52,
+   "chars": 583139,
+   "kb_status": "待建",
+   "intertext_out": 0,
+   "intertext_in": 5,
+   "out_refs": [],
+   "in_refs": [
+    {
+     "book": "慧剑心魔",
+     "kind": "quoted",
+     "count": 4,
+     "locs": [
+      "慧剑心魔·011:199",
+      "慧剑心魔·018:63",
+      "慧剑心魔·041:121",
+      "慧剑心魔·048:187"
+     ],
+     "sample": "…聂锋因事不能如朝廷之意，被削职为民（事详《龙凤宝钗缘》），前两年亦已去世了。"
+    },
+    {
+     "book": "大唐游侠传",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "大唐游侠传·040:291"
+     ],
+     "sample": "…后如何？是否能与史若梅结成佳偶，请看续集《龙凤宝钗缘》。"
+    }
+   ]
+  },
+  {
+   "no": 19,
+   "book": "慧剑心魔",
+   "year": 1966,
+   "year_conf": "approx",
+   "era": "唐·代宗—德宗间（待考）",
+   "era_conf": "todo",
+   "series": "大唐三部曲",
+   "series_conf": "ok",
+   "leads": [
+    "展伯承"
+   ],
+   "leads_conf": "ok",
+   "chapters": 48,
+   "chars": 516809,
+   "kb_status": "待建",
+   "intertext_out": 5,
+   "intertext_in": 0,
+   "out_refs": [
+    {
+     "book": "龙凤宝钗缘",
+     "kind": "quoted",
+     "count": 4,
+     "locs": [
+      "慧剑心魔·011:199",
+      "慧剑心魔·018:63",
+      "慧剑心魔·041:121",
+      "慧剑心魔·048:187"
+     ],
+     "sample": "…聂锋因事不能如朝廷之意，被削职为民（事详《龙凤宝钗缘》），前两年亦已去世了。"
+    },
+    {
+     "book": "大唐游侠传",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "慧剑心魔·026:125"
+     ],
+     "sample": "…忙，窦家五虎则请来了妹婿段珪璋助阵（事详《大唐游侠传》），空空儿出头邀斗段珪璋，说好了他们之间单打独斗，谁赢谁输都不许"
+    }
+   ],
+   "in_refs": []
+  },
+  {
+   "no": 20,
+   "book": "瀚海雄风",
+   "year": 1966,
+   "year_conf": "approx",
+   "era": "南宋末·嘉定（成吉思汗崛起）",
+   "era_conf": "ok",
+   "series": "宋代系列",
+   "series_conf": "ok",
+   "leads": [
+    "李思南",
+    "杨婉"
+   ],
+   "leads_conf": "ok",
+   "chapters": 60,
+   "chars": 588875,
+   "kb_status": "待建",
+   "intertext_out": 0,
+   "intertext_in": 8,
+   "out_refs": [],
+   "in_refs": [
+    {
+     "book": "风云雷电",
+     "kind": "authorial",
+     "count": 7,
+     "locs": [
+      "风云雷电·010:459",
+      "风云雷电·048:81",
+      "风云雷电·048:125",
+      "风云雷电·048:181",
+      "风云雷电·052:87"
+     ],
+     "sample": "…是趁这机会，将他诱杀！（上述故事详见拙著《瀚海雄风》。）"
+    },
+    {
+     "book": "鸣镝风云录",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "鸣镝风云录·114:151"
+     ],
+     "sample": "…也不知是真是假。”（屠百城的故事详见拙著《瀚海雄风》。）"
+    }
+   ]
+  },
+  {
+   "no": 21,
+   "book": "飞凤潜龙",
+   "year": 1966,
+   "year_conf": "approx",
+   "era": "待考（穴道铜人来历，见武林天骄·007）",
+   "era_conf": "todo",
+   "series": "宋代系列（互文实证）",
+   "series_conf": "ok",
+   "leads": [],
+   "leads_conf": "todo",
+   "chapters": 7,
+   "chars": 57445,
+   "kb_status": "待建",
+   "intertext_out": 0,
+   "intertext_in": 1,
+   "out_refs": [],
+   "in_refs": [
+    {
+     "book": "武林天骄",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "武林天骄·007:333"
+     ],
+     "sample": "…的图解上精研出来的（穴道铜人来历详见拙著《飞凤潜龙》），这是天下第一的点穴功夫。完颜鉴已经得了叔父的衣钵真传，只是功力"
+    }
+   ]
+  },
+  {
+   "no": 22,
+   "book": "鸣镝风云录",
+   "year": 1966,
+   "year_conf": "approx",
+   "era": "南宋·开禧前后（待考）",
+   "era_conf": "todo",
+   "series": "宋代系列",
+   "series_conf": "ok",
+   "leads": [
+    "谷啸风"
+   ],
+   "leads_conf": "ok",
+   "chapters": 120,
+   "chars": 1135559,
+   "kb_status": "待建",
+   "intertext_out": 15,
+   "intertext_in": 1,
+   "out_refs": [
+    {
+     "book": "挑灯看剑录",
+     "kind": "authorial",
+     "count": 13,
+     "locs": [
+      "鸣镝风云录·010:285",
+      "鸣镝风云录·026:273",
+      "鸣镝风云录·030:89",
+      "鸣镝风云录·030:319",
+      "鸣镝风云录·034:23"
+     ],
+     "sample": "…两大毒功，以致引起走火入魔而亡（事详拙著《挑灯看剑录》）。宫昭文失了靠山，又害怕侠义道找他算帐，这才逃到海外，苦练武功"
+    },
+    {
+     "book": "瀚海雄风",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "鸣镝风云录·114:151"
+     ],
+     "sample": "…也不知是真是假。”（屠百城的故事详见拙著《瀚海雄风》。）"
+    },
+    {
+     "book": "风云雷电",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "鸣镝风云录·114:169"
+     ],
+     "sample": "…听到这点消息。”（风天扬的故事，另见拙著《风云雷电》。）"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "风云雷电",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "风云雷电·008:251"
+     ],
+     "sample": "…会遇上更多麻烦呢。”（这一故事，详见拙著《鸣镝风云录》。）"
+    }
+   ]
+  },
+  {
+   "no": 23,
+   "book": "风雷震九州",
+   "year": 1967,
+   "year_conf": "approx",
+   "era": "清·嘉庆（天理教林清事，见侠骨丹心·051 回指）",
+   "era_conf": "ok",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [],
+   "leads_conf": "todo",
+   "chapters": 56,
+   "chars": 614163,
+   "kb_status": "待建",
+   "intertext_out": 3,
+   "intertext_in": 3,
+   "out_refs": [
+    {
+     "book": "冰河洗剑录",
+     "kind": "quoted",
+     "count": 2,
+     "locs": [
+      "风雷震九州·004:145",
+      "风雷震九州·047:155"
+     ],
+     "sample": "…次，但乱事过后，他们夫妇又逃走了。（事详《冰河洗剑录》。）"
+    },
+    {
+     "book": "冰川天女传",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "风雷震九州·001:31"
+     ],
+     "sample": "…峰可说是江海天之父江南的第一个师父（事详《冰川天女传》），所以算起来，萧志远和江海天是平辈。但萧志远随即说道：“这位江"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "侠骨丹心",
+     "kind": "quoted",
+     "count": 3,
+     "locs": [
+      "侠骨丹心·017:143",
+      "侠骨丹心·017:221",
+      "侠骨丹心·051:283"
+     ],
+     "sample": "…那次劫牢，得戴均的帮忙也很是不少。（事详《风雷震九州》）"
+    }
+   ]
+  },
+  {
+   "no": 24,
+   "book": "武林天骄",
+   "year": 1970,
+   "year_conf": "approx",
+   "era": "宋（檀羽冲时代，待考）",
+   "era_conf": "todo",
+   "series": "宋代系列",
+   "series_conf": "ok",
+   "leads": [
+    "檀羽冲"
+   ],
+   "leads_conf": "ok",
+   "chapters": 17,
+   "chars": 308313,
+   "kb_status": "待建",
+   "intertext_out": 1,
+   "intertext_in": 0,
+   "out_refs": [
+    {
+     "book": "飞凤潜龙",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "武林天骄·007:333"
+     ],
+     "sample": "…的图解上精研出来的（穴道铜人来历详见拙著《飞凤潜龙》），这是天下第一的点穴功夫。完颜鉴已经得了叔父的衣钵真传，只是功力"
+    }
+   ],
+   "in_refs": []
+  },
+  {
+   "no": 25,
+   "book": "风云雷电",
+   "year": 1970,
+   "year_conf": "approx",
+   "era": "南宋中后期（承鸣镝风云录）",
+   "era_conf": "todo",
+   "series": "宋代系列",
+   "series_conf": "ok",
+   "leads": [
+    "风天扬"
+   ],
+   "leads_conf": "ok",
+   "chapters": 66,
+   "chars": 727369,
+   "kb_status": "待建",
+   "intertext_out": 15,
+   "intertext_in": 1,
+   "out_refs": [
+    {
+     "book": "挑灯看剑录",
+     "kind": "authorial",
+     "count": 7,
+     "locs": [
+      "风云雷电·008:381",
+      "风云雷电·020:15",
+      "风云雷电·023:137",
+      "风云雷电·023:219",
+      "风云雷电·024:295"
+     ],
+     "sample": "…名气的女侠呢。”（耿照夫妻的身世，见拙著《挑灯看剑录》。）"
+    },
+    {
+     "book": "瀚海雄风",
+     "kind": "authorial",
+     "count": 7,
+     "locs": [
+      "风云雷电·010:459",
+      "风云雷电·048:81",
+      "风云雷电·048:125",
+      "风云雷电·048:181",
+      "风云雷电·052:87"
+     ],
+     "sample": "…是趁这机会，将他诱杀！（上述故事详见拙著《瀚海雄风》。）"
+    },
+    {
+     "book": "鸣镝风云录",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "风云雷电·008:251"
+     ],
+     "sample": "…会遇上更多麻烦呢。”（这一故事，详见拙著《鸣镝风云录》。）"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "鸣镝风云录",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "鸣镝风云录·114:169"
+     ],
+     "sample": "…听到这点消息。”（风天扬的故事，另见拙著《风云雷电》。）"
+    }
+   ]
+  },
+  {
+   "no": 26,
+   "book": "侠骨丹心",
+   "year": 1971,
+   "year_conf": "approx",
+   "era": "清·嘉庆（待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "金逐流"
+   ],
+   "leads_conf": "ok",
+   "chapters": 52,
+   "chars": 557510,
+   "kb_status": "待建",
+   "intertext_out": 8,
+   "intertext_in": 2,
+   "out_refs": [
+    {
+     "book": "冰河洗剑录",
+     "kind": "authorial",
+     "count": 4,
+     "locs": [
+      "侠骨丹心·002:9",
+      "侠骨丹心·011:219",
+      "侠骨丹心·045:109",
+      "侠骨丹心·046:51"
+     ],
+     "sample": "…文廷壁叔侄与金世遗师徒结怨之事，事详拙著《冰河洗剑录》。）"
+    },
+    {
+     "book": "风雷震九州",
+     "kind": "quoted",
+     "count": 3,
+     "locs": [
+      "侠骨丹心·017:143",
+      "侠骨丹心·017:221",
+      "侠骨丹心·051:283"
+     ],
+     "sample": "…那次劫牢，得戴均的帮忙也很是不少。（事详《风雷震九州》）"
+    },
+    {
+     "book": "大唐游侠传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "侠骨丹心·045:129"
+     ],
+     "sample": "…儿铁摩勒二人不相上下，鼎足称雄（事详拙著《大唐游侠传》）。牟沧浪之后，经过宋、元、明、清四个朝代，也不知在什么时候早已"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "弹指惊雷",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "弹指惊雷·012:539"
+     ],
+     "sample": "…白都之妹，兄妹行事完全不同。故事详见拙著《侠骨丹心》）。金逐流是天下第一剑客，不用宝剑亦已天下无敌，玄铁重剑自此不再出"
+    },
+    {
+     "book": "游剑江湖",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "游剑江湖·049:221"
+     ],
+     "sample": "…帮帮主史白都那件事。”（按：此事详见拙著《侠骨丹心》）"
+    }
+   ]
+  },
+  {
+   "no": 27,
+   "book": "广陵剑",
+   "year": 1972,
+   "year_conf": "approx",
+   "era": "明·成化末（承联剑风云录，待考）",
+   "era_conf": "todo",
+   "series": "明代系列",
+   "series_conf": "ok",
+   "leads": [
+    "陈石星",
+    "云瑚"
+   ],
+   "leads_conf": "ok",
+   "chapters": 48,
+   "chars": 734407,
+   "kb_status": "待建",
+   "intertext_out": 4,
+   "intertext_in": 0,
+   "out_refs": [
+    {
+     "book": "萍踪侠影录",
+     "kind": "authorial",
+     "count": 4,
+     "locs": [
+      "广陵剑·001:184",
+      "广陵剑·002:13",
+      "广陵剑·010:41",
+      "广陵剑·014:171"
+     ],
+     "sample": "…已经是天下无敌了。（张丹枫故事，详见拙著《萍踪侠影录》。）"
+    }
+   ],
+   "in_refs": []
+  },
+  {
+   "no": 28,
+   "book": "游剑江湖",
+   "year": 1972,
+   "year_conf": "approx",
+   "era": "清·嘉庆（承侠骨丹心，待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "缪长风",
+    "云紫萝"
+   ],
+   "leads_conf": "ok",
+   "chapters": 69,
+   "chars": 782664,
+   "kb_status": "待建",
+   "intertext_out": 2,
+   "intertext_in": 2,
+   "out_refs": [
+    {
+     "book": "侠骨丹心",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "游剑江湖·049:221"
+     ],
+     "sample": "…帮帮主史白都那件事。”（按：此事详见拙著《侠骨丹心》）"
+    },
+    {
+     "book": "散花女侠",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "游剑江湖·062:49"
+     ],
+     "sample": "…”（按：张丹枫和段沐两家的关系，详见拙著《散花女侠》。）"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "牧野流星",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "牧野流星·055:295"
+     ],
+     "sample": "…萝给他吸出毒血，他当时早已死了（事详拙著《游剑江湖》）。云紫萝救活了他却牺牲了自己。"
+    },
+    {
+     "book": "绝塞传烽录",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "绝塞传烽录·001:749"
+     ],
+     "sample": "…他自己是这样想。（他这两件恨事，事详拙著《游剑江湖》。）"
+    }
+   ]
+  },
+  {
+   "no": 29,
+   "book": "牧野流星",
+   "year": 1976,
+   "year_conf": "approx",
+   "era": "清·嘉庆（待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "孟华"
+   ],
+   "leads_conf": "ok",
+   "chapters": 64,
+   "chars": 776259,
+   "kb_status": "待建",
+   "intertext_out": 5,
+   "intertext_in": 2,
+   "out_refs": [
+    {
+     "book": "冰川天女传",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "牧野流星·031:257",
+      "牧野流星·038:291"
+     ],
+     "sample": "…”（按：唐提二人比赛攀登珠峰之事，见拙著《冰川天女传》。）"
+    },
+    {
+     "book": "云海玉弓缘",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "牧野流星·021:339"
+     ],
+     "sample": "…几乎败在连家“四笔点八脉”之下（事详拙著《云海玉弓缘》）。不过“四笔点八脉”是必须两人合使的，一个人就只能使“双笔点四"
+    },
+    {
+     "book": "游剑江湖",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "牧野流星·055:295"
+     ],
+     "sample": "…萝给他吸出毒血，他当时早已死了（事详拙著《游剑江湖》）。云紫萝救活了他却牺牲了自己。"
+    },
+    {
+     "book": "弹指惊雷",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "牧野流星·064:487"
+     ],
+     "sample": "（全书完，请续看《弹指惊雷》）"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "弹指惊雷",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "弹指惊雷·020:113"
+     ],
+     "sample": "…逃的清军，杨炎被一个军官捉了去（事详拙著《牧野流星》）。后来幸亏碰上龙灵珠的外公，方始将他从这个军官手中，救了出来。"
+    },
+    {
+     "book": "绝塞传烽录",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "绝塞传烽录·006:917"
+     ],
+     "sample": "…主之位传给他，一怒而走回疆的。（事详拙著《牧野流星》）武毅在他门下，已是尽得他的衣钵真传。"
+    }
+   ]
+  },
+  {
+   "no": 30,
+   "book": "弹指惊雷",
+   "year": 1977,
+   "year_conf": "approx",
+   "era": "清·嘉庆—道光间（待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "杨炎",
+    "龙灵珠"
+   ],
+   "leads_conf": "ok",
+   "chapters": 20,
+   "chars": 457133,
+   "kb_status": "待建",
+   "intertext_out": 6,
+   "intertext_in": 4,
+   "out_refs": [
+    {
+     "book": "冰魄寒光剑",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "弹指惊雷·001:491",
+      "弹指惊雷·002:71"
+     ],
+     "sample": "…密建筑的一个基地。（桂华生故事，详见拙著《冰魄寒光剑》。）"
+    },
+    {
+     "book": "侠骨丹心",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "弹指惊雷·012:539"
+     ],
+     "sample": "…白都之妹，兄妹行事完全不同。故事详见拙著《侠骨丹心》）。金逐流是天下第一剑客，不用宝剑亦已天下无敌，玄铁重剑自此不再出"
+    },
+    {
+     "book": "冰川天女传",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "弹指惊雷·019:351"
+     ],
+     "sample": "…不会回来了。”（按：龙灵矫故事，事详拙著《冰川天女传》。）"
+    },
+    {
+     "book": "牧野流星",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "弹指惊雷·020:113"
+     ],
+     "sample": "…逃的清军，杨炎被一个军官捉了去（事详拙著《牧野流星》）。后来幸亏碰上龙灵珠的外公，方始将他从这个军官手中，救了出来。"
+    },
+    {
+     "book": "绝塞传烽录",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "弹指惊雷·020:1115"
+     ],
+     "sample": "（全书完，请续看《绝塞传烽录》）"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "绝塞传烽录",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "绝塞传烽录·001:219",
+      "绝塞传烽录·003:835"
+     ],
+     "sample": "…（齐世杰与尉迟炯不打不相识一事，事详拙著《弹指惊雷》。）"
+    },
+    {
+     "book": "幻剑灵旗",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "幻剑灵旗·011:1351"
+     ],
+     "sample": "…炎结成忘年交。”（按：这段故事，详见拙著《弹指惊雷》。）"
+    },
+    {
+     "book": "牧野流星",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "牧野流星·064:487"
+     ],
+     "sample": "（全书完，请续看《弹指惊雷》）"
+    }
+   ]
+  },
+  {
+   "no": 31,
+   "book": "绝塞传烽录",
+   "year": 1979,
+   "year_conf": "approx",
+   "era": "清·道光前后（待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [
+    "杨炎",
+    "冷冰儿"
+   ],
+   "leads_conf": "ok",
+   "chapters": 12,
+   "chars": 355329,
+   "kb_status": "待建",
+   "intertext_out": 5,
+   "intertext_in": 1,
+   "out_refs": [
+    {
+     "book": "弹指惊雷",
+     "kind": "authorial",
+     "count": 2,
+     "locs": [
+      "绝塞传烽录·001:219",
+      "绝塞传烽录·003:835"
+     ],
+     "sample": "…（齐世杰与尉迟炯不打不相识一事，事详拙著《弹指惊雷》。）"
+    },
+    {
+     "book": "游剑江湖",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "绝塞传烽录·001:749"
+     ],
+     "sample": "…他自己是这样想。（他这两件恨事，事详拙著《游剑江湖》。）"
+    },
+    {
+     "book": "牧野流星",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "绝塞传烽录·006:917"
+     ],
+     "sample": "…主之位传给他，一怒而走回疆的。（事详拙著《牧野流星》）武毅在他门下，已是尽得他的衣钵真传。"
+    },
+    {
+     "book": "剑网尘丝",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "绝塞传烽录·012:1121"
+     ],
+     "sample": "（全书完，请续看《剑网尘丝》）"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "弹指惊雷",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "弹指惊雷·020:1115"
+     ],
+     "sample": "（全书完，请续看《绝塞传烽录》）"
+    }
+   ]
+  },
+  {
+   "no": 32,
+   "book": "剑网尘丝",
+   "year": 1980,
+   "year_conf": "approx",
+   "era": "清（承绝塞传烽录，待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [],
+   "leads_conf": "todo",
+   "chapters": 18,
+   "chars": 561594,
+   "kb_status": "待建",
+   "intertext_out": 1,
+   "intertext_in": 2,
+   "out_refs": [
+    {
+     "book": "幻剑灵旗",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "剑网尘丝·018:1277"
+     ],
+     "sample": "…属于本书范围，只能在《剑网尘丝》的姐妹作《幻剑灵旗》中找寻答案了。"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "幻剑灵旗",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "幻剑灵旗·001:35"
+     ],
+     "sample": "…久之前，用酥骨散废了他的武功（详情见拙作《剑网尘丝》），此时，也不知是在后悔还是想要给他安慰，低声说道：“勒铭，你还在"
+    },
+    {
+     "book": "绝塞传烽录",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "绝塞传烽录·012:1121"
+     ],
+     "sample": "（全书完，请续看《剑网尘丝》）"
+    }
+   ]
+  },
+  {
+   "no": 33,
+   "book": "幻剑灵旗",
+   "year": 1981,
+   "year_conf": "approx",
+   "era": "清（剑网尘丝姐妹作，待考）",
+   "era_conf": "todo",
+   "series": "天山系列",
+   "series_conf": "ok",
+   "leads": [],
+   "leads_conf": "todo",
+   "chapters": 12,
+   "chars": 318509,
+   "kb_status": "待建",
+   "intertext_out": 2,
+   "intertext_in": 1,
+   "out_refs": [
+    {
+     "book": "剑网尘丝",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "幻剑灵旗·001:35"
+     ],
+     "sample": "…久之前，用酥骨散废了他的武功（详情见拙作《剑网尘丝》），此时，也不知是在后悔还是想要给他安慰，低声说道：“勒铭，你还在"
+    },
+    {
+     "book": "弹指惊雷",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "幻剑灵旗·011:1351"
+     ],
+     "sample": "…炎结成忘年交。”（按：这段故事，详见拙著《弹指惊雷》。）"
+    }
+   ],
+   "in_refs": [
+    {
+     "book": "剑网尘丝",
+     "kind": "quoted",
+     "count": 1,
+     "locs": [
+      "剑网尘丝·018:1277"
+     ],
+     "sample": "…属于本书范围，只能在《剑网尘丝》的姐妹作《幻剑灵旗》中找寻答案了。"
+    }
+   ]
+  },
+  {
+   "no": 34,
+   "book": "武当一剑",
+   "year": 1983,
+   "year_conf": "verified",
+   "era": "明末（待考）",
+   "era_conf": "todo",
+   "series": "独立（互文连还剑奇情录）",
+   "series_conf": "todo",
+   "leads": [
+    "耿玉京"
+   ],
+   "leads_conf": "ok",
+   "chapters": 19,
+   "chars": 573765,
+   "kb_status": "待建",
+   "intertext_out": 1,
+   "intertext_in": 0,
+   "out_refs": [
+    {
+     "book": "还剑奇情录",
+     "kind": "authorial",
+     "count": 1,
+     "locs": [
+      "武当一剑·003:809"
+     ],
+     "sample": "…子正是牟沧浪的祖先牟独逸（牟独逸事详拙著《还剑奇情录》），但武当派开创至今，一共有十七个掌门，也只是一个例外而已。牟独"
+    }
+   ],
+   "in_refs": []
+  }
+ ]
+}

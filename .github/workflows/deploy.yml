@@ -1,0 +1,56 @@
+# 江湖图志 · CI（语料无关构建）
+#
+# 策略（见《网站完整设计方案》§六 修订）：
+#   - 仓库只含 L0 图谱层（site/data/*.json 已入库）；语料层（章回版/拆分/kb）被
+#     .gitignore 永久排除——CI 环境没有语料，也不需要语料。
+#   - Python 管线（七脚本）在本地运行，产物 site/data 以 diff 审查后提交。
+#   - 本 workflow 只做：install → astro build → pagefind → deploy。
+#
+# 首次启用：push 到 GitHub 后，在仓库 Settings → Secrets 配置
+#   CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID（或改用 gh-pages 镜像 job）。
+# 版权闸门（M1 接入）：构建后断言 dist/ 无 tagged 引用、无超长引文、无 reader 产物。
+
+name: build-deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Build
+        run: cd site && npm ci && npm run build
+
+      - name: Pagefind index
+        run: cd site && npx pagefind --site dist
+
+      # ---- 版权闸门（M1 实现 scripts/copyright_gate.py 后启用）----
+      # - name: Copyright gate (L0 assertion)
+      #   run: python scripts/copyright_gate.py site/dist
+
+      - name: Deploy to Cloudflare Pages
+        if: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy site/dist --project-name=wuxia-atlas
+
+      # 镜像：GitHub Pages（primary 通道，无需 secrets；推送 gh-pages 分支）
+      - name: Deploy mirror to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          publish_dir: site/dist
+          publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}

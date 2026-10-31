@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+
+// M0 骨架：数字为构建时快照（数据版本 2026-10-31）；M1 起改为从 site/data 读取
+const stats = [
+  { n: '34', label: '部作品' },
+  { n: '3 / 34', label: '已点亮' },
+  { n: '2,390', label: '规范实体' },
+  { n: '1,378', label: '回目' },
+  { n: '259', label: '侠客对局图' },
+];
+
+const sections = [
+  { href: '/universe', title: '宇宙地铁图', desc: '系列为线路，人物为站点，跨书人物是换乘站。天山线已亮，其余幽灵线随管线生长。', status: '待建 · M3' },
+  { href: '/books', title: '作品库', desc: '34 部书页：回目、节奏指纹、互文引用。未点亮的书也有"待点亮"档案。', status: '待建 · M1' },
+  { href: '/characters', title: '人物谱', desc: 'SKU 档案：别名、师承、武功、战绩、出场曲线——每条可展开定位符。', status: '待建 · M2' },
+  { href: '/arts', title: '武功谱', desc: '品类、归属、传承树、招式意象图鉴。', status: '待建 · M2' },
+  { href: '/ratings', title: '侠谱评分', desc: 'Glicko-2 战力榜，旁白明文做先验，每条分数可"出示原文"。', status: '待建 · M4' },
+  { href: '/stories', title: '数据说书', desc: '用图谱证明武侠命题：卓练温度曲线、梁氏悲剧公式、食物链。', status: '待建 · M5' },
+  { href: '/qa', title: '江湖问答 · AB 路径', desc: '谁杀了金独异？卓一航怎么认识凌未风？答案带定位符。', status: '待建 · M5' },
+  { href: '/games', title: '侠客游戏', desc: '武林二十问答、每日一谜、排位竞猜——题库零幻觉，争议可对质。', status: '待建 · M5' },
+  { href: '/about', title: '关于 · 开放数据', desc: '方法论、标注规范、图谱下载（CC BY-NC-SA）。', status: '待建 · M1' },
+];
+---
+
+<Base title="首页">
+  <section class="hero">
+    <h1>梁羽生武侠宇宙 · 江湖图志</h1>
+    <p class="tagline">
+      一座<b>生长中的宇宙图集</b>：把 1,700 万字的梁羽生武侠世界，变成一座可探索、可考据、可复算的知识图谱。
+      每个结论都可溯源到 <span class="loc">书·回:行</span> 定位符。
+    </p>
+    <ul class="stats">
+      {stats.map((s) => (
+        <li><b>{s.n}</b><span>{s.label}</span></li>
+      ))}
+    </ul>
+    <p class="note">
+      天山三部曲知识库已点亮：<span class="badge badge-lit">白发魔女传</span>
+      <span class="badge badge-lit">塞外奇侠传</span>
+      <span class="badge badge-lit">七剑下天山</span>
+      <span class="badge badge-todo">江湖三女侠（标注中）</span>
+      ——管线每打通一部书，图集自动生长一部。
+    </p>
+  </section>
+
+  <section class="grid">
+    {sections.map((s) => (
+      <a class="card entry" href={s.href}>
+        <h2>{s.title} <span class="badge badge-todo">{s.status}</span></h2>
+        <p>{s.desc}</p>
+      </a>
+    ))}
+  </section>
+</Base>
+
+<style>
+  .hero { text-align: center; padding: var(--space-6) 0 var(--space-5); }
+  .hero h1 {
+    font-size: 2.2rem;
+    color: var(--ink);
+    letter-spacing: .08em;
+    margin: 0 0 var(--space-3);
+  }
+  .tagline { max-width: var(--measure); margin: 0 auto var(--space-4); color: var(--ink-light); }
+  .tagline b { color: var(--seal); }
+  .stats {
+    display: flex; justify-content: center; gap: var(--space-5);
+    list-style: none; padding: 0; margin: var(--space-4) 0;
+    flex-wrap: wrap;
+  }
+  .stats li { display: flex; flex-direction: column; }
+  .stats b { font-size: 1.6rem; font-family: var(--font-title); color: var(--azure); }
+  .stats span { font-size: .85rem; color: var(--ink-faint); }
+  .note { color: var(--ink-faint); font-size: .9rem; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: var(--space-3);
+  }
+  .entry { color: inherit; transition: transform .15s ease, border-color .15s ease; }
+  .entry:hover { transform: translateY(-2px); border-color: var(--seal); }
+  .entry h2 { font-size: 1.05rem; margin: 0 0 var(--space-2); }
+  .entry p { margin: 0; font-size: .9rem; color: var(--ink-light); }
+</style>

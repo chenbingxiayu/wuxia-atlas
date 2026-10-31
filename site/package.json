@@ -1,0 +1,15 @@
+{
+  "name": "wuxia-atlas",
+  "version": "0.1.0",
+  "description": "梁羽生武侠宇宙 · 江湖图志（图谱层数据站）",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "pagefind": "pagefind --site dist"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

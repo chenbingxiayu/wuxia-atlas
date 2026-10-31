@@ -1,0 +1,77 @@
+---
+import '../styles/tokens.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+const { title, description = '基于梁羽生小说图谱数据的原创研究站点：人物谱、武功志、宇宙地图，每条结论可溯源到原著定位符。' } = Astro.props;
+
+const nav = [
+  { href: '/books', label: '作品' },
+  { href: '/characters', label: '人物' },
+  { href: '/universe', label: '宇宙' },
+  { href: '/ratings', label: '侠谱' },
+  { href: '/games', label: '游戏' },
+  { href: '/about', label: '关于' },
+];
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title} · 江湖图志</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="/">江湖图志</a>
+      <nav>
+        {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        本站为基于原著图谱数据的原创研究站点，严格限于小说文本、不做史料考证；
+        引用内容（定位符与短引文）版权归原作权利人所有。数据版本见 <a href="/about">关于页</a>。
+      </p>
+      <p class="fine">© {year} 江湖图志 · 图谱层内容以 CC BY-NC-SA 授权转载，语料层仅限本地。</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .site-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-5);
+    border-bottom: 2px solid var(--line-strong);
+  }
+  .brand {
+    font-family: var(--font-title);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--seal);
+  }
+  nav { display: flex; gap: var(--space-4); }
+  nav a { color: var(--ink-light); }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--space-5) var(--space-4) var(--space-6);
+  }
+  .site-footer {
+    border-top: 1px solid var(--line);
+    padding: var(--space-4) var(--space-5);
+    color: var(--ink-faint);
+    font-size: .88rem;
+  }
+  .fine { font-size: .8rem; }
+</style>

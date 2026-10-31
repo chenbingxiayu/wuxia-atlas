@@ -1,0 +1,90 @@
+/* ============================================================
+   江湖图志 · 国风 Design Tokens
+   决议：原生 CSS + tokens，不用组件库（《网站完整设计方案》§二）
+   ============================================================ */
+:root {
+  /* 墨色体系 */
+  --paper: #f5efe4;        /* 宣纸底 */
+  --paper-deep: #ece2cf;   /* 陈纸 */
+  --ink: #2b2b2b;          /* 浓墨（正文） */
+  --ink-light: #5a544a;    /* 淡墨（次要文字） */
+  --ink-faint: #8c8477;    /* 极淡墨（标注） */
+
+  /* 主色（印章红）与辅色 */
+  --seal: #a63a2b;         /* 印章红：主色/强调/危险动作 */
+  --seal-deep: #7f2c21;
+  --azure: #34546e;        /* 黛青：链接/次主色 */
+  --gold: #b8860b;         /* 泥金：绝顶档/荣誉徽章 */
+  --jade: #5e7d5a;         /* 竹青：成功/已点亮 */
+  --ghost: #b9b1a2;        /* 幽灵线（待点亮系列） */
+
+  /* 线与影 */
+  --line: #d8cdb8;         /* 细墨框 */
+  --line-strong: #b9ab90;
+  --shadow: 0 1px 3px rgba(43, 43, 43, .08);
+
+  /* 侠谱分档徽章 */
+  --tier-绝顶: var(--gold);
+  --tier-超一流: var(--seal);
+  --tier-一流: var(--azure);
+  --tier-二流: var(--ink-light);
+  --tier-三流: var(--ghost);
+
+  /* 字体：霞鹜文楷/思源宋体（子集化分片接入前用系统衬线兜底） */
+  --font-body: "LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC",
+               "Source Han Serif SC", "SimSun", serif;
+  --font-title: "Noto Serif SC", "Source Han Serif SC", "LXGW WenKai", serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
+
+  /* 版式 */
+  --measure: 72ch;         /* 正文行长 */
+  --radius: 6px;
+  --space-1: .25rem; --space-2: .5rem; --space-3: 1rem;
+  --space-4: 1.5rem; --space-5: 2.5rem; --space-6: 4rem;
+}
+
+/* 基础版式 */
+html { background: var(--paper); }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  line-height: 1.85;
+  background:
+    radial-gradient(ellipse at top, rgba(255,255,255,.5), transparent 60%),
+    var(--paper);
+}
+h1, h2, h3 { font-family: var(--font-title); line-height: 1.4; }
+a { color: var(--azure); text-decoration: none; }
+a:hover { color: var(--seal); }
+code, .loc { font-family: var(--font-mono); font-size: .92em; }
+
+/* 定位符引用样式（L0 档：白发·026:53） */
+.loc {
+  color: var(--ink-faint);
+  border-bottom: 1px dotted var(--ghost);
+  cursor: help;
+}
+
+/* 纸片卡 */
+.card {
+  background: rgba(255, 255, 255, .55);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--space-4);
+}
+
+/* 印章式徽章 */
+.badge {
+  display: inline-block;
+  padding: .1em .45em;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+  font-size: .82em;
+  line-height: 1.5;
+  transform: rotate(-1.2deg);
+}
+.badge-todo { color: var(--ghost); }        /* 待点亮 */
+.badge-lit  { color: var(--jade); }         /* 已点亮 */
+.badge-cross{ color: var(--seal); }         /* 跨书换乘 */
