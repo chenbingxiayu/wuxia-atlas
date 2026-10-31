@@ -1,7 +1,35 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import sectsJson from '@data/sects.json';
 ---
-<Base title="sects">
-  <Placeholder title="sects" milestone="M2" desc="门派志：人物册、武功册、恩怨对头、门派兴衰曲线。" />
+
+<Base title="门派志" description="梁羽生武侠宇宙门派与组织：武功册、成员册、事件参与。">
+  <h1>门派志 <span class="badge badge-lit">已上线</span></h1>
+  <p class="lead">
+    已点亮书目中进入关系考订的 <b>{sectsJson.meta.totals.sects}</b> 个门派/组织
+    （跨书 {sectsJson.meta.totals.cross_book} 个）。成员册来自人物档案的门派线索（strong/ok 级）。
+  </p>
+  <div class="grid">
+    {sectsJson.sects.map((s) => (
+      <a class="card entry" href={`/sects/${encodeURIComponent(s.canonical)}/`}>
+        <h2>{s.canonical}
+          {s.cross_book && <span class="badge badge-cross">跨书</span>}
+        </h2>
+        <p>
+          武功 {Object.values(s.arts_by_pred).reduce((x, y) => x + y.length, 0)} 门 ·
+          成员 {s.members.length} · 事件参与 {s.ev_total}
+        </p>
+      </a>
+    ))}
+  </div>
 </Base>
+
+<style>
+  .lead { color: var(--ink-light); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-3); margin-top: var(--space-4); }
+  .entry { color: inherit; transition: transform .15s ease, border-color .15s ease; }
+  .entry:hover { transform: translateY(-2px); border-color: var(--seal); }
+  .entry h2 { font-size: 1.02rem; margin: 0 0 var(--space-1); }
+  .entry .badge { margin-left: .4em; }
+  .entry p { margin: 0; font-size: .85rem; color: var(--ink-light); }
+</style>

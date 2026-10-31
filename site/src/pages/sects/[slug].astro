@@ -1,0 +1,89 @@
+---
+import Base from '../../layouts/Base.astro';
+import sectsJson from '@data/sects.json';
+
+export function getStaticPaths() {
+  return sectsJson.sects.map((s) => ({ params: { slug: s.canonical }, props: { s } }));
+}
+const { s } = Astro.props;
+const PRED_ORDER = ['镇山', '拥有', '独门', '传授', '修习'];
+const preds = Object.keys(s.arts_by_pred).sort((x, y) => {
+  const ix = PRED_ORDER.indexOf(x), iy = PRED_ORDER.indexOf(y);
+  return (ix < 0 ? 9 : ix) - (iy < 0 ? 9 : iy);
+});
+---
+
+<Base title={s.canonical} description={`${s.canonical}：武功册、成员册与事件参与——梁羽生武侠宇宙门派志。`}>
+  <p class="crumb"><a href="/sects/">门派志</a> / {s.canonical}</p>
+  <h1>{s.canonical}
+    {s.cross_book && <span class="badge badge-cross">跨书</span>}
+  </h1>
+  <p class="meta">事件参与 <b>{s.ev_total}</b> · 见于 {s.books.map((b) => <a class="bookchip" href={`/books/${b}/`}>{b}</a>)}</p>
+
+  {preds.length > 0 && (
+    <section>
+      <h2>武功册</h2>
+      {preds.map((pred) => (
+        <div>
+          <h3 class="sub">{pred}（{s.arts_by_pred[pred].length}）</h3>
+          <p class="chips">
+            {s.arts_by_pred[pred].map((a) => (
+              <a class="chip" href={`/arts/${encodeURIComponent(a.art)}/`}>
+                {a.art}<small>·{a.book}</small>
+              </a>
+            ))}
+          </p>
+        </div>
+      ))}
+      {s.arts_by_pred['镇山']?.some((x) => x.note) && (
+        <ul class="notes">
+          {s.arts_by_pred['镇山'].filter((x) => x.note).map((x) => (
+            <li>{x.art} —— <span class="dim">「{x.note}」</span> <span class="loc">{x.book}·{x.locs[0]}</span></li>
+          ))}
+        </ul>
+      )}
+    </section>
+  )}
+
+  {s.members.length > 0 && (
+    <section>
+      <h2>成员册 <span class="dim">（derived：强证/确证级门派线索）</span></h2>
+      <p class="chips">
+        {s.members.map((m) => (
+          <a class="chip" href={`/characters/${encodeURIComponent(m.name)}/`}>
+            {m.name}<small>{m.tier === 'strong' ? '强证' : '确证'} · 经{m.via.slice(0, 2).join('、')}</small>
+          </a>
+        ))}
+      </p>
+    </section>
+  )}
+
+  <section class="card note">
+    <p class="dim">恩怨对头与兴衰曲线将在侠谱评分上线（M4）后由对局数据生成。</p>
+  </section>
+</Base>
+
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .meta { color: var(--ink-light); }
+  .meta b { color: var(--azure); }
+  .bookchip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .02em .6em; margin: 0 .2em; font-size: .85rem;
+  }
+  .chip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .06em .7em; margin: .15em .2em;
+    font-size: .88rem; background: rgba(255,255,255,.5); color: var(--ink);
+  }
+  .chip small { color: var(--ink-faint); margin-left: .3em; font-family: var(--font-mono); }
+  a.chip:hover { border-color: var(--seal); color: var(--seal); }
+  .chips { line-height: 2.3; }
+  .dim { color: var(--ink-faint); font-weight: 400; }
+  .sub { font-size: .92rem; color: var(--ink-light); margin: .5em 0 .1em; }
+  .notes { font-size: .85rem; padding-left: 1.2em; }
+  .notes li { margin: .3em 0; }
+  .loc { color: var(--ink-faint); font-family: var(--font-mono); font-size: .85em; }
+  .note { margin-top: var(--space-5); }
+  section { margin-top: var(--space-5); }
+</style>

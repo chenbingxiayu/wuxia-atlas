@@ -15,15 +15,12 @@ import json
 import re
 import sys
 from collections import Counter, defaultdict
-from datetime import date
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-ZH = ROOT / '章回版'
-KB = ROOT / 'kb'
-OUT = ROOT / 'site' / 'data'
+from kb_discovery import lit_books, today, ROOT, KB, OUT  # noqa: E402
 
-LIT = ['白发魔女传', '塞外奇侠传', '七剑下天山']
+ZH = ROOT / '章回版'
+LIT = lit_books()
 VERB_CODES = ['◈', '◉', '▲', '◇', '○']
 
 
@@ -98,7 +95,7 @@ def main() -> None:
         payload[book] = entry
 
     out = {
-        'meta': {'generated': str(date.today()), 'schema': 'chapters-v1',
+        'meta': {'generated': today(), 'schema': 'chapters-v1',
                  'lit_books': LIT,
                  'note': '回目取自章回版文件名（短句元数据）；事件流为 L0 图谱事实，不含摘录'},
     }

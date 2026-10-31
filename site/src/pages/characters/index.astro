@@ -1,7 +1,47 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import EntityExplorer from '../../islands/EntityExplorer';
+import entityIndex from '@data/entity-index.json';
 ---
-<Base title="characters">
-  <Placeholder title="characters" milestone="M2" desc="人物谱：SKU 档案页（别名/师承/武功/战绩/出场曲线，全部带定位符）。Top 40 档案数据已就绪（dossiers.json）。" />
+
+<Base title="人物谱" description="梁羽生武侠宇宙人物谱：全部规范人物档案，跨书人物即换乘站。">
+  <h1>人物谱 <span class="badge badge-lit">已上线</span></h1>
+  <p class="lead">
+    三部曲全部 <b>{entityIndex.meta.totals.by_type['@']}</b> 位规范人物均有档案页
+    （别名组/师承传人/战绩/武功/出场曲线，全带定位符）。
+    字号越大出场越多；带「换乘」标记的是跨书人物。
+    新书点亮后此处自动生长。
+  </p>
+  <EntityExplorer client:visible entities={entityIndex.entities} initialType="@" />
 </Base>
+
+<style is:global>
+  .explorer .bar { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; margin: var(--space-3) 0; }
+  .explorer .tabs { display: flex; gap: var(--space-1); }
+  .explorer .tab {
+    border: 1px solid var(--line-strong); background: rgba(255,255,255,.5);
+    padding: .3em .8em; border-radius: 999px; cursor: pointer;
+    font-family: var(--font-body); font-size: .9rem; color: var(--ink-light);
+  }
+  .explorer .tab.on { border-color: var(--seal); color: var(--seal); font-weight: 700; }
+  .explorer input[type="text"], .explorer input:not([type]) {
+    flex: 1; min-width: 180px; padding: .35em .8em;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font-family: var(--font-body); background: rgba(255,255,255,.6);
+  }
+  .explorer .cross { font-size: .85rem; color: var(--ink-light); display: flex; align-items: center; gap: .3em; }
+  .explorer .meta { color: var(--ink-faint); font-size: .85rem; }
+  .explorer .chips { line-height: 2.4; }
+  .explorer .chip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .08em .75em; margin: .12em .2em;
+    color: var(--ink); background: rgba(255,255,255,.5);
+  }
+  .explorer .chip small { color: var(--ink-faint); margin-left: .35em; }
+  .explorer .chip em {
+    font-style: normal; color: var(--seal); font-size: .68em;
+    margin-left: .35em; border: 1px solid currentColor; border-radius: 3px; padding: 0 .25em;
+  }
+  .explorer a.chip:hover { border-color: var(--seal); color: var(--seal); }
+  .explorer .chip.cross { border-color: var(--seal); }
+</style>

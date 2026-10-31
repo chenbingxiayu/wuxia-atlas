@@ -1,0 +1,216 @@
+---
+import Base from '../../layouts/Base.astro';
+import dossiersJson from '@data/dossiers.json';
+
+export function getStaticPaths() {
+  return dossiersJson.dossiers.map((d) => ({ params: { slug: d.canonical }, props: { d } }));
+}
+const { d } = Astro.props;
+
+const TIER_LABEL = { strong: '强证', ok: '确证', weak: '线索' };
+const CONF = { high: '●●', medium: '●○', low: '○○' };
+const maxBar = Math.max(
+  ...Object.values(d.chapter_curves).flatMap((c) => Object.values(c)), 1,
+);
+---
+
+<Base title={d.canonical} description={`${d.canonical}：别名、师承传人、武功、战绩、出场曲线——梁羽生武侠宇宙人物档案。`}>
+  <p class="crumb"><a href="/characters/">人物谱</a> / {d.canonical}</p>
+  <h1>
+    {d.canonical}
+    {d.cross_book && <span class="badge badge-cross">跨书换乘</span>}
+  </h1>
+  <p class="meta">
+    出场 <b>{d.appearance_total.toLocaleString()}</b> 次 ·
+    行经 {d.books.map((b) => <a class="bookchip" href={`/books/${b}/`}>{b}</a>)}
+  </p>
+
+  {d.aliases.length > 0 && (
+    <p class="meta">
+      别名：{d.aliases.map((a) => <span class="chip">{a.alias}<small>×{a.count}</small></span>)}
+    </p>
+  )}
+
+  <section class="card note">
+    <b>人物志</b> <span class="badge badge-todo">待撰写 · 编辑流程</span>
+    <p class="dim">摘要文案走"LLM 以本档案为上下文草拟 → 人工校定"流程后填入；本页其余各卡均为图谱自动事实。</p>
+  </section>
+
+  {d.sect_affinity.length > 0 && (
+    <section>
+      <h2>门派线索 <span class="dim">（derived：修习武功 ∩ 门派武功，非正式归属）</span></h2>
+      <p class="chips">
+        {d.sect_affinity.map((s) => (
+          <a class={`chip t-${s.tier}`} href={`/sects/${encodeURIComponent(s.sect)}/`}>
+            {s.sect}
+            <small>{TIER_LABEL[s.tier]}{s.tier === 'strong' ? '·镇山' : ''}</small>
+          </a>
+        ))}
+      </p>
+    </section>
+  )}
+
+  {(d.lineage.masters.length > 0 || d.lineage.disciples.length > 0 || d.ranks.length > 0) && (
+    <section>
+      <h2>师承 · 传人 · 受立</h2>
+      {d.lineage.masters.length > 0 && (
+        <p class="chips">
+          <span class="dim">师承：</span>
+          {d.lineage.masters.map((m) => (
+            <a class="chip" href={`/characters/${encodeURIComponent(m.person)}/`}>
+              {m.person}<small>{m.tier === 'weak' ? '点拨' : '传授'} · {m.locs[0]}</small>
+            </a>
+          ))}
+        </p>
+      )}
+      {d.lineage.disciples.length > 0 && (
+        <p class="chips">
+          <span class="dim">传人：</span>
+          {d.lineage.disciples.map((m) => (
+            <a class="chip" href={`/characters/${encodeURIComponent(m.person)}/`}>
+              {m.person}<small>{m.tier === 'weak' ? '点拨' : '传授'} · {m.locs[0]}</small>
+            </a>
+          ))}
+        </p>
+      )}
+      {d.ranks.length > 0 && (
+        <p class="chips">
+          <span class="dim">受立：</span>
+          {d.ranks.map((r) => (
+            <span class="chip">{r.person}<small>{r.records.map((x) => x.verb).join('/')} · {r.records[0].book}·{r.records[0].loc}</small></span>
+          ))}
+        </p>
+      )}
+      <p class="fine">分级：传授/拜师/收徒=强证；指点/演示=点拨（不算正式师承）。定位符可回查原书。</p>
+    </section>
+  )}
+
+  {d.arts.length > 0 && (
+    <section>
+      <h2>武功</h2>
+      <p class="chips">
+        {d.arts.map((a) => (
+          <a class="chip" href={`/arts/${encodeURIComponent(a.art)}/`}>
+            {a.art}<small>{a.predicates.join('/')}</small>
+          </a>
+        ))}
+      </p>
+    </section>
+  )}
+
+  <section>
+    <h2>战绩 <span class="dim">（◉杀伐 / ▲擒控，双向；置信 ●●=high）</span></h2>
+    <div class="combat">
+      {(['kills', 'slain_by', 'captures', 'captured_by'] as const).map((k) => {
+        const LABEL = { kills: '杀伤', slain_by: '死于/被擒于杀伤', captures: '擒控', captured_by: '被擒控' };
+        if (d.combat[k].length === 0) return null;
+        return (
+          <div>
+            <h3 class="sub">{LABEL[k]}（{d.combat[k].reduce((s, x) => s + x.records.length, 0)}）</h3>
+            <p class="chips">
+              {d.combat[k].map((x) => (
+                <span class="chip">
+                  {x.person}<small>×{x.records.length} · {x.records[0].book}·{x.records[0].loc}</small>
+                </span>
+              ))}
+            </p>
+          </div>
+        );
+      })}
+    </div>
+    {d.combat.top_opponents.length > 0 && (
+      <p class="chips">
+        <span class="dim">高频对手：</span>
+        {d.combat.top_opponents.map((o) => (
+          <a class="chip" href={`/characters/${encodeURIComponent(o.person)}/`}>
+            {o.person}<small>×{o.n}</small>
+          </a>
+        ))}
+      </p>
+    )}
+  </section>
+
+  <section>
+    <h2>出场曲线 <span class="dim">（逐回出现次数，含对话提及）</span></h2>
+    {Object.entries(d.chapter_curves).map(([book, curve]) => {
+      const entries = Object.entries(curve);
+      const W = entries.length * 12 + 16;
+      return (
+        <div class="curve">
+          <h3 class="sub">{book}</h3>
+          <svg viewBox={`0 0 ${W} 44`} class="bars">
+            {entries.map(([chn, n], i) => {
+              const h = Math.max(2, Math.round((n / maxBar) * 30));
+              return (
+                <rect x={8 + i * 12} y={34 - h} width="9" height={h} fill="var(--azure)">
+                  <title>{`第 ${chn} 回 · ${n} 次`}</title>
+                </rect>
+              );
+            })}
+          </svg>
+        </div>
+      );
+    })}
+  </section>
+
+  {d.key_events.length > 0 && (
+    <section>
+      <h2>关键事件 <span class="dim">（high 置信 · 前 12）</span></h2>
+      <ul class="stream">
+        {d.key_events.map((e) => (
+          <li>
+            <span class="who">{e.subject}</span>
+            <span class="verb">{e.verb}</span>
+            <span class="who">{e.object}</span>
+            <span class="conf">{CONF[e.confidence] ?? ''}</span>
+            <span class="loc">{e.book}·{e.loc}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="fine">更多对局与互动可从"高频对手"进入对方档案交叉浏览。</p>
+    </section>
+  )}
+
+  <section class="card note">
+    <b>侠谱评分</b> <span class="badge badge-todo">M4 上线</span>
+    <p class="dim">Glicko-2 战力评分、档位与成长曲线将在此展示，口径见 <a href="/ratings/method">侠谱方法论</a>。</p>
+  </section>
+</Base>
+
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .meta { color: var(--ink-light); }
+  .meta b { color: var(--azure); }
+  .bookchip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .02em .6em; margin: 0 .2em; font-size: .85rem;
+  }
+  .chip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .06em .7em; margin: .15em .2em;
+    font-size: .88rem; background: rgba(255,255,255,.5); color: var(--ink);
+  }
+  .chip small { color: var(--ink-faint); margin-left: .3em; font-family: var(--font-mono); }
+  a.chip:hover { border-color: var(--seal); color: var(--seal); }
+  .chips { line-height: 2.3; }
+  .dim { color: var(--ink-faint); font-weight: 400; }
+  .fine { font-size: .8rem; color: var(--ink-faint); }
+  .sub { font-size: .92rem; color: var(--ink-light); margin: .4em 0 .1em; }
+  .t-strong { border-color: var(--jade); }
+  .t-ok { border-color: var(--azure); }
+  .t-weak { color: var(--ink-faint); }
+  .combat { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-5); }
+  @media (max-width: 640px) { .combat { grid-template-columns: 1fr; } }
+  .curve { margin: var(--space-2) 0; }
+  .bars { width: 100%; max-width: 560px; height: 44px; }
+  .stream { list-style: none; padding: 0; font-size: .95rem; }
+  .stream li { margin: .28em 0; }
+  .who { font-weight: 700; }
+  .verb { display: inline-block; min-width: 2.2em; text-align: center; color: var(--seal);
+          border-bottom: 1px solid var(--line-strong); margin: 0 .5em; }
+  .conf { color: var(--ghost); font-size: .7em; margin-left: .6em; letter-spacing: -1px; }
+  .stream .loc { color: var(--ink-faint); font-size: .8rem; margin-left: .8em; }
+  .note p { margin: .3em 0 0; }
+  section { margin-top: var(--space-5); }
+  h2 { margin-bottom: var(--space-2); }
+</style>

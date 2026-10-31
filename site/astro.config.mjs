@@ -1,8 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import react from '@astrojs/react';
 
 // 梁羽生武侠宇宙 · 江湖图志
-// 架构决议见《网站完整设计方案》：SSG + 交互岛；版权闸门见 scripts（M1 接入 CI）
+// 架构决议见《网站完整设计方案》：SSG + 交互岛；版权闸门见 scripts/copyright_gate.py
 export default defineConfig({
   // GitHub Pages 项目站点（自定义域名/Cloudflare 时改为根路径并更新 site）
   site: 'https://chenbingxiayu.github.io',
@@ -11,4 +12,5 @@ export default defineConfig({
   build: {
     inlineStylesheets: 'auto',
   },
+  integrations: [react()],
 });

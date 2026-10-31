@@ -21,9 +21,8 @@ ROOT = Path(__file__).resolve().parents[1]
 KB = ROOT / 'kb'
 OUT = ROOT / 'site' / 'data'
 
-LIT_BOOKS = ['白发魔女传', '塞外奇侠传', '七剑下天山']  # 已有实体登记表的书
-# 跨书统一规范名（依据 kb/README.md"跨书接口"节），与 build_dossiers.py 保持一致
-CROSS_BOOK_CANON = {'哈玛雅': '飞红巾', '晦明禅师': '岳鸣珂', '白发魔女': '练霓裳'}
+# 书目与规范名：自动发现 + 跨书归并（见 kb_discovery.py，勿硬编码）
+from kb_discovery import lit_books, canon as book_canon, today, ROOT, KB, OUT  # noqa: E402
 
 
 def dump(name: str, payload) -> None:
@@ -68,7 +67,7 @@ def build_books() -> dict:
                       'out_refs': pack(out_edges, w['book']),
                       'in_refs': pack(in_edges, w['book'])})
     return {
-        'meta': {'generated': str(date.today()), 'schema': 'site-books-v1',
+        'meta': {'generated': today(), 'schema': 'site-books-v1',
                  'totals': wmeta['meta']['totals']},
         'missing_works': wmeta['missing_works'],
         'books': books,
@@ -79,7 +78,7 @@ def build_universe() -> dict:
     with open(KB / '系列谱系考订表.json', encoding='utf-8') as f:
         tree = json.load(f)
     return {
-        'meta': {'generated': str(date.today()), 'schema': 'site-universe-v1',
+        'meta': {'generated': today(), 'schema': 'site-universe-v1',
                  'source': 'kb/系列谱系考订表.json'},
         'lines': tree['lines'],
         'chronology_spine': tree['chronology_spine'],
@@ -90,7 +89,7 @@ def build_universe() -> dict:
 
 def build_characters() -> dict:
     per_book = {}
-    for book in LIT_BOOKS:
+    for book in lit_books():
         with open(KB / book / '实体登记表.json', encoding='utf-8') as f:
             reg = json.load(f)
         per_book[book] = reg['entities']
@@ -98,8 +97,7 @@ def build_characters() -> dict:
     merged = {}
     for book, ents in per_book.items():
         for key, e in ents.items():
-            canon = (CROSS_BOOK_CANON.get(e['canonical'], e['canonical'])
-                     if e['type'] == '@' else e['canonical'])
+            canon = (book_canon(e['canonical']) if e['type'] == '@' else e['canonical'])
             ck = (e['type'], canon)
             m = merged.setdefault(ck, {
                 'type': e['type'], 'canonical': canon,
@@ -126,8 +124,8 @@ def build_characters() -> dict:
     for m in items:
         dist[m['type']] += 1
     return {
-        'meta': {'generated': str(date.today()), 'schema': 'site-characters-v1',
-                 'books': LIT_BOOKS,
+        'meta': {'generated': today(), 'schema': 'site-characters-v1',
+                 'books': lit_books(),
                  'totals': {'merged_entities': len(items),
                             'cross_book': sum(1 for m in items if m['cross_book']),
                             'by_type': dict(sorted(dist.items()))},
@@ -138,10 +136,31 @@ def build_characters() -> dict:
     }
 
 
+def build_entity_index() -> dict:
+    """轻量实体索引（@/☆/◆），供实体联想岛（EntityExplorer）与各索引页使用。"""
+    with open(OUT / 'characters.json', encoding='utf-8') as f:
+        chars = json.load(f)
+    items = [
+        {'t': e['type'], 'c': e['canonical'], 'n': e['total'],
+         'b': {b: v['count'] for b, v in e['books'].items()}, 'x': e['cross_book']}
+        for e in chars['entities'] if e['type'] in ('@', '☆', '◆')
+    ]
+    items.sort(key=lambda x: -x['n'])
+    return {
+        'meta': {'generated': today(), 'schema': 'entity-index-v1',
+                 'note': '轻索引：t=类型 c=规范名 n=总频次 b=逐书频次 x=跨书',
+                 'totals': {'entities': len(items),
+                            'by_type': {t: sum(1 for i in items if i['t'] == t)
+                                        for t in ('@', '☆', '◆')}}},
+        'entities': items,
+    }
+
+
 def main() -> None:
     dump('books.json', build_books())
     dump('universe.json', build_universe())
     dump('characters.json', build_characters())
+    dump('entity-index.json', build_entity_index())
 
 
 if __name__ == '__main__':

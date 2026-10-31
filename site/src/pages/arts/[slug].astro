@@ -1,0 +1,109 @@
+---
+import Base from '../../layouts/Base.astro';
+import artsJson from '@data/arts.json';
+
+export function getStaticPaths() {
+  return artsJson.arts.map((a) => ({ params: { slug: a.canonical }, props: { a } }));
+}
+const { a } = Astro.props;
+
+const PRED_LABEL = { 镇山: '镇山', 拥有: '拥有', 独门: '独门', 传授: '传授', 修习: '修习' };
+// 按谓词重组（跨书）
+const byPred = new Map();
+const persons = new Map();
+const sects = new Map();
+for (const [book, b] of Object.entries(a.relations)) {
+  for (const r of b.relations) {
+    if (!byPred.has(r.pred)) byPred.set(r.pred, []);
+    byPred.get(r.pred).push({ ...r, book });
+    if (r.st === '@') {
+      if (!persons.has(r.s)) persons.set(r.s, []);
+      persons.get(r.s).push({ ...r, book });
+    } else if (r.st === '◆') {
+      if (!sects.has(r.s)) sects.set(r.s, []);
+      sects.get(r.s).push({ ...r, book });
+    }
+  }
+}
+---
+
+<Base title={a.canonical} description={`${a.canonical}（${a.category}）：门派归属、修习者、别名与证据定位符。`}>
+  <p class="crumb"><a href="/arts/">武功谱</a> / {a.canonical}</p>
+  <h1>{a.canonical} <span class="badge" style="color:var(--azure)">{a.category}</span>
+    {a.cross_book && <span class="badge badge-cross">跨书</span>}
+  </h1>
+  <p class="meta">证据合计 <b>{a.ev_total}</b> · 见于 {a.books.map((b) => <a class="bookchip" href={`/books/${b}/`}>{b}</a>)}</p>
+
+  {a.aliases.length > 0 && (
+    <p class="meta">别名/变体：{a.aliases.map((x) => <span class="chip">{x}</span>)}</p>
+  )}
+
+  {sects.size > 0 && (
+    <section>
+      <h2>门派归属</h2>
+      {[...sects.entries()].map(([s, rs]) => (
+        <p class="chips">
+          {rs.map((r) => (
+            <a class="chip" href={`/sects/${encodeURIComponent(s)}/`}>
+              {s}<small>{r.pred} · {r.book}·{r.locs[0]}</small>
+            </a>
+          ))}
+        </p>
+      ))}
+    </section>
+  )}
+
+  {persons.size > 0 && (
+    <section>
+      <h2>修习 / 传授 / 独门者</h2>
+      <p class="chips">
+        {[...persons.entries()].map(([p, rs]) => (
+          <a class="chip" href={`/characters/${encodeURIComponent(p)}/`}>
+            {p}<small>{rs.map((r) => r.pred).join('/')} · {rs[0].book}·{rs[0].locs[0]}</small>
+          </a>
+        ))}
+      </p>
+    </section>
+  )}
+
+  <section>
+    <h2>证据与考订注记</h2>
+    <ul class="ev">
+      {[...byPred.entries()].map(([pred, rs]) => (
+        rs.map((r) => (
+          <li>
+            <span class="pred">{PRED_LABEL[r.pred] ?? r.pred}</span>
+            <span class="who">{r.s}</span>
+            <span class="loc">{r.book}·{r.locs.join('，')}</span>
+            {r.note && <span class="note">「{r.note}」</span>}
+          </li>
+        ))
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .meta { color: var(--ink-light); }
+  .meta b { color: var(--azure); }
+  .bookchip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .02em .6em; margin: 0 .2em; font-size: .85rem;
+  }
+  .chip {
+    display: inline-block; border: 1px solid var(--line-strong);
+    border-radius: 999px; padding: .06em .7em; margin: .15em .2em;
+    font-size: .88rem; background: rgba(255,255,255,.5); color: var(--ink);
+  }
+  .chip small { color: var(--ink-faint); margin-left: .3em; font-family: var(--font-mono); }
+  a.chip:hover { border-color: var(--seal); color: var(--seal); }
+  .chips { line-height: 2.3; }
+  .ev { list-style: none; padding: 0; font-size: .9rem; }
+  .ev li { margin: .3em 0; }
+  .pred { color: var(--seal); margin-right: .6em; }
+  .who { font-weight: 700; margin-right: .6em; }
+  .loc { color: var(--ink-faint); font-family: var(--font-mono); font-size: .85em; }
+  .note { color: var(--ink-light); }
+  section { margin-top: var(--space-5); }
+</style>

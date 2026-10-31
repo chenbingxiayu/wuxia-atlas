@@ -10,8 +10,18 @@
 |---|---|---|---|
 | `books.json` | site-books-v1 | 作品列表/书页 | 34 部元数据卡（初刊年/背景年代/系列/主角/回数/字数/KB 状态）＋互文出入边明细（kind/定位符/片段≤60字）＋缺佚作品 3 部 |
 | `universe.json` | site-universe-v1 | 宇宙页/地铁图 | 六条线路（成员＋故事内序＋排序置信＋证据定位符）＋宇宙编年主线＋22 个换乘站种子＋7 项考订问题 |
-| `characters.json` | site-characters-v1 | 人物索引/全站搜索底座 | 三部曲 2,393 规范实体（10 类），跨书归并（406 个跨书实体），含逐书频次/章节跨度/别名 Top6 |
-| `dossiers.json` | site-dossiers-v1 | 人物档案页（Top 40） | SKU 知识单元：别名组/出场曲线（逐回）/师承传人（动词分级 strong=传授拜师，weak=指点演示）/受立继任/战绩（◉▲双向聚合）/武功卡/门派线索（strong=书内同证镇山+修习；ok=独占招+修习；weak=单招或多门派共有招）/关键事件 12 条。**L0 版权档：仅定位符，不含原文摘录**；`summary` 留空待编辑流程 |
+| `characters.json` | site-characters-v1 | 实体底座 | 全类型规范实体（2,390），跨书归并（405），含逐书频次/章节跨度/别名 |
+| `entity-index.json` | entity-index-v1 | 实体联想岛（EntityExplorer） | 轻索引（@/☆/◆ 共 1,034 条）：规范名/频次/逐书/跨书 |
+| `dossiers.json` | site-dossiers-v1 | 人物档案页（**全部 @ 实体**，现 436 页） | SKU：别名组/出场曲线/师承传人（动词分级）/受立/战绩/武功/门派线索（三级置信）/关键事件。**L0 版权档：仅定位符，不含原文摘录**；`summary` 留空待编辑流程 |
+| `chapters.json` | chapters-v1 | 书页/回目页 | 34 部回目＋三部曲逐章事件流/动词密度/出场人物 |
+| `arts.json` | arts-v1 | 武功谱（102 门） | 品类自动分类/归属/修习传授者/别名/证据注记 |
+| `sects.json` | sects-v1 | 门派志（16 门派） | 武功册（镇山/拥有/独门）/成员册（derived strong/ok）/事件参与 |
+
+## 可扩展性约定（新小说接入 = 零代码改动）
+
+- 书目**自动发现**：管线产出到 `kb/<书>/实体登记表.json` 即视为已点亮——全部 build 脚本基于 `kb_discovery.lit_books()` 运行，无硬编码书目；
+- 跨书统一规范名收口在 `kb_discovery.BOOK_CANON`（依据 kb/README"跨书接口"节，登记表归并后可移除对应项）；
+- 页面由 getStaticPaths 遍历数据生成：重跑管线 → 新书/新实体页面自动出现，dossiers/arts/sects/entity-index 全量生长。
 
 ## 重建
 
@@ -19,12 +29,14 @@
 python scripts/build_intertext.py       # 互文引用表
 python scripts/build_work_metadata.py   # 作品元数据表
 python scripts/build_series_tree.py     # 系列谱系考订表
-python scripts/build_site_data.py       # books/universe/characters
-python scripts/build_dossiers.py [N]    # 人物档案 Top N（默认 40）
+python scripts/build_site_data.py       # books/universe/characters/entity-index
+python scripts/build_dossiers.py        # 人物档案（全部 @ 实体；可传参数只做前 N）
+python scripts/build_pages_data.py      # chapters（回目+事件流切片）
+python scripts/build_arts_data.py       # arts（武功）
+python scripts/build_sects_data.py      # sects（门派，依赖 dossiers）
+cd site && npm ci && npm run build && npx pagefind --site dist
+python scripts/copyright_gate.py site/dist   # 版权闸门（本地部署前必跑；CI 接入 M4）
 ```
-
-上游链：`章回版/ → 互文引用表 → 作品元数据表 → 系列谱系考订表 → site/data/`
-任一上游更新后按序重跑即可；`site/data/` 全部为生成物，不手改。
 
 ## 已就绪 / 待建
 

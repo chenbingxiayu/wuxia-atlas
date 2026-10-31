@@ -1,34 +1,28 @@
 # -*- coding: utf-8 -*-
-"""P1 ①：人物档案页 SKU 数据（三部曲 Top 40 先行）。
+"""P1 ①：人物档案页 SKU 数据（已点亮书目全量 @ 实体；可传参数只做前 N）。
 
 join 三类 kb 产物：实体登记表（身份/别名/出场）× 事件表（师承/战绩/关键事件）
 × 关系表（武功/门派线索），为每个人物生成可独立加载的知识单元（SKU）。
+书目由 kb_discovery.lit_books() 自动发现——新书面作后无需改本脚本。
 
 版权档位：本文件为 L0——只含定位符（书·回:行）与图谱事实，**不含原文摘录**；
 语料摘录仅存在于 kb/ 本地事件表中，站点渲染时如需 L1 短引文须另行走编辑流程。
 
 派生逻辑（全部带证据，不凭印象）：
-  师承/传人   ◇传艺事件（主→客）＋ ○拜师事件（徒→师）
-  受立/继任   ○事件动词=立/指定（如 紫阳道长 立 卓一航）
+  师承/传人   ◇传艺事件（主→客，动词分级）＋ ○拜师/收徒事件（方向随动词）
+  受立/继任   ○事件动词=立/指定/拥立/公推/封/追赠
   战绩        ◉杀伐/▲擒控 按主客双向聚合（排除 dropped）
-  门派线索    人物修习/独门武功 ∩ 门派镇山/拥有武功（跨书匹配，derived=true，待考订确认）
+  门派线索    人物修习/独门武功 ∩ 门派镇山/拥有武功（跨书匹配，derived=true）
 
-用法：python scripts/build_dossiers.py [TOP_N]   # 默认 40
+用法：python scripts/build_dossiers.py [TOP_N]   # 默认全部已点亮书目的 @ 实体
 """
 import json
 import sys
 from collections import defaultdict, Counter
-from datetime import date
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-KB = ROOT / 'kb'
-OUT = ROOT / 'site' / 'data'
-
-LIT_BOOKS = ['白发魔女传', '塞外奇侠传', '七剑下天山']
-# 跨书统一规范名（依据 kb/README.md"跨书接口"节）：各书登记表中未归并的同人异名，
-# 在站点数据层归并到右侧规范名；kb 数据不动，待各书登记表归并后可移除。
-CROSS_BOOK_CANON = {'哈玛雅': '飞红巾', '晦明禅师': '岳鸣珂', '白发魔女': '练霓裳'}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from kb_discovery import lit_books, canon, BOOK_CANON, today, ROOT, KB, OUT  # noqa: E402
 # ◇ 动词分级：强=正式传授；弱=点拨/演示（不算师承，只算"指点过"）
 ART_STRONG = {'传授', '教', '传', '授', '授艺', '相授', '收', '收徒'}
 ART_WEAK = {'指点', '讲解', '演', '相传'}
@@ -55,8 +49,8 @@ def chapter_curve(locators: list) -> dict:
 
 
 def build() -> None:
-    top_n = int(sys.argv[1]) if len(sys.argv) > 1 else 40
-    books = {b: load_book(b) for b in LIT_BOOKS}
+    limit = int(sys.argv[1]) if len(sys.argv) > 1 else None
+    books = {b: load_book(b) for b in lit_books()}
 
     # ---- 合并 @ 实体（跨书 canonical 归并＋跨书规范名归并）----
     persons = {}
@@ -64,8 +58,8 @@ def build() -> None:
         for key, e in data['实体登记表']['entities'].items():
             if e['type'] != '@':
                 continue
-            canon = CROSS_BOOK_CANON.get(e['canonical'], e['canonical'])
-            m = persons.setdefault(canon, {'canonical': canon, 'books': {}})
+            cn = canon(e['canonical'])
+            m = persons.setdefault(cn, {'canonical': cn, 'books': {}})
             if book in m['books']:
                 # 同书多个实体归并到同一规范名（如塞外的 练霓裳+白发魔女）：聚合不覆盖
                 b = m['books'][book]
@@ -82,6 +76,8 @@ def build() -> None:
                     'chapters': list(e.get('chapters', [])),
                 }
     ranked = sorted(persons.values(), key=lambda m: -sum(b['count'] for b in m['books'].values()))
+    if limit:
+        ranked = ranked[:limit]
 
     # ---- 别名→规范名解析（跨书目 @ 实体；一名多主者不解析）----
     alias2canon = defaultdict(set)
@@ -89,13 +85,13 @@ def build() -> None:
         for key, e in data['实体登记表']['entities'].items():
             if e['type'] != '@':
                 continue
-            canon = CROSS_BOOK_CANON.get(e['canonical'], e['canonical'])
+            cn = canon(e['canonical'])
             for n in set(e.get('aliases', {})) | {e['canonical']}:
-                alias2canon[n].add(canon)
+                alias2canon[n].add(cn)
     canon_of = {a: next(iter(s)) for a, s in alias2canon.items() if len(s) == 1}
     # 跨书规范名本身也注册为解析目标（如"晦明禅师"作为别名指向岳鸣珂）
-    for a, canon in CROSS_BOOK_CANON.items():
-        canon_of.setdefault(a, canon)
+    for a, c in BOOK_CANON.items():
+        canon_of.setdefault(a, c)
 
     # ---- 索引事件/关系 ----
     def iter_events():
@@ -137,7 +133,7 @@ def build() -> None:
                 char_art_books[(r['subject'], r['object'])].add(book)
 
     dossiers = []
-    for m in ranked[:top_n]:
+    for m in ranked:
         name = m['canonical']
         books_present = sorted(m['books'])
         # 事实卡
@@ -303,8 +299,8 @@ def build() -> None:
 
     payload = {
         'meta': {
-            'generated': str(date.today()), 'schema': 'site-dossiers-v1',
-            'top_n': top_n, 'books': LIT_BOOKS,
+            'generated': today(), 'schema': 'site-dossiers-v1',
+            'limit': limit, 'books': list(books),
             'copyright': 'L0 档位：仅定位符与图谱事实，不含原文摘录',
             'totals': {'entities_indexed': len(persons), 'dossiers_built': len(dossiers),
                        'cross_book': sum(1 for d in dossiers if d['cross_book'])},
