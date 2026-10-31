@@ -20,6 +20,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 新仓库默认 GITHUB_TOKEN 只读；发布 gh-pages 分支需要写权限
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
