@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>每日一谜 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 14px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.riddle{max-width:680px;margin:34px auto 0;background:#fbf8ef;border:2px solid #262420;border-radius:6px;padding:34px 40px;box-shadow:6px 7px 0 rgba(38,36,32,.12)}
+.rh{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #d8cdb4;padding-bottom:12px}
+button.reveal{font-family:'Noto Serif SC',serif;font-size:15.5px;padding:10px 26px;border:2px solid #a23527;background:#a23527;color:#fbf8ef;border-radius:4px;cursor:pointer}
+button.reveal:hover{background:#7e281d;border-color:#7e281d}
+.hint{display:flex;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed #d8cdb4;font-size:14.5px}
+.hn{color:#8a8172;font-family:ui-monospace,monospace;font-size:12px;white-space:nowrap}
+.answer{background:#f6e8d9;border:1px solid #a23527;border-radius:4px;padding:16px 20px;font-size:15px}
+.share{display:flex;gap:10px;align-items:center;margin-top:20px}
+.emj{display:flex;gap:3px}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">侠谱</a><a href="#" class="on">游戏</a><a href="#">搜索</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <p class="fine" style="margin:22px 0 0">侠客游戏 · 每日一谜（日期哈希全网同题，无需服务器）</p>
+
+    <div class="riddle">
+      <div class="rh">
+        <div>
+          <span class="wf" style="font-size:24px;color:#a23527">每日一谜</span>
+          <span class="mono fine" style="margin-left:10px">2026-10-31 · 第 014 期</span>
+        </div>
+        <span class="chip" style="border-color:#a23527;color:#a23527">凶案竞猜</span>
+      </div>
+
+      <h1 style="font-size:26px;margin:20px 0 6px;letter-spacing:1px">谁杀了金独异？</h1>
+      <p class="dim" style="margin:0 0 14px;font-size:14.5px">三级提示逐级放送——每级都指得出回目。</p>
+
+      <div class="hint"><span class="hn">提示 1</span><span>死者死于一次 ◉ 杀伐事件（<span class="mono">白发·020</span>），回述见 022、027。</span></div>
+      <div class="hint"><span class="hn">提示 2</span><span>凶手彼时是辽东前线的朝廷军官，与熊廷弼共事。</span></div>
+      <div class="hint"><span class="hn">提示 3</span><span>此人后来在天山之巅出家，法号里有一个"明"字。</span></div>
+
+      <div style="margin-top:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <button class="reveal" onClick="{{ reveal }}">揭晓答案</button>
+        <span class="fine">或先去 <a href="#">人物谱</a> 找找看</span>
+      </div>
+
+      <sc-if value="{{ shown }}" hint-placeholder-val="{{ false }}">
+        <div class="answer" style="margin-top:18px">
+          <b>答案：岳鸣珂</b>（后出家为晦明禅师）——华山之役杀金独异，<span class="mono">白发·020</span>。
+          <div class="fine" style="margin-top:6px">判卷口径：事件表 ◉ 杀伐 · high 置信 · 排除回述。上一期答对率 63%。</div>
+        </div>
+      </sc-if>
+
+      <div class="share">
+        <span class="fine">战绩分享：</span>
+        <div class="emj" aria-label="三次提示后答对">
+          <span style="filter:grayscale(1)">🟨</span><span>🟨</span><span>🟩</span>
+        </div>
+        <a href="#" class="fine">复制分享码 → LJT-1031-🟨🟩</a>
+        <span class="fine" style="margin-left:auto">明日 00:00 开新谜</span>
+      </div>
+    </div>
+
+    <p class="fine" style="max-width:680px;margin:20px auto 0;text-align:center;line-height:1.9">
+      题库全部来自图谱事实（零幻觉，争议可"出示原文"）；本页为可交互原型——揭晓按钮即为站上实际行为。
+      同系列：武林二十问答 · 剧情排序 · 武功连连看 · 战力排位竞猜（M4 后）。
+    </p>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-10-31</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1450}}'>
+class Component extends DCLogic {
+  initialState() { return { shown: false }; }
+  renderVals() {
+    return {
+      shown: this.state.shown,
+      reveal: () => this.setState({ shown: true })
+    };
+  }
+}
+</script>
+</body>
+</html>

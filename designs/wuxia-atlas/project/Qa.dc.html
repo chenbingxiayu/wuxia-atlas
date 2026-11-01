@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>江湖问答 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 14px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+h2.sec{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:36px 0 14px}
+h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:3px 14px;font-size:14px;background:#fbf8ef;color:#262420;margin:4px;cursor:pointer}
+.chip:hover{border-color:#a23527;color:#a23527}
+.loc{font-family:ui-monospace,monospace;font-size:12px;color:#8a8172;border-bottom:1px dotted #b5a687}
+input.q{width:100%;box-sizing:border-box;padding:14px 20px;font-size:16.5px;font-family:'Noto Serif SC',serif;border:2px solid #262420;border-radius:4px;background:#fbf8ef;color:#262420}
+.step{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px dashed #d8cdb4}
+.stepno{width:34px;height:34px;border:2px solid #a23527;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;color:#a23527;flex-shrink:0;font-size:14px}
+.rel{font-size:12px;border:1px solid #31536c;color:#31536c;border-radius:3px;padding:1px 8px;white-space:nowrap}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">侠谱</a><a href="#" class="on">问答</a><a href="#">搜索</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <p class="fine" style="margin:22px 0 0">工具 · 问答（确定性求解，答案必带定位符）</p>
+    <h1 style="font-size:32px;margin:6px 0 4px;letter-spacing:2px">江湖问答</h1>
+    <input class="q" type="text" placeholder="问点江湖事：谁杀了金独异？练霓裳在哪几回出场？峨嵋派有什么武功？" aria-label="输入问题">
+    <p style="margin:12px 0 0;line-height:2.4">
+      <span class="chip">谁杀了金独异？</span>
+      <span class="chip">练霓裳在哪几回出场？</span>
+      <span class="chip">卓一航的师承是谁？</span>
+      <span class="chip">武当派有什么武功？</span>
+      <span class="chip" style="border-color:#a23527;color:#a23527">卓一航和凌未风怎么认识的？（AB 路径）</span>
+    </p>
+
+    <h2 class="sec">答 <span class="dim" style="font-weight:400;font-size:14px">确定性求解 · 永不臆造</span></h2>
+    <div class="card" style="padding:20px 26px">
+      <p style="margin:0;font-size:15.5px;line-height:2">
+        <b style="color:#a23527;font-size:17px">岳鸣珂</b> 于华山之役杀死金独异。
+        <span class="loc">白发·020</span><br>
+        <span class="fine">口径：事件表 ◉ 杀伐，high 置信，排除回述；相关回述（022、027 提及）已正确识别为追述不计。</span>
+      </p>
+    </div>
+
+    <h2 class="sec">AB 路径 <span class="dim" style="font-weight:400;font-size:14px">任意两人，图谱最短关联路径 · 每步挂证</span></h2>
+    <div class="card" style="padding:20px 26px">
+      <div style="display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:17px;margin-bottom:6px">
+        <span>卓一航</span><span class="fine">2 跳</span><span>凌未风</span>
+      </div>
+      <div class="step">
+        <span class="stepno">1</span>
+        <div><b>卓一航</b> <span class="dim">——</span> <b>岳鸣珂</b>
+          <div class="fine" style="margin-top:3px">生死之交：岳鸣珂两度点穴背他杀出宫闱重围 <span class="loc">白发·012:121 · 013:3</span></div>
+        </div>
+        <span class="rel" style="margin-left:auto">相救</span>
+      </div>
+      <div class="step" style="border-bottom:none">
+        <span class="stepno">2</span>
+        <div><b>岳鸣珂（晦明禅师）</b> <span class="dim">——</span> <b>凌未风</b>
+          <div class="fine" style="margin-top:3px">师徒：授天山剑法，"海内第一名手所授" <span class="loc">七剑·011:61</span></div>
+        </div>
+        <span class="rel" style="margin-left:auto">师徒</span>
+      </div>
+      <p class="fine" style="margin:12px 0 0">同门分支：杨云骢（白发·028:3 拜师岳鸣珂）与凌未风为同门师兄弟。换一对人试试：<span class="chip">练霓裳 ↔ 厉胜男</span><span class="chip">张丹枫 ↔ 金世遗</span>（跨书路径随书目点亮扩展）。</p>
+    </div>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-10-31</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1450}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

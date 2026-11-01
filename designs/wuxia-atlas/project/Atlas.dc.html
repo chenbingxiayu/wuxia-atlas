@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>行踪地图 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 14px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+h2.sec{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:36px 0 14px}
+h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:2px 12px;font-size:13.5px;background:#fbf8ef;color:#262420;margin:3px;cursor:pointer}
+.chip:hover{border-color:#a23527;color:#a23527}
+.legend{display:flex;gap:22px;font-size:12.5px;color:#5f584b;margin-top:12px;flex-wrap:wrap}
+.prow{display:flex;gap:10px;align-items:baseline;padding:7px 2px;border-bottom:1px solid #e6ddc8;font-size:14px}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#">搜索</a><a href="#" class="on">地图</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <p class="fine" style="margin:22px 0 0">时空 · 行踪地图（M6）</p>
+    <h1 style="font-size:32px;margin:6px 0 4px;letter-spacing:2px">侠客行踪地图</h1>
+    <p style="margin:12px 0 0;line-height:2.4">
+      <span class="dim">选择侠客：</span>
+      <span class="chip" style="border-color:#a23527;color:#a23527">练霓裳</span>
+      <span class="chip">卓一航</span>
+      <span class="chip">岳鸣珂</span>
+      <span class="chip">凌未风</span>
+    </p>
+
+    <div class="card" style="padding:22px 26px;margin-top:16px">
+      <svg viewBox="0 0 1160 420" style="width:100%;height:auto" role="img" aria-label="练霓裳行踪示意（地理骨架，底图待 gazetteer）">
+        <path d="M60 300 C180 260 220 300 300 280 C420 250 470 260 560 230 C700 190 760 150 880 120 C980 96 1040 90 1090 84"
+              fill="none" stroke="#31536c" stroke-width="2.5" stroke-dasharray="8 6" opacity=".8"/>
+        <g font-family="'Noto Serif SC',serif" font-size="13">
+          <circle cx="120" cy="288" r="8" fill="#a23527"/><text x="120" y="322" text-anchor="middle">定军山</text>
+          <text x="120" y="338" text-anchor="middle" font-size="11" fill="#8a8172">001–002 · 劫镖相识</text>
+          <circle cx="330" cy="276" r="8" fill="#a23527"/><text x="330" y="310" text-anchor="middle">秘魔崖</text>
+          <text x="330" y="326" text-anchor="middle" font-size="11" fill="#8a8172">004 · 黄龙洞剑谱</text>
+          <circle cx="540" cy="236" r="8" fill="#a23527"/><text x="540" y="270" text-anchor="middle">武当山</text>
+          <text x="540" y="286" text-anchor="middle" font-size="11" fill="#8a8172">013 · 026 · 剑闯名山</text>
+          <circle cx="760" cy="156" r="8" fill="#a23527"/><text x="760" y="140" text-anchor="middle">明月峡</text>
+          <circle cx="1000" cy="92" r="9" fill="#a23527"/><text x="1000" y="72" text-anchor="middle">天山北高峰</text>
+          <text x="1000" y="122" text-anchor="middle" font-size="11" fill="#8a8172">032 · 守花相望</text>
+          <circle cx="240" cy="360" r="5" fill="#8a8172"/><text x="240" y="382" text-anchor="middle" font-size="12" fill="#5f584b">北京（012 京华线）</text>
+          <circle cx="880" cy="300" r="5" fill="#8a8172"/><text x="880" y="322" text-anchor="middle" font-size="12" fill="#5f584b">大漠（028–030）</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#a23527;margin-right:6px"></i>行踪节点（真实地名，配经纬度）</span>
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#8a8172;margin-right:6px"></i>次要场景</span>
+        <span style="margin-left:auto;color:#8a8172">底图：Natural Earth 轮廓国风化 · 虚构地名按文中方位近似安放</span>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px">
+      <div>
+        <h2 class="sec">双向查询：地 → 人 <span class="dim" style="font-weight:400;font-size:14px">点武当山</span></h2>
+        <div class="card" style="padding:14px 22px">
+          <div class="prow"><b>武当山</b><span class="dim">· 见于</span> <a href="#" class="mono fine">白发·013、026、029 等</a></div>
+          <div class="prow"><span class="dim">在场人物（本回事件）：</span>
+            <span class="chip">练霓裳</span><span class="chip">卓一航</span><span class="chip">白石道人</span><span class="chip">黄叶道人</span>
+          </div>
+          <div class="prow" style="border-bottom:none"><span class="dim">标志性事件：</span><span>剑闯名山（026 · ◈22）· 一夜白头（026:53 附近）</span></div>
+        </div>
+      </div>
+      <div>
+        <h2 class="sec">叙事空间河流图 <span class="dim" style="font-weight:400;font-size:14px">同一数据的另一视图 · M6</span></h2>
+        <div class="card" style="padding:16px 22px;border-style:dashed">
+          <p class="fine" style="margin:0;line-height:1.9">
+            横轴章回、纵轴地理区域的彩带图：京华线（1–12）→ 秘魔崖（13–17）→ 川陕（18–21）→ 京华（22）→ 武当—中条山（25–27）→ 塞外（28–32）。
+            双主角彩带的聚散即分合。
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-10-31</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1450}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

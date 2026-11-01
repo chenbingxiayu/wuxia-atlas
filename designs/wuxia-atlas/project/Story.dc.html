@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>一夜白头：卓练温度曲线 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 14px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.article{max-width:860px;margin:0 auto}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+.loc{font-family:ui-monospace,monospace;font-size:12.5px;color:#8a8172;border-bottom:1px dotted #b5a687}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <article class="article">
+      <p class="fine" style="margin:26px 0 0"><a href="#">数据说书</a> · 第 1 篇 · 图表可复跑（脚本 + 数据版本 2026-10-31）</p>
+      <h1 style="font-size:34px;margin:8px 0 6px;letter-spacing:1px">一夜白头：卓一航与练霓裳的温度曲线</h1>
+      <p class="dim" style="margin:0 0 22px;font-size:15px">用 1,095 起事件、316 条 high 置信交互，量化全书最著名的一段虐恋。</p>
+
+      <h2 style="font-size:20px;margin:30px 0 10px">命题</h2>
+      <p style="font-size:15.5px;line-height:2;margin:0">梁羽生的爱情悲剧里，最锋利的从来不是误会本身，而是误会背后的<b style="color:#a23527">干预者</b>。卓练二人的全书情感走向，应当可以在事件表上画出一条温度曲线——并且每个转折点都指得出回目。</p>
+
+      <h2 style="font-size:20px;margin:30px 0 10px">温度曲线</h2>
+      <div class="card" style="padding:24px 26px">
+        <svg viewBox="0 0 1150 260" style="width:100%;height:auto" role="img" aria-label="卓练温度曲线（示意骨架，数据待 B1 情感词典）">
+          <line x1="40" y1="130" x2="1120" y2="130" stroke="#b5a687" stroke-width="1"/>
+          <line x1="40" y1="30" x2="40" y2="230" stroke="#b5a687" stroke-width="1"/>
+          <text x="10" y="40" font-size="11" fill="#8a8172">暖</text>
+          <text x="10" y="234" font-size="11" fill="#8a8172">寒</text>
+          <text x="46" y="250" font-size="11" fill="#8a8172" font-family="ui-monospace,monospace">001</text>
+          <text x="1060" y="250" font-size="11" fill="#8a8172" font-family="ui-monospace,monospace">032</text>
+          <path d="M60 120 C 160 70, 240 60, 330 96 S 520 150, 610 178 S 760 210, 840 196 S 1000 150, 1100 176"
+                fill="none" stroke="#a23527" stroke-width="2.5" stroke-dasharray="7 6" opacity=".55"/>
+          <g font-size="12" fill="#262420">
+            <circle cx="105" cy="88" r="4.5" fill="#31536c"/><text x="60" y="66">黄龙洞初会 · 003</text>
+            <circle cx="380" cy="120" r="4.5" fill="#31536c"/><text x="330" y="100">明月峡夜话 · 007–009</text>
+            <circle cx="560" cy="170" r="4.5" fill="#a23527"/><text x="470" y="200">武当弹弓之误 · 026 前夜</text>
+            <circle cx="700" cy="205" r="5" fill="#a23527"/><text x="640" y="232">一夜白头 · 026:53</text>
+            <circle cx="905" cy="185" r="4.5" fill="#31536c"/><text x="840" y="168">风砂堡求爱被拒 · 030–031</text>
+            <circle cx="1085" cy="172" r="4.5" fill="#8a8172"/><text x="960" y="150">银河相望 · 032</text>
+          </g>
+        </svg>
+        <p class="fine" style="margin:8px 0 0">虚线为版式示意；实线随 B1 情感词典（正/负各约 40 词）上线后由事件表真实计算，转折点坐标即上述定位符。</p>
+      </div>
+
+      <h2 style="font-size:20px;margin:30px 0 10px">称谓的降温谱</h2>
+      <p style="font-size:15.5px;line-height:2;margin:0">
+        温度之外还有一把更冷的尺子：称呼。卓一航口中的"练姐姐 → 姐姐 → 练女侠"（疏远标记），江湖口中的"玉罗刹 → 白发魔女"，
+        她自称从"我"到"老太婆"——称谓迁移与曲线互为印证，是全书最锋利的心理刻度。统计基于本地语料台词库（建库中）。
+      </p>
+
+      <h2 style="font-size:20px;margin:30px 0 10px">证据链</h2>
+      <div class="card" style="padding:14px 24px">
+        <ul style="margin:0;padding-left:20px;font-size:14px;line-height:2.2">
+          <li>黄龙洞避雨初会 <span class="loc">白发·003</span></li>
+          <li>武当门规"不许和匪人来往" <span class="loc">白发·013</span></li>
+          <li>四老围攻 · 弹弓之误 <span class="loc">白发·026</span></li>
+          <li>一夜白头 <span class="loc">白发·026:53 附近</span></li>
+          <li>她四次暗中出手相救（银针杀雷蒙等） <span class="loc">白发·029、031、032</span></li>
+          <li>银河相望 <span class="loc">白发·032（引《鹊桥仙》）</span></li>
+        </ul>
+        <p class="fine" style="margin:10px 0 0">屏幕引文每处 ≤ 一句（L1 档）；长引文仅在本地阅读器。</p>
+      </div>
+
+      <h2 style="font-size:20px;margin:30px 0 10px">结论</h2>
+      <p style="font-size:15.5px;line-height:2;margin:0 0 8px">
+        曲线的尽头没有相守——只有天山南北两个光点。"两情若是久长时，又岂在朝朝暮暮"（032 引《鹊桥仙》）：
+        梁羽生把遗憾写成了恒星的距离。而数据显示，每一次降温的下一回，都藏着一次她无声的出手。
+      </p>
+      <p class="fine">说书人评点为原创内容（可发布）；生成脚本与数据快照版本随文归档，结论可复现。</p>
+    </article>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-10-31</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1450}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>侠谱总榜 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 14px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+h2.sec{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:36px 0 14px}
+h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:2px 12px;font-size:13.5px;background:#fbf8ef;color:#262420;margin:3px}
+a.chip:hover{border-color:#a23527;color:#a23527}
+.tier{font-family:'Ma Shan Zheng',serif;font-size:19px;margin:22px 0 8px;display:flex;align-items:center;gap:10px}
+.tier:after{content:"";flex:1;height:1px;background:#d8cdb4}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+td{padding:7px 10px;border-bottom:1px solid #e6ddc8}
+.rk{width:40px;color:#8a8172;font-family:ui-monospace,monospace}
+.na{color:#9a9280;font-family:ui-monospace,monospace}
+.tj{display:inline-block;border:1.5px solid currentColor;border-radius:3px;padding:0 8px;font-size:12px;transform:rotate(-2deg);font-family:'Ma Shan Zheng',serif}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#" class="on">侠谱</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <p class="fine" style="margin:22px 0 0">侠谱 · 总榜</p>
+    <h1 style="font-size:32px;margin:6px 0 4px;letter-spacing:2px">侠谱总榜
+      <span class="fine" style="letter-spacing:0">Glicko-2 战力评分 · 每条分数都可以"出示原文"</span>
+    </h1>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 6px">
+      <span class="chip" style="border-color:#a23527;color:#a23527">三部曲合成榜（默认）</span>
+      <span class="chip">白发魔女传书内榜</span>
+      <span class="chip">七剑下天山书内榜</span>
+      <span class="chip">塞外奇侠传书内榜</span>
+      <span class="chip">宇宙榜（锚点依赖）</span>
+    </div>
+
+    <p class="fine" style="border-left:3px solid #d8cdb4;padding-left:14px;line-height:1.9;margin:18px 0">
+      本榜为基于原著交手记录的娱乐性指数（对局 259 人 / 486 对，经场景聚合与胜负词表判定），不含作者口述、改编作品与读者共识。
+      分档阈值按分布分位数自动划定；长尾人物向先验收缩，区间宽 = 数据少。每行可展开证据链（定位符）。
+    </p>
+
+    <div class="tier" style="color:#8a6607">绝 顶</div>
+    <div class="card" style="padding:4px 20px">
+      <table>
+        <tr><td class="rk">1</td><td><a href="#"><b>岳鸣珂</b></a> <span class="fine">晦明禅师 · 天山派</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#8a6607">绝顶</span></td><td class="dim">交手对手 43 · 杀伐 3</td><td class="fine"><a href="#">证据链 5 条</a></td></tr>
+        <tr><td class="rk">2</td><td><a href="#"><b>练霓裳</b></a> <span class="fine">玉罗刹 · 绿林/塞外</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#8a6607">绝顶</span></td><td class="dim">交手对手 62 · 杀伐 22</td><td class="fine"><a href="#">证据链 5 条</a></td></tr>
+        <tr><td class="rk">3</td><td><a href="#"><b>凌未风</b></a> <span class="fine">天山神芒 · 天山派</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#8a6607">绝顶</span></td><td class="dim">交手对手 38</td><td class="fine"><a href="#">证据链 5 条</a></td></tr>
+      </table>
+    </div>
+
+    <div class="tier" style="color:#a23527">超 一 流</div>
+    <div class="card" style="padding:4px 20px">
+      <table>
+        <tr><td class="rk">4</td><td><a href="#"><b>楚昭南</b></a> <span class="fine">天山派（叛）</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#a23527">超一流</span></td><td class="dim">交手对手 24</td><td class="fine"><a href="#">证据链</a></td></tr>
+        <tr><td class="rk">5</td><td><a href="#"><b>白石道人</b></a> <span class="fine">武当四老</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#a23527">超一流</span></td><td class="dim">交手对手 —</td><td class="fine"><a href="#">证据链</a></td></tr>
+        <tr><td class="rk">6</td><td><a href="#"><b>桂仲明</b></a> <span class="fine">达摩剑法传人</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#a23527">超一流</span></td><td class="dim">交手对手 27</td><td class="fine"><a href="#">证据链</a></td></tr>
+      </table>
+    </div>
+
+    <div class="tier" style="color:#31536c">一 流</div>
+    <div class="card" style="padding:4px 20px">
+      <table>
+        <tr><td class="rk">7</td><td><a href="#"><b>铁飞龙</b></a> <span class="fine">绿林</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#31536c">一流</span></td><td class="dim">交手对手 —</td><td class="fine"><a href="#">证据链</a></td></tr>
+        <tr><td class="rk">8</td><td><a href="#"><b>卓一航</b></a> <span class="fine">武当掌门 · 成长曲线 001→032</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#31536c">一流</span></td><td class="dim">交手对手 36</td><td class="fine"><a href="#">证据链</a></td></tr>
+        <tr><td class="rk">9</td><td><a href="#"><b>飞红巾</b></a> <span class="fine">哈玛雅 · 塞外</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#31536c">一流</span></td><td class="dim">交手对手 24</td><td class="fine"><a href="#">证据链</a></td></tr>
+        <tr><td class="rk">10</td><td><a href="#"><b>易兰珠</b></a> <span class="fine">天山派二代</span></td><td class="na">— ± —（待评）</td><td><span class="tj" style="color:#31536c">一流</span></td><td class="dim">交手对手 —</td><td class="fine"><a href="#">证据链</a></td></tr>
+      </table>
+    </div>
+    <p class="fine" style="margin:10px 0 0">二流 / 三流各若干——榜单人物为示例排序候选，评分与档位在 M4 词表校准（精度 ≥90%）后由引擎填入，<b>不可手改</b>。旁白明文与评分的冲突单列 <a href="#">明文冲突页</a>。</p>
+
+    <h2 class="sec">口径 <span class="dim" style="font-weight:400;font-size:14px">全部公开（方法论页）</span></h2>
+    <p style="margin:0;line-height:2.4">
+      <span class="chip">引擎 Glicko-2</span>
+      <span class="chip">胜负词表 v0.1</span>
+      <span class="chip">状态修正（中毒 ×0.3 / 偷袭 ×0.5）</span>
+      <span class="chip">长尾收缩 P=5</span>
+      <span class="chip">明文先验 + holdout 校准</span>
+      <span class="chip">跨书锚点：换乘站同分</span>
+    </p>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本榜为娱乐性指数，基于原著交手记录，不含作者口述、改编作品与读者共识。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-10-31</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1250}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

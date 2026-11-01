@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>首页 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.wf{font-family:'Ma Shan Zheng',serif;font-weight:400}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 14px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+h2.sec{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:900;margin:40px 0 16px}
+h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:2px 12px;font-size:13.5px;background:#fbf8ef;color:#262420}
+a.chip:hover{border-color:#a23527;color:#a23527}
+.chip small{color:#8a8172;margin-left:4px}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#" class="on">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <section style="text-align:center;padding:46px 0 8px">
+      <svg width="30" height="18" viewBox="0 0 24 14" aria-hidden="true" style="opacity:.75"><path d="M0 1 L12 7 L24 1 L24 4 L12 10 L0 4 Z" fill="#262420"/><path d="M0 8 L12 14 L24 8 L24 10 L12 16 L0 10 Z" fill="#a23527" transform="translate(0,-3)"/></svg>
+      <h1 style="margin:10px 0 0;font-family:'Ma Shan Zheng',serif;font-weight:400;font-size:54px;letter-spacing:6px">梁羽生武侠宇宙 · 江湖图志</h1>
+      <p style="margin:14px auto 0;max-width:760px;font-size:16.5px;color:#5f584b;line-height:1.9">
+        一座<b style="color:#a23527">生长中的宇宙图集</b>——把 1,700 万字的梁羽生武侠世界，变成可探索、可考据、可复算的知识图谱。每个结论都可溯源到
+        <span class="mono" style="border-bottom:1px dotted #b5a687;font-size:14px">书·回:行</span> 定位符。
+      </p>
+      <div style="display:flex;justify-content:center;gap:52px;margin:30px 0 6px;flex-wrap:wrap">
+        <div><div style="font-size:34px;font-weight:900;color:#31536c">34</div><div class="fine">部作品</div></div>
+        <div><div style="font-size:34px;font-weight:900;color:#4f6e4a">3 / 34</div><div class="fine">已点亮</div></div>
+        <div><div style="font-size:34px;font-weight:900;color:#31536c">2,390</div><div class="fine">规范实体</div></div>
+        <div><div style="font-size:34px;font-weight:900;color:#31536c">1,378</div><div class="fine">回目</div></div>
+        <div><div style="font-size:34px;font-weight:900;color:#31536c">98</div><div class="fine">作者明示互文</div></div>
+      </div>
+      <p class="fine" style="margin:6px 0 0">天山三部曲已点亮 ·
+        <span class="chip" style="border-color:#4f6e4a;color:#4f6e4a">白发魔女传</span>
+        <span class="chip" style="border-color:#4f6e4a;color:#4f6e4a">塞外奇侠传</span>
+        <span class="chip" style="border-color:#4f6e4a;color:#4f6e4a">七剑下天山</span>
+        <span class="chip" style="border-color:#8a6607;color:#8a6607">江湖三女侠（标注中）</span>
+      </p>
+    </section>
+
+    <h2 class="sec">宇宙地铁图 <a href="#" style="font-size:13.5px;font-weight:400;float:right;margin-top:6px">全图与换乘站 →</a></h2>
+    <div class="card" style="padding:26px 30px 18px">
+      <div style="font-size:13px;font-weight:700;color:#a23527;margin-bottom:2px">天山系列 · 清代主脉（16 部）</div>
+      <svg viewBox="0 0 1210 92" style="width:100%;height:auto" role="img" aria-label="天山系列地铁线">
+        <line x1="14" y1="46" x2="1196" y2="46" stroke="#a23527" stroke-width="5" stroke-linecap="round"/>
+        <g font-size="10.5" font-family="'Noto Serif SC',serif" text-anchor="middle">
+          <circle cx="30"  cy="46" r="8" fill="#4f6e4a"/><text x="30"  y="76" fill="#262420">白发魔女传</text>
+          <circle cx="104" cy="46" r="8" fill="#4f6e4a"/><text x="104" y="22" fill="#262420">塞外奇侠传</text>
+          <circle cx="178" cy="46" r="8" fill="#4f6e4a"/><text x="178" y="76" fill="#262420">七剑下天山</text>
+          <circle cx="252" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="252" y="22" fill="#5f584b">冰魄寒光剑</text>
+          <circle cx="326" cy="46" r="7" fill="#8a6607" stroke="#8a6607" stroke-width="3"/><text x="326" y="76" fill="#8a6607">江湖三女侠</text>
+          <circle cx="400" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="400" y="22" fill="#5f584b">冰川天女传</text>
+          <circle cx="474" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="474" y="76" fill="#5f584b">云海玉弓缘</text>
+          <circle cx="548" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="548" y="22" fill="#5f584b">冰河洗剑录</text>
+          <circle cx="622" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="622" y="76" fill="#5f584b">风雷震九州</text>
+          <circle cx="696" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="696" y="22" fill="#5f584b">侠骨丹心</text>
+          <circle cx="770" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="770" y="76" fill="#5f584b">游剑江湖</text>
+          <circle cx="844" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="844" y="22" fill="#5f584b">牧野流星</text>
+          <circle cx="918" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="918" y="76" fill="#5f584b">弹指惊雷</text>
+          <circle cx="992" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="992" y="22" fill="#5f584b">绝塞传烽录</text>
+          <circle cx="1066" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="1066" y="76" fill="#5f584b">剑网尘丝</text>
+          <circle cx="1140" cy="46" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="3"/><text x="1140" y="22" fill="#5f584b">幻剑灵旗</text>
+        </g>
+      </svg>
+      <div style="display:flex;gap:26px;margin-top:10px;font-size:12.5px;color:#8a8172;flex-wrap:wrap">
+        <span><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#4f6e4a;margin-right:5px"></i>已点亮 3</span>
+        <span><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#8a6607;margin-right:5px"></i>标注中 1</span>
+        <span><i style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#f4eee0;border:2px solid #a23527;margin-right:5px"></i>待点亮 12</span>
+        <span style="margin-left:auto">幽灵线：唐代 3 · 明代 5 · 宋代 6 · 晚清 2 · 独立 2</span>
+      </div>
+    </div>
+
+    <h2 class="sec">进入图集</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px">
+      <a class="card" href="#" style="padding:20px 22px;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:17px">作品库</b><span class="seal" style="font-size:12px;border-color:#4f6e4a;color:#4f6e4a">已上线</span></div><p style="margin:8px 0 0;font-size:13.5px;color:#5f584b;line-height:1.75">34 部书页：回目、节奏指纹、互文引用。未点亮的书也有完整档案。</p></a>
+      <a class="card" href="#" style="padding:20px 22px;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:17px">宇宙</b><span class="seal" style="font-size:12px;border-color:#4f6e4a;color:#4f6e4a">已上线</span></div><p style="margin:8px 0 0;font-size:13.5px;color:#5f584b;line-height:1.75">六条线路、换乘站、编年主线——排序每一步都有作者亲证或互文回指。</p></a>
+      <a class="card" href="#" style="padding:20px 22px;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:17px">人物谱</b><span class="seal" style="font-size:12px;border-color:#4f6e4a;color:#4f6e4a">已上线</span></div><p style="margin:8px 0 0;font-size:13.5px;color:#5f584b;line-height:1.75">436 位规范人物档案：师承、武功、战绩、出场曲线，全带定位符。</p></a>
+      <a class="card" href="#" style="padding:20px 22px;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:17px">武功谱</b><span class="seal" style="font-size:12px;border-color:#4f6e4a;color:#4f6e4a">已上线</span></div><p style="margin:8px 0 0;font-size:13.5px;color:#5f584b;line-height:1.75">102 门武功：品类、门派归属、修习传授者与证据链。</p></a>
+      <a class="card" href="#" style="padding:20px 22px;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:17px">侠谱评分</b><span class="seal" style="font-size:12px">M4 规划</span></div><p style="margin:8px 0 0;font-size:13.5px;color:#5f584b;line-height:1.75">Glicko-2 战力榜——每条分数都可以"出示原文"对质。</p></a>
+      <a class="card" href="#" style="padding:20px 22px;color:inherit"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:17px">数据说书</b><span class="seal" style="font-size:12px">M5 规划</span></div><p style="margin:8px 0 0;font-size:13.5px;color:#5f584b;line-height:1.75">卓练温度曲线、梁氏悲剧公式——用图谱证明武侠命题。</p></a>
+    </div>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <svg width="26" height="16" viewBox="0 0 24 14" aria-hidden="true" style="opacity:.7"><path d="M0 1 L12 7 L24 1 L24 4 L12 10 L0 4 Z" fill="#262420"/><path d="M0 8 L12 14 L24 8 L24 10 L12 16 L0 10 Z" fill="#a23527" transform="translate(0,-3)"/></svg>
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。图谱层内容以 CC BY-NC-SA 授权转载，语料层仅限本地。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-10-31</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1420}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

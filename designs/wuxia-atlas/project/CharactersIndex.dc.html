@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>人物谱 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 14px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.tab{border:1px solid #b5a687;background:#fbf8ef;padding:6px 18px;border-radius:999px;cursor:pointer;font-family:'Noto Serif SC',serif;font-size:14.5px;color:#5f584b}
+.tab.on{border-color:#a23527;color:#a23527;font-weight:700}
+input.q{flex:1;min-width:220px;padding:9px 16px;border:1px solid #b5a687;border-radius:4px;font-family:'Noto Serif SC',serif;font-size:15px;background:#fbf8ef;color:#262420}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:3px 14px;margin:5px 4px;background:#fbf8ef;color:#262420}
+a.chip:hover{border-color:#a23527;color:#a23527}
+.chip small{color:#8a8172;margin-left:5px;font-size:11.5px}
+.chip.x{border-color:#a23527}
+.chip em{font-style:normal;color:#a23527;font-size:10px;border:1px solid currentColor;border-radius:3px;padding:0 4px;margin-left:6px;vertical-align:1px}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#" class="on">人物</a><a href="#">武功</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <p class="fine" style="margin:22px 0 0"><a href="#">首页</a> / 人物谱</p>
+    <h1 style="font-size:32px;margin:6px 0 4px;letter-spacing:2px">人物谱</h1>
+    <p class="dim" style="margin:0 0 20px;font-size:15px">
+      三部曲全部 <b>436</b> 位规范人物均有档案页（别名 / 师承传人 / 战绩 / 武功 / 出场曲线，全带定位符）。
+      字号越大出场越多；<em style="font-style:normal;color:#a23527;font-size:12px;border:1px solid currentColor;border-radius:3px;padding:0 4px">换乘</em> = 跨书人物。新书点亮后此处自动生长。
+    </p>
+
+    <div class="card" style="padding:20px 26px">
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <span class="tab on">人物（436）</span>
+        <span class="tab">武功（451）</span>
+        <span class="tab">门派组织（147）</span>
+        <input class="q" type="text" placeholder="输入名称筛选……（试一下：白发 / 凌 / 铁）" aria-label="筛选人物">
+        <label class="fine" style="display:flex;align-items:center;gap:6px;white-space:nowrap"><input type="checkbox">只看跨书（16）</label>
+      </div>
+      <p class="fine" style="margin:14px 0 10px">436 条 · 显示前 24（继续筛选缩小范围）</p>
+      <div style="line-height:2.5">
+        <a class="chip x" href="#" style="font-size:19px">练霓裳<small>×2678</small><em>换乘</em></a>
+        <a class="chip" href="#" style="font-size:17px">凌未风<small>×2060</small></a>
+        <a class="chip x" href="#" style="font-size:17px">卓一航<small>×1997</small><em>换乘</em></a>
+        <a class="chip x" href="#" style="font-size:15.5px">岳鸣珂<small>×1184</small><em>换乘</em></a>
+        <a class="chip x" href="#" style="font-size:15.5px">杨云骢<small>×1140</small><em>换乘</em></a>
+        <a class="chip x" href="#" style="font-size:15px">楚昭南<small>×1045</small><em>换乘</em></a>
+        <a class="chip x" href="#" style="font-size:15px">飞红巾<small>×992</small><em>换乘</em></a>
+        <a class="chip" href="#">冒浣莲<small>×958</small></a>
+        <a class="chip" href="#">铁飞龙<small>×924</small></a>
+        <a class="chip" href="#">桂仲明<small>×684</small></a>
+        <a class="chip" href="#">傅青主<small>×667</small></a>
+        <a class="chip" href="#">易兰珠<small>×599</small></a>
+        <a class="chip" href="#">李思南<small>×—</small></a>
+        <a class="chip" href="#">纳兰明慧<small>×—</small></a>
+        <a class="chip" href="#">武琼瑶<small>×—</small></a>
+        <a class="chip" href="#">张华昭<small>×—</small></a>
+        <a class="chip" href="#">白石道人<small>×—</small></a>
+        <a class="chip" href="#">练辟疆<small>×—</small></a>
+        <a class="chip" href="#">卓宝良<small>×—</small></a>
+        <a class="chip" href="#">辛龙子<small>×—</small></a>
+        <a class="chip" href="#">孟武威<small>×—</small></a>
+        <a class="chip" href="#">周青<small>×—</small></a>
+        <a class="chip" href="#">喀锦城<small>×—</small></a>
+        <a class="chip" href="#">齐真君<small>×—</small></a>
+      </div>
+      <p class="fine" style="margin:12px 0 0">×—= 三部曲档案数据之外的条目（数量以档案页为准）。人物排序按全书出现频次。</p>
+    </div>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-10-31</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1150}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
