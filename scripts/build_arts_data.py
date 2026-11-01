@@ -18,6 +18,11 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from kb_discovery import lit_books, canon, today, dump_json, KB  # noqa: E402
 
+
+def load_json_local(p):
+    with open(p, encoding="utf-8") as f:
+        return json.load(f)
+
 # 品类分类：按后缀，长词优先
 CATEGORY_RULES = [
     ('一百零八式', '剑法'), ('连环夺命剑', '剑法'),
@@ -83,6 +88,19 @@ def main() -> None:
             'relations': a['books'],
         })
     items.sort(key=lambda x: (-x['ev_total'], x['canonical']))
+
+    # arts v2：挂招式 children（来自招式表，仅 strong/ok 且未 rejected）
+    mp = KB / '招式表.json'
+    if mp.exists():
+        moves = load_json_local(mp).get('moves', [])
+        kids = defaultdict(list)
+        for m in moves:
+            if m.get('conf') in ('strong', 'ok') and m.get('status') != 'rejected'                     and m.get('parent_art') not in (None, '待考'):
+                kids[m['parent_art']].append({'name': m['canonical'], 'conf': m['conf'], 'sect': m.get('sect')})
+        for it in items:
+            ch = kids.get(it['canonical'])
+            if ch:
+                it['children'] = ch
 
     by_cat = defaultdict(int)
     for it in items:
