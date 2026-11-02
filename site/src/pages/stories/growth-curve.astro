@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+import data from '@data/stories/growth-curve.json';
+import { B } from '@lib/base';
+
+const W = 1150, H = 340, padL = 44, padR = 16, top = 30;
+const innerW = W - padL - padR, mainH = H - top - 46;
+const rows = data.per_chapter;
+const maxEv = Math.max(...rows.map((r) => Math.max(r.active, r.passive)), 1);
+const maxW = Math.max(...rows.map((r) => r.opp_weight), 1);
+const x = (c) => padL + ((c - 1) / 31) * innerW;
+const y = (v) => top + mainH - (v / maxEv) * (mainH - 10);
+const yW = (v) => top + mainH - (Math.sqrt(v / maxW)) * (mainH - 10);
+const line = (key) => rows.map((r, i) => `${i ? 'L' : 'M'}${x(r.c).toFixed(1)} ${y(r[key]).toFixed(1)}`).join('');
+const lineW = () => rows.filter((r) => r.opp_weight > 0).map((r, i) => `${i ? 'L' : 'M'}${x(r.c).toFixed(1)} ${yW(r.opp_weight).toFixed(1)}`).join('');
+const ms = data.milestones;
+const kills = rows.filter((r) => r.kills > 0);
+const notable = rows.filter((r) => r.active + r.passive >= 6).sort((a, b) => b.active + b.passive - (a.active + a.passive)).slice(0, 4);
+const firstOpp = rows.find((r) => r.opponents.length)?.opponents[0];
+---
+
+<Base title="武功食物链：卓一航成长曲线">
+  <article class="art">
+    <p class="crumb"><a href={`${B}stories/`}>数据说书</a> · 第 2 篇 · 可复跑（脚本 + 数据版本 {data.meta.generated}）</p>
+    <h1>武功食物链：卓一航成长曲线</h1>
+    <p class="sub">《白发魔女传》事件表里的卓一航：谁在打谁，逐回可数。武功长进不是旁白说的，是主客比翻转出来的。</p>
+
+    <h2>命题</h2>
+    <p>判断一个武侠人物"变强"，最诚实的口径不是旁白形容词，而是事件表的结构：他多少次是动作的<b>发出者</b>（主），多少次是承受者（客）。开篇的卓一航被桩头围殴、被练霓裳单手捉住{firstOpp ? `（第 3 回的第一个对手就是「${firstOpp}」）` : ''}；收官时他与成章五、天龙上人战平。这条曲线把"成长"变成可复算的事实。</p>
+
+    <h2>图表</h2>
+    <div class="chartcard">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="卓一航逐回主动/被动交战曲线">
+        <path d={lineW()} fill="none" stroke="#8a8172" stroke-width="1.2" stroke-dasharray="2 5" opacity=".7" />
+        <path d={line('passive')} fill="none" stroke="#8a8172" stroke-width="1.8" />
+        <path d={line('active')} fill="none" stroke="#31536c" stroke-width="2.2" />
+        {kills.map((r) => (
+          <circle cx={x(r.c)} cy={y(r.active)} r="4.5" fill="#a23527"><title>第{r.c}回 杀伤×{r.kills}</title></circle>
+        ))}
+        {ms.first_dominant_chapter && (
+          <g>
+            <line x1={x(ms.first_dominant_chapter)} y1={top - 4} x2={x(ms.first_dominant_chapter)} y2={top + mainH} stroke="#b8860b" stroke-dasharray="3 4" />
+            <text x={x(ms.first_dominant_chapter) + 4} y={top + 8} font-size="11" fill="#8a6607">主客翻转（第 {ms.first_dominant_chapter} 回）</text>
+          </g>
+        )}
+        {ms.first_kill_chapter && (
+          <text x={x(ms.first_kill_chapter) - 4} y={top + 8} font-size="11" fill="#a23527" text-anchor="end">首次杀伤（第 {ms.first_kill_chapter} 回）</text>
+        )}
+        <g font-size="11" fill="#8a8172" font-family="monospace" text-anchor="middle">
+          {[1, 4, 8, 13, 18, 22, 26, 29, 32].map((c) => <text x={x(c)} y={H - 8}>{String(c).padStart(3, '0')}</text>)}
+        </g>
+        <g font-size="12">
+          <rect x={padL} y={H - 30} width="10" height="10" fill="#31536c" /><text x={padL + 16} y={H - 21} fill="#5f584b">主动（卓一航为动作发出者）</text>
+          <rect x={padL + 200} y={H - 30} width="10" height="10" fill="#8a8172" /><text x={padL + 216} y={H - 21} fill="#5f584b">被动（承受者）</text>
+          <rect x={padL + 380} y={H - 30} width="10" height="10" fill="#a23527" /><text x={padL + 396} y={H - 21} fill="#5f584b">杀伤</text>
+          <line x1={padL + 460} y1={H - 25} x2={padL + 496} y2={H - 25} stroke="#8a8172" stroke-dasharray="2 5" /><text x={padL + 502} y={H - 21} fill="#5f584b">对手分量（√出场量，虚线）</text>
+        </g>
+      </svg>
+    </div>
+
+    <h2>读图</h2>
+    <p><b>主客翻转在第 {ms.first_dominant_chapter} 回</b>——此前的卓一航是事件表里的承受者（被捉、被围、被追）。第 26 回是全书最低谷：武当四老围攻，主 1 客 3；第 29 回是最高峰：<b>主动 13 次、杀伤 2</b>（雷蒙法师等）——恰是"三敌一支撑"的塞外血战。第 32 回主 4 客 9：收官之战他面对的是全书最高密度的压力，但这一次的"客"是与他战平的成章五、天龙上人——<b>同样是被打，性质已经不同</b>。</p>
+    <p>虚线（对手分量）在 026 回冲高：他的对手从散兵变成了有档案分量的人物（黄叶道人、红云道人）。<b>食物链的位置 = 你对手的分量</b>，这条线与主客线交叉的形状，就是"卓一航成长"四个字的全部数据内容。</p>
+
+    <h2>高烈度回目</h2>
+    <ul class="ev">
+      {notable.map((r) => (
+        <li>
+          <a class="mono" href={`${B}books/白发魔女传/${r.c}/`}>第 {String(r.c).padStart(3, '0')} 回 →</a>
+          主 {r.active} / 客 {r.passive} · 杀 {r.kills} · 对手 {r.opponents.join('、') || '—'}
+        </li>
+      ))}
+    </ul>
+
+    <h2>方法与复跑</h2>
+    <p class="method">
+      口径：◈◉▲ 事件（含 medium/low，不含 dropped）中卓一航为主/客的逐回计数；"对手分量" = 对手档案 appearance_total 均值（√ 缩放）；
+      不做胜/负 NLP 判定——事件动词极性足以支撑主客口径，胜负词表属侠谱评分模块（M4）。
+      里程碑"首次杀伤/主客翻转"由脚本从数据计算，非手填。复跑：<code>python scripts/build_stories.py</code> · 数据版本 <code>{data.meta.generated}</code>。
+    </p>
+  </article>
+</Base>
+
+<style>
+  .art { max-width: 900px; margin: 0 auto; }
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 1px; }
+  .sub { color: var(--ink-light); margin-top: -4px; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  p { line-height: 2; }
+  p b { color: var(--seal); }
+  .chartcard { border: 1px solid var(--line-strong); border-radius: 4px; padding: 10px; background: #fbf8ef; }
+  svg { width: 100%; height: auto; display: block; }
+  .ev { list-style: none; padding: 0; }
+  .ev li { padding: .35em 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+  .mono { font-family: var(--font-mono); }
+  .ev a { color: var(--azure); margin-right: .8em; }
+  .method { font-size: .85rem; color: var(--ink-light); }
+  .method code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .3em; font-family: var(--font-mono); font-size: .85em; }
+</style>

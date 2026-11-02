@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>开放数据 × AI 接入 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 13px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+h2.sec{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:34px 0 14px}
+h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:2px 12px;font-size:13.5px;background:#fbf8ef;color:#262420;margin:3px}
+.chip small{color:#8a8172;margin-left:4px}
+pre.code{margin:12px 0 0;background:#2e2c28;color:#e8e0cc;border-radius:4px;padding:16px 18px;font-family:ui-monospace,'Cascadia Code',Consolas,monospace;font-size:12px;line-height:1.75;overflow-x:auto;white-space:pre}
+pre.code .k{color:#e8a87c}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;color:#5f584b;font-size:12.5px;padding:7px 10px;border-bottom:2px solid #b5a687}
+td{padding:7px 10px;border-bottom:1px solid #e6ddc8;vertical-align:top}
+.tool{font-family:ui-monospace,monospace;font-size:13px;color:#a23527;font-weight:700}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#">地图</a><a href="#">搜索</a><a href="#" class="on">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <p class="fine" style="margin:22px 0 0">工具 · <a href="#">开放数据</a> × AI 接入层（N17 · 借 jiangshan-map 范式）</p>
+    <h1 style="font-size:32px;margin:6px 0 8px;letter-spacing:2px">开放数据 × AI 接入层</h1>
+    <p class="dim" style="margin:0;font-size:14.5px">
+      图谱层 <b style="color:#4f6e4a">CC BY-NC-SA</b> 可下载可复算 · 语料层<b style="color:#a23527">永不出门</b>（版权至 2059）·
+      接口铁律：<b>每个回答挂 <span class="mono" style="font-size:13px;border-bottom:1px dotted #b5a687">书·回:行</span> 定位符</b>
+    </p>
+
+    <h2 class="sec">下载 <span class="dim" style="font-weight:400;font-size:14px">全量 + 模块级（借 GeoJSON 导出思路：从"全量下载"到"外部可接的接口"）</span></h2>
+    <div style="display:grid;grid-template-columns:420px minmax(0,1fr);gap:18px">
+      <div class="card" style="padding:18px 22px">
+        <b style="font-size:15.5px">全量图谱</b>
+        <p class="fine" style="margin:8px 0 0;line-height:1.9">JSON / CSV 双格式 · schema 文档 · 版本与更新日志随每版发布。</p>
+        <p style="margin:12px 0 0">
+          <span class="chip" style="border-color:#a23527;color:#a23527">kb 快照 2026-11-02</span>
+          <span class="chip">schema v3</span>
+          <span class="chip">更新日志</span>
+        </p>
+      </div>
+      <div class="card" style="padding:8px 22px 12px">
+        <table>
+          <thead><tr><th>模块级导出</th><th>格式</th><th>谁在消费</th></tr></thead>
+          <tbody>
+            <tr><td>行踪轨迹（人-回-地序列）</td><td class="mono">GeoJSON</td><td class="dim">Leaflet / QGIS · 复刻行踪地图</td></tr>
+            <tr><td>神兵流转链</td><td class="mono">CSV</td><td class="dim">pandas / 可视化复刻</td></tr>
+            <tr><td>招式表 / 世系表 / 神兵表 切片</td><td class="mono">JSON</td><td class="dim">考订工具下游 · 二次分析</td></tr>
+            <tr><td>对局表 + 评分表</td><td class="mono">matches.json · ratings.json</td><td class="dim">G12 竞猜 · 战力研究</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 class="sec">AI 三件套 <span class="dim" style="font-weight:400;font-size:14px">让外部 AI 来查我们的库，而不是凭训练记忆谈梁羽生</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px">
+      <div class="card" style="padding:18px 22px">
+        <div style="display:flex;align-items:baseline;gap:10px"><b style="font-size:15.5px">llms.txt</b><span class="fine">机器可读站点规范 · 站根部署</span></div>
+        <pre class="code"><span class="k"># 江湖图志</span>
+&gt; 梁羽生 34 部武侠宇宙图谱
+&gt; 结论皆挂「书·回:行」定位符
+
+<span class="k">## 数据</span> 4 部已点亮 · 实体 2,390+
+<span class="k">## 引用</span> L0 定位符 / L1 单句 / L2 仅本地
+<span class="k">## 下载</span> /data · schema v3</pre>
+        <p class="fine" style="margin:12px 0 0">AI 爬站先读它：规模、口径、边界声明，一页说清。</p>
+      </div>
+      <div class="card" style="padding:18px 22px">
+        <div style="display:flex;align-items:baseline;gap:10px"><b style="font-size:15.5px">MCP Server</b><span class="fine">零依赖 stdio · 离线 &lt;5ms</span></div>
+        <p style="margin:10px 0 0;line-height:2.1">
+          <span class="tool">inspect_character</span><span class="fine"> 人物档案+战绩</span><br>
+          <span class="tool">inspect_place</span><span class="fine"> 地名沿革（虚实分层）</span><br>
+          <span class="tool">inspect_artifact</span><span class="fine"> 名物流转链</span><br>
+          <span class="tool">search_atlas</span><span class="fine"> 别名解析+全图检索</span>
+        </p>
+        <pre class="code"><span class="k">&gt;</span> inspect_artifact(<span class="k">"游龙剑"</span>)
+{ "grade": "神兵（明文）",
+  "provenance": [
+    {"holder":"岳鸣珂","event":"首见","conf":"ok"},
+    {"holder":"宫中","event":"夺","conf":"strong"} ],
+  "end_state": {"holder":"岳鸣珂","note":"归还"} }</pre>
+        <p class="fine" style="margin:12px 0 0">静态 JSON 上确定性求解——永不幻觉，Claude / Gemini 等任意 MCP 宿主可接。</p>
+      </div>
+      <div class="card" style="padding:18px 22px">
+        <div style="display:flex;align-items:baseline;gap:10px"><b style="font-size:15.5px">atlasAPI × 深链</b><span class="fine">浏览器端查询 · URL 状态协议</span></div>
+        <pre class="code"><span class="k">atlasAPI</span>.resolvePlace("白发魔女")
+  → 练霓裳
+<span class="k">atlasAPI</span>.inspect("岳鸣珂")
+  → 档案 + 定位符</pre>
+        <div class="mono" style="background:#f0e9d8;border:1px solid #d8cdb4;border-radius:4px;padding:10px 14px;font-size:12px;color:#31536c;margin-top:12px;overflow-x:auto;white-space:nowrap">?book=白发魔女传&amp;chap=026&amp;place=武当山&amp;person=练霓裳</div>
+        <p class="fine" style="margin:12px 0 0">游戏（G1/G3/G6/G11）、专栏图表与问答共用同一套查询函数；T4 考据争论直接甩深链。</p>
+      </div>
+    </div>
+
+    <h2 class="sec">Grounding 与版权 <span class="dim" style="font-weight:400;font-size:14px">与 N2 角色对话、KG-QA 同源的铁律</span></h2>
+    <div class="card" style="padding:16px 24px">
+      <table>
+        <thead><tr><th style="width:110px">引用档</th><th>内容</th><th style="width:260px">接口暴露</th></tr></thead>
+        <tbody>
+          <tr><td><b>L0</b></td><td>纯定位符 + 图谱三元组 + 统计</td><td class="dim">MCP / atlasAPI / 导出全部仅此档</td></tr>
+          <tr><td><b>L1</b></td><td>悬浮单句短引文（评论性合理引用）</td><td class="dim">仅页面展示层 · 不进接口</td></tr>
+          <tr><td><b>L2</b></td><td>语料层全文</td><td class="dim">仅本地阅读器 · 永不部署</td></tr>
+        </tbody>
+      </table>
+      <p class="fine" style="margin:12px 0 0">
+        档案未载答「档案未载」；发布层 L0 由 <span class="mono">copyright_gate.py</span> 在 CI 机器断言——版权档位由机器保证，不靠自觉。
+      </p>
+    </div>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。图谱层 CC BY-NC-SA，语料层仅限本地。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-11-02</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1420}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

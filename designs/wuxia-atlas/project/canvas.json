@@ -19,19 +19,23 @@
   "Story.dc.html":            {"x": 0,    "y": 5560, "w": 1360, "h": 1450, "expand": "fill", "title": "数据说书"},
   "Qa.dc.html":               {"x": 1440, "y": 5560, "w": 1360, "h": 1450, "expand": "fill", "title": "江湖问答 · AB 路径"},
   "GameDaily.dc.html":        {"x": 2880, "y": 5560, "w": 1360, "h": 1450, "expand": "fill", "title": "每日一谜", "is_interactive": true},
-  "Atlas.dc.html":            {"x": 4320, "y": 5560, "w": 1360, "h": 1450, "expand": "fill", "title": "行踪地图"}
+  "Atlas.dc.html":            {"x": 4320, "y": 5560, "w": 1360, "h": 1680, "expand": "fill", "title": "行踪地图 · jiangshan 形态"},
+  "WeaponsIndex.dc.html":     {"x": 0,    "y": 7540,  "w": 1360, "h": 1380, "expand": "fill", "title": "神兵谱 · 索引"},
+  "WeaponDetail.dc.html":     {"x": 1440, "y": 7540,  "w": 1360, "h": 1560, "expand": "fill", "title": "神兵 · 游龙剑"},
+  "OpenData.dc.html":         {"x": 2880, "y": 7540,  "w": 1360, "h": 1420, "expand": "fill", "title": "开放数据 × AI 接入"}
  },
  "order": [
   "Main.dc.html", "BooksIndex.dc.html", "BookDetail.dc.html", "Chapter.dc.html",
   "CharactersIndex.dc.html", "CharacterDossier.dc.html", "Universe.dc.html", "ArtDetail.dc.html", "Sect.dc.html",
   "Ratings.dc.html", "Versus.dc.html",
-  "Story.dc.html", "Qa.dc.html", "GameDaily.dc.html", "Atlas.dc.html"
+  "Story.dc.html", "Qa.dc.html", "GameDaily.dc.html", "Atlas.dc.html", "WeaponsIndex.dc.html", "WeaponDetail.dc.html", "OpenData.dc.html"
  ],
  "notes": {
   "t1": {"x": 0, "y": -300, "text": "现有页面 · 已上线（M1–M2）", "kind": "title1", "maxW": 5600},
   "t2": {"x": 0, "y": 1420, "text": "现有页面 · 人物 / 宇宙 / 武功 / 门派", "kind": "title1", "maxW": 7000},
   "t3": {"x": 0, "y": 3660, "text": "侠谱评分 · M4 规划", "kind": "title1", "maxW": 2740},
   "t4": {"x": 0, "y": 5260, "text": "内容与游戏 · M5–M6 规划", "kind": "title1", "maxW": 5560},
+  "t5": {"x": 0, "y": 7240, "text": "名物谱 × AI 接入层 · M7 规划（2026-11-02 增补）", "kind": "title1", "maxW": 4240},
   "howto": {"x": 1450, "y": -300, "w": 430, "text": "每块画板 = 一类页面模板，数据全部取自真实图谱。\n按 C（Comment）点击或框选任意元素即可留言，我会按评论修改；看单页细节可双击进入 Fill 视图。"}
  },
  "designSystems": []

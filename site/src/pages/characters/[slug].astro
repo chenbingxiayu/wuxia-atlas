@@ -1,12 +1,16 @@
 ---
 import Base from '../../layouts/Base.astro';
 import dossiersJson from '@data/dossiers.json';
+import ratingsJson from '@data/ratings.json';
 import { B } from '@lib/base';
 
 export function getStaticPaths() {
   return dossiersJson.dossiers.map((d) => ({ params: { slug: d.canonical }, props: { d } }));
 }
 const { d } = Astro.props;
+const player = ratingsJson.players.find((p2) => p2.name === d.canonical) || null;
+const oppRaw = player ? ((d.combat || {}).top_opponents || [])[0] : null;
+const rivalName = oppRaw ? (typeof oppRaw === 'string' ? oppRaw : oppRaw.name || oppRaw.person || oppRaw.c || null) : null;
 
 const TIER_LABEL = { strong: '强证', ok: '确证', weak: '线索' };
 const CONF = { high: '●●', medium: '●○', low: '○○' };
@@ -172,13 +176,40 @@ const maxBar = Math.max(
     </section>
   )}
 
-  <section class="card note">
-    <b>侠谱评分</b> <span class="badge badge-todo">M4 上线</span>
-    <p class="dim">Glicko-2 战力评分、档位与成长曲线将在此展示，口径见 <a href={`${B}ratings/method`}>侠谱方法论</a>。</p>
-  </section>
+  {player ? (
+    <section class="card rating-card">
+      <div class="rc-head">
+        <b>侠谱评分</b>
+        <span class="rc-rating mono">{player.rating} <small>±{player.rd}</small></span>
+        <span class="rc-tier" style={`color:${player.tier === '绝顶' ? '#b8860b' : player.tier === '超一流' ? '#a23527' : player.tier === '一流' ? '#31536c' : '#5f584b'}`}>{player.tier}</span>
+      </div>
+      <p class="dim">
+        生涯对局 {player.matches_n} 场（{player['w/d/l'][0]} 胜 {player['w/d/l'][1]} 平 {player['w/d/l'][2]} 负）
+        {player.rd > 150 && <span class="few">数据不足（区间宽）</span>} · 成长曲线待 WHR 接入
+      </p>
+      <p class="dim links">
+        <a href={`${B}ratings/`}>侠谱总榜 →</a>
+        {rivalName && <a href={`${B}ratings/versus/?a=${encodeURIComponent(d.canonical)}&b=${encodeURIComponent(rivalName)}`}>对主要对手 →</a>}
+        <a href={`${B}ratings/method/`}>口径 →</a>
+      </p>
+      <p class="fine">娱乐性指数：仅基于原著交手记录（词表 v0.1 明文裁决），可到总榜展开证据链对质。</p>
+    </section>
+  ) : (
+    <section class="card note">
+      <b>侠谱评分</b> <span class="badge badge-todo">无对局记录</span>
+      <p class="dim">事件层没有 TA 的胜负词明文裁决——评分维持先验 1500，不入榜。口径见 <a href={`${B}ratings/method/`}>侠谱方法论</a>。</p>
+    </section>
+  )}
 </Base>
 
 <style>
+  .rating-card { border-left: 4px solid var(--seal); }
+  .rc-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .rc-rating { font-size: 1.5rem; color: var(--seal); }
+  .rc-rating small { color: var(--ink-faint); font-size: .85rem; }
+  .rc-tier { display: inline-block; border: 1.5px solid currentColor; border-radius: 3px; padding: 0 8px; font-size: .8rem; transform: rotate(-1.5deg); }
+  .few { margin-left: 6px; font-size: 11px; color: #8a6607; border: 1px dashed #8a6607; border-radius: 3px; padding: 0 4px; }
+  .links a { margin-right: 14px; color: var(--azure); font-size: .85rem; }
   .crumb { font-size: .85rem; color: var(--ink-faint); }
   .meta { color: var(--ink-light); }
   .meta b { color: var(--azure); }

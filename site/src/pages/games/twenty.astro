@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import GameTwenty from '../../islands/GameTwenty';
+---
+<Base title="武林二十问答">
+  <p class="crumb"><a href="../">侠客游戏</a> / G1 武林二十问答</p>
+  <h1>武林二十问答</h1>
+  <p class="lead">
+    系统心里想了一位人物（436 位规范人物之一），用 ≤20 个是非题把他/她问出来。
+    每一问都选当前区分度最大的属性（信息增益）；候选越问越少，随时可以赌一把直接猜。
+    属性全部来自人物档案（书目/师承/杀伤/出场量……），没有一道题靠猜。
+  </p>
+  <GameTwenty client:load />
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 820px; line-height: 1.9; }
+</style>

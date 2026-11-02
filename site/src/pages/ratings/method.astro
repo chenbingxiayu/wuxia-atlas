@@ -1,0 +1,69 @@
+---
+import Base from '../../layouts/Base.astro';
+import ratings from '@data/ratings.json';
+import matches from '@data/matches.json';
+import { B } from '@lib/base';
+const P = ratings.meta.params;
+const T = ratings.meta.tiers;
+const totals = matches.meta.totals;
+---
+
+<Base title="评分方法论">
+  <p class="crumb"><a href={`${B}ratings/`}>侠谱总榜</a> / 方法论（评分不可手改——唯一入口 build_ratings.py）</p>
+  <h1>评分方法论</h1>
+  <p class="lead">数据源与口径、胜负词表全表、引擎参数、收缩公式、分档阈值、校准状态、更新日志——全部公开。</p>
+
+  <section>
+    <h2>数据源与口径</h2>
+    <p>事件表叙事层（人工校订）中 verb_code ∈ ◈/◉/▲ 且主宾齐备的事件；排除 dropped（{totals.excluded_narrative} 起）与 in_quote 假设句。
+      对局单位 = 场景（同回、行距 ≤15 行聚合；场景切分 {matches.meta.scene_splitter_version}）；景内多对手对各裁一场（围攻景 v0 整场一场）。
+      仅"胜负词表命中"的对局入榜——覆盖率如实声明：{totals.matches} 场明文裁决 / {totals.fighters} 名参战者。</p>
+  </section>
+
+  <section>
+    <h2>胜负词表 {matches.meta.wordlist_version}（方向按主方视角）</h2>
+    <ul class="wl">
+      <li><b>强胜 w1.0</b>：大败 击败 战败 打败 击倒 击毙 刺死 擒下 活捉 一招夺下 毙于 斩于 死于 杀退 败走 倒地 栽倒</li>
+      <li><b>常规胜 w0.8</b>：占得上风 迫退 逼退 震退 荡开 迫得后退 逼得后退 伤在</li>
+      <li><b>险胜 w0.6</b>：险胜 堪堪取胜 略胜一筹 侥幸获胜 略占上风</li>
+      <li><b>平 w0.7</b>：不分胜负 平分秋色 难分高下 势均力敌 旗鼓相当 打个平手 战个平手 战成平手 相持不下 两败俱伤</li>
+      <li><b>下风信号（判向）</b>：连连后退 只有招架 招架不住 招架之功 败象渐露 遮拦不住 再难支撑</li>
+      <li><b>modifier</b>：中毒×0.3 · 状态不佳×0.5 · 偷袭×0.5 · 诈败→平×0.5 · 放水×0.5 · 切磋×0.3 · 围攻（景内人数&gt;2，v0 整场一场）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>引擎与参数（Glicko-2）</h2>
+    <p>r0={P.r0} · rd0={P.rd0} · σ={P.vol} · τ={P.tau} · 长尾收缩 P={P.shrink_P}。
+      每场一个评分周期，按宇宙编年（白发→塞外→七剑→三女侠）+ 回序更新；
+      跨书人物按管线规范名归并（换乘站同实体）。
+      展示分 = (W·r + P·1500)/(W+5)——长尾（度=1 龙套）收缩至先验附近，区间（RD）宽者标"数据不足"。</p>
+  </section>
+
+  <section>
+    <h2>分档阈值（合成榜展示分分位，随数据版本重算）</h2>
+    <p>绝顶 ≥{T['绝顶']} · 超一流 ≥{T['超一流']} · 一流 ≥{T['一流']} · 二流 ≥{T['二流']} · 三流 &lt;{T['二流']}
+      <span class="warn">（当前版本分差被 Glicko-2 保守更新压缩，分位区间很窄——分档仅供演示，见页头横幅）</span></p>
+  </section>
+
+  <section>
+    <h2>校准与验收状态（诚实栏）</h2>
+    <ul>
+      <li>人工抽检 100 场（精度≥90%/召回≥80% 方可发布）：<b>未完成</b>——总榜页挂 v0 预览横幅；</li>
+      <li>规格 §六 异常规则<b>已触发</b>：玉罗刹白发榜未进前五——抽取规则回查中（方向：败词归属的就近人名歧义、场景文本跨对手污染）；</li>
+      <li>holdout 明文复现率：未做（明文库抽取属 M4-M5）；</li>
+      <li>更新日志：{ratings.meta.generated} 词表 {matches.meta.wordlist_version} × 场景切分 {matches.meta.scene_splitter_version} × 数据版本见页脚——三轴任一变更重算并记日志。</li>
+    </ul>
+  </section>
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 880px; line-height: 1.9; }
+  section { margin-top: var(--space-5); max-width: 880px; }
+  h2 { font-size: 1.05rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  p, li { line-height: 2; color: var(--ink); font-size: .95rem; }
+  .wl li { border-bottom: 1px dashed var(--line); }
+  .warn { color: #8a6607; font-size: .85rem; }
+</style>

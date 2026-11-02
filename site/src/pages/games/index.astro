@@ -1,0 +1,54 @@
+---
+import Base from '../../layouts/Base.astro';
+import { B } from '@lib/base';
+const games = [
+  { slug: 'twenty', title: '武林二十问答', desc: 'Akinator 式：系统想一位人物，20 个是非题内猜出。题库 = 436 位规范人物的档案属性。', status: '已上线' },
+  { slug: 'daily', title: '每日一谜', desc: '日期哈希全网同题、无需服务器；三机会三提示，emoji 战绩本地分享。谜底全部带定位符。', status: '已上线' },
+];
+const planned = [
+  ['G2 江湖侦探', '凶案三跳提示猜凶手'],
+  ['G3 AB 路径挑战', '拼最短关系路径'],
+  ['G5 剧情排序', '事件卡按发生顺序排列'],
+  ['G6 兵器归属', '神兵谱答案键（M7 已接数）'],
+  ['G11 行踪寻路', '复用 MapTrail 引擎（M6 已就绪）'],
+];
+---
+<Base title="侠客游戏">
+  <p class="crumb">侠客游戏</p>
+  <h1>侠客游戏</h1>
+  <p class="lead">
+    考据的娱乐化出口：每道题都有定位符级的标准答案（KB 确定性 = 零幻觉题库）；
+    全部纯静态（日期哈希选题 + 本地存档 + 分享码），无后端。
+  </p>
+  <div class="grid">
+    {games.map((g) => (
+      <a class="card" href={`${B}games/${g.slug}/`}>
+        <div class="head"><b>{g.title}</b><span class="st on">{g.status}</span></div>
+        <p>{g.desc}</p>
+      </a>
+    ))}
+  </div>
+  <h2>规划中</h2>
+  <ul class="planned">
+    {planned.map(([t, d]) => <li><b>{t}</b><span>{d}</span></li>)}
+  </ul>
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 820px; line-height: 1.9; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 16px; }
+  .card { display: block; border: 1px solid var(--line-strong); border-radius: 4px; padding: 18px 20px;
+    background: rgba(255,255,255,.45); color: var(--ink); }
+  .card:hover { border-color: var(--seal); }
+  .head { display: flex; justify-content: space-between; align-items: baseline; }
+  .head b { font-size: 1.1rem; }
+  .st { font-size: .72rem; border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 .6em; color: var(--ink-faint); }
+  .st.on { color: #4f6e4a; border-color: #4f6e4a; }
+  .card p { font-size: .9rem; color: var(--ink-light); line-height: 1.8; }
+  h2 { margin-top: 2rem; font-size: 1.05rem; }
+  .planned { list-style: none; padding: 0; }
+  .planned li { display: flex; gap: 14px; padding: .4em 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+  .planned b { min-width: 10em; color: var(--ink); }
+  .planned span { color: var(--ink-light); }
+</style>

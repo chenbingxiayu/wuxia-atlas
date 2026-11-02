@@ -1,0 +1,118 @@
+---
+import Base from '../../layouts/Base.astro';
+import data from '@data/stories/temp-curve.json';
+import { B } from '@lib/base';
+
+/* ---- 构建期 SVG（0 JS）---- */
+const W = 1150, H = 400, padL = 44, padR = 16, top = 34, gap = 58, lowH = 74;
+const innerW = W - padL - padR, mainH = H - top - gap - lowH - 20;
+const rows = data.per_chapter;
+const maxCo = Math.max(...rows.map((r) => r.co_events));
+const maxNeg = Math.max(...rows.map((r) => r.neg), 1);
+const maxKw = Math.max(...rows.map((r) => Math.max(r.kw_pos, r.kw_neg)), 1);
+const x = (c) => padL + ((c - 1) / 31) * innerW;
+const yMain = (v) => top + mainH - (v / maxCo) * (mainH - 10);
+const yLow = (v) => top + mainH + gap + (lowH - 12) - (v / maxKw) * (lowH - 12);
+const path = (vals) => vals.map((r, i) => `${i ? 'L' : 'M'}${x(r.c).toFixed(1)} ${yMain(r.co_events).toFixed(1)}`).join('');
+/* neg 独立比例（0..maxNeg 映射到同一绘图高度） */
+const yNeg = (v) => top + mainH - (v / maxNeg) * (mainH - 10);
+const pathN = (vals) => vals.map((r, i) => `${i ? 'L' : 'M'}${x(r.c).toFixed(1)} ${yNeg(r.neg).toFixed(1)}`).join('');
+const areaCo = `${path(rows)}L${x(32)} ${top + mainH}L${x(1)} ${top + mainH}Z`;
+const lowBars = rows.filter((r) => r.kw_pos || r.kw_neg).map((r) => ({ c: r.c, p: r.kw_pos, n: r.kw_neg }));
+const totalNeg = rows.reduce((s, r) => s + r.neg, 0);
+const totalPos = rows.reduce((s, r) => s + r.pos, 0);
+const totalCo = rows.reduce((s, r) => s + r.co_events, 0);
+const shared = data.shared_chapters.length;
+const evidence = [
+  { loc: '003:81', text: '练霓裳 捉 卓一航（黄龙洞段）' },
+  { loc: '008:11', text: '卓一航 刺 练霓裳' },
+  { loc: '018:95', text: '练霓裳 扣 卓一航（明月峡）' },
+  { loc: '026:53', text: '秘魔崖一夜白头（全书转折）' },
+  { loc: '031:203', text: '练霓裳 刺 卓一航（塞外）' },
+];
+---
+
+<Base title="一夜白头：卓练温度曲线">
+  <article class="art">
+    <p class="crumb"><a href={`${B}stories/`}>数据说书</a> · 第 1 篇 · 可复跑（脚本 + 数据版本 {data.meta.generated}）</p>
+    <h1>一夜白头：卓练温度曲线</h1>
+    <p class="sub">用《白发魔女传》事件表的 {totalCo} 起同场事件、{totalNeg} 起冲突，量化全书最著名的一段虐恋。</p>
+
+    <h2>命题</h2>
+    <p>梁羽生的爱情悲剧里，最锋利的从来不是误会本身，而是误会背后的<b>干预者</b>。我们本想画出一条"温度曲线"——正负互动逐回消长。但数据给出了一个更冷峻的形状：</p>
+    <blockquote><b>全书 32 回，卓练同场 {shared} 回、共现事件 {totalCo} 起；其中正面互动事件 <span class="zero">{totalPos} 起</span>，负面冲突 {totalNeg} 起。</blockquote>
+    <p>温情从未进入"事件"的量级——它只存在于摘录的只言片语（下图下带的关键词密度）与并肩作战的对手重合里。<b>这正是这段关系的形状：正面的东西从来不成"事件"，负面的东西从来不成"绝境"。</b></p>
+
+    <h2>图表</h2>
+    <div class="chartcard">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label="卓练逐回共现与冲突曲线">
+        {data.markers.map((m) => (
+          <g>
+            <line x1={x(m.c)} y1={top - 8} x2={x(m.c)} y2={top + mainH + 14} stroke="#b5a687" stroke-dasharray="3 4" />
+            <text x={x(m.c)} y={top - 12} font-size="10.5" fill="#5f584b" text-anchor="middle">{m.label}</text>
+          </g>
+        ))}
+        <path d={areaCo} fill="#31536c" opacity="0.10" />
+        <path d={path(rows)} fill="none" stroke="#31536c" stroke-width="1.8" />
+        <path d={pathN(rows)} fill="none" stroke="#a23527" stroke-width="2.2" />
+        {lowBars.map((r) => (
+          <g>
+            {r.p > 0 && <rect x={x(r.c) - 3} y={yLow(r.p)} width="6" height={top + mainH + gap + lowH - 12 - yLow(r.p)} fill="#b8860b" opacity="0.85"><title>第{r.c}回 温情关键词 ×{r.p}</title></rect>}
+            {r.n > 0 && <rect x={x(r.c) + 3.5} y={yLow(r.n)} width="6" height={top + mainH + gap + lowH - 12 - yLow(r.n)} fill="#262420" opacity="0.55"><title>第{r.c}回 悲情关键词 ×{r.n}</title></rect>}
+          </g>
+        ))}
+        <line x1={padL} y1={top + mainH + gap - 6} x2={W - padR} y2={top + mainH + gap - 6} stroke="#d8cdb4" />
+        <g font-size="11" fill="#8a8172" font-family="monospace" text-anchor="middle">
+          {[1, 4, 8, 13, 18, 22, 26, 29, 32].map((c) => <text x={x(c)} y={H - 8}>{String(c).padStart(3, '0')}</text>)}
+        </g>
+        <g font-size="12">
+          <rect x={padL} y={top + mainH + 22} width="10" height="10" fill="#31536c" opacity="0.25" />
+          <text x={padL + 16} y={top + mainH + 31} fill="#5f584b">同场事件（二人共同参与，{totalCo} 起）</text>
+          <rect x={padL + 220} y={top + mainH + 22} width="10" height="10" fill="#a23527" />
+          <text x={padL + 236} y={top + mainH + 31} fill="#5f584b">负面/对抗事件（{totalNeg} 起）</text>
+          <rect x={padL + 460} y={top + mainH + 22} width="10" height="10" fill="#b8860b" />
+          <text x={padL + 476} y={top + mainH + 31} fill="#5f584b">下带：温情/悲情关键词密度（本地词频，0–{maxKw}）</text>
+        </g>
+      </svg>
+    </div>
+
+    <h2>读图三问</h2>
+    <p><b>① 为什么正面事件是 0？</b>事件层收录的是"人物—动词—人物"的叙事动作（救/赠/护也未出现于二人之间）；卓练之间发生的只有 捉、扣、刺、避。温情发生在<b>动词够不着的地方</b>：029 回银针杀雷蒙救卓，事件登记为"杀"，温度藏在宾语之外。</p>
+    <p><b>② 峰值在 004–006 与 013？</b>前者是"玉罗刹 domination 期"（黄龙洞缴械、武当对峙），后者是重逢与弹弓误会——两段高冲突都不是感情破裂，而是感情的存在证明。<b>冲突密度 = 关系强度</b>，这是曲线最反直觉的读法。</p>
+    <p><b>③ 026 之后呢？</b>一夜白头后冲突骤降（028–032 均值不到前期一半）——不是和好，是<b>退出彼此的事件</b>。只剩关键词：029 一粒温情词，031 一记"刺"。</p>
+
+    <h2>证据链</h2>
+    <ul class="ev">
+      {evidence.map((e) => (
+        <li><span class="loc">{e.loc}</span> {e.text} <a href={`${B}books/白发魔女传/${e.loc.slice(0, 3).replace(/^0/, '')}/`}>回目页 →</a></li>
+      ))}
+    </ul>
+
+    <h2>方法与复跑</h2>
+    <p class="method">
+      口径：同章在场 = "共同参与"（登记表 chapters 交集，{shared} 回）；互动动词极性词表（正 {13} 词/负 {14} 词）与摘录情感词表（正 {11} 词/负 {9} 词）见脚本头注释；考订锚点 001/004/013/026:53/029/032 全部挂定位符。
+      摘录仅在本地扫描，切片只含计数与定位符（L0）。复跑：<code>python scripts/build_stories.py</code> · 数据版本 <code>{data.meta.generated}</code> · 图表为构建期 SVG，可整体复现。
+    </p>
+  </article>
+</Base>
+
+<style>
+  .art { max-width: 900px; margin: 0 auto; }
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 1px; }
+  .sub { color: var(--ink-light); margin-top: -4px; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  p { line-height: 2; color: var(--ink); }
+  blockquote { margin: 1em 0; padding: .8em 1.2em; border-left: 4px solid var(--seal); background: rgba(255,255,255,.5); line-height: 2; }
+  blockquote b { color: var(--seal); }
+  .zero { font-size: 1.4em; font-weight: 900; }
+  .chartcard { border: 1px solid var(--line-strong); border-radius: 4px; padding: 10px; background: #fbf8ef; }
+  svg { width: 100%; height: auto; display: block; }
+  .ev { list-style: none; padding: 0; }
+  .ev li { padding: .35em 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+  .loc { font-family: var(--font-mono); color: var(--ink-faint); margin-right: .8em; }
+  .ev a { font-size: .8rem; color: var(--azure); margin-left: .6em; }
+  .method { font-size: .85rem; color: var(--ink-light); }
+  .method code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .3em; font-family: var(--font-mono); font-size: .85em; }
+</style>

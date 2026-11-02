@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>游龙剑 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 13px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+h2.sec{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:34px 0 14px}
+h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:2px 12px;font-size:13.5px;background:#fbf8ef;color:#262420;margin:3px}
+a.chip:hover{border-color:#a23527;color:#a23527}
+.chip small{color:#8a8172;margin-left:4px}
+.g{display:inline-block;border:1.5px solid #a23527;background:#a23527;color:#fbf8ef;border-radius:3px;padding:0 8px;font-size:12.5px;transform:rotate(-1.5deg);vertical-align:10px;white-space:nowrap}
+.ev{list-style:none;padding:0;margin:0;font-size:14px}
+.ev li{padding:8px 2px;border-bottom:1px solid #e6ddc8}
+.pred{color:#a23527;margin-right:10px;font-weight:600}
+.tl{position:relative;margin:6px 0 0;padding-left:34px}
+.tl:before{content:"";position:absolute;left:11px;top:14px;bottom:14px;width:2px;background:#d8cdb4}
+.trow{position:relative;padding:10px 0 12px}
+.trow:before{content:"";position:absolute;left:-29px;top:16px;width:12px;height:12px;border-radius:50%;background:#a23527;border:2.5px solid #fbf8ef;box-shadow:0 0 0 1.5px #a23527}
+.trow.end:before{background:#4f6e4a;box-shadow:0 0 0 1.5px #4f6e4a}
+.trow .tedge{display:flex;align-items:center;gap:10px;margin-bottom:5px}
+.tverb{color:#a23527;border:1px solid #a23527;border-radius:3px;padding:0 8px;font-size:12px;font-weight:700}
+.tconf{font-size:11px;color:#8a8172;border:1px dashed #b5a687;border-radius:3px;padding:0 6px}
+.tloc{margin-left:auto;color:#8a8172;font-size:11.5px;white-space:nowrap}
+.tholder{font-size:16px;font-weight:700}
+.vrow{display:flex;align-items:baseline;gap:10px;padding:8px 2px;border-bottom:1px solid #e6ddc8;font-size:14px}
+.vrow:hover{background:#f3ecda}
+.vb{color:#a23527;border-bottom:1px solid #b5a687;min-width:2.4em;text-align:center;font-weight:600}
+.who{font-weight:700}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#" class="on">名物</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#">地图</a><a href="#">搜索</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <p class="fine" style="margin:22px 0 0"><a href="#">名物谱</a> / 游龙剑</p>
+    <h1 style="font-size:36px;margin:6px 0 8px;letter-spacing:3px">游龙剑
+      <span class="g">神兵 · 明文</span>
+      <span style="display:inline-block;border:1.5px solid #31536c;color:#31536c;border-radius:3px;padding:1px 9px;font-size:13px;transform:rotate(1.5deg);vertical-align:10px">剑</span>
+      <span class="fine" style="margin-left:10px">神兵表 v1 · rev 1 · status auto（考订中）</span>
+    </h1>
+    <p class="dim" style="margin:0;font-size:15px">
+      流转 <b style="color:#a23527">4</b> 段 · 证据 <b>9</b> 处 · 见于
+      <a class="chip" href="#">白发魔女传</a>
+      <span class="fine">（跨书段：是否随岳鸣珂上天山 → 七剑，待世系 × 神兵表互证，gaps 显式标注）</span>
+    </p>
+
+    <div class="card" style="padding:16px 24px;margin:20px 0 0;border-left:4px solid #a23527">
+      <p style="margin:0;font-size:15px;line-height:2">
+        岳鸣珂（后之晦明禅师）入京时的随身兵刃。京华—塞外两线皆有出场：
+        宫闱一夜被夺，辗转江湖易手，终物归原主——<b>它的每一次易手都是一次剧情转折的物证</b>。
+        <span class="fine">〔首见定位符待神兵表考订回填〕</span>
+      </p>
+    </div>
+
+    <h2 class="sec">历代流转 <span class="dim" style="font-weight:400;font-size:14px">蓝图 B8 产品化 · 边 = 流转动词句式（strong）或 ▲/◈ 事件侧证（ok）· weak 不发布</span></h2>
+    <div class="card" style="padding:18px 30px 14px">
+      <div class="tl">
+        <div class="trow">
+          <div class="tedge"><span style="font-size:11.5px;color:#4f6e4a;border:1px solid #4f6e4a;border-radius:3px;padding:0 6px">起</span><span class="tholder"><a href="#">岳鸣珂</a></span><span class="dim" style="font-size:13px">首见持有</span><span class="tconf">conf ok</span><span class="tloc mono">白发·RRR:LLL 〈考订回填〉</span></div>
+          <p class="fine" style="margin:0">京华线随行佩剑；与《辽东传》（〔秘籍谱〕）同期在场——人·物·书三线互证。</p>
+        </div>
+        <div class="trow">
+          <div class="tedge"><span class="tverb">夺</span><span class="tholder"><a href="#">宫中</a></span><span class="dim" style="font-size:13px">皇宫被夺（宫闱夜战）</span><span class="tconf">conf strong · 明文句式</span><span class="tloc mono">白发·RRR:LLL 〈考订回填〉</span></div>
+          <p class="fine" style="margin:0">流转类型 = <b>夺</b>（句式动词表：夺/抢/缴/掳）；事件侧证：▲ 擒控 · 同回共现。</p>
+        </div>
+        <div class="trow">
+          <div class="tedge"><span class="tverb">易手</span><span class="tholder"><a href="#">玉罗刹</a></span><span class="dim" style="font-size:13px">练霓裳 · 自宫中取得</span><span class="tconf">conf ok · 事件侧证</span><span class="tloc mono">白发·RRR:LLL 〈考订回填〉</span></div>
+          <p class="fine" style="margin:0">档案页侧写：暂持 ≠ 归属——人物「佩兵 · 持物」卡按流转边性质分列。</p>
+        </div>
+        <div class="trow end">
+          <div class="tedge"><span style="font-size:11.5px;color:#4f6e4a;border:1px solid #4f6e4a;border-radius:3px;padding:0 6px">止</span><span class="tverb" style="color:#4f6e4a;border-color:#4f6e4a">还</span><span class="tholder"><a href="#">岳鸣珂</a></span><span class="dim" style="font-size:13px">归还 · 白发终章</span><span class="tconf">conf ok · end_state</span><span class="tloc mono">白发·RRR:LLL 〈考订回填〉</span></div>
+          <p class="fine" style="margin:0">终态 = 归还原主；如七剑段重现，链上追加新段（稳定键并链，期序不受影响）。</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="sec">相关交战 <span class="dim" style="font-weight:400;font-size:14px">该兵器出场的 ◈/◉/▲ 事件 · 可点跳回目页</span></h2>
+    <div class="card" style="padding:12px 24px">
+      <div class="vrow"><span class="who">玉罗刹</span><span class="vb">御</span><span class="who">官军围攻</span><span class="dim">秘魔崖之战 · ◈</span><span class="mono fine" style="margin-left:auto">〔考订回填〕</span></div>
+      <div class="vrow"><span class="who">岳鸣珂</span><span class="vb">失</span><span class="who">游龙剑</span><span class="dim">宫闱夜战 · ▲/◈</span><span class="mono fine" style="margin-left:auto">〔考订回填〕</span></div>
+      <div class="vrow" style="border-bottom:none"><span class="who">玉罗刹</span><span class="vb">持</span><span class="who">游龙剑</span><span class="dim">江湖段出场 · 共现</span><span class="mono fine" style="margin-left:auto">〔考订回填〕</span></div>
+      <p class="fine" style="margin:8px 0 2px">场景切分（可视化 §2.3）就绪后，此处按「同回同地连续交战」聚合成战斗卡。</p>
+    </div>
+
+    <h2 class="sec">相关人物 · 武功交叉</h2>
+    <p style="margin:0;line-height:2.5">
+      <span class="dim">历代持有：</span>
+      <a class="chip" href="#">岳鸣珂<small>首末持有 · 晦明禅师</small></a>
+      <a class="chip" href="#">练霓裳<small>暂持 · 玉罗刹</small></a>
+      <span class="dim">持有人武功交叉（char_art 配对）：</span>
+      <a class="chip" href="#">天山剑法<small>岳鸣珂一系 · ev12</small></a>
+      <a class="chip" href="#">反势剑法<small>玉罗刹反用各家招式 · 白发·004:53</small></a>
+    </p>
+    <p class="fine" style="margin:8px 0 0">交叉仅作线索展示（"谁使什么剑"），不构成招式归属——兵器 × 招式的强断言需语料明文。</p>
+
+    <h2 class="sec">证据与考订注记</h2>
+    <div class="card" style="padding:8px 24px">
+      <ul class="ev">
+        <li><span class="pred">品阶</span>神兵 · 明文 <span class="mono fine" style="color:#8a8172">品阶词表命中（神兵/宝剑类）· grade_basis=明文</span></li>
+        <li><span class="pred">归层</span>专名性通过 <span class="mono fine" style="color:#8a8172">器类泛称词表未整名命中 → level=名物 · 入谱</span></li>
+        <li><span class="pred">流转</span>4 段（strong 1 / ok 3） <span class="mono fine" style="color:#8a8172">赠/夺/还/传/毁/失 句式 + ▲/◈ 事件侧证 · 按编年排序</span></li>
+        <li><span class="pred">别名</span>游龙 → 游龙剑 <span class="mono fine" style="color:#8a8172">管道别名链 · alias_candidates 0 条待裁 · 同名异物监测 0 冲突</span></li>
+        <li><span class="pred">gaps</span>白发 → 七剑段 <span class="dim">是否随晦明禅师上天山待互文考订——不脑补，链上显式断点</span></li>
+      </ul>
+    </div>
+    <p class="fine" style="margin:12px 0 0">
+      数据契约：工具 C §C0 · 稳定键 = 名物规范名 · 人工裁定 <span class="mono">kb/校订/神兵表-考订.tsv</span> ·
+      本页仅展示 strong / ok 档；<span class="mono">meta.based_on</span> 血缘见页脚数据版本。
+    </p>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-11-02</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1560}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

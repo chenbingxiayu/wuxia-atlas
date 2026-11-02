@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import QaExplorer from '../../islands/QaExplorer';
+---
+<Base title="江湖问答">
+  <p class="crumb">工具 · 问答（确定性求解，答案必带定位符）</p>
+  <h1>江湖问答</h1>
+  <p class="lead">
+    选模板 → 填人名/门派 → 客户端在预构建 JSON 上确定性求解。<b>永不幻觉</b>：答案只来自图谱，
+    每条带「书·回」定位符，档案未载就答"档案未载"。支持深链：
+    <code>?t=killer&amp;x=金独异</code>——考据争论直接甩链接。
+  </p>
+  <QaExplorer client:visible />
+  <p class="note">
+    口径说明：事件层为叙事层（人工校订），"谁杀了 X"以 verb ∈ 杀/诛/毙 为准；
+    师承按动词分级（收徒/传授=strong）；暂持 ≠ 归属（神兵谱口径）。
+    v2 接 LLM 自由提问时同样强制挂引用（NotebookLM 原则）。
+  </p>
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); line-height: 1.9; max-width: 860px; }
+  .lead code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .35em; font-family: var(--font-mono); font-size: .85em; }
+  .note { margin-top: 22px; font-size: .82rem; color: var(--ink-faint); line-height: 1.9; border-top: 1px dashed var(--line); padding-top: 12px; }
+</style>

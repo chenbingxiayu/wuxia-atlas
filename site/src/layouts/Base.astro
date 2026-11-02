@@ -13,6 +13,8 @@ const nav = [
   { href: B + 'universe', label: '宇宙' },
   { href: B + 'characters', label: '人物' },
   { href: B + 'arts', label: '武功' },
+  { href: B + 'weapons', label: '名物' },
+  { href: B + 'atlas', label: '地图' },
   { href: B + 'ratings', label: '侠谱' },
   { href: B + 'games', label: '游戏' },
   { href: B + 'search', label: '搜索' },
@@ -28,6 +30,8 @@ const year = new Date().getFullYear();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title} · 江湖图志</title>
+    <link rel="llms" href={`${B}llms.txt`} />
+    <script src={`${B}atlas-api.js`} is:inline></script>
   </head>
   <body>
     <header class="site-header">

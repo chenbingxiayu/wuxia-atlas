@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import NetworkGraph from '../../islands/NetworkGraph';
+import PathFinder from '../../islands/PathFinder';
+---
+<Base title="关系网络图 × AB 路径">
+  <p class="crumb"><a href="../">宇宙</a> / 关系网络图 + 江湖 AB 路径（M3）</p>
+  <h1>关系网络图 × AB 路径</h1>
+  <p class="lead">
+    左脑看全网：力导向图铺开 646 个节点（人物/武功/门派）与 626 条考据边（对局/师承/救助/恩义/传授——每条边挂定位符）。
+    右脑问路径：任意两人，BFS 最短关联，<b>每一步都可点开原文对质</b>。
+  </p>
+  <section>
+    <h2>江湖 AB 路径 <small>经典案例：卓一航 → 岳鸣珂 → 凌未风（N1）</small></h2>
+    <PathFinder client:visible />
+  </section>
+  <section>
+    <h2>全网关系图 <small>节点 646 · 边 626 · 边宽 = 证据数</small></h2>
+    <NetworkGraph client:visible />
+  </section>
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 880px; line-height: 1.9; }
+  section { margin-top: var(--space-5); }
+  h2 { font-size: 1.05rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  h2 small { font-weight: 400; font-size: .78rem; color: var(--ink-faint); margin-left: .6em; }
+</style>

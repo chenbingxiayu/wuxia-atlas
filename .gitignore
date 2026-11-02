@@ -23,3 +23,6 @@ site/.astro/
 
 # site/data/*.json 为 L0 图谱层生成物，**保留入库**（CI 语料无关构建的输入）。
 # 上游管线在本地运行；重跑后按 diff 审查提交。
+
+# site/public/data 为 astro 构建时从 site/data 镜像的运行时副本（生成物，不重复入库）
+site/public/data/

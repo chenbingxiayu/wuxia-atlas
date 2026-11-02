@@ -23,19 +23,26 @@ a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
 .bname{font-size:19px;font-weight:900;letter-spacing:2px}
 .bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
 .nav{display:flex;gap:2px;margin-left:auto}
-.nav a{padding:9px 14px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a{padding:9px 13px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
 .nav a:hover{color:#a23527}
 .nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
 .foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
 .footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
-h2.sec{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:36px 0 14px}
+h2.sec{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:34px 0 14px}
 h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
 .dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
 .card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
-.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:2px 12px;font-size:13.5px;background:#fbf8ef;color:#262420;margin:3px;cursor:pointer}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:3px 13px;font-size:13.5px;background:#fbf8ef;color:#262420;margin:3px;cursor:pointer}
 .chip:hover{border-color:#a23527;color:#a23527}
-.legend{display:flex;gap:22px;font-size:12.5px;color:#5f584b;margin-top:12px;flex-wrap:wrap}
-.prow{display:flex;gap:10px;align-items:baseline;padding:7px 2px;border-bottom:1px solid #e6ddc8;font-size:14px}
+.chip.on{border-color:#a23527;color:#a23527;font-weight:700}
+button.tgl{font-family:'Noto Serif SC',serif;border:1px solid #b5a687;background:#fbf8ef;color:#5f584b;border-radius:999px;padding:4px 14px;font-size:13.5px;margin:3px;cursor:pointer}
+button.tgl[aria-pressed="true"]{border-color:#4f6e4a;color:#4f6e4a;font-weight:700}
+button.tgl:hover{border-color:#a23527;color:#a23527}
+button.play{font-family:'Noto Serif SC',serif;border:2px solid #a23527;background:#a23527;color:#fbf8ef;border-radius:4px;padding:7px 20px;font-size:14.5px;cursor:pointer}
+button.play:hover{background:#7e281d;border-color:#7e281d}
+.legend{display:flex;gap:20px;font-size:12.5px;color:#5f584b;margin-top:12px;flex-wrap:wrap}
+.prow{display:flex;gap:10px;align-items:baseline;padding:8px 2px;border-bottom:1px solid #e6ddc8;font-size:14px}
+.ctrlab{font-size:12.5px;color:#8a8172;white-space:nowrap;letter-spacing:1px}
 </style>
 </helmet>
 <div style="min-height:100%;display:flex;flex-direction:column">
@@ -46,76 +53,162 @@ h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
       <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
     </a>
     <nav class="nav">
-      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#">搜索</a><a href="#" class="on">地图</a><a href="#">关于</a>
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#" class="on">地图</a><a href="#">搜索</a><a href="#">关于</a>
     </nav>
   </div></div>
 
   <main class="shell" style="flex:1">
-    <p class="fine" style="margin:22px 0 0">时空 · 行踪地图（M6）</p>
+    <p class="fine" style="margin:22px 0 0">时空 · 行踪地图（M6 · jiangshan 形态：回目滑块 / 幽灵轨迹 / 地名谱系卡 / 编年轨迹 / 虚实透镜）</p>
     <h1 style="font-size:32px;margin:6px 0 4px;letter-spacing:2px">侠客行踪地图</h1>
-    <p style="margin:12px 0 0;line-height:2.4">
-      <span class="dim">选择侠客：</span>
-      <span class="chip" style="border-color:#a23527;color:#a23527">练霓裳</span>
-      <span class="chip">卓一航</span>
-      <span class="chip">岳鸣珂</span>
-      <span class="chip">凌未风</span>
-    </p>
+    <p class="dim" style="margin:0;font-size:14.5px">拖动回目观史 · 人 ↔ 地双向查询 · 虚实分层底图（实底 = 真实地理 · 描边 = 虚构安放）· 交互版 M6 上线</p>
 
-    <div class="card" style="padding:22px 26px;margin-top:16px">
-      <svg viewBox="0 0 1160 420" style="width:100%;height:auto" role="img" aria-label="练霓裳行踪示意（地理骨架，底图待 gazetteer）">
-        <path d="M60 300 C180 260 220 300 300 280 C420 250 470 260 560 230 C700 190 760 150 880 120 C980 96 1040 90 1090 84"
-              fill="none" stroke="#31536c" stroke-width="2.5" stroke-dasharray="8 6" opacity=".8"/>
+    <div class="card" style="padding:18px 26px;margin-top:18px">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span class="ctrlab">书目</span>
+        <span class="chip on">白发魔女传</span><span class="chip">塞外奇侠传</span><span class="chip">七剑下天山</span>
+        <span class="ctrlab" style="margin-left:18px">视图</span>
+        <span class="chip on">行踪地图</span><span class="chip">河流图</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;margin-top:12px">
+        <span class="ctrlab">回目</span>
+        <svg viewBox="0 0 1060 66" style="flex:1;height:66px" role="img" aria-label="回目滑块：当前第 026 回">
+          <line x1="16" y1="40" x2="1044" y2="40" stroke="#d8cdb4" stroke-width="6" stroke-linecap="round"/>
+          <line x1="16" y1="40" x2="876" y2="40" stroke="#a23527" stroke-width="6" stroke-linecap="round"/>
+          <g fill="#b5a687">
+            <rect x="16" y="35" width="2" height="10"/><rect x="150" y="35" width="2" height="10"/><rect x="284" y="35" width="2" height="10"/><rect x="418" y="35" width="2" height="10"/><rect x="552" y="35" width="2" height="10"/><rect x="686" y="35" width="2" height="10"/><rect x="820" y="35" width="2" height="10"/><rect x="954" y="35" width="2" height="10"/><rect x="1042" y="35" width="2" height="10"/>
+          </g>
+          <circle cx="876" cy="40" r="13" fill="#a23527" opacity=".18"/>
+          <circle cx="876" cy="40" r="8" fill="#a23527" stroke="#fbf8ef" stroke-width="2"/>
+          <g font-size="11" fill="#8a8172" font-family="ui-monospace,monospace" text-anchor="middle">
+            <text x="18" y="62">001</text><text x="152" y="62">008</text><text x="420" y="62">016</text><text x="688" y="62">024</text><text x="1042" y="62">032</text>
+          </g>
+          <g>
+            <rect x="790" y="2" width="176" height="24" rx="4" fill="#a23527"/>
+            <text x="878" y="18" font-size="12.5" fill="#fbf8ef" text-anchor="middle" font-family="'Noto Serif SC',serif">026 · 剑闯名山 / 一夜白头</text>
+          </g>
+        </svg>
+        <button class="play" type="button">▶ 编年轨迹</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px">
+        <span class="ctrlab">图层</span>
+        <button class="tgl" type="button" aria-pressed="true">虚实透镜 · 真实</button>
+        <button class="tgl" type="button" aria-pressed="false">虚实透镜 · 虚构安放</button>
+        <button class="tgl" type="button" aria-pressed="true">山门图层</button>
+        <button class="tgl" type="button" aria-pressed="false">江湖动线（官道 / 镖路）</button>
+        <button class="tgl" type="button" aria-pressed="false">幽灵对比 · 021 ⇄ 026</button>
+        <span class="fine" style="margin-left:auto">播放时同步切换回目号与事件卡（人物编年轨迹 · 即 G11 引擎）</span>
+      </div>
+    </div>
+
+    <div class="card" style="padding:20px 26px;margin-top:16px">
+      <svg viewBox="0 0 1160 470" style="width:100%;height:auto" role="img" aria-label="练霓裳与卓一航行踪图（026 回处，滑块态）">
+        <path d="M40 330 C140 250 220 200 340 185 C460 170 520 130 640 120 C780 108 880 70 1000 80 C1080 87 1120 120 1140 160 L1140 450 L40 450 Z"
+              fill="#efe7d4" stroke="#d8cdb4" stroke-width="1.5"/>
+        <path d="M180 210 C360 190 560 170 760 128 C860 107 960 95 1060 92" fill="none" stroke="#8a8172" stroke-width="3" stroke-dasharray="12 7" opacity=".55"/>
+        <text x="560" y="146" font-size="11.5" fill="#8a8172">长城（动线层 · 示意）</text>
+        <path d="M150 300 C320 280 480 260 640 250 C760 243 900 236 1120 230" fill="none" stroke="#9db3c0" stroke-width="2.5" opacity=".65"/>
+        <text x="920" y="222" font-size="11" fill="#9db3c0">黄河</text>
+        <path d="M170 380 C360 366 560 340 760 320 C900 306 1020 296 1130 290" fill="none" stroke="#9db3c0" stroke-width="2" opacity=".5"/>
+        <text x="1010" y="312" font-size="11" fill="#9db3c0">长江</text>
+
+        <path d="M170 320 C280 290 360 270 430 262 C480 300 500 316 520 330 C560 250 590 180 620 150 C560 220 540 280 520 330 C640 300 700 280 760 268 C880 200 960 140 1050 112"
+              fill="none" stroke="#a23527" stroke-width="2.5" stroke-dasharray="8 6" opacity=".8"/>
         <g font-family="'Noto Serif SC',serif" font-size="13">
-          <circle cx="120" cy="288" r="8" fill="#a23527"/><text x="120" y="322" text-anchor="middle">定军山</text>
-          <text x="120" y="338" text-anchor="middle" font-size="11" fill="#8a8172">001–002 · 劫镖相识</text>
-          <circle cx="330" cy="276" r="8" fill="#a23527"/><text x="330" y="310" text-anchor="middle">秘魔崖</text>
-          <text x="330" y="326" text-anchor="middle" font-size="11" fill="#8a8172">004 · 黄龙洞剑谱</text>
-          <circle cx="540" cy="236" r="8" fill="#a23527"/><text x="540" y="270" text-anchor="middle">武当山</text>
-          <text x="540" y="286" text-anchor="middle" font-size="11" fill="#8a8172">013 · 026 · 剑闯名山</text>
-          <circle cx="760" cy="156" r="8" fill="#a23527"/><text x="760" y="140" text-anchor="middle">明月峡</text>
-          <circle cx="1000" cy="92" r="9" fill="#a23527"/><text x="1000" y="72" text-anchor="middle">天山北高峰</text>
-          <text x="1000" y="122" text-anchor="middle" font-size="11" fill="#8a8172">032 · 守花相望</text>
-          <circle cx="240" cy="360" r="5" fill="#8a8172"/><text x="240" y="382" text-anchor="middle" font-size="12" fill="#5f584b">北京（012 京华线）</text>
-          <circle cx="880" cy="300" r="5" fill="#8a8172"/><text x="880" y="322" text-anchor="middle" font-size="12" fill="#5f584b">大漠（028–030）</text>
+          <circle cx="170" cy="320" r="8" fill="#a23527"/><text x="170" y="352" text-anchor="middle">定军山</text>
+          <text x="170" y="368" text-anchor="middle" font-size="11" fill="#8a8172">001–002 · 劫镖相识</text>
+          <circle cx="430" cy="262" r="8" fill="#a23527"/><text x="404" y="244" text-anchor="middle">秘魔崖</text>
+          <text x="404" y="260" text-anchor="middle" font-size="11" fill="#8a8172">004 · 黄龙洞剑谱</text>
+          <circle cx="620" cy="150" r="8" fill="#a23527"/><text x="620" y="132" text-anchor="middle">北京</text>
+          <text x="620" y="170" text-anchor="middle" font-size="11" fill="#8a8172">012 · 京华线</text>
+          <circle cx="520" cy="330" r="10" fill="#a23527" stroke="#fbf8ef" stroke-width="2.5"/>
+          <text x="520" y="364" text-anchor="middle" font-weight="700">武当山</text>
+          <text x="520" y="380" text-anchor="middle" font-size="11" fill="#a23527">013 · 026 一夜白头（当前）</text>
+          <circle cx="760" cy="268" r="7" fill="#f4eee0" stroke="#a23527" stroke-width="2.5"/>
+          <text x="760" y="250" text-anchor="middle" fill="#5f584b">明月峡</text>
+          <text x="760" y="290" text-anchor="middle" font-size="11" fill="#8a8172">未至 · 空环</text>
+          <circle cx="1050" cy="112" r="9" fill="#f4eee0" stroke="#a23527" stroke-width="2.5"/>
+          <text x="1050" y="94" text-anchor="middle" fill="#5f584b">天山北高峰</text>
+          <text x="1050" y="136" text-anchor="middle" font-size="11" fill="#8a8172">032 · 守花相望</text>
+        </g>
+        <g font-family="'Noto Serif SC',serif" font-size="12">
+          <path d="M120 388 C300 372 420 356 520 344" fill="none" stroke="#31536c" stroke-width="2" stroke-dasharray="6 5" opacity=".75"/>
+          <circle cx="120" cy="388" r="6" fill="#31536c"/><text x="120" y="410" text-anchor="middle" fill="#31536c">湖北 · 001</text>
+          <circle cx="520" cy="344" r="6" fill="#31536c"/><text x="556" y="352" fill="#31536c">卓一航 · 013 继任 / 016 立储考</text>
+          <circle cx="800" cy="330" r="6" fill="#f4eee0" stroke="#31536c" stroke-width="2"/><text x="800" y="352" text-anchor="middle" fill="#5f584b">中条山 · 025–027</text>
+          <circle cx="1030" cy="150" r="6" fill="#f4eee0" stroke="#31536c" stroke-width="2"/><text x="1030" y="172" text-anchor="middle" fill="#5f584b">天山 · 032</text>
+        </g>
+        <g font-family="'Noto Serif SC',serif" font-size="11.5">
+          <rect x="498" y="296" width="9" height="9" fill="#4f6e4a" transform="rotate(45 502 300)"/>
+          <rect x="688" y="212" width="9" height="9" fill="#4f6e4a" transform="rotate(45 692 216)"/><text x="700" y="204" fill="#4f6e4a">少林</text>
+          <rect x="236" y="416" width="9" height="9" fill="#4f6e4a" transform="rotate(45 240 420)"/><text x="252" y="426" fill="#4f6e4a">峨嵋</text>
+          <text x="512" y="286" fill="#4f6e4a">◆ 武当（山门）</text>
+        </g>
+        <g>
+          <rect x="880" y="200" width="252" height="118" rx="4" fill="#fbf8ef" stroke="#262420" stroke-width="1.5"/>
+          <text x="896" y="224" font-size="12.5" font-weight="700" fill="#a23527" font-family="'Noto Serif SC',serif">江湖状态 · 白发魔女传 026</text>
+          <text x="896" y="248" font-size="12" fill="#262420" font-family="'Noto Serif SC',serif">当朝：明 · 万历末（001 梃击案＝万历四十三）</text>
+          <text x="896" y="272" font-size="12" fill="#262420" font-family="'Noto Serif SC',serif">武当掌门：紫阳道长 → 卓一航（016 立）</text>
+          <text x="896" y="296" font-size="12" fill="#262420" font-family="'Noto Serif SC',serif">绿林第一：玉罗刹（练霓裳）</text>
+          <text x="896" y="312" font-size="10.5" fill="#8a8172" font-family="'Noto Serif SC',serif">世系表 × % 时间实体 · 随滑块联动</text>
         </g>
       </svg>
       <div class="legend">
-        <span><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#a23527;margin-right:6px"></i>行踪节点（真实地名，配经纬度）</span>
-        <span><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#8a8172;margin-right:6px"></i>次要场景</span>
-        <span style="margin-left:auto;color:#8a8172">底图：Natural Earth 轮廓国风化 · 虚构地名按文中方位近似安放</span>
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#a23527;margin-right:6px"></i>练霓裳 · 已至（≤ 当前回）</span>
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#f4eee0;border:2px solid #a23527;margin-right:6px"></i>未至节点（空环）</span>
+        <span><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#31536c;margin-right:6px"></i>卓一航并行线</span>
+        <span><i style="display:inline-block;width:9px;height:9px;background:#4f6e4a;transform:rotate(45deg);margin-right:6px"></i>山门图层（◆ 据点）</span>
+        <span style="margin-left:auto;color:#8a8172">底图：Natural Earth 国风化 · 虚构地名描边安放 · gazetteer ~60 条/书</span>
       </div>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px">
       <div>
-        <h2 class="sec">双向查询：地 → 人 <span class="dim" style="font-weight:400;font-size:14px">点武当山</span></h2>
+        <h2 class="sec">地名谱系卡 <span class="dim" style="font-weight:400;font-size:14px">Trace Place · 点任意地点 → 沿革</span></h2>
         <div class="card" style="padding:14px 22px">
-          <div class="prow"><b>武当山</b><span class="dim">· 见于</span> <a href="#" class="mono fine">白发·013、026、029 等</a></div>
-          <div class="prow"><span class="dim">在场人物（本回事件）：</span>
-            <span class="chip">练霓裳</span><span class="chip">卓一航</span><span class="chip">白石道人</span><span class="chip">黄叶道人</span>
+          <div style="display:flex;align-items:baseline;gap:12px">
+            <b style="font-size:18px">武当山</b>
+            <span class="chip" style="border-color:#4f6e4a;color:#4f6e4a;margin:0">真实地理<small>32.4°N 111.0°E</small></span>
+            <span class="chip" style="border-color:#a23527;color:#a23527;margin:0">山门<small>武当派</small></span>
           </div>
-          <div class="prow" style="border-bottom:none"><span class="dim">标志性事件：</span><span>剑闯名山（026 · ◈22）· 一夜白头（026:53 附近）</span></div>
+          <div class="prow"><span class="dim">见于</span><a href="#" class="mono fine">白发·013、026、029 等</a><span class="fine" style="margin-left:auto">跨书沿革 · 七剑/三女侠段待 gazetteer 联查</span></div>
+          <div class="prow"><span class="dim">013</span><span>剑闯名山前哨 · 在场：</span><a class="chip" href="#">练霓裳</a><a class="chip" href="#">卓一航</a><a class="chip" href="#">白石道人</a></div>
+          <div class="prow"><span class="dim">026</span><span>剑闯名山（◈22）· <b style="color:#a23527">一夜白头</b>（026:53 附近）</span><a class="chip" href="#" style="margin-left:auto">跳 026 回目页 →</a></div>
+          <div class="prow" style="border-bottom:none"><span class="dim">029</span><span>银针杀雷蒙（暗中救卓）等 3 起</span><span class="fine" style="margin-left:auto">事件可点 · 每条挂定位符</span></div>
+          <p class="fine" style="margin:8px 0 0">虚构地名（风砂堡 / 木什塔克）同卡展示，另带「虚构 · 按文中方位安放」徽章。</p>
         </div>
       </div>
       <div>
-        <h2 class="sec">叙事空间河流图 <span class="dim" style="font-weight:400;font-size:14px">同一数据的另一视图 · M6</span></h2>
-        <div class="card" style="padding:16px 22px;border-style:dashed">
-          <p class="fine" style="margin:0;line-height:1.9">
-            横轴章回、纵轴地理区域的彩带图：京华线（1–12）→ 秘魔崖（13–17）→ 川陕（18–21）→ 京华（22）→ 武当—中条山（25–27）→ 塞外（28–32）。
-            双主角彩带的聚散即分合。
+        <h2 class="sec">深链与分享 <span class="dim" style="font-weight:400;font-size:14px">N17 · URL 状态协议</span></h2>
+        <div class="card" style="padding:16px 22px">
+          <div class="mono" style="background:#f0e9d8;border:1px solid #d8cdb4;border-radius:4px;padding:12px 16px;font-size:12.5px;color:#31536c;overflow-x:auto;white-space:nowrap">?book=白发魔女传&amp;chap=026&amp;place=武当山&amp;person=练霓裳&amp;mode=trail</div>
+          <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+            <button class="play" type="button">复制深链</button>
+            <span class="fine">分享即定位——考据争论直接甩深链，对方落点与所见完全一致。</span>
+          </div>
+          <p class="fine" style="margin:12px 0 0;line-height:1.9">
+            同源查询 API：<span class="mono">atlasAPI.resolvePlace('白发魔女') → 练霓裳</span> ·
+            <span class="mono">atlasAPI.locate(026, '武当山')</span>——游戏（G11）、专栏图表与问答共用。
           </p>
         </div>
       </div>
+    </div>
+
+    <h2 class="sec">叙事空间河流图 <span class="dim" style="font-weight:400;font-size:14px">同一数据的另一视图 · M6</span></h2>
+    <div class="card" style="padding:16px 22px;border-style:dashed">
+      <p class="fine" style="margin:0;line-height:1.9">
+        横轴章回、纵轴地理区域的彩带图：京华线（1–12）→ 秘魔崖（13–17）→ 川陕（18–21）→ 京华（22）→ 武当—中条山（25–27）→ 塞外（28–32）。
+        双主角彩带的聚散即分合；切换「视图 · 河流图」即达。
+      </p>
     </div>
   </main>
 
   <div class="foot"><div class="footin">
     <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。</p>
-    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-10-31</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-11-02</p>
   </div></div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1450}}'>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1680}}'>
 class Component extends DCLogic {
   renderVals() { return {}; }
 }

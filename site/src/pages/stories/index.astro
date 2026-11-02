@@ -1,7 +1,44 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import { B } from '@lib/base';
+const stories = [
+  {
+    slug: 'temperature-curve', title: '一夜白头：卓练温度曲线',
+    teaser: '事件层里的卓练：全书 32 回、30 回同场、128 起冲突——而"温情事件"是 0 起。嘴上说放下的那个人，温情只藏在关键词与并肩的对手里。',
+    tag: 'B1 情感曲线', status: '已发布',
+  },
+  {
+    slug: 'growth-curve', title: '武功食物链：卓一航成长曲线',
+    teaser: '第 3 回被练霓裳一把捉住，第 11 回主客翻转，第 29 回主动出击 13 次、诛雷蒙——把"武功长进"画成可复算的曲线。',
+    tag: 'B6 战绩成长', status: '已发布',
+  },
+];
 ---
-<Base title="stories">
-  <Placeholder title="stories" milestone="M5" desc="数据说书：卓练温度曲线、悲剧公式、食物链——图表与视频方案同源。" />
+<Base title="数据说书">
+  <p class="crumb">数据说书</p>
+  <h1>数据说书</h1>
+  <p class="lead">用图谱证明武侠命题：每篇 = 图表（构建期 SVG）+ 证据链（定位符）+ 生成脚本（可复跑，附数据版本号）。</p>
+  <div class="grid">
+    {stories.map((s) => (
+      <a class="card" href={`${B}stories/${s.slug}/`}>
+        <div class="head"><b>{s.title}</b><span class="tag">{s.tag}</span></div>
+        <p>{s.teaser}</p>
+        <span class="fine">{s.status} · L0/L1 引用档 · 可复跑</span>
+      </a>
+    ))}
+  </div>
 </Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; margin-top: 16px; }
+  .card { display: block; border: 1px solid var(--line-strong); border-radius: 4px; padding: 18px 20px;
+    background: rgba(255,255,255,.45); color: var(--ink); }
+  .card:hover { border-color: var(--seal); }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .head b { font-size: 1.1rem; }
+  .tag { font-size: .72rem; color: var(--seal); border: 1px solid var(--seal); border-radius: 999px; padding: 0 .6em; white-space: nowrap; }
+  .card p { font-size: .9rem; color: var(--ink-light); line-height: 1.8; }
+  .fine { font-size: .75rem; color: var(--ink-faint); }
+</style>

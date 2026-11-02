@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import universe from '@data/universe.json';
+import booksJson from '@data/books.json';
+import { B } from '@lib/base';
+
+/* 双轨：上轨 = 故事年代（chronology_spine）；下轨标注出版年（真实时间）。书→线颜色。 */
+const lineColor: Record<string, string> = {};
+const lineOf: Record<string, string> = {};
+for (const ln of universe.lines) {
+  for (const m of ln.members) {
+    lineColor[m.book] = ln.color;
+    lineOf[m.book] = ln.line;
+  }
+}
+const bookMeta: Record<string, { year?: number; kb?: string }> = {};
+for (const w of booksJson.books) bookMeta[w.book] = { year: w.year, kb: w.kb_status };
+
+const spine = universe.chronology_spine.map((sp) => ({
+  era: sp.era,
+  books: sp.books.map((name) => ({
+    name,
+    missing: name.endsWith('*'),
+    clean: name.replace(/\*$/, ''),
+    color: lineColor[name.replace(/\*$/, '')] || '#8a8172',
+    line: lineOf[name.replace(/\*$/, '')] || '待考',
+    year: bookMeta[name.replace(/\*$/, '')]?.year,
+    kb: bookMeta[name.replace(/\*$/, '')]?.kb,
+  })),
+}));
+const covered = new Set(spine.flatMap((s) => s.books.map((b) => b.clean)));
+const rest = booksJson.books.filter((w) => !covered.has(w.book));
+const lit = (name: string) => bookMeta[name]?.kb === '已点亮' || bookMeta[name]?.kb === 'lit';
+---
+
+<Base title="宇宙编年史">
+  <p class="crumb"><a href="../">宇宙</a> / 编年史（双轨 · M3）</p>
+  <h1>宇宙编年史</h1>
+  <p class="lead">
+    双轨对照：<b>上轨是故事年代</b>（唐·武周 → 清·乾隆，来自系列谱系考订），<b>书脊上标真实出版年</b>（1954–1983）。
+    每本书按所属系列线着色；已点亮的书有图谱（亮标）。排序置信：strong ＞ ok ＞ todo，逐线证据见谱系考订表。
+  </p>
+
+  <div class="spine">
+    {spine.map((row) => (
+      <div class="row">
+        <div class="era">{row.era}</div>
+        <div class="books">
+          {row.books.map((b) => (
+            b.missing
+              ? <span class="chip missing" title="缺佚或年代待考">{b.clean}*</span>
+              : <a class="chip" style={`border-color:${b.color};color:${b.color}`} href={`${B}books/${b.clean}/`} title={`${b.line} · 出版 ${b.year ?? '?'}${lit(b.clean) ? ' · 已点亮' : ''}`}>
+                  {b.clean}<small>{b.year ?? ''}{lit(b.clean) ? ' ●' : ''}</small>
+                </a>
+          ))}
+        </div>
+      </div>
+    ))}
+    {rest.length > 0 && (
+      <div class="row">
+        <div class="era">待考时代</div>
+        <div class="books">
+          {rest.map((w) => (
+            <a class="chip" style="border-style:dashed" href={`${B}books/${w.book}/`}>{w.book}<small>{w.year ?? ''}</small></a>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+
+  <p class="fine">
+    图例：<span style="color:#c0392b">● 天山</span> · <span style="color:#8a6607">● 明代</span> ·
+    <span style="color:#31536c">● 大唐</span> · <span style="color:#4f6e4a">● 宋代</span> ·
+    晚清/独立见 chip · <b>●</b> = 已点亮（KB 完成）· * = 缺佚/待考。
+  </p>
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 900px; line-height: 1.9; }
+  .spine { margin-top: 18px; border-left: 3px solid var(--line-strong); }
+  .row { display: flex; gap: 14px; padding: 10px 0 10px 18px; border-bottom: 1px dashed var(--line); align-items: baseline; }
+  .era { min-width: 9.5em; font-weight: 700; color: var(--azure); white-space: nowrap; }
+  .books { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: .1em .7em; font-size: .85rem; background: rgba(255,255,255,.5); }
+  .chip small { color: var(--ink-faint); margin-left: .35em; font-family: var(--font-mono); font-size: .78em; }
+  .chip.missing { color: var(--ink-faint); border-style: dashed; }
+  a.chip:hover { filter: brightness(.85); }
+  .fine { color: var(--ink-faint); font-size: .82rem; margin-top: 14px; }
+</style>

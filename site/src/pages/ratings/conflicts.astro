@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import ratings from '@data/ratings.json';
+import { B } from '@lib/base';
+const conflicts = ratings.conflicts;
+---
+<Base title="明文冲突页">
+  <p class="crumb"><a href={`${B}ratings/`}>侠谱总榜</a> / 明文冲突（穿帮雷达子页）</p>
+  <h1>明文 × 数据</h1>
+  <div class="note">
+    <b>冲突 ≠ 穿帮。</b>可能是剧情保护（主角光环）、旁白夸张、或数据抽取遗漏——
+    每一行都可以点开原文对质。数据结论来自 Glicko-2 合成榜展示分（收缩后）。
+  </div>
+  {conflicts.length === 0 && <p class="lead">当前版本无达到阈值的明文×数据倒置（阈值：败方展示分高出胜方 ≥120，且对局为高置信非平局）。</p>}
+  <div class="list">
+    {conflicts.map((c) => (
+      <div class="card">
+        <div class="claim">「{c.claim}」<span class="mono loc">{c.claim_loc}</span></div>
+        <div class="data">数据结论：<a href={`${B}characters/${encodeURIComponent(c.data.winner)}/`}>{c.data.winner}</a>（低分方）
+          胜 <a href={`${B}characters/${encodeURIComponent(c.data.loser)}/`}>{c.data.loser}</a>
+          —— 倒置分差 <b>{c.data.delta}</b>（{c.data.match}）</div>
+        <div class="note2">{c.note} · <a href={`${B}ratings/versus/?a=${encodeURIComponent(c.data.winner)}&b=${encodeURIComponent(c.data.loser)}`}>对局详情 →</a></div>
+      </div>
+    ))}
+  </div>
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); }
+  .note { background: #f6e8d9; border: 1px solid #a23527; border-radius: 4px; padding: 12px 18px;
+    font-size: .92rem; color: #7e281d; line-height: 1.9; max-width: 860px; }
+  .list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; max-width: 860px; }
+  .card { border: 1px solid var(--line-strong); border-radius: 4px; padding: 14px 18px; background: rgba(255,255,255,.45); }
+  .claim { font-size: 1rem; }
+  .claim .loc, .loc { font-family: var(--font-mono); color: var(--ink-faint); font-size: .8em; margin-left: .6em; }
+  .data { margin-top: 8px; font-size: .9rem; color: var(--ink-light); }
+  .data b { color: var(--seal); }
+  .data a { color: var(--azure); }
+  .note2 { margin-top: 6px; font-size: .8rem; color: var(--ink-faint); }
+  .note2 a { color: var(--azure); }
+</style>

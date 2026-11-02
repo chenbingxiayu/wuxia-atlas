@@ -1,0 +1,26 @@
+# 江湖图志 Liang Yusheng Wuxia Atlas
+
+> 梁羽生 34 部武侠小说宇宙的知识图谱站点：人物/武功/门派/名物/时空/评分，每个结论可溯源到「书·回:行」定位符。严格限于小说文本，不做史料考证。
+
+## 数据规模
+- 已点亮（KB 完成）4 部：七剑下天山、塞外奇侠传、江湖三女侠、白发魔女传
+- 规范实体 1034+（人物/武功等，见 entity-index.json）· 地理坐标点 619（WGS-84，Nominatim+人工核验）· 入谱名物 209
+- 事件层（叙事层，含定位符）见各书图谱下载；引用档位 L0 定位符 / L1 单句 / L2 仅本地（语料层永不发布）
+
+## 页面
+- /books/ 作品库（34 部全有页；未点亮部仅元数据）
+- /characters/ 人物谱（别名/师承/战绩/出场曲线，全带定位符）
+- /arts/ 武功谱 · /weapons/ 神兵谱（品阶+历代流转链）· /sects/ 门派志
+- /atlas 时空行踪地图（真实省界底图 DataV；回目滑块/地名谱系卡/虚实透镜；支持 ?book=&chap=&person=&place=&lens= 深链）
+- /universe 宇宙地铁图 · /ratings 侠谱评分 · /qa 江湖问答 · /audit 穿帮雷达
+
+## 机器接口
+- MCP Server：`node scripts/mcp_server.js`（stdio，零依赖）— 工具：inspect_character / inspect_place / inspect_artifact / search_atlas；全部返回带定位符，档案未载答"档案未载"。
+- 浏览器：`window.atlasAPI.resolve / inspect / locate`（见 /atlas-api.js）。
+- 数据下载：/data/（图谱 JSON/CSV，CC BY-NC-SA）；schema 见各 JSON meta 字段。
+
+## 引用与版权
+- 图谱层（实体/关系/事件三元组、定位符、统计）：CC BY-NC-SA。
+- 语料层（原文）：版权至 2059 年底，永不发布；L1 短引文仅评论性单句且随页声明。
+- 数据版本：2026-11-02（kb 快照；页脚随页标注）。
+

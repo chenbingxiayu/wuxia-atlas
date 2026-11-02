@@ -1,7 +1,75 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import { B } from '@lib/base';
+import MapTrail from '../../islands/MapTrail';
 ---
-<Base title="atlas">
-  <Placeholder title="atlas" milestone="M6" desc="行踪地图与叙事空间河流图。" />
+<Base title="时空 · 行踪地图">
+  <p class="crumb"><a href={`${B}`}>首页</a> / 时空 · 行踪地图（M6 · jiangshan 形态）</p>
+  <h1>侠客行踪地图</h1>
+  <p class="lead">
+    拖动回目滑块观史：轨迹逐回生长（已至实底 / 未至空环 / 当前脉冲）、编年播放同步本回事件流；
+    点击任意地点出<b>地名谱系卡</b>（真实经纬度 + 沿革 + 在场人物，可跳回目页）。
+    底图为真实省界（DataV GeoAtlas），坐标来自 OpenStreetMap 检索 + 人工核验（WGS-84）；
+    虚构地名按考订锚点偏移安放、不发布经纬度。支持 <code>?book=&amp;chap=&amp;person=&amp;place=&amp;lens=</code> 深链。
+  </p>
+  <MapTrail client:load />
+  <noscript><p class="lead">行踪地图需要启用 JavaScript（交互岛按需加载；全部数据为静态 JSON）。</p></noscript>
 </Base>
+
+<style is:global>
+  /* —— MapTrail 国风样式（岛内容为客户端渲染，作用域样式不可达，故用全局）—— */
+  .mt-root { display: flex; flex-direction: column; gap: 16px; margin-top: 14px; }
+  .mt-loading { padding: 60px 0; color: #5f584b; text-align: center; }
+  .mt-panel { background: #fbf8ef; border: 1px solid #d8cdb4; border-radius: 4px; padding: 12px 18px; display: flex; flex-direction: column; gap: 8px; }
+  .mt-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .mt-lab { font-size: 12.5px; color: #8a8172; letter-spacing: 1px; white-space: nowrap; }
+  .mt-chip { font-family: inherit; border: 1px solid #b5a687; background: #fbf8ef; color: #5f584b;
+    border-radius: 999px; padding: 3px 13px; font-size: 13.5px; cursor: pointer; }
+  .mt-chip:hover { border-color: #a23527; color: #a23527; }
+  .mt-chip.on { border-color: #a23527; color: #a23527; font-weight: 700; }
+  .mt-slider { flex: 1; min-width: 160px; accent-color: #a23527; }
+  .mt-chapno { font-size: 14.5px; color: #a23527; white-space: nowrap; }
+  .mt-play { font-family: inherit; border: 2px solid #a23527; background: #a23527; color: #fbf8ef;
+    border-radius: 4px; padding: 5px 16px; font-size: 13.5px; cursor: pointer; white-space: nowrap; }
+  .mt-play:hover { background: #7e281d; border-color: #7e281d; }
+  .mt-mapcard { position: relative; background: #fbf8ef; border: 1px solid #d8cdb4; border-radius: 4px; padding: 10px; }
+  .mt-svg { width: 100%; height: auto; display: block; background: #f8f3e6; border-radius: 3px; }
+  .mt-place { cursor: pointer; }
+  .mt-place:hover circle { stroke-width: 3; }
+  .mt-state { position: absolute; top: 22px; right: 24px; background: #fbf8ef; border: 1.5px solid #262420;
+    border-radius: 4px; padding: 10px 14px; display: flex; flex-direction: column; gap: 3px;
+    font-size: 12px; max-width: 240px; box-shadow: 3px 4px 0 rgba(38,36,32,.12); }
+  .mt-state b { color: #a23527; font-size: 12.5px; }
+  .mt-faint { color: #8a8172; font-size: 11.5px; }
+  .mt-trace { position: absolute; bottom: 40px; left: 24px; width: 320px; background: #fbf8ef;
+    border: 1.5px solid #262420; border-radius: 4px; padding: 12px 14px; max-height: 300px; overflow: auto;
+    box-shadow: 3px 4px 0 rgba(38,36,32,.12); }
+  .mt-trace-h { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .mt-trace-h b { font-size: 16.5px; letter-spacing: 1px; }
+  .mt-x { margin-left: auto; border: none; background: none; font-size: 16px; cursor: pointer; color: #8a8172; }
+  .mt-badge { display: inline-block; border: 1.5px solid currentColor; border-radius: 3px;
+    padding: 0 6px; font-size: 11px; transform: rotate(-1.5deg); }
+  .mt-ok { color: #4f6e4a; } .mt-fic { color: #8a6607; border-style: dashed; }
+  .mt-coord { font-size: 12px; color: #31536c; margin-top: 4px; }
+  .mono { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; }
+  .mt-trace-rows { margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+  .mt-trow { display: flex; gap: 8px; align-items: baseline; border-bottom: 1px solid #e6ddc8; padding-bottom: 5px; font-size: 12.5px; }
+  .mt-link { color: #31536c; } .mt-link:hover { color: #a23527; }
+  .mt-legend { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 12px; color: #5f584b; padding: 6px 6px 2px; }
+  .mt-legend .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+  .mt-legend .dot.hollow { background: #f4eee0; border: 2px solid #a23527; }
+  .mt-evgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 4px 18px; }
+  .mt-ev { display: flex; gap: 8px; align-items: baseline; font-size: 13.5px; padding: 4px 2px; border-bottom: 1px solid #e6ddc8; }
+  .mt-verb { color: #a23527; border-bottom: 1px solid #b5a687; min-width: 1.6em; text-align: center; font-weight: 600; }
+  .mt-who { font-weight: 700; }
+  .mt-loc { margin-left: auto; color: #8a8172; font-size: 11px; white-space: nowrap; }
+  .crumb { font-size: 12.5px; color: #8a8172; margin-top: 18px; }
+  .crumb a { color: #31536c; }
+  h1 { letter-spacing: 2px; margin: 4px 0 6px; }
+  .lead { color: #5f584b; font-size: 14px; line-height: 1.9; margin: 0; }
+  .lead code { background: #f0e9d8; border: 1px solid #d8cdb4; border-radius: 3px; padding: 0 5px; font-size: 12.5px; }
+  @media (max-width: 720px) {
+    .mt-state { position: static; max-width: none; margin-top: 8px; }
+    .mt-trace { position: static; width: auto; margin-top: 8px; }
+  }
+</style>

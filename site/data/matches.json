@@ -1,0 +1,7148 @@
+{
+ "meta": {
+  "generated": "2026-11-02",
+  "schema": "matches-v1",
+  "wordlist_version": "v0.1",
+  "scene_splitter_version": "v0.1",
+  "totals": {
+   "matches": 484,
+   "fighters": 206,
+   "excluded_narrative": 1305
+  },
+  "excluded_detail": {
+   "dropped": 650,
+   "in_quote": 655,
+   "no_participants": 0
+  },
+  "note": "词表命中词与摘录不发布（L0）；围攻 v0=整场一场；连续交锋合并留 v1"
+ },
+ "matches": [
+  {
+   "id": "M001",
+   "a": "归有章",
+   "b": "练霓裳",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "001:103",
+   "scene": "S001-03"
+  },
+  {
+   "id": "M002",
+   "a": "卓一航",
+   "b": "王照希",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "002:073",
+   "scene": "S002-02"
+  },
+  {
+   "id": "M003",
+   "a": "卓一航",
+   "b": "常洵",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "002:073",
+   "scene": "S002-02"
+  },
+  {
+   "id": "M004",
+   "a": "卓一航",
+   "b": "郑贵妃兄弟",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "002:073",
+   "scene": "S002-02"
+  },
+  {
+   "id": "M005",
+   "a": "岳鸣珂",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M006",
+   "a": "凌霄",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M007",
+   "a": "练霓裳",
+   "b": "郑洪台",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M008",
+   "a": "卓一航",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M009",
+   "a": "练霓裳",
+   "b": "范筑",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M010",
+   "a": "卓一航",
+   "b": "应修阳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M011",
+   "a": "应修阳",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M012",
+   "a": "练霓裳",
+   "b": "青松道人",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M013",
+   "a": "练霓裳",
+   "b": "郑洪台等七人",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M014",
+   "a": "卓一航",
+   "b": "玉面妖狐凌霄",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M015",
+   "a": "凌霄",
+   "b": "卓一航",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M016",
+   "a": "范筑",
+   "b": "郑洪台",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:027",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M017",
+   "a": "云燕平",
+   "b": "卓一航",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M018",
+   "a": "练霓裳",
+   "b": "铁珊瑚",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M019",
+   "a": "云燕平",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M020",
+   "a": "练霓裳",
+   "b": "金千岩、云燕平",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M021",
+   "a": "练霓裳",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M022",
+   "a": "白敏",
+   "b": "金千岩",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M023",
+   "a": "卓一航",
+   "b": "金千岩",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M024",
+   "a": "卓继贤",
+   "b": "朱翊钧",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M025",
+   "a": "卓一航",
+   "b": "秦指挥",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M026",
+   "a": "卓一航",
+   "b": "王兵备",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M027",
+   "a": "练霓裳",
+   "b": "金千岩",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M028",
+   "a": "云燕平",
+   "b": "金千岩",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M029",
+   "a": "王照希、卓一航",
+   "b": "金千岩、云燕平",
+   "outcome": "draw",
+   "weight": 0.05,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M030",
+   "a": "练霓裳",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "单挑",
+   "book": "白发魔女传",
+   "loc": "006:003",
+   "scene": "S006-01"
+  },
+  {
+   "id": "M031",
+   "a": "卓一航",
+   "b": "金千岩",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "006:059",
+   "scene": "S006-02"
+  },
+  {
+   "id": "M032",
+   "a": "穆九娘",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "006:059",
+   "scene": "S006-02"
+  },
+  {
+   "id": "M033",
+   "a": "练霓裳",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "006:059",
+   "scene": "S006-02"
+  },
+  {
+   "id": "M034",
+   "a": "云燕平",
+   "b": "卓一航",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "006:059",
+   "scene": "S006-02"
+  },
+  {
+   "id": "M035",
+   "a": "云燕平",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "006:059",
+   "scene": "S006-02"
+  },
+  {
+   "id": "M036",
+   "a": "卓一航",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "006:059",
+   "scene": "S006-02"
+  },
+  {
+   "id": "M037",
+   "a": "卓一航",
+   "b": "穆九娘",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "006:059",
+   "scene": "S006-02"
+  },
+  {
+   "id": "M038",
+   "a": "铁飞龙",
+   "b": "黄叶道人",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "白发魔女传",
+   "loc": "007:095",
+   "scene": "S007-02"
+  },
+  {
+   "id": "M039",
+   "a": "红云道人",
+   "b": "练霓裳",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:141",
+   "scene": "S007-03"
+  },
+  {
+   "id": "M040",
+   "a": "李大人",
+   "b": "白石道人",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "008:081",
+   "scene": "S008-02"
+  },
+  {
+   "id": "M041",
+   "a": "岳鸣珂",
+   "b": "金独异",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "010:021",
+   "scene": "S010-02"
+  },
+  {
+   "id": "M042",
+   "a": "金千岩",
+   "b": "铁珊瑚",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "010:021",
+   "scene": "S010-02"
+  },
+  {
+   "id": "M043",
+   "a": "岳鸣珂",
+   "b": "金千岩",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "010:021",
+   "scene": "S010-02"
+  },
+  {
+   "id": "M044",
+   "a": "金千岩",
+   "b": "铁笛",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "010:021",
+   "scene": "S010-02"
+  },
+  {
+   "id": "M045",
+   "a": "岳鸣珂",
+   "b": "应修阳",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "白发魔女传",
+   "loc": "010:081",
+   "scene": "S010-03"
+  },
+  {
+   "id": "M046",
+   "a": "岳鸣珂",
+   "b": "慕容冲",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "012:021",
+   "scene": "S012-01"
+  },
+  {
+   "id": "M047",
+   "a": "客娉婷",
+   "b": "岳鸣珂",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "012:021",
+   "scene": "S012-01"
+  },
+  {
+   "id": "M048",
+   "a": "慕容冲",
+   "b": "成坤",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "012:021",
+   "scene": "S012-01"
+  },
+  {
+   "id": "M049",
+   "a": "岳鸣珂",
+   "b": "成坤",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "012:021",
+   "scene": "S012-01"
+  },
+  {
+   "id": "M050",
+   "a": "练霓裳",
+   "b": "金独异",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "012:093",
+   "scene": "S012-02"
+  },
+  {
+   "id": "M051",
+   "a": "慕容冲",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "012:093",
+   "scene": "S012-02"
+  },
+  {
+   "id": "M052",
+   "a": "岳鸣珂",
+   "b": "金独异",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "013:003",
+   "scene": "S013-01"
+  },
+  {
+   "id": "M053",
+   "a": "金独异",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "013:003",
+   "scene": "S013-01"
+  },
+  {
+   "id": "M054",
+   "a": "练霓裳",
+   "b": "金独异",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "013:027",
+   "scene": "S013-02"
+  },
+  {
+   "id": "M055",
+   "a": "岳鸣珂",
+   "b": "金独异",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "013:027",
+   "scene": "S013-02"
+  },
+  {
+   "id": "M056",
+   "a": "金独异",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "013:027",
+   "scene": "S013-02"
+  },
+  {
+   "id": "M057",
+   "a": "岳鸣珂",
+   "b": "铁飞龙",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "013:069",
+   "scene": "S013-03"
+  },
+  {
+   "id": "M058",
+   "a": "练霓裳",
+   "b": "铁飞龙",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "013:069",
+   "scene": "S013-03"
+  },
+  {
+   "id": "M059",
+   "a": "公孙大娘",
+   "b": "白石道人",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "014:065",
+   "scene": "S014-03"
+  },
+  {
+   "id": "M060",
+   "a": "公孙大娘",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "015:005",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M061",
+   "a": "公孙大娘",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "015:005",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M062",
+   "a": "武当",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "015:005",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M063",
+   "a": "卓一航",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "015:005",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M064",
+   "a": "练霓裳",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "015:005",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M065",
+   "a": "公孙大娘",
+   "b": "白石道人",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "015:005",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M066",
+   "a": "练霓裳",
+   "b": "金独异",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M067",
+   "a": "何萼华",
+   "b": "李天扬",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M068",
+   "a": "慕容冲",
+   "b": "龙啸云",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M069",
+   "a": "红云道人",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M070",
+   "a": "李天扬",
+   "b": "李申时",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M071",
+   "a": "金独异",
+   "b": "龙啸云",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M072",
+   "a": "金独异",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M073",
+   "a": "练霓裳",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M074",
+   "a": "公孙雷",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M075",
+   "a": "慕容冲",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M076",
+   "a": "红云道人、青蓑道人",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M077",
+   "a": "李天扬",
+   "b": "龙啸云",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M078",
+   "a": "李申时",
+   "b": "石浩",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M079",
+   "a": "公孙大娘",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M080",
+   "a": "公孙大娘",
+   "b": "龙达三",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M081",
+   "a": "公孙大娘",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M082",
+   "a": "公孙大娘",
+   "b": "金独异",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:023",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M083",
+   "a": "练霓裳",
+   "b": "金独异",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "018:081",
+   "scene": "S018-02"
+  },
+  {
+   "id": "M084",
+   "a": "卓一航",
+   "b": "金独异",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "018:081",
+   "scene": "S018-02"
+  },
+  {
+   "id": "M085",
+   "a": "卓一航",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "018:081",
+   "scene": "S018-02"
+  },
+  {
+   "id": "M086",
+   "a": "神一元",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.25,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "022:081",
+   "scene": "S022-02"
+  },
+  {
+   "id": "M087",
+   "a": "唐家璧、杜明忠",
+   "b": "神大元",
+   "outcome": "draw",
+   "weight": 0.25,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "022:081",
+   "scene": "S022-02"
+  },
+  {
+   "id": "M088",
+   "a": "神大元",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.25,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "022:081",
+   "scene": "S022-02"
+  },
+  {
+   "id": "M089",
+   "a": "察克图",
+   "b": "练霓裳",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "023:033",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M090",
+   "a": "努尔哈赤",
+   "b": "察克图",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "023:033",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M091",
+   "a": "慕容冲",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "白发魔女传",
+   "loc": "024:025",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M092",
+   "a": "客娉婷",
+   "b": "应修阳",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "024:063",
+   "scene": "S024-02"
+  },
+  {
+   "id": "M093",
+   "a": "连城虎",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "024:063",
+   "scene": "S024-02"
+  },
+  {
+   "id": "M094",
+   "a": "慕容冲",
+   "b": "连城虎",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "024:063",
+   "scene": "S024-02"
+  },
+  {
+   "id": "M095",
+   "a": "应修阳",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "024:063",
+   "scene": "S024-02"
+  },
+  {
+   "id": "M096",
+   "a": "应修阳",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "024:063",
+   "scene": "S024-02"
+  },
+  {
+   "id": "M097",
+   "a": "智上人",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "025:017",
+   "scene": "S025-01"
+  },
+  {
+   "id": "M098",
+   "a": "铁飞龙",
+   "b": "霍元仲",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "025:017",
+   "scene": "S025-01"
+  },
+  {
+   "id": "M099",
+   "a": "智上人",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "025:017",
+   "scene": "S025-01"
+  },
+  {
+   "id": "M100",
+   "a": "拙道人",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "025:017",
+   "scene": "S025-01"
+  },
+  {
+   "id": "M101",
+   "a": "拙道人",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "025:017",
+   "scene": "S025-01"
+  },
+  {
+   "id": "M102",
+   "a": "公孙雷",
+   "b": "霍元仲",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "025:017",
+   "scene": "S025-01"
+  },
+  {
+   "id": "M103",
+   "a": "练霓裳",
+   "b": "霍元仲",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "025:017",
+   "scene": "S025-01"
+  },
+  {
+   "id": "M104",
+   "a": "慕容冲",
+   "b": "红云道人",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:193",
+   "scene": "S026-05"
+  },
+  {
+   "id": "M105",
+   "a": "慕容冲",
+   "b": "黄叶道人",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:193",
+   "scene": "S026-05"
+  },
+  {
+   "id": "M106",
+   "a": "王照希",
+   "b": "神大元",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M107",
+   "a": "卓一航",
+   "b": "神一元",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M108",
+   "a": "王照希",
+   "b": "连城虎",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M109",
+   "a": "卓一航",
+   "b": "连城虎",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M110",
+   "a": "神大元",
+   "b": "连城虎",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M111",
+   "a": "神大元",
+   "b": "金千岩",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M112",
+   "a": "连城虎",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M113",
+   "a": "杜五、张四",
+   "b": "神大元",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M114",
+   "a": "王照希",
+   "b": "神一元",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M115",
+   "a": "岳鸣珂",
+   "b": "金独异",
+   "outcome": "draw",
+   "weight": 0.17,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:101",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M116",
+   "a": "练霓裳",
+   "b": "连城虎",
+   "outcome": "draw",
+   "weight": 0.25,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:035",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M117",
+   "a": "岳鸣珂",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:035",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M118",
+   "a": "岳鸣珂",
+   "b": "昌钦大喇嘛",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:035",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M119",
+   "a": "岳鸣珂",
+   "b": "红衣喇嘛",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:035",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M120",
+   "a": "朱由检",
+   "b": "魏忠贤",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:035",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M121",
+   "a": "客氏",
+   "b": "朱由检",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:035",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M122",
+   "a": "崔呈秀",
+   "b": "朱由检",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:035",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M123",
+   "a": "岳鸣珂",
+   "b": "连城虎",
+   "outcome": "draw",
+   "weight": 0.25,
+   "confidence": "medium",
+   "modifiers": [
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:035",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M124",
+   "a": "卓一航",
+   "b": "霍元仲",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:109",
+   "scene": "S028-03"
+  },
+  {
+   "id": "M125",
+   "a": "卓一航",
+   "b": "昌钦大喇嘛",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:109",
+   "scene": "S028-03"
+  },
+  {
+   "id": "M126",
+   "a": "卓一航",
+   "b": "科图",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "029:113",
+   "scene": "S029-02"
+  },
+  {
+   "id": "M127",
+   "a": "卓一航",
+   "b": "成章五",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "白发魔女传",
+   "loc": "032:041",
+   "scene": "S032-01"
+  },
+  {
+   "id": "M128",
+   "a": "押不庐",
+   "b": "飞红巾",
+   "outcome": "loss",
+   "weight": 0.25,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "005:011",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M129",
+   "a": "押不庐",
+   "b": "杨云骢",
+   "outcome": "loss",
+   "weight": 0.25,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "005:011",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M130",
+   "a": "德卡",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:031",
+   "scene": "S009-01"
+  },
+  {
+   "id": "M131",
+   "a": "巴拉",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:031",
+   "scene": "S009-01"
+  },
+  {
+   "id": "M132",
+   "a": "罗布族",
+   "b": "萨马儿族",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:031",
+   "scene": "S009-01"
+  },
+  {
+   "id": "M133",
+   "a": "罗布族",
+   "b": "阿盖",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:031",
+   "scene": "S009-01"
+  },
+  {
+   "id": "M134",
+   "a": "杨云骢",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:031",
+   "scene": "S009-01"
+  },
+  {
+   "id": "M135",
+   "a": "堪恰族",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:031",
+   "scene": "S009-01"
+  },
+  {
+   "id": "M136",
+   "a": "巴拉",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "010:003",
+   "scene": "S010-01"
+  },
+  {
+   "id": "M137",
+   "a": "塔山族",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "010:003",
+   "scene": "S010-01"
+  },
+  {
+   "id": "M138",
+   "a": "杨云骢",
+   "b": "柳西岩",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "011:003",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M139",
+   "a": "伊士达",
+   "b": "柳西岩",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "011:003",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M140",
+   "a": "天蒙禅师",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "020:007",
+   "scene": "S020-01"
+  },
+  {
+   "id": "M141",
+   "a": "楚昭南",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "020:007",
+   "scene": "S020-01"
+  },
+  {
+   "id": "M142",
+   "a": "白石道人",
+   "b": "飞红巾",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:009",
+   "scene": "S022-01"
+  },
+  {
+   "id": "M143",
+   "a": "杨云骢",
+   "b": "黄叶道人",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:009",
+   "scene": "S022-01"
+  },
+  {
+   "id": "M144",
+   "a": "练霓裳",
+   "b": "青蓑道人",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:009",
+   "scene": "S022-01"
+  },
+  {
+   "id": "M145",
+   "a": "武当派",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:009",
+   "scene": "S022-01"
+  },
+  {
+   "id": "M146",
+   "a": "红云道人",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:009",
+   "scene": "S022-01"
+  },
+  {
+   "id": "M147",
+   "a": "杨云骢",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "024:005",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M148",
+   "a": "杨云骢",
+   "b": "纽祜庐",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "000:085",
+   "scene": "S000-02"
+  },
+  {
+   "id": "M149",
+   "a": "凌未风",
+   "b": "刘郁芳",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "000:085",
+   "scene": "S000-02"
+  },
+  {
+   "id": "M150",
+   "a": "易兰珠",
+   "b": "纽祜庐",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "000:085",
+   "scene": "S000-02"
+  },
+  {
+   "id": "M151",
+   "a": "冒浣莲",
+   "b": "张华昭",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:011",
+   "scene": "S001-01"
+  },
+  {
+   "id": "M152",
+   "a": "刘郁芳",
+   "b": "多铎",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M153",
+   "a": "多铎",
+   "b": "易兰珠",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M154",
+   "a": "多铎",
+   "b": "通明和尚",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M155",
+   "a": "傅青主",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M156",
+   "a": "刘郁芳",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M157",
+   "a": "多铎",
+   "b": "张华昭",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M158",
+   "a": "张华昭",
+   "b": "纳兰明慧",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M159",
+   "a": "陈锦",
+   "b": "鲁王",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M160",
+   "a": "常英",
+   "b": "纳兰明慧",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M161",
+   "a": "禁卫军",
+   "b": "程通",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M162",
+   "a": "多铎",
+   "b": "常英",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M163",
+   "a": "多铎",
+   "b": "程通",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M164",
+   "a": "刘郁芳",
+   "b": "禁卫军",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:049",
+   "scene": "S001-02"
+  },
+  {
+   "id": "M165",
+   "a": "冒浣莲",
+   "b": "康熙",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "七剑下天山",
+   "loc": "002:013",
+   "scene": "S002-01"
+  },
+  {
+   "id": "M166",
+   "a": "傅青主",
+   "b": "阎中天",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "003:071",
+   "scene": "S003-02"
+  },
+  {
+   "id": "M167",
+   "a": "傅青主",
+   "b": "凌未风",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "003:071",
+   "scene": "S003-02"
+  },
+  {
+   "id": "M168",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "004:091",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M169",
+   "a": "凌未风",
+   "b": "古元亮",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "004:091",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M170",
+   "a": "楚昭南",
+   "b": "韩志邦",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "004:091",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M171",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M172",
+   "a": "凌未风",
+   "b": "郝大绶",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "005:003",
+   "scene": "S005-01"
+  },
+  {
+   "id": "M173",
+   "a": "凌未风",
+   "b": "郝继明",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:021",
+   "scene": "S006-01"
+  },
+  {
+   "id": "M174",
+   "a": "凌未风",
+   "b": "邱东洛",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:021",
+   "scene": "S006-01"
+  },
+  {
+   "id": "M175",
+   "a": "刘郁芳",
+   "b": "张魁",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:021",
+   "scene": "S006-01"
+  },
+  {
+   "id": "M176",
+   "a": "刘郁芳",
+   "b": "彭昆林",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:021",
+   "scene": "S006-01"
+  },
+  {
+   "id": "M177",
+   "a": "彭昆林",
+   "b": "李思永",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:021",
+   "scene": "S006-01"
+  },
+  {
+   "id": "M178",
+   "a": "凌未风",
+   "b": "金崖",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:021",
+   "scene": "S006-01"
+  },
+  {
+   "id": "M179",
+   "a": "保柱",
+   "b": "凌未风",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "007:041",
+   "scene": "S007-02"
+  },
+  {
+   "id": "M180",
+   "a": "保柱",
+   "b": "李思永",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "007:041",
+   "scene": "S007-02"
+  },
+  {
+   "id": "M181",
+   "a": "保柱",
+   "b": "凌未风",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "007:085",
+   "scene": "S007-03"
+  },
+  {
+   "id": "M182",
+   "a": "保柱",
+   "b": "桂仲明",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "007:085",
+   "scene": "S007-03"
+  },
+  {
+   "id": "M183",
+   "a": "桂仲明",
+   "b": "范铮",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "007:085",
+   "scene": "S007-03"
+  },
+  {
+   "id": "M184",
+   "a": "保柱",
+   "b": "傅青主",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "007:085",
+   "scene": "S007-03"
+  },
+  {
+   "id": "M185",
+   "a": "傅青主",
+   "b": "钱四麟",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "009:013",
+   "scene": "S009-01"
+  },
+  {
+   "id": "M186",
+   "a": "桂仲明",
+   "b": "王刚",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:009",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M187",
+   "a": "桂仲明",
+   "b": "焦直",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:009",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M188",
+   "a": "凌未风",
+   "b": "申天豹",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:009",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M189",
+   "a": "桂仲明",
+   "b": "洪涛",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:009",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M190",
+   "a": "凌未风",
+   "b": "申天虎",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:009",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M191",
+   "a": "凌未风",
+   "b": "王刚",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:009",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M192",
+   "a": "楚昭南",
+   "b": "申天虎",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:009",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M193",
+   "a": "冒浣莲",
+   "b": "王刚",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:009",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M194",
+   "a": "凌未风",
+   "b": "韩荆",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "七剑下天山",
+   "loc": "011:203",
+   "scene": "S011-03"
+  },
+  {
+   "id": "M195",
+   "a": "桂仲明",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "014:005",
+   "scene": "S014-01"
+  },
+  {
+   "id": "M196",
+   "a": "易兰珠",
+   "b": "桂仲明",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "014:005",
+   "scene": "S014-01"
+  },
+  {
+   "id": "M197",
+   "a": "易兰珠",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "014:005",
+   "scene": "S014-01"
+  },
+  {
+   "id": "M198",
+   "a": "杨云骢",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "014:005",
+   "scene": "S014-01"
+  },
+  {
+   "id": "M199",
+   "a": "孟武威",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:017",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M200",
+   "a": "张华昭",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:017",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M201",
+   "a": "桂仲明",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:017",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M202",
+   "a": "桂仲明",
+   "b": "胡天柱",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:017",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M203",
+   "a": "易兰珠",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:017",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M204",
+   "a": "张华昭",
+   "b": "胡天柱",
+   "outcome": "loss",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:017",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M205",
+   "a": "孟武威",
+   "b": "胡天柱",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:017",
+   "scene": "S015-01"
+  },
+  {
+   "id": "M206",
+   "a": "凌未风",
+   "b": "成天挺",
+   "outcome": "win",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M207",
+   "a": "纳兰明慧",
+   "b": "飞红巾",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M208",
+   "a": "多铎",
+   "b": "易兰珠",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M209",
+   "a": "凌未风",
+   "b": "飞红巾",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M210",
+   "a": "凌未风",
+   "b": "郑铁牌",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M211",
+   "a": "冒浣莲",
+   "b": "纳兰明慧",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M212",
+   "a": "冒浣莲",
+   "b": "飞红巾",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M213",
+   "a": "成天挺",
+   "b": "楚昭南",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M214",
+   "a": "成天挺",
+   "b": "飞红巾",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:031",
+   "scene": "S017-02"
+  },
+  {
+   "id": "M215",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "七剑下天山",
+   "loc": "017:143",
+   "scene": "S017-03"
+  },
+  {
+   "id": "M216",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "018:003",
+   "scene": "S018-01"
+  },
+  {
+   "id": "M217",
+   "a": "凌未风",
+   "b": "大内",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "018:003",
+   "scene": "S018-01"
+  },
+  {
+   "id": "M218",
+   "a": "飞红巾",
+   "b": "齐真君",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M219",
+   "a": "凌未风",
+   "b": "邱东洛",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M220",
+   "a": "韩志邦",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M221",
+   "a": "凌未风",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M222",
+   "a": "练霓裳",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M223",
+   "a": "邱东洛",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M224",
+   "a": "凌未风",
+   "b": "纽祜庐",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M225",
+   "a": "柳西岩",
+   "b": "桂仲明",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M226",
+   "a": "柳西岩",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:007",
+   "scene": "S019-01"
+  },
+  {
+   "id": "M227",
+   "a": "凌未风",
+   "b": "齐真君",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M228",
+   "a": "成天挺",
+   "b": "桂仲明",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M229",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M230",
+   "a": "楚昭南",
+   "b": "韩志邦",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M231",
+   "a": "楚昭南",
+   "b": "飞红巾",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M232",
+   "a": "桂仲明",
+   "b": "齐真君",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M233",
+   "a": "张青原",
+   "b": "清兵",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M234",
+   "a": "御林军",
+   "b": "石振飞",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M235",
+   "a": "石振飞",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M236",
+   "a": "宗达?完真",
+   "b": "易兰珠",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M237",
+   "a": "易兰珠",
+   "b": "飞红巾",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M238",
+   "a": "楚昭南",
+   "b": "齐真君",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M239",
+   "a": "桂仲明",
+   "b": "郑铁牌",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M240",
+   "a": "大内",
+   "b": "韩志邦",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M241",
+   "a": "凌未风",
+   "b": "成天挺",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M242",
+   "a": "凌未风",
+   "b": "刁四福",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M243",
+   "a": "楚昭南",
+   "b": "石振飞",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M244",
+   "a": "桂仲明",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M245",
+   "a": "成天挺",
+   "b": "通明和尚",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M246",
+   "a": "张青原",
+   "b": "御林军",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M247",
+   "a": "清兵",
+   "b": "石振飞",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:075",
+   "scene": "S019-02"
+  },
+  {
+   "id": "M248",
+   "a": "成天挺",
+   "b": "武琼瑶",
+   "outcome": "win",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M249",
+   "a": "傅青主",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M250",
+   "a": "武琼瑶",
+   "b": "郑大锟",
+   "outcome": "loss",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M251",
+   "a": "武琼瑶",
+   "b": "邱东洛",
+   "outcome": "loss",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M252",
+   "a": "石天成",
+   "b": "辛龙子",
+   "outcome": "loss",
+   "weight": 0.25,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M253",
+   "a": "石大娘",
+   "b": "辛龙子",
+   "outcome": "loss",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M254",
+   "a": "武琼瑶",
+   "b": "清军",
+   "outcome": "win",
+   "weight": 0.25,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M255",
+   "a": "易兰珠",
+   "b": "清军",
+   "outcome": "win",
+   "weight": 0.25,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M256",
+   "a": "清军",
+   "b": "石天成",
+   "outcome": "win",
+   "weight": 0.25,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M257",
+   "a": "石大娘",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:003",
+   "scene": "S023-01"
+  },
+  {
+   "id": "M258",
+   "a": "楚昭南",
+   "b": "辛龙子",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:109",
+   "scene": "S023-02"
+  },
+  {
+   "id": "M259",
+   "a": "张华昭",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:109",
+   "scene": "S023-02"
+  },
+  {
+   "id": "M260",
+   "a": "楚昭南",
+   "b": "韩荆",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:109",
+   "scene": "S023-02"
+  },
+  {
+   "id": "M261",
+   "a": "刘郁芳",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:109",
+   "scene": "S023-02"
+  },
+  {
+   "id": "M262",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:109",
+   "scene": "S023-02"
+  },
+  {
+   "id": "M263",
+   "a": "凌未风",
+   "b": "天蒙禅师",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M264",
+   "a": "孟武威",
+   "b": "铁扇帮",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M265",
+   "a": "尚云亭",
+   "b": "石振飞",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M266",
+   "a": "天蒙禅师",
+   "b": "杨云骢",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M267",
+   "a": "天龙禅师",
+   "b": "杨云骢",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M268",
+   "a": "易兰珠",
+   "b": "郝飞凤",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M269",
+   "a": "尚云亭",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M270",
+   "a": "尚云亭",
+   "b": "石大娘",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M271",
+   "a": "尚云亭",
+   "b": "飞红巾",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M272",
+   "a": "尚云亭",
+   "b": "辛龙子",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M273",
+   "a": "凌未风",
+   "b": "尚云亭",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M274",
+   "a": "傅青主",
+   "b": "凌未风",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M275",
+   "a": "傅青主",
+   "b": "尚云亭",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M276",
+   "a": "武琼瑶",
+   "b": "郝飞凤",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:011",
+   "scene": "S024-01"
+  },
+  {
+   "id": "M277",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M278",
+   "a": "辛龙子",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M279",
+   "a": "天蒙禅师",
+   "b": "辛龙子",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M280",
+   "a": "刘郁芳",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M281",
+   "a": "石天成",
+   "b": "齐真君",
+   "outcome": "loss",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M282",
+   "a": "刘郁芳",
+   "b": "武琼瑶",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M283",
+   "a": "成天挺",
+   "b": "武琼瑶",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M284",
+   "a": "成天挺",
+   "b": "易兰珠",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M285",
+   "a": "凌未风",
+   "b": "大内",
+   "outcome": "loss",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:079",
+   "scene": "S025-04"
+  },
+  {
+   "id": "M286",
+   "a": "易兰珠",
+   "b": "桂仲明",
+   "outcome": "loss",
+   "weight": 0.6,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "七剑下天山",
+   "loc": "027:011",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M287",
+   "a": "何绿华",
+   "b": "傅青主",
+   "outcome": "win",
+   "weight": 0.18,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "027:037",
+   "scene": "S027-02"
+  },
+  {
+   "id": "M288",
+   "a": "傅青主",
+   "b": "神策营",
+   "outcome": "loss",
+   "weight": 0.18,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "027:037",
+   "scene": "S027-02"
+  },
+  {
+   "id": "M289",
+   "a": "武琼瑶",
+   "b": "玄真",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "单挑",
+   "book": "七剑下天山",
+   "loc": "027:103",
+   "scene": "S027-04"
+  },
+  {
+   "id": "M290",
+   "a": "周青",
+   "b": "李思永",
+   "outcome": "loss",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "028:009",
+   "scene": "S028-01"
+  },
+  {
+   "id": "M291",
+   "a": "傅青主",
+   "b": "周青",
+   "outcome": "win",
+   "weight": 0.15,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "028:009",
+   "scene": "S028-01"
+  },
+  {
+   "id": "M292",
+   "a": "易兰珠",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M293",
+   "a": "楚昭南",
+   "b": "韩志邦",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M294",
+   "a": "成天挺",
+   "b": "易兰珠",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M295",
+   "a": "刘郁芳",
+   "b": "成天挺",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M296",
+   "a": "成天挺",
+   "b": "韩志邦",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M297",
+   "a": "傅青主",
+   "b": "禁卫军",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M298",
+   "a": "凌未风",
+   "b": "韩志邦",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M299",
+   "a": "李思永",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M300",
+   "a": "桂仲明",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M301",
+   "a": "周青",
+   "b": "成天挺",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:011",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M302",
+   "a": "桑乾",
+   "b": "玄真",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M303",
+   "a": "桂仲明",
+   "b": "桑弧",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M304",
+   "a": "桑仁",
+   "b": "玄通",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M305",
+   "a": "何绿华",
+   "b": "桑弧",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M306",
+   "a": "桑乾",
+   "b": "桑弧",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M307",
+   "a": "桑仁",
+   "b": "玄真",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M308",
+   "a": "桑弧",
+   "b": "玄真",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M309",
+   "a": "冒浣莲",
+   "b": "桑弧",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M310",
+   "a": "凌未风",
+   "b": "桑仁",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:031",
+   "scene": "S030-02"
+  },
+  {
+   "id": "M311",
+   "a": "周青",
+   "b": "龙木公",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "002:019",
+   "scene": "S002-01"
+  },
+  {
+   "id": "M312",
+   "a": "冯广潮",
+   "b": "龙木公",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "002:019",
+   "scene": "S002-01"
+  },
+  {
+   "id": "M313",
+   "a": "邝琏",
+   "b": "雷海音",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "002:019",
+   "scene": "S002-01"
+  },
+  {
+   "id": "M314",
+   "a": "萨天都",
+   "b": "陈元霸",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "003:095",
+   "scene": "S003-02"
+  },
+  {
+   "id": "M315",
+   "a": "柳先开",
+   "b": "萨天剌",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:003",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M316",
+   "a": "朗月禅师",
+   "b": "萨天都",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:003",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M317",
+   "a": "朗月禅师",
+   "b": "萨天剌",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:003",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M318",
+   "a": "柳先开",
+   "b": "萨天都",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:003",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M319",
+   "a": "玄风道长",
+   "b": "神魔双老",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:003",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M320",
+   "a": "朗月禅师",
+   "b": "神魔双老",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:003",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M321",
+   "a": "关东四侠",
+   "b": "神魔双老",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:003",
+   "scene": "S004-01"
+  },
+  {
+   "id": "M322",
+   "a": "了因",
+   "b": "吕四娘",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "008:041",
+   "scene": "S008-01"
+  },
+  {
+   "id": "M323",
+   "a": "吕四娘",
+   "b": "海云和尚",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "008:041",
+   "scene": "S008-01"
+  },
+  {
+   "id": "M324",
+   "a": "吕四娘",
+   "b": "天叶散人",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "008:041",
+   "scene": "S008-01"
+  },
+  {
+   "id": "M325",
+   "a": "了因",
+   "b": "易兰珠",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:065",
+   "scene": "S009-02"
+  },
+  {
+   "id": "M326",
+   "a": "萨天剌",
+   "b": "钟万堂",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "011:013",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M327",
+   "a": "冯琳",
+   "b": "萨天剌",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "011:013",
+   "scene": "S011-01"
+  },
+  {
+   "id": "M328",
+   "a": "吕四娘",
+   "b": "天叶散人",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "011:069",
+   "scene": "S011-02"
+  },
+  {
+   "id": "M329",
+   "a": "天叶散人",
+   "b": "易兰珠",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "011:069",
+   "scene": "S011-02"
+  },
+  {
+   "id": "M330",
+   "a": "吕四娘",
+   "b": "秦中越",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:021",
+   "scene": "S012-01"
+  },
+  {
+   "id": "M331",
+   "a": "董巨川",
+   "b": "路民瞻",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:021",
+   "scene": "S012-01"
+  },
+  {
+   "id": "M332",
+   "a": "吕四娘",
+   "b": "甘天龙",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:021",
+   "scene": "S012-01"
+  },
+  {
+   "id": "M333",
+   "a": "甘凤池",
+   "b": "秦中越",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "013:003",
+   "scene": "S013-01"
+  },
+  {
+   "id": "M334",
+   "a": "侯三变",
+   "b": "唐晓澜",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "014:033",
+   "scene": "S014-01"
+  },
+  {
+   "id": "M335",
+   "a": "唐晓澜",
+   "b": "祝家澍",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "014:033",
+   "scene": "S014-01"
+  },
+  {
+   "id": "M336",
+   "a": "唐晓澜",
+   "b": "杨仲英",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "014:075",
+   "scene": "S014-02"
+  },
+  {
+   "id": "M337",
+   "a": "哈布陀",
+   "b": "杨仲英",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "014:075",
+   "scene": "S014-02"
+  },
+  {
+   "id": "M338",
+   "a": "凌岳",
+   "b": "曹元朗",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:017",
+   "scene": "S016-01"
+  },
+  {
+   "id": "M339",
+   "a": "玄风道长",
+   "b": "韩重山",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M340",
+   "a": "唐晓澜",
+   "b": "玄风道长",
+   "outcome": "win",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M341",
+   "a": "唐晓澜",
+   "b": "尚复初",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M342",
+   "a": "白泰官",
+   "b": "韩重山",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M343",
+   "a": "董巨川",
+   "b": "陈元霸",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M344",
+   "a": "卫扬威",
+   "b": "甘凤池",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M345",
+   "a": "吕四娘",
+   "b": "韩重山",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M346",
+   "a": "柳先开",
+   "b": "董巨川",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M347",
+   "a": "天叶散人",
+   "b": "韩重山",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M348",
+   "a": "董巨川",
+   "b": "韩重山",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M349",
+   "a": "吕四娘",
+   "b": "董巨川",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M350",
+   "a": "唐晓澜",
+   "b": "杨仲英",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M351",
+   "a": "杨仲英",
+   "b": "甘凤池",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:073",
+   "scene": "S016-02"
+  },
+  {
+   "id": "M352",
+   "a": "了因",
+   "b": "吕四娘",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "017:097",
+   "scene": "S017-03"
+  },
+  {
+   "id": "M353",
+   "a": "吕四娘",
+   "b": "车鼎丰",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "017:097",
+   "scene": "S017-03"
+  },
+  {
+   "id": "M354",
+   "a": "冯琳",
+   "b": "吕四娘",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "017:097",
+   "scene": "S017-03"
+  },
+  {
+   "id": "M355",
+   "a": "了因",
+   "b": "武成化",
+   "outcome": "loss",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "019:093",
+   "scene": "S019-03"
+  },
+  {
+   "id": "M356",
+   "a": "了因",
+   "b": "李治",
+   "outcome": "loss",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "019:093",
+   "scene": "S019-03"
+  },
+  {
+   "id": "M357",
+   "a": "吕四娘",
+   "b": "韩重山",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "020:003",
+   "scene": "S020-01"
+  },
+  {
+   "id": "M358",
+   "a": "吕四娘",
+   "b": "天叶散人",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "020:003",
+   "scene": "S020-01"
+  },
+  {
+   "id": "M359",
+   "a": "叶横波",
+   "b": "吕四娘",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "020:003",
+   "scene": "S020-01"
+  },
+  {
+   "id": "M360",
+   "a": "吕四娘",
+   "b": "董巨川",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "020:003",
+   "scene": "S020-01"
+  },
+  {
+   "id": "M361",
+   "a": "本无大师",
+   "b": "董巨川",
+   "outcome": "win",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "021:003",
+   "scene": "S021-01"
+  },
+  {
+   "id": "M362",
+   "a": "本无大师",
+   "b": "韩重山",
+   "outcome": "win",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "021:003",
+   "scene": "S021-01"
+  },
+  {
+   "id": "M363",
+   "a": "允禵",
+   "b": "吕四娘",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "022:007",
+   "scene": "S022-01"
+  },
+  {
+   "id": "M364",
+   "a": "关东四侠",
+   "b": "李治",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:043",
+   "scene": "S023-02"
+  },
+  {
+   "id": "M365",
+   "a": "方今明",
+   "b": "车辟邪",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:135",
+   "scene": "S023-03"
+  },
+  {
+   "id": "M366",
+   "a": "冯瑛",
+   "b": "年羹尧",
+   "outcome": "win",
+   "weight": 0.06,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:043",
+   "scene": "S025-02"
+  },
+  {
+   "id": "M367",
+   "a": "年羹尧",
+   "b": "李治",
+   "outcome": "loss",
+   "weight": 0.06,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:043",
+   "scene": "S025-02"
+  },
+  {
+   "id": "M368",
+   "a": "了因",
+   "b": "武成化",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:085",
+   "scene": "S025-03"
+  },
+  {
+   "id": "M369",
+   "a": "年羹尧",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:085",
+   "scene": "S025-03"
+  },
+  {
+   "id": "M370",
+   "a": "武成化",
+   "b": "神魔双老",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:085",
+   "scene": "S025-03"
+  },
+  {
+   "id": "M371",
+   "a": "武成化",
+   "b": "萨天都",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:085",
+   "scene": "S025-03"
+  },
+  {
+   "id": "M372",
+   "a": "了因",
+   "b": "萨天剌",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:085",
+   "scene": "S025-03"
+  },
+  {
+   "id": "M373",
+   "a": "了因",
+   "b": "萨天都",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:085",
+   "scene": "S025-03"
+  },
+  {
+   "id": "M374",
+   "a": "了因",
+   "b": "神魔双老",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:085",
+   "scene": "S025-03"
+  },
+  {
+   "id": "M375",
+   "a": "甘凤池",
+   "b": "甘天龙",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M376",
+   "a": "冯瑛",
+   "b": "李源",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M377",
+   "a": "冯瑛",
+   "b": "杨仲英",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M378",
+   "a": "吕四娘",
+   "b": "车辟邪",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M379",
+   "a": "吕四娘",
+   "b": "天叶散人",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M380",
+   "a": "天叶散人",
+   "b": "白泰官",
+   "outcome": "loss",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M381",
+   "a": "了因",
+   "b": "李源",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M382",
+   "a": "冯瑛",
+   "b": "路民瞻",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M383",
+   "a": "一瓢和尚",
+   "b": "冯瑛",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M384",
+   "a": "甘凤池",
+   "b": "董巨川",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M385",
+   "a": "柳先开",
+   "b": "车辟邪",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M386",
+   "a": "冯琳",
+   "b": "江南七侠",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M387",
+   "a": "了因",
+   "b": "冯瑛",
+   "outcome": "draw",
+   "weight": 0.1,
+   "confidence": "medium",
+   "modifiers": [
+    "放水",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:013",
+   "scene": "S027-01"
+  },
+  {
+   "id": "M388",
+   "a": "冯琳",
+   "b": "王敖",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:119",
+   "scene": "S027-03"
+  },
+  {
+   "id": "M389",
+   "a": "冯琳",
+   "b": "王敖",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:031",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M390",
+   "a": "冯琳",
+   "b": "叶横波",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:031",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M391",
+   "a": "叶横波",
+   "b": "李治",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:031",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M392",
+   "a": "李治",
+   "b": "王敖",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:031",
+   "scene": "S028-02"
+  },
+  {
+   "id": "M393",
+   "a": "冯琳",
+   "b": "海云和尚",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "中毒"
+   ],
+   "kind": "单挑",
+   "book": "江湖三女侠",
+   "loc": "029:027",
+   "scene": "S029-01"
+  },
+  {
+   "id": "M394",
+   "a": "哈布陀",
+   "b": "李治",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "029:121",
+   "scene": "S029-02"
+  },
+  {
+   "id": "M395",
+   "a": "了因",
+   "b": "李治",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "029:121",
+   "scene": "S029-02"
+  },
+  {
+   "id": "M396",
+   "a": "允祯",
+   "b": "冯瑛",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "030:167",
+   "scene": "S030-04"
+  },
+  {
+   "id": "M397",
+   "a": "冯瑛",
+   "b": "年羹尧",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "030:167",
+   "scene": "S030-04"
+  },
+  {
+   "id": "M398",
+   "a": "唐赛花",
+   "b": "杨柳青",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "032:057",
+   "scene": "S032-03"
+  },
+  {
+   "id": "M399",
+   "a": "冯瑛",
+   "b": "杨柳青",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "江湖三女侠",
+   "loc": "032:137",
+   "scene": "S032-04"
+  },
+  {
+   "id": "M400",
+   "a": "唐晓澜",
+   "b": "天叶散人",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "033:003",
+   "scene": "S033-01"
+  },
+  {
+   "id": "M401",
+   "a": "天叶散人",
+   "b": "甘凤池",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "033:003",
+   "scene": "S033-01"
+  },
+  {
+   "id": "M402",
+   "a": "海云和尚",
+   "b": "路民瞻",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "033:069",
+   "scene": "S033-03"
+  },
+  {
+   "id": "M403",
+   "a": "冯瑛",
+   "b": "海云和尚",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "033:069",
+   "scene": "S033-03"
+  },
+  {
+   "id": "M404",
+   "a": "冯瑛",
+   "b": "路民瞻",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "033:069",
+   "scene": "S033-03"
+  },
+  {
+   "id": "M405",
+   "a": "海云和尚",
+   "b": "甘凤池",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "033:069",
+   "scene": "S033-03"
+  },
+  {
+   "id": "M406",
+   "a": "毒龙尊者",
+   "b": "甘凤池",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:059",
+   "scene": "S034-01"
+  },
+  {
+   "id": "M407",
+   "a": "唐晓澜",
+   "b": "毒龙尊者",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:059",
+   "scene": "S034-01"
+  },
+  {
+   "id": "M408",
+   "a": "毒龙尊者",
+   "b": "鱼壳",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:059",
+   "scene": "S034-01"
+  },
+  {
+   "id": "M409",
+   "a": "冯瑛",
+   "b": "毒龙尊者",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:059",
+   "scene": "S034-01"
+  },
+  {
+   "id": "M410",
+   "a": "冯瑛",
+   "b": "毒龙尊者",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:113",
+   "scene": "S034-02"
+  },
+  {
+   "id": "M411",
+   "a": "唐晓澜",
+   "b": "毒龙尊者",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:113",
+   "scene": "S034-02"
+  },
+  {
+   "id": "M412",
+   "a": "毒龙尊者",
+   "b": "甘凤池",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:113",
+   "scene": "S034-02"
+  },
+  {
+   "id": "M413",
+   "a": "冯瑛",
+   "b": "唐晓澜",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:113",
+   "scene": "S034-02"
+  },
+  {
+   "id": "M414",
+   "a": "唐晓澜",
+   "b": "萨天都",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "035:065",
+   "scene": "S035-02"
+  },
+  {
+   "id": "M415",
+   "a": "唐晓澜",
+   "b": "萨天剌",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "035:065",
+   "scene": "S035-02"
+  },
+  {
+   "id": "M416",
+   "a": "唐晓澜",
+   "b": "神魔双老",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "035:065",
+   "scene": "S035-02"
+  },
+  {
+   "id": "M417",
+   "a": "毒龙尊者",
+   "b": "甘凤池",
+   "outcome": "loss",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:019",
+   "scene": "S036-01"
+  },
+  {
+   "id": "M418",
+   "a": "吕四娘",
+   "b": "毒龙尊者",
+   "outcome": "win",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:019",
+   "scene": "S036-01"
+  },
+  {
+   "id": "M419",
+   "a": "毒龙尊者",
+   "b": "鱼壳",
+   "outcome": "loss",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:019",
+   "scene": "S036-01"
+  },
+  {
+   "id": "M420",
+   "a": "冯瑛",
+   "b": "毒龙尊者",
+   "outcome": "win",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳",
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:019",
+   "scene": "S036-01"
+  },
+  {
+   "id": "M421",
+   "a": "吕四娘",
+   "b": "毒龙尊者",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:055",
+   "scene": "S036-02"
+  },
+  {
+   "id": "M422",
+   "a": "冯瑛",
+   "b": "毒龙尊者",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:055",
+   "scene": "S036-02"
+  },
+  {
+   "id": "M423",
+   "a": "毒龙尊者",
+   "b": "甘凤池",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:055",
+   "scene": "S036-02"
+  },
+  {
+   "id": "M424",
+   "a": "毒龙尊者",
+   "b": "鱼壳",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:055",
+   "scene": "S036-02"
+  },
+  {
+   "id": "M425",
+   "a": "吕四娘",
+   "b": "额音和布",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:015",
+   "scene": "S037-01"
+  },
+  {
+   "id": "M426",
+   "a": "允祯",
+   "b": "冯瑛",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:015",
+   "scene": "S037-01"
+  },
+  {
+   "id": "M427",
+   "a": "哈布陀",
+   "b": "甘凤池",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:015",
+   "scene": "S037-01"
+  },
+  {
+   "id": "M428",
+   "a": "冯瑛",
+   "b": "额音和布",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:015",
+   "scene": "S037-01"
+  },
+  {
+   "id": "M429",
+   "a": "允禩",
+   "b": "冯瑛",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:015",
+   "scene": "S037-01"
+  },
+  {
+   "id": "M430",
+   "a": "唐晓澜",
+   "b": "额音和布",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:015",
+   "scene": "S037-01"
+  },
+  {
+   "id": "M431",
+   "a": "允禵",
+   "b": "冯瑛",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:015",
+   "scene": "S037-01"
+  },
+  {
+   "id": "M432",
+   "a": "允禵",
+   "b": "额音和布",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:015",
+   "scene": "S037-01"
+  },
+  {
+   "id": "M433",
+   "a": "邝琏",
+   "b": "龙木公",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "038:083",
+   "scene": "S038-02"
+  },
+  {
+   "id": "M434",
+   "a": "冯瑛",
+   "b": "张天池",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "江湖三女侠",
+   "loc": "038:165",
+   "scene": "S038-03"
+  },
+  {
+   "id": "M435",
+   "a": "冯琳",
+   "b": "额音和布",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "040:115",
+   "scene": "S040-01"
+  },
+  {
+   "id": "M436",
+   "a": "冯琳",
+   "b": "杨柳青",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "040:115",
+   "scene": "S040-01"
+  },
+  {
+   "id": "M437",
+   "a": "唐晓澜",
+   "b": "昆甸上人",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M438",
+   "a": "昆甸上人",
+   "b": "甘凤池",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M439",
+   "a": "吕四娘",
+   "b": "韩重山",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M440",
+   "a": "哈布陀",
+   "b": "毒龙尊者",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M441",
+   "a": "吕四娘",
+   "b": "昆甸上人",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M442",
+   "a": "冯琳",
+   "b": "哈布陀",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M443",
+   "a": "吕四娘",
+   "b": "额音和布",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M444",
+   "a": "冯琳",
+   "b": "毒龙尊者",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M445",
+   "a": "毒龙尊者",
+   "b": "韩重山",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:087",
+   "scene": "S041-02"
+  },
+  {
+   "id": "M446",
+   "a": "昆甸上人",
+   "b": "毒龙尊者",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "042:003",
+   "scene": "S042-01"
+  },
+  {
+   "id": "M447",
+   "a": "毒龙尊者",
+   "b": "韩重山",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "042:003",
+   "scene": "S042-01"
+  },
+  {
+   "id": "M448",
+   "a": "吕四娘",
+   "b": "额音和布",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "042:003",
+   "scene": "S042-01"
+  },
+  {
+   "id": "M449",
+   "a": "唐晓澜",
+   "b": "昆甸上人",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "042:003",
+   "scene": "S042-01"
+  },
+  {
+   "id": "M450",
+   "a": "毒龙尊者",
+   "b": "额音和布",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "042:003",
+   "scene": "S042-01"
+  },
+  {
+   "id": "M451",
+   "a": "唐晓澜",
+   "b": "桂华生",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "044:045",
+   "scene": "S044-02"
+  },
+  {
+   "id": "M452",
+   "a": "冯琳",
+   "b": "桂华生",
+   "outcome": "win",
+   "weight": 0.6,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "044:045",
+   "scene": "S044-02"
+  },
+  {
+   "id": "M453",
+   "a": "冯瑛",
+   "b": "桂华生",
+   "outcome": "loss",
+   "weight": 0.6,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "044:045",
+   "scene": "S044-02"
+  },
+  {
+   "id": "M454",
+   "a": "方今明",
+   "b": "车辟邪",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M455",
+   "a": "天叶散人",
+   "b": "玄风道长",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M456",
+   "a": "年羹尧",
+   "b": "车辟邪",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M457",
+   "a": "年羹尧",
+   "b": "弘法大师",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M458",
+   "a": "年羹尧",
+   "b": "方今明",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M459",
+   "a": "允禵",
+   "b": "年羹尧",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M460",
+   "a": "陈元霸",
+   "b": "韩重山",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M461",
+   "a": "柳先开",
+   "b": "陈元霸",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M462",
+   "a": "年羹尧",
+   "b": "无极派",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:105",
+   "scene": "S045-03"
+  },
+  {
+   "id": "M463",
+   "a": "冯琳",
+   "b": "年羹尧",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "046:017",
+   "scene": "S046-01"
+  },
+  {
+   "id": "M464",
+   "a": "年羹尧",
+   "b": "韩重山",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "046:017",
+   "scene": "S046-01"
+  },
+  {
+   "id": "M465",
+   "a": "年羹尧",
+   "b": "弘法大师",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "046:017",
+   "scene": "S046-01"
+  },
+  {
+   "id": "M466",
+   "a": "唐晓澜",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:003",
+   "scene": "S047-01"
+  },
+  {
+   "id": "M467",
+   "a": "冯瑛",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:003",
+   "scene": "S047-01"
+  },
+  {
+   "id": "M468",
+   "a": "允禟",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:003",
+   "scene": "S047-01"
+  },
+  {
+   "id": "M469",
+   "a": "武成化",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:003",
+   "scene": "S047-01"
+  },
+  {
+   "id": "M470",
+   "a": "冯瑛",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:087",
+   "scene": "S047-02"
+  },
+  {
+   "id": "M471",
+   "a": "唐晓澜",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:087",
+   "scene": "S047-02"
+  },
+  {
+   "id": "M472",
+   "a": "白泰官",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:087",
+   "scene": "S047-02"
+  },
+  {
+   "id": "M473",
+   "a": "李治",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:087",
+   "scene": "S047-02"
+  },
+  {
+   "id": "M474",
+   "a": "冯琳",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:087",
+   "scene": "S047-02"
+  },
+  {
+   "id": "M475",
+   "a": "侯三变",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:087",
+   "scene": "S047-02"
+  },
+  {
+   "id": "M476",
+   "a": "侯三变",
+   "b": "允祯",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:087",
+   "scene": "S047-02"
+  },
+  {
+   "id": "M477",
+   "a": "吕四娘",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:175",
+   "scene": "S047-03"
+  },
+  {
+   "id": "M478",
+   "a": "允祯",
+   "b": "冯瑛",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:041",
+   "scene": "S048-02"
+  },
+  {
+   "id": "M479",
+   "a": "冯琳",
+   "b": "哈布陀",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:041",
+   "scene": "S048-02"
+  },
+  {
+   "id": "M480",
+   "a": "冯琳",
+   "b": "额音和布",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:041",
+   "scene": "S048-02"
+  },
+  {
+   "id": "M481",
+   "a": "冯琳",
+   "b": "冯瑛",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:041",
+   "scene": "S048-02"
+  },
+  {
+   "id": "M482",
+   "a": "允祯",
+   "b": "冯琳",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:041",
+   "scene": "S048-02"
+  },
+  {
+   "id": "M483",
+   "a": "冯瑛",
+   "b": "哈布陀",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:041",
+   "scene": "S048-02"
+  },
+  {
+   "id": "M484",
+   "a": "冯瑛",
+   "b": "额音和布",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:041",
+   "scene": "S048-02"
+  }
+ ],
+ "fighters": [
+  "一瓢和尚",
+  "了因",
+  "云燕平",
+  "伊士达",
+  "何绿华",
+  "何萼华",
+  "侯三变",
+  "保柱",
+  "傅青主",
+  "允祯",
+  "允禟",
+  "允禩",
+  "允禵",
+  "公孙大娘",
+  "公孙雷",
+  "关东四侠",
+  "冒浣莲",
+  "冯广潮",
+  "冯琳",
+  "冯瑛",
+  "凌岳",
+  "凌未风",
+  "凌霄",
+  "刁四福",
+  "刘郁芳",
+  "努尔哈赤",
+  "卓一航",
+  "卓继贤",
+  "卫扬威",
+  "古元亮",
+  "叶横波",
+  "吕四娘",
+  "周青",
+  "哈布陀",
+  "唐家璧、杜明忠",
+  "唐晓澜",
+  "唐赛花",
+  "堪恰族",
+  "塔山族",
+  "多铎",
+  "大内",
+  "天叶散人",
+  "天蒙禅师",
+  "天龙禅师",
+  "孟武威",
+  "宗达?完真",
+  "客娉婷",
+  "客氏",
+  "察克图",
+  "尚云亭",
+  "尚复初",
+  "岳鸣珂",
+  "崔呈秀",
+  "巴拉",
+  "常洵",
+  "常英",
+  "年羹尧",
+  "应修阳",
+  "康熙",
+  "弘法大师",
+  "张华昭",
+  "张天池",
+  "张青原",
+  "张魁",
+  "归有章",
+  "彭昆林",
+  "御林军",
+  "德卡",
+  "慕容冲",
+  "成坤",
+  "成天挺",
+  "成章五",
+  "押不庐",
+  "拙道人",
+  "方今明",
+  "无极派",
+  "昆甸上人",
+  "昌钦大喇嘛",
+  "易兰珠",
+  "智上人",
+  "曹元朗",
+  "朗月禅师",
+  "本无大师",
+  "朱由检",
+  "朱翊钧",
+  "李大人",
+  "李天扬",
+  "李思永",
+  "李治",
+  "李源",
+  "李申时",
+  "杜五、张四",
+  "杨云骢",
+  "杨仲英",
+  "杨柳青",
+  "柳先开",
+  "柳西岩",
+  "桂仲明",
+  "桂华生",
+  "桑乾",
+  "桑仁",
+  "桑弧",
+  "楚昭南",
+  "武当",
+  "武当派",
+  "武成化",
+  "武琼瑶",
+  "毒龙尊者",
+  "江南七侠",
+  "洪涛",
+  "海云和尚",
+  "清兵",
+  "清军",
+  "焦直",
+  "玄真",
+  "玄通",
+  "玄风道长",
+  "玉面妖狐凌霄",
+  "王兵备",
+  "王刚",
+  "王敖",
+  "王照希",
+  "王照希、卓一航",
+  "甘凤池",
+  "甘天龙",
+  "申天虎",
+  "申天豹",
+  "白敏",
+  "白泰官",
+  "白石道人",
+  "石大娘",
+  "石天成",
+  "石振飞",
+  "石浩",
+  "祝家澍",
+  "神一元",
+  "神大元",
+  "神策营",
+  "神魔双老",
+  "禁卫军",
+  "科图",
+  "秦中越",
+  "秦指挥",
+  "程通",
+  "穆九娘",
+  "红云道人",
+  "红云道人、青蓑道人",
+  "红衣喇嘛",
+  "纳兰明慧",
+  "纽祜庐",
+  "练霓裳",
+  "罗布族",
+  "胡天柱",
+  "范筑",
+  "范铮",
+  "萨天剌",
+  "萨天都",
+  "萨马儿族",
+  "董巨川",
+  "路民瞻",
+  "车辟邪",
+  "车鼎丰",
+  "辛龙子",
+  "连城虎",
+  "通明和尚",
+  "邝琏",
+  "邱东洛",
+  "郑大锟",
+  "郑洪台",
+  "郑洪台等七人",
+  "郑贵妃兄弟",
+  "郑铁牌",
+  "郝大绶",
+  "郝继明",
+  "郝飞凤",
+  "金千岩",
+  "金千岩、云燕平",
+  "金崖",
+  "金独异",
+  "钟万堂",
+  "钱四麟",
+  "铁扇帮",
+  "铁珊瑚",
+  "铁笛",
+  "铁飞龙",
+  "阎中天",
+  "阿盖",
+  "陈元霸",
+  "陈锦",
+  "雷海音",
+  "霍元仲",
+  "青松道人",
+  "青蓑道人",
+  "韩志邦",
+  "韩荆",
+  "韩重山",
+  "额音和布",
+  "飞红巾",
+  "魏忠贤",
+  "鱼壳",
+  "鲁王",
+  "黄叶道人",
+  "齐真君",
+  "龙啸云",
+  "龙木公",
+  "龙达三"
+ ]
+}

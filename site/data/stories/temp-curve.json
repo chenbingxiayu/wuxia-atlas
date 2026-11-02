@@ -1,0 +1,438 @@
+{
+ "meta": {
+  "generated": "2026-11-02",
+  "schema": "story-v1",
+  "script": "scripts/build_stories.py",
+  "copyright": "L0：计数+定位符；摘录仅本地使用，不入切片"
+ },
+ "book": "白发魔女传",
+ "a": "卓一航",
+ "b": "练霓裳",
+ "shared_chapters": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32
+ ],
+ "per_chapter": [
+  {
+   "c": 1,
+   "co_events": 10,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 2,
+   "co_events": 9,
+   "pos": 0,
+   "neg": 1,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 3,
+   "co_events": 3,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": [
+    {
+     "l": "003:81",
+     "v": "捉",
+     "a": "练霓裳",
+     "b": "卓一航"
+    }
+   ]
+  },
+  {
+   "c": 4,
+   "co_events": 38,
+   "pos": 0,
+   "neg": 13,
+   "allies": 3,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": [
+    {
+     "l": "004:29",
+     "v": "冲",
+     "a": "练霓裳",
+     "b": "卓一航"
+    },
+    {
+     "l": "004:29",
+     "v": "射",
+     "a": "练霓裳",
+     "b": "卓一航"
+    },
+    {
+     "l": "004:31",
+     "v": "刺",
+     "a": "练霓裳",
+     "b": "卓一航"
+    }
+   ]
+  },
+  {
+   "c": 5,
+   "co_events": 49,
+   "pos": 0,
+   "neg": 4,
+   "allies": 2,
+   "kw_pos": 0,
+   "kw_neg": 3,
+   "key": []
+  },
+  {
+   "c": 6,
+   "co_events": 59,
+   "pos": 0,
+   "neg": 12,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 7,
+   "co_events": 21,
+   "pos": 0,
+   "neg": 5,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 8,
+   "co_events": 15,
+   "pos": 0,
+   "neg": 3,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 0,
+   "key": [
+    {
+     "l": "008:11",
+     "v": "刺",
+     "a": "卓一航",
+     "b": "练霓裳"
+    }
+   ]
+  },
+  {
+   "c": 9,
+   "co_events": 0,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 2,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 10,
+   "co_events": 0,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 3,
+   "key": []
+  },
+  {
+   "c": 11,
+   "co_events": 0,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 12,
+   "co_events": 16,
+   "pos": 0,
+   "neg": 6,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 13,
+   "co_events": 42,
+   "pos": 0,
+   "neg": 13,
+   "allies": 1,
+   "kw_pos": 2,
+   "kw_neg": 3,
+   "key": []
+  },
+  {
+   "c": 14,
+   "co_events": 11,
+   "pos": 0,
+   "neg": 2,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 15,
+   "co_events": 48,
+   "pos": 0,
+   "neg": 3,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 1,
+   "key": []
+  },
+  {
+   "c": 16,
+   "co_events": 31,
+   "pos": 0,
+   "neg": 5,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 17,
+   "co_events": 8,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 18,
+   "co_events": 7,
+   "pos": 0,
+   "neg": 3,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": [
+    {
+     "l": "018:95",
+     "v": "扣",
+     "a": "练霓裳",
+     "b": "卓一航"
+    }
+   ]
+  },
+  {
+   "c": 19,
+   "co_events": 4,
+   "pos": 0,
+   "neg": 1,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 20,
+   "co_events": 12,
+   "pos": 0,
+   "neg": 10,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 21,
+   "co_events": 10,
+   "pos": 0,
+   "neg": 6,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 22,
+   "co_events": 0,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 23,
+   "co_events": 5,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 24,
+   "co_events": 1,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 25,
+   "co_events": 7,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 26,
+   "co_events": 21,
+   "pos": 0,
+   "neg": 10,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 27,
+   "co_events": 6,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 28,
+   "co_events": 15,
+   "pos": 0,
+   "neg": 3,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 29,
+   "co_events": 17,
+   "pos": 0,
+   "neg": 7,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 30,
+   "co_events": 4,
+   "pos": 0,
+   "neg": 1,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 1,
+   "key": []
+  },
+  {
+   "c": 31,
+   "co_events": 11,
+   "pos": 0,
+   "neg": 4,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": [
+    {
+     "l": "031:203",
+     "v": "刺",
+     "a": "练霓裳",
+     "b": "卓一航"
+    }
+   ]
+  },
+  {
+   "c": 32,
+   "co_events": 26,
+   "pos": 0,
+   "neg": 7,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 1,
+   "key": []
+  }
+ ],
+ "markers": [
+  {
+   "c": 1,
+   "label": "劫镖初会"
+  },
+  {
+   "c": 4,
+   "label": "黄龙洞剑谱"
+  },
+  {
+   "c": 13,
+   "label": "武当重逢"
+  },
+  {
+   "c": 26,
+   "label": "剑闯名山 · 一夜白头（026:53）"
+  },
+  {
+   "c": 29,
+   "label": "银针暗救（029）"
+  },
+  {
+   "c": 32,
+   "label": "天山守花相望"
+  }
+ ]
+}

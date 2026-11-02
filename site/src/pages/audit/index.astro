@@ -1,7 +1,79 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import audit from '@data/audit.json';
+import { B } from '@lib/base';
+const amb = audit.r1_ambiguous;
+const passes = audit.r1_passes;
 ---
-<Base title="audit">
-  <Placeholder title="audit" milestone="M4" desc="穿帮雷达：死亡/年龄/习得时序一致性报告 + 明文×评分冲突。" />
+<Base title="穿帮雷达">
+  <p class="crumb">工具 · 穿帮雷达（v0 · 规则引擎构建期输出）</p>
+  <h1>穿帮雷达</h1>
+  <p class="lead">
+    规则 R1「死亡一致性」：事件层"杀"事件的对象，此后是否仍以非引述身份出场。
+    输出为<b>两可清单</b>——"杀"可能非致死（未遂/重伤），也可能是真穿帮；不做断言，每条都可点开定位符对质。
+    R2 武功习得时序（待工具 A 招式考订）、R3 毒理一致性（待丹药谱）挂账中。
+  </p>
+
+  <div class="stats">
+    <span><b>{audit.totals.death_events}</b> 起"杀"事件</span>
+    <span><b>{audit.totals.checked}</b> 名死者检查</span>
+    <span class="amb"><b>{audit.totals.ambiguous}</b> 两可</span>
+    <span class="pass"><b>{audit.totals.passes}</b> 验证通过</span>
+  </div>
+
+  <section>
+    <h2>两可清单 <small>死后仍以非引述身份出场（按活跃度排序）</small></h2>
+    <div class="cards">
+      {amb.map((v) => (
+        <div class="card">
+          <div class="head"><b>{v.name}</b><span class="mono">死于 {v.death.book}·{v.death.loc}{v.death.by ? `（${v.death.by}）` : ''}</span></div>
+          <p>此后非引述出场 <b>{v.live_n}</b> 次 / 共 {v.after_n} 次
+            {v.deaths_n > 1 && <span class="dim"> · 另有 {v.deaths_n - 1} 起"杀"事件（复杀疑云）</span>}</p>
+          <ul>
+            {v.samples.map((s) => (
+              <li><a class="mono" href={`${B}books/${encodeURIComponent(s.book)}/${parseInt(s.loc, 10)}/`}>{s.book}·{s.loc} →</a> 以{s.role}方「{s.v}」</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>验证通过展品 <small>死后出场全部为引述（回述正确标注）——事件层校订质量的证明</small></h2>
+    <div class="cards">
+      {passes.map((v) => (
+        <div class="card pass">
+          <div class="head"><b>{v.name}</b><span class="mono">{v.death.book}·{v.death.loc}</span></div>
+          <p>此后 {v.after_n} 次提及全部为引述（in_quote）——<b>✓ 通过</b></p>
+        </div>
+      ))}
+      {passes.length === 0 && <p class="dim">暂无（本批死者多无后续提及）</p>}
+    </div>
+  </section>
 </Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 880px; line-height: 1.9; }
+  .stats { display: flex; gap: 26px; flex-wrap: wrap; margin: 14px 0 4px; font-size: .95rem; }
+  .stats b { font-size: 1.3rem; }
+  .stats .amb b { color: #a23527; }
+  .stats .pass b { color: #4f6e4a; }
+  section { margin-top: var(--space-5); }
+  h2 { font-size: 1.05rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  h2 small { font-weight: 400; font-size: .78rem; color: var(--ink-faint); margin-left: .6em; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; margin-top: 12px; }
+  .card { border: 1px solid var(--line-strong); border-radius: 4px; padding: 12px 16px; background: rgba(255,255,255,.45); }
+  .card.pass { border-color: #4f6e4a; }
+  .head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+  .head b { font-size: 1.02rem; }
+  .mono { font-family: var(--font-mono); font-size: .78em; color: var(--ink-faint); }
+  .card p { margin: 6px 0 0; font-size: .88rem; color: var(--ink-light); }
+  .card b { color: var(--seal); }
+  .card.pass b, .card p b { color: #4f6e4a; }
+  .card ul { list-style: none; padding: 0; margin: 8px 0 0; font-size: .82rem; }
+  .card li { padding: 2px 0; }
+  .card a { color: var(--azure); }
+  .dim { color: var(--ink-faint); font-size: .8rem; }
+</style>

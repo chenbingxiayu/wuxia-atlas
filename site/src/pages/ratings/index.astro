@@ -1,7 +1,22 @@
 ---
 import Base from '../../layouts/Base.astro';
-import Placeholder from '../../components/Placeholder.astro';
+import RatingExplorer from '../../islands/RatingExplorer';
+import { B } from '@lib/base';
 ---
-<Base title="ratings">
-  <Placeholder title="ratings" milestone="M4" desc="侠谱评分：Glicko-2 战力榜，每条分数可出示原文。功能规格已定稿。" />
+<Base title="侠谱总榜">
+  <p class="crumb">侠谱评分 · 总榜（M4 · v0）</p>
+  <h1>侠谱总榜</h1>
+  <p class="lead">
+    基于原著交手记录的 Glicko-2 战力榜——<b>每条分数都可以点开原文对质</b>。
+    对局来自事件表场景切分 + 胜负词表明文裁决（词表 v0.1）；区间（RD）宽者即"数据不足"，诚实呈现长尾。
+    <a href={`${B}ratings/method/`}>口径与参数</a> · <a href={`${B}ratings/conflicts/`}>明文冲突页</a> ·
+    免责：娱乐性指数，不含作者口述、改编作品与读者共识；不做"谁天下第一"式断言。
+  </p>
+  <RatingExplorer client:visible />
 </Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 900px; line-height: 1.9; }
+  .lead a { color: var(--azure); }
+</style>

@@ -1,0 +1,109 @@
+---
+import Base from '../../layouts/Base.astro';
+import booksJson from '@data/books.json';
+import universe from '@data/universe.json';
+import { B } from '@lib/base';
+
+/* 互文图谱（N8）：节点 = 34 部作品（按系列线着色、环状排布），边 = 作者明示互文（authorial）。 */
+const lineColor: Record<string, string> = {};
+for (const ln of universe.lines) for (const m of ln.members) lineColor[m.book] = ln.color;
+
+const books = booksJson.books.map((w) => w.book);
+const refs: { src: string; dst: string; count: number; locs: number }[] = [];
+for (const w of booksJson.books) {
+  for (const r of w.out_refs || []) {
+    if (r.kind === 'authorial' && books.includes(r.book)) {
+      refs.push({ src: w.book, dst: r.book, count: r.count, locs: (r.locs || []).length });
+    }
+  }
+}
+refs.sort((a, b) => b.count - a.count);
+
+const N = books.length;
+const CX = 560, CY = 400, R = 300;
+const pos: Record<string, { x: number; y: number }> = {};
+books.forEach((name, i) => {
+  const ang = (i / N) * Math.PI * 2 - Math.PI / 2;
+  pos[name] = { x: CX + R * Math.cos(ang), y: CY + R * Math.sin(ang) * 0.86 };
+});
+const maxCount = Math.max(...refs.map((r) => r.count), 1);
+---
+
+<Base title="互文图谱">
+  <p class="crumb"><a href="../">宇宙</a> / 互文图谱（N8 · M3）</p>
+  <h1>互文图谱</h1>
+  <p class="lead">
+    「事见拙著《X》」——梁羽生亲笔写下的跨书接口。节点 = 34 部作品（按系列线着色），
+    边 = <b>作者明示互文</b>（authorial，{refs.length} 对 · 全部含定位符）。这是任何百科都没有的
+    <b>作者自己盖章的宇宙地图</b>；悬停节点/边看详情，点击进书页。
+  </p>
+
+  <div class="chartcard">
+    <svg viewBox="0 0 1120 800" role="img" aria-label="梁羽生作品互文环图（作者明示互文）">
+      {refs.map((r, i) => (
+        <line x1={pos[r.src].x} y1={pos[r.src].y} x2={pos[r.dst].x} y2={pos[r.dst].y}
+          stroke="#a23527" stroke-width={0.6 + (r.count / maxCount) * 2.2} opacity="0.28">
+          <title>{r.src} → {r.dst}：互文 {r.count} 处</title>
+        </line>
+      ))}
+      {books.map((name) => {
+        const p = pos[name];
+        const dx = p.x - CX, dy = p.y - CY;
+        const len = Math.hypot(dx, dy) || 1;
+        const anchor = dx >= 0 ? 'start' : 'end';
+        return (
+          <g>
+            <circle cx={p.x} cy={p.y} r="7" fill={lineColor[name] || '#8a8172'} stroke="#fbf8ef" stroke-width="2">
+              <title>{name}</title>
+            </circle>
+            <text x={p.x + (dx / len) * 16} y={p.y + (dy / len) * 16 + 4}
+              font-size="12.5" fill="#262420" text-anchor={anchor}
+              font-family="'Noto Serif SC',serif">{name}</text>
+          </g>
+        );
+      })}
+    </svg>
+  </div>
+
+  <section>
+    <h2>互文边清单 <small>authorial · 按互文处数排序 · 定位符见互文引用表</small></h2>
+    <table>
+      <thead><tr><th>来源作品</th><th></th><th>被引作品</th><th>处数</th><th>定位符样例</th></tr></thead>
+      <tbody>
+        {refs.map((r) => (
+          <tr>
+            <td><a href={`${B}books/${r.src}/`}>{r.src}</a></td>
+            <td class="arrow">→</td>
+            <td><a href={`${B}books/${r.dst}/`}>{r.dst}</a></td>
+            <td class="mono">{r.count}</td>
+            <td class="mono dim">互文引用表 · authorial</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p class="fine">
+      口径：仅作者明示互文（"事详拙著/请续看"式，{refs.length} 对）；书名被引（bare）与角色对白引用未入图。
+      摘录文本（L1）不入切片——定位符到互文引用表（语料库）对质。
+    </p>
+  </section>
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 900px; line-height: 1.9; }
+  .chartcard { border: 1px solid var(--line-strong); border-radius: 4px; padding: 10px; background: #fbf8ef; }
+  svg { width: 100%; height: auto; display: block; }
+  section { margin-top: var(--space-5); }
+  h2 { font-size: 1.05rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  h2 small { font-weight: 400; font-size: .78rem; color: var(--ink-faint); margin-left: .6em; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
+  th, td { text-align: left; padding: .45em .6em; border-bottom: 1px solid var(--line); }
+  th { color: var(--ink-faint); }
+  td a { color: var(--azure); }
+  td a:hover { color: var(--seal); }
+  .arrow { color: var(--seal); }
+  .mono { font-family: var(--font-mono); font-size: .85em; }
+  .dim { color: var(--ink-faint); }
+  .fine { color: var(--ink-faint); font-size: .82rem; margin-top: 10px; }
+</style>

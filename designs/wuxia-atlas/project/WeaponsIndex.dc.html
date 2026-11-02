@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>神兵谱 · 江湖图志</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4eee0;color:#262420;font-family:'Noto Serif SC',serif}
+a{color:#31536c;text-decoration:none}a:hover{color:#a23527}
+.mono{font-family:ui-monospace,'Cascadia Code',Consolas,monospace}
+.shell{max-width:1280px;margin:0 auto;padding:0 44px}
+.top{background:#fbf8ef;border-bottom:3px solid #262420;box-shadow:0 5px 0 -4px #262420}
+.topin{max-width:1280px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;gap:26px}
+.brand{display:flex;align-items:center;gap:12px}
+.bseal{width:48px;height:48px;background:#a23527;color:#fbf8ef;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:'Ma Shan Zheng',serif;font-size:16px;line-height:1.15;transform:rotate(-3deg);text-align:center;box-shadow:2px 3px 0 rgba(38,36,32,.22)}
+.bname{font-size:19px;font-weight:900;letter-spacing:2px}
+.bname small{display:block;font-size:10.5px;font-weight:400;color:#5f584b;letter-spacing:3px}
+.nav{display:flex;gap:2px;margin-left:auto}
+.nav a{padding:9px 13px;font-size:15px;color:#5f584b;border-bottom:3px solid transparent}
+.nav a:hover{color:#a23527}
+.nav a.on{color:#a23527;font-weight:700;border-bottom-color:#a23527}
+.foot{background:#fbf8ef;border-top:3px solid #262420;box-shadow:0 -5px 0 -4px #262420;margin-top:60px}
+.footin{max-width:1280px;margin:0 auto;padding:22px 44px;display:flex;gap:40px;align-items:center}
+h2.sec{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:900;margin:34px 0 14px}
+h2.sec:after{content:"";flex:1;height:1px;background:#b5a687}
+.dim{color:#5f584b}.fine{font-size:12.5px;color:#5f584b}
+.card{background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px}
+.chip{display:inline-block;border:1px solid #b5a687;border-radius:999px;padding:3px 13px;font-size:13.5px;background:#fbf8ef;color:#262420;margin:3px;cursor:pointer}
+.chip:hover{border-color:#a23527;color:#a23527}
+.chip.on{border-color:#a23527;color:#a23527;font-weight:700}
+.chip small{color:#8a8172;margin-left:4px}
+.wgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+a.wp{display:block;padding:18px 20px;color:inherit}
+a.wp:hover{border-color:#a23527}
+.wph{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.wname{font-family:'Ma Shan Zheng',serif;font-weight:400;font-size:23px;letter-spacing:2px}
+.g{display:inline-block;border:1.5px solid #a23527;background:#a23527;color:#fbf8ef;border-radius:3px;padding:0 7px;font-size:11.5px;transform:rotate(-1.5deg);white-space:nowrap}
+.g.inf{background:transparent;border-style:dashed;color:#8a6607}
+.g.li{background:transparent;border-style:solid;color:#31536c}
+.cat{margin-left:auto;font-size:12px;color:#5f584b;border:1px solid #b5a687;border-radius:999px;padding:1px 10px;white-space:nowrap}
+.wline{margin:9px 0 0;font-size:13px;color:#5f584b;line-height:1.8}
+.chain{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-top:10px;font-size:12.5px;color:#262420}
+.chain i{font-style:normal;color:#a23527;border:1px solid #a23527;border-radius:3px;padding:0 5px;font-size:11px}
+.wfoot{margin-top:11px;padding-top:9px;border-top:1px solid #e6ddc8;display:flex;font-size:11.5px;color:#8a8172;gap:10px}
+.wfoot span{margin-left:auto}
+.ctrlab{font-size:12.5px;color:#8a8172;white-space:nowrap;letter-spacing:1px}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <div class="top"><div class="topin">
+    <a class="brand" href="#">
+      <span class="bseal">江湖<br>图志</span>
+      <span class="bname">江湖图志<small>LIANG YUSHENG WUXIA ATLAS</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#">首页</a><a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#" class="on">名物</a><a href="#">侠谱</a><a href="#">游戏</a><a href="#">地图</a><a href="#">搜索</a><a href="#">关于</a>
+    </nav>
+  </div></div>
+
+  <main class="shell" style="flex:1">
+    <p class="fine" style="margin:22px 0 0"><a href="#">名物谱</a> / 神兵（M7 · 工具 C 接数）</p>
+    <h1 style="font-size:34px;margin:6px 0 8px;letter-spacing:3px">神兵谱
+      <span style="display:inline-block;border:1.5px solid #a23527;color:#a23527;border-radius:3px;padding:1px 9px;font-size:13px;transform:rotate(-1.5deg);vertical-align:12px">名物谱 · 一</span>
+    </h1>
+    <p class="dim" style="margin:0;font-size:14.5px">
+      <span class="mono">•</span> 兵器/宝物实体 <b>309</b>（四书实测）→ 专名性归层后<b style="color:#a23527">预计入谱 60–100</b> · 首批 Top 20 随工具 C 上线 ·
+      每次易手都挂 <span class="mono" style="border-bottom:1px dotted #b5a687;font-size:13px">书·回:行</span> 定位符
+    </p>
+    <p class="fine" style="margin:8px 0 0">品阶徽章：<b style="color:#a23527">■ 明文</b>（语料直证"神兵/宝剑/利器"）· <b style="color:#8a6607">▯ 推断</b>（排序展示、不进强断言）。排序：品阶明文优先 → 流转事件数。</p>
+
+    <div class="card" style="padding:14px 22px;margin-top:16px">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span class="ctrlab">类别</span>
+        <span class="chip on">全部</span><span class="chip">剑<small>12</small></span><span class="chip">刀<small>3</small></span><span class="chip">暗器<small>9</small></span><span class="chip">软兵<small>4</small></span><span class="chip">护甲<small>2</small></span><span class="chip">奇门<small>7</small></span><span class="chip">宝物<small>6</small></span>
+        <span class="ctrlab" style="margin-left:16px">品阶</span>
+        <span class="chip">神兵</span><span class="chip">利器</span><span class="chip">凡品</span>
+        <span class="ctrlab" style="margin-left:16px">书目</span>
+        <span class="chip on">四书</span><span class="chip">白发</span><span class="chip">七剑</span><span class="chip">三女侠</span>
+        <span class="fine" style="margin-left:auto">数字为首批 Top 20 预演口径</span>
+      </div>
+    </div>
+
+    <div class="wgrid" style="margin-top:18px">
+      <a class="card wp" href="#">
+        <div class="wph"><span class="wname">游龙剑</span><span class="g">神兵 · 明文</span><span class="cat">剑</span></div>
+        <p class="wline">岳鸣珂佩剑，京华—塞外两线的物证线；宫闱一夜被夺，江湖辗转归主。</p>
+        <div class="chain">岳鸣珂 <i>夺</i> 宫中 <i>易手</i> 玉罗刹 <i>还</i> 岳鸣珂</div>
+        <div class="wfoot">白发魔女传 · 流转 4 段<span>考订中</span></div>
+      </a>
+      <a class="card wp" href="#">
+        <div class="wph"><span class="wname">金丝手套</span><span class="g">宝物 · 明文</span><span class="cat">护甲</span></div>
+        <p class="wline">先帝所赐，经成坤、岳鸣珂、熊廷弼数手；秘魔崖之战玉罗刹借用于阵前，事后拟还江夏。</p>
+        <div class="chain">先帝 <i>赐</i> 成坤 <i>转</i> 岳鸣珂 <i>转</i> 熊廷弼 <i>借</i> 玉罗刹</div>
+        <div class="wfoot">白发魔女传 · 流转 6 段<span>考订中</span></div>
+      </a>
+      <a class="card wp" href="#">
+        <div class="wph"><span class="wname">九星定形针</span><span class="g">神兵 · 明文</span><span class="cat">暗器</span></div>
+        <p class="wline">练霓裳独门暗器，一击定形；档案页武功卡与佩兵卡双挂（☆ 功法 × • 兵器同源）。</p>
+        <div class="chain">练霓裳 <i>独门</i></div>
+        <div class="wfoot">白发·016:53 等 5 证<span>考订中</span></div>
+      </a>
+      <a class="card wp" href="#">
+        <div class="wph"><span class="wname">断玉</span><span class="g inf">神兵 · 推断</span><span class="cat">剑</span></div>
+        <p class="wline">见于白发多回；专名入谱，品阶与归属待考订裁定（alias 候选链监控中）。</p>
+        <div class="chain"><span style="color:#8a8172">持有者 · 待考订</span></div>
+        <div class="wfoot">白发魔女传 · 证据 7 处<span>待裁</span></div>
+      </a>
+      <a class="card wp" href="#">
+        <div class="wph"><span class="wname">尚方宝剑</span><span class="g li">利器 · 明文</span><span class="cat">剑 · 官器</span></div>
+        <p class="wline">京华线的权力象征物；经督抚之手出巡关外，与江湖兵刃分属两套流转逻辑。</p>
+        <div class="chain"><span style="color:#8a8172">朝赐 → 巡边（官器链）</span></div>
+        <div class="wfoot">白发魔女传 · 京华段<span>考订中</span></div>
+      </a>
+      <a class="card wp" href="#">
+        <div class="wph"><span class="wname">独脚铜人</span><span class="g inf">利器 · 推断</span><span class="cat">奇门</span></div>
+        <p class="wline">重兵器，见于白发交战段；专名入谱，持有者与品阶待考订。</p>
+        <div class="chain"><span style="color:#8a8172">◈ 交战侧证 · 待归主</span></div>
+        <div class="wfoot">白发魔女传 · 证据 3 处<span>待裁</span></div>
+      </a>
+      <a class="card wp" href="#">
+        <div class="wph"><span class="wname">蝴蝶镖</span><span class="g inf">利器 · 推断</span><span class="cat">暗器</span></div>
+        <p class="wline">见于白发江湖段；专名入谱。</p>
+        <div class="chain"><span style="color:#8a8172">◈ 交战侧证 · 待归主</span></div>
+        <div class="wfoot">白发魔女传 · 证据 2 处<span>待裁</span></div>
+      </a>
+      <a class="card wp" href="#">
+        <div class="wph"><span class="wname">龙泉</span><span class="g inf">利器 · 推断</span><span class="cat">剑</span></div>
+        <p class="wline">名剑通名，专名入谱；注意与泛称"宝剑"的回指消歧（alias_candidates 待裁）。</p>
+        <div class="chain"><span style="color:#8a8172">待考订</span></div>
+        <div class="wfoot">白发魔女传 · 证据 1 处<span>待裁</span></div>
+      </a>
+      <div class="card wp" style="border-style:dashed">
+        <div class="wph"><span class="wname" style="color:#8a8172">未入谱口径</span><span class="cat">归层示例</span></div>
+        <p class="wline">器类泛称（匕首 / 软鞭 / 弹弓 / 珍珠 / 胡琴）→ <b>凡物层</b>，仅数据不发布；药材（雪莲 / 何首乌 / 熊胆）→ <b>丹药谱原料</b>（工具 C 扩展表）。</p>
+        <p class="fine" style="margin:10px 0 0">归层三判：专名性（主）· 明文品阶（副）· 药材词表（转层）——与工具 A 的功法/招式归层同构。</p>
+      </div>
+    </div>
+
+    <h2 class="sec">数据口径 <span class="dim" style="font-weight:400;font-size:14px">《考订工具实现设计》v3 · 工具 C</span></h2>
+    <div class="card" style="padding:16px 24px">
+      <p style="margin:0;font-size:14px;line-height:2">
+        底表 <span class="mono">kb/神兵表.json</span> · 稳定键 = <b>名物规范名</b>（新书同名证据自动并链——跨书流转的增量主通道）·
+        流转边 = 明文句式（赠/夺/还/传/毁/失）&gt; <span class="mono">▲/◈</span> 事件侧证 &gt; 持有先验（weak 不发布）。
+      </p>
+      <p style="margin:10px 0 0;font-size:14px;line-height:2">扩展表预告：
+        <span class="chip">秘籍谱<small>[ 177 × ☆ 功法配对 · 完缺状态</small></span>
+        <span class="chip">丹药谱<small>§ 67 · 毒↔解药 → 穿帮雷达毒理规则</small></span>
+        <span class="chip">权柄谱<small>; 588 · 职衔变迁时间线</small></span>
+      </p>
+      <p class="fine" style="margin:10px 0 0">验收：抽检 50 例，精度 ≥90%、召回 ≥80%（基准 = tagged `•` 标记覆盖率）；页面仅展示 strong / ok 档，考订不完备不阻塞上线。</p>
+    </div>
+  </main>
+
+  <div class="foot"><div class="footin">
+    <p class="fine" style="margin:0;line-height:1.9">本站严格限于小说文本、不做史料考证；引用内容版权归原作权利人所有。</p>
+    <p class="fine" style="margin:0 0 0 auto">数据版本 2026-11-02</p>
+  </div></div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1380}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

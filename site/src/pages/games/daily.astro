@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import GameDaily from '../../islands/GameDaily';
+---
+<Base title="每日一谜">
+  <p class="crumb"><a href="../">侠客游戏</a> / G7 每日一谜</p>
+  <h1>每日一谜</h1>
+  <p class="lead">
+    全网同题（日期哈希选题，无需服务器）：谁杀了 X · 名物归谁 · 门派武功归属——
+    每道谜底唯一且带「书·回」定位符。三次机会，答错解锁下一级提示；emoji 战绩复制分享。
+  </p>
+  <GameDaily client:load />
+</Base>
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 2px; }
+  .lead { color: var(--ink-light); max-width: 820px; line-height: 1.9; }
+</style>

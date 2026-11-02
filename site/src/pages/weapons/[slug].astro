@@ -1,0 +1,131 @@
+---
+import Base from '../../layouts/Base.astro';
+import weaponsJson from '@data/weapons.json';
+import { B } from '@lib/base';
+
+export function getStaticPaths() {
+  return weaponsJson.weapons.map((x) => ({ params: { slug: x.canonical }, props: { x } }));
+}
+const { x } = Astro.props;
+const books = Object.keys(x.books);
+const strongEdges = x.chain.filter((e) => e.conf === 'strong');
+const sideEv = x.chain.filter((e) => e.conf !== 'strong');
+const VERB = { 夺: '夺', 赠: '赠', 还: '还', 传: '传', 借: '借', 毁: '毁', 失: '失', 交战侧证: '证' };
+---
+
+<Base title={x.canonical} description={`${x.canonical}（${x.kind}）：品阶、历代持有人流转链与证据定位符。`}>
+  <p class="crumb"><a href={`${B}weapons/`}>神兵谱</a> / {x.canonical}</p>
+  <h1>
+    {x.canonical}
+    {x.grade && (
+      <span class={x.grade_basis === '明文' ? 'badge solid' : 'badge dashed'}>
+        {x.grade} · {x.grade_basis === '明文' ? '明文' : '待考'}
+      </span>
+    )}
+    <span class="badge kind">{x.kind}</span>
+    {books.length > 1 && <span class="badge cross">跨书</span>}
+    <span class="rev">神兵表 rev{x ? weaponsJson.meta.rev : ''} · {x.status === 'reviewed' ? '已考订' : 'auto（考订中）'}</span>
+  </h1>
+  <p class="meta">
+    流转 <b>{strongEdges.length}</b> 段（strong）· 侧证 {sideEv.length} · 证据 {x.ev_total} 处 · 见于
+    {books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}
+  </p>
+
+  {x.aliases && x.aliases.length > 0 && <p class="meta">别名/变体：{x.aliases.map((a) => <span class="chip">{a}</span>)}</p>}
+
+  <section>
+    <h2>历代流转 <small>蓝图 B8 产品化 · 边 = 流转动词句式（strong）· 人名与定位符皆 L0</small></h2>
+    {strongEdges.length > 0 ? (
+      <ol class="timeline">
+        {strongEdges.map((e) => (
+          <li>
+            <span class="verb">{VERB[e.verb] ?? e.verb}</span>
+            <span class="persons">{e.persons.map((p) => <a href={`${B}characters/${encodeURIComponent(p)}/`}>{p}</a>)}</span>
+            <span class="loc mono">{e.book}·{e.loc}</span>
+          </li>
+        ))}
+      </ol>
+    ) : (
+      <p class="meta">暂无明文流转句式——仅有共现证据；链上断点待人工考订（不脑补）。</p>
+    )}
+    {x.end_state && <p class="meta end">终态：{x.end_state.note}</p>}
+  </section>
+
+  {sideEv.length > 0 && (
+    <section>
+      <h2>交战 / 事件侧证 <small>同回 ▲◈◉ 事件（ok 档）</small></h2>
+      <ul class="ev">
+        {sideEv.slice(0, 8).map((e) => (
+          <li><span class="who">{e.persons.join(' × ')}</span><span class="loc mono">{e.book}·{e.loc}</span></li>
+        ))}
+      </ul>
+    </section>
+  )}
+
+  {x.holders.length > 0 && (
+    <section>
+      <h2>相关人物 <small>共现持有人（暂持 ≠ 归属）</small></h2>
+      <p class="chips">
+        {x.holders.map((h) => (
+          <a class="chip" href={`${B}characters/${encodeURIComponent(h.name)}/`}>{h.name}<small>×{h.n}</small></a>
+        ))}
+      </p>
+    </section>
+  )}
+
+  <section>
+    <h2>证据与考订注记</h2>
+    <ul class="ev">
+      {x.evidence.slice(0, 12).map((e) => (
+        <li><span class="pred">{e.kind}</span><span class="loc mono">{e.book}·{e.loc}</span></li>
+      ))}
+      {x.ev_total > 12 && <li class="note">…共 {x.ev_total} 处（全量见 kb/神兵表.json）</li>}
+    </ul>
+    <p class="meta">
+      数据契约：考订工具 C §C0 · 稳定键 = 名物规范名 · 人工裁定 <code>kb/校订/神兵表-考订.tsv</code> ·
+      品阶{ x.grade_basis === '明文' ? '为语料明文' : '尚未取得明文，留待考订（页面不做推断）' } ·
+      本页仅展示 L0 图谱层（定位符/结构化事实）。
+    </p>
+  </section>
+</Base>
+
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 2px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .rev { font-size: .72rem; color: var(--ink-faint); font-weight: 400; }
+  .badge { display: inline-block; border: 1.5px solid var(--seal); background: var(--seal); color: #fbf8ef;
+    border-radius: 3px; padding: .05em .5em; font-size: .75rem; transform: rotate(-1.5deg); }
+  .badge.dashed { background: transparent; border-style: dashed; color: #8a6607; }
+  .badge.kind { background: transparent; color: var(--azure); border-color: var(--azure); transform: rotate(1.5deg); }
+  .badge.cross { background: transparent; color: var(--seal); }
+  .meta { color: var(--ink-light); }
+  .meta b { color: var(--seal); }
+  .meta code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .3em; font-family: var(--font-mono); font-size: .85em; }
+  .meta.end { border-left: 3px solid #4f6e4a; padding-left: .8em; }
+  .bookchip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: .02em .6em; margin: 0 .2em; font-size: .85rem; }
+  section { margin-top: var(--space-5); }
+  h2 { border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  h2 small { font-weight: 400; font-size: .78rem; color: var(--ink-faint); margin-left: .6em; }
+  .timeline { list-style: none; padding: 0; margin: 10px 0 0; border-left: 2px solid var(--line-strong); }
+  .timeline li { display: flex; align-items: baseline; gap: 12px; padding: 7px 0 7px 16px; position: relative; font-size: .95rem; }
+  .timeline li::before { content: ''; position: absolute; left: -7px; top: 12px; width: 10px; height: 10px;
+    border-radius: 50%; background: var(--seal); border: 2px solid #fbf8ef; box-shadow: 0 0 0 1.5px var(--seal); }
+  .verb { color: var(--seal); border: 1px solid var(--seal); border-radius: 3px; padding: 0 .5em; font-weight: 700; font-size: .8rem; }
+  .persons { display: inline-flex; gap: 8px; }
+  .persons a { color: var(--azure); }
+  .persons a:hover { color: var(--seal); }
+  .loc { margin-left: auto; color: var(--ink-faint); font-size: .8em; }
+  .mono { font-family: var(--font-mono); }
+  .chips { line-height: 2.3; }
+  .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: .06em .7em; margin: .15em .2em; font-size: .88rem; background: rgba(255,255,255,.5); }
+  .chip small { color: var(--ink-faint); margin-left: .3em; font-family: var(--font-mono); }
+  a.chip:hover { border-color: var(--seal); color: var(--seal); }
+  .ev { list-style: none; padding: 0; font-size: .9rem; }
+  .ev li { margin: .3em 0; }
+  .pred { color: var(--seal); margin-right: .6em; }
+  .who { font-weight: 700; margin-right: .6em; }
+  .note { color: var(--ink-light); }
+</style>
