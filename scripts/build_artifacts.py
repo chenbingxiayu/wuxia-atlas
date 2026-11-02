@@ -35,8 +35,8 @@ PLAIN_OBJECTS = {'匕首', '软鞭', '皮鞭', '弹弓', '珍珠', '胡琴', '�
                  '长枪', '大刀', '钢刀', '戒刀', '铁棍', '铁棒', '铜锤', '铁锤', '宝杖'}
 # 品阶词（窗口命中 → grade_basis=明文）
 GRADE_WORDS = {'神兵': '神兵', '宝剑': '神兵', '名剑': '神兵', '宝刀': '神兵', '宝物': '神兵',
-               '仙品': '神兵', '利器': '利器', '利剑': '利器', '削铁如泥': '利器',
-               '吹毛断发': '利器', '锋利无比': '利器'}
+               '仙品': '神兵', '人间神物': '神兵', '神物': '神兵', '利器': '利器', '利剑': '利器',
+               '削铁如泥': '利器', '吹毛断发': '利器', '吹毛立断': '利器', '锋利无比': '利器'}
 # 器类后缀 → category
 KIND_SUFFIX = [('剑', '剑'), ('刀', '刀'), ('针', '暗器'), ('镖', '暗器'), ('箭', '暗器'),
                ('钉', '暗器'), ('砂', '暗器'), ('蒺藜', '暗器'), ('抓', '奇门'), ('锥', '暗器'),
@@ -54,6 +54,7 @@ P_CHAIN = [
     ('借', re.compile(r'(借给|借来|借用|借了|借用)')),
     ('毁', re.compile(r'(折断|毁去|毁|断成|掷|抛|沉入|砸)')),
     ('失', re.compile(r'(遗失|失落|丢失|失去)')),
+    ('铸', re.compile(r'(重铸|铸成|铸了|铸|炼成|锻成)(?:一|两|三|几)?(?:口|柄|把|件)?')),  # 铸造者=来历
 ]
 CONF_RANK = {'weak': 0, 'ok': 1, 'strong': 2}
 NAME = r'[\u4e00-\u9fa5]{2,8}'
@@ -97,6 +98,10 @@ def read_tagged(book: str):
         for lineno, s in enumerate(body, 1):
             clean = norm_marks(s)
             yield chap, lineno, clean, mark_names(s, '@'), mark_names(s, '•')
+
+
+def edge_persons_default(persons):
+    return list(dict.fromkeys(persons))
 
 
 def classify_level(name: str):
@@ -158,12 +163,39 @@ def main() -> int:
                 chap = int(e['loc'][:3])
                 ev_index[(book, chap)].append(e)
 
+    # ---- 3.5) 包含名物自动归并：A ⊂ B → A 并入 B（游龙⊂游龙剑；TSV alias-of 可反向拆分）----
+    alias_cand = set()
+    merge_into = {}
+    for a in sorted(canon_set):
+        if a in PLAIN_OBJECTS or a in MEDICINE:
+            continue  # 泛称/药材不并入专名（飞刀≠喂毒飞刀）
+        cands = [b for b in sorted(canon_set) if b != a and a in b]
+        if cands:
+            merge_into[a] = min(cands, key=lambda b: (len(b), b))  # 确定性：取最短容器
+    if merge_into:
+        for src, dst in merge_into.items():
+            occ.setdefault(dst, []).extend(occ.get(src, []))
+            occ.pop(src, None)
+            dm, ds = ent_meta.get(dst), ent_meta.get(src)
+            if dm and ds:
+                dm['count'] += ds['count']
+                for b2, meta2 in ds['books'].items():
+                    dm['books'].setdefault(b2, set()).update(meta2)
+            canon_set.discard(src)
+            alias_cand.add((min(src, dst), max(src, dst)))
+        print(f'  包含归并：{len(merge_into)} 组（{ "、".join(a + "→" + b for a, b in merge_into.items()) }）')
+
     # ---- 4) 归层 + 品阶 + 流转链 ----
-    items, alias_cand = [], set()
+    names_of = defaultdict(set)
+    for a, c in alias2canon.items():
+        names_of[c].add(a)
+    for src, dst in merge_into.items():
+        names_of[dst].add(src)
+    items = []
     for canon in sorted(canon_set, key=lambda c: -ent_meta[c]['count']):
         level, kind = classify_level(canon)
         grade, grade_basis = None, None
-        chain, holders = [], Counter()
+        chain, holders, borrowers, makers = [], Counter(), Counter(), Counter()
         evidence = []
         occs = occ.get(canon, [])
         for book, chap, lineno, persons in occs:
@@ -172,20 +204,31 @@ def main() -> int:
             for gw, g in GRADE_WORDS.items():
                 if gw in w:
                     grade, grade_basis = g, '明文'
-            for p in persons:
-                holders[p] += 1
             edge = None
             uniq_persons = list(dict.fromkeys(persons))
+            match_names = names_of.get(canon, {canon})
             for verb, pat in P_CHAIN:
-                if canon in w and pat.search(w) and uniq_persons:
+                if any(mn in w for mn in match_names) and pat.search(w) and uniq_persons:
                     edge = {'verb': verb, 'persons': uniq_persons[:3], 'book': book,
                             'loc': loc, 'conf': 'strong'}
                     break
             if edge:
                 chain.append(edge)
                 evidence.append({'book': book, 'loc': loc, 'kind': f'明文流转({edge["verb"]})'})
+                # 持有/借用/铸造分流：借用者不计入持有人；铸造者=窗口内出现频次最高者
+                if edge['verb'] == '铸':
+                    maker = max(uniq_persons, key=lambda n: w.count(n))
+                    makers[maker] += 2
+                elif edge['verb'] == '借':
+                    for pp in edge['persons']:
+                        borrowers[pp] += 1
+                else:
+                    for pp in edge['persons']:
+                        holders[pp] += 1
             else:
                 evidence.append({'book': book, 'loc': loc, 'kind': '共现'})
+                for pp in uniq_persons:
+                    holders[pp] += 1
         # ok：同回 ▲/◈ 事件侧证（事件主客与窗口人物相交）
         for (book, chap), evs in ev_index.items():
             here = [p for b2, c2, l2, ps in occs if b2 == book and c2 == chap for p in ps]
@@ -213,6 +256,8 @@ def main() -> int:
             'conf': conf,
             'chain': chain[:12],
             'holders': [{'name': n, 'n': c} for n, c in holders.most_common(6)],
+            'borrowers': [{'name': n, 'n': c} for n, c in borrowers.most_common(4)],
+            'makers': [{'name': n, 'n': c} for n, c in makers.most_common(3)],
             'end_state': {'note': f"末见持有：{'、'.join([n for n, _ in holders.most_common(2)]) or '—'}"
                                   f"（{max(occs, key=lambda o: (o[1], o[2]))[0]}·{max(occs, key=lambda o: (o[1], o[2]))[1]} 回）"} if occs and holders else None,
             'evidence': evidence[:12],
@@ -291,7 +336,9 @@ def main() -> int:
             'conf': it.get('conf'), 'status': it['status'],
             'chain': [{'verb': e['verb'], 'persons': e['persons'], 'book': e['book'],
                        'loc': e['loc'], 'conf': e['conf']} for e in it.get('chain', [])],
-            'holders': it.get('holders', []),
+            'holders': [h for h in it.get('holders', []) if h['name'] not in {b['name'] for b in it.get('borrowers', [])}],
+            'borrowers': it.get('borrowers', []),
+            'makers': it.get('makers', []),
             'end_state': it.get('end_state'),
             'books': it['books'], 'count': it['count'], 'ev_total': it.get('ev_total', 0),
             'evidence': it.get('evidence', []),

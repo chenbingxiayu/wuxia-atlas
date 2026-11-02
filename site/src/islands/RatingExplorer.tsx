@@ -34,7 +34,7 @@ export default function RatingExplorer() {
       setMatches(mt.matches);
       const sects: Record<string, string> = {};
       for (const d of ds.dossiers || []) {
-        const sa = (d.sect_affinity || [])[0];
+        const sa = (d.sect_affinity || []).find((x: { tier: string }) => x.tier !== 'weak');
         if (sa) sects[d.canonical] = sa.sect;
       }
       setSectOf(sects);

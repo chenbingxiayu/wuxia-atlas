@@ -75,6 +75,8 @@ export default function MapTrail() {
   const [chap, setChap] = useState(1);
   const [ghostChap, setGhostChap] = useState(1);
   const [ghostOn, setGhostOn] = useState(false);
+  const [dotMode, setDotMode] = useState<'cur' | 'all'>('cur');
+  const [evCat, setEvCat] = useState('all');
   const [lens, setLens] = useState<'real' | 'fiction'>('real');
   const [persons, setPersons] = useState<string[]>([]);
   const [playing, setPlaying] = useState(false);
@@ -196,6 +198,13 @@ export default function MapTrail() {
   })() : null;
 
   const evList = slice.events[chapStr] || [];
+  const evShown = evCat === 'all' ? evList : evCat === 'other'
+    ? evList.filter((e) => !['◈', '◉', '▲', '◇', '○'].includes(e.code || ''))
+    : evList.filter((e) => e.code === evCat);
+  const trailSummary = (slice.bychap[chapStr] || { p: [], l: [] }).l.length
+    ? (slice.events[chapStr] || []).map((e) => (e as { place?: string }).place).filter(Boolean)
+        .filter((v, i, arr) => arr.indexOf(v) === i).join(' → ') || '本章无定位事件地点'
+    : '—';
   const placeEntry = selPlace ? slice.places[selPlace] : null;
   const gazPlace = placeEntry ? { real: placeEntry.real, lat: placeEntry.lat, lng: placeEntry.lng, precision: placeEntry.precision } : null;
 
@@ -262,7 +271,7 @@ export default function MapTrail() {
             }
             return <path key={t.pid} d={d} fill="none" stroke={t.color} strokeWidth="1.6" strokeDasharray="5 4" opacity="0.75" />;
           })}
-          {placeDots(slice, trails, lens, proj, chap, ghost, selPlace, setSelPlace)}
+          {placeDots(slice, trails, lens, proj, chap, ghost, selPlace, setSelPlace, dotMode)}
         </svg>
 
         {/* 内联江湖状态 */}
@@ -321,24 +330,41 @@ export default function MapTrail() {
         </div>
       </div>
 
+      <style>{`
+        .mt-trail { font-size: 13.5px; color: #31536c; }
+        .mt-place-tag { color: #8a6607; font-size: 12px; }
+      `}</style>
       {/* 本回事件流 */}
       <div className="mt-panel">
         <div className="mt-row" style={{ alignItems: 'baseline' }}>
           <b>第 {chap} 回事件流</b>
-          <span className="mt-faint">{evList.length} 起（high 置信优先展示）· L0 定位符</span>
+          <span className="mt-faint">{evList.length} 起 · L0 定位符</span>
           <a className="mt-link" style={{ marginLeft: 'auto' }}
             href={`${B}books/${encodeURIComponent(bookTitle)}/${chap}`}>回目页 →</a>
         </div>
+        <div className="mt-row">
+          <span className="mt-lab">本章行踪：</span>
+          <span className="mt-trail">{trailSummary || '—'}</span>
+        </div>
+        <div className="mt-row">
+          <span className="mt-lab">类型</span>
+          {[['all', '全部'], ['◈', '交战'], ['◉', '杀伐'], ['▲', '擒控'], ['◇', '传艺'], ['○', '结盟拜认'], ['other', '其他']].map(([k, lab]) => (
+            <button key={k} className={'mt-chip' + (evCat === k ? ' on' : '')} onClick={() => setEvCat(k)}>
+              {lab}<small>{k === 'all' ? evList.length : catCount(evList, k)}</small>
+            </button>
+          ))}
+        </div>
         <div className="mt-evgrid">
-          {[...evList].sort((x, y) => Number(y.conf === 'high') - Number(x.conf === 'high')).slice(0, 12).map((e, i) => (
+          {evShown.slice(0, 12).map((e, i) => (
             <div className="mt-ev" key={i}>
               <span className="mt-verb">{e.v || e.code}</span>
               <span className="mt-who">{e.a || '？'}</span>
               {e.b && <>→ <span className="mt-who">{e.b}</span></>}
+              {e.place && <span className="mt-place-tag">@{e.place}</span>}
               <span className="mt-loc mono">{e.l}</span>
             </div>
           ))}
-          {evList.length > 12 && <div className="mt-faint">…其余 {evList.length - 12} 起见回目页</div>}
+          {evShown.length > 12 && <div className="mt-faint">…其余 {evShown.length - 12} 起见回目页</div>}
         </div>
       </div>
     </div>
@@ -369,16 +395,22 @@ function placeDots(
   slice: BookSlice, trails: Trail[], lens: 'real' | 'fiction', proj: Proj,
   chap: number, ghost: { added: string[]; removed: string[] } | null,
   selPlace: string | null, onSelect: (p: string) => void,
+  dotMode: 'cur' | 'all',
 ) {
   const nodes: ReactNode[] = [];
   const visitedOf = (pl: string) => trails.filter((t) => t.visited.has(pl));
   const futureOf = (pl: string) => trails.some((t) => t.future.has(pl));
+  const evsAt = (pl: string) => {
+    const evs = slice.events[String(chap)] || [];
+    return evs.filter((e) => (e as { place?: string }).place === pl).slice(0, 5);
+  };
   const show = (pl: string) => {
     const p = slice.places[pl];
     if (!p) return false;
     if (lens === 'real') return p.real !== false && p.lat != null;
     return p.real === false; // 虚构层
   };
+  const curPlaces = new Set((slice.bychap[String(chap)] || { l: [] }).l);
   for (const [pl, p] of Object.entries(slice.places)) {
     if (!show(pl) || p.lat == null) continue;
     const [x, y] = proj(p.lng!, p.lat!);
@@ -386,19 +418,28 @@ function placeDots(
     const isFuture = !vis.length && futureOf(pl);
     const isGhostAdd = ghost?.added.includes(pl);
     const isGhostRem = ghost?.removed.includes(pl);
-    const curHere = (slice.bychap[String(chap)] || { l: [] }).l.includes(pl);
+    const curHere = curPlaces.has(pl);
+    // 点位模式：cur = 只显当前回地点；all = 已至/未至全景
+    const visible = dotMode === 'cur' ? curHere || pl === selPlace : vis.length > 0 || isFuture || curHere;
+    if (!visible) continue;
+    const evs = evsAt(pl);
+    const tip = [
+      pl + (p.lat != null ? `（${p.lat.toFixed(2)}, ${p.lng!.toFixed(2)}）` : ' · 虚构 · 待锚定'),
+      ...evs.map((e) => `第${chap}回 ${e.v}：${e.a || '？'}${e.b ? ' → ' + e.b : ''}`),
+      evs.length === 0 && curHere ? '第' + chap + '回：在场（无定位事件）' : '',
+    ].filter(Boolean).join(' ｜ ');
     nodes.push(
-      <g key={pl} onClick={() => onSelect(pl)} className="mt-place" >
-        <title>{pl}{p.lat != null ? `（${p.lat.toFixed(2)}, ${p.lng!.toFixed(2)}）` : ' · 虚构 · 待锚定'}</title>
-        {vis.length > 0
-          ? <circle cx={x} cy={y} r={curHere ? 7 : 5} fill={vis[0].color}
+      <g key={pl} onClick={() => onSelect(pl)} className="mt-place">
+        <title>{tip}</title>
+        {dotMode === 'cur' || curHere
+          ? <circle cx={x} cy={y} r={curHere ? 7.5 : 5.5} fill={vis[0]?.color || '#a23527'}
               stroke="#fbf8ef" strokeWidth={curHere ? 2.5 : 1.5} />
           : isFuture
             ? <circle cx={x} cy={y} r={4.5} fill="#f4eee0" stroke={trails[0]?.color || '#a23527'} strokeWidth="2" />
             : <circle cx={x} cy={y} r={3} fill="#c9c0ac" opacity="0.55" />}
         {isGhostAdd && <circle cx={x} cy={y} r={9} fill="none" stroke="#4f6e4a" strokeWidth="2.5" />}
         {isGhostRem && <line x1={x - 6} y1={y - 6} x2={x + 6} y2={y + 6} stroke="#8a8172" strokeWidth="2" />}
-        {(vis.length > 0 || curHere || pl === selPlace || (p.chaps.length >= 12 && lens === 'real')) && (
+        {(dotMode === 'cur' || curHere || pl === selPlace || (p.chaps.length >= 12 && lens === 'real')) && (
           <text x={x} y={y - 10} textAnchor="middle" fontSize="12"
             fill={pl === selPlace ? '#a23527' : '#5f584b'} style={{ pointerEvents: 'none' }}>{pl}</text>
         )}

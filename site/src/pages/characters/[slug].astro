@@ -41,11 +41,11 @@ const maxBar = Math.max(
     <p class="dim">摘要文案走"LLM 以本档案为上下文草拟 → 人工校定"流程后填入；本页其余各卡均为图谱自动事实。</p>
   </section>
 
-  {d.sect_affinity.length > 0 && (
+  {d.sect_affinity.filter((sa) => sa.tier !== 'weak').length > 0 && (
     <section>
-      <h2>门派线索 <span class="dim">（derived：修习武功 ∩ 门派武功，非正式归属）</span></h2>
+      <h2>门派线索 <span class="dim">（仅 strong/ok 级：书内同证修习 ∩ 门派武功；weak 推测级已排除——如练霓裳经反用「无常夺命」挂武当，不构成归属）</span></h2>
       <p class="chips">
-        {d.sect_affinity.map((s) => (
+        {d.sect_affinity.filter((sa) => sa.tier !== 'weak').map((s) => (
           <a class={`chip t-${s.tier}`} href={`${B}sects/${encodeURIComponent(s.sect)}/`}>
             {s.sect}
             <small>{TIER_LABEL[s.tier]}{s.tier === 'strong' ? '·镇山' : ''}</small>

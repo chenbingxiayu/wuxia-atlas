@@ -9,123 +9,153 @@ export function getStaticPaths() {
 const { x } = Astro.props;
 const books = Object.keys(x.books);
 const strongEdges = x.chain.filter((e) => e.conf === 'strong');
+const forgeEdges = strongEdges.filter((e) => e.verb === '铸');
+const mainEdges = strongEdges.filter((e) => e.verb !== '铸');
 const sideEv = x.chain.filter((e) => e.conf !== 'strong');
-const VERB = { 夺: '夺', 赠: '赠', 还: '还', 传: '传', 借: '借', 毁: '毁', 失: '失', 交战侧证: '证' };
+const VERB: Record<string, string> = { 夺: '夺', 赠: '赠', 还: '还', 传: '传', 借: '借', 毁: '毁', 失: '失', 铸: '铸', 交战侧证: '证' };
+const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
 ---
 
-<Base title={x.canonical} description={`${x.canonical}（${x.kind}）：品阶、历代持有人流转链与证据定位符。`}>
+<Base title={x.canonical} description={`${x.canonical}（${x.kind}）：品阶、铸造来历、历代持有人流转链与证据定位符。`}>
   <p class="crumb"><a href={`${B}weapons/`}>神兵谱</a> / {x.canonical}</p>
-  <h1>
-    {x.canonical}
+  <h1 style="font-size:36px;margin:6px 0 8px;letter-spacing:3px">{x.canonical}
     {x.grade && (
-      <span class={x.grade_basis === '明文' ? 'badge solid' : 'badge dashed'}>
-        {x.grade} · {x.grade_basis === '明文' ? '明文' : '待考'}
-      </span>
+      <span class="g">{x.grade} · {x.grade_basis === '明文' ? '明文' : '待考'}</span>
     )}
-    <span class="badge kind">{x.kind}</span>
-    {books.length > 1 && <span class="badge cross">跨书</span>}
-    <span class="rev">神兵表 rev{x ? weaponsJson.meta.rev : ''} · {x.status === 'reviewed' ? '已考订' : 'auto（考订中）'}</span>
+    <span class="kind">{x.kind}</span>
+    {books.length > 1 && <span class="cross">跨书</span>}
+    <span class="rev">神兵表 rev{weaponsJson.meta.rev} · {x.status === 'reviewed' ? '已考订' : 'auto（考订中）'}</span>
   </h1>
   <p class="meta">
-    流转 <b>{strongEdges.length}</b> 段（strong）· 侧证 {sideEv.length} · 证据 {x.ev_total} 处 · 见于
+    流转 <b>{mainEdges.length}</b> 段 · 证据 {x.ev_total} 处 · 见于
     {books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}
   </p>
 
-  {x.aliases && x.aliases.length > 0 && <p class="meta">别名/变体：{x.aliases.map((a) => <span class="chip">{a}</span>)}</p>}
-
-  <section>
-    <h2>历代流转 <small>蓝图 B8 产品化 · 边 = 流转动词句式（strong）· 人名与定位符皆 L0</small></h2>
-    {strongEdges.length > 0 ? (
-      <ol class="timeline">
-        {strongEdges.map((e) => (
-          <li>
-            <span class="verb">{VERB[e.verb] ?? e.verb}</span>
-            <span class="persons">{e.persons.map((p) => <a href={`${B}characters/${encodeURIComponent(p)}/`}>{p}</a>)}</span>
-            <span class="loc mono">{e.book}·{e.loc}</span>
-          </li>
+  {hasForge && (
+    <div class="card forge">
+      <b class="forge-label">来历</b>
+      <span class="forge-body">
+        {(x.makers || []).length > 0 && <>铸造／炼制：
+          {x.makers.map((m) => <a class="chip" href={`${B}characters/${encodeURIComponent(m.name)}/`}>{m.name}</a>)}
+        </>}
+        {forgeEdges.map((e) => (
+          <span class="mono loc">{e.book}·{e.loc}</span>
         ))}
-      </ol>
-    ) : (
-      <p class="meta">暂无明文流转句式——仅有共现证据；链上断点待人工考订（不脑补）。</p>
-    )}
-    {x.end_state && <p class="meta end">终态：{x.end_state.note}</p>}
-  </section>
+      </span>
+    </div>
+  )}
+
+  <h2 class="sec">历代流转 <span class="dim2">每次易手挂定位符；「借」= 暂借，不计入持有人</span></h2>
+  {mainEdges.length > 0 ? (
+    <div class="card tlwrap">
+      <div class="tl">
+        {mainEdges.map((e) => (
+          <div class="trow">
+            <div class="tedge">
+              <span class="tverb" style={e.verb === '借' ? 'color:#8a8172;border-color:#8a8172' : ''}>{VERB[e.verb] ?? e.verb}{e.verb === '借' ? '（暂借）' : ''}</span>
+              <span class="tholder">{e.persons.map((p) => <a href={`${B}characters/${encodeURIComponent(p)}/`}>{p}</a>)}</span>
+              <span class="tconf">{e.conf}</span>
+              <span class="tloc mono">{e.book}·{e.loc}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="fine" style="margin:8px 12px 4px">跨书段断点显式标注（gaps）；终态 = 毁/失明文或末书终章持有人。</p>
+    </div>
+  ) : (
+    <div class="card" style="padding:14px 22px;margin-top:14px"><p class="fine" style="margin:0">暂无明文流转句式——仅共现证据，链上断点待人工考订（不脑补）。</p></div>
+  )}
 
   {sideEv.length > 0 && (
-    <section>
-      <h2>交战 / 事件侧证 <small>同回 ▲◈◉ 事件（ok 档）</small></h2>
+    <h2 class="sec">交战 / 事件侧证 <span class="dim2">同回 ▲◈ 事件（ok 档）</span></h2>
+  )}
+  {sideEv.length > 0 && (
+    <div class="card" style="padding:10px 24px">
       <ul class="ev">
         {sideEv.slice(0, 8).map((e) => (
           <li><span class="who">{e.persons.join(' × ')}</span><span class="loc mono">{e.book}·{e.loc}</span></li>
         ))}
       </ul>
-    </section>
+    </div>
   )}
 
-  {x.holders.length > 0 && (
-    <section>
-      <h2>相关人物 <small>共现持有人（暂持 ≠ 归属）</small></h2>
-      <p class="chips">
-        {x.holders.map((h) => (
-          <a class="chip" href={`${B}characters/${encodeURIComponent(h.name)}/`}>{h.name}<small>×{h.n}</small></a>
-        ))}
-      </p>
-    </section>
+  <h2 class="sec">相关人物 <span class="dim2">持有人为主 · 借用单列（暂借 ≠ 持有）</span></h2>
+  <p class="chipsrow">
+    <span class="dim">持有人：</span>
+    {(x.holders || []).map((h) => <a class="chip" href={`${B}characters/${encodeURIComponent(h.name)}/`}>{h.name}<small>×{h.n}</small></a>)}
+    {(x.holders || []).length === 0 && <span class="dim">—</span>}
+  </p>
+  {(x.borrowers || []).length > 0 && (
+    <p class="chipsrow">
+      <span class="dim">借用 / 暂持：</span>
+      {x.borrowers.map((b2) => <span class="chip dashed">{b2.name}<small>×{b2.n}</small></span>)}
+    </p>
   )}
+  {(x.aliases || []).length > 0 && <p class="meta">别名/变体：{x.aliases.map((a) => <span class="chip">{a}</span>)}</p>}
 
-  <section>
-    <h2>证据与考订注记</h2>
+  <h2 class="sec">证据与考订注记</h2>
+  <div class="card" style="padding:8px 24px">
     <ul class="ev">
       {x.evidence.slice(0, 12).map((e) => (
         <li><span class="pred">{e.kind}</span><span class="loc mono">{e.book}·{e.loc}</span></li>
       ))}
-      {x.ev_total > 12 && <li class="note">…共 {x.ev_total} 处（全量见 kb/神兵表.json）</li>}
+      {x.ev_total > 12 && <li class="dim">…共 {x.ev_total} 处（全量见 kb/神兵表.json）</li>}
     </ul>
-    <p class="meta">
-      数据契约：考订工具 C §C0 · 稳定键 = 名物规范名 · 人工裁定 <code>kb/校订/神兵表-考订.tsv</code> ·
-      品阶{ x.grade_basis === '明文' ? '为语料明文' : '尚未取得明文，留待考订（页面不做推断）' } ·
-      本页仅展示 L0 图谱层（定位符/结构化事实）。
-    </p>
-  </section>
+  </div>
+  <p class="meta">
+    数据契约：考订工具 C · 稳定键 = 名物规范名 · 人工裁定 <code>kb/校订/神兵表-考订.tsv</code> ·
+    品阶{x.grade_basis === '明文' ? '为语料明文' : '尚未取得明文，留待考订（页面不做推断）'} · 本页仅 L0 图谱层。
+  </p>
 </Base>
 
 <style>
   .crumb { font-size: .85rem; color: var(--ink-faint); }
   .crumb a { color: var(--azure); }
-  h1 { letter-spacing: 2px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  h1 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   .rev { font-size: .72rem; color: var(--ink-faint); font-weight: 400; }
-  .badge { display: inline-block; border: 1.5px solid var(--seal); background: var(--seal); color: #fbf8ef;
-    border-radius: 3px; padding: .05em .5em; font-size: .75rem; transform: rotate(-1.5deg); }
-  .badge.dashed { background: transparent; border-style: dashed; color: #8a6607; }
-  .badge.kind { background: transparent; color: var(--azure); border-color: var(--azure); transform: rotate(1.5deg); }
-  .badge.cross { background: transparent; color: var(--seal); }
+  .g { display: inline-block; border: 1.5px solid #a23527; background: #a23527; color: #fbf8ef;
+    border-radius: 3px; padding: 0 8px; font-size: 12.5px; transform: rotate(-1.5deg); white-space: nowrap; }
+  .kind { display: inline-block; border: 1.5px solid #31536c; color: #31536c; border-radius: 3px;
+    padding: 1px 9px; font-size: 13px; transform: rotate(1.5deg); }
+  .cross { display: inline-block; border: 1.5px solid #a23527; color: #a23527; border-radius: 3px;
+    padding: 1px 9px; font-size: 13px; transform: rotate(-1deg); }
   .meta { color: var(--ink-light); }
-  .meta b { color: var(--seal); }
+  .meta b { color: #a23527; }
   .meta code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .3em; font-family: var(--font-mono); font-size: .85em; }
-  .meta.end { border-left: 3px solid #4f6e4a; padding-left: .8em; }
   .bookchip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
     padding: .02em .6em; margin: 0 .2em; font-size: .85rem; }
-  section { margin-top: var(--space-5); }
-  h2 { border-bottom: 1px solid var(--line); padding-bottom: .2em; }
-  h2 small { font-weight: 400; font-size: .78rem; color: var(--ink-faint); margin-left: .6em; }
-  .timeline { list-style: none; padding: 0; margin: 10px 0 0; border-left: 2px solid var(--line-strong); }
-  .timeline li { display: flex; align-items: baseline; gap: 12px; padding: 7px 0 7px 16px; position: relative; font-size: .95rem; }
-  .timeline li::before { content: ''; position: absolute; left: -7px; top: 12px; width: 10px; height: 10px;
-    border-radius: 50%; background: var(--seal); border: 2px solid #fbf8ef; box-shadow: 0 0 0 1.5px var(--seal); }
-  .verb { color: var(--seal); border: 1px solid var(--seal); border-radius: 3px; padding: 0 .5em; font-weight: 700; font-size: .8rem; }
-  .persons { display: inline-flex; gap: 8px; }
-  .persons a { color: var(--azure); }
-  .persons a:hover { color: var(--seal); }
-  .loc { margin-left: auto; color: var(--ink-faint); font-size: .8em; }
-  .mono { font-family: var(--font-mono); }
-  .chips { line-height: 2.3; }
+  .forge { margin-top: 20px; border-left: 4px solid #b8860b; padding: 12px 20px;
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .forge-label { font-family: 'Ma Shan Zheng', serif; font-weight: 400; font-size: 18px; color: #b8860b; white-space: nowrap; }
+  .forge-body { font-size: 15px; display: inline-flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
+  .sec { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 900; margin: 36px 0 14px; }
+  .sec:after { content: ''; flex: 1; height: 1px; background: #b5a687; }
+  .dim2 { color: var(--ink-faint); font-weight: 400; font-size: 14px; }
+  .tlwrap { padding: 16px 24px 8px; }
+  .tl { position: relative; padding-left: 30px; }
+  .tl:before { content: ''; position: absolute; left: 10px; top: 14px; bottom: 14px; width: 2px; background: #d8cdb4; }
+  .trow { position: relative; padding: 8px 0; }
+  .trow:before { content: ''; position: absolute; left: -25px; top: 15px; width: 11px; height: 11px;
+    border-radius: 50%; background: #a23527; border: 2.5px solid #fbf8ef; box-shadow: 0 0 0 1.5px #a23527; }
+  .tedge { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .tverb { color: #a23527; border: 1px solid #a23527; border-radius: 3px; padding: 0 8px; font-weight: 700; font-size: 12.5px; }
+  .tholder { font-size: 15px; font-weight: 700; display: inline-flex; gap: 8px; }
+  .tholder a { color: #31536c; }
+  .tholder a:hover { color: #a23527; }
+  .tconf { font-size: 11px; color: #8a8172; border: 1px dashed #b5a687; border-radius: 3px; padding: 0 6px; }
+  .tloc { margin-left: auto; color: #8a8172; font-size: 11.5px; white-space: nowrap; }
+  .mono { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; }
+  .chipsrow { margin: 6px 0 0; line-height: 2.5; }
   .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
-    padding: .06em .7em; margin: .15em .2em; font-size: .88rem; background: rgba(255,255,255,.5); }
-  .chip small { color: var(--ink-faint); margin-left: .3em; font-family: var(--font-mono); }
-  a.chip:hover { border-color: var(--seal); color: var(--seal); }
-  .ev { list-style: none; padding: 0; font-size: .9rem; }
-  .ev li { margin: .3em 0; }
-  .pred { color: var(--seal); margin-right: .6em; }
-  .who { font-weight: 700; margin-right: .6em; }
-  .note { color: var(--ink-light); }
+    padding: 2px 12px; font-size: 13.5px; background: #fbf8ef; margin: 3px; }
+  .chip.dashed { border-style: dashed; color: #8a8172; }
+  .chip small { color: #8a8172; margin-left: 4px; font-family: ui-monospace, monospace; }
+  a.chip:hover { border-color: #a23527; color: #a23527; }
+  .ev { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+  .ev li { padding: 6px 2px; border-bottom: 1px solid #e6ddc8; display: flex; gap: 10px; align-items: baseline; }
+  .pred { color: #a23527; margin-right: 10px; font-weight: 600; }
+  .who { font-weight: 700; }
+  .loc { color: #8a8172; font-size: 12px; }
+  .dim { color: #8a8172; }
+  section { margin-top: 30px; }
 </style>

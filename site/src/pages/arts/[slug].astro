@@ -26,6 +26,23 @@ for (const [book, b] of Object.entries(a.relations)) {
     }
   }
 }
+/* 门派归属聚合：每派一条（证据可跨多部小说） */
+const sectAgg = [...sects.entries()].map(([sect, rs]) => ({
+  sect,
+  books: [...new Set(rs.map((r) => r.book))],
+  preds: [...new Set(rs.map((r) => r.pred))],
+  ev: rs.reduce((t, r) => t + (r.ev || 1), 0),
+})).sort((x, y) => y.ev - x.ev);
+/* 招式名表（工具 A children）与「包含剑套」（别名中的功法级名称） */
+const children = a.children || [];
+const childNames = new Set(children.map((c) => c.name));
+const GONGFA = /(剑法|掌法|刀法|拳法|剑术|神功|心法|内功|功法|阵法|身法|步法)$/;
+const setsContained = (a.aliases || []).filter((x) => GONGFA.test(x) && !childNames.has(x));
+const aliasesPure = (a.aliases || []).filter((x) => !GONGFA.test(x) && !childNames.has(x));
+/* 传授关系：传授者 → 修习者（同门武功内按谓词配对；独门单列） */
+const teachers = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '传授')).map(([p]) => p);
+const learners = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '修习' || r.pred === '独门') && !teachers.includes(p)).map(([p]) => p);
+const solo = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '独门') && !teachers.includes(p) && !learners.includes(p)).map(([p]) => p);
 ---
 
 <Base title={a.canonical} description={`${a.canonical}（${a.category}）：门派归属、修习者、别名与证据定位符。`}>
@@ -35,35 +52,98 @@ for (const [book, b] of Object.entries(a.relations)) {
   </h1>
   <p class="meta">证据合计 <b>{a.ev_total}</b> · 见于 {a.books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}</p>
 
-  {a.aliases.length > 0 && (
-    <p class="meta">别名/变体：{a.aliases.map((x) => <span class="chip">{x}</span>)}</p>
+  {aliasesPure.length > 0 && (
+    <p class="meta">别名/变体：{aliasesPure.map((x) => <span class="chip">{x}</span>)}</p>
   )}
 
-  {sects.size > 0 && (
+  {sectAgg.length > 0 && (
     <section>
-      <h2>门派归属</h2>
-      {[...sects.entries()].map(([s, rs]) => (
-        <p class="chips">
-          {rs.map((r) => (
-            <a class="chip" href={`${B}sects/${encodeURIComponent(s)}/`}>
-              {s}<small>{r.pred} · {r.book}·{r.locs[0]}</small>
-            </a>
-          ))}
-        </p>
-      ))}
-    </section>
-  )}
-
-  {persons.size > 0 && (
-    <section>
-      <h2>修习 / 传授 / 独门者</h2>
+      <h2>门派归属 <span class="dim2">每派一条 · 证据可跨多部小说</span></h2>
       <p class="chips">
-        {[...persons.entries()].map(([p, rs]) => (
-          <a class="chip" href={`${B}characters/${encodeURIComponent(p)}/`}>
-            {p}<small>{rs.map((r) => r.pred).join('/')} · {rs[0].book}·{rs[0].locs[0]}</small>
+        {sectAgg.map((sa) => (
+          <a class="chip" href={`${B}sects/${encodeURIComponent(sa.sect)}/`}>
+            {sa.sect}<small>{sa.preds.join('/')} · {sa.books.length} 书 · {sa.ev} 证</small>
           </a>
         ))}
       </p>
+    </section>
+  )}
+
+  {(teachers.length > 0 || learners.length > 0 || solo.length > 0) && (
+    <section>
+      <h2>传授关系图 <span class="dim2">传授者 → 修习者 · 按关系表谓词连线（各带定位符）</span></h2>
+      <div class="card" style="padding:16px 22px">
+        <svg viewBox={`0 0 900 ${Math.max(140, Math.max(teachers.length, learners.length, solo.length, 1) * 56 + 70)}`} style="width:100%;height:auto" role="img" aria-label="传授关系图">
+          <text x="120" y="26" font-size="14" font-weight="700" fill="#a23527" text-anchor="middle">传授者</text>
+          <text x="780" y="26" font-size="14" font-weight="700" fill="#31536c" text-anchor="middle">修习者</text>
+          {teachers.map((t, i) => {
+            const y = 60 + i * 56;
+            return (
+              <g>
+                <rect x="30" y={y - 18} width="180" height="36" rx="4" fill="#f6e8d9" stroke="#a23527" />
+                <a href={`${B}characters/${encodeURIComponent(t)}/`}><text x="120" y={y + 5} font-size="14" fill="#262420" text-anchor="middle">{t}</text></a>
+                {learners.map((l, j) => {
+                  const yl = 60 + j * 56;
+                  return <line x1="212" y1={y} x2="688" y2={yl} stroke="#b5a687" stroke-width="1.2" stroke-dasharray="4 3"><title>{t} 传授 {l}</title></line>;
+                })}
+              </g>
+            );
+          })}
+          {learners.map((l, j) => {
+            const yl = 60 + j * 56;
+            return (
+              <g>
+                <rect x="690" y={yl - 18} width="180" height="36" rx="4" fill="#eef2e6" stroke="#31536c" />
+                <a href={`${B}characters/${encodeURIComponent(l)}/`}><text x="780" y={yl + 5} font-size="14" fill="#262420" text-anchor="middle">{l}</text></a>
+              </g>
+            );
+          })}
+          {solo.map((sp, i) => {
+            const y = 60 + (Math.max(teachers.length, learners.length) + i) * 56;
+            return (
+              <g>
+                <rect x="360" y={y - 18} width="180" height="36" rx="4" fill="#f0e9d8" stroke="#8a6607" stroke-dasharray="4 3" />
+                <a href={`${B}characters/${encodeURIComponent(sp)}/`}><text x="450" y={y + 5} font-size="14" fill="#8a6607" text-anchor="middle">{sp}（独门）</text></a>
+              </g>
+            );
+          })}
+        </svg>
+        <p class="fine">谓词来自关系表（传授/修习/独门，各带定位符）；无传授者时不强连线，避免"看不出谁从谁学"。</p>
+      </div>
+    </section>
+  )}
+  {persons.size > 0 && (
+    <section>
+      <h2>全部涉及者</h2>
+      <p class="chips">
+        {[...persons.entries()].map(([p, rs]) => (
+          <a class="chip" href={`${B}characters/${encodeURIComponent(p)}/`}>
+            {p}<small>{[...new Set(rs.map((r) => r.pred))].join('/')} · {rs[0].book}·{rs[0].locs[0]}</small>
+          </a>
+        ))}
+      </p>
+    </section>
+  )}
+
+  {(children.length > 0 || setsContained.length > 0) && (
+    <section>
+      <h2>招式名表 <span class="dim2">工具 A 招式表 ·「一招'X'」式样抽取 + 人工考订</span></h2>
+      <div class="card" style="padding:14px 22px">
+        {children.length > 0 && (
+          <p class="chips" style="margin:0 0 6px">
+            {children.map((c) => (
+              <span class="chip">{c.name}<small>{c.conf} · {c.sect || ''}</small></span>
+            ))}
+          </p>
+        )}
+        {setsContained.length > 0 && (
+          <p style="margin:8px 0 0;font-size:14px">
+            <b>包含剑套 / 分支：</b>
+            {setsContained.map((x2) => <span class="chip" style="border-style:dashed">{x2}<small>套</small></span>)}
+            <span class="fine">（功法级下位名称原误并别名——已按套分层展示，归并待 TSV 考订）</span>
+          </p>
+        )}
+      </div>
     </section>
   )}
 
@@ -106,5 +186,7 @@ for (const [book, b] of Object.entries(a.relations)) {
   .who { font-weight: 700; margin-right: .6em; }
   .loc { color: var(--ink-faint); font-family: var(--font-mono); font-size: .85em; }
   .note { color: var(--ink-light); }
+  .dim2 { color: var(--ink-faint); font-weight: 400; font-size: .78rem; }
+  .fine { color: var(--ink-faint); font-size: .8rem; }
   section { margin-top: var(--space-5); }
 </style>

@@ -23,6 +23,19 @@ OUT = Path(__file__).resolve().parents[1] / 'site' / 'data'
 def main() -> None:
     books = lit_books()
     sects = defaultdict(lambda: {'books': {}, 'ev_total': 0})
+    # 招式级武功集合（工具 A 招式表）——门派武功册只列功法级
+    moves = set()
+    mf = KB / '招式表.json'
+    if mf.exists():
+        for m in json.loads(mf.read_text(encoding='utf-8')).get('moves', []):
+            if m.get('level') == '招式':
+                moves.add(m['canonical'])
+    # 门派世系表（工具 B）——每掌门在位期 + 门下成员
+    lineages = {}
+    lf = KB / '门派世系表.json'
+    if lf.exists():
+        for sec in json.loads(lf.read_text(encoding='utf-8')).get('sects', []):
+            lineages[sec['sect']] = sec
 
     for book in books:
         with open(KB / book / '关系表.json', encoding='utf-8') as f:
@@ -36,6 +49,7 @@ def main() -> None:
             b = sec['books'].setdefault(book, {'arts': []})
             b['arts'].append({
                 'art': r['object'], 'pred': r['predicate'],
+                'level': '招式' if r['object'] in moves else '功法',
                 'locs': r['evidence_locators'][:4], 'ev': r.get('evidence_count', 1),
                 'note': r.get('note', ''),
             })
@@ -78,6 +92,9 @@ def main() -> None:
             'ev_total': s['ev_total'],
             'arts_by_pred': {k: v for k, v in sorted(arts_all.items())},
             'members': sorted(members.get(name, []), key=lambda m: -len(m['via'])),
+            'tenures': (lineages.get(name) or {}).get('tenures', []),
+            'lineage_gaps': (lineages.get(name) or {}).get('gaps', []),
+            'lineage_todo': (lineages.get(name) or {}).get('open_questions', []),
         })
     items.sort(key=lambda x: (-x['ev_total'], x['canonical']))
 

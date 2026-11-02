@@ -1,56 +1,141 @@
 ---
 import Base from '../../layouts/Base.astro';
 import sectsJson from '@data/sects.json';
+import matchesJson from '@data/matches.json';
 import { B } from '@lib/base';
 
 export function getStaticPaths() {
   return sectsJson.sects.map((s) => ({ params: { slug: s.canonical }, props: { s } }));
 }
 const { s } = Astro.props;
+const all = sectsJson.sects;
+const idx = all.findIndex((x) => x.canonical === s.canonical);
+const prevS = all[(idx - 1 + all.length) % all.length];
+const nextS = all[(idx + 1) % all.length];
+
 const PRED_ORDER = ['镇山', '拥有', '独门', '传授', '修习'];
 const preds = Object.keys(s.arts_by_pred).sort((x, y) => {
   const ix = PRED_ORDER.indexOf(x), iy = PRED_ORDER.indexOf(y);
   return (ix < 0 ? 9 : ix) - (iy < 0 ? 9 : iy);
 });
+/* 功法级 / 招式级分流（用户口径：武功册只列功法，招式归各武功页招式名表） */
+const splitArts = (list) => {
+  const gongfa = list.filter((a) => a.level !== '招式');
+  const moves = list.filter((a) => a.level === '招式');
+  return { gongfa, moves };
+};
+
+/* 人物 → 门派（用于恩怨对头的组织级聚合） */
+const personSect = new Map();
+for (const x of all) for (const m of x.members) if (!personSect.has(m.name)) personSect.set(m.name, x.canonical);
+const memberNames = new Set(s.members.map((m) => m.name));
+const foes = new Map();
+for (const m of matchesJson.matches) {
+  let self = null, other = null;
+  if (memberNames.has(m.a)) { self = m.a; other = m.b; }
+  else if (memberNames.has(m.b)) { self = m.b; other = m.a; }
+  if (!other) continue;
+  const osect = personSect.get(other) || '散人/无归属';
+  if (osect === s.canonical) continue;
+  const f = foes.get(osect) || { n: 0, names: new Map() };
+  f.n += 1;
+  f.names.set(other, (f.names.get(other) || 0) + 1);
+  foes.set(osect, f);
+}
+const foeRows = [...foes.entries()].sort((a, b) => b[1].n - a[1].n).slice(0, 5);
+
+/* 世系成员（工具 B）+ 未入世系的 derived 成员 */
+const tenured = new Set();
+for (const t of s.tenures || []) for (const m of t.members || []) tenured.add(typeof m === 'string' ? m : m.name);
+const restMembers = s.members.filter((m) => !tenured.has(m.name));
 ---
 
-<Base title={s.canonical} description={`${s.canonical}：武功册、成员册与事件参与——梁羽生武侠宇宙门派志。`}>
+<Base title={s.canonical} description={`${s.canonical}：武功册、掌门世系、成员册与恩怨对头——梁羽生武侠宇宙门派志。`}>
   <p class="crumb"><a href={`${B}sects/`}>门派志</a> / {s.canonical}</p>
+  <nav class="sectnav">
+    {all.map((x) => (
+      <a class={x.canonical === s.canonical ? 'on' : ''} href={`${B}sects/${encodeURIComponent(x.canonical)}/`}>{x.canonical}</a>
+    ))}
+  </nav>
   <h1>{s.canonical}
     {s.cross_book && <span class="badge badge-cross">跨书</span>}
+    <span class="nav2">
+      <a href={`${B}sects/${encodeURIComponent(prevS.canonical)}/`}>← 上一派</a>
+      <a href={`${B}sects/${encodeURIComponent(nextS.canonical)}/`}>下一派 →</a>
+    </span>
   </h1>
   <p class="meta">事件参与 <b>{s.ev_total}</b> · 见于 {s.books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}</p>
 
   {preds.length > 0 && (
     <section>
-      <h2>武功册</h2>
-      {preds.map((pred) => (
-        <div>
-          <h3 class="sub">{pred}（{s.arts_by_pred[pred].length}）</h3>
-          <p class="chips">
-            {s.arts_by_pred[pred].map((a) => (
-              <a class="chip" href={`${B}arts/${encodeURIComponent(a.art)}/`}>
-                {a.art}<small>·{a.book}</small>
-              </a>
-            ))}
-          </p>
-        </div>
-      ))}
-      {s.arts_by_pred['镇山']?.some((x) => x.note) && (
-        <ul class="notes">
-          {s.arts_by_pred['镇山'].filter((x) => x.note).map((x) => (
-            <li>{x.art} —— <span class="dim">「{x.note}」</span> <span class="loc">{x.book}·{x.locs[0]}</span></li>
-          ))}
-        </ul>
-      )}
+      <h2>武功册 <span class="dim">（只列功法级；招式见各武功页「招式名表」——工具 A 招式表分级）</span></h2>
+      {preds.map((pred) => {
+        const { gongfa, moves } = splitArts(s.arts_by_pred[pred]);
+        if (!gongfa.length) return null;
+        return (
+          <div>
+            <h3 class="sub">{pred}（{gongfa.length}）</h3>
+            <p class="chips">
+              {gongfa.map((a) => (
+                <a class="chip" href={`${B}arts/${encodeURIComponent(a.art)}/`}>
+                  {a.art}<small>·{a.book}{a.ev > 1 ? ` · ${a.ev} 证` : ''}</small>
+                </a>
+              ))}
+            </p>
+            {moves.length > 0 && (
+              <p class="dim moves-note">另有招式级 {moves.length} 个（{moves.map((m) => m.art).join('、')}）——归各武功页招式名表，不入门派武功册。</p>
+            )}
+          </div>
+        );
+      })}
     </section>
   )}
 
-  {s.members.length > 0 && (
+  {(s.tenures || []).length > 0 ? (
     <section>
-      <h2>成员册 <span class="dim">（derived：强证/确证级门派线索）</span></h2>
+      <h2>掌门世系与成员册 <span class="dim">（工具 B 门派世系表 · 每代掌门列门下成员）</span></h2>
+      <div class="tenures">
+        {(s.tenures || []).map((t) => (
+          <div class="tenure">
+            <div class="t-head">
+              <b>掌门：<a href={`${B}characters/${encodeURIComponent(t.leader)}/`}>{t.leader}</a></b>
+              <span class="mono dim">{t.period?.from || ''}{t.period?.to ? ` → ${t.period.to}` : ''}</span>
+              {t.conf && <span class="badge">{t.conf}</span>}
+              {t.successor && <span class="dim">继任：{t.successor}</span>}
+            </div>
+            {(t.members || []).length > 0 ? (
+              <p class="chips">
+                <span class="dim">门下：</span>
+                {t.members.map((m) => {
+                  const name = typeof m === 'string' ? m : m.name;
+                  return <a class="chip" href={`${B}characters/${encodeURIComponent(name)}/`}>{name}</a>;
+                })}
+              </p>
+            ) : (
+              <p class="dim">门下成员待考订归组（世系表 members 空）。</p>
+            )}
+            <ul class="notes">
+              {(t.evidence || []).map((e) => (
+                <li><span class="loc">{e.book}·{e.loc}</span> <span class="dim">{e.kind}</span></li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+      {(s.lineage_gaps || []).length > 0 && (
+        <ul class="notes">
+          {s.lineage_gaps.map((g) => <li class="dim">缺口：{g.before || ''} {g.note}</li>)}
+        </ul>
+      )}
+      {(s.lineage_todo || []).length > 0 && <p class="dim">待考：{s.lineage_todo.join('；')}</p>}
+    </section>
+  ) : null}
+
+  {restMembers.length > 0 && (
+    <section>
+      <h2>其余成员 <span class="dim">（derived：强证/确证级门派线索，未入世系分组）</span></h2>
       <p class="chips">
-        {s.members.map((m) => (
+        {restMembers.map((m) => (
           <a class="chip" href={`${B}characters/${encodeURIComponent(m.name)}/`}>
             {m.name}<small>{m.tier === 'strong' ? '强证' : '确证'} · 经{m.via.slice(0, 2).join('、')}</small>
           </a>
@@ -59,24 +144,34 @@ const preds = Object.keys(s.arts_by_pred).sort((x, y) => {
     </section>
   )}
 
-  <section class="card note">
-    <p class="dim">恩怨对头与兴衰曲线将在侠谱评分上线（M4）后由对局数据生成。</p>
-  </section>
+  {foeRows.length > 0 && (
+    <section>
+      <h2>恩怨对头 <span class="dim">（matches 事件 · 本派成员交手对象的门派聚合）</span></h2>
+      <p class="chips">
+        {foeRows.map(([osect, f]) => (
+          <a class="chip" href={`${B}sects/${encodeURIComponent(osect)}/`}>{osect}<small>{f.n} 场</small></a>
+        ))}
+      </p>
+      <p class="dim">交手最多：{[...foeRows[0][1].names.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([n, c]) => `${n}×${c}`).join('、')}（详见各人对局详情页）。</p>
+    </section>
+  )}
 </Base>
 
 <style>
   .crumb { font-size: .85rem; color: var(--ink-faint); }
   .meta { color: var(--ink-light); }
   .meta b { color: var(--azure); }
-  .bookchip {
-    display: inline-block; border: 1px solid var(--line-strong);
-    border-radius: 999px; padding: .02em .6em; margin: 0 .2em; font-size: .85rem;
-  }
-  .chip {
-    display: inline-block; border: 1px solid var(--line-strong);
-    border-radius: 999px; padding: .06em .7em; margin: .15em .2em;
-    font-size: .88rem; background: rgba(255,255,255,.5); color: var(--ink);
-  }
+  h1 { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+  .nav2 { font-size: .8rem; font-weight: 400; }
+  .nav2 a { color: var(--azure); margin-left: 8px; }
+  .sectnav { display: flex; flex-wrap: wrap; gap: 2px; margin-top: .6em; font-size: .82rem; }
+  .sectnav a { padding: .15em .6em; border-radius: 999px; color: var(--ink-faint); border: 1px solid transparent; }
+  .sectnav a:hover { color: var(--seal); }
+  .sectnav a.on { color: var(--seal); border-color: var(--seal); font-weight: 700; }
+  .bookchip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: .02em .6em; margin: 0 .2em; font-size: .85rem; }
+  .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: .06em .7em; margin: .15em .2em; font-size: .88rem; background: rgba(255,255,255,.5); color: var(--ink); }
   .chip small { color: var(--ink-faint); margin-left: .3em; font-family: var(--font-mono); }
   a.chip:hover { border-color: var(--seal); color: var(--seal); }
   .chips { line-height: 2.3; }
@@ -85,6 +180,15 @@ const preds = Object.keys(s.arts_by_pred).sort((x, y) => {
   .notes { font-size: .85rem; padding-left: 1.2em; }
   .notes li { margin: .3em 0; }
   .loc { color: var(--ink-faint); font-family: var(--font-mono); font-size: .85em; }
-  .note { margin-top: var(--space-5); }
+  .mono { font-family: var(--font-mono); }
+  .moves-note { font-size: .8rem; margin: .2em 0 .6em; }
+  .tenures { border-left: 2px solid var(--line-strong); margin-top: 10px; }
+  .tenure { padding: 8px 0 8px 16px; position: relative; }
+  .tenure::before { content: ''; position: absolute; left: -6px; top: 14px; width: 9px; height: 9px;
+    border-radius: 50%; background: var(--seal); border: 2px solid #fbf8ef; box-shadow: 0 0 0 1.5px var(--seal); }
+  .t-head { display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+  .t-head b { font-size: 1rem; }
+  .t-head a { color: var(--azure); }
+  .badge { display: inline-block; border: 1px solid var(--ink-faint); border-radius: 3px; padding: 0 6px; font-size: .72rem; }
   section { margin-top: var(--space-5); }
 </style>

@@ -35,6 +35,29 @@ def chapter_of(loc: str) -> int:
     return int(loc[:3])
 
 
+def line_places(book: str):
+    """{(chap, 行号): [地点规范名]} —— tagged 同行的 = 标记，供事件挂地点。"""
+    import re
+    out = {}
+    tdir = KB / 'tagged' / book
+    for fp in sorted(tdir.glob('*.tagged.md')):
+        chap = int(fp.name[:3])
+        lines = fp.read_text(encoding='utf-8').splitlines()
+        if lines and lines[0].strip() == '---':
+            endfm = next((i for i in range(1, len(lines)) if lines[i].strip() == '---'), None)
+            body = lines[endfm + 1:] if endfm is not None else lines
+        else:
+            body = lines
+        for lineno, s in enumerate(body, 1):
+            ps = []
+            for tok in re.findall(r'〖=([^〗]*)〗', s):
+                tok = tok.strip()
+                ps.append(tok.split('|')[-1].strip() if '|' in tok else tok)
+            if ps:
+                out[(chap, lineno)] = ps
+    return out
+
+
 def build_book(book: str, gaz):
     reg = json.loads((KB / book / '实体登记表.json').read_text(encoding='utf-8'))
     persons, places, bychap = {}, {}, {}
@@ -61,15 +84,22 @@ def build_book(book: str, gaz):
         bychap[c]['p'] = sorted(set(bychap[c]['p']))
         bychap[c]['l'] = sorted(set(bychap[c]['l']))
     ev = json.loads((KB / book / '事件表.json').read_text(encoding='utf-8'))
+    lp = line_places(book)
     events = {}
     for e in ev.get('events', []):
         if e.get('dropped') or e.get('curation', {}).get('verdict') == 'drop':
             continue
         c = chapter_of(e['loc'])
+        try:
+            ln = int(e['loc'][4:7])
+        except ValueError:
+            ln = 0
+        place = (lp.get((c, ln)) or [None])[0]
         events.setdefault(c, []).append({
             'l': e['loc'], 'v': e.get('verb') or e.get('verb_code', ''),
             'a': e.get('subject'), 'b': e.get('object'),
             'code': e.get('verb_code'), 'conf': e.get('confidence'),
+            'place': place,
         })
     meta_w = json.loads((KB / '作品元数据表.json').read_text(encoding='utf-8'))
     w = next((w for w in meta_w['works'] if w['book'] == book), {})
