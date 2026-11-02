@@ -1,0 +1,55 @@
+{
+ "meta": {
+  "generated": "2026-11-02",
+  "schema": "atlas-state-v1",
+  "note": "leaders（各派当前掌门）待工具 B 门派世系表接入后填充；era 来自作品元数据表"
+ },
+ "books": [
+  {
+   "slug": "七剑下天山",
+   "title": "七剑下天山",
+   "chapters": 30,
+   "era": "清·康熙",
+   "era_conf": "ok",
+   "leads": [
+    "凌未风",
+    "易兰珠"
+   ]
+  },
+  {
+   "slug": "塞外奇侠传",
+   "title": "塞外奇侠传",
+   "chapters": 28,
+   "era": "清初·顺治—康熙间",
+   "era_conf": "todo",
+   "leads": [
+    "杨云骢",
+    "纳兰明慧",
+    "飞红巾"
+   ]
+  },
+  {
+   "slug": "江湖三女侠",
+   "title": "江湖三女侠",
+   "chapters": 48,
+   "era": "清·雍正",
+   "era_conf": "ok",
+   "leads": [
+    "吕四娘",
+    "冯瑛",
+    "冯琳"
+   ]
+  },
+  {
+   "slug": "白发魔女传",
+   "title": "白发魔女传",
+   "chapters": 32,
+   "era": "明末·万历—崇祯（001回梃击案=万历四十三年）",
+   "era_conf": "ok",
+   "leads": [
+    "卓一航",
+    "练霓裳"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,333 @@
+{
+ "meta": {
+  "generated": "2026-11-02",
+  "schema": "story-v1",
+  "script": "scripts/build_stories.py",
+  "copyright": "L0：计数+定位符；摘录仅本地使用，不入切片"
+ },
+ "book": "白发魔女传",
+ "person": "卓一航",
+ "per_chapter": [
+  {
+   "c": 1,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 2,
+   "active": 7,
+   "passive": 2,
+   "kills": 1,
+   "opponents": [
+    "王照希",
+    "常洵",
+    "郑贵妃兄弟"
+   ],
+   "opp_weight": 202
+  },
+  {
+   "c": 3,
+   "active": 0,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "练霓裳"
+   ],
+   "opp_weight": 2678
+  },
+  {
+   "c": 4,
+   "active": 5,
+   "passive": 5,
+   "kills": 1,
+   "opponents": [
+    "练霓裳",
+    "应修阳",
+    "满洲",
+    "玉面妖狐凌霄"
+   ],
+   "opp_weight": 715
+  },
+  {
+   "c": 5,
+   "active": 13,
+   "passive": 13,
+   "kills": 0,
+   "opponents": [
+    "云燕平",
+    "金千岩",
+    "秦指挥",
+    "王兵备"
+   ],
+   "opp_weight": 60
+  },
+  {
+   "c": 6,
+   "active": 5,
+   "passive": 8,
+   "kills": 0,
+   "opponents": [
+    "金千岩",
+    "云燕平",
+    "铁飞龙",
+    "穆九娘"
+   ],
+   "opp_weight": 312
+  },
+  {
+   "c": 7,
+   "active": 0,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 8,
+   "active": 1,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [
+    "练霓裳"
+   ],
+   "opp_weight": 2678
+  },
+  {
+   "c": 9,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 10,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 11,
+   "active": 4,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [
+    "诏书",
+    "岳鸣珂"
+   ],
+   "opp_weight": 1184
+  },
+  {
+   "c": 12,
+   "active": 0,
+   "passive": 3,
+   "kills": 0,
+   "opponents": [
+    "岳鸣珂"
+   ],
+   "opp_weight": 1184
+  },
+  {
+   "c": 13,
+   "active": 4,
+   "passive": 5,
+   "kills": 2,
+   "opponents": [
+    "岳鸣珂",
+    "东厂"
+   ],
+   "opp_weight": 1184
+  },
+  {
+   "c": 14,
+   "active": 5,
+   "passive": 3,
+   "kills": 0,
+   "opponents": [
+    "公孙大娘"
+   ],
+   "opp_weight": 380
+  },
+  {
+   "c": 15,
+   "active": 0,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "铁飞龙"
+   ],
+   "opp_weight": 924
+  },
+  {
+   "c": 16,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 17,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 18,
+   "active": 1,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "金独异",
+    "练霓裳"
+   ],
+   "opp_weight": 1460
+  },
+  {
+   "c": 19,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 20,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 21,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 22,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 23,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 24,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 25,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 26,
+   "active": 1,
+   "passive": 3,
+   "kills": 0,
+   "opponents": [
+    "黄叶道人",
+    "红云道人"
+   ],
+   "opp_weight": 198
+  },
+  {
+   "c": 27,
+   "active": 3,
+   "passive": 3,
+   "kills": 0,
+   "opponents": [
+    "神一元",
+    "连城虎"
+   ],
+   "opp_weight": 72
+  },
+  {
+   "c": 28,
+   "active": 1,
+   "passive": 2,
+   "kills": 0,
+   "opponents": [
+    "霍元仲",
+    "昌钦大喇嘛"
+   ],
+   "opp_weight": 54
+  },
+  {
+   "c": 29,
+   "active": 13,
+   "passive": 4,
+   "kills": 2,
+   "opponents": [
+    "哈川",
+    "雷蒙法师",
+    "石浩",
+    "科图"
+   ],
+   "opp_weight": 42
+  },
+  {
+   "c": 30,
+   "active": 2,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "天德上人",
+    "神大元、神一元"
+   ],
+   "opp_weight": 65
+  },
+  {
+   "c": 31,
+   "active": 4,
+   "passive": 6,
+   "kills": 0,
+   "opponents": [
+    "练霓裳"
+   ],
+   "opp_weight": 2678
+  },
+  {
+   "c": 32,
+   "active": 4,
+   "passive": 9,
+   "kills": 0,
+   "opponents": [
+    "成章五",
+    "天龙上人"
+   ],
+   "opp_weight": 58
+  }
+ ],
+ "milestones": {
+  "first_dominant_chapter": 11,
+  "first_kill_chapter": 2,
+  "known_end": "032 平成章五、诛天德上人（蓝图 B6 叙事锚点）"
+ }
+}
