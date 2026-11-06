@@ -1,0 +1,704 @@
+{
+ "table": "rhetoric",
+ "version": "v1-approved",
+ "generated": "2026-11-04",
+ "source": "rhetoric_candidates_v0.json（53 条逐条人工核定，2026-11-04 项目方裁定）",
+ "spec_version": "0.3-draft",
+ "kind": "rhetoric",
+ "status": "已核定启用待标记（词表就绪；对既有回目补标 〘※〙 与新增回目标注为独立执行步骤）",
+ "totals": {
+  "all": 53,
+  "approved": 49,
+  "rejected": 4,
+  "corrected": 1
+ },
+ "items": [
+  {
+   "surface": "说时迟、那时快",
+   "canonical": "说时迟、那时快",
+   "type": "※",
+   "category": "俗语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 003x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "不到黄河心不死",
+   "canonical": "不到黄河心不死",
+   "type": "※",
+   "category": "俗语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "不见棺材泪不流",
+   "canonical": "不见棺材泪不流",
+   "type": "※",
+   "category": "俗语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "三山五岳",
+   "canonical": "三山五岳",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "迅雷不及掩耳",
+   "canonical": "迅雷不及掩耳",
+   "type": "※",
+   "category": "成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 003x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "天罗地网",
+   "canonical": "天罗地网",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "差之毫厘，谬以千里",
+   "canonical": "差之毫厘，谬以千里",
+   "type": "※",
+   "category": "俗语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "炉火纯青",
+   "canonical": "炉火纯青",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "出神入化",
+   "canonical": "出神入化",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "三头六臂",
+   "canonical": "三头六臂",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "插翅难逃",
+   "canonical": "插翅难逃",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "一字长蛇",
+   "canonical": "一字长蛇",
+   "type": "※",
+   "category": "阵法意象语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "二龙扰海",
+   "canonical": "二龙扰海",
+   "type": "※",
+   "category": "阵法意象语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "苍鹰扑兔",
+   "canonical": "苍鹰扑兔",
+   "type": "※",
+   "category": "武学意象语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "不寒而栗",
+   "canonical": "不寒而栗",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "指东打西",
+   "canonical": "指东打西",
+   "type": "※",
+   "category": "惯用语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "指南打北",
+   "canonical": "指南打北",
+   "type": "※",
+   "category": "惯用语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "杀人不眨眼",
+   "canonical": "杀人不眨眼",
+   "type": "※",
+   "category": "俗语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "老奸巨猾",
+   "canonical": "老奸巨猾",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "为虎作伥",
+   "canonical": "为虎作伥",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "势成骑虎",
+   "canonical": "势成骑虎",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "玉石俱碎",
+   "canonical": "玉石俱碎",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "棋逢敌手",
+   "canonical": "棋逢敌手",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "萍水相逢",
+   "canonical": "萍水相逢",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 003x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "义愤填胸",
+   "canonical": "义愤填胸",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 003x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "魂飞魄散",
+   "canonical": "魂飞魄散",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 003x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "恍然大悟",
+   "canonical": "恍然大悟",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 003x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "唯唯诺诺",
+   "canonical": "唯唯诺诺",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 001x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "肝胆照人",
+   "canonical": "肝胆照人",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 003x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "励精图治",
+   "canonical": "励精图治",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 003x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "落花流水",
+   "canonical": "落花流水",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 001x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "大开杀戒",
+   "canonical": "大开杀戒",
+   "type": "※",
+   "category": "惯用语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "风紧，扯呼",
+   "canonical": "风紧，扯呼",
+   "type": "※",
+   "category": "江湖切口",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": "首例江湖切口（docs/27 G-21 优先裁定项）"
+  },
+  {
+   "surface": "移祸东吴",
+   "canonical": "移祸东吴",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x2"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "狗走鸡飞",
+   "canonical": "狗走鸡飞",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "逐电追风",
+   "canonical": "逐电追风",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "如影随形",
+   "canonical": "如影随形",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "灵猫戏鼠",
+   "canonical": "灵猫戏鼠",
+   "type": "※",
+   "category": "武学意象语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "舌绽春雷",
+   "canonical": "舌绽春雷",
+   "type": "※",
+   "category": "武学意象语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "声到人到",
+   "canonical": "声到人到",
+   "type": "※",
+   "category": "武学惯用语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 004x1,005x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "呆若木鸡",
+   "canonical": "呆若木鸡",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "树大招风",
+   "canonical": "树大招风",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 006x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "现钟不打却去炼铜",
+   "canonical": "现钟不打却去炼铜",
+   "type": "※",
+   "category": "俗语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 006x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "敬酒不吃吃罚酒",
+   "canonical": "敬酒不吃吃罚酒",
+   "type": "※",
+   "category": "俗语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 006x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": "变体收录：006 原文作「怎么敬酒不吃你要吃罚酒」"
+  },
+  {
+   "surface": "花枝乱颤",
+   "canonical": "花枝乱颤",
+   "type": "※",
+   "category": "惯用语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 006x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "名闻胆落",
+   "canonical": "名闻胆落",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 006x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "言过其实",
+   "canonical": "言过其实",
+   "type": "※",
+   "category": "四字成语",
+   "orig_surface": "人言过其实",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 006"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": "边界修正：原候选“人言过其实”切分错误，“人”属前文“绿林中人”；006 原句「我只道绿林中人｜言过其实」"
+  },
+  {
+   "surface": "鹰鼻狮口",
+   "canonical": "鹰鼻狮口",
+   "type": "※",
+   "category": "四字语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 005x1,006x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  },
+  {
+   "surface": "踽踽独行",
+   "canonical": "踽踽独行",
+   "type": "※",
+   "category": "四字成语",
+   "tier": "review",
+   "status": "已核定",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传 006x1"
+   ],
+   "version": "candidates-v0→2026-11-04 核定",
+   "note": ""
+  }
+ ]
+}

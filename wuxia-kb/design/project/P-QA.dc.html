@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 图谱问答</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .nav{display:flex;gap:20px;align-items:center;font-size:14px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.7}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:4px 14px;font-size:13.5px;background:#fbf8ef;color:#5a544a;margin:3px;cursor:pointer}
+  .chip.on{border-color:#a63a2b;color:#a63a2b;font-weight:700}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:#8c8477}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+  <header style="border-bottom:1px solid #d8cdb8;background:#fbf8ef"><div class="wrap nav" style="height:52px">
+    <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:24px;color:#a63a2b;margin-right:18px">江湖图志</span>
+    <a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a></div></header>
+
+  <main class="wrap" style="flex:1;padding-bottom:48px">
+    <p class="lab" style="margin:14px 0 0"><a href="#">首页</a> / 江湖问答</p>
+    <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:36px;letter-spacing:3px;margin:6px 0 4px">江湖问答</h1>
+    <p style="color:#5a544a;font-size:15px">直接问一句话，或在下面选模板——答案只来自考订图谱，每条带「书·回」定位符，档案未载就答"档案未载"。<b>永不幻觉。</b></p>
+
+    <div style="display:flex;gap:10px;align-items:center;margin-top:16px">
+      <input style="flex:1;padding:12px 16px;border:2px solid #2b2b2b;border-radius:4px;font-family:inherit;font-size:16px;background:#fbf8ef" value="练霓裳去过哪里？" aria-label="直接问一个问题">
+      <button style="border:2px solid #a63a2b;background:#a63a2b;color:#fbf8ef;border-radius:4px;padding:10px 30px;font-size:15px;cursor:pointer;font-family:inherit">问</button>
+    </div>
+
+    <div style="margin-top:14px">
+      <span class="chip">谁杀了 X</span><span class="chip">X 在哪几回出场</span><span class="chip">X 的师承 / 传人</span>
+      <span class="chip">Y 派有什么武功</span><span class="chip">X 和 Y 交过手吗</span><span class="chip">X 的神兵 / 持物</span>
+      <span class="chip on">X 去过哪些地方</span><span class="chip" style="border-style:dashed;color:#8c8477">X 和 Y 什么关系（筹备中）</span>
+    </div>
+
+    <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:16px 20px;margin-top:16px">
+      <p style="margin:0 0 10px;font-weight:700;font-size:15px">练霓裳 的行经之地（按故事顺序）：</p>
+      <ul style="list-style:none;margin:0;padding:0;font-size:14px">
+        <li style="padding:6px 0;border-bottom:1px dashed #e6ddc8"><a href="#">明月峡 · 白发魔女传 004 →</a></li>
+        <li style="padding:6px 0;border-bottom:1px dashed #e6ddc8"><a href="#">武当山 · 白发魔女传 018 →</a></li>
+        <li style="padding:6px 0"><a href="#">天山 · 七剑下天山 021 →</a></li>
+      </ul>
+      <div style="display:flex;gap:14px;margin-top:12px;align-items:center">
+        <span class="lab">口径：atlas 切片 person 索引 · L0 · 答案由预构建 JSON 确定性求解，永不幻觉。</span>
+        <a href="#" class="lab" style="margin-left:auto;color:#34546e;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px">复制链接</a>
+      </div>
+    </div>
+
+    <div style="margin-top:18px">
+      <span class="lab">示例（点即查）：</span>
+      <span class="chip on">谁杀了金独异？</span>
+      <span class="chip">卓一航和凌未风交过手吗？</span>
+      <span class="chip">岳鸣珂的传人有哪些？</span>
+    </div>
+
+    <p class="lab" style="margin-top:18px;border-top:1px dashed #d8cdb8;padding-top:12px">
+      口径说明：事件层为叙事层（人工校订），"谁杀了 X"以杀/诛/毙为准；师承按动词分级；暂持 ≠ 归属（神兵谱口径）。
+      v2 接 LLM 自由提问时同样强制挂引用。</p>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":980}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

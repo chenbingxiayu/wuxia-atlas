@@ -1,0 +1,502 @@
+{
+ "table": "rhetoric",
+ "version": "candidates-v0",
+ "generated": "2026-11-03",
+ "status": "已核定关闭（2026-11-04 逐条人工裁定：49 收录 / 4 不收录 / 1 边界修正→言过其实）；正式表见 rhetoric.json",
+ "scope_note": "三回实测扫描 35 候选，剔除 2 条武学术语（走火入魔→^/⊠、传音入密→☆，已由实体动词层覆盖，避免双层冲突）后定稿 33 条；005 续扫新增 10 条（含首例江湖切口「风紧，扯呼」），现共 43 条。阵法/武学意象语（一字长蛇/苍鹰扑兔类）为比喻用法候选，作技法名时归 ☆、作比喻时归 ※——启用时逐条裁定。启用建议见 docs/27 §四。",
+ "items": [
+  {
+   "surface": "说时迟、那时快",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "003": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "不到黄河心不死",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "不见棺材泪不流",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "三山五岳",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "迅雷不及掩耳",
+   "type": "成语",
+   "count": 1,
+   "sources": {
+    "003": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "天罗地网",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "差之毫厘，谬以千里",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "炉火纯青",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "出神入化",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "三头六臂",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "插翅难逃",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "一字长蛇",
+   "type": "阵法意象语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "二龙扰海",
+   "type": "阵法意象语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "苍鹰扑兔",
+   "type": "武学意象语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "不寒而栗",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "指东打西",
+   "type": "惯用语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "指南打北",
+   "type": "惯用语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "杀人不眨眼",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "心领神会",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "rejected",
+   "reject_reason": "已由 ▣ 动词层覆盖（⟦▣心领神会⟧ 已标注），双层冲突排除"
+  },
+  {
+   "surface": "老奸巨猾",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "为虎作伥",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "势成骑虎",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "玉石俱碎",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "棋逢敌手",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "萍水相逢",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "003": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "义愤填胸",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "003": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "魂飞魄散",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "003": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "恍然大悟",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "003": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "唯唯诺诺",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "001": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "肝胆照人",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "003": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "励精图治",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "003": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "落花流水",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "001": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "大开杀戒",
+   "type": "惯用语",
+   "count": 1,
+   "sources": {
+    "004": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "风紧，扯呼",
+   "type": "江湖切口",
+   "count": 1,
+   "sources": {
+    "005": 1
+   },
+   "note": "黑话切口——01g：切口制度归专门概念，具体措辞可归修辞；启用时优先裁定",
+   "decision": "approved"
+  },
+  {
+   "surface": "移祸东吴",
+   "type": "四字成语",
+   "count": 2,
+   "sources": {
+    "005": 2
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "狗走鸡飞",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "005": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "逐电追风",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "005": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "如影随形",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "005": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "灵猫戏鼠",
+   "type": "武学意象语",
+   "count": 1,
+   "sources": {
+    "005": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "舌绽春雷",
+   "type": "武学意象语",
+   "count": 1,
+   "sources": {
+    "005": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "声到人到",
+   "type": "武学惯用语",
+   "count": 2,
+   "sources": {
+    "004": 1,
+    "005": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "寿终正寝",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "005": 1
+   },
+   "decision": "rejected",
+   "reject_reason": "死亡委婉语实指已实施死亡，⊠ 事件层覆盖（参照 excluded 走火入魔先例）"
+  },
+  {
+   "surface": "呆若木鸡",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "005": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "树大招风",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "现钟不打却去炼铜",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "指腹为媒",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   },
+   "decision": "rejected",
+   "reject_reason": "婚俗用语实指已实施订婚，⊡ 婚姻域覆盖（P3-8 口径）"
+  },
+  {
+   "surface": "敬酒不吃吃罚酒",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "花枝乱颤",
+   "type": "惯用语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "名闻胆落",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "人言过其实",
+   "type": "俗语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   }
+  },
+  {
+   "surface": "鹰鼻狮口",
+   "type": "四字语",
+   "count": 2,
+   "sources": {
+    "005": 1,
+    "006": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "踽踽独行",
+   "type": "四字成语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   },
+   "decision": "approved"
+  },
+  {
+   "surface": "听声辨器",
+   "type": "武学惯用语",
+   "count": 1,
+   "sources": {
+    "006": 1
+   },
+   "decision": "rejected",
+   "reject_reason": "武学能力描写，裁定不入修辞层（如后续作技法名可另归 ☆）"
+  }
+ ],
+ "excluded": [
+  {
+   "surface": "走火入魔",
+   "reason": "^专门概念/⊠事件已覆盖"
+  },
+  {
+   "surface": "传音入密",
+   "reason": "☆技艺已覆盖"
+  }
+ ]
+}

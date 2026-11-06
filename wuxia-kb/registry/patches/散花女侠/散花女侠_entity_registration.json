@@ -1,0 +1,4342 @@
+{
+ "schema": "entity_registration_proposal/v1",
+ "book": "散花女侠",
+ "generated": "2026-11-06T10:28:04",
+ "source": "registry/concordance/散花女侠（scan+aggregate 复算）",
+ "scope_types": [
+  "@",
+  "&",
+  "◆"
+ ],
+ "status_policy": "proposed（试点新增待核；合并后进映射表消费，与既有 proposed 同口径）",
+ "counts": {
+  "proposals": 403,
+  "alias_additions": 9,
+  "skipped": 9,
+  "entities": 375,
+  "by_type": {
+   "@": 324,
+   "◆": 35,
+   "&": 16
+  },
+  "alias_filter": {
+   "kept": 61,
+   "dropped": 164
+  },
+  "canonical_drop2": [
+   "波斯公主",
+   "刘公公",
+   "段王爷",
+   "阿萨玛兄弟",
+   "沐小姐",
+   "铁公子",
+   "曹公公",
+   "凌姐姐",
+   "于姑娘",
+   "曹太监",
+   "褚大人",
+   "于大人",
+   "朱明天子",
+   "铁相公",
+   "石老师",
+   "沐公子",
+   "于小姐",
+   "朱家天子",
+   "中国皇帝",
+   "金娥姐姐",
+   "于相公",
+   "小姐",
+   "铁大人",
+   "凌姑娘",
+   "于姐姐"
+  ],
+  "alias_additions_dropped": 1
+ },
+ "entities": [
+  {
+   "type": "@",
+   "canonical": "于承珠",
+   "aliases": [
+    "承珠",
+    "散花女侠",
+    "珠儿"
+   ],
+   "sources": [
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现2778次/30回；首见 散花女侠#pn-r6.2"
+  },
+  {
+   "type": "@",
+   "canonical": "铁镜心",
+   "aliases": [
+    "镜心"
+   ],
+   "sources": [
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "019",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1087次/20回；首见 散花女侠#pn-r11.6"
+  },
+  {
+   "type": "@",
+   "canonical": "张丹枫",
+   "aliases": [
+    "丹枫"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "031",
+    "032",
+    "033",
+    "034",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现911次/34回；首见 散花女侠#pn-r1.49"
+  },
+  {
+   "type": "@",
+   "canonical": "毕擎天",
+   "aliases": [
+    "毕擎夭"
+   ],
+   "sources": [
+    "004",
+    "005",
+    "006",
+    "008",
+    "010",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "022",
+    "023",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现849次/24回；首见 散花女侠#pn-r4.90"
+  },
+  {
+   "type": "@",
+   "canonical": "小虎子",
+   "aliases": [
+    "虎子"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "007",
+    "008",
+    "016",
+    "017",
+    "018",
+    "019",
+    "021",
+    "023",
+    "024",
+    "025",
+    "032",
+    "034",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现582次/15回；首见 散花女侠#pn-r1.9"
+  },
+  {
+   "type": "@",
+   "canonical": "叶成林",
+   "aliases": [
+    "成林"
+   ],
+   "sources": [
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现573次/15回；首见 散花女侠#pn-r22.20"
+  },
+  {
+   "type": "@",
+   "canonical": "阳宗海",
+   "aliases": [
+    "宗海"
+   ],
+   "sources": [
+    "004",
+    "005",
+    "007",
+    "009",
+    "010",
+    "011",
+    "016",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "031",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现512次/22回；首见 散花女侠#pn-r4.17"
+  },
+  {
+   "type": "@",
+   "canonical": "樊英",
+   "aliases": [
+    "宁花斧",
+    "宣花斧"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现491次/8回；首见 散花女侠#pn-r1.50"
+  },
+  {
+   "type": "@",
+   "canonical": "凌云凤",
+   "aliases": [
+    "云凤",
+    "凌云风"
+   ],
+   "sources": [
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现449次/10回；首见 散花女侠#pn-r26.45"
+  },
+  {
+   "type": "@",
+   "canonical": "叶宗留",
+   "sources": [
+    "010",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "022",
+    "023",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "033",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现261次/18回；首见 散花女侠#pn-r10.4"
+  },
+  {
+   "type": "@",
+   "canonical": "张风府",
+   "aliases": [
+    "张大人"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "007",
+    "008",
+    "009",
+    "017",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现255次/10回；首见 散花女侠#pn-r1.47"
+  },
+  {
+   "type": "@",
+   "canonical": "娄桐荪",
+   "aliases": [
+    "桐荪"
+   ],
+   "sources": [
+    "009",
+    "010",
+    "015",
+    "016",
+    "017",
+    "030",
+    "031",
+    "032",
+    "033",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现221次/11回；首见 散花女侠#pn-r9.13"
+  },
+  {
+   "type": "@",
+   "canonical": "毕愿穷",
+   "aliases": [
+    "愿穷"
+   ],
+   "sources": [
+    "005",
+    "008",
+    "009",
+    "010",
+    "013",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "032",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现190次/14回；首见 散花女侠#pn-r5.7"
+  },
+  {
+   "type": "@",
+   "canonical": "潮音和尚",
+   "aliases": [
+    "湖音和尚",
+    "潮音",
+    "潮音大师"
+   ],
+   "sources": [
+    "010",
+    "015",
+    "023",
+    "025",
+    "026",
+    "027",
+    "028",
+    "030",
+    "031",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现188次/10回；首见 散花女侠#pn-r10.3"
+  },
+  {
+   "type": "@",
+   "canonical": "黑白摩诃",
+   "sources": [
+    "007",
+    "008",
+    "011",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "032",
+    "033",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现184次/16回；首见 散花女侠#pn-r7.30"
+  },
+  {
+   "type": "@",
+   "canonical": "于谦",
+   "aliases": [
+    "于肃愍公",
+    "于阁老",
+    "于阁部"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "012",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "031",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现140次/16回；首见 散花女侠#pn-r1.49"
+  },
+  {
+   "type": "@",
+   "canonical": "沐燕",
+   "aliases": [
+    "燕儿"
+   ],
+   "sources": [
+    "019",
+    "020",
+    "023",
+    "024",
+    "025",
+    "026",
+    "030",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现136次/8回；首见 散花女侠#pn-r19.16"
+  },
+  {
+   "type": "@",
+   "canonical": "云蕾",
+   "aliases": [
+    "散花女侠"
+   ],
+   "sources": [
+    "006",
+    "007",
+    "009",
+    "010",
+    "013",
+    "014",
+    "016",
+    "019",
+    "021",
+    "023",
+    "024",
+    "025",
+    "032",
+    "033",
+    "034",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现131次/16回；首见 散花女侠#pn-r6.3"
+  },
+  {
+   "type": "@",
+   "canonical": "周山民",
+   "aliases": [
+    "金刀小寨主"
+   ],
+   "sources": [
+    "004",
+    "008",
+    "009",
+    "010",
+    "012",
+    "015",
+    "025",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现124次/8回；首见 散花女侠#pn-r4.92"
+  },
+  {
+   "type": "@",
+   "canonical": "祈镇",
+   "aliases": [
+    "明英宗"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "005",
+    "007",
+    "008",
+    "009",
+    "018",
+    "021",
+    "032",
+    "033",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现122次/12回；首见 散花女侠#pn-r1.48"
+  },
+  {
+   "type": "@",
+   "canonical": "赤霞道人",
+   "aliases": [
+    "赤霞道长"
+   ],
+   "sources": [
+    "017",
+    "018",
+    "020",
+    "023",
+    "024",
+    "025",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现116次/7回；首见 散花女侠#pn-r17.80"
+  },
+  {
+   "type": "@",
+   "canonical": "玄瑛道人",
+   "sources": [
+    "005",
+    "026",
+    "027",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现113次/4回；首见 散花女侠#pn-r5.13"
+  },
+  {
+   "type": "@",
+   "canonical": "云重",
+   "sources": [
+    "001",
+    "003",
+    "006",
+    "007",
+    "020",
+    "023",
+    "024",
+    "025",
+    "032",
+    "033",
+    "034",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现112次/12回；首见 散花女侠#pn-r1.49"
+  },
+  {
+   "type": "@",
+   "canonical": "石惊涛",
+   "sources": [
+    "004",
+    "011",
+    "012",
+    "014",
+    "015",
+    "016",
+    "022",
+    "023",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现110次/10回；首见 散花女侠#pn-r4.18"
+  },
+  {
+   "type": "@",
+   "canonical": "乌蒙夫",
+   "aliases": [
+    "蒙夫"
+   ],
+   "sources": [
+    "004",
+    "011",
+    "016",
+    "022",
+    "023",
+    "024",
+    "025",
+    "027",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现107次/10回；首见 散花女侠#pn-r4.18"
+  },
+  {
+   "type": "@",
+   "canonical": "韩老镖头",
+   "sources": [
+    "026",
+    "027",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现100次/3回；首见 散花女侠#pn-r26.13"
+  },
+  {
+   "type": "@",
+   "canonical": "黑摩诃",
+   "sources": [
+    "007",
+    "008",
+    "009",
+    "017",
+    "018",
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现99次/7回；首见 散花女侠#pn-r7.31"
+  },
+  {
+   "type": "@",
+   "canonical": "石鸿博",
+   "aliases": [
+    "鸿博"
+   ],
+   "sources": [
+    "009",
+    "032",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现81次/3回；首见 散花女侠#pn-r9.13"
+  },
+  {
+   "type": "@",
+   "canonical": "沐璘",
+   "aliases": [
+    "璘儿"
+   ],
+   "sources": [
+    "019",
+    "020",
+    "021",
+    "023",
+    "024",
+    "025",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现80次/7回；首见 散花女侠#pn-r19.15"
+  },
+  {
+   "type": "@",
+   "canonical": "陆展鹏",
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现76次/4回；首见 散花女侠#pn-r1.72"
+  },
+  {
+   "type": "@",
+   "canonical": "沐国公",
+   "sources": [
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "025",
+    "028",
+    "030",
+    "031",
+    "033",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现73次/11回；首见 散花女侠#pn-r19.5"
+  },
+  {
+   "type": "@",
+   "canonical": "阿萨玛",
+   "sources": [
+    "008",
+    "018",
+    "019",
+    "025",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现72次/5回；首见 散花女侠#pn-r8.7"
+  },
+  {
+   "type": "@",
+   "canonical": "盘天罗",
+   "sources": [
+    "017",
+    "018",
+    "023",
+    "024",
+    "025",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现71次/6回；首见 散花女侠#pn-r17.79"
+  },
+  {
+   "type": "@",
+   "canonical": "长谷川",
+   "sources": [
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现68次/2回；首见 散花女侠#pn-r13.31"
+  },
+  {
+   "type": "@",
+   "canonical": "沐琮",
+   "aliases": [
+    "沐国公"
+   ],
+   "sources": [
+    "019",
+    "020",
+    "021",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现67次/4回；首见 散花女侠#pn-r19.15"
+  },
+  {
+   "type": "@",
+   "canonical": "武振东",
+   "aliases": [
+    "小金龙"
+   ],
+   "sources": [
+    "004",
+    "005",
+    "006",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现63次/4回；首见 散花女侠#pn-r4.81"
+  },
+  {
+   "type": "@",
+   "canonical": "段澄苍",
+   "sources": [
+    "018",
+    "019",
+    "020",
+    "021",
+    "023",
+    "024",
+    "025",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现63次/8回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "@",
+   "canonical": "东方洛",
+   "sources": [
+    "003",
+    "011",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现62次/3回；首见 散花女侠#pn-r3.28"
+  },
+  {
+   "type": "@",
+   "canonical": "玄机逸士",
+   "aliases": [
+    "玄机"
+   ],
+   "sources": [
+    "006",
+    "007",
+    "008",
+    "010",
+    "011",
+    "014",
+    "015",
+    "016",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "028",
+    "032",
+    "033",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现62次/17回；首见 散花女侠#pn-r6.3"
+  },
+  {
+   "type": "◆",
+   "canonical": "丐帮",
+   "sources": [
+    "004",
+    "005",
+    "012",
+    "026",
+    "027",
+    "028",
+    "032",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现61次/8回；首见 散花女侠#pn-r4.92"
+  },
+  {
+   "type": "@",
+   "canonical": "六阳真君",
+   "sources": [
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现58次/2回；首见 散花女侠#pn-r24.30"
+  },
+  {
+   "type": "@",
+   "canonical": "成海山",
+   "aliases": [
+    "海山"
+   ],
+   "sources": [
+    "011",
+    "012",
+    "015",
+    "016",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现57次/7回；首见 散花女侠#pn-r11.56"
+  },
+  {
+   "type": "@",
+   "canonical": "白孟川",
+   "sources": [
+    "026",
+    "027",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现57次/4回；首见 散花女侠#pn-r26.20"
+  },
+  {
+   "type": "@",
+   "canonical": "石文纨",
+   "aliases": [
+    "文纨"
+   ],
+   "sources": [
+    "011",
+    "012",
+    "015",
+    "016",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现55次/7回；首见 散花女侠#pn-r11.56"
+  },
+  {
+   "type": "@",
+   "canonical": "顾孟章",
+   "sources": [
+    "030",
+    "032",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现55次/3回；首见 散花女侠#pn-r30.7"
+  },
+  {
+   "type": "@",
+   "canonical": "白摩诃",
+   "sources": [
+    "007",
+    "008",
+    "017",
+    "018",
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现53次/6回；首见 散花女侠#pn-r7.32"
+  },
+  {
+   "type": "@",
+   "canonical": "大漠神狼",
+   "sources": [
+    "031",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现53次/2回；首见 散花女侠#pn-r31.19"
+  },
+  {
+   "type": "@",
+   "canonical": "张黑",
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现52次/5回；首见 散花女侠#pn-r10.28"
+  },
+  {
+   "type": "@",
+   "canonical": "屠龙尊者",
+   "sources": [
+    "023",
+    "025",
+    "032",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现48次/4回；首见 散花女侠#pn-r23.75"
+  },
+  {
+   "type": "@",
+   "canonical": "鸠盘婆",
+   "sources": [
+    "023",
+    "024",
+    "025",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现47次/4回；首见 散花女侠#pn-r23.75"
+  },
+  {
+   "type": "@",
+   "canonical": "李涵真",
+   "sources": [
+    "007",
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现46次/3回；首见 散花女侠#pn-r7.44"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台灭明",
+   "sources": [
+    "016",
+    "023",
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现46次/4回；首见 散花女侠#pn-r16.18"
+  },
+  {
+   "type": "@",
+   "canonical": "蒙元子",
+   "sources": [
+    "017",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现46次/2回；首见 散花女侠#pn-r17.23"
+  },
+  {
+   "type": "@",
+   "canonical": "钱通海",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现44次/1回；首见 散花女侠#pn-r5.6"
+  },
+  {
+   "type": "@",
+   "canonical": "石井太郎",
+   "sources": [
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现44次/2回；首见 散花女侠#pn-r13.30"
+  },
+  {
+   "type": "@",
+   "canonical": "洪岩道人",
+   "sources": [
+    "020",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现42次/2回；首见 散花女侠#pn-r20.36"
+  },
+  {
+   "type": "@",
+   "canonical": "摘星上人",
+   "aliases": [
+    "摘星老道"
+   ],
+   "sources": [
+    "023",
+    "024",
+    "025",
+    "032",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现42次/5回；首见 散花女侠#pn-r23.75"
+  },
+  {
+   "type": "@",
+   "canonical": "郝云台",
+   "aliases": [
+    "火麒麟"
+   ],
+   "sources": [
+    "028",
+    "031",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现42次/3回；首见 散花女侠#pn-r28.15"
+  },
+  {
+   "type": "@",
+   "canonical": "老樊",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现38次/1回；首见 散花女侠#pn-r1.14"
+  },
+  {
+   "type": "@",
+   "canonical": "郭成泰",
+   "sources": [
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现38次/2回；首见 散花女侠#pn-r8.51"
+  },
+  {
+   "type": "@",
+   "canonical": "楚大齐",
+   "aliases": [
+    "铁扇书生"
+   ],
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现38次/1回；首见 散花女侠#pn-r33.30"
+  },
+  {
+   "type": "@",
+   "canonical": "芥川龙木",
+   "sources": [
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现37次/2回；首见 散花女侠#pn-r13.40"
+  },
+  {
+   "type": "@",
+   "canonical": "铁鈜",
+   "sources": [
+    "011",
+    "012",
+    "015",
+    "022",
+    "023",
+    "030",
+    "031",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现36次/8回；首见 散花女侠#pn-r11.12"
+  },
+  {
+   "type": "@",
+   "canonical": "谷中豪",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现36次/1回；首见 散花女侠#pn-r23.4"
+  },
+  {
+   "type": "@",
+   "canonical": "杨千斤",
+   "sources": [
+    "006",
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现35次/2回；首见 散花女侠#pn-r6.30"
+  },
+  {
+   "type": "@",
+   "canonical": "战三山",
+   "sources": [
+    "001",
+    "002",
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现34次/4回；首见 散花女侠#pn-r1.66"
+  },
+  {
+   "type": "@",
+   "canonical": "郑长老",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现34次/1回；首见 散花女侠#pn-r32.31"
+  },
+  {
+   "type": "@",
+   "canonical": "童家骏",
+   "sources": [
+    "001",
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现33次/2回；首见 散花女侠#pn-r1.72"
+  },
+  {
+   "type": "@",
+   "canonical": "贯居",
+   "sources": [
+    "001",
+    "004",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现32次/3回；首见 散花女侠#pn-r1.50"
+  },
+  {
+   "type": "@",
+   "canonical": "石翠凤",
+   "sources": [
+    "009",
+    "010",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现31次/3回；首见 散花女侠#pn-r9.5"
+  },
+  {
+   "type": "@",
+   "canonical": "王安",
+   "sources": [
+    "015",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现31次/2回；首见 散花女侠#pn-r15.16"
+  },
+  {
+   "type": "@",
+   "canonical": "张骥",
+   "sources": [
+    "031",
+    "032",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现31次/5回；首见 散花女侠#pn-r31.53"
+  },
+  {
+   "type": "@",
+   "canonical": "谢天华",
+   "aliases": [
+    "天华"
+   ],
+   "sources": [
+    "016",
+    "021",
+    "023",
+    "025",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现30次/5回；首见 散花女侠#pn-r16.25"
+  },
+  {
+   "type": "@",
+   "canonical": "龙腾",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现28次/1回；首见 散花女侠#pn-r32.72"
+  },
+  {
+   "type": "@",
+   "canonical": "金万两",
+   "sources": [
+    "006",
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现27次/2回；首见 散花女侠#pn-r6.30"
+  },
+  {
+   "type": "@",
+   "canonical": "韩振羽",
+   "aliases": [
+    "金针圣手"
+   ],
+   "sources": [
+    "026",
+    "027",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现27次/3回；首见 散花女侠#pn-r26.28"
+  },
+  {
+   "type": "@",
+   "canonical": "褚玄",
+   "sources": [
+    "009",
+    "010",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现26次/3回；首见 散花女侠#pn-r9.37"
+  },
+  {
+   "type": "@",
+   "canonical": "闻铁声",
+   "sources": [
+    "001",
+    "002",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现25次/3回；首见 散花女侠#pn-r1.66"
+  },
+  {
+   "type": "@",
+   "canonical": "张大侠",
+   "sources": [
+    "007",
+    "018",
+    "020",
+    "022",
+    "026",
+    "027",
+    "030",
+    "032",
+    "034",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现22次/10回；首见 散花女侠#pn-r7.55"
+  },
+  {
+   "type": "@",
+   "canonical": "朗英",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现22次/1回；首见 散花女侠#pn-r22.38"
+  },
+  {
+   "type": "@",
+   "canonical": "邓茂七",
+   "sources": [
+    "010",
+    "013",
+    "014",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现19次/4回；首见 散花女侠#pn-r10.4"
+  },
+  {
+   "type": "@",
+   "canonical": "哈木图",
+   "aliases": [
+    "大漠神狼"
+   ],
+   "sources": [
+    "028",
+    "031",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现19次/3回；首见 散花女侠#pn-r28.35"
+  },
+  {
+   "type": "@",
+   "canonical": "叶元章",
+   "aliases": [
+    "西山医隐"
+   ],
+   "sources": [
+    "032",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现19次/2回；首见 散花女侠#pn-r32.59"
+  },
+  {
+   "type": "@",
+   "canonical": "上官天野",
+   "sources": [
+    "008",
+    "016",
+    "022",
+    "023",
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现18次/6回；首见 散花女侠#pn-r8.27"
+  },
+  {
+   "type": "@",
+   "canonical": "孟长生",
+   "sources": [
+    "008",
+    "009",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现18次/3回；首见 散花女侠#pn-r8.51"
+  },
+  {
+   "type": "@",
+   "canonical": "段澄平",
+   "sources": [
+    "020",
+    "024",
+    "025",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现18次/4回；首见 散花女侠#pn-r20.23"
+  },
+  {
+   "type": "@",
+   "canonical": "小昭",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现17次/1回；首见 散花女侠#pn-r13.35"
+  },
+  {
+   "type": "@",
+   "canonical": "叶盈盈",
+   "aliases": [
+    "盈盈",
+    "飞天龙女"
+   ],
+   "sources": [
+    "016",
+    "021",
+    "023",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现17次/4回；首见 散花女侠#pn-r16.25"
+  },
+  {
+   "type": "@",
+   "canonical": "王镇南",
+   "sources": [
+    "019",
+    "020",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现17次/3回；首见 散花女侠#pn-r19.15"
+  },
+  {
+   "type": "@",
+   "canonical": "杜焜",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现17次/1回；首见 散花女侠#pn-r22.38"
+  },
+  {
+   "type": "@",
+   "canonical": "齐封",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现17次/1回；首见 散花女侠#pn-r32.85"
+  },
+  {
+   "type": "&",
+   "canonical": "段家",
+   "sources": [
+    "018",
+    "020",
+    "022",
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现16次/5回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "◆",
+   "canonical": "大明",
+   "sources": [
+    "001",
+    "003",
+    "005",
+    "006",
+    "010",
+    "011",
+    "015",
+    "029",
+    "032",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现15次/10回；首见 散花女侠#pn-r1.68"
+  },
+  {
+   "type": "@",
+   "canonical": "江口",
+   "sources": [
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现15次/2回；首见 散花女侠#pn-r11.65"
+  },
+  {
+   "type": "◆",
+   "canonical": "义军",
+   "sources": [
+    "015",
+    "016",
+    "022",
+    "028",
+    "029",
+    "031",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现15次/7回；首见 散花女侠#pn-r15.31"
+  },
+  {
+   "type": "@",
+   "canonical": "小公爹",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现15次/1回；首见 散花女侠#pn-r19.4"
+  },
+  {
+   "type": "@",
+   "canonical": "胡宏",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现15次/1回；首见 散花女侠#pn-r28.32"
+  },
+  {
+   "type": "@",
+   "canonical": "张大洪",
+   "sources": [
+    "019",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现14次/2回；首见 散花女侠#pn-r19.35"
+  },
+  {
+   "type": "@",
+   "canonical": "方地刚",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现14次/1回；首见 散花女侠#pn-r20.30"
+  },
+  {
+   "type": "@",
+   "canonical": "毕道凡",
+   "aliases": [
+    "震三界"
+   ],
+   "sources": [
+    "004",
+    "005",
+    "010",
+    "032",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现13次/5回；首见 散花女侠#pn-r4.92"
+  },
+  {
+   "type": "@",
+   "canonical": "高桥",
+   "sources": [
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现13次/2回；首见 散花女侠#pn-r11.65"
+  },
+  {
+   "type": "@",
+   "canonical": "濑越",
+   "sources": [
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现13次/2回；首见 散花女侠#pn-r11.65"
+  },
+  {
+   "type": "@",
+   "canonical": "新娘",
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现13次/1回；首见 散花女侠#pn-r17.11"
+  },
+  {
+   "type": "&",
+   "canonical": "沐家",
+   "sources": [
+    "019",
+    "020",
+    "021",
+    "033",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现13次/5回；首见 散花女侠#pn-r19.6"
+  },
+  {
+   "type": "@",
+   "canonical": "祈钰",
+   "aliases": [
+    "明代宗",
+    "郕王"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现12次/3回；首见 散花女侠#pn-r1.49"
+  },
+  {
+   "type": "@",
+   "canonical": "阿合玛",
+   "sources": [
+    "008",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现12次/2回；首见 散花女侠#pn-r8.7"
+  },
+  {
+   "type": "@",
+   "canonical": "邓义七",
+   "sources": [
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现12次/2回；首见 散花女侠#pn-r29.25"
+  },
+  {
+   "type": "@",
+   "canonical": "张士诚",
+   "sources": [
+    "006",
+    "007",
+    "010",
+    "012",
+    "018",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现11次/6回；首见 散花女侠#pn-r6.13"
+  },
+  {
+   "type": "@",
+   "canonical": "周谷隐",
+   "aliases": [
+    "八臂哪吒",
+    "八达山人"
+   ],
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现10次/1回；首见 散花女侠#pn-r34.31"
+  },
+  {
+   "type": "@",
+   "canonical": "胖和尚",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现9次/1回；首见 散花女侠#pn-r9.33"
+  },
+  {
+   "type": "@",
+   "canonical": "林仙韵",
+   "aliases": [
+    "金钩仙子"
+   ],
+   "sources": [
+    "016",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 散花女侠#pn-r16.18"
+  },
+  {
+   "type": "@",
+   "canonical": "赤城子",
+   "aliases": [
+    "赤霞道人"
+   ],
+   "sources": [
+    "016",
+    "021",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现9次/3回；首见 散花女侠#pn-r16.32"
+  },
+  {
+   "type": "◆",
+   "canonical": "波斯",
+   "sources": [
+    "018",
+    "032",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现9次/3回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "@",
+   "canonical": "沐小公爹",
+   "sources": [
+    "019",
+    "023",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现9次/3回；首见 散花女侠#pn-r19.5"
+  },
+  {
+   "type": "@",
+   "canonical": "金娥",
+   "sources": [
+    "020",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 散花女侠#pn-r20.15"
+  },
+  {
+   "type": "@",
+   "canonical": "银桂",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现9次/1回；首见 散花女侠#pn-r20.15"
+  },
+  {
+   "type": "@",
+   "canonical": "霍行仲",
+   "sources": [
+    "028",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 散花女侠#pn-r28.6"
+  },
+  {
+   "type": "@",
+   "canonical": "八达山人",
+   "sources": [
+    "032",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 散花女侠#pn-r32.83"
+  },
+  {
+   "type": "◆",
+   "canonical": "赤城派",
+   "sources": [
+    "004",
+    "016",
+    "018",
+    "021",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现8次/5回；首见 散花女侠#pn-r4.18"
+  },
+  {
+   "type": "@",
+   "canonical": "了缘大师",
+   "aliases": [
+    "了缘"
+   ],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现8次/1回；首见 散花女侠#pn-r9.15"
+  },
+  {
+   "type": "@",
+   "canonical": "董岳",
+   "sources": [
+    "015",
+    "016",
+    "022",
+    "023",
+    "025",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现8次/6回；首见 散花女侠#pn-r15.2"
+  },
+  {
+   "type": "@",
+   "canonical": "段功",
+   "aliases": [
+    "段平章"
+   ],
+   "sources": [
+    "018",
+    "020",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现8次/3回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "@",
+   "canonical": "王将军",
+   "sources": [
+    "019",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 散花女侠#pn-r19.14"
+  },
+  {
+   "type": "@",
+   "canonical": "王金标",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现8次/1回；首见 散花女侠#pn-r19.35"
+  },
+  {
+   "type": "@",
+   "canonical": "段珠儿",
+   "aliases": [
+    "珠儿"
+   ],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现8次/1回；首见 散花女侠#pn-r24.6"
+  },
+  {
+   "type": "@",
+   "canonical": "朱见深",
+   "aliases": [
+    "见深"
+   ],
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现8次/1回；首见 散花女侠#pn-r33.10"
+  },
+  {
+   "type": "@",
+   "canonical": "也先",
+   "sources": [
+    "001",
+    "002",
+    "018",
+    "020",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现7次/5回；首见 散花女侠#pn-r1.64"
+  },
+  {
+   "type": "@",
+   "canonical": "城隍",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 散花女侠#pn-r19.8"
+  },
+  {
+   "type": "@",
+   "canonical": "阳总管",
+   "sources": [
+    "020",
+    "022",
+    "023",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现7次/4回；首见 散花女侠#pn-r20.1"
+  },
+  {
+   "type": "@",
+   "canonical": "曹安",
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 散花女侠#pn-r31.57"
+  },
+  {
+   "type": "@",
+   "canonical": "小龙",
+   "sources": [
+    "001",
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 散花女侠#pn-r1.13"
+  },
+  {
+   "type": "@",
+   "canonical": "樊俊",
+   "sources": [
+    "001",
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 散花女侠#pn-r1.55"
+  },
+  {
+   "type": "◆",
+   "canonical": "瓦剌",
+   "sources": [
+    "001",
+    "006",
+    "009",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现6次/4回；首见 散花女侠#pn-r1.64"
+  },
+  {
+   "type": "◆",
+   "canonical": "明室",
+   "sources": [
+    "005",
+    "008",
+    "018",
+    "021",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现6次/5回；首见 散花女侠#pn-r5.85"
+  },
+  {
+   "type": "@",
+   "canonical": "云状元",
+   "sources": [
+    "006",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 散花女侠#pn-r6.24"
+  },
+  {
+   "type": "@",
+   "canonical": "薛老三",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 散花女侠#pn-r8.33"
+  },
+  {
+   "type": "@",
+   "canonical": "了缘",
+   "sources": [
+    "009",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 散花女侠#pn-r9.37"
+  },
+  {
+   "type": "@",
+   "canonical": "沐公爹",
+   "sources": [
+    "019",
+    "020",
+    "023",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现6次/4回；首见 散花女侠#pn-r19.14"
+  },
+  {
+   "type": "&",
+   "canonical": "乐家",
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 散花女侠#pn-r27.33"
+  },
+  {
+   "type": "@",
+   "canonical": "章逢",
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 散花女侠#pn-r30.42"
+  },
+  {
+   "type": "@",
+   "canonical": "樊忠",
+   "sources": [
+    "001",
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 散花女侠#pn-r1.55"
+  },
+  {
+   "type": "@",
+   "canonical": "贯仲",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 散花女侠#pn-r1.55"
+  },
+  {
+   "type": "@",
+   "canonical": "周杰",
+   "aliases": [
+    "金刀寨主"
+   ],
+   "sources": [
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 散花女侠#pn-r8.32"
+  },
+  {
+   "type": "&",
+   "canonical": "毕家",
+   "sources": [
+    "008",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现5次/3回；首见 散花女侠#pn-r8.49"
+  },
+  {
+   "type": "@",
+   "canonical": "黄大庆",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 散花女侠#pn-r11.5"
+  },
+  {
+   "type": "@",
+   "canonical": "知府",
+   "sources": [
+    "011",
+    "012",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现5次/3回；首见 散花女侠#pn-r11.66"
+  },
+  {
+   "type": "@",
+   "canonical": "大卫门",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 散花女侠#pn-r13.4"
+  },
+  {
+   "type": "@",
+   "canonical": "板田荣男",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 散花女侠#pn-r13.4"
+  },
+  {
+   "type": "@",
+   "canonical": "芥川",
+   "sources": [
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 散花女侠#pn-r13.42"
+  },
+  {
+   "type": "@",
+   "canonical": "杜金娥",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 散花女侠#pn-r20.3"
+  },
+  {
+   "type": "@",
+   "canonical": "庄主",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 散花女侠#pn-r23.9"
+  },
+  {
+   "type": "@",
+   "canonical": "王振",
+   "sources": [
+    "001",
+    "023",
+    "031",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现4次/4回；首见 散花女侠#pn-r1.55"
+  },
+  {
+   "type": "@",
+   "canonical": "于阁老",
+   "sources": [
+    "002",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 散花女侠#pn-r2.44"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台镜明",
+   "sources": [
+    "006",
+    "022",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 散花女侠#pn-r6.23"
+  },
+  {
+   "type": "@",
+   "canonical": "彭和尚",
+   "sources": [
+    "008",
+    "011",
+    "029",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现4次/4回；首见 散花女侠#pn-r8.11"
+  },
+  {
+   "type": "@",
+   "canonical": "娄桐苏",
+   "sources": [
+    "009",
+    "030",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 散花女侠#pn-r9.33"
+  },
+  {
+   "type": "@",
+   "canonical": "潮音大师",
+   "sources": [
+    "010",
+    "027",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 散花女侠#pn-r10.2"
+  },
+  {
+   "type": "◆",
+   "canonical": "市舶司",
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 散花女侠#pn-r10.37"
+  },
+  {
+   "type": "@",
+   "canonical": "叶大哥",
+   "sources": [
+    "011",
+    "028",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 散花女侠#pn-r11.64"
+  },
+  {
+   "type": "@",
+   "canonical": "石井",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 散花女侠#pn-r13.30"
+  },
+  {
+   "type": "@",
+   "canonical": "近卫三郎",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 散花女侠#pn-r13.32"
+  },
+  {
+   "type": "@",
+   "canonical": "近卫",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 散花女侠#pn-r13.33"
+  },
+  {
+   "type": "@",
+   "canonical": "萧韵兰",
+   "sources": [
+    "016",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 散花女侠#pn-r16.25"
+  },
+  {
+   "type": "@",
+   "canonical": "赤霞道长",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 散花女侠#pn-r25.2"
+  },
+  {
+   "type": "@",
+   "canonical": "天都",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 散花女侠#pn-r28.56"
+  },
+  {
+   "type": "@",
+   "canonical": "韦庄",
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 散花女侠#pn-r36.100"
+  },
+  {
+   "type": "@",
+   "canonical": "张大叔",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r1.21"
+  },
+  {
+   "type": "@",
+   "canonical": "张虎子",
+   "sources": [
+    "001",
+    "003",
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 散花女侠#pn-r1.21"
+  },
+  {
+   "type": "@",
+   "canonical": "云靖",
+   "sources": [
+    "001",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r1.65"
+  },
+  {
+   "type": "@",
+   "canonical": "王骥",
+   "aliases": [
+    "靖远伯"
+   ],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r2.40"
+  },
+  {
+   "type": "@",
+   "canonical": "龙天仕",
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r6.23"
+  },
+  {
+   "type": "@",
+   "canonical": "龙帮主",
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r6.24"
+  },
+  {
+   "type": "@",
+   "canonical": "金刀寨主",
+   "sources": [
+    "009",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r9.33"
+  },
+  {
+   "type": "@",
+   "canonical": "郑茂七",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r10.21"
+  },
+  {
+   "type": "@",
+   "canonical": "台州知府",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r11.64"
+  },
+  {
+   "type": "@",
+   "canonical": "郑赶驴",
+   "sources": [
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r13.29"
+  },
+  {
+   "type": "◆",
+   "canonical": "波斯帝国",
+   "sources": [
+    "018",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r18.8"
+  },
+  {
+   "type": "@",
+   "canonical": "沐英",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r19.6"
+  },
+  {
+   "type": "@",
+   "canonical": "徐达",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r19.7"
+  },
+  {
+   "type": "@",
+   "canonical": "蓝玉",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r19.7"
+  },
+  {
+   "type": "@",
+   "canonical": "王副将军",
+   "sources": [
+    "019",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r19.11"
+  },
+  {
+   "type": "@",
+   "canonical": "黑白摩河",
+   "sources": [
+    "019",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r19.13"
+  },
+  {
+   "type": "@",
+   "canonical": "张老大",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r19.33"
+  },
+  {
+   "type": "@",
+   "canonical": "公爹",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r20.22"
+  },
+  {
+   "type": "◆",
+   "canonical": "本朝",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r20.23"
+  },
+  {
+   "type": "@",
+   "canonical": "方统领",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r20.29"
+  },
+  {
+   "type": "@",
+   "canonical": "朗寨主",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r22.55"
+  },
+  {
+   "type": "@",
+   "canonical": "谷庄主",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r23.4"
+  },
+  {
+   "type": "@",
+   "canonical": "观音",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r24.8"
+  },
+  {
+   "type": "@",
+   "canonical": "时成林",
+   "sources": [
+    "024",
+    "026",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 散花女侠#pn-r24.16"
+  },
+  {
+   "type": "@",
+   "canonical": "玄瑛",
+   "sources": [
+    "026",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r26.43"
+  },
+  {
+   "type": "@",
+   "canonical": "叶统领",
+   "sources": [
+    "027",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r27.16"
+  },
+  {
+   "type": "@",
+   "canonical": "凌云风",
+   "sources": [
+    "027",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 散花女侠#pn-r27.25"
+  },
+  {
+   "type": "◆",
+   "canonical": "军队",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r29.10"
+  },
+  {
+   "type": "@",
+   "canonical": "师伯祖",
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r30.45"
+  },
+  {
+   "type": "@",
+   "canonical": "云大侠",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 散花女侠#pn-r32.50"
+  },
+  {
+   "type": "@",
+   "canonical": "陆管带",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r1.43"
+  },
+  {
+   "type": "@",
+   "canonical": "展鹏兄",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r1.71"
+  },
+  {
+   "type": "@",
+   "canonical": "康超海",
+   "sources": [
+    "001",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r1.72"
+  },
+  {
+   "type": "&",
+   "canonical": "张家",
+   "sources": [
+    "002",
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r2.28"
+  },
+  {
+   "type": "@",
+   "canonical": "阳海宗",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r4.19"
+  },
+  {
+   "type": "@",
+   "canonical": "秦始皇",
+   "sources": [
+    "004",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r4.68"
+  },
+  {
+   "type": "@",
+   "canonical": "武老庄主",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r5.3"
+  },
+  {
+   "type": "@",
+   "canonical": "毕某人",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r5.57"
+  },
+  {
+   "type": "@",
+   "canonical": "毕凌虚",
+   "sources": [
+    "006",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r6.13"
+  },
+  {
+   "type": "@",
+   "canonical": "大门卫",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r11.6"
+  },
+  {
+   "type": "@",
+   "canonical": "铁御史",
+   "sources": [
+    "011",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r11.16"
+  },
+  {
+   "type": "◆",
+   "canonical": "团练",
+   "sources": [
+    "012",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r12.40"
+  },
+  {
+   "type": "@",
+   "canonical": "卫抚台",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r15.35"
+  },
+  {
+   "type": "@",
+   "canonical": "玄机",
+   "sources": [
+    "016",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r16.31"
+  },
+  {
+   "type": "@",
+   "canonical": "上官前辈",
+   "sources": [
+    "016",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r16.32"
+  },
+  {
+   "type": "◆",
+   "canonical": "蒙古",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "@",
+   "canonical": "脱脱不花",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r18.8"
+  },
+  {
+   "type": "@",
+   "canonical": "小王子",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r18.8"
+  },
+  {
+   "type": "@",
+   "canonical": "常遇春",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r19.7"
+  },
+  {
+   "type": "@",
+   "canonical": "明成祖",
+   "sources": [
+    "019",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r19.7"
+  },
+  {
+   "type": "@",
+   "canonical": "王金镖",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r20.3"
+  },
+  {
+   "type": "@",
+   "canonical": "郑和",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r20.21"
+  },
+  {
+   "type": "@",
+   "canonical": "沐夫人",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r20.25"
+  },
+  {
+   "type": "@",
+   "canonical": "董老大",
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r21.66"
+  },
+  {
+   "type": "@",
+   "canonical": "林和靖",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r22.19"
+  },
+  {
+   "type": "@",
+   "canonical": "史定山",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r22.22"
+  },
+  {
+   "type": "@",
+   "canonical": "韩二嫂",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r22.49"
+  },
+  {
+   "type": "@",
+   "canonical": "韩展",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r22.52"
+  },
+  {
+   "type": "@",
+   "canonical": "谷小庄主",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r23.39"
+  },
+  {
+   "type": "&",
+   "canonical": "谷家庄",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r23.47"
+  },
+  {
+   "type": "◆",
+   "canonical": "瓦刺",
+   "sources": [
+    "023",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r23.73"
+  },
+  {
+   "type": "@",
+   "canonical": "公孙无垢",
+   "sources": [
+    "023",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r23.75"
+  },
+  {
+   "type": "@",
+   "canonical": "段赤城",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r24.3"
+  },
+  {
+   "type": "@",
+   "canonical": "张于湖",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r25.92"
+  },
+  {
+   "type": "@",
+   "canonical": "毕帮主",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r26.16"
+  },
+  {
+   "type": "◆",
+   "canonical": "韩家镖局",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r26.16"
+  },
+  {
+   "type": "@",
+   "canonical": "成林",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r29.42"
+  },
+  {
+   "type": "@",
+   "canonical": "孟章",
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r30.42"
+  },
+  {
+   "type": "@",
+   "canonical": "大摸神狼",
+   "sources": [
+    "031",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 散花女侠#pn-r31.32"
+  },
+  {
+   "type": "@",
+   "canonical": "郑国有",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r32.59"
+  },
+  {
+   "type": "&",
+   "canonical": "云家",
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r33.5"
+  },
+  {
+   "type": "@",
+   "canonical": "朗月禅师",
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r33.52"
+  },
+  {
+   "type": "@",
+   "canonical": "穆桂英",
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r34.19"
+  },
+  {
+   "type": "@",
+   "canonical": "承珠",
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r36.30"
+  },
+  {
+   "type": "@",
+   "canonical": "杭州知府",
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 散花女侠#pn-r36.87"
+  },
+  {
+   "type": "@",
+   "canonical": "于统领",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r1.43"
+  },
+  {
+   "type": "◆",
+   "canonical": "明军",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r1.48"
+  },
+  {
+   "type": "@",
+   "canonical": "于军官",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r1.56"
+  },
+  {
+   "type": "@",
+   "canonical": "陆军官",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r1.56"
+  },
+  {
+   "type": "@",
+   "canonical": "陆兄",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r1.71"
+  },
+  {
+   "type": "@",
+   "canonical": "阴阳面战三山",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r2.11"
+  },
+  {
+   "type": "@",
+   "canonical": "矮冬瓜闻铁声",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r2.11"
+  },
+  {
+   "type": "@",
+   "canonical": "岳飞",
+   "aliases": [
+    "岳武穆王"
+   ],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r3.2"
+  },
+  {
+   "type": "@",
+   "canonical": "陈逵",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r3.20"
+  },
+  {
+   "type": "@",
+   "canonical": "孔子",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r4.65"
+  },
+  {
+   "type": "@",
+   "canonical": "元任兄",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r4.83"
+  },
+  {
+   "type": "@",
+   "canonical": "元涵长老",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r4.86"
+  },
+  {
+   "type": "@",
+   "canonical": "柳定庵",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r4.86"
+  },
+  {
+   "type": "@",
+   "canonical": "寒江道长",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r4.86"
+  },
+  {
+   "type": "@",
+   "canonical": "毕老弟",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r4.88"
+  },
+  {
+   "type": "@",
+   "canonical": "泺河三龙",
+   "aliases": [
+    "三龙"
+   ],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r4.90"
+  },
+  {
+   "type": "@",
+   "canonical": "韩庄二虎",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r4.90"
+  },
+  {
+   "type": "@",
+   "canonical": "钱百万",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r5.6"
+  },
+  {
+   "type": "@",
+   "canonical": "樊大哥",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r5.12"
+  },
+  {
+   "type": "@",
+   "canonical": "玄瑛道长",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r5.13"
+  },
+  {
+   "type": "@",
+   "canonical": "鲁不邪",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r5.68"
+  },
+  {
+   "type": "@",
+   "canonical": "张苍水",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r5.82"
+  },
+  {
+   "type": "@",
+   "canonical": "项羽",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r5.84"
+  },
+  {
+   "type": "&",
+   "canonical": "朱家",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r5.84"
+  },
+  {
+   "type": "@",
+   "canonical": "彭莹玉",
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r6.13"
+  },
+  {
+   "type": "@",
+   "canonical": "殷天鉴",
+   "aliases": [
+    "九头狮子"
+   ],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r6.23"
+  },
+  {
+   "type": "&",
+   "canonical": "殷家",
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r6.23"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台仲元",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r7.18"
+  },
+  {
+   "type": "◆",
+   "canonical": "水师",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r7.37"
+  },
+  {
+   "type": "@",
+   "canonical": "黑白无常",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r7.38"
+  },
+  {
+   "type": "@",
+   "canonical": "达摩祖师",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r7.48"
+  },
+  {
+   "type": "&",
+   "canonical": "郭家",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r9.17"
+  },
+  {
+   "type": "@",
+   "canonical": "觉慧禅师",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r9.37"
+  },
+  {
+   "type": "@",
+   "canonical": "觉慧",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r9.37"
+  },
+  {
+   "type": "@",
+   "canonical": "石翠凰",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r9.46"
+  },
+  {
+   "type": "@",
+   "canonical": "毕贤弟",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r10.15"
+  },
+  {
+   "type": "@",
+   "canonical": "周大哥",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r10.15"
+  },
+  {
+   "type": "@",
+   "canonical": "郭老英雄",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r10.17"
+  },
+  {
+   "type": "@",
+   "canonical": "丹枫",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r10.17"
+  },
+  {
+   "type": "@",
+   "canonical": "周寨主",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r10.29"
+  },
+  {
+   "type": "@",
+   "canonical": "江口富士技",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r10.52"
+  },
+  {
+   "type": "@",
+   "canonical": "铁师哥",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r11.50"
+  },
+  {
+   "type": "◆",
+   "canonical": "日本",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r12.8"
+  },
+  {
+   "type": "◆",
+   "canonical": "抗倭军",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r12.40"
+  },
+  {
+   "type": "@",
+   "canonical": "九段国手",
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r14.58"
+  },
+  {
+   "type": "◆",
+   "canonical": "藤牌军",
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r14.59"
+  },
+  {
+   "type": "@",
+   "canonical": "杨宗武",
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r14.59"
+  },
+  {
+   "type": "@",
+   "canonical": "九段武士长谷川",
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r14.60"
+  },
+  {
+   "type": "@",
+   "canonical": "卫春廷",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r15.18"
+  },
+  {
+   "type": "@",
+   "canonical": "文纨",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r15.39"
+  },
+  {
+   "type": "@",
+   "canonical": "海山",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r15.39"
+  },
+  {
+   "type": "@",
+   "canonical": "苏老",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r16.1"
+  },
+  {
+   "type": "@",
+   "canonical": "公瑾",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r16.1"
+  },
+  {
+   "type": "◆",
+   "canonical": "鹰爪门",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r16.26"
+  },
+  {
+   "type": "&",
+   "canonical": "大理段家",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "◆",
+   "canonical": "大理国",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "◆",
+   "canonical": "汗国",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "◆",
+   "canonical": "蒙古军",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r18.5"
+  },
+  {
+   "type": "@",
+   "canonical": "阿刺",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r18.8"
+  },
+  {
+   "type": "@",
+   "canonical": "乌珂克图",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r18.8"
+  },
+  {
+   "type": "@",
+   "canonical": "燕王",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r19.7"
+  },
+  {
+   "type": "@",
+   "canonical": "徐辉祖",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r19.7"
+  },
+  {
+   "type": "&",
+   "canonical": "沐府",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r19.8"
+  },
+  {
+   "type": "@",
+   "canonical": "岳家",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r19.36"
+  },
+  {
+   "type": "@",
+   "canonical": "黔宁王",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r20.21"
+  },
+  {
+   "type": "@",
+   "canonical": "段平章",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r20.23"
+  },
+  {
+   "type": "◆",
+   "canonical": "元军",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r20.23"
+  },
+  {
+   "type": "@",
+   "canonical": "休璘",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r20.40"
+  },
+  {
+   "type": "@",
+   "canonical": "赤城道人",
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r21.33"
+  },
+  {
+   "type": "◆",
+   "canonical": "赤城",
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r21.44"
+  },
+  {
+   "type": "◆",
+   "canonical": "国公府",
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r21.55"
+  },
+  {
+   "type": "@",
+   "canonical": "武侯",
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r21.60"
+  },
+  {
+   "type": "&",
+   "canonical": "于府",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r22.34"
+  },
+  {
+   "type": "@",
+   "canonical": "萧老太婆",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r22.39"
+  },
+  {
+   "type": "@",
+   "canonical": "玄机前辈",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r23.45"
+  },
+  {
+   "type": "@",
+   "canonical": "铁公于",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r23.50"
+  },
+  {
+   "type": "@",
+   "canonical": "萧老大娘",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r23.65"
+  },
+  {
+   "type": "@",
+   "canonical": "云阳真君",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r23.75"
+  },
+  {
+   "type": "@",
+   "canonical": "尉迟敬德",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r24.3"
+  },
+  {
+   "type": "@",
+   "canonical": "观世音菩萨",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r24.8"
+  },
+  {
+   "type": "@",
+   "canonical": "上官",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r24.54"
+  },
+  {
+   "type": "@",
+   "canonical": "玄机逸土",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r24.59"
+  },
+  {
+   "type": "@",
+   "canonical": "鸠盘婆公孙无垢",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r25.4"
+  },
+  {
+   "type": "@",
+   "canonical": "黑白魔诃",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r25.4"
+  },
+  {
+   "type": "@",
+   "canonical": "公孙道友",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r25.20"
+  },
+  {
+   "type": "@",
+   "canonical": "白摩河",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r25.32"
+  },
+  {
+   "type": "@",
+   "canonical": "公孙前辈",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r25.61"
+  },
+  {
+   "type": "@",
+   "canonical": "肃韵兰",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r25.68"
+  },
+  {
+   "type": "@",
+   "canonical": "钦镜心",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r25.78"
+  },
+  {
+   "type": "@",
+   "canonical": "金针圣手韩老镖头",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r26.12"
+  },
+  {
+   "type": "◆",
+   "canonical": "振远镖局",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r26.45"
+  },
+  {
+   "type": "@",
+   "canonical": "韩老头儿",
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r27.7"
+  },
+  {
+   "type": "@",
+   "canonical": "时宗留",
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r27.17"
+  },
+  {
+   "type": "@",
+   "canonical": "白盂川",
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r27.68"
+  },
+  {
+   "type": "@",
+   "canonical": "李靖",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r28.1"
+  },
+  {
+   "type": "@",
+   "canonical": "红拂",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r28.1"
+  },
+  {
+   "type": "@",
+   "canonical": "杏儿",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r28.2"
+  },
+  {
+   "type": "&",
+   "canonical": "霍家",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r28.23"
+  },
+  {
+   "type": "@",
+   "canonical": "凌寨主",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r28.62"
+  },
+  {
+   "type": "@",
+   "canonical": "祝英台",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r28.62"
+  },
+  {
+   "type": "@",
+   "canonical": "孟姜女",
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r28.62"
+  },
+  {
+   "type": "@",
+   "canonical": "朱祁镇",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r29.6"
+  },
+  {
+   "type": "◆",
+   "canonical": "大军",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r29.13"
+  },
+  {
+   "type": "@",
+   "canonical": "愿穷",
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r30.42"
+  },
+  {
+   "type": "@",
+   "canonical": "顾盂章",
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r30.45"
+  },
+  {
+   "type": "@",
+   "canonical": "云凤",
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r31.26"
+  },
+  {
+   "type": "◆",
+   "canonical": "少林寺",
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r31.36"
+  },
+  {
+   "type": "@",
+   "canonical": "毕擎夭",
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r31.42"
+  },
+  {
+   "type": "@",
+   "canonical": "阳大总管",
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r31.47"
+  },
+  {
+   "type": "&",
+   "canonical": "曹家",
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r31.60"
+  },
+  {
+   "type": "@",
+   "canonical": "毕顾穷",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r32.45"
+  },
+  {
+   "type": "@",
+   "canonical": "韩御史",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r32.50"
+  },
+  {
+   "type": "@",
+   "canonical": "霍夭都",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r32.64"
+  },
+  {
+   "type": "@",
+   "canonical": "散花女侠",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r32.69"
+  },
+  {
+   "type": "&",
+   "canonical": "叶家",
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r32.72"
+  },
+  {
+   "type": "@",
+   "canonical": "苏武",
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r33.7"
+  },
+  {
+   "type": "@",
+   "canonical": "乌坷克图",
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r33.16"
+  },
+  {
+   "type": "@",
+   "canonical": "皇后",
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r33.19"
+  },
+  {
+   "type": "@",
+   "canonical": "见深",
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r33.19"
+  },
+  {
+   "type": "◆",
+   "canonical": "神箭营",
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r33.65"
+  },
+  {
+   "type": "@",
+   "canonical": "驸马",
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r34.2"
+  },
+  {
+   "type": "◆",
+   "canonical": "飞龙镖局",
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r34.5"
+  },
+  {
+   "type": "@",
+   "canonical": "药隐叶元章",
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r34.12"
+  },
+  {
+   "type": "◆",
+   "canonical": "青阳",
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r34.27"
+  },
+  {
+   "type": "◆",
+   "canonical": "天龙",
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r34.27"
+  },
+  {
+   "type": "@",
+   "canonical": "八臂哪吒",
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r34.32"
+  },
+  {
+   "type": "@",
+   "canonical": "铁铱",
+   "sources": [
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r35.29"
+  },
+  {
+   "type": "@",
+   "canonical": "田单",
+   "sources": [
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r35.36"
+  },
+  {
+   "type": "@",
+   "canonical": "张巡抚",
+   "sources": [
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r35.46"
+  },
+  {
+   "type": "@",
+   "canonical": "玄机师祖",
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r36.58"
+  },
+  {
+   "type": "@",
+   "canonical": "毕清泉",
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r36.65"
+  },
+  {
+   "type": "◆",
+   "canonical": "剑派",
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r36.73"
+  },
+  {
+   "type": "@",
+   "canonical": "杨瑄",
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r36.86"
+  },
+  {
+   "type": "@",
+   "canonical": "王建",
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 散花女侠#pn-r36.100"
+  }
+ ],
+ "alias_additions": [
+  {
+   "target_id": "E10910",
+   "target_canonical": "武元英",
+   "type": "@",
+   "add_alias": "武庄主",
+   "occurrences": 4
+  },
+  {
+   "target_id": "E0110",
+   "target_canonical": "少林派",
+   "type": "◆",
+   "add_alias": "少林",
+   "occurrences": 5
+  },
+  {
+   "target_id": "E0021",
+   "target_canonical": "朱元璋",
+   "type": "@",
+   "add_alias": "明太祖",
+   "occurrences": 2
+  },
+  {
+   "target_id": "E7126",
+   "target_canonical": "韩荆",
+   "type": "@",
+   "add_alias": "韩二哥",
+   "occurrences": 2
+  },
+  {
+   "target_id": "E0101",
+   "target_canonical": "武当派",
+   "type": "◆",
+   "add_alias": "武当",
+   "occurrences": 3
+  },
+  {
+   "target_id": "E0109",
+   "target_canonical": "嵩阳派",
+   "type": "◆",
+   "add_alias": "嵩阳",
+   "occurrences": 1
+  },
+  {
+   "target_id": "E0241",
+   "target_canonical": "龙达三",
+   "type": "@",
+   "add_alias": "龙镖头",
+   "occurrences": 1
+  },
+  {
+   "target_id": "E0032",
+   "target_canonical": "岳鸣珂",
+   "type": "@",
+   "add_alias": "晦明禅师",
+   "occurrences": 1
+  }
+ ],
+ "skipped": [
+  {
+   "canonical": "明",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "于",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "陆",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "童",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "张",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "毕",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "樊",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "元",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "凌",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  }
+ ]
+}

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 武功详情</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .nav{display:flex;gap:20px;align-items:center;font-size:14px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.7}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;font-size:13px;background:#fbf8ef;color:#2b2b2b;margin:3px}
+  .chip small{color:#8c8477;margin-left:4px;font-family:Consolas,monospace;font-size:11px}
+  .badge{display:inline-block;border:1.5px solid;border-radius:3px;padding:0 8px;font-size:12px}
+  h2.sec{font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:19px;margin:32px 0 10px;border-bottom:1px solid #d8cdb8;padding-bottom:5px;letter-spacing:1px}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:#8c8477}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+  <header style="border-bottom:1px solid #d8cdb8;background:#fbf8ef"><div class="wrap nav" style="height:52px">
+    <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:24px;color:#a63a2b;margin-right:18px">江湖图志</span>
+    <a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#" style="color:#a63a2b;font-weight:700">武功</a><a href="#">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a></div></header>
+
+  <main class="wrap" style="flex:1;padding-bottom:48px">
+    <p class="lab" style="margin:14px 0 0"><a href="#">武功谱</a> / 天山剑法 <span style="color:#a63a2b">← 属于 <a href="#">天山派</a>（统称）</span></p>
+    <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:36px;letter-spacing:3px;margin:6px 0 4px">天山剑法
+      <span class="badge" style="border-color:#34546e;color:#34546e">统称</span>
+      <span class="badge" style="border-color:#a63a2b;color:#a63a2b">跨书</span></h1>
+    <p style="color:#5a544a;margin:4px 0">关系 <b style="color:#34546e">23</b> 条 · 见于 <a class="chip" href="#">白发魔女传</a><a class="chip" href="#">塞外奇侠传</a><a class="chip" href="#">七剑下天山</a><a class="chip" href="#">江湖三女侠</a></p>
+    <p style="margin:4px 0">别名/变体：<span class="chip">天山剑</span><span class="chip">须弥剑法<small>剑套 →</small></span></p>
+
+    <div style="background:#fbf8ef;border:1px solid #b8860b;border-left:4px solid #b8860b;border-radius:4px;padding:14px 20px;margin-top:18px">
+      <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:20px;color:#b8860b;margin-right:12px">一门武功的一生</span>
+      <div class="lab" style="font-size:13.5px;color:#5a544a;line-height:2;margin-top:6px">
+        <b style="color:#2b2b2b">创制</b> 霍天都与弟子岳鸣珂廿年研究完成（白发 004:57）→
+        <b style="color:#2b2b2b">演进</b> 晦明禅师独创一百四十八手（塞外 001:32）→
+        <b style="color:#2b2b2b">增补</b> 凌未风毕生心得尽传易兰珠（三女侠 009:7）→
+        <b style="color:#2b2b2b">传承</b> 五代，在册修习者 9 人</div>
+    </div>
+
+    <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:12px 18px;margin-top:12px">
+      <span class="lab">原著怎么说：</span>
+      <span style="font-family:'Noto Serif SC','SimSun',serif;font-size:15px">「天下独步的剑法」</span>
+      <span class="lab">—— 原著 · 七剑下天山 000:125 · 共 2 条精选（L1 短引文档位）</span>
+    </div>
+
+    <h2 class="sec">传承树 <span class="lab">实线=正式传授 · 点划=记名 · 虚=挂名 · 点线=点拨 · 按代分层</span></h2>
+    <div style="border:1px solid #b9ab90;border-radius:4px;background:#f8f3e6;padding:12px">
+      <svg viewBox="0 0 1100 180" style="width:100%;height:auto;display:block" role="img" aria-label="天山剑法传承树">
+        <text x="20" y="26" font-size="13.5" font-weight="700">霍天都</text><text x="90" y="26" font-size="11" fill="#8c8477">白发 004:57</text>
+        <line x1="50" y1="34" x2="50" y2="58" stroke="#2b2b2b" stroke-width="1.6"/>
+        <text x="20" y="80" font-size="13.5" font-weight="700">岳鸣珂 · 晦明禅师</text><text x="190" y="80" font-size="11" fill="#8c8477">白发 028:5</text>
+        <line x1="60" y1="88" x2="150" y2="118" stroke="#2b2b2b" stroke-width="1.6"/>
+        <line x1="120" y1="88" x2="320" y2="118" stroke="#2b2b2b" stroke-width="1.6"/>
+        <line x1="180" y1="88" x2="480" y2="118" stroke="#2b2b2b" stroke-width="1.6"/>
+        <text x="150" y="134" font-size="13" font-weight="700">杨云骢</text>
+        <text x="320" y="134" font-size="13" font-weight="700">楚昭南</text>
+        <text x="480" y="134" font-size="13" font-weight="700">凌未风</text>
+        <line x1="510" y1="140" x2="620" y2="158" stroke="#2b2b2b" stroke-width="1.6" stroke-dasharray="6 3"/>
+        <text x="618" y="150" font-size="10.5" fill="#8a6607">记名 · 三女侠 001</text>
+        <text x="622" y="172" font-size="13" font-weight="700">周青</text>
+        <line x1="660" y1="152" x2="760" y2="168" stroke="#2b2b2b" stroke-width="1.6" stroke-dasharray="6 3"/>
+        <text x="764" y="180" font-size="13" font-weight="700">唐晓澜 · 冯广潮</text>
+        <text x="20" y="170" font-size="10.5" fill="#8c8477">另一支：晦明 → 易兰珠（七剑 023:65）→ 挂名师徒唐晓澜（三女侠 009:31）→ 冯瑛</text>
+      </svg>
+    </div>
+
+    <h2 class="sec">剑套 <span class="lab">原文明文的分支剑法 · 伞形三层：统称页做总纲，套页做专论</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <a href="#" style="border:1px solid #b9ab90;border-radius:4px;padding:12px 16px;background:#fbf8ef;display:block;color:#2b2b2b">
+        <b style="font-family:'Noto Serif SC','SimSun',serif">追风剑法</b> <span class="badge" style="border-color:#34546e;color:#34546e">剑套</span>
+        <p class="lab" style="margin:6px 0 0">「天山剑法中攻势最劲的一路」· 五代链：凌未风→周青→唐晓澜</p></a>
+      <a href="#" style="border:1px solid #b9ab90;border-radius:4px;padding:12px 16px;background:#fbf8ef;display:block;color:#8c8477">
+        <b style="font-family:'Noto Serif SC','SimSun',serif">须弥剑法</b> <span class="badge" style="border-color:#34546e;color:#34546e;border-style:dashed">剑套</span>
+        <p class="lab" style="margin:6px 0 0">原著中记载简略，暂无深度考订内容。</p></a>
+      <a href="#" style="border:1px solid #b9ab90;border-radius:4px;padding:12px 16px;background:#fbf8ef;display:block;color:#8c8477">
+        <b style="font-family:'Noto Serif SC','SimSun',serif">寒涛剑法</b> <span class="badge" style="border-color:#34546e;color:#34546e;border-style:dashed">剑套</span>
+        <p class="lab" style="margin:6px 0 0">原著中记载简略，暂无深度考订内容。</p></a>
+    </div>
+
+    <h2 class="sec">门派归属</h2>
+    <p style="line-height:2.4"><a class="chip" href="#">天山派<small>拥有/镇山 · 4 书 · 117 证</small></a></p>
+
+    <h2 class="sec">招式名表 <span class="lab">原文明文归套者入套页 · 未归套者列此（宁缺毋滥）</span></h2>
+    <p style="line-height:2.4">
+      <span class="chip">仙姑送子<small>天山派</small></span><span class="chip">冰河倒挂</span><span class="chip">力划鸿沟</span>
+      <span class="chip">大漠流沙</span><span class="chip">天山飞雪</span><span class="chip">巧女穿针</span><span class="chip">平沙落雁</span><span class="chip">探骊取珠</span>
+      <span class="chip" style="border-style:dashed;color:#8c8477">…共 22 式</span></p>
+
+    <h2 class="sec">全部涉及者</h2>
+    <p style="line-height:2.4">
+      <a class="chip" href="#">霍天都<small>创制 · 白发 004:57</small></a>
+      <a class="chip" href="#">晦明禅师<small>创制/传授</small></a>
+      <a class="chip" href="#">杨云骢<small>修习</small></a>
+      <a class="chip" href="#">楚昭南<small>修习</small></a>
+      <a class="chip" href="#">凌未风<small>修习/传授</small></a>
+      <a class="chip" href="#">易兰珠<small>修习/传授</small></a>
+      <a class="chip" href="#">唐晓澜<small>修习</small></a>
+      <a class="chip" href="#">冯瑛<small>修习</small></a>
+    </p>
+
+    <h2 class="sec">证据与考订注记 <span class="lab">同书证据池合并展示 · 定位符可点</span></h2>
+    <ul style="list-style:none;padding:0;font-size:13.5px;line-height:2.1">
+      <li><span style="color:#a63a2b;margin-right:10px">拥有</span>天山派 <span class="loc">七剑 000:61，001:127…（57 证）</span></li>
+      <li><span style="color:#a63a2b;margin-right:10px">创制</span>晦明禅师 <span class="loc">七剑 004:131</span> <span style="color:#5a544a">「明文：晦明禅师采集各派剑法之长，创立天山剑法」</span></li>
+      <li><span style="color:#a63a2b;margin-right:10px">传授</span>周青 → 唐晓澜 <span class="loc">三女侠 001:83</span> <span style="color:#5a544a">「七天授追风剑法与飞芒暗器 · 记名弟子」</span></li>
+    </ul>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

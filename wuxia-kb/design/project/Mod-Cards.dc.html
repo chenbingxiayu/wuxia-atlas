@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>模块库 · 卡片族</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#e9e2d2;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  h3.sec{font-family:"Noto Serif SC","SimSun",serif;font-weight:900;font-size:18px;margin:0 0 8px;padding-bottom:5px;
+    border-bottom:1px solid #d8cdb8;letter-spacing:2px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.6}
+  .card{border:1px solid #b9ab90;border-radius:4px;padding:14px 16px;background:#fbf8ef;display:block;color:#2b2b2b}
+  .card:hover{border-color:#a63a2b}
+  .badge{display:inline-block;border:1.5px solid;border-radius:3px;padding:0 8px;font-size:12px;margin-left:6px}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:1px 10px;margin:2px;font-size:12px;background:#f5efe4;color:#5a544a}
+</style>
+</helmet>
+<div style="width:1200px;height:1260px;box-sizing:border-box;padding:48px 56px;background:#fbf8ef;display:flex;flex-direction:column;gap:22px">
+
+  <div style="display:flex;align-items:baseline;gap:14px">
+    <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:24px;letter-spacing:3px">卡片族</span>
+    <span class="lab">CardGrid 的六种卡 · 模块库 2/7 · 卡距 12–14px · min-width 280–320px 网格</span>
+  </div>
+
+  <div>
+    <h3 class="sec">人物卡（人物谱/相关人物）</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px">
+      <a class="card" href="#">
+        <div style="display:flex;align-items:center;gap:8px"><b style="font-size:17px;letter-spacing:1px">练霓裳</b>
+          <span class="badge" style="border-color:#a63a2b;color:#a63a2b;transform:rotate(-1.5deg)">跨书换乘</span>
+          <span class="badge" style="border-color:#34546e;color:#34546e">一流</span></div>
+        <p class="lab" style="margin:6px 0 0">白发魔女传 · 塞外奇侠传 · 七剑下天山 · 出场 2,678 次 · 师承铁飞龙(点拨) · 传人武琼瑶/飞红巾</p>
+        <div style="margin-top:8px;border-top:1px solid #d8cdb8;padding-top:6px;display:flex;gap:14px" class="lab">
+          <span>战绩 143 条</span><span>武功 3 门</span><span>剧情锚点 6 个</span>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div style="display:flex;align-items:center;gap:8px"><b style="font-size:17px;letter-spacing:1px">方家兄弟</b></div>
+        <p class="lab" style="margin:6px 0 0">次要人物 · 原著中出现但暂无深度考订内容；别名与出场曲线照常提供。</p>
+      </a>
+    </div>
+    <p class="lab" style="margin-top:6px">主卡带数据摘要行；薄页人物卡带条目说明（EmptyState 联动）。分层：主要人物区在前，其余（存目）折叠。</p>
+  </div>
+
+  <div>
+    <h3 class="sec">名物卡（神兵谱 / 图鉴共用卡面）</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px">
+      <a class="card" href="#">
+        <div style="display:flex;align-items:center;gap:8px"><b style="font-size:16px">游龙剑</b>
+          <span class="badge" style="border-color:#fbf8ef;background:#a63a2b;color:#fbf8ef">神兵 · 明文</span></div>
+        <div style="margin:8px 0;display:flex;align-items:center;gap:10px">
+          <div style="width:64px;height:44px;border:1px dashed #b9ab90;border-radius:4px;background:#f5efe4;display:flex;align-items:center;justify-content:center">
+            <svg width="40" height="28" viewBox="0 0 40 28" aria-hidden="true"><path d="M4 24 L32 6 L36 4 L34 8 L6 26 Z" fill="none" stroke="#b9ab90" stroke-width="1.5"/><path d="M4 24 L10 20" stroke="#b9ab90" stroke-width="2"/></svg>
+          </div>
+          <div class="lab">剑 · 岳鸣珂铸<br>晦明→楚昭南→凌未风→唐晓澜</div>
+        </div>
+        <div class="lab" style="border-top:1px solid #d8cdb8;padding-top:6px;display:flex;gap:12px">
+          <span>跨书 4</span><span>证据 188</span><span style="color:#a63a2b">strong</span>
+        </div>
+      </a>
+      <a class="card" href="#">
+        <div style="display:flex;align-items:center;gap:8px"><b style="font-size:16px">夺命神砂</b>
+          <span class="badge" style="border-color:#34546e;color:#34546e;border-style:dashed">品阶待考</span></div>
+        <div style="margin:8px 0;display:flex;align-items:center;gap:10px">
+          <div style="width:64px;height:44px;border:1px dashed #b9ab90;border-radius:4px;background:#f5efe4;display:flex;align-items:center;justify-content:center">
+            <svg width="36" height="28" viewBox="0 0 36 28" aria-hidden="true"><circle cx="10" cy="16" r="2" fill="#b9ab90"/><circle cx="18" cy="10" r="2" fill="#b9ab90"/><circle cx="26" cy="18" r="2" fill="#b9ab90"/><circle cx="22" cy="22" r="1.5" fill="#b9ab90"/><path d="M6 24 Q18 4 32 20" fill="none" stroke="#b9ab90" stroke-width="1.2"/></svg>
+          </div>
+          <div class="lab">暗器 · 冒浣莲<br>共现证据 66 处</div>
+        </div>
+        <div class="lab" style="border-top:1px solid #d8cdb8;padding-top:6px;display:flex;gap:12px">
+          <span>跨书 2</span><span>证据 66</span><span style="color:#8a6607">ok</span>
+        </div>
+      </a>
+      <a class="card" href="#" style="position:relative">
+        <div style="position:absolute;top:8px;right:10px" class="lab">图鉴 · 已阅 ✓</div>
+        <div style="display:flex;align-items:center;gap:8px"><b style="font-size:16px">断玉剑</b>
+          <span class="badge" style="border-color:#fbf8ef;background:#a63a2b;color:#fbf8ef">神兵 · 明文</span></div>
+        <div style="margin:8px 0;display:flex;align-items:center;gap:10px">
+          <div style="width:64px;height:44px;border:1px solid #a63a2b;border-radius:4px;background:#fdf6ee;display:flex;align-items:center;justify-content:center">
+            <svg width="40" height="28" viewBox="0 0 40 28" aria-hidden="true"><path d="M6 22 L30 8 L34 6 L32 10 L8 24 Z" fill="#a63a2b" opacity=".55"/><path d="M6 22 L12 18" stroke="#a63a2b" stroke-width="2"/></svg>
+          </div>
+          <div class="lab">剑 · 白发 28:17 铸<br>冯瑛、易兰珠末见持有</div>
+        </div>
+        <div class="lab" style="border-top:1px solid #d8cdb8;padding-top:6px;display:flex;gap:12px">
+          <span>终态卡可点</span><span>证据 120</span>
+        </div>
+      </a>
+    </div>
+    <p class="lab" style="margin-top:6px">剪影按 kind 六种（剑/刀/暗器/奇门/护甲/宝物）；插图文件存在则替换剪影（文件驱动，与名物页同一目录）。图鉴态加"已阅 ✓"角标与收集进度。</p>
+  </div>
+
+  <div>
+    <h3 class="sec">门派卡 / 文章卡 / 游戏卡</h3>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px">
+      <a class="card" href="#">
+        <div style="display:flex;align-items:center;gap:8px"><b style="font-size:16px">天山派</b>
+          <span class="badge" style="border-color:#a63a2b;color:#a63a2b">名门正派</span>
+          <span class="badge" style="border-color:#b8860b;color:#b8860b;border-style:dashed">建设中</span></div>
+        <p class="lab" style="margin:6px 0 0">镇山：天山剑法 · 五代传承 · 成员 5 · 见于 2 书</p>
+        <div class="lab" style="margin-top:6px;color:#5e7d5a">● 实锚驻地：天山（全景地图可点）</div>
+      </a>
+      <a class="card" href="#">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b style="font-size:16px">一夜白头：卓练温度曲线</b>
+          <span class="badge" style="border-color:#a63a2b;color:#a63a2b;border-radius:999px">关系</span></div>
+        <p class="lab" style="margin:6px 0 0">131 起冲突、0 起温情事件——嘴上说放下的那个人，温情只藏在关键词与并肩的对手里。</p>
+        <div class="lab" style="margin-top:6px;border-top:1px solid #d8cdb8;padding-top:6px">可复算 · 数据版本 2026-11-02</div>
+      </a>
+      <a class="card" href="#">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b style="font-size:16px">每日一谜</b><span class="lab">第 38 题</span></div>
+        <p class="lab" style="margin:6px 0 0">今日之题：谁杀了金独异？——三次机会，逐级解锁提示。</p>
+        <div class="lab" style="margin-top:6px;border-top:1px solid #d8cdb8;padding-top:6px">连胜 4 · 正确率 72%</div>
+      </a>
+    </div>
+    <p class="lab" style="margin-top:6px">文章卡 teaser 数字来自切片（禁硬编码）；游戏卡带战绩摘要；门派卡带类型徽章与实锚驻地标记。</p>
+  </div>
+
+  <div style="margin-top:auto">
+    <h3 class="sec">图鉴收集进度条（游戏页图鉴 + 名物谱共用）</h3>
+    <div style="background:#f5efe4;border-radius:4px;padding:14px 16px;display:flex;align-items:center;gap:16px">
+      <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900">图鉴收集度</span>
+      <div style="flex:1;height:14px;border:1px solid #b9ab90;border-radius:999px;background:#fbf8ef;overflow:hidden">
+        <div style="width:43%;height:100%;background:#a63a2b"></div>
+      </div>
+      <b style="font-family:'JetBrains Mono',monospace">43%</b>
+      <span class="lab">79 / 183 件已阅 · 集齐点亮完成卡</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1260}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,3055 @@
+{
+  "schema": "w11-insights-v0.1",
+  "meta": {
+    "generated": "2026-11-05",
+    "tool": "build_insights v0.1 (2026-11-05, W11)",
+    "data_version": "2026-11-05",
+    "source_refs": {
+      "graph": "logs/export/staging/graph.json",
+      "relations": "registry/relations/",
+      "cards": "registry/sku/cards.json",
+      "concordance": "registry/concordance/",
+      "intertext": "registry/intertext/intertext_loc.json",
+      "consistency": "registry/consistency/",
+      "taxonomy": "logs/taxonomy/taxonomy_trees.json",
+      "time": "registry/time/",
+      "matches": "logs/export/staging/matches.json"
+    },
+    "patterns": [
+      "COLLAB",
+      "CONFLICT",
+      "LINEAGE",
+      "COMPARE",
+      "CHAIN",
+      "BLANK",
+      "CROSSREF",
+      "ANOMALY"
+    ],
+    "confidence_rule": "A=≥3 类证据+反证排除；B=2 类+反证已检索；C=2 类但反证未清；D=单一；E=冲突",
+    "counts": {
+      "total": 72,
+      "by_pattern": {
+        "COLLAB": 8,
+        "CONFLICT": 8,
+        "LINEAGE": 8,
+        "COMPARE": 8,
+        "CHAIN": 8,
+        "BLANK": 10,
+        "CROSSREF": 10,
+        "ANOMALY": 12
+      }
+    },
+    "validation": {
+      "passed": true,
+      "errors": [],
+      "counts": {
+        "total": 72,
+        "by_pattern": {
+          "COLLAB": 8,
+          "CONFLICT": 8,
+          "LINEAGE": 8,
+          "COMPARE": 8,
+          "CHAIN": 8,
+          "BLANK": 10,
+          "CROSSREF": 10,
+          "ANOMALY": 12
+        }
+      }
+    }
+  },
+  "insights": [
+    {
+      "id": "INS-0001",
+      "pattern": "COLLAB",
+      "claim": "天山与岳鸣珂在 1 书共现且存在到达关系（n=4）",
+      "entities": [
+        "天山",
+        "岳鸣珂"
+      ],
+      "books": [
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[岳鸣珂—到达—天山]",
+          "value": 4
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传·028:1",
+          "note": "共 3 条定位符"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[天山,岳鸣珂]",
+          "value": "两张人物卡可回指"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0002",
+      "pattern": "COLLAB",
+      "claim": "年羹尧与钟万堂在 1 书共现且存在师承关系（n=3）",
+      "entities": [
+        "年羹尧",
+        "钟万堂"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[年羹尧—师承—钟万堂]",
+          "value": 3
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·021:12",
+          "note": "共 3 条定位符"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0003",
+      "pattern": "COLLAB",
+      "claim": "冯琳与后园在 1 书共现且存在到达关系（n=2）",
+      "entities": [
+        "冯琳",
+        "后园"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[冯琳—到达—后园]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·034:3",
+          "note": "共 2 条定位符"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0004",
+      "pattern": "COLLAB",
+      "claim": "冯琳与山东在 1 书共现且存在到达关系（n=2）",
+      "entities": [
+        "冯琳",
+        "山东"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[冯琳—到达—山东]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·044:1",
+          "note": "共 2 条定位符"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0005",
+      "pattern": "COLLAB",
+      "claim": "卓一航与回疆在 1 书共现且存在到达关系（n=2）",
+      "entities": [
+        "卓一航",
+        "回疆"
+      ],
+      "books": [
+        "塞外奇侠传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[卓一航—到达—回疆]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "塞外奇侠传·021:4",
+          "note": "共 2 条定位符"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0006",
+      "pattern": "COLLAB",
+      "claim": "唐晓澜与浙江在 1 书共现且存在到达关系（n=2）",
+      "entities": [
+        "唐晓澜",
+        "浙江"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[唐晓澜—到达—浙江]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·014:50",
+          "note": "共 1 条定位符"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0007",
+      "pattern": "COLLAB",
+      "claim": "客娉婷与山西在 1 书共现且存在到达关系（n=2）",
+      "entities": [
+        "客娉婷",
+        "山西"
+      ],
+      "books": [
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[客娉婷—到达—山西]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传·024:45",
+          "note": "共 2 条定位符"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0008",
+      "pattern": "COLLAB",
+      "claim": "乳娘府与应修阳在 1 书共现且存在到达关系（n=2）",
+      "entities": [
+        "乳娘府",
+        "应修阳"
+      ],
+      "books": [
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[应修阳—到达—乳娘府]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传·024:32",
+          "note": "共 2 条定位符"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0009",
+      "pattern": "CONFLICT",
+      "claim": "凌未风与楚昭南交手边 n=36（3 条定位符）",
+      "entities": [
+        "凌未风",
+        "楚昭南"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[凌未风—交手—楚昭南]",
+          "value": 36
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·004:63"
+        },
+        {
+          "level": "E3",
+          "ref": "matches.json#pair(凌未风,楚昭南)",
+          "value": 4
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "存在非敌对关系边（师承/同门/婚约/结义/解救）",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0010",
+      "pattern": "CONFLICT",
+      "claim": "易兰珠与楚昭南交手边 n=12（3 条定位符）",
+      "entities": [
+        "易兰珠",
+        "楚昭南"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[易兰珠—交手—楚昭南]",
+          "value": 12
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·014:13"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "未检索到非敌对边",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0011",
+      "pattern": "CONFLICT",
+      "claim": "冯琳与额音和布交手边 n=11（3 条定位符）",
+      "entities": [
+        "冯琳",
+        "额音和布"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[冯琳—交手—额音和布]",
+          "value": 11
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·037:24"
+        },
+        {
+          "level": "E3",
+          "ref": "matches.json#pair(冯琳,额音和布)",
+          "value": 2
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "存在非敌对关系边（师承/同门/婚约/结义/解救）",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0012",
+      "pattern": "CONFLICT",
+      "claim": "桂仲明与楚昭南交手边 n=11（3 条定位符）",
+      "entities": [
+        "桂仲明",
+        "楚昭南"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[桂仲明—交手—楚昭南]",
+          "value": 11
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·014:14"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "未检索到非敌对边",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0013",
+      "pattern": "CONFLICT",
+      "claim": "公孙大娘与练霓裳交手边 n=10（3 条定位符）",
+      "entities": [
+        "公孙大娘",
+        "练霓裳"
+      ],
+      "books": [
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[公孙大娘—交手—练霓裳]",
+          "value": 10
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传·015:11"
+        },
+        {
+          "level": "E3",
+          "ref": "matches.json#pair(公孙大娘,练霓裳)",
+          "value": 2
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "存在非敌对关系边（师承/同门/婚约/结义/解救）",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0014",
+      "pattern": "CONFLICT",
+      "claim": "吕四娘与天叶散人交手边 n=10（3 条定位符）",
+      "entities": [
+        "吕四娘",
+        "天叶散人"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[吕四娘—交手—天叶散人]",
+          "value": 10
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·011:44"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "未检索到非敌对边",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0015",
+      "pattern": "CONFLICT",
+      "claim": "吕四娘与王尊一交手边 n=10（3 条定位符）",
+      "entities": [
+        "吕四娘",
+        "王尊一"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[吕四娘—交手—王尊一]",
+          "value": 10
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·009:32"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "未检索到非敌对边",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0016",
+      "pattern": "CONFLICT",
+      "claim": "提摩达多与桂华生交手边 n=10（3 条定位符）",
+      "entities": [
+        "提摩达多",
+        "桂华生"
+      ],
+      "books": [
+        "冰魄寒光剑"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[提摩达多—交手—桂华生]",
+          "value": 10
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑·007:51"
+        },
+        {
+          "level": "E3",
+          "ref": "matches.json#pair(提摩达多,桂华生)",
+          "value": 2
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "未检索到非敌对边",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0017",
+      "pattern": "LINEAGE",
+      "claim": "师承链 杨云骢→岳鸣珂→易兰珠（跨书图投影，中间人有卡）",
+      "entities": [
+        "岳鸣珂",
+        "易兰珠",
+        "杨云骢"
+      ],
+      "books": [
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[杨云骢—师承—岳鸣珂—师承—易兰珠]",
+          "value": 3
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传·028:1；江湖三女侠·011:50"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0032",
+          "value": "卡 teachers/seniority"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "中间人存在互斥师父冲突，链需复核",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0018",
+      "pattern": "LINEAGE",
+      "claim": "师承链 伊士达→岳鸣珂→易兰珠（跨书图投影，中间人有卡）",
+      "entities": [
+        "伊士达",
+        "岳鸣珂",
+        "易兰珠"
+      ],
+      "books": [
+        "塞外奇侠传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[伊士达—师承—岳鸣珂—师承—易兰珠]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "塞外奇侠传·027:8；江湖三女侠·011:50"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0032",
+          "value": "卡 teachers/seniority"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "中间人存在互斥师父冲突，链需复核",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0019",
+      "pattern": "LINEAGE",
+      "claim": "师承链 冯琳→易兰珠→哈玛雅（跨书图投影，中间人有卡）",
+      "entities": [
+        "冯琳",
+        "哈玛雅",
+        "易兰珠"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[冯琳—师承—易兰珠—师承—哈玛雅]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·031:101；七剑下天山·021:59"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e2310",
+          "value": "卡 teachers/seniority"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "中间人存在互斥师父冲突，链需复核",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0020",
+      "pattern": "LINEAGE",
+      "claim": "师承链 冯琳→易兰珠→辛龙子（跨书图投影，中间人有卡）",
+      "entities": [
+        "冯琳",
+        "易兰珠",
+        "辛龙子"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[冯琳—师承—易兰珠—师承—辛龙子]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·031:101；七剑下天山·021:14"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e2310",
+          "value": "卡 teachers/seniority"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "中间人存在互斥师父冲突，链需复核",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0021",
+      "pattern": "LINEAGE",
+      "claim": "师承链 凌未风→岳鸣珂→易兰珠（跨书图投影，中间人有卡）",
+      "entities": [
+        "凌未风",
+        "岳鸣珂",
+        "易兰珠"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[凌未风—师承—岳鸣珂—师承—易兰珠]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·030:26；江湖三女侠·011:50"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0032",
+          "value": "卡 teachers/seniority"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "中间人存在互斥师父冲突，链需复核",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0022",
+      "pattern": "LINEAGE",
+      "claim": "师承链 卓一航→岳鸣珂→易兰珠（跨书图投影，中间人有卡）",
+      "entities": [
+        "卓一航",
+        "岳鸣珂",
+        "易兰珠"
+      ],
+      "books": [
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[卓一航—师承—岳鸣珂—师承—易兰珠]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传·028:45；江湖三女侠·011:50"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0032",
+          "value": "卡 teachers/seniority"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "中间人存在互斥师父冲突，链需复核",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0023",
+      "pattern": "LINEAGE",
+      "claim": "师承链 哈玛雅→岳鸣珂→易兰珠（跨书图投影，中间人有卡）",
+      "entities": [
+        "哈玛雅",
+        "岳鸣珂",
+        "易兰珠"
+      ],
+      "books": [
+        "塞外奇侠传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[哈玛雅—师承—岳鸣珂—师承—易兰珠]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "塞外奇侠传·006:20；江湖三女侠·011:50"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0032",
+          "value": "卡 teachers/seniority"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "中间人存在互斥师父冲突，链需复核",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0024",
+      "pattern": "LINEAGE",
+      "claim": "师承链 唐金峰→额音和布→易兰珠（跨书图投影，中间人无卡）",
+      "entities": [
+        "唐金峰",
+        "易兰珠",
+        "额音和布"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[唐金峰—师承—额音和布—师承—易兰珠]",
+          "value": 2
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·047:9；江湖三女侠·048:36"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "检查 N5 互斥/互为师徒冲突：未命中",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0025",
+      "pattern": "COMPARE",
+      "claim": "练霓裳与朱由检同为 ≥3 书跨书人物，但门派履历一有一无（True/False）",
+      "entities": [
+        "朱由检",
+        "练霓裳"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[练霓裳/朱由检].books",
+          "value": [
+            5,
+            4
+          ]
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r1.41"
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r23.10"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[练霓裳/朱由检].faction_history",
+          "value": [
+            true,
+            false
+          ]
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "同名/展示层映射冲突已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0026",
+      "pattern": "COMPARE",
+      "claim": "哈玛雅与朱由检同为 ≥3 书跨书人物，但门派履历一有一无（True/False）",
+      "entities": [
+        "哈玛雅",
+        "朱由检"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[哈玛雅/朱由检].books",
+          "value": [
+            4,
+            4
+          ]
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r30.9"
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r23.10"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[哈玛雅/朱由检].faction_history",
+          "value": [
+            true,
+            false
+          ]
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "同名/展示层映射冲突已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0027",
+      "pattern": "COMPARE",
+      "claim": "朱由检与楚昭南同为 ≥3 书跨书人物，但门派履历一有一无（False/True）",
+      "entities": [
+        "朱由检",
+        "楚昭南"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[朱由检/楚昭南].books",
+          "value": [
+            4,
+            4
+          ]
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r23.10"
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r28.37"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[朱由检/楚昭南].faction_history",
+          "value": [
+            false,
+            true
+          ]
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "同名/展示层映射冲突已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0028",
+      "pattern": "COMPARE",
+      "claim": "楚昭南与何绿华同为 ≥3 书跨书人物，但门派履历一有一无（True/False）",
+      "entities": [
+        "何绿华",
+        "楚昭南"
+      ],
+      "books": [
+        "七剑下天山",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[楚昭南/何绿华].books",
+          "value": [
+            4,
+            3
+          ]
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r28.37"
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r8.30"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[楚昭南/何绿华].faction_history",
+          "value": [
+            true,
+            false
+          ]
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "同名/展示层映射冲突已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0029",
+      "pattern": "COMPARE",
+      "claim": "何绿华与傅青主同为 ≥3 书跨书人物，但门派履历一有一无（False/True）",
+      "entities": [
+        "何绿华",
+        "傅青主"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[何绿华/傅青主].books",
+          "value": [
+            3,
+            3
+          ]
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r8.30"
+        },
+        {
+          "level": "E2",
+          "ref": "qijian#pn-r1.4"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[何绿华/傅青主].faction_history",
+          "value": [
+            false,
+            true
+          ]
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "同名/展示层映射冲突已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0030",
+      "pattern": "COMPARE",
+      "claim": "傅青主与允禵同为 ≥3 书跨书人物，但门派履历一有一无（True/False）",
+      "entities": [
+        "傅青主",
+        "允禵"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[傅青主/允禵].books",
+          "value": [
+            3,
+            3
+          ]
+        },
+        {
+          "level": "E2",
+          "ref": "qijian#pn-r1.4"
+        },
+        {
+          "level": "E2",
+          "ref": "qijian#pn-r26.48"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[傅青主/允禵].faction_history",
+          "value": [
+            true,
+            false
+          ]
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "同名/展示层映射冲突已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0031",
+      "pattern": "COMPARE",
+      "claim": "允禵与冒浣莲同为 ≥3 书跨书人物，但门派履历一有一无（False/True）",
+      "entities": [
+        "允禵",
+        "冒浣莲"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[允禵/冒浣莲].books",
+          "value": [
+            3,
+            3
+          ]
+        },
+        {
+          "level": "E2",
+          "ref": "qijian#pn-r26.48"
+        },
+        {
+          "level": "E2",
+          "ref": "qijian#pn-r1.5"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[允禵/冒浣莲].faction_history",
+          "value": [
+            false,
+            true
+          ]
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "同名/展示层映射冲突已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0032",
+      "pattern": "COMPARE",
+      "claim": "冒浣莲与凌未风同为 ≥3 书跨书人物，但门派履历一有一无（True/False）",
+      "entities": [
+        "冒浣莲",
+        "凌未风"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[冒浣莲/凌未风].books",
+          "value": [
+            3,
+            3
+          ]
+        },
+        {
+          "level": "E2",
+          "ref": "qijian#pn-r1.5"
+        },
+        {
+          "level": "E2",
+          "ref": "card:凌未风"
+        },
+        {
+          "level": "E3",
+          "ref": "cards[冒浣莲/凌未风].faction_history",
+          "value": [
+            true,
+            false
+          ]
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "同名/展示层映射冲突已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0033",
+      "pattern": "CHAIN",
+      "claim": "凌未风—楚昭南—石大娘 两跳可达且无直接边（每跳有定位符）",
+      "entities": [
+        "凌未风",
+        "楚昭南",
+        "石大娘"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[凌未风—楚昭南—石大娘]",
+          "value": 38
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·004:63"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·023:17"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "A—C 直接边不存在（两跳关系链为新增信息）",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0034",
+      "pattern": "CHAIN",
+      "claim": "凌未风—楚昭南—武琼瑶 两跳可达且无直接边（每跳有定位符）",
+      "entities": [
+        "凌未风",
+        "楚昭南",
+        "武琼瑶"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[凌未风—楚昭南—武琼瑶]",
+          "value": 37
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·004:63"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·025:32"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "A—C 直接边不存在（两跳关系链为新增信息）",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0035",
+      "pattern": "CHAIN",
+      "claim": "凌未风—楚昭南—石天成 两跳可达且无直接边（每跳有定位符）",
+      "entities": [
+        "凌未风",
+        "楚昭南",
+        "石天成"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[凌未风—楚昭南—石天成]",
+          "value": 37
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·004:63"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·025:32"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "A—C 直接边不存在（两跳关系链为新增信息）",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0036",
+      "pattern": "CHAIN",
+      "claim": "凌未风—楚昭南—胡天柱 两跳可达且无直接边（每跳有定位符）",
+      "entities": [
+        "凌未风",
+        "楚昭南",
+        "胡天柱"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[凌未风—楚昭南—胡天柱]",
+          "value": 37
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·004:63"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·015:28"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "A—C 直接边不存在（两跳关系链为新增信息）",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0037",
+      "pattern": "CHAIN",
+      "claim": "易兰珠—楚昭南—韩志邦 两跳可达且无直接边（每跳有定位符）",
+      "entities": [
+        "易兰珠",
+        "楚昭南",
+        "韩志邦"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[易兰珠—楚昭南—韩志邦]",
+          "value": 22
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·014:13"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·004:43"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "A—C 直接边不存在（两跳关系链为新增信息）",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0038",
+      "pattern": "CHAIN",
+      "claim": "易兰珠—楚昭南—武琼瑶 两跳可达且无直接边（每跳有定位符）",
+      "entities": [
+        "易兰珠",
+        "楚昭南",
+        "武琼瑶"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[易兰珠—楚昭南—武琼瑶]",
+          "value": 13
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·014:13"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·025:32"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "A—C 直接边不存在（两跳关系链为新增信息）",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0039",
+      "pattern": "CHAIN",
+      "claim": "易兰珠—楚昭南—石天成 两跳可达且无直接边（每跳有定位符）",
+      "entities": [
+        "易兰珠",
+        "楚昭南",
+        "石天成"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[易兰珠—楚昭南—石天成]",
+          "value": 13
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·014:13"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·025:32"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "A—C 直接边不存在（两跳关系链为新增信息）",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0040",
+      "pattern": "CHAIN",
+      "claim": "易兰珠—楚昭南—胡天柱 两跳可达且无直接边（每跳有定位符）",
+      "entities": [
+        "易兰珠",
+        "楚昭南",
+        "胡天柱"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.edges[易兰珠—楚昭南—胡天柱]",
+          "value": 13
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·014:13"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山·015:28"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "A—C 直接边不存在（两跳关系链为新增信息）",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0041",
+      "pattern": "BLANK",
+      "claim": "唐晓澜 被提及 2186 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "唐晓澜"
+      ],
+      "books": [
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[唐晓澜].total",
+          "value": 2186
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑#pn-r1.6；江湖三女侠#pn-r1.20"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[唐晓澜]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0042",
+      "pattern": "BLANK",
+      "claim": "吕四娘 被提及 1843 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "吕四娘"
+      ],
+      "books": [
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[吕四娘].total",
+          "value": 1843
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑#pn-r1.35；江湖三女侠#pn-r5.21"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[吕四娘]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0043",
+      "pattern": "BLANK",
+      "claim": "年羹尧 被提及 1085 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "年羹尧"
+      ],
+      "books": [
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[年羹尧].total",
+          "value": 1085
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑#pn-r1.22；江湖三女侠#pn-r2.5"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[年羹尧]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0044",
+      "pattern": "BLANK",
+      "claim": "甘凤池 被提及 1084 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "甘凤池"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[甘凤池].total",
+          "value": 1084
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r5.29"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[甘凤池]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0045",
+      "pattern": "BLANK",
+      "claim": "了因 被提及 963 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "了因"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[了因].total",
+          "value": 963
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r5.29"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[了因]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0046",
+      "pattern": "BLANK",
+      "claim": "杨柳青 被提及 438 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "杨柳青"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[杨柳青].total",
+          "value": 438
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r5.36"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[杨柳青]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0047",
+      "pattern": "BLANK",
+      "claim": "白泰官 被提及 359 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "白泰官"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[白泰官].total",
+          "value": 359
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r5.29"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[白泰官]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0048",
+      "pattern": "BLANK",
+      "claim": "萨天剌 被提及 358 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "萨天剌"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[萨天剌].total",
+          "value": 358
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r3.48"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[萨天剌]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0049",
+      "pattern": "BLANK",
+      "claim": "鱼壳 被提及 296 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "鱼壳"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[鱼壳].total",
+          "value": 296
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r7.26"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[鱼壳]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0050",
+      "pattern": "BLANK",
+      "claim": "钟万堂 被提及 295 次但无人物卡/无独立页（空白候选）",
+      "entities": [
+        "钟万堂"
+      ],
+      "books": [
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "concordance[钟万堂].total",
+          "value": 295
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r1.37"
+        },
+        {
+          "level": "E3",
+          "ref": "graph.nodes[钟万堂]/cards",
+          "value": "节点/卡均缺失（空白）"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display/registry 映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W8",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0051",
+      "pattern": "CROSSREF",
+      "claim": "练霓裳 在 5 书出现（跨书重现候选）",
+      "entities": [
+        "练霓裳"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[练霓裳].books",
+          "value": 5
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r1.41"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0019",
+          "value": "active_books=5"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0052",
+      "pattern": "CROSSREF",
+      "claim": "岳鸣珂 在 5 书出现（跨书重现候选）",
+      "entities": [
+        "岳鸣珂"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[岳鸣珂].books",
+          "value": 5
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r4.20"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0032",
+          "value": "active_books=5"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0053",
+      "pattern": "CROSSREF",
+      "claim": "楚昭南 在 4 书出现（跨书重现候选）",
+      "entities": [
+        "楚昭南"
+      ],
+      "books": [
+        "七剑下天山",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[楚昭南].books",
+          "value": 4
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r28.37"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e1278",
+          "value": "active_books=4"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0054",
+      "pattern": "CROSSREF",
+      "claim": "哈玛雅 在 4 书出现（跨书重现候选）",
+      "entities": [
+        "哈玛雅"
+      ],
+      "books": [
+        "七剑下天山",
+        "塞外奇侠传",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[哈玛雅].books",
+          "value": 4
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r30.9"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0238",
+          "value": "active_books=4"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0055",
+      "pattern": "CROSSREF",
+      "claim": "朱由检 在 4 书出现（跨书重现候选）",
+      "entities": [
+        "朱由检"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[朱由检].books",
+          "value": 4
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r23.10"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e98630",
+          "value": "active_books=4"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0056",
+      "pattern": "CROSSREF",
+      "claim": "卓一航 在 3 书出现（跨书重现候选）",
+      "entities": [
+        "卓一航"
+      ],
+      "books": [
+        "七剑下天山",
+        "塞外奇侠传",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[卓一航].books",
+          "value": 3
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r1.4"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0003",
+          "value": "active_books=3"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0057",
+      "pattern": "CROSSREF",
+      "claim": "凌未风 在 3 书出现（跨书重现候选）",
+      "entities": [
+        "凌未风"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[凌未风].books",
+          "value": 3
+        },
+        {
+          "level": "E3",
+          "ref": "card.artifact.nf99ef5d29b",
+          "value": "active_books=1"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "B",
+      "novelty": "new",
+      "action": "merge-into-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0058",
+      "pattern": "CROSSREF",
+      "claim": "杨云骢 在 3 书出现（跨书重现候选）",
+      "entities": [
+        "杨云骢"
+      ],
+      "books": [
+        "七剑下天山",
+        "塞外奇侠传",
+        "白发魔女传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[杨云骢].books",
+          "value": 3
+        },
+        {
+          "level": "E2",
+          "ref": "bainv#pn-r22.14"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e9190",
+          "value": "active_books=3"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0059",
+      "pattern": "CROSSREF",
+      "claim": "冒浣莲 在 3 书出现（跨书重现候选）",
+      "entities": [
+        "冒浣莲"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[冒浣莲].books",
+          "value": 3
+        },
+        {
+          "level": "E2",
+          "ref": "qijian#pn-r1.5"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e0934",
+          "value": "active_books=3"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0060",
+      "pattern": "CROSSREF",
+      "claim": "易兰珠 在 3 书出现（跨书重现候选）",
+      "entities": [
+        "易兰珠"
+      ],
+      "books": [
+        "七剑下天山",
+        "冰魄寒光剑",
+        "江湖三女侠"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "graph.nodes[易兰珠].books",
+          "value": 3
+        },
+        {
+          "level": "E2",
+          "ref": "qijian#pn-r1.78"
+        },
+        {
+          "level": "E3",
+          "ref": "card.person.e2310",
+          "value": "active_books=3"
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "display_canonical 同名/异人映射已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W12",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0061",
+      "pattern": "ANOMALY",
+      "claim": "七剑下天山 C5：称谓辈分错乱",
+      "entities": [
+        "易兰珠"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C5-001]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        },
+        {
+          "level": "E3",
+          "ref": "time[七剑下天山].forks",
+          "value": 29
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=未知；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0062",
+      "pattern": "ANOMALY",
+      "claim": "七剑下天山 C5：称谓辈分错乱",
+      "entities": [
+        "玄真"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C5-002]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        },
+        {
+          "level": "E3",
+          "ref": "time[七剑下天山].forks",
+          "value": 29
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=未知；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0063",
+      "pattern": "ANOMALY",
+      "claim": "七剑下天山 C1：人物年龄跨回自洽",
+      "entities": [
+        "凌未风"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C1-001]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "016:19"
+        },
+        {
+          "level": "E3",
+          "ref": "time[七剑下天山].forks",
+          "value": 29
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0064",
+      "pattern": "ANOMALY",
+      "claim": "七剑下天山 C1：人物年龄跨回自洽",
+      "entities": [
+        "凌未风"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C1-002]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "019:27"
+        },
+        {
+          "level": "E3",
+          "ref": "time[七剑下天山].forks",
+          "value": 29
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0065",
+      "pattern": "ANOMALY",
+      "claim": "七剑下天山 C1：人物年龄跨回自洽",
+      "entities": [
+        "凌未风"
+      ],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C1-003]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "019:27"
+        },
+        {
+          "level": "E3",
+          "ref": "time[七剑下天山].forks",
+          "value": 29
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0066",
+      "pattern": "ANOMALY",
+      "claim": "七剑下天山 J4：绿林道惯例",
+      "entities": [],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-J4-001]",
+          "value": "J4/info"
+        },
+        {
+          "level": "E2",
+          "ref": "013:26"
+        },
+        {
+          "level": "E3",
+          "ref": "time[七剑下天山].forks",
+          "value": 29
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0067",
+      "pattern": "ANOMALY",
+      "claim": "七剑下天山 J4：绿林道惯例",
+      "entities": [],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-J4-002]",
+          "value": "J4/info"
+        },
+        {
+          "level": "E2",
+          "ref": "015:47"
+        },
+        {
+          "level": "E3",
+          "ref": "time[七剑下天山].forks",
+          "value": 29
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0068",
+      "pattern": "ANOMALY",
+      "claim": "七剑下天山 W6：轻功/剑气数值夸饰",
+      "entities": [],
+      "books": [
+        "七剑下天山"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-W6-001]",
+          "value": "W6/info"
+        },
+        {
+          "level": "E2",
+          "ref": "026:24"
+        },
+        {
+          "level": "E3",
+          "ref": "time[七剑下天山].forks",
+          "value": 29
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0069",
+      "pattern": "ANOMALY",
+      "claim": "冰魄寒光剑 W6：轻功/剑气数值夸饰",
+      "entities": [],
+      "books": [
+        "冰魄寒光剑"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[冰魄寒光剑].violations[冰魄-W6-001]",
+          "value": "W6/info"
+        },
+        {
+          "level": "E2",
+          "ref": "001:47"
+        },
+        {
+          "level": "E3",
+          "ref": "time[冰魄寒光剑].forks",
+          "value": 15
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0070",
+      "pattern": "ANOMALY",
+      "claim": "冰魄寒光剑 W6：轻功/剑气数值夸饰",
+      "entities": [],
+      "books": [
+        "冰魄寒光剑"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[冰魄寒光剑].violations[冰魄-W6-002]",
+          "value": "W6/info"
+        },
+        {
+          "level": "E2",
+          "ref": "010:59"
+        },
+        {
+          "level": "E3",
+          "ref": "time[冰魄寒光剑].forks",
+          "value": 15
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0071",
+      "pattern": "ANOMALY",
+      "claim": "塞外奇侠传 W6：轻功/剑气数值夸饰",
+      "entities": [],
+      "books": [
+        "塞外奇侠传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[塞外奇侠传].violations[塞外-W6-001]",
+          "value": "W6/info"
+        },
+        {
+          "level": "E2",
+          "ref": "025:6"
+        },
+        {
+          "level": "E3",
+          "ref": "time[塞外奇侠传].forks",
+          "value": 13
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=对白；豁免/三分流已检索",
+        "cleared": false
+      },
+      "confidence": "C",
+      "novelty": "new",
+      "action": "observe",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "observe",
+      "dup_of": null
+    },
+    {
+      "id": "INS-0072",
+      "pattern": "ANOMALY",
+      "claim": "塞外奇侠传 W6：轻功/剑气数值夸饰",
+      "entities": [],
+      "books": [
+        "塞外奇侠传"
+      ],
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[塞外奇侠传].violations[塞外-W6-002]",
+          "value": "W6/info"
+        },
+        {
+          "level": "E2",
+          "ref": "027:9"
+        },
+        {
+          "level": "E3",
+          "ref": "time[塞外奇侠传].forks",
+          "value": 13
+        }
+      ],
+      "counter": {
+        "searched": true,
+        "result": "叙述模式=正常叙事；豁免/三分流已检索",
+        "cleared": true
+      },
+      "confidence": "A",
+      "novelty": "new",
+      "action": "build-page",
+      "handoff": "W14",
+      "data_version": "2026-11-05",
+      "generated_at": "2026-11-05",
+      "status": "queued",
+      "dup_of": null
+    }
+  ]
+}

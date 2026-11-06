@@ -1,0 +1,211 @@
+{
+ "schema": "wuxia-acceptance-v1",
+ "book": "冰魄寒光剑",
+ "chapters": [
+  2
+ ],
+ "chapter_label": "002",
+ "generated_at": "2026-11-06T02:24:13",
+ "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
+ "rule_version": "SKILL_03a v1.8",
+ "sample_ratio_requested": 0.1,
+ "seed": "20261104",
+ "readonly": true,
+ "global_gate": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\pipeline_wuxia.py 冰魄寒光剑 check",
+  "exit_code": 0,
+  "lint_codes": {
+   "lint-pn": 0,
+   "integrity": 0,
+   "symbol-lint": 0,
+   "md-lint": 0,
+   "fence-format": 0
+  },
+  "passed": true,
+  "log": "logs\\acceptance\\check_global.log"
+ },
+ "fix_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 冰魄寒光剑 --chapters 2 --dry-run",
+  "exit": 0,
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "log": "logs\\acceptance\\fix_dry_run.log"
+ },
+ "chapters_data": {
+  "002": {
+   "chapter": 2,
+   "structural": "pass",
+   "paragraphs": 57,
+   "chars": 7507,
+   "entity_tokens": 377,
+   "verb_tokens": 95,
+   "rhetoric_tokens": 1,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    5,
+    6,
+    15,
+    25,
+    29,
+    44
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.1053,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [
+    {
+     "chapter": 2,
+     "removed": 18,
+     "added": 5,
+     "for": "E$"
+    },
+    {
+     "chapter": 2,
+     "removed": 22,
+     "added": 15,
+     "for": "E%"
+    }
+   ],
+   "entity_dist": {
+    "#": 26,
+    "$": 21,
+    "%": 5,
+    "+": 5,
+    ";": 40,
+    "=": 55,
+    "@": 120,
+    "^": 22,
+    "{": 3,
+    "•": 57,
+    "◆": 10,
+    "◎": 1,
+    "☆": 12
+   },
+   "verb_dist": {
+    "⊞": 37,
+    "⊟": 14,
+    "⊠": 8,
+    "⊡": 1,
+    "■": 35
+   },
+   "pipe_counts": {
+    "⟦⊠": 1,
+    "〖%": 5
+   },
+   "pipe_sources": {}
+  }
+ },
+ "summary": {
+  "chapters_total": 1,
+  "accepted": 1,
+  "needs_fix": 0,
+  "accepted_chapters": [
+   2
+  ],
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
+  "warnings": 0,
+  "pipe_unsourced": 0,
+  "judgment_items": 0,
+  "sampled_paragraphs": 6,
+  "total_paragraphs": 57,
+  "total_chars": 7507,
+  "entity_tokens": 377,
+  "verb_tokens": 95,
+  "rhetoric_tokens": 1,
+  "llm_used": false
+ },
+ "risk_stats": [
+  {
+   "category": "① 管道",
+   "hits": 6,
+   "hard": 0,
+   "judgment": 0,
+   "note": "@ 管道 0 条，无来源 0 条，登记表映射冲突 0 条（warning）"
+  },
+  {
+   "category": "② 层-码错位",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "实体/动词括号内码位一致性"
+  },
+  {
+   "category": "③ 括号/标点",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "未闭合/闭合符误写/嵌套/标注内标点；修辞 〘※说时迟、那时快〙 标点属固定表达不判"
+  },
+  {
+   "category": "④ 围栏/套语",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "回目/回末/套语 0；韵文围栏动词 0；回末对实体限实指 1"
+  },
+  {
+   "category": "⑤ 动词域高风险",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "⊠/⊡/⊞ 拘押判刑处死语境 + verbs.json 候选域差异"
+  },
+  {
+   "category": "⑥ 时间/数量边界",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "% 无时间线索 + $ 裸数词/裸量词"
+  },
+  {
+   "category": "⑦ D1/谦辞/纯亲属（抽样）",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "抽样段 #/; 全类型检查"
+  },
+  {
+   "category": "⑧ 计划/否定/假想语境",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "前接 要/想/欲/若/待/将/否则/不/没/未 的动词"
+  }
+ ],
+ "qa_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\qa_annotation_report.py --book 冰魄寒光剑 --chapters 2 --out C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\logs\\acceptance\\qa_structure_A_B_002.md --mapping-file logs/mapping_冰魄寒光剑",
+  "exit_code": 0,
+  "report": "logs\\acceptance\\qa_structure_A_B_002.md",
+  "strip_mismatch": 0,
+  "pipe_issues": 0,
+  "title_tokens": 0,
+  "fence_tokens": 0,
+  "tao_tokens": 0,
+  "parsed": true
+ },
+ "mapping_loaded": true,
+ "mapping_source": {
+  "registry": "registry/entities.json",
+  "mapping_file": "logs/mapping_冰魄寒光剑",
+  "mapping_pairs": 0,
+  "mapping_loaded": true
+ },
+ "pipe_sources": {
+  "at_pipes": 0,
+  "text_only": 0,
+  "unsourced": 0,
+  "detail_by_source": {
+   "002": {}
+  }
+ },
+ "sample_coverage": {
+  "entity": "@=;#☆•%$",
+  "verb": "⊞⊟■",
+  "coverage_swaps": 2
+ }
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 穿帮雷达</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .nav{display:flex;gap:20px;align-items:center;font-size:14px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.7}
+  .card{border:1px solid #b9ab90;border-radius:4px;padding:12px 16px;background:#fbf8ef}
+  .badge{display:inline-block;border:1.5px solid;border-radius:3px;padding:0 8px;font-size:12px}
+  h2.sec{font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:20px;margin:30px 0 12px;border-bottom:1px solid #d8cdb8;padding-bottom:5px;letter-spacing:2px}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:#8c8477}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+  <header style="border-bottom:1px solid #d8cdb8;background:#fbf8ef"><div class="wrap nav" style="height:52px">
+    <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:24px;color:#a63a2b;margin-right:18px">江湖图志</span>
+    <a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a></div></header>
+
+  <main class="wrap" style="flex:1;padding-bottom:48px">
+    <p class="lab" style="margin:14px 0 0"><a href="#">首页</a> / 穿帮雷达</p>
+    <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:36px;letter-spacing:3px;margin:6px 0 4px">穿帮雷达</h1>
+    <p style="color:#5a544a;font-size:15px">全站事实层的质检报告：51 条规则扫过五部深度书目——称谓、年龄、纪年、武功数值、江湖惯例，每条命中都可点开原文对质；每条豁免都公开理由。<b>冲突≠穿帮，我们只陈列证据。</b></p>
+    <div style="display:flex;gap:30px;margin-top:14px;font-size:14px;color:#5a544a;flex-wrap:wrap">
+      <span><b style="font-size:22px;color:#a63a2b">51</b> 条规则</span>
+      <span><b style="font-size:22px;color:#a63a2b">44</b> 条命中</span>
+      <span><b style="font-size:22px">28</b> warning</span>
+      <span><b style="font-size:22px">16</b> info</span>
+      <span><b style="font-size:22px">5</b> 部书覆盖</span>
+      <span><b style="font-size:22px">10</b> 条豁免</span>
+    </div>
+
+    <h2 class="sec">穿帮报告 <span class="lab">warning 在前 · info 在后 · 豁免已折叠标注 · 每条可对质</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b style="font-size:14px">C1 人物年龄跨回自洽</b>
+          <span class="badge" style="border-color:#a63a2b;color:#a63a2b">warning</span></div>
+        <p class="lab" style="margin:6px 0 0">七剑下天山·023 —— 易兰珠称谓年龄与两回前冲突（±1 年容差外）。</p>
+        <span class="loc">七剑·023:14 → · 规则 C1 §4.1</span>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b style="font-size:14px">C5 称谓辈分错乱</b>
+          <span class="badge" style="border-color:#a63a2b;color:#a63a2b">warning</span></div>
+        <p class="lab" style="margin:6px 0 0">白发魔女传·012 —— 师侄称呼与关系边系统性冲突。</p>
+        <span class="loc">白发·012:6 → · 规则 C5 §4.5</span>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b style="font-size:14px">W6 轻功/剑气数值夸饰</b>
+          <span class="badge" style="border-color:#8c8477;color:#8c8477">info</span></div>
+        <p class="lab" style="margin:6px 0 0">三女侠·009 —— 一跃三丈与同一场景前文一跃两丈不符。</p>
+        <span class="loc">三女侠·009:44 → · 规则 W6 §7.2</span>
+      </div>
+      <div class="card" style="background:#f5efe4;border-style:dashed">
+        <div style="display:flex;justify-content:space-between;align-items:baseline">
+          <b style="font-size:14px;color:#8c8477">T4 纪年自洽（已豁免）</b>
+          <span class="badge" style="border-color:#b9b1a2;color:#8c8477">豁免</span></div>
+        <p class="lab" style="margin:6px 0 0">作者按语中的纪年（叙述模式豁免 04a）——不算穿帮，理由公开。</p>
+        <span class="loc">七剑·007:12 · <a href="#">原著纪年 × 史实对照 →</a></span>
+      </div>
+    </div>
+
+    <h2 class="sec">规则覆盖 <span class="lab">查了什么、没查什么，全部公开</span></h2>
+    <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:10px 16px;font-size:13px;line-height:2.1">
+      <b style="color:#a63a2b">C 系列 · 一致性</b>：C1 年龄自洽（15 命中）· C5 称谓辈分（9）· C4 死亡角色再出场（严格口径 0）<br>
+      <b style="color:#a63a2b">W 系列 · 武功</b>：W6 数值夸饰（8）· W2 内伤恢复（2）· W9 少年天才铺垫（1）<br>
+      <b style="color:#34546e">T 系列 · 时代</b>：T4 纪年自洽（3）· T1 器物朝代（1）<br>
+      <b style="color:#5e7d5a">J/S 系列 · 江湖惯例</b>：J4 绿林道惯例（2）· J6 官府缺位（1）· J3 彩头兑现（1）· S9 失传绝学再现（1）· J7 迷药药性（待丹药谱）<br>
+      <span class="lab">manual/exempt 规则 12 条 · 全量状态矩阵见数据文件</span>
+    </div>
+
+    <h2 class="sec">豁免清单 <span class="lab">叙述模式豁免：作者按语、回忆等不算穿帮 · 理由公开</span></h2>
+    <ul style="list-style:none;padding:0;font-size:13px;line-height:2.1">
+      <li><span class="loc">七剑·007:12</span> 规则 T4 —— 叙述模式豁免（04a/作者按语）</li>
+      <li><span class="loc">三女侠·031:11</span> 规则 T4 —— 叙述模式豁免（04a/回忆）</li>
+    </ul>
+
+    <h2 class="sec">死亡一致性 <span class="lab">核验服务版 · 供谜题与问答消费</span></h2>
+    <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:14px 18px" class="lab">
+      <p style="margin:0 0 6px;font-size:13.5px;color:#5a544a">严格口径（C4）本批 0 命中；宽松核验清单（事件层 verb∈{杀,诛,毙}，群目已滤）独立输出——
+        同一条数据三处消费：<b>游戏谜题过滤 · 问答存疑标注 · 武评归属辅助</b>，口径同源。</p>
+      <span class="chip" style="border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;font-size:12px;background:#fbf8ef">两可清单 N 条 · 渲染于数据到位后</span>
+      <span class="chip" style="border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;font-size:12px;background:#fbf8ef">验证通过名单 · games 消费</span>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1660}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

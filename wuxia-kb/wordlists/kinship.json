@@ -1,0 +1,819 @@
+{
+ "meta": {
+  "schema": "wordlist-v1",
+  "generated": "2026-11-04",
+  "source": "kinship_source.md",
+  "spec_version": "0.3-draft",
+  "totals": {
+   "all": 62,
+   "auto": 0,
+   "review": 0,
+   "watch": 62,
+   "auto_ready": 0
+  }
+ },
+ "items": [
+  {
+   "surface": "父亲",
+   "canonical": "父亲",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "母亲",
+   "canonical": "母亲",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "父母",
+   "canonical": "父母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "兄弟",
+   "canonical": "兄弟",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "姐妹",
+   "canonical": "姐妹",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "哥哥",
+   "canonical": "哥哥",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "弟弟",
+   "canonical": "弟弟",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "姐姐",
+   "canonical": "姐姐",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "妹妹",
+   "canonical": "妹妹",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "兄长",
+   "canonical": "兄长",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "叔父",
+   "canonical": "叔父",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "伯父",
+   "canonical": "伯父",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "七剑下天山:10"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "叔母",
+   "canonical": "叔母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "伯母",
+   "canonical": "伯母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "七剑下天山:9"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "婶母",
+   "canonical": "婶母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "姨母",
+   "canonical": "姨母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:27"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "姨父",
+   "canonical": "姨父",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:27"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "舅父",
+   "canonical": "舅父",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:24"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "舅母",
+   "canonical": "舅母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "弹指惊雷:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "姑母",
+   "canonical": "姑母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "七剑下天山:2"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "姑丈",
+   "canonical": "姑丈",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "岳父",
+   "canonical": "岳父",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "岳母",
+   "canonical": "岳母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:20"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "婆婆",
+   "canonical": "婆婆",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:13"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "丈夫",
+   "canonical": "丈夫",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "夫君",
+   "canonical": "夫君",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "游剑江湖:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "妻子",
+   "canonical": "妻子",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "妻室",
+   "canonical": "妻室",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:11"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "儿女",
+   "canonical": "儿女",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "子女",
+   "canonical": "子女",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:10"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "儿子",
+   "canonical": "儿子",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "女儿",
+   "canonical": "女儿",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "孙儿",
+   "canonical": "孙儿",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "孙女",
+   "canonical": "孙女",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "冰川天女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "孙子",
+   "canonical": "孙子",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "女婿",
+   "canonical": "女婿",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "媳妇",
+   "canonical": "媳妇",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "儿媳",
+   "canonical": "儿媳",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:13"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "妾",
+   "canonical": "妾",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "妾侍",
+   "canonical": "妾侍",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "姨太太",
+   "canonical": "姨太太",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "鸣镝风云录:73"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "堂兄",
+   "canonical": "堂兄",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "侠骨丹心:14"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "堂弟",
+   "canonical": "堂弟",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "侠骨丹心:14"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "表兄",
+   "canonical": "表兄",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:28"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "表姐",
+   "canonical": "表姐",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "大唐游侠传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "表妹",
+   "canonical": "表妹",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "外甥",
+   "canonical": "外甥",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:43"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "侄子",
+   "canonical": "侄子",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "侄女",
+   "canonical": "侄女",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "孩儿",
+   "canonical": "孩儿",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "爹爹",
+   "canonical": "爹爹",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "妈妈",
+   "canonical": "妈妈",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "爸爸",
+   "canonical": "爸爸",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "娘亲",
+   "canonical": "娘亲",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "剑网尘丝:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "继父",
+   "canonical": "继父",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "冰川天女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "养父",
+   "canonical": "养父",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "七剑下天山:9"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "义父",
+   "canonical": "义父",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "义母",
+   "canonical": "义母",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:43"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "义子",
+   "canonical": "义子",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "云海玉弓缘:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "干爹",
+   "canonical": "干爹",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:24"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "亲家",
+   "canonical": "亲家",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  },
+  {
+   "surface": "夫人",
+   "canonical": "夫人",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "亲属称谓（D1：仅领属结构有明确指称对象时建议）"
+  }
+ ]
+}

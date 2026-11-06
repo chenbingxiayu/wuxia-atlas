@@ -39,3 +39,7 @@ wuxia-kb/registry/ast/
 wuxia-kb/registry/structure/
 wuxia-kb/logs/
 wuxia-kb/backup/
+wuxia-kb/.token_cost_config.json
+wuxia-kb/design/.artifact-server.json
+wuxia-kb/design/.artifact-server.log
+wuxia-kb/design/_tools/__pycache__/

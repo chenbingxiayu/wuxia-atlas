@@ -1,0 +1,275 @@
+{
+ "schema": "wuxia-acceptance-v1",
+ "book": "江湖三女侠",
+ "chapters": [
+  15
+ ],
+ "chapter_label": "015",
+ "generated_at": "2026-11-06T02:24:45",
+ "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
+ "rule_version": "SKILL_03a v1.8",
+ "sample_ratio_requested": 0.1,
+ "seed": "20261104",
+ "readonly": true,
+ "global_gate": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\pipeline_wuxia.py 江湖三女侠 check",
+  "exit_code": 0,
+  "lint_codes": {
+   "lint-pn": 0,
+   "integrity": 0,
+   "symbol-lint": 0,
+   "md-lint": 0,
+   "fence-format": 0
+  },
+  "passed": true,
+  "log": "logs\\acceptance\\check_global.log"
+ },
+ "fix_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 江湖三女侠 --chapters 15 --dry-run",
+  "exit": 0,
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "log": "logs\\acceptance\\fix_dry_run.log"
+ },
+ "chapters_data": {
+  "015": {
+   "chapter": 15,
+   "structural": "pass",
+   "paragraphs": 55,
+   "chars": 10445,
+   "entity_tokens": 562,
+   "verb_tokens": 101,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [
+    {
+     "pn": 16,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 19,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 19,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 19,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 19,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 20,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 20,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 20,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 21,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    },
+    {
+     "pn": 26,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 唐兄→唐晓澜 与登记表 唐兄→唐经天 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@唐兄|唐晓澜"
+    }
+   ],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    31,
+    35,
+    40,
+    43,
+    48,
+    53
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.1091,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [
+    {
+     "chapter": 15,
+     "removed": 8,
+     "added": 43,
+     "for": "E#"
+    }
+   ],
+   "entity_dist": {
+    "#": 6,
+    "$": 64,
+    "%": 25,
+    "+": 1,
+    ";": 21,
+    "=": 53,
+    "@": 356,
+    "^": 4,
+    "{": 3,
+    "•": 20,
+    "◆": 4,
+    "◎": 1,
+    "☆": 4
+   },
+   "verb_dist": {
+    "⊞": 7,
+    "⊟": 12,
+    "⊡": 3,
+    "■": 79
+   },
+   "pipe_counts": {
+    "〖%": 25,
+    "〖@": 56
+   },
+   "pipe_sources": {
+    "mapping_snapshot": 19,
+    "registry+mapping_snapshot": 37
+   }
+  }
+ },
+ "summary": {
+  "chapters_total": 1,
+  "accepted": 1,
+  "needs_fix": 0,
+  "accepted_chapters": [
+   15
+  ],
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
+  "warnings": 10,
+  "pipe_unsourced": 0,
+  "judgment_items": 0,
+  "sampled_paragraphs": 6,
+  "total_paragraphs": 55,
+  "total_chars": 10445,
+  "entity_tokens": 562,
+  "verb_tokens": 101,
+  "rhetoric_tokens": 2,
+  "llm_used": false
+ },
+ "risk_stats": [
+  {
+   "category": "① 管道",
+   "hits": 81,
+   "hard": 0,
+   "judgment": 0,
+   "note": "@ 管道 56 条，无来源 0 条，登记表映射冲突 10 条（warning）"
+  },
+  {
+   "category": "② 层-码错位",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "实体/动词括号内码位一致性"
+  },
+  {
+   "category": "③ 括号/标点",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "未闭合/闭合符误写/嵌套/标注内标点；修辞 〘※说时迟、那时快〙 标点属固定表达不判"
+  },
+  {
+   "category": "④ 围栏/套语",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "回目/回末/套语 0；韵文围栏动词 0；回末对实体限实指 1"
+  },
+  {
+   "category": "⑤ 动词域高风险",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "⊠/⊡/⊞ 拘押判刑处死语境 + verbs.json 候选域差异"
+  },
+  {
+   "category": "⑥ 时间/数量边界",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "% 无时间线索 + $ 裸数词/裸量词"
+  },
+  {
+   "category": "⑦ D1/谦辞/纯亲属（抽样）",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "抽样段 #/; 全类型检查"
+  },
+  {
+   "category": "⑧ 计划/否定/假想语境",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "前接 要/想/欲/若/待/将/否则/不/没/未 的动词"
+  }
+ ],
+ "qa_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\qa_annotation_report.py --book 江湖三女侠 --chapters 15 --out C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\logs\\acceptance\\qa_structure_A_B_015.md --mapping-file logs/mapping_江湖三女侠",
+  "exit_code": 0,
+  "report": "logs\\acceptance\\qa_structure_A_B_015.md",
+  "strip_mismatch": 0,
+  "pipe_issues": 0,
+  "title_tokens": 0,
+  "fence_tokens": 0,
+  "tao_tokens": 0,
+  "parsed": true
+ },
+ "mapping_loaded": true,
+ "mapping_source": {
+  "registry": "registry/entities.json",
+  "mapping_file": "logs/mapping_江湖三女侠",
+  "mapping_pairs": 444,
+  "mapping_loaded": true,
+  "scoped": {
+   "registry_entries": 51,
+   "mapping_entries": 0
+  }
+ },
+ "pipe_sources": {
+  "at_pipes": 56,
+  "text_only": 0,
+  "unsourced": 0,
+  "detail_by_source": {
+   "015": {
+    "mapping_snapshot": 19,
+    "registry+mapping_snapshot": 37
+   }
+  }
+ },
+ "sample_coverage": {
+  "entity": "@=;#•^%$",
+  "verb": "⊟■",
+  "coverage_swaps": 1
+ }
+}

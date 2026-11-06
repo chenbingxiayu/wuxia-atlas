@@ -1,0 +1,2759 @@
+{
+ "meta": {
+  "schema": "wordlist-v1",
+  "generated": "2026-11-05",
+  "source": "identity_source.md",
+  "spec_version": "0.3-draft",
+  "totals": {
+   "all": 212,
+   "auto": 0,
+   "review": 191,
+   "watch": 21,
+   "auto_ready": 0
+  }
+ },
+ "items": [
+  {
+   "surface": "掌门",
+   "canonical": "掌门",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "掌门人",
+   "canonical": "掌门人",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "掌门弟子",
+   "canonical": "掌门弟子",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "掌门大弟子",
+   "canonical": "掌门大弟子",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "长老",
+   "canonical": "长老",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "帮主",
+   "canonical": "帮主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:13"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "盟主",
+   "canonical": "盟主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "舵主",
+   "canonical": "舵主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "总舵主",
+   "canonical": "总舵主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "堂主",
+   "canonical": "堂主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "武当一剑:8"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "香主",
+   "canonical": "香主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "坛主",
+   "canonical": "坛主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位；语料未检出（先验/待验证）"
+  },
+  {
+   "surface": "教主",
+   "canonical": "教主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "副教主",
+   "canonical": "副教主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:7"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "护法",
+   "canonical": "护法",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "寨主",
+   "canonical": "寨主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "按 01g 职位短语裁定改 ;（P2 修复）"
+  },
+  {
+   "surface": "堡主",
+   "canonical": "堡主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "庄主",
+   "canonical": "庄主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "岛主",
+   "canonical": "岛主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "云海玉弓缘:30"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "宫主",
+   "canonical": "宫主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:25"
+   ],
+   "version": "0.3-draft",
+   "note": "按 01g 职位短语裁定改 ;（P2 修复）"
+  },
+  {
+   "surface": "宗主",
+   "canonical": "宗主",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "方丈",
+   "canonical": "方丈",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "监寺",
+   "canonical": "监寺",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "知客",
+   "canonical": "知客",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "知客僧",
+   "canonical": "知客僧",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "总管",
+   "canonical": "总管",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "管家",
+   "canonical": "管家",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别（非建制职位），保留 #（P2 裁定）"
+  },
+  {
+   "surface": "教头",
+   "canonical": "教头",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "总教头",
+   "canonical": "总教头",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "头目",
+   "canonical": "头目",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "头子",
+   "canonical": "头子",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "首领",
+   "canonical": "首领",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "龙头",
+   "canonical": "龙头",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "大帅",
+   "canonical": "大帅",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "元帅",
+   "canonical": "元帅",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:7"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "将军",
+   "canonical": "将军",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "主将",
+   "canonical": "主将",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "大将",
+   "canonical": "大将",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "统领",
+   "canonical": "统领",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "都指挥",
+   "canonical": "都指挥",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "指挥",
+   "canonical": "指挥",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "副指挥",
+   "canonical": "副指挥",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "侍卫长",
+   "canonical": "侍卫长",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "副侍卫长",
+   "canonical": "副侍卫长",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "侍卫班长",
+   "canonical": "侍卫班长",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "校尉",
+   "canonical": "校尉",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "总督",
+   "canonical": "总督",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "巡抚",
+   "canonical": "巡抚",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "知府",
+   "canonical": "知府",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "知县",
+   "canonical": "知县",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "县官",
+   "canonical": "县官",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "钦差",
+   "canonical": "钦差",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "钦使",
+   "canonical": "钦使",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "太监",
+   "canonical": "太监",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "内监",
+   "canonical": "内监",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "太监总管",
+   "canonical": "太监总管",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "御前侍卫",
+   "canonical": "御前侍卫",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "尚书",
+   "canonical": "尚书",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "侍郎",
+   "canonical": "侍郎",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "给事中",
+   "canonical": "给事中",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "御史",
+   "canonical": "御史",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "都御史",
+   "canonical": "都御史",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "左都御史",
+   "canonical": "左都御史",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "经略",
+   "canonical": "经略",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "辽东经略",
+   "canonical": "辽东经略",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "提督",
+   "canonical": "提督",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "九门提督",
+   "canonical": "九门提督",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "总兵",
+   "canonical": "总兵",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "参将",
+   "canonical": "参将",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:16"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "副将",
+   "canonical": "副将",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "大学士",
+   "canonical": "大学士",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "首辅",
+   "canonical": "首辅",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "宰相",
+   "canonical": "宰相",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "皇太后",
+   "canonical": "皇太后",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "皇后",
+   "canonical": "皇后",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "皇太子",
+   "canonical": "皇太子",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "太子",
+   "canonical": "太子",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "王爷",
+   "canonical": "王爷",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "藩王",
+   "canonical": "藩王",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "皇子",
+   "canonical": "皇子",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "公主",
+   "canonical": "公主",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "驸马",
+   "canonical": "驸马",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:14"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "太子少保",
+   "canonical": "太子少保",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "总镖头",
+   "canonical": "总镖头",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:14"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "桩头",
+   "canonical": "桩头",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "总桩头",
+   "canonical": "总桩头",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "副总桩头",
+   "canonical": "副总桩头",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "头领",
+   "canonical": "头领",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:19"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 # 身份，与本表职衔归类冲突，待人工裁定"
+  },
+  {
+   "surface": "队长",
+   "canonical": "队长",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "冰川天女传:32"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "参赞",
+   "canonical": "参赞",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "监军",
+   "canonical": "监军",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:20"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "督抚",
+   "canonical": "督抚",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "殿前侍卫",
+   "canonical": "殿前侍卫",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:22"
+   ],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位"
+  },
+  {
+   "surface": "护卫长",
+   "canonical": "护卫长",
+   "type": ";",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "可履任/册封的建制岗位；语料未检出（先验/待验证）"
+  },
+  {
+   "surface": "武师",
+   "canonical": "武师",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "镖师",
+   "canonical": "镖师",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "镖头",
+   "canonical": "镖头",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "老镖头",
+   "canonical": "老镖头",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "副镖头",
+   "canonical": "副镖头",
+   "type": ";",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:24"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 ; 职衔，与本表身份归类冲突，待人工裁定"
+  },
+  {
+   "surface": "拳师",
+   "canonical": "拳师",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:47"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "剑客",
+   "canonical": "剑客",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "剑侠",
+   "canonical": "剑侠",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "冰川天女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "歧义/两义词（家人=仆役义#｜亲属义不标；小二/手下/高手等泛称），保守观察档"
+  },
+  {
+   "surface": "刺客",
+   "canonical": "刺客",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "强盗",
+   "canonical": "强盗",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "大盗",
+   "canonical": "大盗",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "剧盗",
+   "canonical": "剧盗",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "盗贼",
+   "canonical": "盗贼",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "贼人",
+   "canonical": "贼人",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "山贼",
+   "canonical": "山贼",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "马贼",
+   "canonical": "马贼",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:30"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "土匪",
+   "canonical": "土匪",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:52"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "喽兵",
+   "canonical": "喽兵",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "喽啰",
+   "canonical": "喽啰",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "官军",
+   "canonical": "官军",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "官兵",
+   "canonical": "官兵",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "兵士",
+   "canonical": "兵士",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "兵丁",
+   "canonical": "兵丁",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "军校",
+   "canonical": "军校",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "歧义/两义词（家人=仆役义#｜亲属义不标；小二/手下/高手等泛称），保守观察档；语料未检出（先验/待验证）"
+  },
+  {
+   "surface": "军官",
+   "canonical": "军官",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "武将",
+   "canonical": "武将",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "武官",
+   "canonical": "武官",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "文官",
+   "canonical": "文官",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "冰川天女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "大臣",
+   "canonical": "大臣",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "官员",
+   "canonical": "官员",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "犯官",
+   "canonical": "犯官",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "钦犯",
+   "canonical": "钦犯",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "犯人",
+   "canonical": "犯人",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "俘虏",
+   "canonical": "俘虏",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "囚犯",
+   "canonical": "囚犯",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:楔子"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "狱卒",
+   "canonical": "狱卒",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "更夫",
+   "canonical": "更夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "店家",
+   "canonical": "店家",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "伙计",
+   "canonical": "伙计",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:14"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "客商",
+   "canonical": "客商",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "皮草客商",
+   "canonical": "皮草客商",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "绅士",
+   "canonical": "绅士",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "士子",
+   "canonical": "士子",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "书生",
+   "canonical": "书生",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "秀才",
+   "canonical": "秀才",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "举人",
+   "canonical": "举人",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "女帝奇英传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "道士",
+   "canonical": "道士",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "尼姑",
+   "canonical": "尼姑",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "和尚",
+   "canonical": "和尚",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "喇嘛",
+   "canonical": "喇嘛",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "僧人",
+   "canonical": "僧人",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "僧众",
+   "canonical": "僧众",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "高僧",
+   "canonical": "高僧",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "太医",
+   "canonical": "太医",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "郎中",
+   "canonical": "郎中",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:8"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "车夫",
+   "canonical": "车夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "云海玉弓缘:37"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "船夫",
+   "canonical": "船夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "剑网尘丝:6"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "樵夫",
+   "canonical": "樵夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:32"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "渔夫",
+   "canonical": "渔夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "探子",
+   "canonical": "探子",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "剑网尘丝:12"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "细作",
+   "canonical": "细作",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "广陵剑:22"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "内应",
+   "canonical": "内应",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "使者",
+   "canonical": "使者",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "信使",
+   "canonical": "信使",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:12"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "说客",
+   "canonical": "说客",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "术士",
+   "canonical": "术士",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "相士",
+   "canonical": "相士",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "广陵剑:16"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "随从",
+   "canonical": "随从",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "侍从",
+   "canonical": "侍从",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "手下",
+   "canonical": "手下",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "歧义/两义词（家人=仆役义#｜亲属义不标；小二/手下/高手等泛称），保守观察档"
+  },
+  {
+   "surface": "仆人",
+   "canonical": "仆人",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:28"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "仆役",
+   "canonical": "仆役",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:13"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "丫鬟",
+   "canonical": "丫鬟",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "婢女",
+   "canonical": "婢女",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:26"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "第二代弟子",
+   "canonical": "第二代弟子",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "大弟子",
+   "canonical": "大弟子",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "首徒",
+   "canonical": "首徒",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "卫兵",
+   "canonical": "卫兵",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:楔子"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "卫士",
+   "canonical": "卫士",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "武士",
+   "canonical": "武士",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "香客",
+   "canonical": "香客",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "叛逆",
+   "canonical": "叛逆",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "凶手",
+   "canonical": "凶手",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "高手",
+   "canonical": "高手",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "歧义/两义词（家人=仆役义#｜亲属义不标；小二/手下/高手等泛称），保守观察档"
+  },
+  {
+   "surface": "女强盗",
+   "canonical": "女强盗",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "官吏",
+   "canonical": "官吏",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "公差",
+   "canonical": "公差",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:27"
+   ],
+   "version": "0.3-draft",
+   "note": "歧义/两义词（家人=仆役义#｜亲属义不标；小二/手下/高手等泛称），保守观察档"
+  },
+  {
+   "surface": "捕快",
+   "canonical": "捕快",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:16"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "衙役",
+   "canonical": "衙役",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "官差",
+   "canonical": "官差",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "驿卒",
+   "canonical": "驿卒",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）；语料未检出（先验/待验证）"
+  },
+  {
+   "surface": "猎户",
+   "canonical": "猎户",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "农夫",
+   "canonical": "农夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:3"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "铁匠",
+   "canonical": "铁匠",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:20"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "掌柜",
+   "canonical": "掌柜",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "账房",
+   "canonical": "账房",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "弹指惊雷:15"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "小二",
+   "canonical": "小二",
+   "type": "#",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "歧义/两义词（家人=仆役义#｜亲属义不标；小二/手下/高手等泛称），保守观察档"
+  },
+  {
+   "surface": "学徒",
+   "canonical": "学徒",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）；语料未检出（先验/待验证）"
+  },
+  {
+   "surface": "乳母",
+   "canonical": "乳母",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "乳娘",
+   "canonical": "乳娘",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "宦官",
+   "canonical": "宦官",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "内侍",
+   "canonical": "内侍",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "御医",
+   "canonical": "御医",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:15"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "琴师",
+   "canonical": "琴师",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:13"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "歌女",
+   "canonical": "歌女",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:7"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "舞女",
+   "canonical": "舞女",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）；语料未检出（先验/待验证）"
+  },
+  {
+   "surface": "船家",
+   "canonical": "船家",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:11"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "艄公",
+   "canonical": "艄公",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "狂侠天骄魔女:28"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "脚夫",
+   "canonical": "脚夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "大唐游侠传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "挑夫",
+   "canonical": "挑夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）；语料未检出（先验/待验证）"
+  },
+  {
+   "surface": "马夫",
+   "canonical": "马夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:38"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "轿夫",
+   "canonical": "轿夫",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "冰河洗剑录:2"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "门客",
+   "canonical": "门客",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "幕僚",
+   "canonical": "幕僚",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "师爷",
+   "canonical": "师爷",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "谋士",
+   "canonical": "谋士",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:7"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "军师",
+   "canonical": "军师",
+   "type": "#",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:49"
+   ],
+   "version": "0.3-draft",
+   "note": "职业类别/处境身份（非建制岗位）"
+  },
+  {
+   "surface": "客卿",
+   "canonical": "客卿",
+   "type": ";",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "语料既有标为 ; 职衔，与本表身份归类冲突，待人工裁定"
+  }
+ ]
+}

@@ -1,0 +1,6700 @@
+{
+ "version": "0.1-draft",
+ "generated": "2026-11-05T10:38:48",
+ "scope": "人物/组织/家族（管道消费方）。地点→gazetteer(docs/14)、技艺与概念→词表(docs/13)。",
+ "status_legend": "approved=种子人工核准; proposed=试点新增待核; pending=证据不足不猜名",
+ "entities": [
+  {
+   "id": "E0001",
+   "type": "@",
+   "canonical": "卓仲廉",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0002",
+   "type": "@",
+   "canonical": "卓继贤",
+   "aliases": [],
+   "contextual": [
+    "儿子名唤归属（001[4]）"
+   ],
+   "sources": [
+    "001",
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0003",
+   "type": "@",
+   "canonical": "卓一航",
+   "aliases": [],
+   "contextual": [
+    "卓兄",
+    "卓公子",
+    "卓先生"
+   ],
+   "sources": [
+    "001",
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0004",
+   "type": "@",
+   "canonical": "王照希",
+   "aliases": [],
+   "contextual": [
+    "王兄",
+    "王哥哥",
+    "照希"
+   ],
+   "sources": [
+    "001",
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0005",
+   "type": "@",
+   "canonical": "孟灿",
+   "aliases": [],
+   "contextual": [
+    "孟伯伯",
+    "孟武师"
+   ],
+   "sources": [
+    "001",
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0006",
+   "type": "@",
+   "canonical": "孟秋霞",
+   "aliases": [],
+   "contextual": [
+    "霞儿",
+    "霞妹",
+    "秋霞"
+   ],
+   "sources": [
+    "001",
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0007",
+   "type": "@",
+   "canonical": "白敏",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0008",
+   "type": "@",
+   "canonical": "耿绍南",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0009",
+   "type": "@",
+   "canonical": "石浩",
+   "aliases": [],
+   "contextual": [
+    "石指挥"
+   ],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0010",
+   "type": "@",
+   "canonical": "郑贵妃",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0011",
+   "type": "@",
+   "canonical": "魏忠贤",
+   "aliases": [],
+   "contextual": [
+    "魏公公"
+   ],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0012",
+   "type": "@",
+   "canonical": "常洛",
+   "aliases": [],
+   "contextual": [
+    "太子",
+    "太子常洛"
+   ],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": "庙号/称号类指称挂管道"
+  },
+  {
+   "id": "E0013",
+   "type": "@",
+   "canonical": "常洵",
+   "aliases": [],
+   "contextual": [
+    "二皇子",
+    "二皇子常洵"
+   ],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0014",
+   "type": "@",
+   "canonical": "郑洪台",
+   "aliases": [],
+   "contextual": [
+    "郑前辈",
+    "郑老前辈",
+    "姓郑的"
+   ],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0015",
+   "type": "@",
+   "canonical": "贞乾道人",
+   "aliases": [],
+   "contextual": [
+    "贞乾道长",
+    "贞乾"
+   ],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0016",
+   "type": "@",
+   "canonical": "红云道人",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0017",
+   "type": "@",
+   "canonical": "紫阳道长",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0018",
+   "type": "@",
+   "canonical": "罗金峰",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0019",
+   "type": "@",
+   "canonical": "练霓裳",
+   "aliases": [
+    "玉罗刹",
+    "霓裳",
+    "练女",
+    "白发魔女"
+   ],
+   "contextual": [
+    "练小姐",
+    "练姑娘"
+   ],
+   "sources": [
+    "001",
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": "揭名前亦挂管道（01g D1 正例）；玉罗刹为江湖名号"
+  },
+  {
+   "id": "E0020",
+   "type": "@",
+   "canonical": "朱翊钧",
+   "aliases": [
+    "神宗",
+    "明神宗"
+   ],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0021",
+   "type": "@",
+   "canonical": "朱元璋",
+   "aliases": [
+    "明太祖"
+   ],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0022",
+   "type": "@",
+   "canonical": "李密",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0023",
+   "type": "@",
+   "canonical": "顾宪成",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0024",
+   "type": "@",
+   "canonical": "申时行",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0025",
+   "type": "@",
+   "canonical": "王锡爵",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0026",
+   "type": "@",
+   "canonical": "王家屏",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0027",
+   "type": "@",
+   "canonical": "郑庄公",
+   "aliases": [
+    "郑伯"
+   ],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0028",
+   "type": "@",
+   "canonical": "共叔段",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0029",
+   "type": "@",
+   "canonical": "应修阳",
+   "aliases": [],
+   "contextual": [
+    "应大哥"
+   ],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": "应大哥映射为 004 回内证据"
+  },
+  {
+   "id": "E0030",
+   "type": "@",
+   "canonical": "凌慕华",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": "岳鸣珂师娘；日记作者；文内未复合名前称\"师娘\""
+  },
+  {
+   "id": "E0031",
+   "type": "@",
+   "canonical": "霍天都",
+   "aliases": [
+    "天都居士"
+   ],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0032",
+   "type": "@",
+   "canonical": "岳鸣珂",
+   "aliases": [
+    "晦明禅师"
+   ],
+   "contextual": [
+    "姓岳的"
+   ],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": "2026-11-05 考订：028 文内证据（昌钦法师认出「你是岳鸣珂」+自述随熊经略巡边后削发），出家后法号晦明禅师；镜明长老（少林）为其师，非同一人（010 文内：岳鸣珂自述「镜明长老说我颇有慧根」）"
+  },
+  {
+   "id": "E0033",
+   "type": "@",
+   "canonical": "赵挺",
+   "aliases": [],
+   "contextual": [
+    "赵兄",
+    "嵩阳剑客"
+   ],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0034",
+   "type": "@",
+   "canonical": "范筑",
+   "aliases": [],
+   "contextual": [
+    "范二哥",
+    "金刚手（称谓前缀）"
+   ],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0035",
+   "type": "@",
+   "canonical": "凌霄",
+   "aliases": [
+    "玉面妖狐"
+   ],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": "全形\"玉面妖狐凌霄\"显示串覆盖后挂管道"
+  },
+  {
+   "id": "E0036",
+   "type": "@",
+   "canonical": "青松道人",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0037",
+   "type": "@",
+   "canonical": "熊廷弼",
+   "aliases": [
+    "熊经略"
+   ],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": "2026-11-03 全书检索升级：熊廷弼×219（经略辽东线主角），熊经略为其职衔称谓——书内证据，非猜测"
+  },
+  {
+   "id": "E0038",
+   "type": "@",
+   "canonical": "柳西铭",
+   "aliases": [
+    "柳叔叔",
+    "柳伯伯"
+   ],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": "2026-11-03 全书检索升级：武师柳西铭×45，柳家=其家（白石道人住柳西铭家中），白敏居柳家=柳叔叔家——证据链闭合"
+  },
+  {
+   "id": "E0039",
+   "type": "@",
+   "canonical": "郑国泰",
+   "aliases": [
+    "郑国舅"
+   ],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": "2026-11-03 全书检索升级：书中明文「哥哥郑国泰」（郑贵妃兄）——郑国舅=郑国泰书内证据"
+  },
+  {
+   "id": "E0040",
+   "type": "@",
+   "canonical": "云燕平",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "大内卫士·私通满洲三人之一；柔功"
+  },
+  {
+   "id": "E0041",
+   "type": "@",
+   "canonical": "金千岩",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "大内卫士；阴风毒砂掌（三日毒发七日身亡）"
+  },
+  {
+   "id": "E0042",
+   "type": "@",
+   "canonical": "王嘉胤",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "王照希之父；与玉罗刹订盟（史实农民军首领，书内证据为准）"
+  },
+  {
+   "id": "E0043",
+   "type": "@",
+   "canonical": "方从哲",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "大学士（史实人物）"
+  },
+  {
+   "id": "E0044",
+   "type": "@",
+   "canonical": "秦指挥",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "approved",
+   "note": "锦衣卫随行指挥，全称未现；2026-11-04 证据搜索收口：全书 32 回 40.4 万字检索确认本名未揭示，姓+衔称谓即规范名（G-25 三级处理·人名化），关闭 pending"
+  },
+  {
+   "id": "E0045",
+   "type": "@",
+   "canonical": "王兵备",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "approved",
+   "note": "兵备道称谓，本名未现；2026-11-04 证据搜索收口：全书 32 回 40.4 万字检索确认本名未揭示，姓+衔称谓即规范名（G-25 三级处理·人名化），关闭 pending"
+  },
+  {
+   "id": "E0046",
+   "type": "@",
+   "canonical": "王守备",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "approved",
+   "note": "守备称谓，本名未现；2026-11-04 证据搜索收口：全书 32 回 40.4 万字检索确认本名未揭示，姓+衔称谓即规范名（G-25 三级处理·人名化），关闭 pending"
+  },
+  {
+   "id": "E0048",
+   "type": "@",
+   "canonical": "周钦差",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "approved",
+   "note": "副钦差，姓周，名未现；2026-11-04 证据搜索收口：全书 32 回 40.4 万字检索确认本名未揭示，姓+衔称谓即规范名（G-25 三级处理·人名化），关闭 pending"
+  },
+  {
+   "id": "E0049",
+   "type": "@",
+   "canonical": "铁飞龙",
+   "aliases": [
+    "铁老贼",
+    "铁老怪",
+    "铁老头子",
+    "清风山老怪（旧称）"
+   ],
+   "contextual": [],
+   "sources": [
+    "005",
+    "006"
+   ],
+   "status": "proposed",
+   "note": "006 揭名；蒙面少女之父；龙门铁家庄庄主；膝下无儿只有一女"
+  },
+  {
+   "id": "E0050",
+   "type": "@",
+   "canonical": "铁珊瑚",
+   "aliases": [
+    "阿瑚",
+    "珊瑚",
+    "珊瑚小姐",
+    "蒙面少女（005 旧称）"
+   ],
+   "contextual": [],
+   "sources": [
+    "005",
+    "006"
+   ],
+   "status": "proposed",
+   "note": "铁飞龙之女；005 蒙面少女身份坐实（006 [15][32]）"
+  },
+  {
+   "id": "E0051",
+   "type": "@",
+   "canonical": "穆九娘",
+   "aliases": [
+    "九娘",
+    "中年美妇（005 旧称）"
+   ],
+   "contextual": [],
+   "sources": [
+    "005",
+    "006"
+   ],
+   "status": "proposed",
+   "note": "铁珊瑚庶母；铁飞龙宠妾；偷练玉罗刹剑谱剑法"
+  },
+  {
+   "id": "E0052",
+   "type": "@",
+   "canonical": "张三丰",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "太极派鼻祖（史实人物，【按】注内）"
+  },
+  {
+   "id": "E0203",
+   "type": "&",
+   "canonical": "铁家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "铁飞龙家族（&铁家，006 [15]）"
+  },
+  {
+   "id": "E0101",
+   "type": "◆",
+   "canonical": "武当派",
+   "aliases": [
+    "武当"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0102",
+   "type": "◆",
+   "canonical": "龙门帮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0103",
+   "type": "◆",
+   "canonical": "锦衣卫",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0104",
+   "type": "◆",
+   "canonical": "东厂",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0105",
+   "type": "◆",
+   "canonical": "西厂",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0106",
+   "type": "◆",
+   "canonical": "满洲",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": "政权用法；族群语义出现时再议 ~"
+  },
+  {
+   "id": "E0107",
+   "type": "◆",
+   "canonical": "朝廷",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0108",
+   "type": "◆",
+   "canonical": "东林党",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0109",
+   "type": "◆",
+   "canonical": "嵩阳派",
+   "aliases": [
+    "嵩阳"
+   ],
+   "contextual": [],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0110",
+   "type": "◆",
+   "canonical": "少林派",
+   "aliases": [
+    "少林"
+   ],
+   "contextual": [],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0111",
+   "type": "◆",
+   "canonical": "峨嵋派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0112",
+   "type": "◆",
+   "canonical": "华山派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0113",
+   "type": "◆",
+   "canonical": "雪山派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0114",
+   "type": "◆",
+   "canonical": "郑国",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0115",
+   "type": "◆",
+   "canonical": "东西两厂（东厂+西厂合称）",
+   "aliases": [
+    "东西厂"
+   ],
+   "contextual": [],
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "approved",
+   "note": "2026-11-03 用户核准：独立合称条目（非 alias 归并）"
+  },
+  {
+   "id": "E0201",
+   "type": "&",
+   "canonical": "卓家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "approved",
+   "note": "001 v3 口径（docs/21 R3）"
+  },
+  {
+   "id": "E0202",
+   "type": "&",
+   "canonical": "孟家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "approved",
+   "note": ""
+  },
+  {
+   "id": "E0204",
+   "type": "@",
+   "canonical": "何绿华",
+   "aliases": [
+    "绿华"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009",
+    "017",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 08 回）"
+  },
+  {
+   "id": "E0205",
+   "type": "@",
+   "canonical": "何萼华",
+   "aliases": [
+    "萼华"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009",
+    "011",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 08 回）"
+  },
+  {
+   "id": "E0206",
+   "type": "@",
+   "canonical": "公孙大娘",
+   "aliases": [
+    "红花鬼母",
+    "红花鬼母公孙大娘",
+    "金嫂子"
+   ],
+   "contextual": [],
+   "sources": [
+    "013",
+    "014",
+    "015",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "绰号红花鬼母；金独异之妻（020 文内多次连称）"
+  },
+  {
+   "id": "E0207",
+   "type": "@",
+   "canonical": "哈川",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 029 回）"
+  },
+  {
+   "id": "E0208",
+   "type": "@",
+   "canonical": "唐努",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "017",
+    "018",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 017 回）"
+  },
+  {
+   "id": "E0209",
+   "type": "@",
+   "canonical": "天德上人",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 029 回）"
+  },
+  {
+   "id": "E0210",
+   "type": "@",
+   "canonical": "天龙上人",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029",
+    "031",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 029 回）"
+  },
+  {
+   "id": "E0211",
+   "type": "@",
+   "canonical": "孟萨思",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 028 回）"
+  },
+  {
+   "id": "E0212",
+   "type": "@",
+   "canonical": "客娉婷",
+   "aliases": [
+    "娉婷",
+    "娉婷妹子",
+    "婷儿"
+   ],
+   "contextual": [],
+   "sources": [
+    "012",
+    "016",
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 012 回）"
+  },
+  {
+   "id": "E0213",
+   "type": "@",
+   "canonical": "客氏",
+   "aliases": [
+    "客魏"
+   ],
+   "contextual": [],
+   "sources": [
+    "011",
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 011 回）"
+  },
+  {
+   "id": "E0214",
+   "type": "@",
+   "canonical": "巴龙",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 029 回）"
+  },
+  {
+   "id": "E0215",
+   "type": "@",
+   "canonical": "归有章",
+   "aliases": [
+    "大哥",
+    "归大哥",
+    "归老大",
+    "鹰爪王归有章"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 01 回）"
+  },
+  {
+   "id": "E0216",
+   "type": "@",
+   "canonical": "慕容冲",
+   "aliases": [
+    "慕容先生",
+    "慕容大哥"
+   ],
+   "contextual": [
+    "慕容总管"
+   ],
+   "sources": [
+    "012",
+    "013",
+    "016",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "卫士统领/都头级头目（020 文内称慕容总管）"
+  },
+  {
+   "id": "E0217",
+   "type": "@",
+   "canonical": "成章五",
+   "aliases": [
+    "堡主",
+    "成堡主",
+    "风砂堡主"
+   ],
+   "contextual": [],
+   "sources": [
+    "031",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 031 回）"
+  },
+  {
+   "id": "E0218",
+   "type": "@",
+   "canonical": "朱宝椿",
+   "aliases": [
+    "朱寨主",
+    "火灵猿",
+    "火灵猿朱宝椿"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "绰号火灵猿（001 文内）"
+  },
+  {
+   "id": "E0219",
+   "type": "@",
+   "canonical": "李天扬",
+   "aliases": [
+    "天扬",
+    "李封",
+    "李指挥",
+    "李钦差"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "016",
+    "017",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "2026-11-05 考订合并 E0047（李钦差）：008 回石浩同一叙事段先述「李钦差和周钦差逃到河南」（005 回事），后述「太子差遣我和李指挥李天扬出京保护卓一航」，同段两人线索相接；冻结映射表 mapping_frozen_20261104 已登记 李钦差→李天扬、李指挥→李天扬；016 回「锦衣卫的指挥李天扬」。原 E0047「本名未揭示」结论系散文检索漏管道/映射证据，废弃。另收 李封（frozen 映射别名，所指待 S-03b 复核）。"
+  },
+  {
+   "id": "E0220",
+   "type": "@",
+   "canonical": "李岩",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "021",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 021 回）"
+  },
+  {
+   "id": "E0221",
+   "type": "@",
+   "canonical": "李申时",
+   "aliases": [
+    "申儿",
+    "申时",
+    "申时哥哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "016",
+    "017",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 016 回）"
+  },
+  {
+   "id": "E0222",
+   "type": "@",
+   "canonical": "李自成",
+   "aliases": [
+    "小闯王"
+   ],
+   "contextual": [],
+   "sources": [
+    "018",
+    "019",
+    "022",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "史实人物"
+  },
+  {
+   "id": "E0223",
+   "type": "@",
+   "canonical": "杜明忠",
+   "aliases": [
+    "明忠"
+   ],
+   "contextual": [],
+   "sources": [
+    "022",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 022 回）"
+  },
+  {
+   "id": "E0224",
+   "type": "@",
+   "canonical": "杨涟",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "009",
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "史实人物（左副都御史）"
+  },
+  {
+   "id": "E0225",
+   "type": "@",
+   "canonical": "由校",
+   "aliases": [
+    "熹宗",
+    "由哥儿"
+   ],
+   "contextual": [],
+   "sources": [
+    "011",
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "即天启帝（明熹宗朱由校）"
+  },
+  {
+   "id": "E0226",
+   "type": "@",
+   "canonical": "白石道人",
+   "aliases": [
+    "哥哥",
+    "大舅",
+    "屠龙剑客",
+    "白石",
+    "白石贼道"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "007",
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "武当四长老之一（026 文内：黄叶白石红云青蓑四个长老）"
+  },
+  {
+   "id": "E0227",
+   "type": "@",
+   "canonical": "神一元",
+   "aliases": [
+    "神老二"
+   ],
+   "contextual": [],
+   "sources": [
+    "018",
+    "022",
+    "027",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 018 回）"
+  },
+  {
+   "id": "E0228",
+   "type": "@",
+   "canonical": "神大元",
+   "aliases": [
+    "神老大"
+   ],
+   "contextual": [],
+   "sources": [
+    "022",
+    "024",
+    "027",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 022 回）"
+  },
+  {
+   "id": "E0229",
+   "type": "@",
+   "canonical": "红娘子",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 021 回）"
+  },
+  {
+   "id": "E0230",
+   "type": "@",
+   "canonical": "罗铁臂",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "022",
+    "024",
+    "025",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 022 回）"
+  },
+  {
+   "id": "E0231",
+   "type": "@",
+   "canonical": "虞新城",
+   "aliases": [
+    "新城"
+   ],
+   "contextual": [],
+   "sources": [
+    "007",
+    "008",
+    "018",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 07 回）"
+  },
+  {
+   "id": "E0232",
+   "type": "@",
+   "canonical": "袁崇焕",
+   "aliases": [
+    "袁相公"
+   ],
+   "contextual": [],
+   "sources": [
+    "022",
+    "023",
+    "024",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "史实人物"
+  },
+  {
+   "id": "E0233",
+   "type": "@",
+   "canonical": "辛五",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 029 回）"
+  },
+  {
+   "id": "E0234",
+   "type": "@",
+   "canonical": "连城虎",
+   "aliases": [
+    "连总管"
+   ],
+   "contextual": [],
+   "sources": [
+    "016",
+    "020",
+    "021",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 016 回）"
+  },
+  {
+   "id": "E0235",
+   "type": "@",
+   "canonical": "金独异",
+   "aliases": [
+    "金大哥",
+    "金老怪",
+    "金老贼"
+   ],
+   "contextual": [
+    "金老前辈",
+    "金老大",
+    "金老爹"
+   ],
+   "sources": [
+    "007",
+    "009",
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "红花鬼母之夫（020 文内称谓）"
+  },
+  {
+   "id": "E0236",
+   "type": "@",
+   "canonical": "镜明长老",
+   "aliases": [
+    "镜明",
+    "镜明大师",
+    "镜明禅师",
+    "镜明老禅师",
+    "镜明老秃"
+   ],
+   "contextual": [],
+   "sources": [
+    "009",
+    "010",
+    "011",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "少林寺方丈（009-011 金标显示串：镜明/镜明禅师/镜明老禅师/镜明老秃/镜明大师）；岳鸣珂之师门长老（010：岳鸣珂自述「镜明长老说我颇有慧根」）。2026-11-05 修正：先前误收 晦明禅师/晦明 别名，系 028 回机器错挂管道（已改挂 岳鸣珂，见 docs/47）污染回填采证。"
+  },
+  {
+   "id": "E0237",
+   "type": "@",
+   "canonical": "霍元仲",
+   "aliases": [
+    "霍老二",
+    "霍老头",
+    "霍老头子"
+   ],
+   "contextual": [],
+   "sources": [
+    "025",
+    "028",
+    "031",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 025 回）"
+  },
+  {
+   "id": "E0238",
+   "type": "@",
+   "canonical": "飞红巾",
+   "aliases": [
+    "哈玛雅"
+   ],
+   "contextual": [],
+   "sources": [
+    "030",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "回疆女杰（030/032 塞外线）"
+  },
+  {
+   "id": "E0239",
+   "type": "@",
+   "canonical": "黄叶道人",
+   "aliases": [
+    "二师兄黄叶",
+    "黄叶",
+    "黄叶道长"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "007",
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "武当四长老之一（026 文内并称）"
+  },
+  {
+   "id": "E0240",
+   "type": "@",
+   "canonical": "龙啸云",
+   "aliases": [
+    "姓龙的小子",
+    "龙大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "016",
+    "017",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 08 回）"
+  },
+  {
+   "id": "E0241",
+   "type": "@",
+   "canonical": "龙达三",
+   "aliases": [
+    "达三",
+    "龙达三镖师",
+    "龙镖头",
+    "龙镖师"
+   ],
+   "contextual": [],
+   "sources": [
+    "013",
+    "014",
+    "015",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填（首现 013 回）"
+  },
+  {
+   "id": "E0242",
+   "type": "@",
+   "canonical": "昌钦法师",
+   "aliases": [
+    "昌钦大法师",
+    "昌钦大喇嘛"
+   ],
+   "contextual": [],
+   "sources": [],
+   "status": "proposed",
+   "note": "红衣喇嘛；028 文内与岳鸣珂（晦明禅师）相认并交手；024 为宫中护身法师"
+  },
+  {
+   "id": "E0243",
+   "type": "@",
+   "canonical": "辛龙子",
+   "aliases": [],
+   "contextual": [],
+   "sources": [],
+   "status": "proposed",
+   "note": "029-032 塞外线少年（晦明禅师门下线索，028 收徒段）"
+  },
+  {
+   "id": "E0244",
+   "type": "@",
+   "canonical": "公孙雷",
+   "aliases": [],
+   "contextual": [],
+   "sources": [],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填"
+  },
+  {
+   "id": "E0245",
+   "type": "@",
+   "canonical": "唐家璧",
+   "aliases": [],
+   "contextual": [],
+   "sources": [],
+   "status": "proposed",
+   "note": "C24 concordance 未登记回填"
+  },
+  {
+   "id": "E0246",
+   "type": "@",
+   "canonical": "哈萨克酋长",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "030 哈萨克部酋长，姓名未现；按 G-25 三级处理·人名化（同 E0047 李钦差先例）；C20 建议拆称谓不采纳"
+  },
+  {
+   "id": "E0590",
+   "type": "@",
+   "canonical": "凌未风",
+   "aliases": [
+    "凌大侠",
+    "天山神芒",
+    "凌叔叔",
+    "凌大哥",
+    "凌未凤",
+    "凌英雄",
+    "凌师父",
+    "未风",
+    "凌壮士",
+    "凌大陕",
+    "凌在风",
+    "梁穆郎"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现2041次/29回；首见 七剑下天山#pn-r1.97"
+  },
+  {
+   "id": "E0934",
+   "type": "@",
+   "canonical": "冒浣莲",
+   "aliases": [
+    "浣莲",
+    "冒姑娘",
+    "冒姐姐",
+    "浣莲姑娘",
+    "浣莲姐姐",
+    "莲儿",
+    "冒小姐",
+    "冒院莲",
+    "莲姐姐",
+    "冒烷莲",
+    "冒淀莲"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "026",
+    "027",
+    "028",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现944次/24回；首见 七剑下天山#pn-r1.5"
+  },
+  {
+   "id": "E1278",
+   "type": "@",
+   "canonical": "楚昭南",
+   "aliases": [
+    "游龙剑",
+    "楚统领",
+    "楚大哥",
+    "楚昭甫"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "009",
+    "010",
+    "011",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现845次/27回；首见 七剑下天山#pn-r1.60"
+  },
+  {
+   "id": "E1622",
+   "type": "@",
+   "canonical": "桂仲明",
+   "aliases": [
+    "仲明",
+    "桂贤弟",
+    "黄衫少年",
+    "桂贤侄",
+    "桂大哥",
+    "黄衫儿",
+    "桂冲明",
+    "佳仲明",
+    "仲明贤弟",
+    "桂仲明贤弟",
+    "桂兄"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现685次/20回；首见 七剑下天山#pn-r10.9"
+  },
+  {
+   "id": "E1966",
+   "type": "@",
+   "canonical": "傅青主",
+   "aliases": [
+    "傅伯伯",
+    "傅老先生",
+    "傅老前辈",
+    "傅师叔",
+    "傅伯怕",
+    "傅先生",
+    "神医",
+    "无极剑",
+    "傅老哥子",
+    "神医国手"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "019",
+    "020",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现679次/25回；首见 七剑下天山#pn-r1.4"
+  },
+  {
+   "id": "E2310",
+   "type": "@",
+   "canonical": "易兰珠",
+   "aliases": [
+    "兰珠",
+    "兰珠姐姐",
+    "宝珠",
+    "兰珠妹妹",
+    "兰妹妹",
+    "易姐姐",
+    "易当珠"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "012",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现588次/21回；首见 七剑下天山#pn-r1.78"
+  },
+  {
+   "id": "E2654",
+   "type": "@",
+   "canonical": "刘郁芳",
+   "aliases": [
+    "刘大姐",
+    "刘姑娘",
+    "刘总舵主",
+    "云锦剑",
+    "总舵主",
+    "刘舵主",
+    "刘邵芳"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "009",
+    "012",
+    "014",
+    "018",
+    "020",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现433次/21回；首见 七剑下天山#pn-r1.51"
+  },
+  {
+   "id": "E2998",
+   "type": "@",
+   "canonical": "韩志邦",
+   "aliases": [
+    "韩大哥",
+    "韩叔叔",
+    "志邦",
+    "韩总舵主",
+    "总舵主",
+    "韩舵主",
+    "韩大侠",
+    "韩义士"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "004",
+    "005",
+    "006",
+    "008",
+    "010",
+    "011",
+    "018",
+    "019",
+    "020",
+    "021",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现419次/18回；首见 七剑下天山#pn-r1.76"
+  },
+  {
+   "id": "E3342",
+   "type": "@",
+   "canonical": "张华昭",
+   "aliases": [
+    "张公子",
+    "昭郎",
+    "张大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "003",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现298次/20回；首见 七剑下天山#pn-r2.73"
+  },
+  {
+   "id": "E3686",
+   "type": "@",
+   "canonical": "纳兰容若",
+   "aliases": [
+    "纳兰",
+    "纳兰公子",
+    "容若",
+    "公子",
+    "容若哥哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "003",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "023",
+    "026",
+    "027",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现287次/14回；首见 七剑下天山#pn-r2.48"
+  },
+  {
+   "id": "E4030",
+   "type": "@",
+   "canonical": "李思永",
+   "aliases": [
+    "李公子"
+   ],
+   "contextual": [],
+   "sources": [
+    "007",
+    "008",
+    "009",
+    "012",
+    "020",
+    "022",
+    "023",
+    "024",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现275次/13回；首见 七剑下天山#pn-r7.14"
+  },
+  {
+   "id": "E4374",
+   "type": "@",
+   "canonical": "武琼瑶",
+   "aliases": [
+    "琼姐",
+    "武姐姐",
+    "武姑娘",
+    "武谅瑶"
+   ],
+   "contextual": [],
+   "sources": [
+    "003",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现238次/10回；首见 七剑下天山#pn-r3.21"
+  },
+  {
+   "id": "E4718",
+   "type": "@",
+   "canonical": "多铎",
+   "aliases": [
+    "鄂亲王"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "006",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "021",
+    "026",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现230次/13回；首见 七剑下天山#pn-r1.16"
+  },
+  {
+   "id": "E5062",
+   "type": "@",
+   "canonical": "康熙",
+   "aliases": [
+    "皇上",
+    "皇帝",
+    "玄烨",
+    "康熙皇帝"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "010",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "022",
+    "026",
+    "027",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现217次/20回；首见 七剑下天山#pn-r2.83"
+  },
+  {
+   "id": "E5406",
+   "type": "@",
+   "canonical": "齐真君",
+   "aliases": [
+    "风雷剑",
+    "齐老前辈"
+   ],
+   "contextual": [],
+   "sources": [
+    "006",
+    "019",
+    "020",
+    "023",
+    "025",
+    "026",
+    "027",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现203次/8回；首见 七剑下天山#pn-r6.14"
+  },
+  {
+   "id": "E5750",
+   "type": "@",
+   "canonical": "纳兰明慧",
+   "aliases": [
+    "王妃",
+    "纳兰王妃",
+    "鄂王妃",
+    "明慧",
+    "多铎王妃"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现170次/8回；首见 七剑下天山#pn-r2.46"
+  },
+  {
+   "id": "E6094",
+   "type": "@",
+   "canonical": "成天挺",
+   "aliases": [
+    "铁笔判官",
+    "成大人"
+   ],
+   "contextual": [],
+   "sources": [
+    "017",
+    "019",
+    "022",
+    "023",
+    "025",
+    "026",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现164次/8回；首见 七剑下天山#pn-r17.38"
+  },
+  {
+   "id": "E6438",
+   "type": "@",
+   "canonical": "吴三桂",
+   "aliases": [
+    "平西王",
+    "平南王"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "018",
+    "019",
+    "020",
+    "022",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现146次/21回；首见 七剑下天山#pn-r1.61"
+  },
+  {
+   "id": "E6782",
+   "type": "@",
+   "canonical": "桂天澜",
+   "aliases": [
+    "天澜",
+    "桂老头儿",
+    "桂老前辈",
+    "桂伯伯",
+    "天澜兄"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "025",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现146次/9回；首见 七剑下天山#pn-r8.26"
+  },
+  {
+   "id": "E7126",
+   "type": "@",
+   "canonical": "韩荆",
+   "aliases": [
+    "韩大哥",
+    "韩老前辈",
+    "韩二哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "011",
+    "012",
+    "013",
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现131次/5回；首见 七剑下天山#pn-r11.82"
+  },
+  {
+   "id": "E7470",
+   "type": "@",
+   "canonical": "张天蒙",
+   "aliases": [
+    "天蒙",
+    "天蒙禅师",
+    "天雄",
+    "天雄禅师",
+    "天雄上人"
+   ],
+   "contextual": [],
+   "sources": [
+    "004",
+    "005",
+    "006",
+    "019",
+    "023",
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现101次/7回；首见 七剑下天山#pn-r4.39"
+  },
+  {
+   "id": "E7814",
+   "type": "@",
+   "canonical": "石天成",
+   "aliases": [
+    "天成",
+    "石老前辈"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现101次/12回；首见 七剑下天山#pn-r10.9"
+  },
+  {
+   "id": "E8158",
+   "type": "@",
+   "canonical": "玄真",
+   "aliases": [
+    "玄真气"
+   ],
+   "contextual": [],
+   "sources": [
+    "027",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现87次/2回；首见 七剑下天山#pn-r27.36"
+  },
+  {
+   "id": "E8502",
+   "type": "@",
+   "canonical": "阎中天",
+   "aliases": [
+    "阎大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "003",
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现86次/3回；首见 七剑下天山#pn-r2.35"
+  },
+  {
+   "id": "E8846",
+   "type": "@",
+   "canonical": "玄烨",
+   "aliases": [
+    "康熙",
+    "康熙皇帝",
+    "皇上",
+    "陛下"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "003",
+    "013",
+    "016",
+    "017",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现82次/6回；首见 七剑下天山#pn-r2.8"
+  },
+  {
+   "id": "E9190",
+   "type": "@",
+   "canonical": "杨云骢",
+   "aliases": [
+    "杨大侠",
+    "杨师兄",
+    "杨云骆",
+    "大侠杨云骢"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "004",
+    "005",
+    "006",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "027",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现81次/19回；首见 七剑下天山#pn-r1.61"
+  },
+  {
+   "id": "E9534",
+   "type": "@",
+   "canonical": "邱东洛",
+   "aliases": [
+    "邱东沼",
+    "邱老前辈",
+    "东洛",
+    "邱乐洛",
+    "邱大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "006",
+    "019",
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现75次/4回；首见 七剑下天山#pn-r6.9"
+  },
+  {
+   "id": "E9878",
+   "type": "@",
+   "canonical": "石振飞",
+   "aliases": [
+    "石老镖头",
+    "石老前辈",
+    "石老镖师",
+    "石伯们",
+    "石镖头",
+    "石老头子",
+    "蹑云剑"
+   ],
+   "contextual": [],
+   "sources": [
+    "014",
+    "015",
+    "016",
+    "017",
+    "019",
+    "021",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现75次/7回；首见 七剑下天山#pn-r14.50"
+  },
+  {
+   "id": "E10222",
+   "type": "@",
+   "canonical": "保柱",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006",
+    "007",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现72次/3回；首见 七剑下天山#pn-r6.48"
+  },
+  {
+   "id": "E10566",
+   "type": "@",
+   "canonical": "李定国",
+   "aliases": [
+    "李将军",
+    "李伯伯",
+    "李军",
+    "定国"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "010",
+    "011",
+    "012",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现72次/5回；首见 七剑下天山#pn-r8.27"
+  },
+  {
+   "id": "E10910",
+   "type": "@",
+   "canonical": "武元英",
+   "aliases": [
+    "武庄主",
+    "武老英雄"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "022",
+    "023",
+    "024",
+    "026",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现71次/7回；首见 七剑下天山#pn-r1.76"
+  },
+  {
+   "id": "E11254",
+   "type": "@",
+   "canonical": "通明和尚",
+   "aliases": [
+    "通明",
+    "怪头陀"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "011",
+    "014",
+    "016",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现69次/6回；首见 七剑下天山#pn-r1.12"
+  },
+  {
+   "id": "E11598",
+   "type": "@",
+   "canonical": "王刚",
+   "aliases": [
+    "王大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现68次/2回；首见 七剑下天山#pn-r10.83"
+  },
+  {
+   "id": "E11942",
+   "type": "@",
+   "canonical": "张承斌",
+   "aliases": [
+    "张大人",
+    "张副统领"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "003",
+    "005",
+    "010",
+    "015",
+    "026",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现65次/7回；首见 七剑下天山#pn-r2.87"
+  },
+  {
+   "id": "E12286",
+   "type": "@",
+   "canonical": "达三公",
+   "aliases": [
+    "达土司",
+    "达士司",
+    "石砥土司",
+    "达某人"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现65次/3回；首见 七剑下天山#pn-r10.72"
+  },
+  {
+   "id": "E12630",
+   "type": "@",
+   "canonical": "郝飞凤",
+   "aliases": [
+    "人妖",
+    "郝寨主"
+   ],
+   "contextual": [],
+   "sources": [
+    "013",
+    "015",
+    "019",
+    "023",
+    "024",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现56次/6回；首见 七剑下天山#pn-r13.21"
+  },
+  {
+   "id": "E12974",
+   "type": "@",
+   "canonical": "孟坚",
+   "aliases": [
+    "孟少镖头",
+    "孟爷"
+   ],
+   "contextual": [],
+   "sources": [
+    "013",
+    "015",
+    "019",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现55次/4回；首见 七剑下天山#pn-r13.15"
+  },
+  {
+   "id": "E13318",
+   "type": "@",
+   "canonical": "石大娘",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013",
+    "023",
+    "024",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现53次/7回；首见 七剑下天山#pn-r10.79"
+  },
+  {
+   "id": "E13662",
+   "type": "@",
+   "canonical": "张青原",
+   "aliases": [
+    "张大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "019",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现52次/9回；首见 七剑下天山#pn-r8.54"
+  },
+  {
+   "id": "E14006",
+   "type": "@",
+   "canonical": "李来亨",
+   "aliases": [
+    "李将军"
+   ],
+   "contextual": [],
+   "sources": [
+    "007",
+    "008",
+    "009",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "019",
+    "020",
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现51次/13回；首见 七剑下天山#pn-r7.11"
+  },
+  {
+   "id": "E14350",
+   "type": "@",
+   "canonical": "孟禄",
+   "aliases": [
+    "孟老酋长"
+   ],
+   "contextual": [],
+   "sources": [
+    "023",
+    "024",
+    "025",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现51次/4回；首见 七剑下天山#pn-r23.51"
+  },
+  {
+   "id": "E14694",
+   "type": "@",
+   "canonical": "卢大楞子",
+   "aliases": [
+    "卢舵主"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现49次/3回；首见 七剑下天山#pn-r10.72"
+  },
+  {
+   "id": "E15038",
+   "type": "@",
+   "canonical": "孟武威",
+   "aliases": [
+    "孟老爷子"
+   ],
+   "contextual": [],
+   "sources": [
+    "013",
+    "015",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现49次/3回；首见 七剑下天山#pn-r13.15"
+  },
+  {
+   "id": "E15382",
+   "type": "@",
+   "canonical": "尚云亭",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "024",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现48次/2回；首见 七剑下天山#pn-r24.1"
+  },
+  {
+   "id": "E15726",
+   "type": "@",
+   "canonical": "罗达",
+   "aliases": [
+    "罗大哥",
+    "罗当家",
+    "罗寨主"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现45次/3回；首见 七剑下天山#pn-r10.72"
+  },
+  {
+   "id": "E16070",
+   "type": "@",
+   "canonical": "周青",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "027",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现44次/3回；首见 七剑下天山#pn-r27.15"
+  },
+  {
+   "id": "E16414",
+   "type": "@",
+   "canonical": "呼克济",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025",
+    "026",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现43次/3回；首见 七剑下天山#pn-r25.2"
+  },
+  {
+   "id": "E16758",
+   "type": "◆",
+   "canonical": "禁卫军",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "005",
+    "015",
+    "019",
+    "026",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现41次/8回；首见 七剑下天山#pn-r1.36"
+  },
+  {
+   "id": "E17102",
+   "type": "◆",
+   "canonical": "清廷",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "006",
+    "007",
+    "008",
+    "010",
+    "011",
+    "014",
+    "015",
+    "018",
+    "019",
+    "022",
+    "023",
+    "025",
+    "026",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现40次/16回；首见 七剑下天山#pn-r1.99"
+  },
+  {
+   "id": "E17446",
+   "type": "@",
+   "canonical": "马方",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "027",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现37次/3回；首见 七剑下天山#pn-r27.15"
+  },
+  {
+   "id": "E17790",
+   "type": "◆",
+   "canonical": "五龙帮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现34次/3回；首见 七剑下天山#pn-r8.46"
+  },
+  {
+   "id": "E18134",
+   "type": "@",
+   "canonical": "鄂王妃",
+   "aliases": [
+    "王妃",
+    "纳兰王妃"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现33次/3回；首见 七剑下天山#pn-r1.34"
+  },
+  {
+   "id": "E18478",
+   "type": "@",
+   "canonical": "孟曼丽丝",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现33次/2回；首见 七剑下天山#pn-r25.2"
+  },
+  {
+   "id": "E18822",
+   "type": "@",
+   "canonical": "陆明",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013",
+    "014",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现31次/3回；首见 七剑下天山#pn-r13.39"
+  },
+  {
+   "id": "E19166",
+   "type": "◆",
+   "canonical": "天地会",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "004",
+    "005",
+    "008",
+    "012",
+    "014",
+    "019",
+    "023",
+    "024",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现30次/12回；首见 七剑下天山#pn-r1.76"
+  },
+  {
+   "id": "E19510",
+   "type": "◆",
+   "canonical": "清兵",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006",
+    "007",
+    "010",
+    "016",
+    "017",
+    "018",
+    "019",
+    "023",
+    "024",
+    "025",
+    "026",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现29次/13回；首见 七剑下天山#pn-r6.14"
+  },
+  {
+   "id": "E19854",
+   "type": "◆",
+   "canonical": "清军",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "017",
+    "019",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现29次/8回；首见 七剑下天山#pn-r10.39"
+  },
+  {
+   "id": "E20198",
+   "type": "@",
+   "canonical": "陆亮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013",
+    "014",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现29次/3回；首见 七剑下天山#pn-r13.39"
+  },
+  {
+   "id": "E20542",
+   "type": "@",
+   "canonical": "宗达完真",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005",
+    "018",
+    "019",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现27次/5回；首见 七剑下天山#pn-r5.55"
+  },
+  {
+   "id": "E20886",
+   "type": "@",
+   "canonical": "柳大雄",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现26次/1回；首见 七剑下天山#pn-r13.29"
+  },
+  {
+   "id": "E21230",
+   "type": "@",
+   "canonical": "金崖",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006",
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现25次/2回；首见 七剑下天山#pn-r6.8"
+  },
+  {
+   "id": "E21574",
+   "type": "@",
+   "canonical": "范铮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006",
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现25次/2回；首见 七剑下天山#pn-r6.60"
+  },
+  {
+   "id": "E21918",
+   "type": "@",
+   "canonical": "鲁王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "004",
+    "012",
+    "015",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现24次/5回；首见 七剑下天山#pn-r1.16"
+  },
+  {
+   "id": "E22262",
+   "type": "@",
+   "canonical": "常英",
+   "aliases": [
+    "丧门神"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "014",
+    "016",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现24次/5回；首见 七剑下天山#pn-r1.27"
+  },
+  {
+   "id": "E22606",
+   "type": "@",
+   "canonical": "古元亮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现24次/2回；首见 七剑下天山#pn-r4.51"
+  },
+  {
+   "id": "E22950",
+   "type": "@",
+   "canonical": "郝继明",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现23次/1回；首见 七剑下天山#pn-r6.20"
+  },
+  {
+   "id": "E23294",
+   "type": "@",
+   "canonical": "张元振",
+   "aliases": [
+    "八方刀"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现23次/3回；首见 七剑下天山#pn-r10.67"
+  },
+  {
+   "id": "E23638",
+   "type": "@",
+   "canonical": "张一虎",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现21次/2回；首见 七剑下天山#pn-r8.57"
+  },
+  {
+   "id": "E23982",
+   "type": "@",
+   "canonical": "程通",
+   "aliases": [
+    "铁塔"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "014",
+    "016",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现20次/5回；首见 七剑下天山#pn-r1.27"
+  },
+  {
+   "id": "E24326",
+   "type": "@",
+   "canonical": "三公主",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "016",
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现20次/2回；首见 七剑下天山#pn-r16.65"
+  },
+  {
+   "id": "E24670",
+   "type": "@",
+   "canonical": "董小宛",
+   "aliases": [
+    "董鄂妃"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "014",
+    "016",
+    "017",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现19次/7回；首见 七剑下天山#pn-r1.5"
+  },
+  {
+   "id": "E25014",
+   "type": "@",
+   "canonical": "武成化",
+   "aliases": [
+    "成化"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "023",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现19次/4回；首见 七剑下天山#pn-r1.87"
+  },
+  {
+   "id": "E25358",
+   "type": "@",
+   "canonical": "张献忠",
+   "aliases": [
+    "大西王"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现19次/4回；首见 七剑下天山#pn-r8.27"
+  },
+  {
+   "id": "E25702",
+   "type": "@",
+   "canonical": "允禔",
+   "aliases": [
+    "允题"
+   ],
+   "contextual": [],
+   "sources": [
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现18次/5回；首见 七剑下天山#pn-r26.2"
+  },
+  {
+   "id": "E26046",
+   "type": "@",
+   "canonical": "老和尚",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现17次/1回；首见 七剑下天山#pn-r3.3"
+  },
+  {
+   "id": "E26390",
+   "type": "@",
+   "canonical": "贺万方",
+   "aliases": [
+    "贺老兄",
+    "贺老弟",
+    "贺大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现17次/2回；首见 七剑下天山#pn-r11.84"
+  },
+  {
+   "id": "E26734",
+   "type": "@",
+   "canonical": "朱天木",
+   "aliases": [
+    "朱三哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "012",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现17次/2回；首见 七剑下天山#pn-r12.19"
+  },
+  {
+   "id": "E27078",
+   "type": "@",
+   "canonical": "悟性",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "020",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现17次/2回；首见 七剑下天山#pn-r20.45"
+  },
+  {
+   "id": "E27422",
+   "type": "@",
+   "canonical": "桑仁",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现17次/1回；首见 七剑下天山#pn-r30.14"
+  },
+  {
+   "id": "E27766",
+   "type": "@",
+   "canonical": "洪涛",
+   "aliases": [
+    "洪二弟"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现16次/2回；首见 七剑下天山#pn-r10.83"
+  },
+  {
+   "id": "E28110",
+   "type": "@",
+   "canonical": "胡天柱",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现16次/1回；首见 七剑下天山#pn-r15.22"
+  },
+  {
+   "id": "E28454",
+   "type": "@",
+   "canonical": "桑乾",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现16次/1回；首见 七剑下天山#pn-r30.14"
+  },
+  {
+   "id": "E28798",
+   "type": "@",
+   "canonical": "陶宏",
+   "aliases": [
+    "黑煞神",
+    "陶大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现15次/3回；首见 七剑下天山#pn-r10.65"
+  },
+  {
+   "id": "E29142",
+   "type": "@",
+   "canonical": "太后",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "017",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现15次/2回；首见 七剑下天山#pn-r17.8"
+  },
+  {
+   "id": "E29486",
+   "type": "@",
+   "canonical": "达赖活佛",
+   "aliases": [
+    "活佛",
+    "达赖",
+    "达赖喇嘛"
+   ],
+   "contextual": [],
+   "sources": [
+    "003",
+    "018",
+    "020",
+    "026",
+    "027",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现14次/6回；首见 七剑下天山#pn-r3.51"
+  },
+  {
+   "id": "E29830",
+   "type": "@",
+   "canonical": "伊士达",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现14次/2回；首见 七剑下天山#pn-r23.47"
+  },
+  {
+   "id": "E30174",
+   "type": "@",
+   "canonical": "桑弧",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现14次/1回；首见 七剑下天山#pn-r30.14"
+  },
+  {
+   "id": "E30518",
+   "type": "◆",
+   "canonical": "御林军",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现13次/2回；首见 七剑下天山#pn-r1.36"
+  },
+  {
+   "id": "E30862",
+   "type": "@",
+   "canonical": "杨一维",
+   "aliases": [
+    "杨大哥",
+    "杨叔叔"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "023",
+    "026",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现13次/5回；首见 七剑下天山#pn-r1.92"
+  },
+  {
+   "id": "E31206",
+   "type": "@",
+   "canonical": "顺治",
+   "aliases": [
+    "先帝",
+    "先朝"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "003",
+    "012",
+    "013",
+    "016",
+    "017",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现13次/7回；首见 七剑下天山#pn-r2.83"
+  },
+  {
+   "id": "E31550",
+   "type": "@",
+   "canonical": "焦直",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现13次/2回；首见 七剑下天山#pn-r10.83"
+  },
+  {
+   "id": "E31894",
+   "type": "@",
+   "canonical": "沙无定",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现13次/1回；首见 七剑下天山#pn-r13.37"
+  },
+  {
+   "id": "E32238",
+   "type": "@",
+   "canonical": "麦盖提",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现13次/1回；首见 七剑下天山#pn-r23.47"
+  },
+  {
+   "id": "E32582",
+   "type": "@",
+   "canonical": "黄衫少年",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "009",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现12次/2回；首见 七剑下天山#pn-r9.9"
+  },
+  {
+   "id": "E32926",
+   "type": "@",
+   "canonical": "贝勒",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "017",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现12次/2回；首见 七剑下天山#pn-r17.66"
+  },
+  {
+   "id": "E33270",
+   "type": "@",
+   "canonical": "郑大锟",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现12次/2回；首见 七剑下天山#pn-r22.13"
+  },
+  {
+   "id": "E33614",
+   "type": "@",
+   "canonical": "纳兰明珠",
+   "aliases": [
+    "明珠",
+    "纳兰相爷",
+    "纳兰宰相"
+   ],
+   "contextual": [],
+   "sources": [
+    "002",
+    "013",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现11次/3回；首见 七剑下天山#pn-r2.48"
+  },
+  {
+   "id": "E33958",
+   "type": "@",
+   "canonical": "彭昆林",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现11次/1回；首见 七剑下天山#pn-r6.20"
+  },
+  {
+   "id": "E34302",
+   "type": "@",
+   "canonical": "达土司",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现11次/2回；首见 七剑下天山#pn-r10.78"
+  },
+  {
+   "id": "E34646",
+   "type": "@",
+   "canonical": "冒辟疆",
+   "aliases": [
+    "冒先生"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "009",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现10次/4回；首见 七剑下天山#pn-r1.5"
+  },
+  {
+   "id": "E34990",
+   "type": "◆",
+   "canonical": "满清",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "010",
+    "014",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现10次/4回；首见 七剑下天山#pn-r1.32"
+  },
+  {
+   "id": "E35334",
+   "type": "@",
+   "canonical": "成化",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现10次/2回；首见 七剑下天山#pn-r1.85"
+  },
+  {
+   "id": "E35678",
+   "type": "◆",
+   "canonical": "武威镖局",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现10次/2回；首见 七剑下天山#pn-r13.15"
+  },
+  {
+   "id": "E36022",
+   "type": "@",
+   "canonical": "天蒙禅师",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现10次/2回；首见 七剑下天山#pn-r24.6"
+  },
+  {
+   "id": "E36366",
+   "type": "◆",
+   "canonical": "神策营",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现10次/1回；首见 七剑下天山#pn-r27.21"
+  },
+  {
+   "id": "E36710",
+   "type": "@",
+   "canonical": "华紫山",
+   "aliases": [
+    "华大哥"
+   ],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "023",
+    "026",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现9次/5回；首见 七剑下天山#pn-r1.92"
+  },
+  {
+   "id": "E37054",
+   "type": "@",
+   "canonical": "尚可喜",
+   "aliases": [
+    "平南王"
+   ],
+   "contextual": [],
+   "sources": [
+    "003",
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 七剑下天山#pn-r3.50"
+  },
+  {
+   "id": "E37398",
+   "type": "@",
+   "canonical": "李二豹",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 七剑下天山#pn-r8.57"
+  },
+  {
+   "id": "E37742",
+   "type": "@",
+   "canonical": "唐五熊",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 七剑下天山#pn-r8.57"
+  },
+  {
+   "id": "E38086",
+   "type": "@",
+   "canonical": "竹君",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现9次/3回；首见 七剑下天山#pn-r10.16"
+  },
+  {
+   "id": "E38430",
+   "type": "@",
+   "canonical": "武大娘",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现9次/1回；首见 七剑下天山#pn-r24.2"
+  },
+  {
+   "id": "E38774",
+   "type": "@",
+   "canonical": "张魁",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现8次/1回；首见 七剑下天山#pn-r6.20"
+  },
+  {
+   "id": "E39118",
+   "type": "@",
+   "canonical": "李锦",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 七剑下天山#pn-r7.11"
+  },
+  {
+   "id": "E39462",
+   "type": "@",
+   "canonical": "叶云荪",
+   "aliases": [
+    "叶大侠"
+   ],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现8次/3回；首见 七剑下天山#pn-r10.9"
+  },
+  {
+   "id": "E39806",
+   "type": "@",
+   "canonical": "于中",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现8次/3回；首见 七剑下天山#pn-r10.44"
+  },
+  {
+   "id": "E40150",
+   "type": "◆",
+   "canonical": "天山剑法",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "019",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 七剑下天山#pn-r19.54"
+  },
+  {
+   "id": "E40494",
+   "type": "◆",
+   "canonical": "终南派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003",
+    "007",
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现7次/5回；首见 七剑下天山#pn-r1.76"
+  },
+  {
+   "id": "E40838",
+   "type": "@",
+   "canonical": "尚之信",
+   "aliases": [
+    "平南王"
+   ],
+   "contextual": [],
+   "sources": [
+    "003",
+    "006",
+    "014",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现7次/4回；首见 七剑下天山#pn-r3.50"
+  },
+  {
+   "id": "E41182",
+   "type": "@",
+   "canonical": "红面老人",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 七剑下天山#pn-r10.22"
+  },
+  {
+   "id": "E41526",
+   "type": "@",
+   "canonical": "杨青波",
+   "aliases": [
+    "杨四弟"
+   ],
+   "contextual": [],
+   "sources": [
+    "012",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现7次/2回；首见 七剑下天山#pn-r12.19"
+  },
+  {
+   "id": "E41870",
+   "type": "◆",
+   "canonical": "铁扇帮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013",
+    "024",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现7次/3回；首见 七剑下天山#pn-r13.26"
+  },
+  {
+   "id": "E42214",
+   "type": "◆",
+   "canonical": "天龙派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023",
+    "024",
+    "025",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现7次/4回；首见 七剑下天山#pn-r23.52"
+  },
+  {
+   "id": "E42558",
+   "type": "@",
+   "canonical": "天雄",
+   "aliases": [
+    "天雄上人"
+   ],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 七剑下天山#pn-r25.6"
+  },
+  {
+   "id": "E42902",
+   "type": "@",
+   "canonical": "张煌言",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现6次/3回；首见 七剑下天山#pn-r1.32"
+  },
+  {
+   "id": "E43246",
+   "type": "◆",
+   "canonical": "长白山派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "019",
+    "023",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现6次/4回；首见 七剑下天山#pn-r1.42"
+  },
+  {
+   "id": "E43590",
+   "type": "◆",
+   "canonical": "鲁王旧部",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "012",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现6次/3回；首见 七剑下天山#pn-r1.93"
+  },
+  {
+   "id": "E43934",
+   "type": "@",
+   "canonical": "福临",
+   "aliases": [
+    "顺治"
+   ],
+   "contextual": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 七剑下天山#pn-r2.40"
+  },
+  {
+   "id": "E44278",
+   "type": "@",
+   "canonical": "耿精忠",
+   "aliases": [
+    "靖南王"
+   ],
+   "contextual": [],
+   "sources": [
+    "003",
+    "007",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现6次/3回；首见 七剑下天山#pn-r3.50"
+  },
+  {
+   "id": "E44622",
+   "type": "@",
+   "canonical": "葛中龙",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 七剑下天山#pn-r8.56"
+  },
+  {
+   "id": "E44966",
+   "type": "@",
+   "canonical": "桂天成",
+   "aliases": [
+    "天成",
+    "大成"
+   ],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 七剑下天山#pn-r10.40"
+  },
+  {
+   "id": "E45310",
+   "type": "@",
+   "canonical": "申天豹",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 七剑下天山#pn-r10.83"
+  },
+  {
+   "id": "E45654",
+   "type": "◆",
+   "canonical": "镖局",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 七剑下天山#pn-r13.15"
+  },
+  {
+   "id": "E45998",
+   "type": "@",
+   "canonical": "陆家兄弟",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 七剑下天山#pn-r13.45"
+  },
+  {
+   "id": "E46342",
+   "type": "@",
+   "canonical": "连三虎",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 七剑下天山#pn-r22.13"
+  },
+  {
+   "id": "E46686",
+   "type": "@",
+   "canonical": "康熙皇帝",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 七剑下天山#pn-r1.1"
+  },
+  {
+   "id": "E47030",
+   "type": "@",
+   "canonical": "吴梅村",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 七剑下天山#pn-r1.17"
+  },
+  {
+   "id": "E47374",
+   "type": "@",
+   "canonical": "张公子",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r1.34"
+  },
+  {
+   "id": "E47718",
+   "type": "@",
+   "canonical": "刘精一",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r1.52"
+  },
+  {
+   "id": "E48062",
+   "type": "@",
+   "canonical": "武庄主",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r1.81"
+  },
+  {
+   "id": "E48406",
+   "type": "@",
+   "canonical": "刘姑娘",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r1.81"
+  },
+  {
+   "id": "E48750",
+   "type": "◆",
+   "canonical": "清宫",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "009",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 七剑下天山#pn-r9.66"
+  },
+  {
+   "id": "E49094",
+   "type": "@",
+   "canonical": "天成",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r10.19"
+  },
+  {
+   "id": "E49438",
+   "type": "@",
+   "canonical": "申天虎",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 七剑下天山#pn-r10.83"
+  },
+  {
+   "id": "E49782",
+   "type": "@",
+   "canonical": "熊延弼",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r11.81"
+  },
+  {
+   "id": "E50126",
+   "type": "@",
+   "canonical": "朱由榔",
+   "aliases": [
+    "永历帝",
+    "永历"
+   ],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r11.91"
+  },
+  {
+   "id": "E50470",
+   "type": "@",
+   "canonical": "叶云苏",
+   "aliases": [
+    "叶大侠"
+   ],
+   "contextual": [],
+   "sources": [
+    "020",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 七剑下天山#pn-r20.28"
+  },
+  {
+   "id": "E50814",
+   "type": "◆",
+   "canonical": "塔山族",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r25.5"
+  },
+  {
+   "id": "E51158",
+   "type": "@",
+   "canonical": "天雄禅师",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 七剑下天山#pn-r25.18"
+  },
+  {
+   "id": "E51502",
+   "type": "@",
+   "canonical": "鄂亲王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r1.22"
+  },
+  {
+   "id": "E51846",
+   "type": "◆",
+   "canonical": "明朝",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "007",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 七剑下天山#pn-r1.32"
+  },
+  {
+   "id": "E52190",
+   "type": "@",
+   "canonical": "哈的庐",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r4.21"
+  },
+  {
+   "id": "E52534",
+   "type": "@",
+   "canonical": "达摩禅师",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 七剑下天山#pn-r5.45"
+  },
+  {
+   "id": "E52878",
+   "type": "@",
+   "canonical": "达摩",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 七剑下天山#pn-r5.45"
+  },
+  {
+   "id": "E53222",
+   "type": "@",
+   "canonical": "刘宗敏",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r7.8"
+  },
+  {
+   "id": "E53566",
+   "type": "@",
+   "canonical": "李闯王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r7.77"
+  },
+  {
+   "id": "E53910",
+   "type": "@",
+   "canonical": "石老太太",
+   "aliases": [
+    "桂老嫂子"
+   ],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r10.74"
+  },
+  {
+   "id": "E54254",
+   "type": "@",
+   "canonical": "申家兄弟",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 七剑下天山#pn-r10.100"
+  },
+  {
+   "id": "E54598",
+   "type": "@",
+   "canonical": "刁四福",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r19.78"
+  },
+  {
+   "id": "E54942",
+   "type": "@",
+   "canonical": "天蒙",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r25.51"
+  },
+  {
+   "id": "E55286",
+   "type": "@",
+   "canonical": "吴汉槎",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r26.39"
+  },
+  {
+   "id": "E55630",
+   "type": "@",
+   "canonical": "玄通",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r30.7"
+  },
+  {
+   "id": "E55974",
+   "type": "@",
+   "canonical": "玄觉",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 七剑下天山#pn-r30.7"
+  },
+  {
+   "id": "E56318",
+   "type": "@",
+   "canonical": "单思南",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 七剑下天山#pn-r1.58"
+  },
+  {
+   "id": "E56662",
+   "type": "@",
+   "canonical": "冒小姐",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r1.82"
+  },
+  {
+   "id": "E57006",
+   "type": "◆",
+   "canonical": "无极派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003",
+    "014",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 七剑下天山#pn-r3.35"
+  },
+  {
+   "id": "E57350",
+   "type": "@",
+   "canonical": "耿仲明",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r3.50"
+  },
+  {
+   "id": "E57694",
+   "type": "◆",
+   "canonical": "三藩",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r3.50"
+  },
+  {
+   "id": "E58038",
+   "type": "@",
+   "canonical": "阿盖",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r4.21"
+  },
+  {
+   "id": "E58382",
+   "type": "@",
+   "canonical": "郝大绶",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r5.4"
+  },
+  {
+   "id": "E58726",
+   "type": "@",
+   "canonical": "李公子",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r6.42"
+  },
+  {
+   "id": "E59070",
+   "type": "◆",
+   "canonical": "南明政府",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r7.11"
+  },
+  {
+   "id": "E59414",
+   "type": "@",
+   "canonical": "永明王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r7.20"
+  },
+  {
+   "id": "E59758",
+   "type": "@",
+   "canonical": "焦霸",
+   "aliases": [
+    "八臂哪咤"
+   ],
+   "contextual": [],
+   "sources": [
+    "008",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 七剑下天山#pn-r8.40"
+  },
+  {
+   "id": "E60102",
+   "type": "@",
+   "canonical": "赵三麒",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 七剑下天山#pn-r8.57"
+  },
+  {
+   "id": "E60446",
+   "type": "@",
+   "canonical": "钱四麟",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r8.57"
+  },
+  {
+   "id": "E60790",
+   "type": "@",
+   "canonical": "老婆婆",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r10.63"
+  },
+  {
+   "id": "E61134",
+   "type": "◆",
+   "canonical": "青阳帮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 七剑下天山#pn-r10.73"
+  },
+  {
+   "id": "E61478",
+   "type": "@",
+   "canonical": "王辅臣",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 七剑下天山#pn-r13.90"
+  },
+  {
+   "id": "E61822",
+   "type": "@",
+   "canonical": "押不卢",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r17.51"
+  },
+  {
+   "id": "E62166",
+   "type": "@",
+   "canonical": "太平公主",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r18.78"
+  },
+  {
+   "id": "E62510",
+   "type": "@",
+   "canonical": "红衣喇嘛",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 七剑下天山#pn-r19.36"
+  },
+  {
+   "id": "E62854",
+   "type": "◆",
+   "canonical": "马帮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 七剑下天山#pn-r25.82"
+  },
+  {
+   "id": "E63198",
+   "type": "◆",
+   "canonical": "清朝",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r1.1"
+  },
+  {
+   "id": "E63542",
+   "type": "@",
+   "canonical": "洪承畴",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r1.5"
+  },
+  {
+   "id": "E63886",
+   "type": "@",
+   "canonical": "顺治皇帝",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r1.5"
+  },
+  {
+   "id": "E64230",
+   "type": "◆",
+   "canonical": "南明",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001",
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r1.32"
+  },
+  {
+   "id": "E64574",
+   "type": "@",
+   "canonical": "韩叔叔",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r1.85"
+  },
+  {
+   "id": "E64918",
+   "type": "@",
+   "canonical": "韩大哥",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r1.86"
+  },
+  {
+   "id": "E65262",
+   "type": "@",
+   "canonical": "傅伯伯",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r1.86"
+  },
+  {
+   "id": "E65606",
+   "type": "@",
+   "canonical": "多尔衮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "002",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r2.42"
+  },
+  {
+   "id": "E65950",
+   "type": "@",
+   "canonical": "皇帝",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r3.14"
+  },
+  {
+   "id": "E66294",
+   "type": "@",
+   "canonical": "通明",
+   "aliases": [
+    "通明和尚"
+   ],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r3.58"
+  },
+  {
+   "id": "E66638",
+   "type": "@",
+   "canonical": "龙树禅师",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r4.41"
+  },
+  {
+   "id": "E66982",
+   "type": "@",
+   "canonical": "释迦牟尼",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r4.41"
+  },
+  {
+   "id": "E67326",
+   "type": "@",
+   "canonical": "纽祜卢",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r6.14"
+  },
+  {
+   "id": "E67670",
+   "type": "@",
+   "canonical": "牛金星",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r7.8"
+  },
+  {
+   "id": "E68014",
+   "type": "@",
+   "canonical": "陈圆圆",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r7.10"
+  },
+  {
+   "id": "E68358",
+   "type": "@",
+   "canonical": "高氏",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r7.11"
+  },
+  {
+   "id": "E68702",
+   "type": "@",
+   "canonical": "蒋壮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r8.54"
+  },
+  {
+   "id": "E69046",
+   "type": "@",
+   "canonical": "钱四麒",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r9.6"
+  },
+  {
+   "id": "E69390",
+   "type": "@",
+   "canonical": "吴世璠",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r9.17"
+  },
+  {
+   "id": "E69734",
+   "type": "@",
+   "canonical": "桂老前辈",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r9.66"
+  },
+  {
+   "id": "E70078",
+   "type": "@",
+   "canonical": "孙可望",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r10.14"
+  },
+  {
+   "id": "E70422",
+   "type": "&",
+   "canonical": "石家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r10.58"
+  },
+  {
+   "id": "E70766",
+   "type": "@",
+   "canonical": "石大成",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r10.79"
+  },
+  {
+   "id": "E71110",
+   "type": "@",
+   "canonical": "洪四把子",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r10.83"
+  },
+  {
+   "id": "E71454",
+   "type": "@",
+   "canonical": "达士司",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r10.84"
+  },
+  {
+   "id": "E71798",
+   "type": "◆",
+   "canonical": "大内",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r10.91"
+  },
+  {
+   "id": "E72142",
+   "type": "@",
+   "canonical": "童镖头",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r13.68"
+  },
+  {
+   "id": "E72486",
+   "type": "@",
+   "canonical": "花王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r13.98"
+  },
+  {
+   "id": "E72830",
+   "type": "&",
+   "canonical": "纳兰相府",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "015",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r15.39"
+  },
+  {
+   "id": "E73174",
+   "type": "@",
+   "canonical": "丘东洛",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r17.32"
+  },
+  {
+   "id": "E73518",
+   "type": "@",
+   "canonical": "郑铁牌",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r17.37"
+  },
+  {
+   "id": "E73862",
+   "type": "&",
+   "canonical": "罗布族",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r18.12"
+  },
+  {
+   "id": "E74206",
+   "type": "@",
+   "canonical": "西藏活佛",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r19.34"
+  },
+  {
+   "id": "E74550",
+   "type": "◆",
+   "canonical": "大地会",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 七剑下天山#pn-r23.13"
+  },
+  {
+   "id": "E74894",
+   "type": "@",
+   "canonical": "曼铃娜",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r23.47"
+  },
+  {
+   "id": "E75238",
+   "type": "@",
+   "canonical": "孟山",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r23.69"
+  },
+  {
+   "id": "E75582",
+   "type": "@",
+   "canonical": "天雄上人",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r25.5"
+  },
+  {
+   "id": "E75926",
+   "type": "@",
+   "canonical": "塔山族",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r25.20"
+  },
+  {
+   "id": "E76270",
+   "type": "◆",
+   "canonical": "武当门",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r26.3"
+  },
+  {
+   "id": "E76614",
+   "type": "@",
+   "canonical": "顾梁汾",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r26.39"
+  },
+  {
+   "id": "E76958",
+   "type": "@",
+   "canonical": "允题",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r26.48"
+  },
+  {
+   "id": "E77302",
+   "type": "@",
+   "canonical": "马大哥",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r28.11"
+  },
+  {
+   "id": "E77646",
+   "type": "@",
+   "canonical": "丧门神常英",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.9"
+  },
+  {
+   "id": "E77990",
+   "type": "@",
+   "canonical": "铁塔程通",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.9"
+  },
+  {
+   "id": "E78334",
+   "type": "@",
+   "canonical": "怪头陀通明和尚",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.10"
+  },
+  {
+   "id": "E78678",
+   "type": "@",
+   "canonical": "文殊菩萨",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.18"
+  },
+  {
+   "id": "E79022",
+   "type": "@",
+   "canonical": "福王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.32"
+  },
+  {
+   "id": "E79366",
+   "type": "@",
+   "canonical": "桂王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.32"
+  },
+  {
+   "id": "E79710",
+   "type": "@",
+   "canonical": "张名振",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.32"
+  },
+  {
+   "id": "E80054",
+   "type": "@",
+   "canonical": "陈锦",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.32"
+  },
+  {
+   "id": "E80398",
+   "type": "◆",
+   "canonical": "鲁王余部",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.48"
+  },
+  {
+   "id": "E80742",
+   "type": "◆",
+   "canonical": "兵部",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.52"
+  },
+  {
+   "id": "E81086",
+   "type": "◆",
+   "canonical": "太极",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.54"
+  },
+  {
+   "id": "E81430",
+   "type": "@",
+   "canonical": "多锋",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.54"
+  },
+  {
+   "id": "E81774",
+   "type": "◆",
+   "canonical": "神机营",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.69"
+  },
+  {
+   "id": "E82118",
+   "type": "@",
+   "canonical": "傅大爷",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.81"
+  },
+  {
+   "id": "E82462",
+   "type": "@",
+   "canonical": "傅大哥",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.82"
+  },
+  {
+   "id": "E82806",
+   "type": "@",
+   "canonical": "韩总舵主",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.85"
+  },
+  {
+   "id": "E83150",
+   "type": "@",
+   "canonical": "傅前辈",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r1.101"
+  },
+  {
+   "id": "E83494",
+   "type": "@",
+   "canonical": "皇上",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r2.5"
+  },
+  {
+   "id": "E83838",
+   "type": "@",
+   "canonical": "董鄂妃",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r2.36"
+  },
+  {
+   "id": "E84182",
+   "type": "@",
+   "canonical": "纳兰公子",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r2.46"
+  },
+  {
+   "id": "E84526",
+   "type": "@",
+   "canonical": "贾宝玉",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r2.48"
+  },
+  {
+   "id": "E84870",
+   "type": "@",
+   "canonical": "纳兰",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r2.61"
+  },
+  {
+   "id": "E85214",
+   "type": "@",
+   "canonical": "吴三挂",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r3.51"
+  },
+  {
+   "id": "E85558",
+   "type": "@",
+   "canonical": "达赖",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r3.52"
+  },
+  {
+   "id": "E85902",
+   "type": "@",
+   "canonical": "赵良栋",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r3.53"
+  },
+  {
+   "id": "E86246",
+   "type": "&",
+   "canonical": "鄂王府",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r3.55"
+  },
+  {
+   "id": "E86590",
+   "type": "@",
+   "canonical": "纳兰总兵",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r4.12"
+  },
+  {
+   "id": "E86934",
+   "type": "@",
+   "canonical": "龙树",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r4.41"
+  },
+  {
+   "id": "E87278",
+   "type": "@",
+   "canonical": "达赖喇嘛",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r4.41"
+  },
+  {
+   "id": "E87622",
+   "type": "◆",
+   "canonical": "武林",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r4.49"
+  },
+  {
+   "id": "E87966",
+   "type": "&",
+   "canonical": "方家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r4.51"
+  },
+  {
+   "id": "E88310",
+   "type": "◆",
+   "canonical": "天山派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r4.62"
+  },
+  {
+   "id": "E88654",
+   "type": "@",
+   "canonical": "韩成邦",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r5.43"
+  },
+  {
+   "id": "E88998",
+   "type": "@",
+   "canonical": "邱东治",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r6.9"
+  },
+  {
+   "id": "E89342",
+   "type": "@",
+   "canonical": "郝昆明",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r6.24"
+  },
+  {
+   "id": "E89686",
+   "type": "&",
+   "canonical": "唐家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r6.25"
+  },
+  {
+   "id": "E90030",
+   "type": "@",
+   "canonical": "辛弃疾",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r6.56"
+  },
+  {
+   "id": "E90374",
+   "type": "@",
+   "canonical": "李本深",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r7.6"
+  },
+  {
+   "id": "E90718",
+   "type": "@",
+   "canonical": "朱国治",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r7.6"
+  },
+  {
+   "id": "E91062",
+   "type": "@",
+   "canonical": "崇祯",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r7.9"
+  },
+  {
+   "id": "E91406",
+   "type": "@",
+   "canonical": "吴襄",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r7.10"
+  },
+  {
+   "id": "E91750",
+   "type": "◆",
+   "canonical": "忠贞营",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r7.11"
+  },
+  {
+   "id": "E92094",
+   "type": "◆",
+   "canonical": "大顺",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r7.33"
+  },
+  {
+   "id": "E92438",
+   "type": "@",
+   "canonical": "罗森",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r8.49"
+  },
+  {
+   "id": "E92782",
+   "type": "@",
+   "canonical": "石仲明",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.9"
+  },
+  {
+   "id": "E93126",
+   "type": "◆",
+   "canonical": "满军",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.42"
+  },
+  {
+   "id": "E93470",
+   "type": "@",
+   "canonical": "仲明",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.56"
+  },
+  {
+   "id": "E93814",
+   "type": "&",
+   "canonical": "桂家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.58"
+  },
+  {
+   "id": "E94158",
+   "type": "@",
+   "canonical": "方天成",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.76"
+  },
+  {
+   "id": "E94502",
+   "type": "@",
+   "canonical": "石老嫂子",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.79"
+  },
+  {
+   "id": "E94846",
+   "type": "@",
+   "canonical": "石大哥",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.79"
+  },
+  {
+   "id": "E95190",
+   "type": "@",
+   "canonical": "卢大哥",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.82"
+  },
+  {
+   "id": "E95534",
+   "type": "◆",
+   "canonical": "川陕总督府",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.83"
+  },
+  {
+   "id": "E95878",
+   "type": "@",
+   "canonical": "罗寨主",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.84"
+  },
+  {
+   "id": "E96222",
+   "type": "@",
+   "canonical": "罗大哥",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r10.97"
+  },
+  {
+   "id": "E96566",
+   "type": "@",
+   "canonical": "侍洪涛",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r11.8"
+  },
+  {
+   "id": "E96910",
+   "type": "&",
+   "canonical": "洪家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r11.11"
+  },
+  {
+   "id": "E97254",
+   "type": "◆",
+   "canonical": "洪门",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r11.11"
+  },
+  {
+   "id": "E97598",
+   "type": "@",
+   "canonical": "陶某",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r11.50"
+  },
+  {
+   "id": "E97942",
+   "type": "@",
+   "canonical": "张某",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r11.50"
+  },
+  {
+   "id": "E98286",
+   "type": "@",
+   "canonical": "岳武穆",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r11.81"
+  },
+  {
+   "id": "E98630",
+   "type": "@",
+   "canonical": "朱由检",
+   "aliases": [
+    "崇祯"
+   ],
+   "contextual": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r11.92"
+  },
+  {
+   "id": "E98974",
+   "type": "◆",
+   "canonical": "眉山寨",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r12.28"
+  },
+  {
+   "id": "E99318",
+   "type": "@",
+   "canonical": "孟老镖头",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r13.20"
+  },
+  {
+   "id": "E99662",
+   "type": "@",
+   "canonical": "赦飞凤",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r13.26"
+  },
+  {
+   "id": "E100006",
+   "type": "@",
+   "canonical": "尚云享",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r13.27"
+  },
+  {
+   "id": "E100350",
+   "type": "@",
+   "canonical": "松大雄",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r13.36"
+  },
+  {
+   "id": "E100694",
+   "type": "@",
+   "canonical": "陆师父",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r13.46"
+  },
+  {
+   "id": "E101038",
+   "type": "@",
+   "canonical": "孟老头子",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r13.49"
+  },
+  {
+   "id": "E101382",
+   "type": "@",
+   "canonical": "紫菊",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r13.57"
+  },
+  {
+   "id": "E101726",
+   "type": "@",
+   "canonical": "李后主",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r13.72"
+  },
+  {
+   "id": "E102070",
+   "type": "@",
+   "canonical": "常叔叔",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r14.60"
+  },
+  {
+   "id": "E102414",
+   "type": "@",
+   "canonical": "程叔叔",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r14.60"
+  },
+  {
+   "id": "E102758",
+   "type": "◆",
+   "canonical": "鲁王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r14.69"
+  },
+  {
+   "id": "E103102",
+   "type": "◆",
+   "canonical": "镖行",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r15.39"
+  },
+  {
+   "id": "E103446",
+   "type": "&",
+   "canonical": "陆家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r15.39"
+  },
+  {
+   "id": "E103790",
+   "type": "◆",
+   "canonical": "八旗",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r15.59"
+  },
+  {
+   "id": "E104134",
+   "type": "@",
+   "canonical": "张大将军",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r15.61"
+  },
+  {
+   "id": "E104478",
+   "type": "@",
+   "canonical": "桓温",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r16.59"
+  },
+  {
+   "id": "E104822",
+   "type": "@",
+   "canonical": "崇祯皇帝",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r16.82"
+  },
+  {
+   "id": "E105166",
+   "type": "&",
+   "canonical": "冒门",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r16.82"
+  },
+  {
+   "id": "E105510",
+   "type": "@",
+   "canonical": "太祖",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r17.19"
+  },
+  {
+   "id": "E105854",
+   "type": "@",
+   "canonical": "格钦努",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r17.63"
+  },
+  {
+   "id": "E106198",
+   "type": "@",
+   "canonical": "武则天",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r18.78"
+  },
+  {
+   "id": "E106542",
+   "type": "@",
+   "canonical": "柳西岩",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r19.28"
+  },
+  {
+   "id": "E106886",
+   "type": "@",
+   "canonical": "西藏喇嘛",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r19.36"
+  },
+  {
+   "id": "E107230",
+   "type": "@",
+   "canonical": "西藏僧众",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r19.36"
+  },
+  {
+   "id": "E107574",
+   "type": "◆",
+   "canonical": "中国",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r20.2"
+  },
+  {
+   "id": "E107918",
+   "type": "@",
+   "canonical": "班禅",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r20.2"
+  },
+  {
+   "id": "E108262",
+   "type": "@",
+   "canonical": "无住禅师",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r20.32"
+  },
+  {
+   "id": "E108606",
+   "type": "@",
+   "canonical": "元住禅师",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r20.32"
+  },
+  {
+   "id": "E108950",
+   "type": "@",
+   "canonical": "李白",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r21.8"
+  },
+  {
+   "id": "E109294",
+   "type": "@",
+   "canonical": "呼图努克",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r23.18"
+  },
+  {
+   "id": "E109638",
+   "type": "@",
+   "canonical": "石无成",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r23.41"
+  },
+  {
+   "id": "E109982",
+   "type": "@",
+   "canonical": "纳兰秀吉",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r23.51"
+  },
+  {
+   "id": "E110326",
+   "type": "@",
+   "canonical": "伊土达",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r24.6"
+  },
+  {
+   "id": "E110670",
+   "type": "◆",
+   "canonical": "官兵",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r24.6"
+  },
+  {
+   "id": "E111014",
+   "type": "@",
+   "canonical": "天龙禅师",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r24.8"
+  },
+  {
+   "id": "E111358",
+   "type": "◆",
+   "canonical": "无极剑",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r24.20"
+  },
+  {
+   "id": "E111702",
+   "type": "@",
+   "canonical": "盂禄",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r25.5"
+  },
+  {
+   "id": "E112046",
+   "type": "◆",
+   "canonical": "搭山族",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r25.5"
+  },
+  {
+   "id": "E112390",
+   "type": "@",
+   "canonical": "堪恰族",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r25.20"
+  },
+  {
+   "id": "E112734",
+   "type": "@",
+   "canonical": "喀达尔族",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r25.20"
+  },
+  {
+   "id": "E113078",
+   "type": "@",
+   "canonical": "张天雄",
+   "aliases": [
+    "天雄"
+   ],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r25.32"
+  },
+  {
+   "id": "E113422",
+   "type": "◆",
+   "canonical": "西藏天龙派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r25.32"
+  },
+  {
+   "id": "E113766",
+   "type": "@",
+   "canonical": "成亲王",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r25.35"
+  },
+  {
+   "id": "E114110",
+   "type": "@",
+   "canonical": "格济",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r25.35"
+  },
+  {
+   "id": "E114454",
+   "type": "◆",
+   "canonical": "清营",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r26.36"
+  },
+  {
+   "id": "E114798",
+   "type": "@",
+   "canonical": "尚云亨",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r27.15"
+  },
+  {
+   "id": "E115142",
+   "type": "◆",
+   "canonical": "大军",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r27.46"
+  },
+  {
+   "id": "E115486",
+   "type": "@",
+   "canonical": "成大挺",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r29.5"
+  },
+  {
+   "id": "E115830",
+   "type": "@",
+   "canonical": "韩志帮",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r29.13"
+  },
+  {
+   "id": "E116174",
+   "type": "@",
+   "canonical": "王栋",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r29.17"
+  },
+  {
+   "id": "E116518",
+   "type": "@",
+   "canonical": "张材",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r29.17"
+  },
+  {
+   "id": "E116862",
+   "type": "◆",
+   "canonical": "天山",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r29.25"
+  },
+  {
+   "id": "E117206",
+   "type": "@",
+   "canonical": "何绿妇",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r30.31"
+  },
+  {
+   "id": "E117550",
+   "type": "@",
+   "canonical": "卓祖师",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r30.31"
+  },
+  {
+   "id": "E117894",
+   "type": "&",
+   "canonical": "马家",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r30.36"
+  },
+  {
+   "id": "E118238",
+   "type": "◆",
+   "canonical": "天山剑派",
+   "aliases": [],
+   "contextual": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r30.73"
+  }
+ ]
+}

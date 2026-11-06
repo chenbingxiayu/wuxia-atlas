@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>模块库 · 图表族</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#e9e2d2;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  h3.sec{font-family:"Noto Serif SC","SimSun",serif;font-weight:900;font-size:18px;margin:0 0 8px;padding-bottom:5px;
+    border-bottom:1px solid #d8cdb8;letter-spacing:2px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.6}
+  .chartcard{border:1px solid #b9ab90;border-radius:4px;padding:10px;background:#fbf8ef}
+</style>
+</helmet>
+<div style="width:1200px;height:1560px;box-sizing:border-box;padding:48px 56px;background:#fbf8ef;display:flex;flex-direction:column;gap:22px">
+
+  <div style="display:flex;align-items:baseline;gap:14px">
+    <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:24px;letter-spacing:3px">图表族</span>
+    <span class="lab">全部构建期 SVG · 零 JS · chartcard 统一底 · 模块库 3/7</span>
+  </div>
+
+  <div>
+    <h3 class="sec">关系温度曲线（双层：共现面积 + 负面线 + 锚点虚线）</h3>
+    <div class="chartcard" style="margin-top:8px">
+      <svg viewBox="0 0 560 180" style="width:100%;height:auto;display:block" role="img" aria-label="卓练温度曲线示例">
+        <line x1="150" y1="16" x2="150" y2="150" stroke="#b5a687" stroke-dasharray="3 4"/>
+        <text x="150" y="12" font-size="10" fill="#5a544a" text-anchor="middle">劫镖初会</text>
+        <line x1="420" y1="16" x2="420" y2="150" stroke="#b5a687" stroke-dasharray="3 4"/>
+        <text x="420" y="12" font-size="10" fill="#5a544a" text-anchor="middle">一夜白头</text>
+        <path d="M20 150 L60 150 L100 120 L150 60 L200 90 L260 110 L330 100 L420 130 L540 145 L540 150 Z" fill="#34546e" opacity="0.10"/>
+        <path d="M20 150 L60 150 L100 120 L150 60 L200 90 L260 110 L330 100 L420 130 L540 145" fill="none" stroke="#34546e" stroke-width="1.8"/>
+        <path d="M20 148 L100 118 L150 55 L200 85 L330 95 L420 128 L540 143" fill="none" stroke="#a63a2b" stroke-width="2.2"/>
+        <line x1="20" y1="166" x2="540" y2="166" stroke="#d8cdb8"/>
+        <text x="20" y="178" font-size="10" fill="#8c8477" font-family="monospace">001</text>
+        <text x="540" y="178" font-size="10" fill="#8c8477" font-family="monospace" text-anchor="end">032</text>
+      </svg>
+      <div style="display:flex;gap:18px;padding:4px 6px" class="lab">
+        <span><span style="display:inline-block;width:9px;height:9px;background:#34546e;opacity:.35;margin-right:5px"></span>同场事件</span>
+        <span><span style="display:inline-block;width:9px;height:9px;background:#a63a2b;margin-right:5px"></span>负面/对抗</span>
+        <span>锚点虚线 = 剧情锚点表取数</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sec">主客成长曲线（含杀伤点 + 对手分量虚线 + 里程碑）</h3>
+      <div class="chartcard" style="margin-top:8px">
+        <svg viewBox="0 0 560 160" style="width:100%;height:auto;display:block" role="img" aria-label="卓一航主客曲线示例">
+          <line x1="300" y1="10" x2="300" y2="130" stroke="#b8860b" stroke-dasharray="3 4"/>
+          <text x="304" y="20" font-size="10" fill="#8a6607">主客翻转 · 第 11 回</text>
+          <path d="M20 120 L100 110 L180 95 L300 70 L420 50 L540 40" fill="none" stroke="#34546e" stroke-width="2.2"/>
+          <path d="M20 125 L100 120 L180 110 L300 95 L420 90 L540 70" fill="none" stroke="#8c8477" stroke-width="1.8"/>
+          <path d="M20 130 L300 115 L540 100" fill="none" stroke="#8c8477" stroke-width="1.2" stroke-dasharray="2 5" opacity=".7"/>
+          <circle cx="420" cy="50" r="4.5" fill="#a63a2b"><title>杀伤 ×2</title></circle>
+          <circle cx="540" cy="40" r="4.5" fill="#a63a2b"><title>杀伤 ×2</title></circle>
+          <text x="20" y="152" font-size="10" fill="#8c8477" font-family="monospace">001</text>
+          <text x="540" y="152" font-size="10" fill="#8c8477" font-family="monospace" text-anchor="end">032</text>
+        </svg>
+        <div style="display:flex;gap:16px;padding:4px 6px" class="lab">
+          <span style="color:#34546e">━ 主动</span><span style="color:#8c8477">━ 被动</span>
+          <span style="color:#a63a2b">● 杀伤</span><span>┅ 对手分量（√出场量）</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">WHR 巅峰曲线（全历史等级分 · 逐书 + peak 标注）</h3>
+      <div class="chartcard" style="margin-top:8px">
+        <svg viewBox="0 0 560 160" style="width:100%;height:auto;display:block" role="img" aria-label="WHR 巅峰曲线示例">
+          <path d="M20 140 L120 130 L220 110 L320 70 L420 42 L470 38 L520 44" fill="none" stroke="#34546e" stroke-width="2.2"/>
+          <path d="M20 146 L120 140 L220 124 L320 88 L420 58 L470 54 L520 60" fill="none" stroke="#34546e" stroke-width="1" opacity=".35"/>
+          <circle cx="470" cy="38" r="5" fill="#b8860b"/>
+          <text x="470" y="26" font-size="11" fill="#8a6607" text-anchor="middle" font-weight="700">巅峰 · 七剑中段</text>
+          <text x="20" y="152" font-size="10" fill="#8c8477" font-family="monospace">白发 001</text>
+          <text x="290" y="152" font-size="10" fill="#8c8477" font-family="monospace" text-anchor="middle">塞外</text>
+          <text x="540" y="152" font-size="10" fill="#8c8477" font-family="monospace" text-anchor="end">三女侠</text>
+        </svg>
+        <div style="padding:4px 6px" class="lab">粗线 = 评分轨迹 · 淡线 = ±不确定度带 · 泥金点 = 巅峰期 · 跨书人物按宇宙编年</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sec">双轨编年行（宇宙编年史 · era 行）</h3>
+      <div class="chartcard" style="margin-top:8px;padding:12px 14px">
+        <div style="display:flex;gap:12px;align-items:baseline;padding:8px 0;border-bottom:1px dashed #d8cdb8">
+          <span style="min-width:9em;font-weight:700;color:#34546e;font-size:13px">明末·万历—崇祯</span>
+          <span style="display:flex;gap:6px;flex-wrap:wrap">
+            <a href="#" style="display:inline-block;border:1px solid #c0392b;color:#c0392b;border-radius:999px;padding:.1em .7em;font-size:12.5px;background:#fbf8ef">白发魔女传<small style="color:#8c8477;margin-left:4px">1957 ●</small></a>
+            <span style="color:#8c8477">→</span>
+            <a href="#" style="display:inline-block;border:1px dashed #b9b1a2;color:#8c8477;border-radius:999px;padding:.1em .7em;font-size:12.5px">冰魄寒光剑*</a>
+            <span style="color:#8c8477">→</span>
+            <a href="#" style="display:inline-block;border:1px solid #4f6e4a;color:#4f6e4a;border-radius:999px;padding:.1em .7em;font-size:12.5px">江湖三女侠<small style="color:#8c8477;margin-left:4px">1960 ●</small></a>
+          </span>
+        </div>
+        <div class="lab" style="padding-top:6px">线色=系列 · <b>●</b>=深度解析 · *=存目 · →=作者接力边 · chip 上标真实出版年（双轨）</div>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">流转时间线（名物 · 方向化 + 毁折叠）</h3>
+      <div class="chartcard" style="margin-top:8px;padding:12px 16px">
+        <div style="border-left:2px solid #d8cdb8;padding-left:18px;display:flex;flex-direction:column;gap:8px">
+          <div style="position:relative"><span style="position:absolute;left:-24px;top:6px;width:9px;height:9px;border-radius:50%;background:#a63a2b;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #a63a2b"></span>
+            <span style="color:#a63a2b;border:1px solid #a63a2b;border-radius:3px;padding:0 6px;font-size:11.5px;font-weight:700">铸</span>
+            <b style="font-size:14px;margin-left:6px">岳鸣珂</b>
+            <span class="lab" style="margin-left:10px;font-family:monospace">白发魔女传·028:17</span></div>
+          <div style="position:relative"><span style="position:absolute;left:-24px;top:6px;width:9px;height:9px;border-radius:50%;background:#a63a2b;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #a63a2b"></span>
+            <span style="color:#a63a2b;border:1px solid #a63a2b;border-radius:3px;padding:0 6px;font-size:11.5px;font-weight:700">夺</span>
+            <b style="font-size:14px;margin-left:6px">凌未风 → 楚昭南</b>
+            <span class="lab" style="margin-left:10px;font-family:monospace">七剑下天山·005:07</span></div>
+          <div style="position:relative"><span style="position:absolute;left:-24px;top:6px;width:9px;height:9px;border-radius:50%;background:#b9b1a2;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #b9b1a2"></span>
+            <span style="color:#8c8477;border:1px dashed #b9ab90;border-radius:3px;padding:0 6px;font-size:11.5px;font-weight:700">疑似误伤 ×4</span>
+            <span class="lab" style="margin-left:8px">"毁"字句但该物此后仍在传世 —— 展开细看</span></div>
+          <div style="position:relative"><span style="position:absolute;left:-24px;top:6px;width:9px;height:9px;border-radius:50%;background:#5e7d5a;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #5e7d5a"></span>
+            <span style="color:#5e7d5a;border:1px solid #5e7d5a;border-radius:3px;padding:0 6px;font-size:11.5px;font-weight:700">归宿</span>
+            <span class="lab" style="margin-left:8px">末见持有：唐晓澜、楚昭南（江湖三女侠 · 47 回）</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sec">主角词云（字号∝频次 · 绰号如实上榜）</h3>
+      <div class="chartcard" style="margin-top:8px;padding:16px 18px">
+        <div style="line-height:2.2;text-align:center">
+          <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:30px;color:#a63a2b">蓬莱魔女</span>
+          <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:24px;color:#34546e">金世遗</span>
+          <span style="font-size:19px;color:#5a544a">江海天</span>
+          <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:21px;color:#a63a2b">张丹枫</span>
+          <span style="font-size:16px;color:#5a544a">金逐流</span>
+          <span style="font-size:15px;color:#8c8477">陈石星</span>
+          <span style="font-size:15px;color:#5a544a">孟元超</span>
+          <span style="font-size:14px;color:#8c8477">段克邪</span>
+          <span style="font-size:14px;color:#34546e">李思南</span>
+          <span style="font-size:13px;color:#8c8477">铁摩勒</span>
+          <span style="font-size:13px;color:#b8860b">玉罗刹</span>
+        </div>
+        <div class="lab" style="margin-top:8px;border-top:1px dashed #d8cdb8;padding-top:6px">
+          按名目出现次数统计（含对白提及），别名绰号未归并——玉罗刹与练霓裳分列，绰号比本名更响也是江湖的一部分。点击词目可搜索。</div>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">传承树（按代分层 · 边四档）</h3>
+      <div class="chartcard" style="margin-top:8px;padding:14px 16px">
+        <svg viewBox="0 0 540 150" style="width:100%;height:auto;display:block" role="img" aria-label="天山剑法传承树示例">
+          <text x="30" y="22" font-size="13" font-weight="700" fill="#2b2b2b">霍天都</text>
+          <text x="30" y="36" font-size="10" fill="#8c8477">创制 · 白发004:57</text>
+          <line x1="60" y1="44" x2="60" y2="64" stroke="#2b2b2b" stroke-width="1.6"/>
+          <text x="30" y="82" font-size="13" font-weight="700" fill="#2b2b2b">岳鸣珂（晦明禅师）</text>
+          <line x1="70" y1="90" x2="150" y2="110" stroke="#2b2b2b" stroke-width="1.6"/>
+          <line x1="100" y1="90" x2="260" y2="110" stroke="#2b2b2b" stroke-width="1.6" stroke-dasharray="6 3"/>
+          <line x1="130" y1="90" x2="380" y2="110" stroke="#2b2b2b" stroke-width="1.6" stroke-dasharray="2 3"/>
+          <text x="150" y="124" font-size="12.5" font-weight="700" fill="#2b2b2b">杨云骢</text>
+          <text x="245" y="124" font-size="12.5" font-weight="700" fill="#2b2b2b">楚昭南</text>
+          <text x="365" y="124" font-size="12.5" font-weight="700" fill="#2b2b2b">凌未风</text>
+          <text x="480" y="124" font-size="12.5" font-weight="700" fill="#2b2b2b">周青</text>
+          <text x="460" y="112" font-size="9.5" fill="#8a6607">记名</text>
+          <text x="150" y="140" font-size="9.5" fill="#8c8477">实线=正式传授 · 点划=记名 · 虚=挂名 · 点线=点拨 · 角标=跨书</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">出场曲线（人物档案 · 柱状 · 可点回目 + ★ 锚点回标记）</h3>
+    <div class="chartcard" style="margin-top:8px;padding:12px 14px">
+      <svg viewBox="0 0 540 90" style="width:100%;height:auto;max-width:560px;display:block" role="img" aria-label="出场曲线示例">
+        <g>
+          <rect x="20" y="20" width="9" height="60" fill="#34546e"><title>第1回 · 97 次</title></rect>
+          <rect x="36" y="68" width="9" height="12" fill="#34546e"><title>第2回 · 5 次</title></rect>
+          <rect x="52" y="40" width="9" height="40" fill="#34546e"><title>第3回 · 40 次</title></rect>
+          <rect x="68" y="10" width="9" height="70" fill="#a63a2b"><title>第4回 · 145 次 ★ 一夜白头前夜</title></rect>
+          <rect x="84" y="30" width="9" height="50" fill="#34546e"><title>第5回</title></rect>
+          <rect x="100" y="22" width="9" height="58" fill="#34546e"><title>第6回</title></rect>
+          <rect x="132" y="55" width="9" height="25" fill="#34546e"><title>第8回</title></rect>
+          <rect x="260" y="12" width="9" height="68" fill="#a63a2b"><title>第26回 · 一夜白头 ★</title></rect>
+          <rect x="420" y="60" width="9" height="20" fill="#34546e"><title>第32回</title></rect>
+        </g>
+        <text x="20" y="88" font-size="10" fill="#8c8477" font-family="monospace">001</text>
+        <text x="500" y="88" font-size="10" fill="#8c8477" font-family="monospace">032</text>
+      </svg>
+      <div class="lab" style="margin-top:4px">柱 = 逐回出现次数 · 红柱 + ★ = 该人物剧情锚点所在回 · 点击柱进回目页</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1560}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

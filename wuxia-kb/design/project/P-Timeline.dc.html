@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 编年史双视图</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .nav{display:flex;gap:20px;align-items:center;font-size:14px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.7}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;font-size:12.5px;background:#fbf8ef;color:#5a544a;margin:2px;cursor:pointer}
+  .chip.on{border-color:#a63a2b;color:#a63a2b;font-weight:700}
+  .row{display:flex;gap:14px;padding:10px 0 10px 18px;border-bottom:1px dashed #d8cdb8;align-items:baseline}
+  .era{min-width:9.5em;font-weight:700;color:#34546e;white-space:nowrap;font-size:13.5px}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+  <header style="border-bottom:1px solid #d8cdb8;background:#fbf8ef"><div class="wrap nav" style="height:52px">
+    <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:24px;color:#a63a2b;margin-right:18px">江湖图志</span>
+    <a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a></div></header>
+
+  <main class="wrap" style="flex:1;padding-bottom:48px">
+    <p class="lab" style="margin:14px 0 0"><a href="#">宇宙</a> / 编年史</p>
+    <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:36px;letter-spacing:3px;margin:6px 0 10px">宇宙编年史</h1>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px">
+      <span class="chip">书级双轨</span><span class="chip on">事件年谱</span>
+      <span class="lab" style="margin-left:16px">图例：<span style="color:#a63a2b">■ 史实锚（真实历史事件）</span> · <span style="color:#34546e">● 剧情锚（原著关键情节）</span> · 纪年四档：明文纪年 &gt; 推定纪年（附依据） &gt; 年代段 &gt; 年代不详</span>
+    </div>
+
+    <div style="border-left:3px solid #b9ab90">
+      <div class="row">
+        <span class="era">唐 · 武周</span>
+        <span style="font-size:13.5px;line-height:2"><span style="color:#8e44ad">■</span> <b>690 年</b>（明文纪年）武则天称帝——女帝奇英传的时代背景 · <a href="#" class="loc">女帝奇英传·001 →</a>
+          <span class="lab" style="margin-left:8px">推算依据：原著明文「天册万岁二年」</span></span>
+      </div>
+      <div class="row">
+        <span class="era">南宋 · 开禧—嘉定</span>
+        <span style="font-size:13.5px;line-height:2"><span style="color:#34546e">●</span> <b>年代段</b>（推定纪年）独臂神尼刺杀未遂后携幼女出宫——吕四娘线前史 · <a href="#" class="loc">三女侠 001 →</a>
+          <span class="lab" style="margin-left:8px">原著纪年 × 史实对照：雍正六年吕留良案（对照陈列，不作穿帮断言）</span></span>
+      </div>
+      <div class="row">
+        <span class="era">明 · 万历四十三年</span>
+        <span style="font-size:13.5px;line-height:2"><span style="color:#8e44ad">■</span> <b>1615 年</b> 梃击案（明文纪年）——白发魔女传开篇 · <a href="#" class="loc">白发 001 →</a>
+          <span style="color:#34546e">●</span> <b>约 1615–1620</b>（推定）玉罗刹劫镖初会卓一航 · <a href="#" class="loc">白发 001:103 →</a>
+          <span class="lab" style="margin-left:8px">推算依据：梃击案后至天启年间</span></span>
+      </div>
+      <div class="row">
+        <span class="era">清 · 康熙</span>
+        <span style="font-size:13.5px;line-height:2"><span style="color:#34546e">●</span> <b>康熙初年</b>（年代段）凌未风被囚布达拉宫十年 · <a href="#" class="loc">七剑 004:12 →</a>　<span style="color:#34546e">●</span> 一夜白头 · <a href="#" class="loc">白发 026:53 →</a>
+          <span class="lab" style="margin-left:8px">原著纪年 × 史实对照：平定回部时序与原著有出入（详见穿帮雷达 T4）</span></span>
+      </div>
+      <div class="row">
+        <span class="era">清 · 雍正十三年</span>
+        <span style="font-size:13.5px;line-height:2"><span style="color:#8e44ad">■</span> <b>1735 年 8 月</b>（明文纪年 · 确日）雍正暴死圆明园——<b>吕四娘刺雍正</b> · <a href="#" class="loc">三女侠 047 →</a>
+          <span class="lab" style="margin-left:8px">即「小说中的今天」彩蛋联动事件</span></span>
+      </div>
+      <div class="row">
+        <span class="era">年代不详</span>
+        <span style="font-size:13.5px;line-height:2;color:#8c8477">宋代诸书精确背景年代仅到朝代分段——按原著回目顺序陈列，不标年份。</span>
+      </div>
+    </div>
+
+    <p class="lab" style="margin-top:16px">分段：唐 · 宋 · 元明 · 清（默认收起，点开展开）· 年谱随考订与标注扩展持续生长 · 推定纪年均附推算依据，可翻回原文对质。
+      <a href="#" style="margin-left:16px">切回书级双轨视图 →</a></p>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

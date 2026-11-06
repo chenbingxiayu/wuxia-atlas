@@ -1,0 +1,112 @@
+{
+ "schema": "entity_registration_proposal/v1",
+ "book": "七剑下天山",
+ "generated": "2026-11-05T10:41:19",
+ "source": "registry/concordance/七剑下天山（scan+aggregate 复算）",
+ "scope_types": [
+  "&",
+  "@",
+  "◆"
+ ],
+ "status_policy": "proposed（试点新增待核；合并后进映射表消费，与既有 proposed 同口径）",
+ "counts": {
+  "proposals": 5,
+  "alias_additions": 5,
+  "skipped": 1
+ },
+ "entities": [
+  {
+   "type": "@",
+   "canonical": "纳兰小姐",
+   "aliases": [],
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现13次/1回；首见 七剑下天山#pn-r0.15"
+  },
+  {
+   "type": "@",
+   "canonical": "多铎提督",
+   "aliases": [],
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 七剑下天山#pn-r0.44"
+  },
+  {
+   "type": "◆",
+   "canonical": "八旗军",
+   "aliases": [],
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r0.4"
+  },
+  {
+   "type": "&",
+   "canonical": "爱新觉罗氏",
+   "aliases": [],
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r0.13"
+  },
+  {
+   "type": "@",
+   "canonical": "杨大爷",
+   "aliases": [],
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 七剑下天山#pn-r0.19"
+  }
+ ],
+ "alias_additions": [
+  {
+   "target_id": "E0032",
+   "target_canonical": "岳鸣珂",
+   "type": "@",
+   "add_alias": "晦明禅师",
+   "occurrences": 103
+  },
+  {
+   "target_id": "E0101",
+   "target_canonical": "武当派",
+   "type": "◆",
+   "add_alias": "武当",
+   "occurrences": 22
+  },
+  {
+   "target_id": "E0238",
+   "target_canonical": "飞红巾",
+   "type": "@",
+   "add_alias": "哈玛雅",
+   "occurrences": 301
+  },
+  {
+   "target_id": "E0019",
+   "target_canonical": "练霓裳",
+   "type": "@",
+   "add_alias": "白发魔女",
+   "occurrences": 15
+  },
+  {
+   "target_id": "E0110",
+   "target_canonical": "少林派",
+   "type": "◆",
+   "add_alias": "少林",
+   "occurrences": 4
+  }
+ ],
+ "skipped": [
+  {
+   "canonical": "清",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  }
+ ]
+}

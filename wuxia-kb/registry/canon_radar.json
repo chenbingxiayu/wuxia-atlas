@@ -1,0 +1,1790 @@
+{
+  "schema": "w14-canon-radar-v0.1",
+  "meta": {
+    "generated": "2026-11-05",
+    "tool": "build_canon_radar v0.1 (2026-11-05, W14)",
+    "data_version": "2026-11-05",
+    "source_refs": {
+      "consistency": "registry/consistency/",
+      "time": "registry/time/",
+      "relations": "registry/relations/",
+      "cards": "registry/sku/cards.json",
+      "tagged": "tagged/（只读）"
+    },
+    "radars": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "triage": [
+      "设定破绽",
+      "夸张修辞",
+      "有意翻案"
+    ],
+    "note": "记录不改文；R1 以 N8 C4 + N5 杀害边观察为主"
+  },
+  "radar_records": [
+    {
+      "id": "CA-0001",
+      "book": "七剑下天山",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：五十岁（50 岁）→ 十六岁（16 岁），年龄差 -34 岁 vs 时点差 0.4 年（偏差 34.4 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C1-001]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "016:19"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0002",
+      "book": "七剑下天山",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：五十岁（50 岁）→ 三十岁多点（30 岁），年龄差 -20 岁 vs 时点差 5.4 年（偏差 25.4 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C1-002]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "019:27"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0003",
+      "book": "七剑下天山",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：十六岁（16 岁）→ 三十岁多点（30 岁），年龄差 +14 岁 vs 时点差 5.0 年（偏差 9.0 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C1-003]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "019:27"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0004",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：七岁（7 岁）→ 十九岁（19 岁），年龄差 +12 岁 vs 时点差 20.0 年（偏差 8.0 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C1-001]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "005:49"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0005",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "topic": "纪年体系/时间线",
+      "claim": "T4：N4 纪年换算冲突登记（T15）：朝代锚『康熙六十一年一月十三日』与书内相对链冲突，按 §2.5 规则5 以朝代锚为主并登记 → 疑似纪年体系冲突（N4 相对链可能漂移，需回读原文区分倒叙/误置，暂判 warning；§3.4 T4）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-T4-001]",
+          "value": "T4/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "022:49"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0006",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：十一岁（11 岁）→ 十四岁（14 岁），年龄差 +3 岁 vs 时点差 11.1 年（偏差 8.1 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C1-003]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "025:12"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0007",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：十四岁（14 岁）→ 十四岁（14 岁），年龄差 +0 岁 vs 时点差 9.2 年（偏差 9.2 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C1-005]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "025:12"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0008",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：二十一岁（21 岁）→ 十四岁（14 岁），年龄差 -7 岁 vs 时点差 1.1 年（偏差 8.1 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C1-006]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "025:12"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0009",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：十一岁（11 岁）→ 十四岁（14 岁），年龄差 +3 岁 vs 时点差 2.0 年（偏差 1.0 年 >1） → info（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C1-002]",
+          "value": "C1/info"
+        },
+        {
+          "level": "E2",
+          "ref": "011:31"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "B",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0010",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：十四岁（14 岁）→ 二十一岁（21 岁），年龄差 +7 岁 vs 时点差 8.0 年（偏差 1.0 年 >1） → info（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C1-004]",
+          "value": "C1/info"
+        },
+        {
+          "level": "E2",
+          "ref": "019:30"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "B",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0011",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：七岁（7 岁）→ 十七八岁（18 岁），年龄差 +11 岁 vs 时点差 8.7 年（偏差 2.3 年 >1） → info（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C1-007]",
+          "value": "C1/info"
+        },
+        {
+          "level": "E2",
+          "ref": "034:87"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "B",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0012",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：七岁（7 岁）→ 十九岁（19 岁），年龄差 +12 岁 vs 时点差 0.0 年（偏差 12.0 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C1-001]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "002:33"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0013",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "纪年体系/时间线",
+      "claim": "W2：伤情（内伤）到恢复（痊愈）约 0.0 日 < 阈值 0.5 日，且无灵药/疗养/运功明写（§3.1 W2）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-W2-001]",
+          "value": "W2/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "010:27"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0014",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "纪年体系/时间线",
+      "claim": "W2：伤情（重伤）到恢复（如常）约 0.0 日 < 阈值 3 日，且无灵药/疗养/运功明写（§3.1 W2）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-W2-002]",
+          "value": "W2/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "010:36"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0015",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：十二岁（12 岁）→ 三岁（3 岁），年龄差 -9 岁 vs 时点差 0.0 年（偏差 9.0 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C1-005]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "016:17"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0016",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "纪年体系/时间线",
+      "claim": "T4：N4 纪年换算冲突登记（T15）：朝代锚『天启四年』与书内相对链冲突，按 §2.5 规则5 以朝代锚为主并登记 → 疑似纪年体系冲突（N4 相对链可能漂移，需回读原文区分倒叙/误置，暂判 warning；§3.4 T4）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-T4-001]",
+          "value": "T4/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "018:18"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0017",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "纪年体系/时间线",
+      "claim": "T4：N4 纪年换算冲突登记（T15）：朝代锚『天启四年』与书内相对链冲突，按 §2.5 规则5 以朝代锚为主并登记 → 疑似纪年体系冲突（N4 相对链可能漂移，需回读原文区分倒叙/误置，暂判 warning；§3.4 T4）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-T4-002]",
+          "value": "T4/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "022:68"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0018",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：十岁（10 岁）→ 十七八岁（18 岁），年龄差 +8 岁 vs 时点差 0.5 年（偏差 7.5 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C1-004]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "031:36"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0019",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：七岁（7 岁）→ 三十多岁（30 岁），年龄差 +23 岁 vs 时点差 30.6 年（偏差 7.6 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C1-002]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "032:23"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0020",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "topic": "年龄跨回",
+      "claim": "C1：年龄跨回：十九岁（19 岁）→ 三十多岁（30 岁），年龄差 +11 岁 vs 时点差 30.6 年（偏差 19.6 年 >1） → warning（§4.1 检查项一）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C1-003]",
+          "value": "C1/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "032:23"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0021",
+      "book": "七剑下天山",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "多铎 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[七剑下天山].edges[七剑下天山#R0203]",
+          "value": "杀害边 易兰珠→多铎/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山#pn-r17.63"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0022",
+      "book": "七剑下天山",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "纳兰容若 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[七剑下天山].edges[七剑下天山#R0204]",
+          "value": "杀害边 易兰珠→纳兰容若/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山#pn-r27.25"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0023",
+      "book": "七剑下天山",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "多铎 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[七剑下天山].edges[七剑下天山#R0205]",
+          "value": "杀害边 杨云骢→多铎/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山#pn-r14.42"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0024",
+      "book": "七剑下天山",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "傅青主 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[七剑下天山].edges[七剑下天山#R0206]",
+          "value": "杀害边 石天成→傅青主/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山#pn-r23.36"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0025",
+      "book": "冰魄寒光剑",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "桂华生 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[冰魄寒光剑].edges[冰魄寒光剑#R0027]",
+          "value": "杀害边 巴勃→桂华生/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑#pn-r8.9"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0026",
+      "book": "冰魄寒光剑",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "摩兰法师 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[冰魄寒光剑].edges[冰魄寒光剑#R0028]",
+          "value": "杀害边 提摩达多→摩兰法师/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑#pn-r9.1"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0027",
+      "book": "塞外奇侠传",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "麦盖提 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[塞外奇侠传].edges[塞外奇侠传#R0040]",
+          "value": "杀害边 杨云骢→麦盖提/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "塞外奇侠传#pn-r18.2"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0028",
+      "book": "江湖三女侠",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "路民瞻 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].edges[江湖三女侠#R0314]",
+          "value": "杀害边 吕四娘→路民瞻/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r13.2"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0029",
+      "book": "江湖三女侠",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "本无大师 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].edges[江湖三女侠#R0315]",
+          "value": "杀害边 年羹尧→本无大师/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r28.30"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0030",
+      "book": "江湖三女侠",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "甘凤池 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].edges[江湖三女侠#R0316]",
+          "value": "杀害边 李明珠→甘凤池/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r34.38"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0031",
+      "book": "江湖三女侠",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "了因 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].edges[江湖三女侠#R0317]",
+          "value": "杀害边 胤禛→了因/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r25.48"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0032",
+      "book": "江湖三女侠",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "年羹尧 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].edges[江湖三女侠#R0318]",
+          "value": "杀害边 胤禛→年羹尧/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r48.40"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0033",
+      "book": "江湖三女侠",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "周青 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].edges[江湖三女侠#R0319]",
+          "value": "杀害边 龙木公→周青/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r3.4"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0034",
+      "book": "江湖三女侠",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "邝琏 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].edges[江湖三女侠#R0320]",
+          "value": "杀害边 龙木公→邝琏/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r38.45"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0035",
+      "book": "白发魔女传",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "金独异 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[白发魔女传].edges[白发魔女传#R0043]",
+          "value": "杀害边 岳鸣珂→金独异/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传#pn-r27.66"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0036",
+      "book": "白发魔女传",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "王照希 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[白发魔女传].edges[白发魔女传#R0165]",
+          "value": "杀害边 张四→王照希/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传#pn-r27.51"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0037",
+      "book": "白发魔女传",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "魏忠贤 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[白发魔女传].edges[白发魔女传#R0166]",
+          "value": "杀害边 朱由检→魏忠贤/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传#pn-r28.20"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0038",
+      "book": "白发魔女传",
+      "radar": "R1",
+      "topic": "死亡后再提及",
+      "claim": "白石道人 在杀害边后有再提及（需区分回忆/传言/同名；N8 C4 未判活体出场）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[白发魔女传].edges[白发魔女传#R0167]",
+          "value": "杀害边 红云道人→白石道人/strong"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传#pn-r26.71"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "D",
+      "action": "记录观察",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0039",
+      "book": "七剑下天山",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 关系互斥：易兰珠 存在 2 位师父 ['哈玛雅', '辛龙子']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C5-001]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0040",
+      "book": "七剑下天山",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 关系互斥：玄真 存在 2 位师父 ['卓一航', '黄叶道人']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[七剑下天山].violations[七剑-C5-002]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0041",
+      "book": "江湖三女侠",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 关系互斥：冯琳 存在 2 位师父 ['易兰珠', '钟万堂']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C5-001]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0042",
+      "book": "江湖三女侠",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 互为师徒对 易兰珠 ⇄ 唐晓澜（016:44）→ 辈分/称谓系统性冲突候选（§4.5 检查项五；待人工裁定）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C5-002]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0043",
+      "book": "江湖三女侠",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 互为师徒对 唐晓澜 ⇄ 易兰珠（024:4）→ 辈分/称谓系统性冲突候选（§4.5 检查项五；待人工裁定）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[江湖三女侠].violations[江湖-C5-003]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0044",
+      "book": "白发魔女传",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 关系互斥：李申时 存在 2 位师父 ['白石道人', '黄叶道人']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C5-001]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0045",
+      "book": "白发魔女传",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 关系互斥：卓一航 存在 3 位师父 ['岳鸣珂', '紫阳道长', '达摩租师']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C5-002]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0046",
+      "book": "白发魔女传",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 互为师徒对 卓一航 ⇄ 辛龙子（029:35）→ 辈分/称谓系统性冲突候选（§4.5 检查项五；待人工裁定）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C5-003]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0047",
+      "book": "白发魔女传",
+      "radar": "R3",
+      "topic": "称谓辈分错乱",
+      "claim": "C5：N5 互为师徒对 辛龙子 ⇄ 卓一航（029:35）→ 辈分/称谓系统性冲突候选（§4.5 检查项五；待人工裁定）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-C5-004]",
+          "value": "C5/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "001:0"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0048",
+      "book": "白发魔女传",
+      "radar": "R3",
+      "topic": "失传绝学再现",
+      "claim": "S9：028:45 明写『失传』，030:33 又见使出且无秘籍/隐脉明写 → warning（§3.2 S9）",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "consistency[白发魔女传].violations[白发-S9-001]",
+          "value": "S9/warning"
+        },
+        {
+          "level": "E2",
+          "ref": "030:33"
+        }
+      ],
+      "narrative_mode": "正常叙事",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0049",
+      "book": "江湖三女侠",
+      "radar": "R3",
+      "topic": "师承/辈分互斥",
+      "claim": "N5 互斥：冯琳 存在 2 位师父 ['易兰珠', '钟万堂']，active 唯一性须 N4 时间轴复核",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].validation.warnings",
+          "value": "互斥"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r16.44"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0050",
+      "book": "江湖三女侠",
+      "radar": "R3",
+      "topic": "师承/辈分互斥",
+      "claim": "N5 无环(已消解)：互为师徒对 易兰珠 ⇄ 唐晓澜（016:44/024:4）双放弃，待人工裁定",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].validation.warnings",
+          "value": "无环(已消解)"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·016:44"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0051",
+      "book": "江湖三女侠",
+      "radar": "R3",
+      "topic": "师承/辈分互斥",
+      "claim": "N5 无环(已消解)：互为师徒对 唐晓澜 ⇄ 易兰珠（024:4/016:44）双放弃，待人工裁定",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[江湖三女侠].validation.warnings",
+          "value": "无环(已消解)"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠·024:4"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0052",
+      "book": "白发魔女传",
+      "radar": "R3",
+      "topic": "师承/辈分互斥",
+      "claim": "N5 无环(已消解)：互为师徒对 卓一航 ⇄ 辛龙子（029:35/029:35）双放弃，待人工裁定",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[白发魔女传].validation.warnings",
+          "value": "无环(已消解)"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传·029:35"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "CA-0053",
+      "book": "白发魔女传",
+      "radar": "R3",
+      "topic": "师承/辈分互斥",
+      "claim": "N5 无环(已消解)：互为师徒对 辛龙子 ⇄ 卓一航（029:35/029:35）双放弃，待人工裁定",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "relations[白发魔女传].validation.warnings",
+          "value": "无环(已消解)"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传·029:35"
+        }
+      ],
+      "narrative_mode": "未知",
+      "triage": "设定破绽",
+      "grade": "C",
+      "action": "记录待修",
+      "owner": "W14",
+      "status": "open",
+      "data_version": "2026-11-05"
+    }
+  ],
+  "exemptions": [
+    {
+      "id": "EX-0001",
+      "book": "七剑下天山",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[七剑下天山].forks[qijian-F001]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山#pn-r1.102"
+        }
+      ],
+      "fork_id": "qijian-F001",
+      "reinsert_anchor": "七剑下天山#pn-r2.60",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0002",
+      "book": "七剑下天山",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[七剑下天山].forks[qijian-F002]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山#pn-r3.56"
+        }
+      ],
+      "fork_id": "qijian-F002",
+      "reinsert_anchor": "七剑下天山#pn-r3.73",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0003",
+      "book": "七剑下天山",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[七剑下天山].forks[qijian-F003]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "七剑下天山#pn-r6.3"
+        }
+      ],
+      "fork_id": "qijian-F003",
+      "reinsert_anchor": "七剑下天山#pn-r6.13",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0004",
+      "book": "冰魄寒光剑",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[冰魄寒光剑].forks[bingpo-F001]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑#pn-r0.0"
+        }
+      ],
+      "fork_id": "bingpo-F001",
+      "reinsert_anchor": "冰魄寒光剑#pn-r1.6",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0005",
+      "book": "冰魄寒光剑",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[冰魄寒光剑].forks[bingpo-F002]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑#pn-r4.53"
+        }
+      ],
+      "fork_id": "bingpo-F002",
+      "reinsert_anchor": "冰魄寒光剑#pn-r4.62",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0006",
+      "book": "冰魄寒光剑",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[冰魄寒光剑].forks[bingpo-F003]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "冰魄寒光剑#pn-r6.30"
+        }
+      ],
+      "fork_id": "bingpo-F003",
+      "reinsert_anchor": "冰魄寒光剑#pn-r6.35",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0007",
+      "book": "塞外奇侠传",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[塞外奇侠传].forks[saiwai-F001]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "塞外奇侠传#pn-r3.12"
+        }
+      ],
+      "fork_id": "saiwai-F001",
+      "reinsert_anchor": "塞外奇侠传#pn-r3.35",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0008",
+      "book": "塞外奇侠传",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[塞外奇侠传].forks[saiwai-F002]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "塞外奇侠传#pn-r10.23"
+        }
+      ],
+      "fork_id": "saiwai-F002",
+      "reinsert_anchor": "塞外奇侠传#pn-r11.1",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0009",
+      "book": "塞外奇侠传",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[塞外奇侠传].forks[saiwai-F003]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "塞外奇侠传#pn-r10.23"
+        }
+      ],
+      "fork_id": "saiwai-F003",
+      "reinsert_anchor": "塞外奇侠传#pn-r11.13",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0010",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[江湖三女侠].forks[jianghu-F001]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r1.16"
+        }
+      ],
+      "fork_id": "jianghu-F001",
+      "reinsert_anchor": "江湖三女侠#pn-r1.20",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0011",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[江湖三女侠].forks[jianghu-F002]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r1.48"
+        }
+      ],
+      "fork_id": "jianghu-F002",
+      "reinsert_anchor": "江湖三女侠#pn-r1.66",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0012",
+      "book": "江湖三女侠",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[江湖三女侠].forks[jianghu-F003]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "江湖三女侠#pn-r2.8"
+        }
+      ],
+      "fork_id": "jianghu-F003",
+      "reinsert_anchor": "江湖三女侠#pn-r2.8",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0013",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[白发魔女传].forks[bainv-F001]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传#pn-r1.56"
+        }
+      ],
+      "fork_id": "bainv-F001",
+      "reinsert_anchor": "白发魔女传#pn-r1.58",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0014",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[白发魔女传].forks[bainv-F002]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传#pn-r1.67"
+        }
+      ],
+      "fork_id": "bainv-F002",
+      "reinsert_anchor": "白发魔女传#pn-r2.2",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    },
+    {
+      "id": "EX-0015",
+      "book": "白发魔女传",
+      "radar": "R2",
+      "reason": "N4 分叉（追叙）已隔离主轨，非设定破绽",
+      "evidence": [
+        {
+          "level": "E1",
+          "ref": "time[白发魔女传].forks[bainv-F003]",
+          "value": "追叙"
+        },
+        {
+          "level": "E2",
+          "ref": "白发魔女传#pn-r1.67"
+        }
+      ],
+      "fork_id": "bainv-F003",
+      "reinsert_anchor": "白发魔女传#pn-r2.2",
+      "confidence": "low",
+      "data_version": "2026-11-05"
+    }
+  ],
+  "summary": {
+    "books": {
+      "七剑下天山": {
+        "R1": {
+          "open": 4,
+          "asset": 0,
+          "exempt": 0
+        },
+        "R2": {
+          "open": 3,
+          "asset": 0,
+          "exempt": 3
+        },
+        "R3": {
+          "open": 2,
+          "asset": 0,
+          "exempt": 0
+        }
+      },
+      "冰魄寒光剑": {
+        "R1": {
+          "open": 2,
+          "asset": 0,
+          "exempt": 0
+        },
+        "R2": {
+          "open": 0,
+          "asset": 0,
+          "exempt": 3
+        },
+        "R3": {
+          "open": 0,
+          "asset": 0,
+          "exempt": 0
+        }
+      },
+      "塞外奇侠传": {
+        "R1": {
+          "open": 1,
+          "asset": 0,
+          "exempt": 0
+        },
+        "R2": {
+          "open": 0,
+          "asset": 0,
+          "exempt": 3
+        },
+        "R3": {
+          "open": 0,
+          "asset": 0,
+          "exempt": 0
+        }
+      },
+      "江湖三女侠": {
+        "R1": {
+          "open": 7,
+          "asset": 0,
+          "exempt": 0
+        },
+        "R2": {
+          "open": 8,
+          "asset": 0,
+          "exempt": 3
+        },
+        "R3": {
+          "open": 6,
+          "asset": 0,
+          "exempt": 0
+        }
+      },
+      "白发魔女传": {
+        "R1": {
+          "open": 4,
+          "asset": 0,
+          "exempt": 0
+        },
+        "R2": {
+          "open": 9,
+          "asset": 0,
+          "exempt": 3
+        },
+        "R3": {
+          "open": 7,
+          "asset": 0,
+          "exempt": 0
+        }
+      }
+    },
+    "totals": {
+      "R1": {
+        "open": 18,
+        "asset": 0,
+        "exempt": 0
+      },
+      "R2": {
+        "open": 20,
+        "asset": 0,
+        "exempt": 15
+      },
+      "R3": {
+        "open": 15,
+        "asset": 0,
+        "exempt": 0
+      }
+    },
+    "records": 53,
+    "exemptions": 15,
+    "by_grade": {
+      "C": 32,
+      "B": 3,
+      "D": 18
+    },
+    "by_triage": {
+      "设定破绽": 53
+    },
+    "validation": {
+      "passed": true,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,2438 @@
+{
+ "book": "冰魄寒光剑",
+ "generated": "2026-11-06",
+ "generated_at": "2026-11-06 08:44:33",
+ "script": "scripts/relation_validator.py",
+ "script_version": "0.1",
+ "spec_version": "0.3-draft",
+ "schema": "relations-v0.1",
+ "mode": "default",
+ "source": [
+  "tagged/<书>/*.tagged.md（只读）",
+  "registry/concordance/<书>.json",
+  "registry/entities.json",
+  "skills/SKILL_关系体系_武侠版.md §7.2/§8",
+  "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
+ ],
+ "snapshot": {
+  "exported_at": "2026-11-06 08:44:33",
+  "tagged_chapters": 12,
+  "concordance_generated": "2026-11-06T00:28:04+08:00",
+  "registry_entities": 738,
+  "corpus_chapters": 12,
+  "paragraphs": 735,
+  "verbs": 1147,
+  "verbs_in_quote": 122,
+  "entities": 5618
+ },
+ "predicate_table": {
+  "version": "D06@0.3-draft",
+  "count": 55,
+  "used": [
+   "交手",
+   "到达",
+   "师承",
+   "杀害",
+   "点穴",
+   "离开",
+   "转移"
+  ]
+ },
+ "edge_schema": {
+  "required": [
+   "subject",
+   "predicate",
+   "object",
+   "subject_type",
+   "object_type",
+   "confidence",
+   "loc",
+   "evidence",
+   "rule"
+  ],
+  "confidence_values": [
+   "strong",
+   "ok",
+   "weak"
+  ],
+  "subject_type": "标注层实体符号（@人物/◆组织/&家族/☆武功/•器物/=/地点/;职衔）",
+  "evidence": {
+   "fields": [
+    "loc",
+    "type",
+    "rule"
+   ],
+   "type_values": [
+    "E1明文",
+    "E2动作+共现",
+    "E3推导"
+   ]
+  },
+  "loc_format": "NNN:段（回号:PN 段号）",
+  "source": "D06 §7.2 谓词总表 / §8.1 证据三级 / §6.2 离线表 schema"
+ },
+ "offline_interface": {
+  "types": [
+   "情感",
+   "恩义",
+   "背叛",
+   "主仆"
+  ],
+  "schema": "D06 §6.2（rel_id/subject/object/type/subtype/direction/states/manner/conf/evidence/event_ids/related_predicates/notes）",
+  "emitted": [],
+  "note": "四类离线关系行内不设符号（01g 铁律）；本脚本只出放弃原因（治愈/转移→恩义候选、隶属终止→背叛候选等），离线表由人工裁定流程维护，N5 不写。"
+ },
+ "counts": {
+  "candidates": 77,
+  "edges": 34,
+  "dropped": 75,
+  "derived_edges": 0,
+  "tongmen_edges": 0,
+  "lineage_labels": 0,
+  "by_predicate": {
+   "交手": 11,
+   "到达": 14,
+   "师承": 1,
+   "杀害": 2,
+   "点穴": 1,
+   "离开": 4,
+   "转移": 1
+  },
+  "by_confidence": {
+   "ok": 27,
+   "weak": 3,
+   "strong": 4
+  },
+  "by_layer": {
+   "人": 15,
+   "实": 19
+  },
+  "by_rule": {
+   "X-COMBAT": 11,
+   "X-ARRIVE": 11,
+   "04f-L24": 3,
+   "语式-师承": 1,
+   "04f-L08": 2,
+   "04f-L05": 1,
+   "X-LEAVE": 3,
+   "04f-L22": 1,
+   "04f-L11": 1
+  },
+  "drop_by_reason": {
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 7,
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 11,
+   "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）": 1,
+   "实体缺失（04f#5 点穴须施者/受者）": 11,
+   "实体缺失（04f#26 交手须双方人物角色）": 4,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 6,
+   "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）": 1,
+   "传闻降权（D06 §8.3，不入正式表）": 1,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 1,
+   "强制档实体缺失（04f#9 医者/伤者未同现）": 2,
+   "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）": 1,
+   "自指/主宾同一实体": 29
+  }
+ },
+ "edges": [
+  {
+   "subject": "提摩达多",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂华生",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:54",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:56",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:64",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:86",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:86",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:87",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:12",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:20",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:25",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 10,
+   "loc": "007:51",
+   "chapter": 7,
+   "para": 51,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "007:51",
+    "007:54",
+    "007:56",
+    "007:64",
+    "007:86",
+    "007:86",
+    "007:87",
+    "009:12",
+    "009:20",
+    "009:25"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0001"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "达赖活佛",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:38",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "005:38",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "005:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "005:38",
+   "chapter": 5,
+   "para": 38,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "005:38",
+    "005:38",
+    "005:43"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0002"
+  },
+  {
+   "subject": "摩农",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "邓南遮",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "011:21",
+   "chapter": 11,
+   "para": 21,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "011:21",
+    "011:21"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0003"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "藏灵上人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:28",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "004:63",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "004:28",
+   "chapter": 4,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "004:28",
+    "004:63"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0004"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "尼泊尔",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:32",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "007:4",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "003:32",
+   "chapter": 3,
+   "para": 32,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "003:32",
+    "007:4"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0005"
+  },
+  {
+   "subject": "公主",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂华生",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "012:23",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "012:23",
+   "chapter": 12,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "012:23"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0006"
+  },
+  {
+   "subject": "华玉公主",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "提摩达多",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:45",
+   "chapter": 9,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "009:45"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0007"
+  },
+  {
+   "subject": "宛兰星",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂华生",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:3",
+   "chapter": 11,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "011:3"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0008"
+  },
+  {
+   "subject": "摩兰法师",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂华生",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:32",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:32",
+   "chapter": 9,
+   "para": 32,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "009:32"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0009"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "白衣少女",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:80",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "004:80",
+   "chapter": 4,
+   "para": 80,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "004:80"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0010"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "邓南遮",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:36",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:36",
+   "chapter": 11,
+   "para": 36,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "011:36"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0011"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "麦士迦南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "002:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "002:42",
+   "chapter": 2,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "002:42"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰魄寒光剑#R0012"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "冰窖",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:43",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "004:43",
+   "chapter": 4,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "004:43"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0013"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "加德满都",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:5",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "007:5",
+   "chapter": 7,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "007:5"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0014"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "城西",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:19",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:19",
+   "chapter": 7,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "007:19"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0015"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "大厅",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:5",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "011:5",
+   "chapter": 11,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "011:5"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0016"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "宫殿",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "008:4",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "008:4",
+   "chapter": 8,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "008:4"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0017"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "宫门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "009:51",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "009:51",
+   "chapter": 9,
+   "para": 51,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "009:51"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0018"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "帐篷",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:20",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "005:20",
+   "chapter": 5,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "005:20"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0019"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "洞房",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "012:61",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "012:61",
+   "chapter": 12,
+   "para": 61,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "012:61"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0020"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "清泉",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:20",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:20",
+   "chapter": 10,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "010:20"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0021"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "瑞扬布山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "009:68",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "009:68",
+   "chapter": 9,
+   "para": 68,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "009:68"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0022"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "西藏",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "006:24",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "006:24",
+   "chapter": 6,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "006:24"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0023"
+  },
+  {
+   "subject": "白衣少女",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "玉女峰",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:20",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "004:20",
+   "chapter": 4,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "004:20"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0024"
+  },
+  {
+   "subject": "雅德星王子",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "加德满都",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:61",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:61",
+   "chapter": 10,
+   "para": 61,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "010:61"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0025"
+  },
+  {
+   "subject": "雅德星王子",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "龙叶高僧",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "008:22",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "008:22",
+   "chapter": 8,
+   "para": 22,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "008:22"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0026"
+  },
+  {
+   "subject": "巴勃",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "桂华生",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "008:8",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "008:8",
+   "chapter": 8,
+   "para": 8,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "008:8"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0027"
+  },
+  {
+   "subject": "提摩达多",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "摩兰法师",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "008:36",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "008:36",
+   "chapter": 8,
+   "para": 36,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "008:36"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0028"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "邓南遮",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": ""
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:37",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "011:37",
+   "chapter": 11,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "011:37"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0029"
+  },
+  {
+   "subject": "巴勃",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "玛清勒寺",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:37",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:37",
+   "chapter": 10,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "010:37"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0030"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "中国",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:43",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:43",
+   "chapter": 7,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "007:43"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0031"
+  },
+  {
+   "subject": "桂华生",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "布达拉宫",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:49",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "005:49",
+   "chapter": 5,
+   "para": 49,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "005:49"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0032"
+  },
+  {
+   "subject": "达赖活佛",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "布达拉宫",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:42",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "005:42",
+   "chapter": 5,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "005:42"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0033"
+  },
+  {
+   "subject": "白衣少女",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "桂华生",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L11",
+   "rule_row": 11,
+   "subtype": "赠",
+   "params": {
+    "物": "丹丸",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "004:75",
+     "type": "E2动作+共现",
+     "rule": "04f-L11"
+    }
+   ],
+   "count": 1,
+   "loc": "004:75",
+   "chapter": 4,
+   "para": 75,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "locs": [
+    "004:75"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰魄寒光剑#R0034"
+  }
+ ],
+ "derived": {
+  "tongmen_edges": [],
+  "tongmen_pairs": [],
+  "lineage_labels": [],
+  "trees": {
+   "master_tree": {
+    "nodes": [
+     {
+      "person": "雅德星王子",
+      "master": "龙叶高僧",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "龙叶高僧",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     }
+    ],
+    "roots": [
+     "龙叶高僧"
+    ],
+    "edge_count": 1
+   },
+   "blood_tree": {
+    "nodes": [],
+    "note": "亲属/血缘抽取不在 04f 27 行联动内，留候选池待语式扩展（本脚本不产出）"
+   }
+  },
+  "cycles": [],
+  "reciprocal_conflicts": []
+ },
+ "dropped": {
+  "total": 75,
+  "by_reason": {
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 7,
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 11,
+   "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）": 1,
+   "实体缺失（04f#5 点穴须施者/受者）": 11,
+   "实体缺失（04f#26 交手须双方人物角色）": 4,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 6,
+   "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）": 1,
+   "传闻降权（D06 §8.3，不入正式表）": 1,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 1,
+   "强制档实体缺失（04f#9 医者/伤者未同现）": 2,
+   "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）": 1,
+   "自指/主宾同一实体": 29
+  },
+  "samples": [
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "002:12"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "002:13"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "002:40"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "002:56"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "004:63"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "004:64"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "005:2"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "005:19"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "005:30"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "006:1"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "006:17"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "006:30"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "007:28"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "007:41"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "007:43"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "007:67"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "008:1"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "008:2"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "008:4"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "008:7"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "订婚",
+    "loc": "008:14"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "008:36"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:46",
+    "note": "桂华生 交手 提摩达多"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "009:46"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "009:46"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "009:50"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "010:20"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "010:23"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "010:24"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "010:24"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "010:45"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "011:37"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:37"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:37"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:38"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:38"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:39"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:39"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "011:46"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "011:47"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "012:8"
+   },
+   {
+    "reason": "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）",
+    "rule": "04f-L15",
+    "rule_row": 15,
+    "predicate": "毁损",
+    "note": "器物=玉笛",
+    "loc": "012:11"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "012:13"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "012:20"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "012:50"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "012:50"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "001:61"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "002:26"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "002:40"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "002:40"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "002:42"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "002:42"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "004:37"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "004:60"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "005:15"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "005:33"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "loc": "005:33"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "006:14"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "006:36"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "007:33"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "007:33"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "loc": "007:77"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:8"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:24"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "loc": "010:21"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "loc": "010:21"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "010:24"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "010:24"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "011:26"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "011:26"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "012:4"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "012:4"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "012:23"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "loc": "012:43"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "012:44"
+   }
+  ]
+ },
+ "validation": {
+  "hard_errors": [],
+  "warnings": [],
+  "checks": [
+   "无环(师承)",
+   "方向(徒→师/无互为师徒)",
+   "类型(55 谓词主宾)",
+   "证据级(E1 名分类)",
+   "自指",
+   "传闻(§8.3)",
+   "共现生边(交手≠敌对)",
+   "时序(师承 vs 隶属终止, 定位符级)"
+  ],
+  "pending": [
+   "N4 时间轴未上线：active 互斥（配偶唯一/师承唯一）无法按时段判定，只做定位符级提示",
+   "亲属/血缘树：04f 27 行联动无亲属触发词，未产出",
+   "仇怨：event_ids 必填（D06#44）而事件层 N4/D03 未产出"
+  ]
+ },
+ "rows_stats": {
+  "1": {
+   "rule": "04f-L01",
+   "predicate": "掌握",
+   "triggers": "练成/学会/悟出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "2": {
+   "rule": "04f-L02",
+   "predicate": "传授",
+   "triggers": "传授（具体武功名在句）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "3": {
+   "rule": "04f-L03",
+   "predicate": null,
+   "triggers": "授艺/教（泛指）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "4": {
+   "rule": "04f-L04",
+   "predicate": "掌握",
+   "triggers": "偷学/窃艺",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "5": {
+   "rule": "04f-L05",
+   "predicate": "点穴",
+   "triggers": "点穴（穴道名在句）",
+   "strength": "强制",
+   "candidates": 3,
+   "emitted": 1,
+   "dropped": 11,
+   "extension": false,
+   "note": ""
+  },
+  "6": {
+   "rule": "04f-L06",
+   "predicate": "师承",
+   "triggers": "拜师/拜…为师",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "7": {
+   "rule": "04f-L07",
+   "predicate": "师承",
+   "triggers": "收徒/授艺（具体对象）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "8": {
+   "rule": "04f-L08",
+   "predicate": "杀害",
+   "triggers": "杀/杀死/斩杀",
+   "strength": "强制",
+   "candidates": 3,
+   "emitted": 2,
+   "dropped": 6,
+   "extension": false,
+   "note": ""
+  },
+  "9": {
+   "rule": "04f-L09",
+   "predicate": "治愈",
+   "triggers": "疗伤/救活/治愈",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 2,
+   "extension": false,
+   "note": ""
+  },
+  "10": {
+   "rule": "04f-L10",
+   "predicate": "投毒",
+   "triggers": "下毒/投毒（致害成立）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "11": {
+   "rule": "04f-L11",
+   "predicate": "转移",
+   "triggers": "赠/赠送/相赠",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 1,
+   "dropped": 4,
+   "extension": false,
+   "note": ""
+  },
+  "12": {
+   "rule": "04f-L12",
+   "predicate": "转移",
+   "triggers": "夺/抢（夺物义）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 3,
+   "extension": false,
+   "note": ""
+  },
+  "13": {
+   "rule": "04f-L13b",
+   "predicate": "转移",
+   "triggers": "借/还",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "14": {
+   "rule": "04f-L14",
+   "predicate": "制造",
+   "triggers": "铸/炼制/打造",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "15": {
+   "rule": "04f-L15",
+   "predicate": null,
+   "triggers": "折断/烧毁/焚毁",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "16": {
+   "rule": "04f-L16",
+   "predicate": "组织成员",
+   "triggers": "拜师→◆组织",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "17": {
+   "rule": "04f-L17",
+   "predicate": "任职",
+   "triggers": "任命/继任/接任",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "18": {
+   "rule": "04f-L18",
+   "predicate": "隶属终止",
+   "triggers": "逐出/叛出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "19": {
+   "rule": "04f-L19",
+   "predicate": "结义",
+   "triggers": "结义/结拜",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "20": {
+   "rule": "04f-L20",
+   "predicate": "配偶",
+   "triggers": "娶/嫁/成亲",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "21": {
+   "rule": "04f-L21",
+   "predicate": "到达",
+   "triggers": "抵达/来到（行程级）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 6,
+   "extension": false,
+   "note": ""
+  },
+  "22": {
+   "rule": "04f-L22",
+   "predicate": "离开",
+   "triggers": "离开（行程级）",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "23": {
+   "rule": "04f-L23",
+   "predicate": "押送",
+   "triggers": "押解/解往",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "24": {
+   "rule": "04f-L24",
+   "predicate": "到达",
+   "triggers": "潜入/混入",
+   "strength": "强制",
+   "candidates": 3,
+   "emitted": 3,
+   "dropped": 4,
+   "extension": false,
+   "note": "04f『进入』无 D06 同名谓词，按 §7.3 对号入座最近落位 #18 到达（weak）"
+  },
+  "25": {
+   "rule": "04f-L25",
+   "predicate": null,
+   "triggers": "追踪/跟踪（行程级）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "26": {
+   "rule": "04f-L26",
+   "predicate": "交手",
+   "triggers": "交手/比武",
+   "strength": "建议",
+   "candidates": 1,
+   "emitted": 0,
+   "dropped": 4,
+   "extension": false,
+   "note": ""
+  },
+  "27": {
+   "rule": "04f-L27",
+   "predicate": null,
+   "triggers": "使用阵法（结阵/布阵）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "X-RESCUE": {
+   "rule": "X-RESCUE",
+   "predicate": "解救",
+   "triggers": "救/救出/救下/营救",
+   "strength": "扩展",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": true,
+   "note": "04f#9 只列疗伤/救活/治愈；『救』按 D06#51 解救 候选（E2）"
+  },
+  "X-ARRIVE": {
+   "rule": "X-ARRIVE",
+   "predicate": "到达",
+   "triggers": "■ 行程动词（回到/走到/走进/赶到…）",
+   "strength": "扩展",
+   "candidates": 12,
+   "emitted": 11,
+   "dropped": 0,
+   "extension": true,
+   "note": ""
+  },
+  "X-LEAVE": {
+   "rule": "X-LEAVE",
+   "predicate": "离开",
+   "triggers": "■ 离开类动词（走出/退出/逃出…）",
+   "strength": "扩展",
+   "candidates": 3,
+   "emitted": 3,
+   "dropped": 0,
+   "extension": true,
+   "note": ""
+  },
+  "X-COMBAT": {
+   "rule": "X-COMBAT",
+   "predicate": "交手",
+   "triggers": "⊞ 攻击/防御动词（近邻双角色）",
+   "strength": "扩展",
+   "candidates": 49,
+   "emitted": 11,
+   "dropped": 1,
+   "extension": true,
+   "note": ""
+  }
+ }
+}

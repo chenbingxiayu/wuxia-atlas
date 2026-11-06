@@ -1,0 +1,258 @@
+{
+ "schema": "wuxia-acceptance-v1",
+ "book": "萍踪侠影录",
+ "chapters": [
+  0
+ ],
+ "chapter_label": "000",
+ "generated_at": "2026-11-06T11:08:47",
+ "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
+ "rule_version": "SKILL_03a v1.8",
+ "sample_ratio_requested": 0.1,
+ "seed": "20261104",
+ "readonly": true,
+ "global_gate": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\pipeline_wuxia.py 萍踪侠影录 check",
+  "exit_code": 0,
+  "lint_codes": {
+   "lint-pn": 0,
+   "integrity": 0,
+   "symbol-lint": 0,
+   "md-lint": 0,
+   "fence-format": 0
+  },
+  "passed": true,
+  "log": "logs\\acceptance\\check_global.log"
+ },
+ "fix_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 萍踪侠影录 --chapters 0 --dry-run",
+  "exit": 0,
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "log": "logs\\acceptance\\fix_dry_run.log"
+ },
+ "chapters_data": {
+  "000": {
+   "chapter": 0,
+   "structural": "pass",
+   "paragraphs": 90,
+   "chars": 17189,
+   "entity_tokens": 1076,
+   "verb_tokens": 229,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 36,
+     "type": "plan_negation_verb",
+     "detail": "计划/否定/假想语境动词（前接“将”）：避",
+     "display": "避",
+     "suggestion": "v1.8：计划/意图/否定/命令内容不标；确认后摘除该动词标记",
+     "sampled": false
+    },
+    {
+     "pn": 40,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊞ 与 verbs.json 候选域 ⊟ 不同：还",
+     "display": "还",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    },
+    {
+     "pn": 40,
+     "type": "plan_negation_verb",
+     "detail": "计划/否定/假想语境动词（前接“要”）：回转",
+     "display": "回转",
+     "suggestion": "v1.8：计划/意图/否定/命令内容不标；确认后摘除该动词标记",
+     "sampled": false
+    },
+    {
+     "pn": 74,
+     "type": "plan_negation_verb",
+     "detail": "计划/否定/假想语境动词（前接“要”）：害死",
+     "display": "害死",
+     "suggestion": "v1.8：计划/意图/否定/命令内容不标；确认后摘除该动词标记",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    3,
+    15,
+    19,
+    23,
+    36,
+    43,
+    55,
+    63,
+    66
+   ],
+   "sample_size": 9,
+   "sample_ratio_actual": 0.1,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [
+    {
+     "chapter": 0,
+     "removed": 7,
+     "added": 19,
+     "for": "E&"
+    },
+    {
+     "chapter": 0,
+     "removed": 13,
+     "added": 36,
+     "for": "E^"
+    }
+   ],
+   "entity_dist": {
+    "#": 49,
+    "$": 87,
+    "%": 63,
+    "&": 2,
+    "+": 9,
+    ";": 35,
+    "=": 86,
+    "@": 480,
+    "^": 5,
+    "{": 32,
+    "~": 14,
+    "•": 165,
+    "◆": 34,
+    "☆": 15
+   },
+   "verb_dist": {
+    "⊞": 75,
+    "⊟": 41,
+    "⊠": 31,
+    "⊡": 3,
+    "■": 79
+   },
+   "pipe_counts": {
+    "⟦⊠": 2,
+    "⟦⊡": 2,
+    "〖%": 63,
+    "〖@": 55
+   },
+   "pipe_sources": {
+    "registry": 55
+   }
+  }
+ },
+ "summary": {
+  "chapters_total": 1,
+  "accepted": 1,
+  "needs_fix": 0,
+  "accepted_chapters": [
+   0
+  ],
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
+  "warnings": 0,
+  "pipe_unsourced": 0,
+  "judgment_items": 4,
+  "sampled_paragraphs": 9,
+  "total_paragraphs": 90,
+  "total_chars": 17189,
+  "entity_tokens": 1076,
+  "verb_tokens": 229,
+  "rhetoric_tokens": 2,
+  "llm_used": false
+ },
+ "risk_stats": [
+  {
+   "category": "① 管道",
+   "hits": 122,
+   "hard": 0,
+   "judgment": 0,
+   "note": "@ 管道 55 条，无来源 0 条，登记表映射冲突 0 条（warning）"
+  },
+  {
+   "category": "② 层-码错位",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "实体/动词括号内码位一致性"
+  },
+  {
+   "category": "③ 括号/标点",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "未闭合/闭合符误写/嵌套/标注内标点；修辞 〘※说时迟、那时快〙 标点属固定表达不判"
+  },
+  {
+   "category": "④ 围栏/套语",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "回目/回末/套语 0；韵文围栏动词 0；回末对实体限实指 1"
+  },
+  {
+   "category": "⑤ 动词域高风险",
+   "hits": 1,
+   "hard": 0,
+   "judgment": 1,
+   "note": "⊠/⊡/⊞ 拘押判刑处死语境 + verbs.json 候选域差异"
+  },
+  {
+   "category": "⑥ 时间/数量边界",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "% 无时间线索 + $ 裸数词/裸量词"
+  },
+  {
+   "category": "⑦ D1/谦辞/纯亲属（抽样）",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "抽样段 #/; 全类型检查"
+  },
+  {
+   "category": "⑧ 计划/否定/假想语境",
+   "hits": 3,
+   "hard": 0,
+   "judgment": 3,
+   "note": "前接 要/想/欲/若/待/将/否则/不/没/未 的动词"
+  }
+ ],
+ "qa_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\qa_annotation_report.py --book 萍踪侠影录 --chapters 0 --out C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\logs\\acceptance\\qa_structure_A_B_000.md --mapping-file logs/mapping_萍踪侠影录",
+  "exit_code": 0,
+  "report": "logs\\acceptance\\qa_structure_A_B_000.md",
+  "strip_mismatch": 0,
+  "pipe_issues": 0,
+  "title_tokens": 0,
+  "fence_tokens": 0,
+  "tao_tokens": 0,
+  "parsed": true
+ },
+ "mapping_loaded": true,
+ "mapping_source": {
+  "registry": "registry/entities.json",
+  "mapping_file": "logs/mapping_萍踪侠影录",
+  "mapping_pairs": 0,
+  "mapping_loaded": true,
+  "scoped": {
+   "registry_entries": 352,
+   "mapping_entries": 0
+  }
+ },
+ "pipe_sources": {
+  "at_pipes": 55,
+  "text_only": 0,
+  "unsourced": 0,
+  "detail_by_source": {
+   "000": {
+    "registry": 55
+   }
+  }
+ },
+ "sample_coverage": {
+  "entity": "@=◆&~;#•+{^%$",
+  "verb": "⊞⊠⊟■",
+  "coverage_swaps": 2
+ }
+}

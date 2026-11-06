@@ -1,0 +1,1649 @@
+{
+  "version": "0.1-draft",
+  "generated": "2026-11-03",
+  "scope": "人物/组织/家族（管道消费方）。地点→gazetteer(docs/14)、技艺与概念→词表(docs/13)。",
+  "status_legend": "approved=种子人工核准; proposed=试点新增待核; pending=证据不足不猜名",
+  "entities": [
+    {
+      "id": "E0001",
+      "type": "@",
+      "canonical": "卓仲廉",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "001",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0002",
+      "type": "@",
+      "canonical": "卓继贤",
+      "aliases": [],
+      "contextual": [
+        "儿子名唤归属（001[4]）"
+      ],
+      "sources": [
+        "001",
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0003",
+      "type": "@",
+      "canonical": "卓一航",
+      "aliases": [],
+      "contextual": [
+        "卓兄",
+        "卓公子",
+        "卓先生"
+      ],
+      "sources": [
+        "001",
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0004",
+      "type": "@",
+      "canonical": "王照希",
+      "aliases": [],
+      "contextual": [
+        "王兄",
+        "王哥哥",
+        "照希"
+      ],
+      "sources": [
+        "001",
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0005",
+      "type": "@",
+      "canonical": "孟灿",
+      "aliases": [],
+      "contextual": [
+        "孟伯伯",
+        "孟武师"
+      ],
+      "sources": [
+        "001",
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0006",
+      "type": "@",
+      "canonical": "孟秋霞",
+      "aliases": [],
+      "contextual": [
+        "霞儿",
+        "霞妹",
+        "秋霞"
+      ],
+      "sources": [
+        "001",
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0007",
+      "type": "@",
+      "canonical": "白敏",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0008",
+      "type": "@",
+      "canonical": "耿绍南",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "001",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0009",
+      "type": "@",
+      "canonical": "石浩",
+      "aliases": [],
+      "contextual": [
+        "石指挥"
+      ],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0010",
+      "type": "@",
+      "canonical": "郑贵妃",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0011",
+      "type": "@",
+      "canonical": "魏忠贤",
+      "aliases": [],
+      "contextual": [
+        "魏公公"
+      ],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0012",
+      "type": "@",
+      "canonical": "常洛",
+      "aliases": [],
+      "contextual": [
+        "太子",
+        "太子常洛"
+      ],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": "庙号/称号类指称挂管道"
+    },
+    {
+      "id": "E0013",
+      "type": "@",
+      "canonical": "常洵",
+      "aliases": [],
+      "contextual": [
+        "二皇子",
+        "二皇子常洵"
+      ],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0014",
+      "type": "@",
+      "canonical": "郑洪台",
+      "aliases": [],
+      "contextual": [
+        "郑前辈",
+        "郑老前辈",
+        "姓郑的"
+      ],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0015",
+      "type": "@",
+      "canonical": "贞乾道人",
+      "aliases": [],
+      "contextual": [
+        "贞乾道长",
+        "贞乾"
+      ],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0016",
+      "type": "@",
+      "canonical": "红云道人",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0017",
+      "type": "@",
+      "canonical": "紫阳道长",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0018",
+      "type": "@",
+      "canonical": "罗金峰",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0019",
+      "type": "@",
+      "canonical": "练霓裳",
+      "aliases": [
+        "玉罗刹",
+        "霓裳",
+        "练女",
+        "白发魔女"
+      ],
+      "contextual": [
+        "练小姐",
+        "练姑娘"
+      ],
+      "sources": [
+        "001",
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": "揭名前亦挂管道（01g D1 正例）；玉罗刹为江湖名号"
+    },
+    {
+      "id": "E0020",
+      "type": "@",
+      "canonical": "朱翊钧",
+      "aliases": [
+        "神宗",
+        "明神宗"
+      ],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0021",
+      "type": "@",
+      "canonical": "朱元璋",
+      "aliases": [
+        "明太祖"
+      ],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0022",
+      "type": "@",
+      "canonical": "李密",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0023",
+      "type": "@",
+      "canonical": "顾宪成",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0024",
+      "type": "@",
+      "canonical": "申时行",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0025",
+      "type": "@",
+      "canonical": "王锡爵",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0026",
+      "type": "@",
+      "canonical": "王家屏",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0027",
+      "type": "@",
+      "canonical": "郑庄公",
+      "aliases": [
+        "郑伯"
+      ],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0028",
+      "type": "@",
+      "canonical": "共叔段",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0029",
+      "type": "@",
+      "canonical": "应修阳",
+      "aliases": [],
+      "contextual": [
+        "应大哥"
+      ],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": "应大哥映射为 004 回内证据"
+    },
+    {
+      "id": "E0030",
+      "type": "@",
+      "canonical": "凌慕华",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": "岳鸣珂师娘；日记作者；文内未复合名前称\"师娘\""
+    },
+    {
+      "id": "E0031",
+      "type": "@",
+      "canonical": "霍天都",
+      "aliases": [
+        "天都居士"
+      ],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0032",
+      "type": "@",
+      "canonical": "岳鸣珂",
+      "aliases": [
+        "晦明禅师"
+      ],
+      "contextual": [
+        "姓岳的"
+      ],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": "2026-11-05 考订：028 文内证据（昌钦法师认出「你是岳鸣珂」+自述随熊经略巡边后削发），出家后法号晦明禅师；镜明长老（少林）为其师，非同一人（010 文内：岳鸣珂自述「镜明长老说我颇有慧根」）"
+    },
+    {
+      "id": "E0033",
+      "type": "@",
+      "canonical": "赵挺",
+      "aliases": [],
+      "contextual": [
+        "赵兄",
+        "嵩阳剑客"
+      ],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0034",
+      "type": "@",
+      "canonical": "范筑",
+      "aliases": [],
+      "contextual": [
+        "范二哥",
+        "金刚手（称谓前缀）"
+      ],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0035",
+      "type": "@",
+      "canonical": "凌霄",
+      "aliases": [
+        "玉面妖狐"
+      ],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": "全形\"玉面妖狐凌霄\"显示串覆盖后挂管道"
+    },
+    {
+      "id": "E0036",
+      "type": "@",
+      "canonical": "青松道人",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0037",
+      "type": "@",
+      "canonical": "熊廷弼",
+      "aliases": [
+        "熊经略"
+      ],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": "2026-11-03 全书检索升级：熊廷弼×219（经略辽东线主角），熊经略为其职衔称谓——书内证据，非猜测"
+    },
+    {
+      "id": "E0038",
+      "type": "@",
+      "canonical": "柳西铭",
+      "aliases": [
+        "柳叔叔",
+        "柳伯伯"
+      ],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": "2026-11-03 全书检索升级：武师柳西铭×45，柳家=其家（白石道人住柳西铭家中），白敏居柳家=柳叔叔家——证据链闭合"
+    },
+    {
+      "id": "E0039",
+      "type": "@",
+      "canonical": "郑国泰",
+      "aliases": [
+        "郑国舅"
+      ],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": "2026-11-03 全书检索升级：书中明文「哥哥郑国泰」（郑贵妃兄）——郑国舅=郑国泰书内证据"
+    },
+    {
+      "id": "E0040",
+      "type": "@",
+      "canonical": "云燕平",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "005"
+      ],
+      "status": "proposed",
+      "note": "大内卫士·私通满洲三人之一；柔功"
+    },
+    {
+      "id": "E0041",
+      "type": "@",
+      "canonical": "金千岩",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "005"
+      ],
+      "status": "proposed",
+      "note": "大内卫士；阴风毒砂掌（三日毒发七日身亡）"
+    },
+    {
+      "id": "E0042",
+      "type": "@",
+      "canonical": "王嘉胤",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "005"
+      ],
+      "status": "proposed",
+      "note": "王照希之父；与玉罗刹订盟（史实农民军首领，书内证据为准）"
+    },
+    {
+      "id": "E0043",
+      "type": "@",
+      "canonical": "方从哲",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "005"
+      ],
+      "status": "proposed",
+      "note": "大学士（史实人物）"
+    },
+    {
+      "id": "E0044",
+      "type": "@",
+      "canonical": "秦指挥",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "005"
+      ],
+      "status": "approved",
+      "note": "锦衣卫随行指挥，全称未现；2026-11-04 证据搜索收口：全书 32 回 40.4 万字检索确认本名未揭示，姓+衔称谓即规范名（G-25 三级处理·人名化），关闭 pending"
+    },
+    {
+      "id": "E0045",
+      "type": "@",
+      "canonical": "王兵备",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "005"
+      ],
+      "status": "approved",
+      "note": "兵备道称谓，本名未现；2026-11-04 证据搜索收口：全书 32 回 40.4 万字检索确认本名未揭示，姓+衔称谓即规范名（G-25 三级处理·人名化），关闭 pending"
+    },
+    {
+      "id": "E0046",
+      "type": "@",
+      "canonical": "王守备",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "005"
+      ],
+      "status": "approved",
+      "note": "守备称谓，本名未现；2026-11-04 证据搜索收口：全书 32 回 40.4 万字检索确认本名未揭示，姓+衔称谓即规范名（G-25 三级处理·人名化），关闭 pending"
+    },
+    {
+      "id": "E0048",
+      "type": "@",
+      "canonical": "周钦差",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "005"
+      ],
+      "status": "approved",
+      "note": "副钦差，姓周，名未现；2026-11-04 证据搜索收口：全书 32 回 40.4 万字检索确认本名未揭示，姓+衔称谓即规范名（G-25 三级处理·人名化），关闭 pending"
+    },
+    {
+      "id": "E0049",
+      "type": "@",
+      "canonical": "铁飞龙",
+      "aliases": [
+        "铁老贼",
+        "铁老怪",
+        "铁老头子",
+        "清风山老怪（旧称）"
+      ],
+      "contextual": [],
+      "sources": [
+        "005",
+        "006"
+      ],
+      "status": "proposed",
+      "note": "006 揭名；蒙面少女之父；龙门铁家庄庄主；膝下无儿只有一女"
+    },
+    {
+      "id": "E0050",
+      "type": "@",
+      "canonical": "铁珊瑚",
+      "aliases": [
+        "阿瑚",
+        "珊瑚",
+        "珊瑚小姐",
+        "蒙面少女（005 旧称）"
+      ],
+      "contextual": [],
+      "sources": [
+        "005",
+        "006"
+      ],
+      "status": "proposed",
+      "note": "铁飞龙之女；005 蒙面少女身份坐实（006 [15][32]）"
+    },
+    {
+      "id": "E0051",
+      "type": "@",
+      "canonical": "穆九娘",
+      "aliases": [
+        "九娘",
+        "中年美妇（005 旧称）"
+      ],
+      "contextual": [],
+      "sources": [
+        "005",
+        "006"
+      ],
+      "status": "proposed",
+      "note": "铁珊瑚庶母；铁飞龙宠妾；偷练玉罗刹剑谱剑法"
+    },
+    {
+      "id": "E0052",
+      "type": "@",
+      "canonical": "张三丰",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "006"
+      ],
+      "status": "proposed",
+      "note": "太极派鼻祖（史实人物，【按】注内）"
+    },
+    {
+      "id": "E0203",
+      "type": "&",
+      "canonical": "铁家",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "006"
+      ],
+      "status": "proposed",
+      "note": "铁飞龙家族（&铁家，006 [15]）"
+    },
+    {
+      "id": "E0101",
+      "type": "◆",
+      "canonical": "武当派",
+      "aliases": [
+        "武当"
+      ],
+      "contextual": [],
+      "sources": [
+        "001",
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0102",
+      "type": "◆",
+      "canonical": "龙门帮",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "001"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0103",
+      "type": "◆",
+      "canonical": "锦衣卫",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0104",
+      "type": "◆",
+      "canonical": "东厂",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0105",
+      "type": "◆",
+      "canonical": "西厂",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0106",
+      "type": "◆",
+      "canonical": "满洲",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": "政权用法；族群语义出现时再议 ~"
+    },
+    {
+      "id": "E0107",
+      "type": "◆",
+      "canonical": "朝廷",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0108",
+      "type": "◆",
+      "canonical": "东林党",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0109",
+      "type": "◆",
+      "canonical": "嵩阳派",
+      "aliases": [
+        "嵩阳"
+      ],
+      "contextual": [],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0110",
+      "type": "◆",
+      "canonical": "少林派",
+      "aliases": [
+        "少林"
+      ],
+      "contextual": [],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0111",
+      "type": "◆",
+      "canonical": "峨嵋派",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0112",
+      "type": "◆",
+      "canonical": "华山派",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0113",
+      "type": "◆",
+      "canonical": "雪山派",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0114",
+      "type": "◆",
+      "canonical": "郑国",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0115",
+      "type": "◆",
+      "canonical": "东西两厂（东厂+西厂合称）",
+      "aliases": [
+        "东西厂"
+      ],
+      "contextual": [],
+      "sources": [
+        "003",
+        "004"
+      ],
+      "status": "approved",
+      "note": "2026-11-03 用户核准：独立合称条目（非 alias 归并）"
+    },
+    {
+      "id": "E0201",
+      "type": "&",
+      "canonical": "卓家",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "004"
+      ],
+      "status": "approved",
+      "note": "001 v3 口径（docs/21 R3）"
+    },
+    {
+      "id": "E0202",
+      "type": "&",
+      "canonical": "孟家",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "003"
+      ],
+      "status": "approved",
+      "note": ""
+    },
+    {
+      "id": "E0204",
+      "type": "@",
+      "canonical": "何绿华",
+      "aliases": [
+        "绿华"
+      ],
+      "contextual": [],
+      "sources": [
+        "008",
+        "009",
+        "017",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 08 回）"
+    },
+    {
+      "id": "E0205",
+      "type": "@",
+      "canonical": "何萼华",
+      "aliases": [
+        "萼华"
+      ],
+      "contextual": [],
+      "sources": [
+        "008",
+        "009",
+        "011",
+        "013"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 08 回）"
+    },
+    {
+      "id": "E0206",
+      "type": "@",
+      "canonical": "公孙大娘",
+      "aliases": [
+        "红花鬼母",
+        "红花鬼母公孙大娘",
+        "金嫂子"
+      ],
+      "contextual": [],
+      "sources": [
+        "013",
+        "014",
+        "015",
+        "016"
+      ],
+      "status": "proposed",
+      "note": "绰号红花鬼母；金独异之妻（020 文内多次连称）"
+    },
+    {
+      "id": "E0207",
+      "type": "@",
+      "canonical": "哈川",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "029",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 029 回）"
+    },
+    {
+      "id": "E0208",
+      "type": "@",
+      "canonical": "唐努",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "017",
+        "018",
+        "029",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 017 回）"
+    },
+    {
+      "id": "E0209",
+      "type": "@",
+      "canonical": "天德上人",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "029",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 029 回）"
+    },
+    {
+      "id": "E0210",
+      "type": "@",
+      "canonical": "天龙上人",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "029",
+        "031",
+        "032"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 029 回）"
+    },
+    {
+      "id": "E0211",
+      "type": "@",
+      "canonical": "孟萨思",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "028",
+        "029",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 028 回）"
+    },
+    {
+      "id": "E0212",
+      "type": "@",
+      "canonical": "客娉婷",
+      "aliases": [
+        "娉婷",
+        "娉婷妹子",
+        "婷儿"
+      ],
+      "contextual": [],
+      "sources": [
+        "012",
+        "016",
+        "022",
+        "023"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 012 回）"
+    },
+    {
+      "id": "E0213",
+      "type": "@",
+      "canonical": "客氏",
+      "aliases": [
+        "客魏"
+      ],
+      "contextual": [],
+      "sources": [
+        "011",
+        "012",
+        "013",
+        "014"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 011 回）"
+    },
+    {
+      "id": "E0214",
+      "type": "@",
+      "canonical": "巴龙",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "029",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 029 回）"
+    },
+    {
+      "id": "E0215",
+      "type": "@",
+      "canonical": "归有章",
+      "aliases": [
+        "大哥",
+        "归大哥",
+        "归老大",
+        "鹰爪王归有章"
+      ],
+      "contextual": [],
+      "sources": [
+        "001",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 01 回）"
+    },
+    {
+      "id": "E0216",
+      "type": "@",
+      "canonical": "慕容冲",
+      "aliases": [
+        "慕容先生",
+        "慕容大哥"
+      ],
+      "contextual": [
+        "慕容总管"
+      ],
+      "sources": [
+        "012",
+        "013",
+        "016",
+        "018"
+      ],
+      "status": "proposed",
+      "note": "卫士统领/都头级头目（020 文内称慕容总管）"
+    },
+    {
+      "id": "E0217",
+      "type": "@",
+      "canonical": "成章五",
+      "aliases": [
+        "堡主",
+        "成堡主",
+        "风砂堡主"
+      ],
+      "contextual": [],
+      "sources": [
+        "031",
+        "032"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 031 回）"
+    },
+    {
+      "id": "E0218",
+      "type": "@",
+      "canonical": "朱宝椿",
+      "aliases": [
+        "朱寨主",
+        "火灵猿",
+        "火灵猿朱宝椿"
+      ],
+      "contextual": [],
+      "sources": [
+        "001",
+        "022"
+      ],
+      "status": "proposed",
+      "note": "绰号火灵猿（001 文内）"
+    },
+    {
+      "id": "E0219",
+      "type": "@",
+      "canonical": "李天扬",
+      "aliases": [
+        "天扬",
+        "李封",
+        "李指挥",
+        "李钦差"
+      ],
+      "contextual": [],
+      "sources": [
+        "008",
+        "016",
+        "017",
+        "029"
+      ],
+      "status": "proposed",
+      "note": "2026-11-05 考订合并 E0047（李钦差）：008 回石浩同一叙事段先述「李钦差和周钦差逃到河南」（005 回事），后述「太子差遣我和李指挥李天扬出京保护卓一航」，同段两人线索相接；冻结映射表 mapping_frozen_20261104 已登记 李钦差→李天扬、李指挥→李天扬；016 回「锦衣卫的指挥李天扬」。原 E0047「本名未揭示」结论系散文检索漏管道/映射证据，废弃。另收 李封（frozen 映射别名，所指待 S-03b 复核）。"
+    },
+    {
+      "id": "E0220",
+      "type": "@",
+      "canonical": "李岩",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "021",
+        "022"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 021 回）"
+    },
+    {
+      "id": "E0221",
+      "type": "@",
+      "canonical": "李申时",
+      "aliases": [
+        "申儿",
+        "申时",
+        "申时哥哥"
+      ],
+      "contextual": [],
+      "sources": [
+        "016",
+        "017",
+        "026"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 016 回）"
+    },
+    {
+      "id": "E0222",
+      "type": "@",
+      "canonical": "李自成",
+      "aliases": [
+        "小闯王"
+      ],
+      "contextual": [],
+      "sources": [
+        "018",
+        "019",
+        "022",
+        "027"
+      ],
+      "status": "proposed",
+      "note": "史实人物"
+    },
+    {
+      "id": "E0223",
+      "type": "@",
+      "canonical": "杜明忠",
+      "aliases": [
+        "明忠"
+      ],
+      "contextual": [],
+      "sources": [
+        "022",
+        "024"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 022 回）"
+    },
+    {
+      "id": "E0224",
+      "type": "@",
+      "canonical": "杨涟",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "009",
+        "010",
+        "011",
+        "012"
+      ],
+      "status": "proposed",
+      "note": "史实人物（左副都御史）"
+    },
+    {
+      "id": "E0225",
+      "type": "@",
+      "canonical": "由校",
+      "aliases": [
+        "熹宗",
+        "由哥儿"
+      ],
+      "contextual": [],
+      "sources": [
+        "011",
+        "012",
+        "013",
+        "014"
+      ],
+      "status": "proposed",
+      "note": "即天启帝（明熹宗朱由校）"
+    },
+    {
+      "id": "E0226",
+      "type": "@",
+      "canonical": "白石道人",
+      "aliases": [
+        "哥哥",
+        "大舅",
+        "屠龙剑客",
+        "白石",
+        "白石贼道"
+      ],
+      "contextual": [],
+      "sources": [
+        "001",
+        "007",
+        "008",
+        "009"
+      ],
+      "status": "proposed",
+      "note": "武当四长老之一（026 文内：黄叶白石红云青蓑四个长老）"
+    },
+    {
+      "id": "E0227",
+      "type": "@",
+      "canonical": "神一元",
+      "aliases": [
+        "神老二"
+      ],
+      "contextual": [],
+      "sources": [
+        "018",
+        "022",
+        "027",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 018 回）"
+    },
+    {
+      "id": "E0228",
+      "type": "@",
+      "canonical": "神大元",
+      "aliases": [
+        "神老大"
+      ],
+      "contextual": [],
+      "sources": [
+        "022",
+        "024",
+        "027",
+        "030"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 022 回）"
+    },
+    {
+      "id": "E0229",
+      "type": "@",
+      "canonical": "红娘子",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "021"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 021 回）"
+    },
+    {
+      "id": "E0230",
+      "type": "@",
+      "canonical": "罗铁臂",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "022",
+        "024",
+        "025",
+        "028"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 022 回）"
+    },
+    {
+      "id": "E0231",
+      "type": "@",
+      "canonical": "虞新城",
+      "aliases": [
+        "新城"
+      ],
+      "contextual": [],
+      "sources": [
+        "007",
+        "008",
+        "018",
+        "026"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 07 回）"
+    },
+    {
+      "id": "E0232",
+      "type": "@",
+      "canonical": "袁崇焕",
+      "aliases": [
+        "袁相公"
+      ],
+      "contextual": [],
+      "sources": [
+        "022",
+        "023",
+        "024",
+        "028"
+      ],
+      "status": "proposed",
+      "note": "史实人物"
+    },
+    {
+      "id": "E0233",
+      "type": "@",
+      "canonical": "辛五",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "029"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 029 回）"
+    },
+    {
+      "id": "E0234",
+      "type": "@",
+      "canonical": "连城虎",
+      "aliases": [
+        "连总管"
+      ],
+      "contextual": [],
+      "sources": [
+        "016",
+        "020",
+        "021",
+        "023"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 016 回）"
+    },
+    {
+      "id": "E0235",
+      "type": "@",
+      "canonical": "金独异",
+      "aliases": [
+        "金大哥",
+        "金老怪",
+        "金老贼"
+      ],
+      "contextual": [
+        "金老前辈",
+        "金老大",
+        "金老爹"
+      ],
+      "sources": [
+        "007",
+        "009",
+        "010",
+        "011"
+      ],
+      "status": "proposed",
+      "note": "红花鬼母之夫（020 文内称谓）"
+    },
+    {
+      "id": "E0236",
+      "type": "@",
+      "canonical": "镜明长老",
+      "aliases": [
+        "镜明",
+        "镜明大师",
+        "镜明禅师",
+        "镜明老禅师",
+        "镜明老秃"
+      ],
+      "contextual": [],
+      "sources": [
+        "009",
+        "010",
+        "011",
+        "016"
+      ],
+      "status": "proposed",
+      "note": "少林寺方丈（009-011 金标显示串：镜明/镜明禅师/镜明老禅师/镜明老秃/镜明大师）；岳鸣珂之师门长老（010：岳鸣珂自述「镜明长老说我颇有慧根」）。2026-11-05 修正：先前误收 晦明禅师/晦明 别名，系 028 回机器错挂管道（已改挂 岳鸣珂，见 docs/47）污染回填采证。"
+    },
+    {
+      "id": "E0237",
+      "type": "@",
+      "canonical": "霍元仲",
+      "aliases": [
+        "霍老二",
+        "霍老头",
+        "霍老头子"
+      ],
+      "contextual": [],
+      "sources": [
+        "025",
+        "028",
+        "031",
+        "032"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 025 回）"
+    },
+    {
+      "id": "E0238",
+      "type": "@",
+      "canonical": "飞红巾",
+      "aliases": [
+        "哈玛雅"
+      ],
+      "contextual": [],
+      "sources": [
+        "030",
+        "032"
+      ],
+      "status": "proposed",
+      "note": "回疆女杰（030/032 塞外线）"
+    },
+    {
+      "id": "E0239",
+      "type": "@",
+      "canonical": "黄叶道人",
+      "aliases": [
+        "二师兄黄叶",
+        "黄叶",
+        "黄叶道长"
+      ],
+      "contextual": [],
+      "sources": [
+        "001",
+        "007",
+        "008",
+        "009"
+      ],
+      "status": "proposed",
+      "note": "武当四长老之一（026 文内并称）"
+    },
+    {
+      "id": "E0240",
+      "type": "@",
+      "canonical": "龙啸云",
+      "aliases": [
+        "姓龙的小子",
+        "龙大哥"
+      ],
+      "contextual": [],
+      "sources": [
+        "008",
+        "016",
+        "017",
+        "022"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 08 回）"
+    },
+    {
+      "id": "E0241",
+      "type": "@",
+      "canonical": "龙达三",
+      "aliases": [
+        "达三",
+        "龙达三镖师",
+        "龙镖头",
+        "龙镖师"
+      ],
+      "contextual": [],
+      "sources": [
+        "013",
+        "014",
+        "015",
+        "016"
+      ],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填（首现 013 回）"
+    },
+    {
+      "id": "E0242",
+      "type": "@",
+      "canonical": "昌钦法师",
+      "aliases": [
+        "昌钦大法师",
+        "昌钦大喇嘛"
+      ],
+      "contextual": [],
+      "sources": [],
+      "status": "proposed",
+      "note": "红衣喇嘛；028 文内与岳鸣珂（晦明禅师）相认并交手；024 为宫中护身法师"
+    },
+    {
+      "id": "E0243",
+      "type": "@",
+      "canonical": "辛龙子",
+      "aliases": [],
+      "contextual": [],
+      "sources": [],
+      "status": "proposed",
+      "note": "029-032 塞外线少年（晦明禅师门下线索，028 收徒段）"
+    },
+    {
+      "id": "E0244",
+      "type": "@",
+      "canonical": "公孙雷",
+      "aliases": [],
+      "contextual": [],
+      "sources": [],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填"
+    },
+    {
+      "id": "E0245",
+      "type": "@",
+      "canonical": "唐家璧",
+      "aliases": [],
+      "contextual": [],
+      "sources": [],
+      "status": "proposed",
+      "note": "C24 concordance 未登记回填"
+    },
+    {
+      "id": "E0246",
+      "type": "@",
+      "canonical": "哈萨克酋长",
+      "aliases": [],
+      "contextual": [],
+      "sources": [
+        "030"
+      ],
+      "status": "proposed",
+      "note": "030 哈萨克部酋长，姓名未现；按 G-25 三级处理·人名化（同 E0047 李钦差先例）；C20 建议拆称谓不采纳"
+    }
+  ]
+}

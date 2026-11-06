@@ -1,0 +1,312 @@
+{
+ "schema": "wuxia-acceptance-v1",
+ "book": "七剑下天山",
+ "chapters": [
+  6,
+  17
+ ],
+ "chapter_label": "006,017",
+ "generated_at": "2026-11-06T02:25:11",
+ "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
+ "rule_version": "SKILL_03a v1.8",
+ "sample_ratio_requested": 0.1,
+ "seed": "20261104",
+ "readonly": true,
+ "global_gate": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\pipeline_wuxia.py 七剑下天山 check",
+  "exit_code": 0,
+  "lint_codes": {
+   "lint-pn": 0,
+   "integrity": 0,
+   "symbol-lint": 0,
+   "md-lint": 0,
+   "fence-format": 0
+  },
+  "passed": true,
+  "log": "logs\\acceptance\\check_global.log"
+ },
+ "fix_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 七剑下天山 --chapters 6,17 --dry-run",
+  "exit": 0,
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "log": "logs\\acceptance\\fix_dry_run.log"
+ },
+ "chapters_data": {
+  "006": {
+   "chapter": 6,
+   "structural": "pass",
+   "paragraphs": 72,
+   "chars": 11654,
+   "entity_tokens": 708,
+   "verb_tokens": 245,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    4,
+    14,
+    25,
+    34,
+    42,
+    47,
+    53
+   ],
+   "sample_size": 7,
+   "sample_ratio_actual": 0.0972,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [
+    {
+     "chapter": 6,
+     "removed": 24,
+     "added": 25,
+     "for": "E&"
+    },
+    {
+     "chapter": 6,
+     "removed": 26,
+     "added": 4,
+     "for": "E~"
+    },
+    {
+     "chapter": 6,
+     "removed": 35,
+     "added": 14,
+     "for": "E◆"
+    }
+   ],
+   "entity_dist": {
+    "#": 30,
+    "$": 92,
+    "%": 13,
+    "&": 1,
+    "+": 8,
+    ";": 9,
+    "=": 37,
+    "@": 343,
+    "^": 5,
+    "{": 2,
+    "~": 3,
+    "•": 140,
+    "◆": 2,
+    "☆": 23
+   },
+   "verb_dist": {
+    "⊞": 130,
+    "⊟": 34,
+    "⊠": 9,
+    "⊡": 1,
+    "■": 71
+   },
+   "pipe_counts": {
+    "⟦⊞": 1,
+    "〖%": 13,
+    "〖@": 12
+   },
+   "pipe_sources": {
+    "registry": 3,
+    "registry+mapping_snapshot": 9
+   }
+  },
+  "017": {
+   "chapter": 17,
+   "structural": "pass",
+   "paragraphs": 73,
+   "chars": 13066,
+   "entity_tokens": 844,
+   "verb_tokens": 241,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 4,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊠ 与 verbs.json 候选域 ⊟ 不同：断",
+     "display": "断",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    },
+    {
+     "pn": 4,
+     "type": "verb_domain_risk",
+     "detail": "⊠ 用于纯攻击动作（04f：攻击归⊞/杀伤结果归⊠）：戳",
+     "display": "戳",
+     "suggestion": "按 04f §2.2 受伤阈值裁决：未达阈值改 ⊞，达阈值保留 ⊠",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    9,
+    21,
+    27,
+    55,
+    60,
+    61,
+    65
+   ],
+   "sample_size": 7,
+   "sample_ratio_actual": 0.0959,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 61,
+    "$": 60,
+    "%": 13,
+    "+": 1,
+    ";": 16,
+    "=": 54,
+    "@": 486,
+    "^": 6,
+    "{": 6,
+    "~": 4,
+    "•": 110,
+    "◆": 5,
+    "☆": 22
+   },
+   "verb_dist": {
+    "⊞": 124,
+    "⊟": 25,
+    "⊠": 29,
+    "⊡": 5,
+    "■": 58
+   },
+   "pipe_counts": {
+    "⟦⊡": 2,
+    "〖%": 13,
+    "〖@": 95
+   },
+   "pipe_sources": {
+    "registry": 8,
+    "registry+mapping_snapshot": 87
+   }
+  }
+ },
+ "summary": {
+  "chapters_total": 2,
+  "accepted": 2,
+  "needs_fix": 0,
+  "accepted_chapters": [
+   6,
+   17
+  ],
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
+  "warnings": 0,
+  "pipe_unsourced": 0,
+  "judgment_items": 2,
+  "sampled_paragraphs": 14,
+  "total_paragraphs": 145,
+  "total_chars": 24720,
+  "entity_tokens": 1552,
+  "verb_tokens": 486,
+  "rhetoric_tokens": 4,
+  "llm_used": false
+ },
+ "risk_stats": [
+  {
+   "category": "① 管道",
+   "hits": 136,
+   "hard": 0,
+   "judgment": 0,
+   "note": "@ 管道 107 条，无来源 0 条，登记表映射冲突 0 条（warning）"
+  },
+  {
+   "category": "② 层-码错位",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "实体/动词括号内码位一致性"
+  },
+  {
+   "category": "③ 括号/标点",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "未闭合/闭合符误写/嵌套/标注内标点；修辞 〘※说时迟、那时快〙 标点属固定表达不判"
+  },
+  {
+   "category": "④ 围栏/套语",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "回目/回末/套语 0；韵文围栏动词 0；回末对实体限实指 1"
+  },
+  {
+   "category": "⑤ 动词域高风险",
+   "hits": 2,
+   "hard": 0,
+   "judgment": 2,
+   "note": "⊠/⊡/⊞ 拘押判刑处死语境 + verbs.json 候选域差异"
+  },
+  {
+   "category": "⑥ 时间/数量边界",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "% 无时间线索 + $ 裸数词/裸量词"
+  },
+  {
+   "category": "⑦ D1/谦辞/纯亲属（抽样）",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "抽样段 #/; 全类型检查"
+  },
+  {
+   "category": "⑧ 计划/否定/假想语境",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "前接 要/想/欲/若/待/将/否则/不/没/未 的动词"
+  }
+ ],
+ "qa_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\qa_annotation_report.py --book 七剑下天山 --chapters 6,17 --out C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\logs\\acceptance\\qa_structure_A_B_006,017.md --mapping-file logs/mapping_七剑下天山",
+  "exit_code": 0,
+  "report": "logs\\acceptance\\qa_structure_A_B_006,017.md",
+  "strip_mismatch": 0,
+  "pipe_issues": 0,
+  "title_tokens": 0,
+  "fence_tokens": 0,
+  "tao_tokens": 0,
+  "parsed": true
+ },
+ "mapping_loaded": true,
+ "mapping_source": {
+  "registry": "registry/entities.json",
+  "mapping_file": "logs/mapping_七剑下天山",
+  "mapping_pairs": 287,
+  "mapping_loaded": true,
+  "scoped": {
+   "registry_entries": 42,
+   "mapping_entries": 0
+  }
+ },
+ "pipe_sources": {
+  "at_pipes": 107,
+  "text_only": 0,
+  "unsourced": 0,
+  "detail_by_source": {
+   "006": {
+    "registry": 3,
+    "registry+mapping_snapshot": 9
+   },
+   "017": {
+    "registry": 8,
+    "registry+mapping_snapshot": 87
+   }
+  }
+ },
+ "sample_coverage": {
+  "entity": "@=◆&~;#☆•+{^%$",
+  "verb": "⊞⊠⊡⊟■",
+  "coverage_swaps": 3
+ }
+}

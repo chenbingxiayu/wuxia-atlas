@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>模块库 · 问答组件</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#e9e2d2;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  h3.sec{font-family:"Noto Serif SC","SimSun",serif;font-weight:900;font-size:18px;margin:0 0 8px;padding-bottom:5px;
+    border-bottom:1px solid #d8cdb8;letter-spacing:2px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.6}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:4px 14px;font-size:13.5px;background:#fbf8ef;color:#5a544a;margin:3px;cursor:pointer}
+  .chip.on{border-color:#a63a2b;color:#a63a2b;font-weight:700}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:#8c8477}
+</style>
+</helmet>
+<div style="width:1200px;height:1060px;box-sizing:border-box;padding:48px 56px;background:#fbf8ef;display:flex;flex-direction:column;gap:22px">
+
+  <div style="display:flex;align-items:baseline;gap:14px">
+    <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:24px;letter-spacing:3px">问答组件</span>
+    <span class="lab">零幻觉考据 · 规则式路由 + 确定性求解 · 模块库 5/7</span>
+  </div>
+
+  <div>
+    <h3 class="sec">自然语言路由框（置顶 · 只有路由无生成）</h3>
+    <div style="background:#f5efe4;padding:12px 16px;border-radius:4px;display:flex;gap:10px;align-items:center;margin-top:8px">
+      <input style="flex:1;padding:12px 16px;border:2px solid #2b2b2b;border-radius:4px;font-family:inherit;font-size:16px;background:#fbf8ef"
+        value="练霓裳去过哪里？" aria-label="直接问一个问题">
+      <button style="border:2px solid #a63a2b;background:#a63a2b;color:#fbf8ef;border-radius:4px;padding:10px 28px;font-size:15px;cursor:pointer;font-family:inherit">问</button>
+    </div>
+    <div class="lab" style="margin-top:6px">placeholder：直接问：谁杀了金独异？练霓裳去过哪里？——关键词规则路由到模板；未匹配回落模板选择器（零幻觉不破）。</div>
+  </div>
+
+  <div>
+    <h3 class="sec">模板 chips（双入口并存 · 六模板 + 随轨新模板）</h3>
+    <div style="background:#f5efe4;padding:10px 14px;border-radius:4px">
+      <span class="chip on">谁杀了 X</span><span class="chip">X 在哪几回出场</span><span class="chip">X 的师承 / 传人</span>
+      <span class="chip">Y 派有什么武功</span><span class="chip">X 和 Y 交过手吗</span><span class="chip">X 的神兵 / 持物</span>
+      <span class="chip">X 去过哪些地方</span><span class="chip" style="border-style:dashed;color:#8c8477">X 和 Y 什么关系（随轨）</span>
+      <span class="chip" style="border-style:dashed;color:#8c8477">X 的关键剧情（随轨）</span>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">答案卡 · killer（凶手聚合 + audit 存疑标注）</h3>
+    <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:16px 20px;margin-top:8px;max-width:760px">
+      <p style="margin:0 0 10px;font-weight:700;font-size:15px">击杀 练霓裳 的记录：3 起（去重后 2 名凶手）</p>
+      <ul style="list-style:none;margin:0;padding:0;font-size:14px">
+        <li style="padding:6px 0;border-bottom:1px dashed #e6ddc8;display:flex;gap:10px;align-items:baseline">
+          <b>岳鸣珂</b><span class="lab">2 起（复杀疑云）</span>
+          <span class="loc" style="margin-left:auto">白发魔女传·004:33</span>
+        </li>
+        <li style="padding:6px 0;border-bottom:1px dashed #e6ddc8">
+          <b>郑洪台等七人</b><span class="lab">1 起</span>
+          <span class="loc" style="margin-left:auto">白发魔女传·004:51</span>
+        </li>
+      </ul>
+      <div style="background:#f6e8d9;border:1px solid #a63a2b;border-radius:4px;padding:8px 14px;margin-top:10px;font-size:13px;color:#7f2c21;line-height:1.8">
+        ⚠ 此记录存疑：死者此后仍在出场（197 次）——剧情保护或误标，详见<a href="#" style="color:#a63a2b">穿帮雷达</a>。</div>
+      <div style="display:flex;gap:14px;margin-top:10px;align-items:center">
+        <span class="lab">口径：事件表 verb∈{杀,诛,毙} 且宾语=X · L0 定位符。</span>
+        <a href="#" class="lab" style="margin-left:auto;color:#34546e;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px">复制链接</a>
+      </div>
+    </div>
+    <p class="lab" style="margin-top:6px">分工：问答展示记录 + 存疑标注（考据工具）；游戏侧才静默过滤。同一条 audit 数据三处消费。</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    <div>
+      <h3 class="sec">答案卡 · 行踪（本期新模板 · 地图导流）</h3>
+      <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:14px 18px">
+        <p style="margin:0 0 8px;font-weight:700;font-size:14px">练霓裳 的行经之地（按故事顺序）：</p>
+        <ul style="list-style:none;margin:0;padding:0;font-size:13.5px">
+          <li style="padding:4px 0;border-bottom:1px dashed #e6ddc8"><a href="#" style="color:#34546e">明月峡 · 白发 004 →</a></li>
+          <li style="padding:4px 0;border-bottom:1px dashed #e6ddc8"><a href="#" style="color:#34546e">武当山 · 白发 018 →</a></li>
+          <li style="padding:4px 0"><a href="#" style="color:#34546e">天山 · 七剑 021 →</a></li>
+        </ul>
+        <div style="display:flex;gap:12px;margin-top:10px">
+          <a href="#" class="lab" style="color:#34546e;border-bottom:1px solid #34546e">行踪地图 →</a>
+          <span class="lab" style="margin-left:auto">口径：atlas 切片 person 索引 · L0。</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">答案卡 · 档案未载（诚实空态）</h3>
+      <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:14px 18px">
+        <p style="margin:0;font-weight:700;font-size:14px">档案未载（此人物暂无师承考订）。</p>
+        <div class="lab" style="margin-top:10px">口径：dossiers lineage（动词分级：收徒/传授=强证）· 答案由预构建 JSON 确定性求解，永不幻觉。</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">深链协议（考据争论的终局是甩链接）</h3>
+    <div style="background:#f5efe4;padding:12px 16px;border-radius:4px;display:flex;gap:16px;align-items:center">
+      <span class="loc" style="font-size:13px;color:#34546e">/qa/?t=killer&amp;x=金独异</span>
+      <span class="loc" style="font-size:13px;color:#34546e">/qa/?t=versus&amp;x=练霓裳&amp;y=铁飞龙</span>
+      <span class="lab">预填并求解 · 页内预置 2–3 个示例问题（点即查）· 首页问答示例卡同源</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1060}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

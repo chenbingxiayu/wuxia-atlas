@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 名物详情</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .nav{display:flex;gap:20px;align-items:center;font-size:14px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.7}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;font-size:13px;background:#fbf8ef;color:#2b2b2b;margin:3px}
+  .chip small{color:#8c8477;margin-left:4px;font-family:Consolas,monospace;font-size:11px}
+  .badge{display:inline-block;border:1.5px solid;border-radius:3px;padding:0 8px;font-size:12px}
+  h2.sec{font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:19px;margin:32px 0 10px;border-bottom:1px solid #d8cdb8;padding-bottom:5px;letter-spacing:1px}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:#8c8477}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+  <header style="border-bottom:1px solid #d8cdb8;background:#fbf8ef"><div class="wrap nav" style="height:52px">
+    <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:24px;color:#a63a2b;margin-right:18px">江湖图志</span>
+    <a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#" style="color:#a63a2b;font-weight:700">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a></div></header>
+
+  <main class="wrap" style="flex:1;padding-bottom:48px">
+    <p class="lab" style="margin:14px 0 0"><a href="#">神兵谱</a> / 游龙剑</p>
+    <div style="display:flex;gap:24px;align-items:flex-start;margin-top:6px">
+      <div style="flex:1">
+        <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:36px;letter-spacing:3px;margin:0 0 6px">游龙剑
+          <span class="badge" style="border-color:#fbf8ef;background:#a63a2b;color:#fbf8ef;transform:rotate(-1.5deg)">神兵 · 明文</span>
+          <span class="badge" style="border-color:#34546e;color:#34546e">剑</span>
+          <span class="badge" style="border-color:#a63a2b;color:#a63a2b">跨书</span></h1>
+        <p style="color:#5a544a;margin:4px 0">关系 <b style="color:#34546e">12</b> 条 · 见于 <a class="chip" href="#">白发魔女传</a><a class="chip" href="#">七剑下天山</a><a class="chip" href="#">江湖三女侠</a></p>
+        <p style="margin:6px 0">别名/变体：<span class="chip">游龙宝剑</span></p>
+      </div>
+      <div style="width:220px;border:1px solid #b9ab90;border-radius:4px;background:#f8f3e6;display:flex;align-items:center;justify-content:center;height:160px">
+        <svg width="140" height="100" viewBox="0 0 140 100" aria-hidden="true">
+          <path d="M18 84 L108 26 L122 16 L116 32 L28 90 Z" fill="none" stroke="#a63a2b" stroke-width="2.5"/>
+          <path d="M18 84 L34 74 M30 88 L46 78" stroke="#a63a2b" stroke-width="3"/>
+          <path d="M104 20 L122 16 L116 32" fill="#a63a2b" opacity=".3"/>
+        </svg>
+      </div>
+    </div>
+
+    <div style="background:#fbf8ef;border:1px solid #b8860b;border-left:4px solid #b8860b;border-radius:4px;padding:14px 20px;margin-top:18px">
+      <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:20px;color:#b8860b;margin-right:12px">一件名物的一生</span>
+      <div class="lab" style="font-size:13.5px;color:#5a544a;line-height:2;margin-top:6px">
+        <b style="color:#2b2b2b">来历</b> 岳鸣珂（晦明禅师）铸，天山派镇山双剑之一（白发 028:17）→
+        <b style="color:#2b2b2b">高光</b> 楚昭南仗之压服江湖 →
+        <b style="color:#2b2b2b">流转</b> 凌未风 → 周青 → 唐晓澜（三代）→
+        <b style="color:#2b2b2b">归宿</b> 末见持有：唐晓澜、楚昭南（三女侠 · 47 回）</div>
+    </div>
+
+    <h2 class="sec">原著怎么写它 <span class="lab">精选短引 · L1 档位 · ≤2 条</span></h2>
+    <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:12px 18px">
+      <span style="font-family:'Noto Serif SC','SimSun',serif;font-size:15.5px">「老一辈的宫廷武士和禁卫军教头都赞不绝口」</span>
+      <span class="lab">—— 原著 · 江湖三女侠 001:37</span>
+    </div>
+
+    <h2 class="sec">历代流转 <span class="lab">方向化（A → B）· 编年排序 · 每次易手挂定位符</span></h2>
+    <div style="border-left:2px solid #d8cdb8;padding-left:20px;display:flex;flex-direction:column;gap:10px;margin-top:6px">
+      <div style="position:relative"><span style="position:absolute;left:-26px;top:7px;width:10px;height:10px;border-radius:50%;background:#a63a2b;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #a63a2b"></span>
+        <span style="color:#a63a2b;border:1px solid #a63a2b;border-radius:3px;padding:0 8px;font-size:12px;font-weight:700">铸</span>
+        <b style="margin-left:8px">岳鸣珂</b><span class="lab" style="margin-left:12px">白发魔女传·028:17</span></div>
+      <div style="position:relative"><span style="position:absolute;left:-26px;top:7px;width:10px;height:10px;border-radius:50%;background:#a63a2b;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #a63a2b"></span>
+        <span style="color:#a63a2b;border:1px solid #a63a2b;border-radius:3px;padding:0 8px;font-size:12px;font-weight:700">夺</span>
+        <b style="margin-left:8px">凌未风 → 楚昭南</b><span class="lab" style="margin-left:12px">七剑下天山·005:07</span></div>
+      <div style="position:relative"><span style="position:absolute;left:-26px;top:7px;width:10px;height:10px;border-radius:50%;background:#a63a2b;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #a63a2b"></span>
+        <span style="color:#a63a2b;border:1px solid #a63a2b;border-radius:3px;padding:0 8px;font-size:12px;font-weight:700">传</span>
+        <b style="margin-left:8px">凌未风 → 周青</b><span class="lab" style="margin-left:12px">江湖三女侠·002:69</span> <span class="lab">（含周青→唐晓澜，游龙剑+追风剑诀）</span></div>
+      <div style="position:relative"><span style="position:absolute;left:-26px;top:7px;width:10px;height:10px;border-radius:50%;background:#b9b1a2;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #b9b1a2"></span>
+        <span style="color:#8c8477;border:1px dashed #b9ab90;border-radius:3px;padding:0 8px;font-size:12px;font-weight:700">疑似误伤 ×4</span>
+        <span class="lab" style="margin-left:8px">"毁"字句但该物此后仍在传世——<a href="#">展开细看</a></span></div>
+      <div style="position:relative"><span style="position:absolute;left:-26px;top:7px;width:10px;height:10px;border-radius:50%;background:#5e7d5a;border:2px solid #fbf8ef;box-shadow:0 0 0 1.5px #5e7d5a"></span>
+        <span style="color:#5e7d5a;border:1px solid #5e7d5a;border-radius:3px;padding:0 8px;font-size:12px;font-weight:700">归宿</span>
+        <span class="lab" style="margin-left:8px;font-size:13px;color:#5a544a">末见持有：唐晓澜、楚昭南（江湖三女侠 · 47 回）——传世</span></div>
+    </div>
+
+    <h2 class="sec">出场而非流转 <span class="lab">同场出现 ≠ 易手</span></h2>
+    <div style="background:#f5efe4;border:1px dashed #b9ab90;border-radius:4px;padding:10px 16px" class="lab">
+      以下人物曾与此物同场出现（原著提及），但无明文易手句式——不要当成交接链：
+      <span class="chip">郝继明</span><span class="chip">刘郁芳</span><span class="chip">范铮</span></div>
+
+    <h2 class="sec">门派归属 <span class="lab">原文明文 · 无明文不推断</span></h2>
+    <p style="line-height:2.4"><a class="chip" href="#">天山派<small>镇山双剑 · 白发 004:125</small></a></p>
+
+    <h2 class="sec">相关人物 <span class="lab">持有人为主 · 借用单列（暂借 ≠ 持有）</span></h2>
+    <p style="line-height:2.4">
+      <span class="lab">持有人：</span>
+      <a class="chip" href="#">唐晓澜<small>×79</small></a><a class="chip" href="#">楚昭南<small>×45</small></a><a class="chip" href="#">凌未风<small>×37</small></a>
+      <a class="chip" href="#">周青<small>×8</small></a><a class="chip" href="#">冯瑛<small>×21</small></a><a class="chip" href="#">易兰珠<small>×20</small></a></p>
+
+    <h2 class="sec">证据与考订注记 <span class="lab">前 12 条 · 定位符可点</span></h2>
+    <ul style="list-style:none;padding:0;font-size:13.5px;line-height:2.1">
+      <li><span style="color:#a63a2b;margin-right:10px">流转</span><span class="loc">白发·028:17</span> <span style="color:#5a544a">铸（晦明禅师）</span></li>
+      <li><span style="color:#a63a2b;margin-right:10px">流转</span><span class="loc">七剑·005:07</span> <span style="color:#5a544a">凌未风 夺 楚昭南</span></li>
+      <li><span style="color:#a63a2b;margin-right:10px">侧证</span><span class="loc">三女侠·002:69</span> <span style="color:#5a544a">周青携游龙剑与追风剑诀（雷海音追捕缘由）</span></li>
+      <li class="lab">…共 188 处</li>
+    </ul>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1980}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

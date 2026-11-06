@@ -1,0 +1,3293 @@
+{
+  "schema": "w12-crossbook-threads-v0.1",
+  "meta": {
+    "generated": "2026-11-05",
+    "tool": "build_crossbook_threads v0.1 (2026-11-05, W12)",
+    "data_version": "2026-11-05",
+    "source_refs": {
+      "graph": "logs/export/staging/graph.json",
+      "cards": "registry/sku/cards.json",
+      "entities": "registry/entities.json",
+      "display_canonical": "registry/display_canonical.json",
+      "concordance": "registry/concordance/",
+      "intertext": "registry/intertext/intertext_loc.json",
+      "crossover": "registry/crossover/merge_candidates.json"
+    },
+    "types": [
+      "character-line",
+      "same-name-diff-person",
+      "mention-only",
+      "intertext-line"
+    ],
+    "counts": {
+      "threads": 61,
+      "by_type": {
+        "character-line": 25,
+        "same-name-diff-person": 6,
+        "mention-only": 10,
+        "intertext-line": 20
+      }
+    },
+    "validation": {
+      "passed": true,
+      "errors": [],
+      "counts": {
+        "threads": 61,
+        "by_type": {
+          "character-line": 25,
+          "same-name-diff-person": 6,
+          "mention-only": 10,
+          "intertext-line": 20
+        }
+      }
+    }
+  },
+  "threads": [
+    {
+      "id": "CB-0001",
+      "type": "character-line",
+      "title": "练霓裳：塞外奇侠传 → 冰魄寒光剑",
+      "entities": [
+        "练霓裳"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 18,
+          "pn": "塞外奇侠传#pn-r18.24",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r18.24（concordance total=64）",
+          "evidence": [
+            "graph.nodes[练霓裳].books",
+            "concordance[练霓裳@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 20,
+          "pn": "七剑下天山#pn-r20.31",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r20.31（concordance total=116）",
+          "evidence": [
+            "graph.nodes[练霓裳].books",
+            "concordance[练霓裳@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 18,
+          "pn": "江湖三女侠#pn-r18.32",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r18.32（concordance total=16）",
+          "evidence": [
+            "graph.nodes[练霓裳].books",
+            "concordance[练霓裳@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 1,
+          "pn": "白发魔女传#pn-r1.41",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r1.41（concordance total=101）",
+          "evidence": [
+            "graph.nodes[练霓裳].books",
+            "concordance[练霓裳@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": null,
+          "pn": null,
+          "summary": "冰魄寒光剑 内出现/关系边 2826 次量级",
+          "evidence": [
+            "graph.nodes[练霓裳].books",
+            "graph.edges@冰魄寒光剑"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0002",
+      "type": "character-line",
+      "title": "岳鸣珂：塞外奇侠传 → 冰魄寒光剑",
+      "entities": [
+        "岳鸣珂"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": null,
+          "pn": "塞外奇侠传·027:8",
+          "summary": "塞外奇侠传 内出现/关系边 1241 次量级",
+          "evidence": [
+            "graph.nodes[岳鸣珂].books",
+            "graph.edges@塞外奇侠传"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": null,
+          "pn": "七剑下天山·012:12",
+          "summary": "七剑下天山 内出现/关系边 1241 次量级",
+          "evidence": [
+            "graph.nodes[岳鸣珂].books",
+            "graph.edges@七剑下天山"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": null,
+          "pn": "江湖三女侠·009:23",
+          "summary": "江湖三女侠 内出现/关系边 1241 次量级",
+          "evidence": [
+            "graph.nodes[岳鸣珂].books",
+            "graph.edges@江湖三女侠"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 4,
+          "pn": "白发魔女传#pn-r4.20",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r4.20（concordance total=1101）",
+          "evidence": [
+            "graph.nodes[岳鸣珂].books",
+            "concordance[岳鸣珂@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": null,
+          "pn": null,
+          "summary": "冰魄寒光剑 内出现/关系边 1241 次量级",
+          "evidence": [
+            "graph.nodes[岳鸣珂].books",
+            "graph.edges@冰魄寒光剑"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0003",
+      "type": "character-line",
+      "title": "楚昭南：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "楚昭南"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 1,
+          "pn": "塞外奇侠传#pn-r1.14",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r1.14（concordance total=190）",
+          "evidence": [
+            "graph.nodes[楚昭南].books",
+            "concordance[楚昭南@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 1,
+          "pn": "七剑下天山#pn-r1.60",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r1.60（concordance total=845）",
+          "evidence": [
+            "graph.nodes[楚昭南].books",
+            "concordance[楚昭南@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1.52",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r1.52（concordance total=5）",
+          "evidence": [
+            "graph.nodes[楚昭南].books",
+            "concordance[楚昭南@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 28,
+          "pn": "白发魔女传#pn-r28.37",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r28.37（concordance total=2）",
+          "evidence": [
+            "graph.nodes[楚昭南].books",
+            "concordance[楚昭南@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0004",
+      "type": "character-line",
+      "title": "哈玛雅：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "哈玛雅"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 4,
+          "pn": "塞外奇侠传#pn-r4.7",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r4.7（concordance total=362）",
+          "evidence": [
+            "graph.nodes[哈玛雅].books",
+            "concordance[哈玛雅@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 17,
+          "pn": "七剑下天山#pn-r17.51",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r17.51（concordance total=302）",
+          "evidence": [
+            "graph.nodes[哈玛雅].books",
+            "concordance[哈玛雅@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": null,
+          "pn": null,
+          "summary": "江湖三女侠 内出现/关系边 679 次量级",
+          "evidence": [
+            "graph.nodes[哈玛雅].books",
+            "graph.edges@江湖三女侠"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 30,
+          "pn": "白发魔女传#pn-r30.9",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r30.9（concordance total=12）",
+          "evidence": [
+            "graph.nodes[哈玛雅].books",
+            "concordance[哈玛雅@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0005",
+      "type": "character-line",
+      "title": "朱由检：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "朱由检"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 11,
+          "pn": "七剑下天山#pn-r11.92",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r11.92（concordance total=1）",
+          "evidence": [
+            "graph.nodes[朱由检].books",
+            "concordance[朱由检@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 5,
+          "pn": "江湖三女侠#pn-r5.11",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r5.11（concordance total=3）",
+          "evidence": [
+            "graph.nodes[朱由检].books",
+            "concordance[朱由检@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 23,
+          "pn": "白发魔女传#pn-r23.10",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r23.10（concordance total=9）",
+          "evidence": [
+            "graph.nodes[朱由检].books",
+            "concordance[朱由检@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": null,
+          "pn": null,
+          "summary": "冰魄寒光剑 内出现/关系边 14 次量级",
+          "evidence": [
+            "graph.nodes[朱由检].books",
+            "graph.edges@冰魄寒光剑"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0006",
+      "type": "character-line",
+      "title": "卓一航：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "卓一航"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 15,
+          "pn": "塞外奇侠传#pn-r15.23",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r15.23（concordance total=59）",
+          "evidence": [
+            "graph.nodes[卓一航].books",
+            "concordance[卓一航@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 10,
+          "pn": "七剑下天山#pn-r10.37",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r10.37（concordance total=80）",
+          "evidence": [
+            "graph.nodes[卓一航].books",
+            "concordance[卓一航@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 1,
+          "pn": "白发魔女传#pn-r1.4",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r1.4（concordance total=2）",
+          "evidence": [
+            "graph.nodes[卓一航].books",
+            "concordance[卓一航@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0007",
+      "type": "character-line",
+      "title": "凌未风：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "凌未风"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 1,
+          "pn": "七剑下天山#pn-r1.97",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r1.97（concordance total=2041）",
+          "evidence": [
+            "graph.nodes[凌未风].books",
+            "concordance[凌未风@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1.48",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r1.48（concordance total=31）",
+          "evidence": [
+            "graph.nodes[凌未风].books",
+            "concordance[凌未风@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 6,
+          "pn": "冰魄寒光剑#pn-r6.29",
+          "summary": "冰魄寒光剑 首见 冰魄寒光剑#pn-r6.29（concordance total=2）",
+          "evidence": [
+            "graph.nodes[凌未风].books",
+            "concordance[凌未风@冰魄寒光剑]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0008",
+      "type": "character-line",
+      "title": "杨云骢：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "杨云骢"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 1,
+          "pn": "塞外奇侠传#pn-r1.7",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r1.7（concordance total=993）",
+          "evidence": [
+            "graph.nodes[杨云骢].books",
+            "concordance[杨云骢@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 0,
+          "pn": "七剑下天山#pn-r0.42",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r0.42（concordance total=123）",
+          "evidence": [
+            "graph.nodes[杨云骢].books",
+            "concordance[杨云骢@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 22,
+          "pn": "白发魔女传#pn-r22.14",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r22.14（concordance total=19）",
+          "evidence": [
+            "graph.nodes[杨云骢].books",
+            "concordance[杨云骢@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0009",
+      "type": "character-line",
+      "title": "冒浣莲：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "冒浣莲"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 1,
+          "pn": "七剑下天山#pn-r1.5",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r1.5（concordance total=944）",
+          "evidence": [
+            "graph.nodes[冒浣莲].books",
+            "concordance[冒浣莲@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1.46",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r1.46（concordance total=3）",
+          "evidence": [
+            "graph.nodes[冒浣莲].books",
+            "concordance[冒浣莲@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 4,
+          "pn": "冰魄寒光剑#pn-r4.10",
+          "summary": "冰魄寒光剑 首见 冰魄寒光剑#pn-r4.10（concordance total=1）",
+          "evidence": [
+            "graph.nodes[冒浣莲].books",
+            "concordance[冒浣莲@冰魄寒光剑]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0010",
+      "type": "character-line",
+      "title": "易兰珠：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "易兰珠"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 1,
+          "pn": "七剑下天山#pn-r1.78",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r1.78（concordance total=588）",
+          "evidence": [
+            "graph.nodes[易兰珠].books",
+            "concordance[易兰珠@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 9,
+          "pn": "江湖三女侠#pn-r9.2",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r9.2（concordance total=316）",
+          "evidence": [
+            "graph.nodes[易兰珠].books",
+            "concordance[易兰珠@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 3,
+          "pn": "冰魄寒光剑#pn-r3.13",
+          "summary": "冰魄寒光剑 首见 冰魄寒光剑#pn-r3.13（concordance total=3）",
+          "evidence": [
+            "graph.nodes[易兰珠].books",
+            "concordance[易兰珠@冰魄寒光剑]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0011",
+      "type": "character-line",
+      "title": "傅青主：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "傅青主"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 1,
+          "pn": "七剑下天山#pn-r1.4",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r1.4（concordance total=679）",
+          "evidence": [
+            "graph.nodes[傅青主].books",
+            "concordance[傅青主@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1.39",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r1.39（concordance total=65）",
+          "evidence": [
+            "graph.nodes[傅青主].books",
+            "concordance[傅青主@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 7,
+          "pn": "冰魄寒光剑#pn-r7.11",
+          "summary": "冰魄寒光剑 首见 冰魄寒光剑#pn-r7.11（concordance total=2）",
+          "evidence": [
+            "graph.nodes[傅青主].books",
+            "concordance[傅青主@冰魄寒光剑]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0012",
+      "type": "character-line",
+      "title": "桂仲明：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "桂仲明"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 10,
+          "pn": "七剑下天山#pn-r10.9",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r10.9（concordance total=685）",
+          "evidence": [
+            "graph.nodes[桂仲明].books",
+            "concordance[桂仲明@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1.48",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r1.48（concordance total=8）",
+          "evidence": [
+            "graph.nodes[桂仲明].books",
+            "concordance[桂仲明@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 1,
+          "pn": "冰魄寒光剑#pn-r1.4",
+          "summary": "冰魄寒光剑 首见 冰魄寒光剑#pn-r1.4（concordance total=3）",
+          "evidence": [
+            "graph.nodes[桂仲明].books",
+            "concordance[桂仲明@冰魄寒光剑]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0013",
+      "type": "character-line",
+      "title": "辛龙子：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "辛龙子"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 21,
+          "pn": "塞外奇侠传#pn-r21.3",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r21.3（concordance total=32）",
+          "evidence": [
+            "graph.nodes[辛龙子].books",
+            "concordance[辛龙子@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 20,
+          "pn": "七剑下天山#pn-r20.33",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r20.33（concordance total=310）",
+          "evidence": [
+            "graph.nodes[辛龙子].books",
+            "concordance[辛龙子@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 29,
+          "pn": "白发魔女传#pn-r29.34",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r29.34（concordance total=26）",
+          "evidence": [
+            "graph.nodes[辛龙子].books",
+            "concordance[辛龙子@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0014",
+      "type": "character-line",
+      "title": "魏忠贤：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "魏忠贤"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 1,
+          "pn": "塞外奇侠传#pn-r1.9",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r1.9（concordance total=1）",
+          "evidence": [
+            "graph.nodes[魏忠贤].books",
+            "concordance[魏忠贤@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 11,
+          "pn": "七剑下天山#pn-r11.81",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r11.81（concordance total=1）",
+          "evidence": [
+            "graph.nodes[魏忠贤].books",
+            "concordance[魏忠贤@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 2,
+          "pn": "白发魔女传#pn-r2.18",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r2.18（concordance total=296）",
+          "evidence": [
+            "graph.nodes[魏忠贤].books",
+            "concordance[魏忠贤@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0015",
+      "type": "character-line",
+      "title": "纳兰容若：塞外奇侠传 → 江湖三女侠",
+      "entities": [
+        "纳兰容若"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "江湖三女侠"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": null,
+          "pn": null,
+          "summary": "塞外奇侠传 内出现/关系边 296 次量级",
+          "evidence": [
+            "graph.nodes[纳兰容若].books",
+            "graph.edges@塞外奇侠传"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 2,
+          "pn": "七剑下天山#pn-r2.48",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r2.48（concordance total=287）",
+          "evidence": [
+            "graph.nodes[纳兰容若].books",
+            "concordance[纳兰容若@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 22,
+          "pn": "江湖三女侠#pn-r22.49",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r22.49（concordance total=7）",
+          "evidence": [
+            "graph.nodes[纳兰容若].books",
+            "concordance[纳兰容若@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0016",
+      "type": "character-line",
+      "title": "武琼瑶：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "武琼瑶"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 3,
+          "pn": "七剑下天山#pn-r3.21",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r3.21（concordance total=238）",
+          "evidence": [
+            "graph.nodes[武琼瑶].books",
+            "concordance[武琼瑶@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 9,
+          "pn": "江湖三女侠#pn-r9.2",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r9.2（concordance total=39）",
+          "evidence": [
+            "graph.nodes[武琼瑶].books",
+            "concordance[武琼瑶@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 4,
+          "pn": "冰魄寒光剑#pn-r4.62",
+          "summary": "冰魄寒光剑 首见 冰魄寒光剑#pn-r4.62（concordance total=5）",
+          "evidence": [
+            "graph.nodes[武琼瑶].books",
+            "concordance[武琼瑶@冰魄寒光剑]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0017",
+      "type": "character-line",
+      "title": "玄烨：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "玄烨"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 2,
+          "pn": "七剑下天山#pn-r2.6",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r2.6（concordance total=85）",
+          "evidence": [
+            "graph.nodes[玄烨].books",
+            "concordance[玄烨@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 10,
+          "pn": "江湖三女侠#pn-r10.34",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r10.34（concordance total=53）",
+          "evidence": [
+            "graph.nodes[玄烨].books",
+            "concordance[玄烨@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": null,
+          "pn": null,
+          "summary": "冰魄寒光剑 内出现/关系边 271 次量级",
+          "evidence": [
+            "graph.nodes[玄烨].books",
+            "graph.edges@冰魄寒光剑"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0018",
+      "type": "character-line",
+      "title": "何绿华：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "何绿华"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 16,
+          "pn": "塞外奇侠传#pn-r16.3",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r16.3（concordance total=5）",
+          "evidence": [
+            "graph.nodes[何绿华].books",
+            "concordance[何绿华@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 27,
+          "pn": "七剑下天山#pn-r27.36",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r27.36（concordance total=23）",
+          "evidence": [
+            "graph.nodes[何绿华].books",
+            "concordance[何绿华@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 8,
+          "pn": "白发魔女传#pn-r8.30",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r8.30（concordance total=135）",
+          "evidence": [
+            "graph.nodes[何绿华].books",
+            "concordance[何绿华@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0019",
+      "type": "character-line",
+      "title": "允禵：七剑下天山 → 冰魄寒光剑",
+      "entities": [
+        "允禵"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 27,
+          "pn": "七剑下天山#pn-r27.37",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r27.37（concordance total=3）",
+          "evidence": [
+            "graph.nodes[允禵].books",
+            "concordance[允禵@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 13,
+          "pn": "江湖三女侠#pn-r13.33",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r13.33（concordance total=136）",
+          "evidence": [
+            "graph.nodes[允禵].books",
+            "concordance[允禵@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 6,
+          "pn": "冰魄寒光剑#pn-r6.18",
+          "summary": "冰魄寒光剑 首见 冰魄寒光剑#pn-r6.18（concordance total=2）",
+          "evidence": [
+            "graph.nodes[允禵].books",
+            "concordance[允禵@冰魄寒光剑]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0020",
+      "type": "character-line",
+      "title": "唐努：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "唐努"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 4,
+          "pn": "塞外奇侠传#pn-r4.9",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r4.9（concordance total=18）",
+          "evidence": [
+            "graph.nodes[唐努].books",
+            "concordance[唐努@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 17,
+          "pn": "七剑下天山#pn-r17.51",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r17.51（concordance total=5）",
+          "evidence": [
+            "graph.nodes[唐努].books",
+            "concordance[唐努@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 17,
+          "pn": "白发魔女传#pn-r17.37",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r17.37（concordance total=85）",
+          "evidence": [
+            "graph.nodes[唐努].books",
+            "concordance[唐努@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0021",
+      "type": "character-line",
+      "title": "李自成：七剑下天山 → 白发魔女传",
+      "entities": [
+        "李自成"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 7,
+          "pn": "七剑下天山#pn-r7.8",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r7.8（concordance total=28）",
+          "evidence": [
+            "graph.nodes[李自成].books",
+            "concordance[李自成@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 18,
+          "pn": "江湖三女侠#pn-r18.36",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r18.36（concordance total=2）",
+          "evidence": [
+            "graph.nodes[李自成].books",
+            "concordance[李自成@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 18,
+          "pn": "白发魔女传#pn-r18.1",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r18.1（concordance total=59）",
+          "evidence": [
+            "graph.nodes[李自成].books",
+            "concordance[李自成@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0022",
+      "type": "character-line",
+      "title": "白石道人：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "白石道人"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 22,
+          "pn": "塞外奇侠传#pn-r22.7",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r22.7（concordance total=5）",
+          "evidence": [
+            "graph.nodes[白石道人].books",
+            "concordance[白石道人@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 27,
+          "pn": "七剑下天山#pn-r27.36",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r27.36（concordance total=2）",
+          "evidence": [
+            "graph.nodes[白石道人].books",
+            "concordance[白石道人@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 1,
+          "pn": "白发魔女传#pn-r1.15",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r1.15（concordance total=2）",
+          "evidence": [
+            "graph.nodes[白石道人].books",
+            "concordance[白石道人@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0023",
+      "type": "character-line",
+      "title": "黄叶道人：塞外奇侠传 → 白发魔女传",
+      "entities": [
+        "黄叶道人"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 22,
+          "pn": "塞外奇侠传#pn-r22.7",
+          "summary": "塞外奇侠传 首见 塞外奇侠传#pn-r22.7（concordance total=12）",
+          "evidence": [
+            "graph.nodes[黄叶道人].books",
+            "concordance[黄叶道人@塞外奇侠传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 27,
+          "pn": "七剑下天山#pn-r27.36",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r27.36（concordance total=1）",
+          "evidence": [
+            "graph.nodes[黄叶道人].books",
+            "concordance[黄叶道人@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 1,
+          "pn": "白发魔女传#pn-r1.15",
+          "summary": "白发魔女传 首见 白发魔女传#pn-r1.15（concordance total=1）",
+          "evidence": [
+            "graph.nodes[黄叶道人].books",
+            "concordance[黄叶道人@白发魔女传]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0024",
+      "type": "character-line",
+      "title": "福临：七剑下天山 → 白发魔女传",
+      "entities": [
+        "福临"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": 2,
+          "pn": "七剑下天山#pn-r2.40",
+          "summary": "七剑下天山 首见 七剑下天山#pn-r2.40（concordance total=6）",
+          "evidence": [
+            "graph.nodes[福临].books",
+            "concordance[福临@七剑下天山]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 14,
+          "pn": "江湖三女侠#pn-r14.4",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r14.4（concordance total=1）",
+          "evidence": [
+            "graph.nodes[福临].books",
+            "concordance[福临@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": null,
+          "pn": null,
+          "summary": "白发魔女传 内出现/关系边 8 次量级",
+          "evidence": [
+            "graph.nodes[福临].books",
+            "graph.edges@白发魔女传"
+          ],
+          "evidence_level": "E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0025",
+      "type": "character-line",
+      "title": "唐晓澜：江湖三女侠 → 冰魄寒光剑",
+      "entities": [
+        "唐晓澜"
+      ],
+      "books": [
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1.20",
+          "summary": "江湖三女侠 首见 江湖三女侠#pn-r1.20（concordance total=2184）",
+          "evidence": [
+            "graph.nodes[唐晓澜].books",
+            "concordance[唐晓澜@江湖三女侠]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 1,
+          "pn": "冰魄寒光剑#pn-r1.6",
+          "summary": "冰魄寒光剑 首见 冰魄寒光剑#pn-r1.6（concordance total=2）",
+          "evidence": [
+            "graph.nodes[唐晓澜].books",
+            "concordance[唐晓澜@冰魄寒光剑]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": true,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 0,
+        "note": "canonical 同实体跨书（registry ID/图节点合并）"
+      },
+      "spoiler_level": 1,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0026",
+      "type": "same-name-diff-person",
+      "title": "同名/异名：康熙（展示）≠ 玄烨（规范）",
+      "entities": [
+        "玄烨",
+        "康熙"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": null,
+          "pn": null,
+          "summary": "展示名 康熙 与规范名 玄烨 分离，叙事须分写/标展示名",
+          "evidence": [
+            "display_canonical[康熙→玄烨]",
+            "registry.entities[玄烨]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "must_split": true,
+        "display": "康熙",
+        "canonical": "玄烨",
+        "note": "B-1/B04 展示层与规范层分离；禁合并叙事"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0027",
+      "type": "same-name-diff-person",
+      "title": "同名/异名：崇祯（展示）≠ 朱由检（规范）",
+      "entities": [
+        "朱由检",
+        "崇祯"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": null,
+          "pn": null,
+          "summary": "展示名 崇祯 与规范名 朱由检 分离，叙事须分写/标展示名",
+          "evidence": [
+            "display_canonical[崇祯→朱由检]",
+            "registry.entities[朱由检]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "must_split": true,
+        "display": "崇祯",
+        "canonical": "朱由检",
+        "note": "B-1/B04 展示层与规范层分离；禁合并叙事"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0028",
+      "type": "same-name-diff-person",
+      "title": "同名/异名：顺治（展示）≠ 福临（规范）",
+      "entities": [
+        "福临",
+        "顺治"
+      ],
+      "books": [
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": null,
+          "pn": null,
+          "summary": "展示名 顺治 与规范名 福临 分离，叙事须分写/标展示名",
+          "evidence": [
+            "display_canonical[顺治→福临]",
+            "registry.entities[福临]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "must_split": true,
+        "display": "顺治",
+        "canonical": "福临",
+        "note": "B-1/B04 展示层与规范层分离；禁合并叙事"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0029",
+      "type": "same-name-diff-person",
+      "title": "同名/异名：雍正（展示）≠ 胤禛（规范）",
+      "entities": [
+        "胤禛",
+        "雍正"
+      ],
+      "books": [
+        "江湖三女侠",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "江湖三女侠",
+          "chapter": null,
+          "pn": null,
+          "summary": "展示名 雍正 与规范名 胤禛 分离，叙事须分写/标展示名",
+          "evidence": [
+            "display_canonical[雍正→胤禛]",
+            "registry.entities[胤禛]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "must_split": true,
+        "display": "雍正",
+        "canonical": "胤禛",
+        "note": "B-1/B04 展示层与规范层分离；禁合并叙事"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0030",
+      "type": "same-name-diff-person",
+      "title": "同名/异名：飞红巾（展示）≠ 哈玛雅（规范）",
+      "entities": [
+        "哈玛雅",
+        "飞红巾"
+      ],
+      "books": [
+        "塞外奇侠传",
+        "七剑下天山",
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": null,
+          "pn": null,
+          "summary": "展示名 飞红巾 与规范名 哈玛雅 分离，叙事须分写/标展示名",
+          "evidence": [
+            "display_canonical[飞红巾→哈玛雅]",
+            "registry.entities[哈玛雅]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "must_split": true,
+        "display": "飞红巾",
+        "canonical": "哈玛雅",
+        "note": "B-1/B04 展示层与规范层分离；禁合并叙事"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0031",
+      "type": "same-name-diff-person",
+      "title": "同名表面 霞妹 指向 2 个规范实体",
+      "entities": [
+        "孟秋霞",
+        "邝练霞"
+      ],
+      "books": [
+        "江湖三女侠",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "江湖三女侠",
+          "chapter": null,
+          "pn": null,
+          "summary": "surface=霞妹 对应 canonical=['孟秋霞', '邝练霞']；须人工裁定",
+          "evidence": [
+            "registry.entities[surface=霞妹]"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "must_split": true,
+        "display": "霞妹",
+        "canonical": null,
+        "note": "同名异人候选，须 03b 消歧裁定"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0032",
+      "type": "mention-only",
+      "title": "仅提及：狂侠天骄魔女 → 武林天骄",
+      "entities": [
+        "狂侠天骄魔女",
+        "武林天骄"
+      ],
+      "books": [
+        "狂侠天骄魔女",
+        "武林天骄"
+      ],
+      "beats": [
+        {
+          "book": "狂侠天骄魔女",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：狂侠天骄魔女→武林天骄 共 1089 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[狂侠天骄魔女→武林天骄]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 1089,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0033",
+      "type": "mention-only",
+      "title": "仅提及：鸣镝风云录 → 武林天骄",
+      "entities": [
+        "鸣镝风云录",
+        "武林天骄"
+      ],
+      "books": [
+        "鸣镝风云录",
+        "武林天骄"
+      ],
+      "beats": [
+        {
+          "book": "鸣镝风云录",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：鸣镝风云录→武林天骄 共 279 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[鸣镝风云录→武林天骄]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 279,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0034",
+      "type": "mention-only",
+      "title": "仅提及：风云雷电 → 武林天骄",
+      "entities": [
+        "风云雷电",
+        "武林天骄"
+      ],
+      "books": [
+        "风云雷电",
+        "武林天骄"
+      ],
+      "beats": [
+        {
+          "book": "风云雷电",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：风云雷电→武林天骄 共 207 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[风云雷电→武林天骄]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 207,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0035",
+      "type": "intertext-line",
+      "title": "互文：弹指惊雷 → 冰魄寒光剑",
+      "entities": [
+        "弹指惊雷",
+        "冰魄寒光剑"
+      ],
+      "books": [
+        "弹指惊雷",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "弹指惊雷",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：弹指惊雷→冰魄寒光剑 authorial=2/quoted=0/bare=54；resolved=0",
+          "evidence": [
+            "intertext_loc[弹指惊雷→冰魄寒光剑]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 2,
+        "quoted": 0,
+        "bare": 54,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0036",
+      "type": "mention-only",
+      "title": "仅提及：冰川天女传 → 冰魄寒光剑",
+      "entities": [
+        "冰川天女传",
+        "冰魄寒光剑"
+      ],
+      "books": [
+        "冰川天女传",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "冰川天女传",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：冰川天女传→冰魄寒光剑 共 45 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[冰川天女传→冰魄寒光剑]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 45,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0037",
+      "type": "mention-only",
+      "title": "仅提及：绝塞传烽录 → 冰魄寒光剑",
+      "entities": [
+        "绝塞传烽录",
+        "冰魄寒光剑"
+      ],
+      "books": [
+        "绝塞传烽录",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "绝塞传烽录",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：绝塞传烽录→冰魄寒光剑 共 36 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[绝塞传烽录→冰魄寒光剑]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 36,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0038",
+      "type": "mention-only",
+      "title": "仅提及：云海玉弓缘 → 冰魄寒光剑",
+      "entities": [
+        "云海玉弓缘",
+        "冰魄寒光剑"
+      ],
+      "books": [
+        "云海玉弓缘",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "云海玉弓缘",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：云海玉弓缘→冰魄寒光剑 共 20 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[云海玉弓缘→冰魄寒光剑]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 20,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0039",
+      "type": "intertext-line",
+      "title": "互文：联剑风云录 → 散花女侠",
+      "entities": [
+        "联剑风云录",
+        "散花女侠"
+      ],
+      "books": [
+        "联剑风云录",
+        "散花女侠"
+      ],
+      "beats": [
+        {
+          "book": "联剑风云录",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：联剑风云录→散花女侠 authorial=1/quoted=0/bare=12；resolved=0",
+          "evidence": [
+            "intertext_loc[联剑风云录→散花女侠]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 0,
+        "bare": 12,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0040",
+      "type": "intertext-line",
+      "title": "互文：鸣镝风云录 → 挑灯看剑录",
+      "entities": [
+        "鸣镝风云录",
+        "挑灯看剑录"
+      ],
+      "books": [
+        "鸣镝风云录",
+        "挑灯看剑录"
+      ],
+      "beats": [
+        {
+          "book": "鸣镝风云录",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：鸣镝风云录→挑灯看剑录 authorial=10/quoted=3/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[鸣镝风云录→挑灯看剑录]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 10,
+        "quoted": 3,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0041",
+      "type": "intertext-line",
+      "title": "互文：草莽龙蛇传 → 龙虎斗京华",
+      "entities": [
+        "草莽龙蛇传",
+        "龙虎斗京华"
+      ],
+      "books": [
+        "草莽龙蛇传",
+        "龙虎斗京华"
+      ],
+      "beats": [
+        {
+          "book": "草莽龙蛇传",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：草莽龙蛇传→龙虎斗京华 authorial=9/quoted=1/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[草莽龙蛇传→龙虎斗京华]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 9,
+        "quoted": 1,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0042",
+      "type": "mention-only",
+      "title": "仅提及：侠骨丹心 → 冰魄寒光剑",
+      "entities": [
+        "侠骨丹心",
+        "冰魄寒光剑"
+      ],
+      "books": [
+        "侠骨丹心",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "侠骨丹心",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：侠骨丹心→冰魄寒光剑 共 9 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[侠骨丹心→冰魄寒光剑]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 9,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0043",
+      "type": "intertext-line",
+      "title": "互文：散花女侠 → 萍踪侠影录",
+      "entities": [
+        "散花女侠",
+        "萍踪侠影录"
+      ],
+      "books": [
+        "散花女侠",
+        "萍踪侠影录"
+      ],
+      "beats": [
+        {
+          "book": "散花女侠",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：散花女侠→萍踪侠影录 authorial=8/quoted=1/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[散花女侠→萍踪侠影录]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 8,
+        "quoted": 1,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0044",
+      "type": "intertext-line",
+      "title": "互文：江湖三女侠 → 七剑下天山",
+      "entities": [
+        "江湖三女侠",
+        "七剑下天山"
+      ],
+      "books": [
+        "江湖三女侠",
+        "七剑下天山"
+      ],
+      "beats": [
+        {
+          "book": "江湖三女侠",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：江湖三女侠→七剑下天山 authorial=8/quoted=0/bare=0；resolved=8",
+          "evidence": [
+            "intertext_loc[江湖三女侠→七剑下天山]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "B"
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": null,
+          "pn": null,
+          "summary": "可定位边 8 条（loc_r 可作 E2）",
+          "evidence": [
+            "intertext_loc[江湖三女侠→七剑下天山].loc_r"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 8,
+        "quoted": 0,
+        "bare": 0,
+        "locatable": 8,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0045",
+      "type": "intertext-line",
+      "title": "互文：风云雷电 → 挑灯看剑录",
+      "entities": [
+        "风云雷电",
+        "挑灯看剑录"
+      ],
+      "books": [
+        "风云雷电",
+        "挑灯看剑录"
+      ],
+      "beats": [
+        {
+          "book": "风云雷电",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：风云雷电→挑灯看剑录 authorial=7/quoted=0/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[风云雷电→挑灯看剑录]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 7,
+        "quoted": 0,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0046",
+      "type": "intertext-line",
+      "title": "互文：风云雷电 → 瀚海雄风",
+      "entities": [
+        "风云雷电",
+        "瀚海雄风"
+      ],
+      "books": [
+        "风云雷电",
+        "瀚海雄风"
+      ],
+      "beats": [
+        {
+          "book": "风云雷电",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：风云雷电→瀚海雄风 authorial=7/quoted=0/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[风云雷电→瀚海雄风]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 7,
+        "quoted": 0,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0047",
+      "type": "intertext-line",
+      "title": "互文：七剑下天山 → 塞外奇侠传",
+      "entities": [
+        "七剑下天山",
+        "塞外奇侠传"
+      ],
+      "books": [
+        "七剑下天山",
+        "塞外奇侠传"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：七剑下天山→塞外奇侠传 authorial=5/quoted=0/bare=0；resolved=5",
+          "evidence": [
+            "intertext_loc[七剑下天山→塞外奇侠传]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "B"
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": null,
+          "pn": null,
+          "summary": "可定位边 5 条（loc_r 可作 E2）",
+          "evidence": [
+            "intertext_loc[七剑下天山→塞外奇侠传].loc_r"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 5,
+        "quoted": 0,
+        "bare": 0,
+        "locatable": 5,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0048",
+      "type": "intertext-line",
+      "title": "互文：冰河洗剑录 → 云海玉弓缘",
+      "entities": [
+        "冰河洗剑录",
+        "云海玉弓缘"
+      ],
+      "books": [
+        "冰河洗剑录",
+        "云海玉弓缘"
+      ],
+      "beats": [
+        {
+          "book": "冰河洗剑录",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：冰河洗剑录→云海玉弓缘 authorial=1/quoted=4/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[冰河洗剑录→云海玉弓缘]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 4,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0049",
+      "type": "intertext-line",
+      "title": "互文：侠骨丹心 → 冰河洗剑录",
+      "entities": [
+        "侠骨丹心",
+        "冰河洗剑录"
+      ],
+      "books": [
+        "侠骨丹心",
+        "冰河洗剑录"
+      ],
+      "beats": [
+        {
+          "book": "侠骨丹心",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：侠骨丹心→冰河洗剑录 authorial=1/quoted=3/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[侠骨丹心→冰河洗剑录]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 3,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0050",
+      "type": "intertext-line",
+      "title": "互文：冰河洗剑录 → 冰川天女传",
+      "entities": [
+        "冰河洗剑录",
+        "冰川天女传"
+      ],
+      "books": [
+        "冰河洗剑录",
+        "冰川天女传"
+      ],
+      "beats": [
+        {
+          "book": "冰河洗剑录",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：冰河洗剑录→冰川天女传 authorial=1/quoted=3/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[冰河洗剑录→冰川天女传]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 3,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0051",
+      "type": "intertext-line",
+      "title": "互文：广陵剑 → 萍踪侠影录",
+      "entities": [
+        "广陵剑",
+        "萍踪侠影录"
+      ],
+      "books": [
+        "广陵剑",
+        "萍踪侠影录"
+      ],
+      "beats": [
+        {
+          "book": "广陵剑",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：广陵剑→萍踪侠影录 authorial=4/quoted=0/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[广陵剑→萍踪侠影录]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 4,
+        "quoted": 0,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0052",
+      "type": "intertext-line",
+      "title": "互文：慧剑心魔 → 龙凤宝钗缘",
+      "entities": [
+        "慧剑心魔",
+        "龙凤宝钗缘"
+      ],
+      "books": [
+        "慧剑心魔",
+        "龙凤宝钗缘"
+      ],
+      "beats": [
+        {
+          "book": "慧剑心魔",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：慧剑心魔→龙凤宝钗缘 authorial=1/quoted=3/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[慧剑心魔→龙凤宝钗缘]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 3,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0053",
+      "type": "mention-only",
+      "title": "仅提及：游剑江湖 → 冰魄寒光剑",
+      "entities": [
+        "游剑江湖",
+        "冰魄寒光剑"
+      ],
+      "books": [
+        "游剑江湖",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "游剑江湖",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：游剑江湖→冰魄寒光剑 共 4 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[游剑江湖→冰魄寒光剑]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 4,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0054",
+      "type": "intertext-line",
+      "title": "互文：云海玉弓缘 → 冰川天女传",
+      "entities": [
+        "云海玉弓缘",
+        "冰川天女传"
+      ],
+      "books": [
+        "云海玉弓缘",
+        "冰川天女传"
+      ],
+      "beats": [
+        {
+          "book": "云海玉弓缘",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：云海玉弓缘→冰川天女传 authorial=1/quoted=1/bare=1；resolved=0",
+          "evidence": [
+            "intertext_loc[云海玉弓缘→冰川天女传]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 1,
+        "bare": 1,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0055",
+      "type": "intertext-line",
+      "title": "互文：侠骨丹心 → 风雷震九州",
+      "entities": [
+        "侠骨丹心",
+        "风雷震九州"
+      ],
+      "books": [
+        "侠骨丹心",
+        "风雷震九州"
+      ],
+      "beats": [
+        {
+          "book": "侠骨丹心",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：侠骨丹心→风雷震九州 authorial=1/quoted=2/bare=0；resolved=0",
+          "evidence": [
+            "intertext_loc[侠骨丹心→风雷震九州]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 2,
+        "bare": 0,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0056",
+      "type": "intertext-line",
+      "title": "互文：冰川天女传 → 江湖三女侠",
+      "entities": [
+        "冰川天女传",
+        "江湖三女侠"
+      ],
+      "books": [
+        "冰川天女传",
+        "江湖三女侠"
+      ],
+      "beats": [
+        {
+          "book": "冰川天女传",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：冰川天女传→江湖三女侠 authorial=2/quoted=0/bare=1；resolved=0",
+          "evidence": [
+            "intertext_loc[冰川天女传→江湖三女侠]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 2,
+        "quoted": 0,
+        "bare": 1,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0057",
+      "type": "mention-only",
+      "title": "仅提及：冰河洗剑录 → 冰魄寒光剑",
+      "entities": [
+        "冰河洗剑录",
+        "冰魄寒光剑"
+      ],
+      "books": [
+        "冰河洗剑录",
+        "冰魄寒光剑"
+      ],
+      "beats": [
+        {
+          "book": "冰河洗剑录",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：冰河洗剑录→冰魄寒光剑 共 3 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[冰河洗剑录→冰魄寒光剑]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 3,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0058",
+      "type": "intertext-line",
+      "title": "互文：剑网尘丝 → 幻剑灵旗",
+      "entities": [
+        "剑网尘丝",
+        "幻剑灵旗"
+      ],
+      "books": [
+        "剑网尘丝",
+        "幻剑灵旗"
+      ],
+      "beats": [
+        {
+          "book": "剑网尘丝",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：剑网尘丝→幻剑灵旗 authorial=0/quoted=1/bare=2；resolved=0",
+          "evidence": [
+            "intertext_loc[剑网尘丝→幻剑灵旗]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 1,
+        "bare": 2,
+        "locatable": 0,
+        "strength": "quoted",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0059",
+      "type": "mention-only",
+      "title": "仅提及：萍踪侠影录 → 散花女侠",
+      "entities": [
+        "萍踪侠影录",
+        "散花女侠"
+      ],
+      "books": [
+        "萍踪侠影录",
+        "散花女侠"
+      ],
+      "beats": [
+        {
+          "book": "萍踪侠影录",
+          "chapter": null,
+          "pn": null,
+          "summary": "仅提及：萍踪侠影录→散花女侠 共 3 条 bare 互文；无 authorial/quoted，只能写'被提及'",
+          "evidence": [
+            "intertext_loc[萍踪侠影录→散花女侠]"
+          ],
+          "evidence_level": "E1",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 0,
+        "quoted": 0,
+        "bare": 3,
+        "locatable": 0,
+        "strength": "bare",
+        "note": "仅提及，禁写情节"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0060",
+      "type": "intertext-line",
+      "title": "互文：七剑下天山 → 白发魔女传",
+      "entities": [
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "books": [
+        "七剑下天山",
+        "白发魔女传"
+      ],
+      "beats": [
+        {
+          "book": "七剑下天山",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：七剑下天山→白发魔女传 authorial=1/quoted=0/bare=1；resolved=2",
+          "evidence": [
+            "intertext_loc[七剑下天山→白发魔女传]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "B"
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": null,
+          "pn": null,
+          "summary": "可定位边 2 条（loc_r 可作 E2）",
+          "evidence": [
+            "intertext_loc[七剑下天山→白发魔女传].loc_r"
+          ],
+          "evidence_level": "E2",
+          "confidence": "B"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 0,
+        "bare": 1,
+        "locatable": 2,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    },
+    {
+      "id": "CB-0061",
+      "type": "intertext-line",
+      "title": "互文：冰川天女传 → 七剑下天山",
+      "entities": [
+        "冰川天女传",
+        "七剑下天山"
+      ],
+      "books": [
+        "冰川天女传",
+        "七剑下天山"
+      ],
+      "beats": [
+        {
+          "book": "冰川天女传",
+          "chapter": null,
+          "pn": null,
+          "summary": "互文：冰川天女传→七剑下天山 authorial=1/quoted=0/bare=1；resolved=0",
+          "evidence": [
+            "intertext_loc[冰川天女传→七剑下天山]"
+          ],
+          "evidence_level": "E1+E2",
+          "confidence": "C"
+        }
+      ],
+      "timeline": {
+        "basis": "books.year+series",
+        "forks": []
+      },
+      "judgement": {
+        "canonical_same": false,
+        "authorial": 1,
+        "quoted": 0,
+        "bare": 1,
+        "locatable": 0,
+        "strength": "authorial",
+        "note": "按 authorial/quoted 判真；bare 只能写'提及'"
+      },
+      "spoiler_level": 0,
+      "data_version": "2026-11-05",
+      "status": "draft"
+    }
+  ]
+}

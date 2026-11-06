@@ -1,0 +1,255 @@
+{
+  "v": 3,
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-05T12:00:00Z"
+  },
+  "title": "江湖图志 前端模块设计",
+  "launch": {
+    "view": "canvas"
+  },
+  "pages": [
+    {
+      "id": "ds",
+      "name": "设计系统"
+    },
+    {
+      "id": "modules",
+      "name": "模块库"
+    },
+    {
+      "id": "pages",
+      "name": "页面组装"
+    }
+  ],
+  "boards": {
+    "Main.dc.html": {
+      "x": 0,
+      "y": 0,
+      "w": 1200,
+      "h": 1560,
+      "page": "ds",
+      "title": "设计系统采样板"
+    },
+    "Mod-Primitives.dc.html": {
+      "x": 1320,
+      "y": 0,
+      "w": 1200,
+      "h": 1500,
+      "page": "modules",
+      "title": "基础原语集"
+    },
+    "Mod-Cards.dc.html": {
+      "x": 2640,
+      "y": 0,
+      "w": 1200,
+      "h": 1260,
+      "page": "modules",
+      "title": "卡片族"
+    },
+    "Mod-Charts.dc.html": {
+      "x": 3960,
+      "y": 0,
+      "w": 1200,
+      "h": 1560,
+      "page": "modules",
+      "title": "图表族"
+    },
+    "Mod-Map.dc.html": {
+      "x": 5280,
+      "y": 0,
+      "w": 1200,
+      "h": 1450,
+      "page": "modules",
+      "title": "地图组件"
+    },
+    "Mod-QA.dc.html": {
+      "x": 6600,
+      "y": 0,
+      "w": 1200,
+      "h": 1060,
+      "page": "modules",
+      "title": "问答组件"
+    },
+    "Mod-Game.dc.html": {
+      "x": 7920,
+      "y": 0,
+      "w": 1200,
+      "h": 1240,
+      "page": "modules",
+      "title": "游戏组件"
+    },
+    "Mod-Ratings.dc.html": {
+      "x": 9240,
+      "y": 0,
+      "w": 1200,
+      "h": 1120,
+      "page": "modules",
+      "title": "榜单组件"
+    },
+    "P-Home.dc.html": {
+      "x": 0,
+      "y": 1700,
+      "w": 1360,
+      "h": 1760,
+      "page": "pages",
+      "expand": "fill",
+      "title": "首页 · 七区"
+    },
+    "P-Character.dc.html": {
+      "x": 1480,
+      "y": 1700,
+      "w": 1360,
+      "h": 2560,
+      "page": "pages",
+      "expand": "fill",
+      "title": "人物档案 · 14 区块"
+    },
+    "P-Art.dc.html": {
+      "x": 2960,
+      "y": 1700,
+      "w": 1360,
+      "h": 1900,
+      "page": "pages",
+      "expand": "fill",
+      "title": "武功详情 · 伞形三层"
+    },
+    "P-Weapon.dc.html": {
+      "x": 4440,
+      "y": 1700,
+      "w": 1360,
+      "h": 1980,
+      "page": "pages",
+      "expand": "fill",
+      "title": "名物详情 · 一生与流转"
+    },
+    "P-Sects.dc.html": {
+      "x": 5920,
+      "y": 1700,
+      "w": 1360,
+      "h": 1930,
+      "page": "pages",
+      "expand": "fill",
+      "title": "门派总览 · 全景势力地图"
+    },
+    "P-Universe.dc.html": {
+      "x": 7400,
+      "y": 1700,
+      "w": 1360,
+      "h": 1900,
+      "page": "pages",
+      "expand": "fill",
+      "title": "宇宙门户"
+    },
+    "P-RatingsPage.dc.html": {
+      "x": 8880,
+      "y": 1700,
+      "w": 1360,
+      "h": 1560,
+      "page": "pages",
+      "expand": "fill",
+      "title": "武评 · 江湖座次"
+    },
+    "P-Games.dc.html": {
+      "x": 0,
+      "y": 3620,
+      "w": 1360,
+      "h": 1480,
+      "page": "pages",
+      "expand": "fill",
+      "title": "游戏 · 江湖游乐场"
+    },
+    "P-Story.dc.html": {
+      "x": 1480,
+      "y": 3620,
+      "w": 1360,
+      "h": 1620,
+      "page": "pages",
+      "expand": "fill",
+      "title": "专栏 · 数据说书篇页"
+    },
+    "P-QA.dc.html": {
+      "x": 2960,
+      "y": 3620,
+      "w": 1360,
+      "h": 980,
+      "page": "pages",
+      "expand": "fill",
+      "title": "图谱问答"
+    },
+    "P-Audit.dc.html": {
+      "x": 4440,
+      "y": 3620,
+      "w": 1360,
+      "h": 1660,
+      "page": "pages",
+      "expand": "fill",
+      "title": "穿帮雷达"
+    },
+    "P-MapPage.dc.html": {
+      "x": 5920,
+      "y": 3620,
+      "w": 1360,
+      "h": 1380,
+      "page": "pages",
+      "expand": "fill",
+      "title": "行踪地图"
+    },
+    "P-Timeline.dc.html": {
+      "x": 7400,
+      "y": 3620,
+      "w": 1360,
+      "h": 1180,
+      "page": "pages",
+      "expand": "fill",
+      "title": "编年史 · 双视图"
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Mod-Primitives.dc.html",
+    "Mod-Cards.dc.html",
+    "Mod-Charts.dc.html",
+    "Mod-Map.dc.html",
+    "Mod-QA.dc.html",
+    "Mod-Game.dc.html",
+    "Mod-Ratings.dc.html",
+    "P-Home.dc.html",
+    "P-Character.dc.html",
+    "P-Art.dc.html",
+    "P-Weapon.dc.html",
+    "P-Sects.dc.html",
+    "P-Universe.dc.html",
+    "P-RatingsPage.dc.html",
+    "P-Games.dc.html",
+    "P-Story.dc.html",
+    "P-QA.dc.html",
+    "P-Audit.dc.html",
+    "P-MapPage.dc.html",
+    "P-Timeline.dc.html"
+  ],
+  "notes": {
+    "ds-title": {
+      "x": 0,
+      "y": -280,
+      "text": "设计系统",
+      "kind": "title1",
+      "maxW": 1200
+    },
+    "mod-title": {
+      "x": 1320,
+      "y": -280,
+      "text": "模块库",
+      "kind": "title1",
+      "maxW": 1200
+    },
+    "pages-title": {
+      "x": 0,
+      "y": 1420,
+      "text": "页面组装",
+      "kind": "title1",
+      "maxW": 1360
+    }
+  },
+  "designSystems": []
+}

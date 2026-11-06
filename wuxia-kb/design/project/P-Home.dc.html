@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 首页</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .nav{display:flex;gap:22px;align-items:center;font-size:14.5px}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .badge{display:inline-block;border:1.5px solid;border-radius:3px;padding:0 8px;font-size:12px}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;font-size:13px;background:#fbf8ef;color:#5a544a;margin:3px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.6}
+  .card{border:1px solid #b9ab90;border-radius:4px;padding:16px 18px;background:#fbf8ef;display:block}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+
+  <header style="border-bottom:1px solid #d8cdb8;background:#fbf8ef">
+    <div class="wrap nav" style="height:56px">
+      <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:26px;color:#a63a2b;margin-right:20px">江湖图志</span>
+      <a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a>
+    </div>
+  </header>
+
+  <main class="wrap" style="flex:1;display:flex;flex-direction:column;gap:44px;padding-top:36px;padding-bottom:48px">
+
+    <section style="text-align:center;padding:12px 0 4px">
+      <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:40px;letter-spacing:6px;margin:0 0 12px">江湖图志</h1>
+      <p style="font-size:17px;color:#5a544a;margin:0 0 6px">用 1,700 万字原著，回答关于梁羽生宇宙的任何问题——谁更能打？师承何处？神兵归谁？</p>
+      <p class="lab" style="margin:0">每个结论都带「书·回：行」定位符，随时翻回原著那一行对质。</p>
+      <div style="display:flex;gap:10px;justify-content:center;margin:18px 0">
+        <input style="width:420px;padding:10px 16px;border:2px solid #2b2b2b;border-radius:4px;font-family:inherit;font-size:15px;background:#fbf8ef" value="搜索任何人物、武功、神兵…" aria-label="站内搜索">
+        <button style="border:2px solid #a63a2b;background:#a63a2b;color:#fbf8ef;border-radius:4px;padding:0 26px;font-family:inherit;cursor:pointer">搜索</button>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;margin-bottom:14px">
+        <a href="#" class="chip" style="padding:6px 20px">查人物</a>
+        <a href="#" class="chip" style="padding:6px 20px">看行踪</a>
+        <a href="#" class="chip" style="padding:6px 20px">每日一谜</a>
+      </div>
+      <div class="lab">34 部作品 · 4 部深度解析 · 436 位人物档案 · 116 门武功 · 183 件神兵 · 215 场交手</div>
+    </section>
+
+    <section>
+      <h2 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:20px;letter-spacing:2px;border-bottom:1px solid #d8cdb8;padding-bottom:6px">今日江湖</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px">
+        <a class="card" href="#"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">每日一谜 · 第 38 题</b><span class="lab">连胜 4</span></div>
+          <p class="lab" style="margin:6px 0 0">谁杀了金独异？——三次机会，逐级解锁提示。</p></a>
+        <a class="card" href="#" style="border-color:#a63a2b"><div class="lab" style="color:#a63a2b">康熙初年 · 塞外 <span style="color:#a63a2b">● 剧情锚</span></div>
+          <b style="font-size:15px">凌未风被囚布达拉宫</b>
+          <p class="lab" style="margin:6px 0 0">七剑下天山·004:12 → ——确日事件来自年谱；无确日则显示「这一天，江湖风平浪静」。</p></a>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:20px;letter-spacing:2px;border-bottom:1px solid #d8cdb8;padding-bottom:6px">宇宙一图流 <span class="lab">系列是线路，作品是站点。绿站=深度解析，金站=建设中，虚线=存目。点击进入书页。</span></h2>
+      <div class="card" style="margin-top:14px;padding:18px 22px">
+        <svg viewBox="0 0 1100 300" style="width:100%;height:auto;display:block" role="img" aria-label="梁羽生宇宙地铁图">
+          <g><text x="4" y="30" font-size="12" font-weight="700" fill="#c0392b">天山</text><line x1="60" y1="26" x2="1050" y2="26" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="90" cy="26" r="9" fill="#5e7d5a" stroke="#c0392b" stroke-width="3"/><text x="90" y="52" font-size="10.5" text-anchor="middle">白发魔女传</text>
+            <circle cx="152" cy="26" r="7" fill="#fbf8ef" stroke="#c0392b" stroke-width="3"/><text x="152" y="52" font-size="10.5" text-anchor="middle" fill="#8c8477">塞外奇侠传</text>
+            <circle cx="214" cy="26" r="9" fill="#5e7d5a" stroke="#c0392b" stroke-width="3"/><text x="214" y="52" font-size="10.5" text-anchor="middle">七剑下天山</text>
+            <circle cx="276" cy="26" r="7" fill="#fbf8ef" stroke="#b9b1a2" stroke-width="3" stroke-dasharray="4 3"/><text x="276" y="52" font-size="10.5" text-anchor="middle" fill="#8c8477">冰魄寒光剑*</text>
+            <circle cx="338" cy="26" r="9" fill="#5e7d5a" stroke="#c0392b" stroke-width="3"/><text x="338" y="52" font-size="10.5" text-anchor="middle">江湖三女侠</text>
+            <circle cx="400" cy="26" r="7" fill="#fbf8ef" stroke="#c0392b" stroke-width="3"/><text x="400" y="52" font-size="10.5" text-anchor="middle" fill="#8c8477">冰川天女传</text>
+            <circle cx="462" cy="26" r="7" fill="#fbf8ef" stroke="#c0392b" stroke-width="3"/><text x="462" y="52" font-size="10.5" text-anchor="middle" fill="#8c8477">云海玉弓缘</text></g>
+          <g><text x="4" y="98" font-size="12" font-weight="700" fill="#2980b9">明代</text><line x1="60" y1="94" x2="520" y2="94" stroke="#2980b9" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="90" cy="94" r="7" fill="#fbf8ef" stroke="#2980b9" stroke-width="3"/><text x="90" y="120" font-size="10.5" text-anchor="middle" fill="#8c8477">还剑奇情录</text>
+            <circle cx="152" cy="94" r="7" fill="#fbf8ef" stroke="#2980b9" stroke-width="3"/><text x="152" y="120" font-size="10.5" text-anchor="middle" fill="#8c8477">萍踪侠影录</text>
+            <circle cx="214" cy="94" r="7" fill="#fbf8ef" stroke="#2980b9" stroke-width="3"/><text x="214" y="120" font-size="10.5" text-anchor="middle" fill="#8c8477">散花女侠</text></g>
+          <g><text x="4" y="166" font-size="12" font-weight="700" fill="#8e44ad">大唐</text><line x1="60" y1="162" x2="380" y2="162" stroke="#8e44ad" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="90" cy="162" r="7" fill="#fbf8ef" stroke="#8e44ad" stroke-width="3"/><text x="90" y="188" font-size="10.5" text-anchor="middle" fill="#8c8477">大唐游侠传</text>
+            <circle cx="152" cy="162" r="7" fill="#fbf8ef" stroke="#8e44ad" stroke-width="3"/><text x="152" y="188" font-size="10.5" text-anchor="middle" fill="#8c8477">龙凤宝钗缘</text></g>
+          <g><text x="4" y="234" font-size="12" font-weight="700" fill="#27ae60">宋代</text><line x1="60" y1="230" x2="640" y2="230" stroke="#27ae60" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="90" cy="230" r="7" fill="#fbf8ef" stroke="#b9b1a2" stroke-width="3" stroke-dasharray="4 3"/><text x="90" y="256" font-size="10.5" text-anchor="middle" fill="#8c8477">挑灯看剑录*</text>
+            <circle cx="152" cy="230" r="7" fill="#fbf8ef" stroke="#27ae60" stroke-width="3"/><text x="152" y="256" font-size="10.5" text-anchor="middle" fill="#8c8477">武林天骄</text></g>
+          <g><text x="4" y="290" font-size="12" font-weight="700" fill="#7f8c8d">晚清</text><line x1="60" y1="286" x2="300" y2="286" stroke="#7f8c8d" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="90" cy="286" r="7" fill="#fbf8ef" stroke="#7f8c8d" stroke-width="3"/><text x="90" y="312" font-size="10.5" text-anchor="middle" fill="#8c8477" opacity="0"> </text></g>
+        </svg>
+        <div class="lab" style="text-align:right;margin-top:4px"><a href="#">全图与换乘站 →</a></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:20px;letter-spacing:2px;border-bottom:1px solid #d8cdb8;padding-bottom:6px">看几张图，感受一下</h2>
+      <div style="display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:14px;margin-top:14px">
+        <a class="card" href="#">
+          <b style="font-family:'Noto Serif SC','SimSun',serif;font-size:15px">一夜白头：卓练温度曲线</b>
+          <svg viewBox="0 0 380 90" style="width:100%;height:auto;display:block;margin-top:8px" aria-hidden="true">
+            <path d="M10 80 L80 80 L140 55 L200 25 L260 45 L320 60 L370 72 L370 80 Z" fill="#34546e" opacity=".1"/>
+            <path d="M10 80 L140 55 L200 25 L260 45 L320 60 L370 72" fill="none" stroke="#34546e" stroke-width="1.6"/>
+            <path d="M10 78 L140 52 L200 22 L260 42 L320 58 L370 70" fill="none" stroke="#a63a2b" stroke-width="1.8"/>
+          </svg>
+          <p class="lab" style="margin:6px 0 0">131 起冲突、0 起温情事件。</p>
+        </a>
+        <a class="card" href="#">
+          <b style="font-family:'Noto Serif SC','SimSun',serif;font-size:15px">江湖座次 · 五强</b>
+          <div style="margin-top:10px;display:flex;flex-direction:column;gap:6px;font-size:14px">
+            <div style="display:flex;gap:8px;align-items:baseline"><span style="color:#b8860b;font-weight:700">绝顶</span><b>吕四娘</b><span class="lab">1662</span></div>
+            <div style="display:flex;gap:8px;align-items:baseline"><span style="color:#b8860b;font-weight:700">绝顶</span><b>冯琳</b><span class="lab">1654</span></div>
+            <div style="display:flex;gap:8px;align-items:baseline"><span style="color:#b8860b;font-weight:700">绝顶</span><b>了因</b><span class="lab">1625</span></div>
+          </div>
+          <p class="lab" style="margin-top:8px">每一场都能翻回原文对质。</p>
+        </a>
+        <a class="card" href="#">
+          <b style="font-family:'Noto Serif SC','SimSun',serif;font-size:15px">问：卓一航和凌未风怎么认识？</b>
+          <div class="lab" style="margin-top:10px;line-height:2">
+            卓一航 <span class="chip" style="border-color:#a63a2b;color:#a63a2b">恩义</span> 岳鸣珂
+            <br>岳鸣珂 <span class="chip" style="border-color:#a63a2b;color:#a63a2b">师承</span> 凌未风
+            <br>两跳 · 每跳挂证（白发·012:121 / 011:61）</div>
+          <p class="lab" style="margin-top:8px"><a href="#">图谱问答 →</a></p>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:20px;letter-spacing:2px;border-bottom:1px solid #d8cdb8;padding-bottom:6px">主入口</h2>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px">
+        <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">人物谱</b><p class="lab" style="margin:6px 0 0">查任何一位侠客：师承、武功、战绩、出场曲线——每一条都挂原著定位。</p></a>
+        <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">武功谱</b><p class="lab" style="margin:6px 0 0">一门武功谁创、谁传、谁练？名门绝学的归属与传承，证据链齐全。</p></a>
+        <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">神兵谱</b><p class="lab" style="margin:6px 0 0">游龙剑换过几任主人？神兵利器的来历与历代流转，一站看全。</p></a>
+        <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">武评</b><p class="lab" style="margin:6px 0 0">谁更能打？用原著交手排出的江湖座次，每一场都能翻回原文对质。</p></a>
+        <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">游戏</b><p class="lab" style="margin:6px 0 0">每日一谜、武林二十问答——答案全部出自原著图谱，不靠瞎编。</p></a>
+        <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">专栏</b><p class="lab" style="margin:6px 0 0">用数据读梁羽生：卓练温度曲线、成长曲线，结论可复算。</p></a>
+      </div>
+      <p class="lab" style="margin-top:14px">
+        <a href="#">作品库</a> · <a href="#">门派志（建设中）</a> · <a href="#">AB 路径</a> · <a href="#">穿帮雷达</a> · <a href="#">关于</a></p>
+    </section>
+
+    <footer style="border-top:1px solid #d8cdb8;padding-top:14px">
+      <p class="lab" style="margin:0">作品档案覆盖 34 部；人物、武功、地图、武评的深度数据目前覆盖天山四书（白发魔女传 · 塞外奇侠传 · 七剑下天山 · 江湖三女侠），其余作品随管线推进逐部开放。</p>
+      <p class="lab" style="margin:6px 0 0">CC BY-NC-SA · 梁羽生作品版权保护期内 · 全站引用遵守 L0/L1 档位</p>
+    </footer>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1760}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

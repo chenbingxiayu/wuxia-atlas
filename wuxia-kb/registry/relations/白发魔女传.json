@@ -1,0 +1,10018 @@
+{
+ "book": "白发魔女传",
+ "generated": "2026-11-06",
+ "generated_at": "2026-11-06 08:44:36",
+ "script": "scripts/relation_validator.py",
+ "script_version": "0.1",
+ "spec_version": "0.3-draft",
+ "schema": "relations-v0.1",
+ "mode": "default",
+ "source": [
+  "tagged/<书>/*.tagged.md（只读）",
+  "registry/concordance/<书>.json",
+  "registry/entities.json",
+  "skills/SKILL_关系体系_武侠版.md §7.2/§8",
+  "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
+ ],
+ "snapshot": {
+  "exported_at": "2026-11-06 08:44:36",
+  "tagged_chapters": 32,
+  "concordance_generated": "2026-11-05T22:00:09+08:00",
+  "registry_entities": 738,
+  "corpus_chapters": 32,
+  "paragraphs": 2196,
+  "verbs": 5700,
+  "verbs_in_quote": 1035,
+  "entities": 31504
+ },
+ "predicate_table": {
+  "version": "D06@0.3-draft",
+  "count": 55,
+  "used": [
+   "交手",
+   "任职",
+   "到达",
+   "同门",
+   "婚约",
+   "师承",
+   "杀害",
+   "点穴",
+   "离开",
+   "结义",
+   "解救",
+   "转移"
+  ]
+ },
+ "edge_schema": {
+  "required": [
+   "subject",
+   "predicate",
+   "object",
+   "subject_type",
+   "object_type",
+   "confidence",
+   "loc",
+   "evidence",
+   "rule"
+  ],
+  "confidence_values": [
+   "strong",
+   "ok",
+   "weak"
+  ],
+  "subject_type": "标注层实体符号（@人物/◆组织/&家族/☆武功/•器物/=/地点/;职衔）",
+  "evidence": {
+   "fields": [
+    "loc",
+    "type",
+    "rule"
+   ],
+   "type_values": [
+    "E1明文",
+    "E2动作+共现",
+    "E3推导"
+   ]
+  },
+  "loc_format": "NNN:段（回号:PN 段号）",
+  "source": "D06 §7.2 谓词总表 / §8.1 证据三级 / §6.2 离线表 schema"
+ },
+ "offline_interface": {
+  "types": [
+   "情感",
+   "恩义",
+   "背叛",
+   "主仆"
+  ],
+  "schema": "D06 §6.2（rel_id/subject/object/type/subtype/direction/states/manner/conf/evidence/event_ids/related_predicates/notes）",
+  "emitted": [],
+  "note": "四类离线关系行内不设符号（01g 铁律）；本脚本只出放弃原因（治愈/转移→恩义候选、隶属终止→背叛候选等），离线表由人工裁定流程维护，N5 不写。"
+ },
+ "counts": {
+  "candidates": 394,
+  "edges": 214,
+  "dropped": 256,
+  "derived_edges": 1,
+  "tongmen_edges": 1,
+  "lineage_labels": 7,
+  "by_predicate": {
+   "交手": 89,
+   "到达": 54,
+   "师承": 11,
+   "杀害": 4,
+   "离开": 27,
+   "结义": 4,
+   "任职": 2,
+   "同门": 1,
+   "婚约": 4,
+   "点穴": 7,
+   "解救": 4,
+   "转移": 7
+  },
+  "by_confidence": {
+   "ok": 164,
+   "strong": 26,
+   "weak": 24
+  },
+  "by_layer": {
+   "人": 124,
+   "实": 90
+  },
+  "by_rule": {
+   "X-COMBAT": 89,
+   "X-ARRIVE": 41,
+   "04f-L24": 12,
+   "语式-收徒": 5,
+   "04f-L08": 4,
+   "X-LEAVE": 20,
+   "语式-结义": 3,
+   "04f-L17": 2,
+   "04f-L21": 1,
+   "D06#45/B3": 1,
+   "语式-婚约": 4,
+   "语式-师承": 4,
+   "语式-拜师": 2,
+   "04f-L05": 7,
+   "04f-L22": 7,
+   "04f-L19": 1,
+   "X-RESCUE": 4,
+   "04f-L12": 3,
+   "04f-L11": 4
+  },
+  "drop_by_reason": {
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 25,
+   "实体缺失（04f#5 点穴须施者/受者）": 11,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 25,
+   "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）": 6,
+   "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库": 7,
+   "传闻降权（D06 §8.3，不入正式表）": 15,
+   "婚约双方为下一代（指腹为媒/结成亲家），须亲属边推导；本脚本无血缘树，不直接落库（D06 few-shot 甲）": 3,
+   "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）": 7,
+   "恩义属离线表（D06 §6.4），不进 SPO 关系表": 2,
+   "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）": 3,
+   "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）": 5,
+   "实体缺失（04f#26 交手须双方人物角色）": 19,
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 33,
+   "E1 明文不足（师承须拜师实写；04f R1/R8、D06 §8.1）": 1,
+   "强制双实体缺失（04f#23 押送须押者+被押者[+讫地]）": 1,
+   "强制档实体缺失（04f#1/#4 武功名未在句）": 1,
+   "强制档实体缺失（04f#17 任职须人物+职衔）": 1,
+   "强制档实体缺失（04f#9 医者/伤者未同现）": 3,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 3,
+   "强制档实体缺失（04f#14 制造须人物+器物）": 1,
+   "强制档实体缺失（04f#18 隶属终止须人物+组织）": 3,
+   "自指/主宾同一实体": 76,
+   "互为师徒环（D06 §9.3 无环拦截）：双向证据冲突，双放弃待人工裁定": 2,
+   "主宾类型/谓词表校验不符（D06 §7.2）": 3
+  }
+ },
+ "edges": [
+  {
+   "subject": "公孙大娘",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "015:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "015:20",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "015:22",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "015:22",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "015:23",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "016:23",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "016:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:12",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:14",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:16",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 10,
+   "loc": "015:11",
+   "chapter": 15,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "015:11",
+    "015:20",
+    "015:22",
+    "015:22",
+    "015:23",
+    "016:23",
+    "016:24",
+    "020:12",
+    "020:14",
+    "020:16"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0001"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "004:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "004:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "004:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "004:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "004:25",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "004:25",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:36",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 9,
+   "loc": "004:24",
+   "chapter": 4,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:24",
+    "004:24",
+    "004:24",
+    "004:24",
+    "004:24",
+    "004:25",
+    "004:25",
+    "013:35",
+    "013:36"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0002"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "006:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "006:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "006:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "012:55",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "015:28",
+     "type": "E2动作+共现",
+     "rule": "04f-L26"
+    },
+    {
+     "loc": "022:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "022:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:38",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:8",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 9,
+   "loc": "006:43",
+   "chapter": 6,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "006:43",
+    "006:43",
+    "006:43",
+    "012:55",
+    "015:28",
+    "022:51",
+    "022:51",
+    "024:38",
+    "025:8"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0003"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "021:5",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "023:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "023:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "023:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:36",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 8,
+   "loc": "013:13",
+   "chapter": 13,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:13",
+    "021:5",
+    "023:50",
+    "023:50",
+    "023:51",
+    "024:17",
+    "024:17",
+    "024:36"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0004"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:16",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:20",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:61",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:61",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "032:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "032:52",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 7,
+   "loc": "026:16",
+   "chapter": 26,
+   "para": 16,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:16",
+    "026:20",
+    "026:51",
+    "026:61",
+    "026:61",
+    "032:51",
+    "032:52"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0005"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:16",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "004:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "029:5",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 5,
+   "loc": "004:16",
+   "chapter": 4,
+   "para": 16,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:16",
+    "004:17",
+    "020:10",
+    "020:10",
+    "029:5"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0006"
+  },
+  {
+   "subject": "连城虎",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "023:49",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "023:72",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "023:72",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "027:87",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "027:87",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 5,
+   "loc": "023:49",
+   "chapter": 23,
+   "para": 49,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "023:49",
+    "023:72",
+    "023:72",
+    "027:87",
+    "027:87"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0007"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "哈川",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "029:79",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "029:79",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "029:86",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "029:86",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "029:79",
+   "chapter": 29,
+   "para": 79,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:79",
+    "029:79",
+    "029:86",
+    "029:86"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0008"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "应修阳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:18",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:20",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "010:42",
+   "chapter": 10,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:42",
+    "011:17",
+    "011:18",
+    "011:20"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0009"
+  },
+  {
+   "subject": "红云",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:82",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:83",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:83",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:83",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "007:82",
+   "chapter": 7,
+   "para": 82,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:82",
+    "007:83",
+    "007:83",
+    "007:83"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0010"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "天山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:1",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "028:1",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "032:68",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "032:88",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 4,
+   "loc": "028:1",
+   "chapter": 28,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:1",
+    "028:1",
+    "032:68",
+    "032:88"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0011"
+  },
+  {
+   "subject": "云燕平",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "卓一航",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:32",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "006:31",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "006:31",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "005:32",
+   "chapter": 5,
+   "para": 32,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "005:32",
+    "006:31",
+    "006:31"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0012"
+  },
+  {
+   "subject": "公孙大娘",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "白石道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "014:9",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "014:33",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "014:33",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "014:9",
+   "chapter": 14,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "014:9",
+    "014:33",
+    "014:33"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0013"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "成章五",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "032:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "032:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "032:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "032:24",
+   "chapter": 32,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "032:24",
+    "032:24",
+    "032:24"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0014"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金独异",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:27",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:27",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:14",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "010:27",
+   "chapter": 10,
+   "para": 27,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:27",
+    "010:27",
+    "013:14"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0015"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:15",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:82",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:82",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "013:15",
+   "chapter": 13,
+   "para": 15,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:15",
+    "020:82",
+    "020:82"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0016"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金独异",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:16",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "016:31",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "018:47",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "013:16",
+   "chapter": 13,
+   "para": 16,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:16",
+    "016:31",
+    "018:47"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0017"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "青蓑道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:54",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:54",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:60",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "026:54",
+   "chapter": 26,
+   "para": 54,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:54",
+    "026:54",
+    "026:60"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0018"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄叶道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:53",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:60",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "007:53",
+   "chapter": 7,
+   "para": 53,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:53",
+    "026:19",
+    "026:60"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0019"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "王兵备",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "005:39",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "005:24",
+   "chapter": 5,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "005:24",
+    "005:39"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0020"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "王照希",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "002:40",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "027:70",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "002:40",
+   "chapter": 2,
+   "para": 40,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "002:40",
+    "027:70"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0021"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "石浩",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "029:79",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "029:88",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "029:79",
+   "chapter": 29,
+   "para": 79,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:79",
+    "029:88"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0022"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "白石道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "018:44",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:23",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "018:44",
+   "chapter": 18,
+   "para": 44,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "018:44",
+    "020:23"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0023"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁珊瑚",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:28",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "010:28",
+   "chapter": 10,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:28",
+    "020:35"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0024"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄叶道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:96",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:96",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "026:96",
+   "chapter": 26,
+   "para": 96,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:96",
+    "026:96"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0025"
+  },
+  {
+   "subject": "拙道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "025:13",
+   "chapter": 25,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "025:13",
+    "025:13"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0026"
+  },
+  {
+   "subject": "李岩",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "021:48",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "021:48",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "021:48",
+   "chapter": 21,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "021:48",
+    "021:48"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0027"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "003:5",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:5",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "003:5",
+   "chapter": 3,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:5",
+    "003:5"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0028"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄叶道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:16",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "026:16",
+   "chapter": 26,
+   "para": 16,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:16",
+    "026:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0029"
+  },
+  {
+   "subject": "神一元",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "022:44",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "022:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "022:44",
+   "chapter": 22,
+   "para": 44,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:44",
+    "022:45"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0030"
+  },
+  {
+   "subject": "神大元",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "022:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "022:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "022:43",
+   "chapter": 22,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:43",
+    "022:43"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0031"
+  },
+  {
+   "subject": "穆九娘",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "006:41",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "006:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "006:41",
+   "chapter": 6,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "006:41",
+    "006:42"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0032"
+  },
+  {
+   "subject": "红云道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "014:1",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "014:1",
+   "chapter": 14,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "014:1",
+    "026:50"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0033"
+  },
+  {
+   "subject": "红云道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄叶道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:96",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:96",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "026:96",
+   "chapter": 26,
+   "para": 96,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:96",
+    "026:96"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0034"
+  },
+  {
+   "subject": "金千岩",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁珊瑚",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:29",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "010:11",
+   "chapter": 10,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:11",
+    "010:29"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0035"
+  },
+  {
+   "subject": "客娉婷",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "山西",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "024:45",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "026:99",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "024:45",
+   "chapter": 24,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "024:45",
+    "026:99"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0036"
+  },
+  {
+   "subject": "应修阳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "乳娘府",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "024:32",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "024:45",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "024:32",
+   "chapter": 24,
+   "para": 32,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "024:32",
+    "024:45"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0037"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "厢房",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "023:9",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    },
+    {
+     "loc": "025:34",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "023:9",
+   "chapter": 23,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "023:9",
+    "025:34"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0038"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "清虚观",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:6",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "020:6",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "020:6",
+   "chapter": 20,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:6",
+    "020:6"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0039"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "长安镖局",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "022:97",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "024:10",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "022:97",
+   "chapter": 22,
+   "para": 97,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:97",
+    "024:10"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0040"
+  },
+  {
+   "subject": "李申时",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "白石道人",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "语式-收徒",
+   "rule_row": 7,
+   "subtype": "收…为徒",
+   "params": {},
+   "notes": "明文章式『收…为徒』（E1；方向=徒→师）；04f#7 收徒实写；方向倒置（徒→师）",
+   "evidence": [
+    {
+     "loc": "017:17",
+     "type": "E1明文",
+     "rule": "语式-收徒"
+    },
+    {
+     "loc": "017:17",
+     "type": "E1明文",
+     "rule": "04f-L07"
+    }
+   ],
+   "count": 2,
+   "loc": "017:17",
+   "chapter": 17,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "017:17",
+    "017:17"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0041"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "岳鸣珂",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "语式-收徒",
+   "rule_row": 7,
+   "subtype": "收…为徒",
+   "params": {},
+   "notes": "明文章式『收…为徒』（E1；方向=徒→师）；04f#7 收徒实写；方向倒置（徒→师）",
+   "evidence": [
+    {
+     "loc": "028:1",
+     "type": "E1明文",
+     "rule": "语式-收徒"
+    },
+    {
+     "loc": "028:1",
+     "type": "E1明文",
+     "rule": "04f-L07"
+    }
+   ],
+   "count": 2,
+   "loc": "028:1",
+   "chapter": 28,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:1",
+    "028:1"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0042"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "金独异",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "022:63",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    },
+    {
+     "loc": "027:66",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 2,
+   "loc": "022:63",
+   "chapter": 22,
+   "para": 63,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:63",
+    "027:66"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0043"
+  },
+  {
+   "subject": "公孙大娘",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "道观",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:7",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    },
+    {
+     "loc": "020:7",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 2,
+   "loc": "020:7",
+   "chapter": 20,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:7",
+    "020:7"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0044"
+  },
+  {
+   "subject": "张献忠",
+   "subject_type": "@",
+   "predicate": "结义",
+   "object": "李自成",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "语式-结义",
+   "rule_row": 19,
+   "subtype": "结为兄弟",
+   "params": {},
+   "notes": "语式『结为兄弟』",
+   "evidence": [
+    {
+     "loc": "027:48",
+     "type": "E1明文",
+     "rule": "语式-结义"
+    },
+    {
+     "loc": "027:48",
+     "type": "E1明文",
+     "rule": "语式-结义"
+    }
+   ],
+   "count": 2,
+   "loc": "027:48",
+   "chapter": 27,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:48",
+    "027:48"
+   ],
+   "layer": "人",
+   "direction": "组",
+   "id": "白发魔女传#R0045"
+  },
+  {
+   "subject": "云燕平",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:36",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "005:36",
+   "chapter": 5,
+   "para": 36,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "005:36"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0046"
+  },
+  {
+   "subject": "何萼华",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "李申时",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:16",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:16",
+   "chapter": 16,
+   "para": 16,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "016:16"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0047"
+  },
+  {
+   "subject": "公孙大娘",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金独异",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:40",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:40",
+   "chapter": 16,
+   "para": 40,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "016:40"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0048"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "哈玛雅",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "030:30",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "030:30",
+   "chapter": 30,
+   "para": 30,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "030:30"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0049"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "天德上人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "030:40",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "030:40",
+   "chapter": 30,
+   "para": 40,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "030:40"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0050"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "天龙上人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "032:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "032:45",
+   "chapter": 32,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "032:45"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0051"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "应修阳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "004:19",
+   "chapter": 4,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0052"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "昌钦法师",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:58",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "028:58",
+   "chapter": 28,
+   "para": 58,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:58"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0053"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "红云道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:96",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "026:96",
+   "chapter": 26,
+   "para": 96,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:96"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0054"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "范筑",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:14",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "004:14",
+   "chapter": 4,
+   "para": 14,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:14"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0055"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金独异",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "018:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "018:45",
+   "chapter": 18,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "018:45"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0056"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "雷蒙法师",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "029:77",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "029:77",
+   "chapter": 29,
+   "para": 77,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:77"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0057"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "霍元仲",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:54",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "028:54",
+   "chapter": 28,
+   "para": 54,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:54"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0058"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄叶道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "008:4",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "008:4",
+   "chapter": 8,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "008:4"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0059"
+  },
+  {
+   "subject": "卓家",
+   "subject_type": "&",
+   "predicate": "交手",
+   "object": "耿绍南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "001:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "001:10",
+   "chapter": 1,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "001:10"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0060"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "天德上人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "030:30",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "030:30",
+   "chapter": 30,
+   "para": 30,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "030:30"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0061"
+  },
+  {
+   "subject": "唐努",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "孟萨思",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "029:109",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "029:109",
+   "chapter": 29,
+   "para": 109,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:109"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0062"
+  },
+  {
+   "subject": "天元",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "岳鸣珂",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:43",
+   "chapter": 9,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "009:43"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0063"
+  },
+  {
+   "subject": "客娉婷",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "岳鸣珂",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "012:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "012:10",
+   "chapter": 12,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "012:10"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0064"
+  },
+  {
+   "subject": "客娉婷",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "王照希",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "027:88",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "027:88",
+   "chapter": 27,
+   "para": 88,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:88"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0065"
+  },
+  {
+   "subject": "尊胜",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "岳鸣珂",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "010:21",
+   "chapter": 10,
+   "para": 21,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:21"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0066"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "慕容冲",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "012:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "012:17",
+   "chapter": 12,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "012:17"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0067"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "熊廷弼",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "012:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "012:50",
+   "chapter": 12,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "012:50"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0068"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "王赞",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "012:47",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "012:47",
+   "chapter": 12,
+   "para": 47,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "012:47"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0069"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "连城虎",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:31",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "028:31",
+   "chapter": 28,
+   "para": 31,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:31"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0070"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金千岩",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:20",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "010:20",
+   "chapter": 10,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:20"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0071"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:37",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "013:37",
+   "chapter": 13,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:37"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0072"
+  },
+  {
+   "subject": "应修阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "004:19",
+   "chapter": 4,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0073"
+  },
+  {
+   "subject": "归有章",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "030:29",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "030:29",
+   "chapter": 30,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "030:29"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0074"
+  },
+  {
+   "subject": "归有章",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "耿绍南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "001:40",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "001:40",
+   "chapter": 1,
+   "para": 40,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "001:40"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0075"
+  },
+  {
+   "subject": "归有章",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "邵宣扬",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "001:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "001:43",
+   "chapter": 1,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "001:43"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0076"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁珊瑚",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "020:2",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "020:2",
+   "chapter": 20,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:2"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0077"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙啸云",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:18",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:18",
+   "chapter": 16,
+   "para": 18,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "016:18"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0078"
+  },
+  {
+   "subject": "成章五",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "032:55",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "032:55",
+   "chapter": 32,
+   "para": 55,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "032:55"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0079"
+  },
+  {
+   "subject": "柳西铭",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "013:13",
+   "chapter": 13,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:13"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0080"
+  },
+  {
+   "subject": "武当五老",
+   "subject_type": "◎",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:52",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "007:52",
+   "chapter": 7,
+   "para": 52,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:52"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0081"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "耿绍南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "001:27",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "001:27",
+   "chapter": 1,
+   "para": 27,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "001:27"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0082"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "连城虎",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "027:67",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "027:67",
+   "chapter": 27,
+   "para": 67,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:67"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0083"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金千岩",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "027:69",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "027:69",
+   "chapter": 27,
+   "para": 69,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:69"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0084"
+  },
+  {
+   "subject": "白广恩",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "袁崇焕",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "023:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "023:19",
+   "chapter": 23,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "023:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0085"
+  },
+  {
+   "subject": "白敏",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "连城虎",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "027:87",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "027:87",
+   "chapter": 27,
+   "para": 87,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:87"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0086"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "紫阳道长",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "020:75",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "020:75",
+   "chapter": 20,
+   "para": 75,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:75"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0087"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "红云道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:60",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "026:60",
+   "chapter": 26,
+   "para": 60,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:60"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0088"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "霍元仲",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "032:59",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "032:59",
+   "chapter": 32,
+   "para": 59,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "032:59"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0089"
+  },
+  {
+   "subject": "石浩",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "罗铁臂",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "022:8",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "022:8",
+   "chapter": 22,
+   "para": 8,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:8"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0090"
+  },
+  {
+   "subject": "石浩",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "023:28",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "023:28",
+   "chapter": 23,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "023:28"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0091"
+  },
+  {
+   "subject": "神大元",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金千岩",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "027:77",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "027:77",
+   "chapter": 27,
+   "para": 77,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:77"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0092"
+  },
+  {
+   "subject": "神家两兄弟",
+   "subject_type": "◎",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "022:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "022:50",
+   "chapter": 22,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:50"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0093"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "耿绍南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:70",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "007:70",
+   "chapter": 7,
+   "para": 70,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:70"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0094"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "范筑",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "004:17",
+   "chapter": 4,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:17"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0095"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "连城虎",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "023:72",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "023:72",
+   "chapter": 23,
+   "para": 72,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "023:72"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0096"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁珊瑚",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "006:7",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "006:7",
+   "chapter": 6,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "006:7"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0097"
+  },
+  {
+   "subject": "范筑",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "郑洪台",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "004:19",
+   "chapter": 4,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0098"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "霍元仲",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:24",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "025:24",
+   "chapter": 25,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "025:24"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0099"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄叶道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "007:50",
+   "chapter": 7,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:50"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0100"
+  },
+  {
+   "subject": "常洛",
+   "subject_type": "@",
+   "predicate": "任职",
+   "object": "太子",
+   "object_type": ";",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "04f-L17",
+   "rule_row": 17,
+   "subtype": "",
+   "params": {
+    "组织": ""
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:48",
+     "type": "E1明文",
+     "rule": "04f-L17"
+    }
+   ],
+   "count": 1,
+   "loc": "010:48",
+   "chapter": 10,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:48"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0101"
+  },
+  {
+   "subject": "由校",
+   "subject_type": "@",
+   "predicate": "任职",
+   "object": "太子",
+   "object_type": ";",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "04f-L17",
+   "rule_row": 17,
+   "subtype": "",
+   "params": {
+    "组织": ""
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:29",
+     "type": "E1明文",
+     "rule": "04f-L17"
+    }
+   ],
+   "count": 1,
+   "loc": "011:29",
+   "chapter": 11,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "011:29"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0102"
+  },
+  {
+   "subject": "公孙大娘",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "清虚观",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:6",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "020:6",
+   "chapter": 20,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:6"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0103"
+  },
+  {
+   "subject": "公孙大娘",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "襄樊",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "025:50",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "025:50",
+   "chapter": 25,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "025:50"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0104"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "东长安街",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:52",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:52",
+   "chapter": 10,
+   "para": 52,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:52"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0105"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "内堂",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:2",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "005:2",
+   "chapter": 5,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "005:2"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0106"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "内室",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:37",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "004:37",
+   "chapter": 4,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:37"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0107"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "半山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:29",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "003:29",
+   "chapter": 3,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:29"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0108"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "后洞",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:29",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "004:29",
+   "chapter": 4,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:29"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0109"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "客寓",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:9",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "004:9",
+   "chapter": 4,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:9"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0110"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "客店",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:42",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "003:42",
+   "chapter": 3,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:42"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0111"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "少林寺",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "009:11",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "009:11",
+   "chapter": 9,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "009:11"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0112"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "屋内",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "006:34",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "006:34",
+   "chapter": 6,
+   "para": 34,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "006:34"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0113"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "山坳",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:41",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "003:41",
+   "chapter": 3,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:41"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0114"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "庄门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:62",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:62",
+   "chapter": 7,
+   "para": 62,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:62"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0115"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "玉女峰",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:10",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "004:10",
+   "chapter": 4,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:10"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0116"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "石莲台",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "026:30",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "026:30",
+   "chapter": 26,
+   "para": 30,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:30"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0117"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "神座",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "026:96",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "026:96",
+   "chapter": 26,
+   "para": 96,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:96"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0118"
+  },
+  {
+   "subject": "孟秋霞",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "乾清宫",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "002:27",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "002:27",
+   "chapter": 2,
+   "para": 27,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "002:27"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0119"
+  },
+  {
+   "subject": "孟秋霞",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "殿",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:5",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "003:5",
+   "chapter": 3,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:5"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0120"
+  },
+  {
+   "subject": "客娉婷",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "中条山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "027:82",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "027:82",
+   "chapter": 27,
+   "para": 82,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:82"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0121"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "慕十塔格山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "032:88",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "032:88",
+   "chapter": 32,
+   "para": 88,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "032:88"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0122"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "漱石斋",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:53",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:53",
+   "chapter": 10,
+   "para": 53,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:53"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0123"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "皇宫",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:47",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "011:47",
+   "chapter": 11,
+   "para": 47,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "011:47"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0124"
+  },
+  {
+   "subject": "常洛",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "报子胡同",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:25",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "003:25",
+   "chapter": 3,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:25"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0125"
+  },
+  {
+   "subject": "应修阳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "山谷",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:2",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "020:2",
+   "chapter": 20,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:2"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0126"
+  },
+  {
+   "subject": "应修阳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "皇宫",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:20",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "011:20",
+   "chapter": 11,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "011:20"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0127"
+  },
+  {
+   "subject": "归有章",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "门外",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "001:43",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "001:43",
+   "chapter": 1,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "001:43"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0128"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "山寨",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:69",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "020:69",
+   "chapter": 20,
+   "para": 69,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:69"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0129"
+  },
+  {
+   "subject": "昌钦法师",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "回疆",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:20",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "028:20",
+   "chapter": 28,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:20"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0130"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "卧房",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:9",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "003:9",
+   "chapter": 3,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:9"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0131"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "内室",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:37",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "011:37",
+   "chapter": 11,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "011:37"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0132"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "河南",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "008:23",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "008:23",
+   "chapter": 8,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "008:23"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0133"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "西北角",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "009:72",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "009:72",
+   "chapter": 9,
+   "para": 72,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "009:72"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0134"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "北高峰",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "029:10",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "029:10",
+   "chapter": 29,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:10"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0135"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "回疆",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:33",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "028:33",
+   "chapter": 28,
+   "para": 33,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:33"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0136"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "塞外",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "032:62",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "032:62",
+   "chapter": 32,
+   "para": 62,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "032:62"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0137"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "明月峡",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "021:43",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "021:43",
+   "chapter": 21,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "021:43"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0138"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "武当山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "015:37",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "015:37",
+   "chapter": 15,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "015:37"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0139"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "谷底",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "021:17",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "021:17",
+   "chapter": 21,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "021:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0140"
+  },
+  {
+   "subject": "贞乾道人",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "峨嵋",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:36",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "004:36",
+   "chapter": 4,
+   "para": 36,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:36"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0141"
+  },
+  {
+   "subject": "连城虎",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "西藏",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:20",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "028:20",
+   "chapter": 28,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:20"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0142"
+  },
+  {
+   "subject": "郑洪台",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "华阴",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L21",
+   "rule_row": 21,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:28",
+     "type": "E2动作+共现",
+     "rule": "04f-L21"
+    }
+   ],
+   "count": 1,
+   "loc": "003:28",
+   "chapter": 3,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:28"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0143"
+  },
+  {
+   "subject": "金独异",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "屋",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "016:26",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "016:26",
+   "chapter": 16,
+   "para": 26,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "016:26"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0144"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "卧房",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "025:49",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "025:49",
+   "chapter": 25,
+   "para": 49,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "025:49"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0145"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "场心",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:72",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:72",
+   "chapter": 7,
+   "para": 72,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:72"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0146"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "山腰",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "021:23",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "021:23",
+   "chapter": 21,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "021:23"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0147"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "秘魔崖",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "024:12",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "024:12",
+   "chapter": 24,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "024:12"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0148"
+  },
+  {
+   "subject": "镜明长老",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "少林寺",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "017:7",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "017:7",
+   "chapter": 17,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "017:7"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0149"
+  },
+  {
+   "subject": "黄叶道人",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "清风山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:43",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:43",
+   "chapter": 7,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:43"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0150"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "杨云骢",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "岳鸣珂"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "028:1",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "028:45",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "028:1",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "白发魔女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "028:1",
+    "028:45"
+   ],
+   "id": "白发魔女传#R0151"
+  },
+  {
+   "subject": "孟灿",
+   "subject_type": "@",
+   "predicate": "婚约",
+   "object": "王照希",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-婚约",
+   "rule_row": 41,
+   "subtype": "未婚妻",
+   "params": {},
+   "notes": "语式『未婚妻』；近邻配对启发式，待人工复核；婚约→配偶状态机（永不自动生成配偶边）",
+   "evidence": [
+    {
+     "loc": "002:14",
+     "type": "E1明文",
+     "rule": "语式-婚约"
+    }
+   ],
+   "count": 1,
+   "loc": "002:14",
+   "chapter": 2,
+   "para": 14,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "002:14"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0152"
+  },
+  {
+   "subject": "孟秋霞",
+   "subject_type": "@",
+   "predicate": "婚约",
+   "object": "柳西铭",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-婚约",
+   "rule_row": 41,
+   "subtype": "未婚夫",
+   "params": {},
+   "notes": "语式『未婚夫』；近邻配对启发式，待人工复核；婚约→配偶状态机（永不自动生成配偶边）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "002:24",
+     "type": "E1明文",
+     "rule": "语式-婚约"
+    }
+   ],
+   "count": 1,
+   "loc": "002:24",
+   "chapter": 2,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "002:24"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0153"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "婚约",
+   "object": "铁珊瑚",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-婚约",
+   "rule_row": 41,
+   "subtype": "未婚妻",
+   "params": {},
+   "notes": "语式『未婚妻』；近邻配对启发式，待人工复核；婚约→配偶状态机（永不自动生成配偶边）",
+   "evidence": [
+    {
+     "loc": "007:7",
+     "type": "E1明文",
+     "rule": "语式-婚约"
+    }
+   ],
+   "count": 1,
+   "loc": "007:7",
+   "chapter": 7,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:7"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0154"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "婚约",
+   "object": "黄叶道人",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-婚约",
+   "rule_row": 41,
+   "subtype": "未婚妻",
+   "params": {},
+   "notes": "语式『未婚妻』；近邻配对启发式，待人工复核；婚约→配偶状态机（永不自动生成配偶边）",
+   "evidence": [
+    {
+     "loc": "007:45",
+     "type": "E1明文",
+     "rule": "语式-婚约"
+    }
+   ],
+   "count": 1,
+   "loc": "007:45",
+   "chapter": 7,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:45"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0155"
+  },
+  {
+   "subject": "公孙大娘",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "应修阳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "020:9",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "020:9",
+   "chapter": 20,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:9"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0156"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "岳鸣珂",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师",
+   "params": {},
+   "notes": "明文章式『拜…为师』（E1）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "028:45",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "028:45",
+   "chapter": 28,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:45"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0157"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "紫阳道长",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "006:35",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "006:35",
+   "chapter": 6,
+   "para": 35,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "006:35"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0158"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "达摩租师",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师(代词)",
+   "params": {},
+   "notes": "代词宾语句式启发式（master=前文最近角色）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "028:45",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "028:45",
+   "chapter": 28,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:45"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0159"
+  },
+  {
+   "subject": "天德上人",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "卓一航",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-收徒",
+   "rule_row": 7,
+   "subtype": "收徒",
+   "params": {},
+   "notes": "『收徒』明文（E1，方向=徒→师）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "029:28",
+     "type": "E1明文",
+     "rule": "语式-收徒"
+    }
+   ],
+   "count": 1,
+   "loc": "029:28",
+   "chapter": 29,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:28"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0160"
+  },
+  {
+   "subject": "李申时",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "黄叶道人",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-收徒",
+   "rule_row": 7,
+   "subtype": "收…为徒(代词)",
+   "params": {},
+   "notes": "代词宾语句式启发式（disciple=前文最近角色）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "017:14",
+     "type": "E1明文",
+     "rule": "语式-收徒"
+    }
+   ],
+   "count": 1,
+   "loc": "017:14",
+   "chapter": 17,
+   "para": 14,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "017:14"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0161"
+  },
+  {
+   "subject": "白敏",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "孟灿",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "005:10",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "005:10",
+   "chapter": 5,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "005:10"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0162"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "公孙大娘",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "025:6",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "025:6",
+   "chapter": 25,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "025:6"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0163"
+  },
+  {
+   "subject": "黄叶道人",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "何萼华",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-收徒",
+   "rule_row": 7,
+   "subtype": "收…为徒",
+   "params": {},
+   "notes": "明文章式『收…为徒』（E1；方向=徒→师）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "017:14",
+     "type": "E1明文",
+     "rule": "语式-收徒"
+    }
+   ],
+   "count": 1,
+   "loc": "017:14",
+   "chapter": 17,
+   "para": 14,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "017:14"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0164"
+  },
+  {
+   "subject": "张四",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "王照希",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "027:50",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "027:50",
+   "chapter": 27,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:50"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0165"
+  },
+  {
+   "subject": "朱由检",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "魏忠贤",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "028:19",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "028:19",
+   "chapter": 28,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:19"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0166"
+  },
+  {
+   "subject": "红云道人",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "白石道人",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "026:70",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "026:70",
+   "chapter": 26,
+   "para": 70,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:70"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0167"
+  },
+  {
+   "subject": "凌霄",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "卓一航",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": "志堂穴"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:18",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "004:18",
+   "chapter": 4,
+   "para": 18,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:18"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0168"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "白石道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": "软麻哑穴"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "013:1",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "013:1",
+   "chapter": 13,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:1"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0169"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "雷蒙法师",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": "穴道"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "029:95",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "029:95",
+   "chapter": 29,
+   "para": 95,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:95"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0170"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "铁珊瑚",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": "穴道"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:3",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "020:3",
+   "chapter": 20,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:3"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0171"
+  },
+  {
+   "subject": "杜明忠",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "唐家璧",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": ""
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "022:40",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "022:40",
+   "chapter": 22,
+   "para": 40,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:40"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0172"
+  },
+  {
+   "subject": "神一元",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": "臂儒穴"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "022:44",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "022:44",
+   "chapter": 22,
+   "para": 44,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:44"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0173"
+  },
+  {
+   "subject": "连城虎",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "岳鸣珂",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": "穴道"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:31",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "028:31",
+   "chapter": 28,
+   "para": 31,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:31"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0174"
+  },
+  {
+   "subject": "云燕平",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "房门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "017:33",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "017:33",
+   "chapter": 17,
+   "para": 33,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "017:33"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0175"
+  },
+  {
+   "subject": "公孙大娘",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "明月峡",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:5",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "020:5",
+   "chapter": 20,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:5"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0176"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "中堂",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:10",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "005:10",
+   "chapter": 5,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "005:10"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0177"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "洞口",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:41",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "003:41",
+   "chapter": 3,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:41"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0178"
+  },
+  {
+   "subject": "孟秋霞",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "京师",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:6",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "007:6",
+   "chapter": 7,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:6"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0179"
+  },
+  {
+   "subject": "孟秋霞",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "西北",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:6",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:6",
+   "chapter": 7,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:6"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0180"
+  },
+  {
+   "subject": "尊胜禅师",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "静室",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:35",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:35",
+   "chapter": 10,
+   "para": 35,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "010:35"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0181"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "体仁阁",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:27",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "011:27",
+   "chapter": 11,
+   "para": 27,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "011:27"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0182"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "初祖庵",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "009:56",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "009:56",
+   "chapter": 9,
+   "para": 56,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "009:56"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0183"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "天山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:37",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "028:37",
+   "chapter": 28,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "028:37"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0184"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "山风",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "013:44",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "013:44",
+   "chapter": 13,
+   "para": 44,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:44"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0185"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "明月峡",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:24",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "020:24",
+   "chapter": 20,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "020:24"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0186"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "北京",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "026:88",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "026:88",
+   "chapter": 26,
+   "para": 88,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "026:88"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0187"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "山谷",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "019:6",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "019:6",
+   "chapter": 19,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "019:6"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0188"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "地窟",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:4",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "003:4",
+   "chapter": 3,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "003:4"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0189"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "天桥",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "002:6",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "002:6",
+   "chapter": 2,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "002:6"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0190"
+  },
+  {
+   "subject": "王赞",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "大门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "013:29",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "013:29",
+   "chapter": 13,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:29"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0191"
+  },
+  {
+   "subject": "白石道人",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "河南",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "008:23",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "008:23",
+   "chapter": 8,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "008:23"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0192"
+  },
+  {
+   "subject": "穆九娘",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "湖北",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "013:57",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "013:57",
+   "chapter": 13,
+   "para": 57,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:57"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0193"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "天山",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "029:10",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "029:10",
+   "chapter": 29,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:10"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0194"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "天牢",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "022:97",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "022:97",
+   "chapter": 22,
+   "para": 97,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:97"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0195"
+  },
+  {
+   "subject": "辛龙子",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "驼峰",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "029:48",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "029:48",
+   "chapter": 29,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "029:48"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0196"
+  },
+  {
+   "subject": "铁珊瑚",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "花厅",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "006:35",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "006:35",
+   "chapter": 6,
+   "para": 35,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "006:35"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0197"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "万县",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "022:20",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "022:20",
+   "chapter": 22,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:20"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0198"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "大门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "013:25",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "013:25",
+   "chapter": 13,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:25"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0199"
+  },
+  {
+   "subject": "铁飞龙",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "谷底",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "021:17",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "021:17",
+   "chapter": 21,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "021:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0200"
+  },
+  {
+   "subject": "孟灿",
+   "subject_type": "@",
+   "predicate": "结义",
+   "object": "王照希",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "语式-结义",
+   "rule_row": 19,
+   "subtype": "八拜之交",
+   "params": {},
+   "notes": "语式『八拜之交』",
+   "evidence": [
+    {
+     "loc": "002:2",
+     "type": "E1明文",
+     "rule": "语式-结义"
+    }
+   ],
+   "count": 1,
+   "loc": "002:2",
+   "chapter": 2,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "002:2"
+   ],
+   "layer": "人",
+   "direction": "组",
+   "id": "白发魔女传#R0201"
+  },
+  {
+   "subject": "应修阳",
+   "subject_type": "@",
+   "predicate": "结义",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-结义",
+   "rule_row": 19,
+   "subtype": "结为兄弟",
+   "params": {},
+   "notes": "语式『结为兄弟』；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "004:19",
+     "type": "E1明文",
+     "rule": "语式-结义"
+    }
+   ],
+   "count": 1,
+   "loc": "004:19",
+   "chapter": 4,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "004:19"
+   ],
+   "layer": "人",
+   "direction": "组",
+   "id": "白发魔女传#R0202"
+  },
+  {
+   "subject": "王嘉胤",
+   "subject_type": "@",
+   "predicate": "结义",
+   "object": "高迎祥",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "04f-L19",
+   "rule_row": 19,
+   "subtype": "",
+   "params": {
+    "组规模": 2
+   },
+   "notes": "结义为 N 元组，组内两两成边",
+   "evidence": [
+    {
+     "loc": "001:60",
+     "type": "E1明文",
+     "rule": "04f-L19"
+    }
+   ],
+   "count": 1,
+   "loc": "001:60",
+   "chapter": 1,
+   "para": 60,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "001:60"
+   ],
+   "layer": "人",
+   "direction": "组",
+   "id": "白发魔女传#R0203"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "解救",
+   "object": "白石道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-RESCUE",
+   "rule_row": "X-RESCUE",
+   "subtype": "",
+   "params": {},
+   "notes": "一次救助不自动友盟（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "032:50",
+     "type": "E2动作+共现",
+     "rule": "X-RESCUE"
+    }
+   ],
+   "count": 1,
+   "loc": "032:50",
+   "chapter": 32,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "032:50"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0204"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "解救",
+   "object": "成坤",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-RESCUE",
+   "rule_row": "X-RESCUE",
+   "subtype": "",
+   "params": {},
+   "notes": "一次救助不自动友盟（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:40",
+     "type": "E2动作+共现",
+     "rule": "X-RESCUE"
+    }
+   ],
+   "count": 1,
+   "loc": "013:40",
+   "chapter": 13,
+   "para": 40,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "013:40"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0205"
+  },
+  {
+   "subject": "王嘉胤",
+   "subject_type": "@",
+   "predicate": "解救",
+   "object": "白敏",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-RESCUE",
+   "rule_row": "X-RESCUE",
+   "subtype": "",
+   "params": {},
+   "notes": "一次救助不自动友盟（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:34",
+     "type": "E2动作+共现",
+     "rule": "X-RESCUE"
+    }
+   ],
+   "count": 1,
+   "loc": "005:34",
+   "chapter": 5,
+   "para": 34,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "005:34"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0206"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "解救",
+   "object": "天龙上人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-RESCUE",
+   "rule_row": "X-RESCUE",
+   "subtype": "",
+   "params": {},
+   "notes": "一次救助不自动友盟（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "032:52",
+     "type": "E2动作+共现",
+     "rule": "X-RESCUE"
+    }
+   ],
+   "count": 1,
+   "loc": "032:52",
+   "chapter": 32,
+   "para": 52,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "032:52"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "白发魔女传#R0207"
+  },
+  {
+   "subject": "岳鸣珂",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "客娉婷",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L12",
+   "rule_row": 12,
+   "subtype": "夺",
+   "params": {
+    "物": "长剑",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "012:11",
+     "type": "E2动作+共现",
+     "rule": "04f-L12"
+    }
+   ],
+   "count": 1,
+   "loc": "012:11",
+   "chapter": 12,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "012:11"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0208"
+  },
+  {
+   "subject": "慕容冲",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "熊廷弼",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L12",
+   "rule_row": 12,
+   "subtype": "夺",
+   "params": {
+    "物": "宝剑",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "012:48",
+     "type": "E2动作+共现",
+     "rule": "04f-L12"
+    }
+   ],
+   "count": 1,
+   "loc": "012:48",
+   "chapter": 12,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "012:48"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0209"
+  },
+  {
+   "subject": "春桂",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "由校",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L11",
+   "rule_row": 11,
+   "subtype": "赠",
+   "params": {
+    "物": "参汤",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "022:104",
+     "type": "E2动作+共现",
+     "rule": "04f-L11"
+    }
+   ],
+   "count": 1,
+   "loc": "022:104",
+   "chapter": 22,
+   "para": 104,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "022:104"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0210"
+  },
+  {
+   "subject": "王照希",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "客娉婷",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L12",
+   "rule_row": 12,
+   "subtype": "夺",
+   "params": {
+    "物": "刀",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "027:88",
+     "type": "E2动作+共现",
+     "rule": "04f-L12"
+    }
+   ],
+   "count": 1,
+   "loc": "027:88",
+   "chapter": 27,
+   "para": 88,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "027:88"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0211"
+  },
+  {
+   "subject": "白敏",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "卓一航",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L11",
+   "rule_row": 11,
+   "subtype": "赠",
+   "params": {
+    "物": "供词",
+    "物类型": "{"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "005:23",
+     "type": "E2动作+共现",
+     "rule": "04f-L11"
+    }
+   ],
+   "count": 1,
+   "loc": "005:23",
+   "chapter": 5,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "005:23"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0212"
+  },
+  {
+   "subject": "练霓裳",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "杜明忠",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L11",
+   "rule_row": 11,
+   "subtype": "赠",
+   "params": {
+    "物": "信",
+    "物类型": "{"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "024:59",
+     "type": "E2动作+共现",
+     "rule": "04f-L11"
+    }
+   ],
+   "count": 1,
+   "loc": "024:59",
+   "chapter": 24,
+   "para": 59,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "024:59"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0213"
+  },
+  {
+   "subject": "贞乾道人",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "铁飞龙",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L11",
+   "rule_row": 11,
+   "subtype": "赠",
+   "params": {
+    "物": "匿名信",
+    "物类型": "{"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "007:43",
+     "type": "E2动作+共现",
+     "rule": "04f-L11"
+    }
+   ],
+   "count": 1,
+   "loc": "007:43",
+   "chapter": 7,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "007:43"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "白发魔女传#R0214"
+  }
+ ],
+ "derived": {
+  "tongmen_edges": [
+   {
+    "subject": "卓一航",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "杨云骢",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "岳鸣珂"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "028:1",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "028:45",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "028:1",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "白发魔女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "028:1",
+     "028:45"
+    ],
+    "id": "白发魔女传#R0151"
+   }
+  ],
+  "tongmen_pairs": [
+   {
+    "a": "卓一航",
+    "b": "杨云骢",
+    "master": "岳鸣珂",
+    "rule": "B3",
+    "confidence": "weak"
+   }
+  ],
+  "lineage_labels": [
+   {
+    "kind": "辈分",
+    "person": "天德上人",
+    "value": "师祖",
+    "relative_to": "紫阳道长",
+    "chain": [
+     "天德上人",
+     "卓一航",
+     "紫阳道长"
+    ],
+    "rule": "B1",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "天德上人",
+    "value": "师祖",
+    "relative_to": "岳鸣珂",
+    "chain": [
+     "天德上人",
+     "卓一航",
+     "岳鸣珂"
+    ],
+    "rule": "B1",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "天德上人",
+    "value": "师祖",
+    "relative_to": "达摩租师",
+    "chain": [
+     "天德上人",
+     "卓一航",
+     "达摩租师"
+    ],
+    "rule": "B1",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "李申时",
+    "value": "师祖",
+    "relative_to": "何萼华",
+    "chain": [
+     "李申时",
+     "黄叶道人",
+     "何萼华"
+    ],
+    "rule": "B1",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "练霓裳",
+    "value": "师祖",
+    "relative_to": "应修阳",
+    "chain": [
+     "练霓裳",
+     "公孙大娘",
+     "应修阳"
+    ],
+    "rule": "B1",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "天德上人",
+    "value": "师叔伯（性别未判）",
+    "relative_to": "杨云骢",
+    "rule": "B2",
+    "confidence": "weak"
+   },
+   {
+    "kind": "长幼",
+    "person": "杨云骢",
+    "value": "师兄/姐（按拜师定位符时序）",
+    "relative_to": "卓一航",
+    "rule": "B5",
+    "confidence": "weak",
+    "basis": "拜师定位符时序，性别未判"
+   }
+  ],
+  "trees": {
+   "master_tree": {
+    "nodes": [
+     {
+      "person": "何萼华",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "公孙大娘",
+      "master": "应修阳",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "卓一航",
+      "master": "紫阳道长",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "天德上人",
+      "master": "卓一航",
+      "generation": 2,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "孟灿",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "岳鸣珂",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "应修阳",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "李申时",
+      "master": "黄叶道人",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "杨云骢",
+      "master": "岳鸣珂",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "白敏",
+      "master": "孟灿",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "白石道人",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "紫阳道长",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "练霓裳",
+      "master": "公孙大娘",
+      "generation": 2,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "达摩租师",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "黄叶道人",
+      "master": "何萼华",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     }
+    ],
+    "roots": [
+     "何萼华",
+     "孟灿",
+     "岳鸣珂",
+     "应修阳",
+     "白石道人",
+     "紫阳道长",
+     "达摩租师"
+    ],
+    "edge_count": 11
+   },
+   "blood_tree": {
+    "nodes": [],
+    "note": "亲属/血缘抽取不在 04f 27 行联动内，留候选池待语式扩展（本脚本不产出）"
+   }
+  },
+  "cycles": [],
+  "reciprocal_conflicts": [
+   [
+    "卓一航",
+    "辛龙子",
+    "029:35",
+    "029:35"
+   ],
+   [
+    "辛龙子",
+    "卓一航",
+    "029:35",
+    "029:35"
+   ]
+  ]
+ },
+ "dropped": {
+  "total": 256,
+  "by_reason": {
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 25,
+   "实体缺失（04f#5 点穴须施者/受者）": 11,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 25,
+   "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）": 6,
+   "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库": 7,
+   "传闻降权（D06 §8.3，不入正式表）": 15,
+   "婚约双方为下一代（指腹为媒/结成亲家），须亲属边推导；本脚本无血缘树，不直接落库（D06 few-shot 甲）": 3,
+   "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）": 7,
+   "恩义属离线表（D06 §6.4），不进 SPO 关系表": 2,
+   "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）": 3,
+   "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）": 5,
+   "实体缺失（04f#26 交手须双方人物角色）": 19,
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 33,
+   "E1 明文不足（师承须拜师实写；04f R1/R8、D06 §8.1）": 1,
+   "强制双实体缺失（04f#23 押送须押者+被押者[+讫地]）": 1,
+   "强制档实体缺失（04f#1/#4 武功名未在句）": 1,
+   "强制档实体缺失（04f#17 任职须人物+职衔）": 1,
+   "强制档实体缺失（04f#9 医者/伤者未同现）": 3,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 3,
+   "强制档实体缺失（04f#14 制造须人物+器物）": 1,
+   "强制档实体缺失（04f#18 隶属终止须人物+组织）": 3,
+   "自指/主宾同一实体": 76,
+   "互为师徒环（D06 §9.3 无环拦截）：双向证据冲突，双放弃待人工裁定": 2,
+   "主宾类型/谓词表校验不符（D06 §7.2）": 3
+  },
+  "samples": [
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "001:18"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "001:27"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "001:50"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "001:51"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇家",
+    "loc": "001:60"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "001:60"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "001:67"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "语式-结义",
+    "rule_row": 19,
+    "predicate": "结义",
+    "loc": "001:70",
+    "note": "孟灿 结义 王照希"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "语式-结义",
+    "rule_row": 19,
+    "predicate": "结义",
+    "loc": "001:70",
+    "note": "孟灿 结义 练霓裳"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "语式-结义",
+    "rule_row": 19,
+    "predicate": "结义",
+    "loc": "001:70",
+    "note": "王照希 结义 练霓裳"
+   },
+   {
+    "reason": "婚约双方为下一代（指腹为媒/结成亲家），须亲属边推导；本脚本无血缘树，不直接落库（D06 few-shot 甲）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "指腹为媒",
+    "loc": "002:2"
+   },
+   {
+    "reason": "婚约双方为下一代（指腹为媒/结成亲家），须亲属边推导；本脚本无血缘树，不直接落库（D06 few-shot 甲）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "结成亲家",
+    "loc": "002:2"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "002:6"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "未婚妻",
+    "loc": "002:13"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "未婚夫",
+    "loc": "002:14"
+   },
+   {
+    "reason": "恩义属离线表（D06 §6.4），不进 SPO 关系表",
+    "rule": "语式-恩义",
+    "rule_row": "语式",
+    "predicate": "",
+    "note": "大恩",
+    "loc": "002:15"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "未婚妻",
+    "loc": "002:17"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "未婚夫",
+    "loc": "002:19"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "未婚妻",
+    "loc": "002:22"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "002:24"
+   },
+   {
+    "reason": "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）",
+    "rule": "04f-L03",
+    "rule_row": 3,
+    "predicate": "",
+    "note": "",
+    "loc": "002:32"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "002:40"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "002:43"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "003:3"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "003:5"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "004:2"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "004:14"
+   },
+   {
+    "reason": "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）",
+    "rule": "04f-L15",
+    "rule_row": 15,
+    "predicate": "毁损",
+    "note": "器物=刀",
+    "loc": "004:20"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "语式-拜师",
+    "rule_row": 6,
+    "predicate": "师承",
+    "loc": "004:28",
+    "note": "凌慕华 师承 霍天都"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "语式-拜师",
+    "rule_row": 6,
+    "predicate": "师承",
+    "loc": "004:28",
+    "note": "凌慕华 师承 霍天都"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "005:1"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "005:17"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "005:42"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "005:47"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "006:1"
+   },
+   {
+    "reason": "婚约双方为下一代（指腹为媒/结成亲家），须亲属边推导；本脚本无血缘树，不直接落库（D06 few-shot 甲）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "指腹为媒",
+    "loc": "006:18"
+   },
+   {
+    "reason": "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）",
+    "rule": "04f-L15",
+    "rule_row": 15,
+    "predicate": "毁损",
+    "note": "器物=香",
+    "loc": "006:25"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "006:28"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "006:29"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "006:35"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "006:38"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "006:38"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "未婚妻",
+    "loc": "007:4"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "007:6"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "007:19"
+   },
+   {
+    "reason": "E1 明文不足（师承须拜师实写；04f R1/R8、D06 §8.1）",
+    "rule": "04f-L06",
+    "rule_row": 6,
+    "predicate": "师承",
+    "note": "触发词『拜』无『为师/拜师』明文",
+    "loc": "007:29"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "007:31"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "007:43"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "007:45"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "007:83"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "008:3"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "008:6"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "008:10"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "008:10"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "008:11"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "009:16"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:25",
+    "note": "熊廷弼 交手 岳鸣珂"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:25",
+    "note": "熊廷弼 交手 岳鸣珂"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "009:25"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "009:35"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "009:43"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "010:3"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "010:3"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "010:12"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "010:22"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "011:12"
+   },
+   {
+    "reason": "强制双实体缺失（04f#23 押送须押者+被押者[+讫地]）",
+    "rule": "04f-L23",
+    "rule_row": 23,
+    "predicate": "押送",
+    "note": "",
+    "loc": "011:53"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:68"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:68"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "012:13"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "loc": "012:34",
+    "note": "成坤 到达 客房"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "012:51"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "012:60"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "013:5"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "013:5"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "013:5"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "013:5"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "013:6"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "013:7"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "013:7"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "013:33"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "013:34"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "013:37"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "013:40"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "013:57"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "013:57"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇家",
+    "loc": "014:7"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "014:22"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "loc": "014:26",
+    "note": "卓一航 离开 西郊"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "014:28"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "015:3"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "015:16"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "015:19"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "015:26"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "015:34"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "015:34"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "015:48"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "016:3"
+   },
+   {
+    "reason": "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）",
+    "rule": "04f-L03",
+    "rule_row": 3,
+    "predicate": "",
+    "note": "",
+    "loc": "016:3"
+   },
+   {
+    "reason": "强制档实体缺失（04f#1/#4 武功名未在句）",
+    "rule": "04f-L01",
+    "rule_row": 1,
+    "predicate": "掌握",
+    "note": "",
+    "loc": "016:4"
+   }
+  ]
+ },
+ "validation": {
+  "hard_errors": [],
+  "warnings": [
+   {
+    "check": "互斥",
+    "rule": "D06 §4.2",
+    "detail": "李申时 存在 2 位师父 ['白石道人', '黄叶道人']，active 唯一性须 N4 时间轴复核"
+   },
+   {
+    "check": "互斥",
+    "rule": "D06 §4.2",
+    "detail": "卓一航 存在 3 位师父 ['岳鸣珂', '紫阳道长', '达摩租师']，active 唯一性须 N4 时间轴复核"
+   },
+   {
+    "check": "无环(已消解)",
+    "rule": "D06 §9.3",
+    "detail": "互为师徒对 卓一航 ⇄ 辛龙子（029:35/029:35）双放弃，待人工裁定"
+   },
+   {
+    "check": "无环(已消解)",
+    "rule": "D06 §9.3",
+    "detail": "互为师徒对 辛龙子 ⇄ 卓一航（029:35/029:35）双放弃，待人工裁定"
+   }
+  ],
+  "checks": [
+   "无环(师承)",
+   "方向(徒→师/无互为师徒)",
+   "类型(55 谓词主宾)",
+   "证据级(E1 名分类)",
+   "自指",
+   "传闻(§8.3)",
+   "共现生边(交手≠敌对)",
+   "时序(师承 vs 隶属终止, 定位符级)"
+  ],
+  "pending": [
+   "N4 时间轴未上线：active 互斥（配偶唯一/师承唯一）无法按时段判定，只做定位符级提示",
+   "亲属/血缘树：04f 27 行联动无亲属触发词，未产出",
+   "仇怨：event_ids 必填（D06#44）而事件层 N4/D03 未产出"
+  ]
+ },
+ "rows_stats": {
+  "1": {
+   "rule": "04f-L01",
+   "predicate": "掌握",
+   "triggers": "练成/学会/悟出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "2": {
+   "rule": "04f-L02",
+   "predicate": "传授",
+   "triggers": "传授（具体武功名在句）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 3,
+   "extension": false,
+   "note": ""
+  },
+  "3": {
+   "rule": "04f-L03",
+   "predicate": null,
+   "triggers": "授艺/教（泛指）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 3,
+   "extension": false,
+   "note": ""
+  },
+  "4": {
+   "rule": "04f-L04",
+   "predicate": "掌握",
+   "triggers": "偷学/窃艺",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "5": {
+   "rule": "04f-L05",
+   "predicate": "点穴",
+   "triggers": "点穴（穴道名在句）",
+   "strength": "强制",
+   "candidates": 7,
+   "emitted": 7,
+   "dropped": 11,
+   "extension": false,
+   "note": ""
+  },
+  "6": {
+   "rule": "04f-L06",
+   "predicate": "师承",
+   "triggers": "拜师/拜…为师",
+   "strength": "强制",
+   "candidates": 10,
+   "emitted": 6,
+   "dropped": 4,
+   "extension": false,
+   "note": ""
+  },
+  "7": {
+   "rule": "04f-L07",
+   "predicate": "师承",
+   "triggers": "收徒/授艺（具体对象）",
+   "strength": "强制",
+   "candidates": 9,
+   "emitted": 5,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "8": {
+   "rule": "04f-L08",
+   "predicate": "杀害",
+   "triggers": "杀/杀死/斩杀",
+   "strength": "强制",
+   "candidates": 7,
+   "emitted": 4,
+   "dropped": 25,
+   "extension": false,
+   "note": ""
+  },
+  "9": {
+   "rule": "04f-L09",
+   "predicate": "治愈",
+   "triggers": "疗伤/救活/治愈",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 3,
+   "extension": false,
+   "note": ""
+  },
+  "10": {
+   "rule": "04f-L10",
+   "predicate": "投毒",
+   "triggers": "下毒/投毒（致害成立）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "11": {
+   "rule": "04f-L11",
+   "predicate": "转移",
+   "triggers": "赠/赠送/相赠",
+   "strength": "强制",
+   "candidates": 4,
+   "emitted": 4,
+   "dropped": 13,
+   "extension": false,
+   "note": ""
+  },
+  "12": {
+   "rule": "04f-L12",
+   "predicate": "转移",
+   "triggers": "夺/抢（夺物义）",
+   "strength": "强制",
+   "candidates": 3,
+   "emitted": 3,
+   "dropped": 20,
+   "extension": false,
+   "note": ""
+  },
+  "13": {
+   "rule": "04f-L13b",
+   "predicate": "转移",
+   "triggers": "借/还",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "14": {
+   "rule": "04f-L14",
+   "predicate": "制造",
+   "triggers": "铸/炼制/打造",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "15": {
+   "rule": "04f-L15",
+   "predicate": null,
+   "triggers": "折断/烧毁/焚毁",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 5,
+   "extension": false,
+   "note": ""
+  },
+  "16": {
+   "rule": "04f-L16",
+   "predicate": "组织成员",
+   "triggers": "拜师→◆组织",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "17": {
+   "rule": "04f-L17",
+   "predicate": "任职",
+   "triggers": "任命/继任/接任",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 2,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "18": {
+   "rule": "04f-L18",
+   "predicate": "隶属终止",
+   "triggers": "逐出/叛出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 3,
+   "extension": false,
+   "note": ""
+  },
+  "19": {
+   "rule": "04f-L19",
+   "predicate": "结义",
+   "triggers": "结义/结拜",
+   "strength": "强制",
+   "candidates": 8,
+   "emitted": 4,
+   "dropped": 3,
+   "extension": false,
+   "note": ""
+  },
+  "20": {
+   "rule": "04f-L20",
+   "predicate": "配偶",
+   "triggers": "娶/嫁/成亲",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "21": {
+   "rule": "04f-L21",
+   "predicate": "到达",
+   "triggers": "抵达/来到（行程级）",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 1,
+   "dropped": 6,
+   "extension": false,
+   "note": ""
+  },
+  "22": {
+   "rule": "04f-L22",
+   "predicate": "离开",
+   "triggers": "离开（行程级）",
+   "strength": "强制",
+   "candidates": 8,
+   "emitted": 7,
+   "dropped": 8,
+   "extension": false,
+   "note": ""
+  },
+  "23": {
+   "rule": "04f-L23",
+   "predicate": "押送",
+   "triggers": "押解/解往",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "24": {
+   "rule": "04f-L24",
+   "predicate": "到达",
+   "triggers": "潜入/混入",
+   "strength": "强制",
+   "candidates": 13,
+   "emitted": 12,
+   "dropped": 14,
+   "extension": false,
+   "note": "04f『进入』无 D06 同名谓词，按 §7.3 对号入座最近落位 #18 到达（weak）"
+  },
+  "25": {
+   "rule": "04f-L25",
+   "predicate": null,
+   "triggers": "追踪/跟踪（行程级）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 7,
+   "extension": false,
+   "note": ""
+  },
+  "26": {
+   "rule": "04f-L26",
+   "predicate": "交手",
+   "triggers": "交手/比武",
+   "strength": "建议",
+   "candidates": 1,
+   "emitted": 0,
+   "dropped": 19,
+   "extension": false,
+   "note": ""
+  },
+  "27": {
+   "rule": "04f-L27",
+   "predicate": null,
+   "triggers": "使用阵法（结阵/布阵）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "X-RESCUE": {
+   "rule": "X-RESCUE",
+   "predicate": "解救",
+   "triggers": "救/救出/救下/营救",
+   "strength": "扩展",
+   "candidates": 4,
+   "emitted": 4,
+   "dropped": 0,
+   "extension": true,
+   "note": "04f#9 只列疗伤/救活/治愈；『救』按 D06#51 解救 候选（E2）"
+  },
+  "X-ARRIVE": {
+   "rule": "X-ARRIVE",
+   "predicate": "到达",
+   "triggers": "■ 行程动词（回到/走到/走进/赶到…）",
+   "strength": "扩展",
+   "candidates": 52,
+   "emitted": 41,
+   "dropped": 3,
+   "extension": true,
+   "note": ""
+  },
+  "X-LEAVE": {
+   "rule": "X-LEAVE",
+   "predicate": "离开",
+   "triggers": "■ 离开类动词（走出/退出/逃出…）",
+   "strength": "扩展",
+   "candidates": 22,
+   "emitted": 20,
+   "dropped": 1,
+   "extension": true,
+   "note": ""
+  },
+  "X-COMBAT": {
+   "rule": "X-COMBAT",
+   "predicate": "交手",
+   "triggers": "⊞ 攻击/防御动词（近邻双角色）",
+   "strength": "扩展",
+   "candidates": 253,
+   "emitted": 89,
+   "dropped": 2,
+   "extension": true,
+   "note": ""
+  }
+ }
+}

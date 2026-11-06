@@ -1,0 +1,3230 @@
+{
+ "schema": "entity_registration_proposal/v1",
+ "book": "萍踪侠影录",
+ "generated": "2026-11-06T10:28:03",
+ "source": "registry/concordance/萍踪侠影录（scan+aggregate 复算）",
+ "scope_types": [
+  "&",
+  "@",
+  "◆"
+ ],
+ "status_policy": "proposed（试点新增待核；合并后进映射表消费，与既有 proposed 同口径）",
+ "counts": {
+  "proposals": 280,
+  "alias_additions": 5,
+  "skipped": 10,
+  "entities": 260,
+  "by_type": {
+   "@": 226,
+   "◆": 24,
+   "&": 10
+  },
+  "alias_filter": {
+   "kept": 53,
+   "dropped": 123
+  },
+  "canonical_drop2": [
+   "路家兄弟",
+   "明朝皇帝",
+   "石姑娘",
+   "王公公",
+   "正统皇帝",
+   "石大爷",
+   "云相公",
+   "云伯母",
+   "云大人",
+   "瓦剌可汗",
+   "周老大人",
+   "方大人",
+   "石小姐",
+   "凤姐姐",
+   "朱皇帝",
+   "张皇帝",
+   "大明皇帝"
+  ],
+  "alias_additions_dropped": 3
+ },
+ "entities": [
+  {
+   "type": "@",
+   "canonical": "张丹枫",
+   "aliases": [
+    "丹枫",
+    "张公子",
+    "白马书生"
+   ],
+   "sources": [
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现2506次/27回；首见 萍踪侠影录#pn-r5.33"
+  },
+  {
+   "type": "@",
+   "canonical": "云蕾",
+   "aliases": [
+    "散花女侠",
+    "蕾儿",
+    "阿蕾"
+   ],
+   "sources": [
+    "000",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现2164次/31回；首见 萍踪侠影录#pn-r0.10"
+  },
+  {
+   "type": "@",
+   "canonical": "云重",
+   "sources": [
+    "003",
+    "012",
+    "013",
+    "015",
+    "016",
+    "018",
+    "019",
+    "021",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现728次/11回；首见 萍踪侠影录#pn-r3.11"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台灭明",
+   "aliases": [
+    "澹台"
+   ],
+   "sources": [
+    "000",
+    "002",
+    "003",
+    "005",
+    "006",
+    "007",
+    "008",
+    "011",
+    "014",
+    "015",
+    "016",
+    "018",
+    "020",
+    "021",
+    "022",
+    "023",
+    "026",
+    "028",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现430次/21回；首见 萍踪侠影录#pn-r0.36"
+  },
+  {
+   "type": "@",
+   "canonical": "张风府",
+   "aliases": [
+    "张大人"
+   ],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "019",
+    "020",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现428次/10回；首见 萍踪侠影录#pn-r10.21"
+  },
+  {
+   "type": "@",
+   "canonical": "也先",
+   "sources": [
+    "003",
+    "014",
+    "015",
+    "018",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "028",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现326次/15回；首见 萍踪侠影录#pn-r3.12"
+  },
+  {
+   "type": "@",
+   "canonical": "周山民",
+   "aliases": [
+    "山民"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "021",
+    "022",
+    "023",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现315次/19回；首见 萍踪侠影录#pn-r2.43"
+  },
+  {
+   "type": "@",
+   "canonical": "石翠凤",
+   "aliases": [
+    "翠凤"
+   ],
+   "sources": [
+    "004",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "021",
+    "022",
+    "023",
+    "026",
+    "029",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现308次/17回；首见 萍踪侠影录#pn-r4.1"
+  },
+  {
+   "type": "@",
+   "canonical": "毕道凡",
+   "aliases": [
+    "震三界"
+   ],
+   "sources": [
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "025",
+    "026",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现291次/9回；首见 萍踪侠影录#pn-r8.62"
+  },
+  {
+   "type": "@",
+   "canonical": "谢天华",
+   "aliases": [
+    "天华"
+   ],
+   "sources": [
+    "000",
+    "003",
+    "006",
+    "007",
+    "008",
+    "014",
+    "015",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现266次/14回；首见 萍踪侠影录#pn-r0.8"
+  },
+  {
+   "type": "@",
+   "canonical": "石英",
+   "aliases": [
+    "轰天雷"
+   ],
+   "sources": [
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "012",
+    "014",
+    "015",
+    "017",
+    "018",
+    "022",
+    "023",
+    "024",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现254次/18回；首见 萍踪侠影录#pn-r3.49"
+  },
+  {
+   "type": "@",
+   "canonical": "潮音和尚",
+   "aliases": [
+    "潮音",
+    "潮音大师"
+   ],
+   "sources": [
+    "000",
+    "003",
+    "008",
+    "009",
+    "010",
+    "015",
+    "017",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现234次/13回；首见 萍踪侠影录#pn-r0.8"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台镜明",
+   "aliases": [
+    "镜明"
+   ],
+   "sources": [
+    "018",
+    "019",
+    "021",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现225次/6回；首见 萍踪侠影录#pn-r18.11"
+  },
+  {
+   "type": "@",
+   "canonical": "张宗周",
+   "sources": [
+    "000",
+    "002",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现213次/25回；首见 萍踪侠影录#pn-r0.14"
+  },
+  {
+   "type": "◆",
+   "canonical": "瓦剌",
+   "sources": [
+    "000",
+    "001",
+    "003",
+    "005",
+    "007",
+    "008",
+    "010",
+    "011",
+    "012",
+    "014",
+    "015",
+    "016",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "028",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现178次/25回；首见 萍踪侠影录#pn-r0.11"
+  },
+  {
+   "type": "@",
+   "canonical": "周健",
+   "aliases": [
+    "金刀寨主"
+   ],
+   "sources": [
+    "000",
+    "001",
+    "002",
+    "003",
+    "006",
+    "007",
+    "011",
+    "012",
+    "014",
+    "016",
+    "020",
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现164次/13回；首见 萍踪侠影录#pn-r0.51"
+  },
+  {
+   "type": "@",
+   "canonical": "上官天野",
+   "aliases": [
+    "上官",
+    "上官魔头",
+    "天野老怪"
+   ],
+   "sources": [
+    "000",
+    "006",
+    "014",
+    "023",
+    "024",
+    "026",
+    "027",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现156次/8回；首见 萍踪侠影录#pn-r0.38"
+  },
+  {
+   "type": "@",
+   "canonical": "于谦",
+   "aliases": [
+    "于阁老"
+   ],
+   "sources": [
+    "000",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "024",
+    "025",
+    "026",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现153次/18回；首见 萍踪侠影录#pn-r0.53"
+  },
+  {
+   "type": "@",
+   "canonical": "云靖",
+   "sources": [
+    "000",
+    "001",
+    "002",
+    "003",
+    "007",
+    "008",
+    "010",
+    "015",
+    "016",
+    "020",
+    "023",
+    "026",
+    "027",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现151次/16回；首见 萍踪侠影录#pn-r0.8"
+  },
+  {
+   "type": "@",
+   "canonical": "脱不花",
+   "sources": [
+    "020",
+    "024",
+    "025",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现140次/5回；首见 萍踪侠影录#pn-r20.32"
+  },
+  {
+   "type": "@",
+   "canonical": "沙涛",
+   "sources": [
+    "004",
+    "005",
+    "022",
+    "023",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现129次/6回；首见 萍踪侠影录#pn-r4.12"
+  },
+  {
+   "type": "@",
+   "canonical": "方庆",
+   "sources": [
+    "001",
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现127次/2回；首见 萍踪侠影录#pn-r1.4"
+  },
+  {
+   "type": "@",
+   "canonical": "玄机逸士",
+   "aliases": [
+    "玄机"
+   ],
+   "sources": [
+    "000",
+    "002",
+    "003",
+    "005",
+    "006",
+    "007",
+    "014",
+    "015",
+    "016",
+    "017",
+    "022",
+    "023",
+    "024",
+    "026",
+    "027",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现126次/16回；首见 萍踪侠影录#pn-r0.15"
+  },
+  {
+   "type": "@",
+   "canonical": "额吉多",
+   "sources": [
+    "020",
+    "022",
+    "023",
+    "024",
+    "025",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现116次/7回；首见 萍踪侠影录#pn-r20.11"
+  },
+  {
+   "type": "@",
+   "canonical": "祈镇",
+   "aliases": [
+    "明英宗",
+    "英宗"
+   ],
+   "sources": [
+    "015",
+    "016",
+    "020",
+    "021",
+    "025",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现112次/7回；首见 萍踪侠影录#pn-r15.29"
+  },
+  {
+   "type": "@",
+   "canonical": "黑摩诃",
+   "sources": [
+    "005",
+    "006",
+    "007",
+    "012",
+    "013",
+    "026",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现110次/7回；首见 萍踪侠影录#pn-r5.48"
+  },
+  {
+   "type": "@",
+   "canonical": "王振",
+   "sources": [
+    "000",
+    "002",
+    "010",
+    "014",
+    "015",
+    "016",
+    "018",
+    "019",
+    "020",
+    "021",
+    "026",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现100次/12回；首见 萍踪侠影录#pn-r0.53"
+  },
+  {
+   "type": "@",
+   "canonical": "黑白摩诃",
+   "sources": [
+    "005",
+    "006",
+    "007",
+    "008",
+    "012",
+    "013",
+    "026",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现87次/9回；首见 萍踪侠影录#pn-r5.41"
+  },
+  {
+   "type": "@",
+   "canonical": "叶盈盈",
+   "aliases": [
+    "盈盈",
+    "飞天龙女"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "006",
+    "007",
+    "015",
+    "023",
+    "024",
+    "025",
+    "027",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现86次/11回；首见 萍踪侠影录#pn-r2.42"
+  },
+  {
+   "type": "@",
+   "canonical": "康超海",
+   "sources": [
+    "012",
+    "013",
+    "015",
+    "016",
+    "019",
+    "026",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现86次/7回；首见 萍踪侠影录#pn-r12.50"
+  },
+  {
+   "type": "@",
+   "canonical": "董岳",
+   "aliases": [
+    "金刚手"
+   ],
+   "sources": [
+    "003",
+    "006",
+    "014",
+    "015",
+    "016",
+    "018",
+    "023",
+    "026",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现83次/9回；首见 萍踪侠影录#pn-r3.11"
+  },
+  {
+   "type": "@",
+   "canonical": "乌蒙夫",
+   "aliases": [
+    "蒙夫"
+   ],
+   "sources": [
+    "023",
+    "024",
+    "027",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现74次/4回；首见 萍踪侠影录#pn-r23.17"
+  },
+  {
+   "type": "@",
+   "canonical": "樊忠",
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013",
+    "016",
+    "020",
+    "021",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现72次/8回；首见 萍踪侠影录#pn-r10.21"
+  },
+  {
+   "type": "@",
+   "canonical": "沙无忌",
+   "aliases": [
+    "无忌"
+   ],
+   "sources": [
+    "004",
+    "005",
+    "015",
+    "022",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现67次/5回；首见 萍踪侠影录#pn-r4.10"
+  },
+  {
+   "type": "@",
+   "canonical": "云澄",
+   "aliases": [
+    "澄儿"
+   ],
+   "sources": [
+    "000",
+    "003",
+    "006",
+    "024",
+    "027",
+    "028",
+    "029",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现63次/8回；首见 萍踪侠影录#pn-r0.6"
+  },
+  {
+   "type": "@",
+   "canonical": "张士诚",
+   "aliases": [
+    "士诚"
+   ],
+   "sources": [
+    "000",
+    "007",
+    "008",
+    "009",
+    "010",
+    "016",
+    "017",
+    "018",
+    "021",
+    "022",
+    "023",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现61次/13回；首见 萍踪侠影录#pn-r0.45"
+  },
+  {
+   "type": "@",
+   "canonical": "铁臂金猿",
+   "sources": [
+    "012",
+    "013",
+    "016",
+    "018",
+    "019",
+    "026",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现46次/7回；首见 萍踪侠影录#pn-r12.84"
+  },
+  {
+   "type": "@",
+   "canonical": "郭洪",
+   "aliases": [
+    "红发妖龙"
+   ],
+   "sources": [
+    "016",
+    "017",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现42次/3回；首见 萍踪侠影录#pn-r16.46"
+  },
+  {
+   "type": "@",
+   "canonical": "白摩诃",
+   "sources": [
+    "005",
+    "006",
+    "007",
+    "008",
+    "012",
+    "013",
+    "026",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现41次/8回；首见 萍踪侠影录#pn-r5.48"
+  },
+  {
+   "type": "@",
+   "canonical": "林仙韵",
+   "aliases": [
+    "仙韵",
+    "金钩仙子"
+   ],
+   "sources": [
+    "023",
+    "024",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现41次/3回；首见 萍踪侠影录#pn-r23.17"
+  },
+  {
+   "type": "@",
+   "canonical": "路明",
+   "sources": [
+    "014",
+    "015",
+    "016",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现40次/4回；首见 萍踪侠影录#pn-r14.48"
+  },
+  {
+   "type": "&",
+   "canonical": "张家",
+   "sources": [
+    "000",
+    "008",
+    "009",
+    "010",
+    "014",
+    "015",
+    "016",
+    "018",
+    "020",
+    "024",
+    "026",
+    "028",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现39次/15回；首见 萍踪侠影录#pn-r0.19"
+  },
+  {
+   "type": "@",
+   "canonical": "玄灵子",
+   "sources": [
+    "012",
+    "013",
+    "016",
+    "018",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现38次/5回；首见 萍踪侠影录#pn-r12.69"
+  },
+  {
+   "type": "@",
+   "canonical": "路亮",
+   "sources": [
+    "014",
+    "015",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现38次/3回；首见 萍踪侠影录#pn-r14.48"
+  },
+  {
+   "type": "◆",
+   "canonical": "大明",
+   "sources": [
+    "000",
+    "002",
+    "008",
+    "010",
+    "011",
+    "012",
+    "015",
+    "016",
+    "017",
+    "018",
+    "020",
+    "021",
+    "022",
+    "025",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现37次/17回；首见 萍踪侠影录#pn-r0.11"
+  },
+  {
+   "type": "@",
+   "canonical": "殷天鉴",
+   "aliases": [
+    "九头狮子"
+   ],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现35次/1回；首见 萍踪侠影录#pn-r16.37"
+  },
+  {
+   "type": "@",
+   "canonical": "金刀寨主",
+   "sources": [
+    "002",
+    "003",
+    "005",
+    "008",
+    "010",
+    "012",
+    "020",
+    "021",
+    "022",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现34次/10回；首见 萍踪侠影录#pn-r2.4"
+  },
+  {
+   "type": "@",
+   "canonical": "郝宝椿",
+   "aliases": [
+    "火神弹"
+   ],
+   "sources": [
+    "009",
+    "010",
+    "011",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现33次/5回；首见 萍踪侠影录#pn-r9.28"
+  },
+  {
+   "type": "@",
+   "canonical": "麻翼赞",
+   "sources": [
+    "024",
+    "025",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现33次/3回；首见 萍踪侠影录#pn-r24.55"
+  },
+  {
+   "type": "@",
+   "canonical": "贯仲",
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现32次/4回；首见 萍踪侠影录#pn-r10.21"
+  },
+  {
+   "type": "@",
+   "canonical": "阿剌",
+   "sources": [
+    "014",
+    "015",
+    "024",
+    "025",
+    "026",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现31次/7回；首见 萍踪侠影录#pn-r14.63"
+  },
+  {
+   "type": "@",
+   "canonical": "酋长",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现31次/1回；首见 萍踪侠影录#pn-r26.44"
+  },
+  {
+   "type": "@",
+   "canonical": "孟玑",
+   "sources": [
+    "001",
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现30次/2回；首见 萍踪侠影录#pn-r1.9"
+  },
+  {
+   "type": "@",
+   "canonical": "潮音",
+   "sources": [
+    "000",
+    "003",
+    "008",
+    "009",
+    "010",
+    "023",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现28次/7回；首见 萍踪侠影录#pn-r0.6"
+  },
+  {
+   "type": "@",
+   "canonical": "飞天龙女",
+   "sources": [
+    "003",
+    "023",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现28次/3回；首见 萍踪侠影录#pn-r3.2"
+  },
+  {
+   "type": "@",
+   "canonical": "三花剑",
+   "sources": [
+    "012",
+    "013",
+    "016",
+    "018",
+    "019",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现28次/6回；首见 萍踪侠影录#pn-r12.84"
+  },
+  {
+   "type": "@",
+   "canonical": "察鲁图",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现28次/1回；首见 萍踪侠影录#pn-r18.36"
+  },
+  {
+   "type": "@",
+   "canonical": "林道安",
+   "sources": [
+    "004",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现20次/2回；首见 萍踪侠影录#pn-r4.6"
+  },
+  {
+   "type": "@",
+   "canonical": "蓝天石",
+   "sources": [
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现20次/6回；首见 萍踪侠影录#pn-r8.15"
+  },
+  {
+   "type": "@",
+   "canonical": "龙镇方",
+   "aliases": [
+    "铁臂金猿"
+   ],
+   "sources": [
+    "012",
+    "013",
+    "016",
+    "018",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现20次/5回；首见 萍踪侠影录#pn-r12.69"
+  },
+  {
+   "type": "@",
+   "canonical": "松石道人",
+   "sources": [
+    "005",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现19次/2回；首见 萍踪侠影录#pn-r5.10"
+  },
+  {
+   "type": "@",
+   "canonical": "彭和尚",
+   "sources": [
+    "009",
+    "010",
+    "017",
+    "018",
+    "022",
+    "023",
+    "025",
+    "027",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现19次/9回；首见 萍踪侠影录#pn-r9.53"
+  },
+  {
+   "type": "@",
+   "canonical": "洞庭庄主",
+   "sources": [
+    "017",
+    "018",
+    "019",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现19次/4回；首见 萍踪侠影录#pn-r17.20"
+  },
+  {
+   "type": "@",
+   "canonical": "龙帮主",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现18次/1回；首见 萍踪侠影录#pn-r16.44"
+  },
+  {
+   "type": "@",
+   "canonical": "陆展鹏",
+   "sources": [
+    "015",
+    "016",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现17次/3回；首见 萍踪侠影录#pn-r15.40"
+  },
+  {
+   "type": "@",
+   "canonical": "白山法师",
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现15次/1回；首见 萍踪侠影录#pn-r30.38"
+  },
+  {
+   "type": "@",
+   "canonical": "窝扎合",
+   "sources": [
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现14次/2回；首见 萍踪侠影录#pn-r30.45"
+  },
+  {
+   "type": "@",
+   "canonical": "青谷法师",
+   "sources": [
+    "024",
+    "025",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现13次/3回；首见 萍踪侠影录#pn-r24.55"
+  },
+  {
+   "type": "@",
+   "canonical": "脱欢",
+   "sources": [
+    "000",
+    "003",
+    "005",
+    "015",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现12次/5回；首见 萍踪侠影录#pn-r0.14"
+  },
+  {
+   "type": "@",
+   "canonical": "苏武",
+   "sources": [
+    "000",
+    "003",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现11次/3回；首见 萍踪侠影录#pn-r0.9"
+  },
+  {
+   "type": "@",
+   "canonical": "轰天雷",
+   "sources": [
+    "005",
+    "006",
+    "008",
+    "009",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现11次/5回；首见 萍踪侠影录#pn-r5.2"
+  },
+  {
+   "type": "◆",
+   "canonical": "大周",
+   "sources": [
+    "008",
+    "017",
+    "021",
+    "022",
+    "026",
+    "029",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现11次/7回；首见 萍踪侠影录#pn-r8.57"
+  },
+  {
+   "type": "◆",
+   "canonical": "海龙帮",
+   "sources": [
+    "016",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现11次/2回；首见 萍踪侠影录#pn-r16.44"
+  },
+  {
+   "type": "&",
+   "canonical": "云家",
+   "sources": [
+    "000",
+    "007",
+    "008",
+    "018",
+    "019",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现10次/7回；首见 萍踪侠影录#pn-r0.19"
+  },
+  {
+   "type": "@",
+   "canonical": "韩大海",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现10次/1回；首见 萍踪侠影录#pn-r4.3"
+  },
+  {
+   "type": "&",
+   "canonical": "沙家",
+   "sources": [
+    "004",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现10次/2回；首见 萍踪侠影录#pn-r4.13"
+  },
+  {
+   "type": "@",
+   "canonical": "彭莹玉",
+   "aliases": [
+    "彭和尚"
+   ],
+   "sources": [
+    "009",
+    "017",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现10次/3回；首见 萍踪侠影录#pn-r9.45"
+  },
+  {
+   "type": "@",
+   "canonical": "沙寨主",
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 萍踪侠影录#pn-r3.50"
+  },
+  {
+   "type": "@",
+   "canonical": "胡大庆",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现9次/1回；首见 萍踪侠影录#pn-r15.33"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台大娘",
+   "sources": [
+    "016",
+    "018",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现9次/3回；首见 萍踪侠影录#pn-r16.35"
+  },
+  {
+   "type": "@",
+   "canonical": "朱淑真",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现9次/1回；首见 萍踪侠影录#pn-r20.65"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台将军",
+   "sources": [
+    "002",
+    "010",
+    "020",
+    "029",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现8次/5回；首见 萍踪侠影录#pn-r2.48"
+  },
+  {
+   "type": "@",
+   "canonical": "翠凤",
+   "sources": [
+    "004",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 萍踪侠影录#pn-r4.26"
+  },
+  {
+   "type": "@",
+   "canonical": "周大哥",
+   "sources": [
+    "008",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现8次/3回；首见 萍踪侠影录#pn-r8.30"
+  },
+  {
+   "type": "@",
+   "canonical": "阿剌知院",
+   "sources": [
+    "015",
+    "020",
+    "021",
+    "026",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现8次/5回；首见 萍踪侠影录#pn-r15.2"
+  },
+  {
+   "type": "@",
+   "canonical": "红发妖龙",
+   "sources": [
+    "016",
+    "018",
+    "019",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现8次/4回；首见 萍踪侠影录#pn-r16.57"
+  },
+  {
+   "type": "@",
+   "canonical": "哈那",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现8次/1回；首见 萍踪侠影录#pn-r26.58"
+  },
+  {
+   "type": "@",
+   "canonical": "萧韵兰",
+   "sources": [
+    "027",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 萍踪侠影录#pn-r27.50"
+  },
+  {
+   "type": "@",
+   "canonical": "天华",
+   "sources": [
+    "003",
+    "006",
+    "008",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现7次/4回；首见 萍踪侠影录#pn-r3.12"
+  },
+  {
+   "type": "@",
+   "canonical": "林庄主",
+   "sources": [
+    "003",
+    "004",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现7次/3回；首见 萍踪侠影录#pn-r3.50"
+  },
+  {
+   "type": "@",
+   "canonical": "蓝寨主",
+   "sources": [
+    "009",
+    "010",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现7次/3回；首见 萍踪侠影录#pn-r9.25"
+  },
+  {
+   "type": "@",
+   "canonical": "毕凌虚",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 萍踪侠影录#pn-r9.46"
+  },
+  {
+   "type": "@",
+   "canonical": "毕老英雄",
+   "aliases": [
+    "震三界"
+   ],
+   "sources": [
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现7次/2回；首见 萍踪侠影录#pn-r10.9"
+  },
+  {
+   "type": "@",
+   "canonical": "红发老人",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 萍踪侠影录#pn-r16.55"
+  },
+  {
+   "type": "◆",
+   "canonical": "瓦剌军",
+   "sources": [
+    "019",
+    "020",
+    "021",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现7次/4回；首见 萍踪侠影录#pn-r19.45"
+  },
+  {
+   "type": "@",
+   "canonical": "赤霞",
+   "aliases": [
+    "赤霞道人",
+    "赤霞道长"
+   ],
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 萍踪侠影录#pn-r22.7"
+  },
+  {
+   "type": "@",
+   "canonical": "吉彰阿",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 萍踪侠影录#pn-r22.30"
+  },
+  {
+   "type": "@",
+   "canonical": "瓦剌国王",
+   "sources": [
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现7次/2回；首见 萍踪侠影录#pn-r30.20"
+  },
+  {
+   "type": "@",
+   "canonical": "金刀老贼",
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现6次/4回；首见 萍踪侠影录#pn-r1.3"
+  },
+  {
+   "type": "@",
+   "canonical": "韩岛主",
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 萍踪侠影录#pn-r3.50"
+  },
+  {
+   "type": "@",
+   "canonical": "郝庄主",
+   "sources": [
+    "008",
+    "009",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现6次/3回；首见 萍踪侠影录#pn-r8.30"
+  },
+  {
+   "type": "&",
+   "canonical": "毕家",
+   "sources": [
+    "009",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 萍踪侠影录#pn-r9.1"
+  },
+  {
+   "type": "&",
+   "canonical": "朱家",
+   "sources": [
+    "010",
+    "016",
+    "025",
+    "026",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现6次/5回；首见 萍踪侠影录#pn-r10.9"
+  },
+  {
+   "type": "@",
+   "canonical": "云统领",
+   "sources": [
+    "012",
+    "014",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现6次/3回；首见 萍踪侠影录#pn-r12.84"
+  },
+  {
+   "type": "@",
+   "canonical": "樊俊",
+   "sources": [
+    "016",
+    "021",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现6次/3回；首见 萍踪侠影录#pn-r16.17"
+  },
+  {
+   "type": "◆",
+   "canonical": "蒙古",
+   "sources": [
+    "000",
+    "019",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现5次/3回；首见 萍踪侠影录#pn-r0.11"
+  },
+  {
+   "type": "@",
+   "canonical": "张丞相",
+   "sources": [
+    "000",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 萍踪侠影录#pn-r0.40"
+  },
+  {
+   "type": "@",
+   "canonical": "丁大可",
+   "sources": [
+    "001",
+    "002",
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现5次/3回；首见 萍踪侠影录#pn-r1.4"
+  },
+  {
+   "type": "@",
+   "canonical": "丁总兵",
+   "sources": [
+    "001",
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 萍踪侠影录#pn-r1.9"
+  },
+  {
+   "type": "@",
+   "canonical": "潮音大师",
+   "sources": [
+    "002",
+    "003",
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现5次/4回；首见 萍踪侠影录#pn-r2.42"
+  },
+  {
+   "type": "@",
+   "canonical": "李陵",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 萍踪侠影录#pn-r3.13"
+  },
+  {
+   "type": "@",
+   "canonical": "哈达莱",
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 萍踪侠影录#pn-r6.65"
+  },
+  {
+   "type": "@",
+   "canonical": "蓝大侠",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 萍踪侠影录#pn-r8.30"
+  },
+  {
+   "type": "@",
+   "canonical": "金刀周健",
+   "sources": [
+    "008",
+    "014",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现5次/3回；首见 萍踪侠影录#pn-r8.42"
+  },
+  {
+   "type": "◆",
+   "canonical": "宋朝",
+   "sources": [
+    "008",
+    "020",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现5次/3回；首见 萍踪侠影录#pn-r8.56"
+  },
+  {
+   "type": "◆",
+   "canonical": "点苍派",
+   "sources": [
+    "012",
+    "013",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现5次/3回；首见 萍踪侠影录#pn-r12.69"
+  },
+  {
+   "type": "@",
+   "canonical": "杨威",
+   "sources": [
+    "015",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 萍踪侠影录#pn-r15.38"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台归真",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 萍踪侠影录#pn-r18.11"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台玉明",
+   "sources": [
+    "018",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 萍踪侠影录#pn-r18.31"
+  },
+  {
+   "type": "@",
+   "canonical": "朱祁钰",
+   "aliases": [
+    "明代宗",
+    "祈钰"
+   ],
+   "sources": [
+    "021",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 萍踪侠影录#pn-r21.9"
+  },
+  {
+   "type": "@",
+   "canonical": "朱祁镇",
+   "aliases": [
+    "祈镇",
+    "英宗"
+   ],
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 萍踪侠影录#pn-r21.9"
+  },
+  {
+   "type": "◆",
+   "canonical": "瓦剌国",
+   "sources": [
+    "000",
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 萍踪侠影录#pn-r0.11"
+  },
+  {
+   "type": "@",
+   "canonical": "脱脱不花",
+   "sources": [
+    "000",
+    "014",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 萍踪侠影录#pn-r0.14"
+  },
+  {
+   "type": "@",
+   "canonical": "康总管",
+   "sources": [
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 萍踪侠影录#pn-r12.39"
+  },
+  {
+   "type": "@",
+   "canonical": "刘得新",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 萍踪侠影录#pn-r15.19"
+  },
+  {
+   "type": "&",
+   "canonical": "于家",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 萍踪侠影录#pn-r15.27"
+  },
+  {
+   "type": "@",
+   "canonical": "九头狮子",
+   "sources": [
+    "016",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 萍踪侠影录#pn-r16.43"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台仲元",
+   "sources": [
+    "018",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 萍踪侠影录#pn-r18.11"
+  },
+  {
+   "type": "@",
+   "canonical": "祈钰",
+   "sources": [
+    "021",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 萍踪侠影录#pn-r21.9"
+  },
+  {
+   "type": "@",
+   "canonical": "瓦剌王",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 萍踪侠影录#pn-r0.11"
+  },
+  {
+   "type": "@",
+   "canonical": "上官",
+   "sources": [
+    "000",
+    "006",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 萍踪侠影录#pn-r0.38"
+  },
+  {
+   "type": "@",
+   "canonical": "晋王",
+   "sources": [
+    "005",
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 萍踪侠影录#pn-r5.49"
+  },
+  {
+   "type": "@",
+   "canonical": "宗周",
+   "sources": [
+    "006",
+    "009",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 萍踪侠影录#pn-r6.13"
+  },
+  {
+   "type": "◆",
+   "canonical": "红巾军",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 萍踪侠影录#pn-r9.47"
+  },
+  {
+   "type": "@",
+   "canonical": "毕老前辈",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 萍踪侠影录#pn-r10.10"
+  },
+  {
+   "type": "@",
+   "canonical": "震三界",
+   "sources": [
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 萍踪侠影录#pn-r10.75"
+  },
+  {
+   "type": "&",
+   "canonical": "蓝家",
+   "sources": [
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 萍踪侠影录#pn-r12.6"
+  },
+  {
+   "type": "@",
+   "canonical": "董师伯",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 萍踪侠影录#pn-r13.31"
+  },
+  {
+   "type": "@",
+   "canonical": "千里兄",
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 萍踪侠影录#pn-r14.61"
+  },
+  {
+   "type": "@",
+   "canonical": "孔子",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 萍踪侠影录#pn-r16.31"
+  },
+  {
+   "type": "@",
+   "canonical": "于阁老",
+   "sources": [
+    "018",
+    "019",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 萍踪侠影录#pn-r18.75"
+  },
+  {
+   "type": "@",
+   "canonical": "岳飞",
+   "sources": [
+    "019",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 萍踪侠影录#pn-r19.51"
+  },
+  {
+   "type": "@",
+   "canonical": "李清照",
+   "sources": [
+    "020",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 萍踪侠影录#pn-r20.65"
+  },
+  {
+   "type": "@",
+   "canonical": "上官老怪",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 萍踪侠影录#pn-r23.16"
+  },
+  {
+   "type": "@",
+   "canonical": "曹操",
+   "sources": [
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 萍踪侠影录#pn-r24.57"
+  },
+  {
+   "type": "@",
+   "canonical": "澄儿",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r0.4"
+  },
+  {
+   "type": "@",
+   "canonical": "成祖",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r0.12"
+  },
+  {
+   "type": "@",
+   "canonical": "天野",
+   "sources": [
+    "000",
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 萍踪侠影录#pn-r0.38"
+  },
+  {
+   "type": "@",
+   "canonical": "胡将军",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r0.84"
+  },
+  {
+   "type": "@",
+   "canonical": "胡老二",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r4.12"
+  },
+  {
+   "type": "@",
+   "canonical": "山民",
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r6.58"
+  },
+  {
+   "type": "@",
+   "canonical": "龙寨主",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r8.63"
+  },
+  {
+   "type": "@",
+   "canonical": "潮音师兄",
+   "sources": [
+    "009",
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 萍踪侠影录#pn-r9.37"
+  },
+  {
+   "type": "@",
+   "canonical": "虬髯客",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r10.9"
+  },
+  {
+   "type": "@",
+   "canonical": "成吉思汗",
+   "sources": [
+    "011",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 萍踪侠影录#pn-r11.32"
+  },
+  {
+   "type": "@",
+   "canonical": "周贤侄",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r12.34"
+  },
+  {
+   "type": "@",
+   "canonical": "凌霄子",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r12.69"
+  },
+  {
+   "type": "@",
+   "canonical": "郭登",
+   "sources": [
+    "015",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 萍踪侠影录#pn-r15.2"
+  },
+  {
+   "type": "@",
+   "canonical": "于承珠",
+   "aliases": [
+    "承珠"
+   ],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r15.27"
+  },
+  {
+   "type": "&",
+   "canonical": "澹台一家",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r18.14"
+  },
+  {
+   "type": "@",
+   "canonical": "邝尘",
+   "sources": [
+    "019",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 萍踪侠影录#pn-r19.45"
+  },
+  {
+   "type": "@",
+   "canonical": "王佐",
+   "sources": [
+    "019",
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 萍踪侠影录#pn-r19.45"
+  },
+  {
+   "type": "◆",
+   "canonical": "宋代",
+   "sources": [
+    "019",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 萍踪侠影录#pn-r19.51"
+  },
+  {
+   "type": "@",
+   "canonical": "钦二帝",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r20.11"
+  },
+  {
+   "type": "@",
+   "canonical": "阿剌亲王",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r20.41"
+  },
+  {
+   "type": "@",
+   "canonical": "金钩仙子",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r23.17"
+  },
+  {
+   "type": "@",
+   "canonical": "岑参",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r24.33"
+  },
+  {
+   "type": "@",
+   "canonical": "姬芝罗·安美",
+   "aliases": [
+    "安美"
+   ],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r24.39"
+  },
+  {
+   "type": "@",
+   "canonical": "安芝罗·密云",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r24.39"
+  },
+  {
+   "type": "@",
+   "canonical": "刘备",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r24.57"
+  },
+  {
+   "type": "@",
+   "canonical": "愕罗酋长",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 萍踪侠影录#pn-r26.41"
+  },
+  {
+   "type": "@",
+   "canonical": "谢侠士",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r0.4"
+  },
+  {
+   "type": "@",
+   "canonical": "阿蕾",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r0.5"
+  },
+  {
+   "type": "◆",
+   "canonical": "鞑靼",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r0.11"
+  },
+  {
+   "type": "@",
+   "canonical": "朱棣",
+   "aliases": [
+    "明成祖"
+   ],
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r0.12"
+  },
+  {
+   "type": "@",
+   "canonical": "仁宗",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r0.12"
+  },
+  {
+   "type": "@",
+   "canonical": "愚公",
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r0.19"
+  },
+  {
+   "type": "@",
+   "canonical": "上官云龙",
+   "aliases": [
+    "上官老魔头"
+   ],
+   "sources": [
+    "000"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r0.47"
+  },
+  {
+   "type": "@",
+   "canonical": "神箭方庆",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r1.4"
+  },
+  {
+   "type": "@",
+   "canonical": "丁大总兵",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r2.4"
+  },
+  {
+   "type": "◆",
+   "canonical": "日月旗",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r2.4"
+  },
+  {
+   "type": "@",
+   "canonical": "散花女侠",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r2.43"
+  },
+  {
+   "type": "@",
+   "canonical": "李广",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r3.12"
+  },
+  {
+   "type": "@",
+   "canonical": "张贼",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r3.12"
+  },
+  {
+   "type": "@",
+   "canonical": "盈妹",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r3.12"
+  },
+  {
+   "type": "◆",
+   "canonical": "汉室",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r3.13"
+  },
+  {
+   "type": "◆",
+   "canonical": "汉朝",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r3.13"
+  },
+  {
+   "type": "@",
+   "canonical": "翠儿",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r4.24"
+  },
+  {
+   "type": "@",
+   "canonical": "沙通天",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r5.19"
+  },
+  {
+   "type": "@",
+   "canonical": "陈胜",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r7.1"
+  },
+  {
+   "type": "@",
+   "canonical": "吴广",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r7.1"
+  },
+  {
+   "type": "@",
+   "canonical": "周少寨主",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r7.26"
+  },
+  {
+   "type": "@",
+   "canonical": "柳永",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r7.35"
+  },
+  {
+   "type": "@",
+   "canonical": "谢处厚",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r8.56"
+  },
+  {
+   "type": "@",
+   "canonical": "石翠枫",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r8.64"
+  },
+  {
+   "type": "@",
+   "canonical": "周山",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r9.27"
+  },
+  {
+   "type": "@",
+   "canonical": "石老英雄",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r9.37"
+  },
+  {
+   "type": "@",
+   "canonical": "邝中",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r9.63"
+  },
+  {
+   "type": "@",
+   "canonical": "华道凡",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r9.70"
+  },
+  {
+   "type": "@",
+   "canonical": "李世民",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r10.9"
+  },
+  {
+   "type": "◆",
+   "canonical": "海阳帮",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r11.5"
+  },
+  {
+   "type": "@",
+   "canonical": "石老前辈",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r11.5"
+  },
+  {
+   "type": "@",
+   "canonical": "毕前辈",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r11.19"
+  },
+  {
+   "type": "◆",
+   "canonical": "大明帝国",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r11.23"
+  },
+  {
+   "type": "@",
+   "canonical": "千里",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r12.46"
+  },
+  {
+   "type": "@",
+   "canonical": "金刀",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r12.48"
+  },
+  {
+   "type": "◆",
+   "canonical": "大明朝廷",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r12.84"
+  },
+  {
+   "type": "@",
+   "canonical": "黄盖",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r12.87"
+  },
+  {
+   "type": "@",
+   "canonical": "王雱",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r13.35"
+  },
+  {
+   "type": "@",
+   "canonical": "明成祖",
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r14.3"
+  },
+  {
+   "type": "@",
+   "canonical": "路家",
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r14.51"
+  },
+  {
+   "type": "@",
+   "canonical": "杨洪",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.2"
+  },
+  {
+   "type": "@",
+   "canonical": "赵佑",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.4"
+  },
+  {
+   "type": "@",
+   "canonical": "郑思肖",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.4"
+  },
+  {
+   "type": "@",
+   "canonical": "董大师伯",
+   "aliases": [
+    "金刚手"
+   ],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.12"
+  },
+  {
+   "type": "@",
+   "canonical": "于家",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.14"
+  },
+  {
+   "type": "@",
+   "canonical": "云雷",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.18"
+  },
+  {
+   "type": "◆",
+   "canonical": "户部",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.30"
+  },
+  {
+   "type": "@",
+   "canonical": "李顺",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.34"
+  },
+  {
+   "type": "&",
+   "canonical": "路家",
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r15.37"
+  },
+  {
+   "type": "@",
+   "canonical": "金钩吴锋",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r16.12"
+  },
+  {
+   "type": "@",
+   "canonical": "龙从帮主",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r16.46"
+  },
+  {
+   "type": "@",
+   "canonical": "殷林主",
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r16.55"
+  },
+  {
+   "type": "@",
+   "canonical": "唐人",
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r17.18"
+  },
+  {
+   "type": "@",
+   "canonical": "玉明妹子",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r18.22"
+  },
+  {
+   "type": "@",
+   "canonical": "鹿虔扆",
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r18.85"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台父女",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.26"
+  },
+  {
+   "type": "@",
+   "canonical": "石亨",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.45"
+  },
+  {
+   "type": "@",
+   "canonical": "武进伯朱冕",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.45"
+  },
+  {
+   "type": "@",
+   "canonical": "西宁侯宋玫",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.45"
+  },
+  {
+   "type": "@",
+   "canonical": "秦桧",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.51"
+  },
+  {
+   "type": "@",
+   "canonical": "奏桧",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.51"
+  },
+  {
+   "type": "@",
+   "canonical": "哈瓦",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.53"
+  },
+  {
+   "type": "@",
+   "canonical": "达莱",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.53"
+  },
+  {
+   "type": "◆",
+   "canonical": "卫队",
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r19.53"
+  },
+  {
+   "type": "@",
+   "canonical": "曹鼐",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r20.8"
+  },
+  {
+   "type": "@",
+   "canonical": "张益",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r20.8"
+  },
+  {
+   "type": "@",
+   "canonical": "张辅",
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r20.8"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台庄主",
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r21.12"
+  },
+  {
+   "type": "@",
+   "canonical": "赤霞道人",
+   "aliases": [
+    "赤霞"
+   ],
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r22.8"
+  },
+  {
+   "type": "◆",
+   "canonical": "朱明",
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r22.30"
+  },
+  {
+   "type": "@",
+   "canonical": "乌老二",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r23.17"
+  },
+  {
+   "type": "@",
+   "canonical": "张土诚",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r23.19"
+  },
+  {
+   "type": "@",
+   "canonical": "玄机逸土",
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r23.20"
+  },
+  {
+   "type": "@",
+   "canonical": "姬芝罗",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r24.39"
+  },
+  {
+   "type": "@",
+   "canonical": "花儿",
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r24.63"
+  },
+  {
+   "type": "&",
+   "canonical": "皇室",
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r25.20"
+  },
+  {
+   "type": "@",
+   "canonical": "陶渊明",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r26.5"
+  },
+  {
+   "type": "@",
+   "canonical": "楚霸王",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r26.5"
+  },
+  {
+   "type": "@",
+   "canonical": "张天华",
+   "aliases": [
+    "天华"
+   ],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r26.18"
+  },
+  {
+   "type": "◆",
+   "canonical": "明军",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r26.32"
+  },
+  {
+   "type": "@",
+   "canonical": "知院",
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r26.56"
+  },
+  {
+   "type": "@",
+   "canonical": "上官老魔",
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r27.59"
+  },
+  {
+   "type": "◆",
+   "canonical": "中华",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r29.1"
+  },
+  {
+   "type": "@",
+   "canonical": "也先太师",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r29.19"
+  },
+  {
+   "type": "@",
+   "canonical": "韦庄",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r29.22"
+  },
+  {
+   "type": "@",
+   "canonical": "陆游",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r29.22"
+  },
+  {
+   "type": "@",
+   "canonical": "关公",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r29.59"
+  },
+  {
+   "type": "@",
+   "canonical": "华雄",
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r29.59"
+  },
+  {
+   "type": "◆",
+   "canonical": "明兵",
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 萍踪侠影录#pn-r30.66"
+  }
+ ],
+ "alias_additions": [
+  {
+   "target_id": "E0021",
+   "target_canonical": "朱元璋",
+   "type": "@",
+   "add_alias": "明太祖",
+   "occurrences": 1
+  },
+  {
+   "target_id": "E0101",
+   "target_canonical": "武当派",
+   "type": "◆",
+   "add_alias": "武当",
+   "occurrences": 1
+  }
+ ],
+ "skipped": [
+  {
+   "canonical": "明",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "岳",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "郝",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "邝",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "张",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "云",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "徽",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "钦",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "金",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "辽",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  }
+ ]
+}

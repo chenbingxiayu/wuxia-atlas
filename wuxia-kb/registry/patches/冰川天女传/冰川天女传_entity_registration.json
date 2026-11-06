@@ -1,0 +1,4225 @@
+{
+ "schema": "entity_registration_proposal/v1",
+ "book": "冰川天女传",
+ "generated": "2026-11-06T01:28:29",
+ "source": "registry/concordance/冰川天女传（scan+aggregate 复算）",
+ "scope_types": [
+  "◆",
+  "@",
+  "&"
+ ],
+ "status_policy": "proposed（试点新增待核；合并后进映射表消费，与既有 proposed 同口径）",
+ "counts": {
+  "proposals": 330,
+  "alias_additions": 13,
+  "skipped": 3
+ },
+ "entities": [
+  {
+   "type": "@",
+   "canonical": "唐经天",
+   "aliases": [
+    "唐大侠",
+    "唐相公",
+    "唐哥哥",
+    "唐兄",
+    "经天",
+    "经儿",
+    "经天哥哥",
+    "经天兄",
+    "唐兄弟",
+    "唐家哥哥",
+    "唐伯伯",
+    "唐经人"
+   ],
+   "sources": [
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036",
+    "037",
+    "038",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现1874次/30回；首见 冰川天女传#pn-r11.46"
+  },
+  {
+   "type": "@",
+   "canonical": "陈天宇",
+   "aliases": [
+    "天宇",
+    "陈公子",
+    "宇儿",
+    "陈兄",
+    "天宇兄"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "014",
+    "016",
+    "017",
+    "020",
+    "022",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "034",
+    "035",
+    "036",
+    "037",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现1308次/30回；首见 冰川天女传#pn-r1.18",
+   "context_notes": [
+    {
+     "chapter": 10,
+     "display": "陈大人",
+     "note": "龙灵矫当面称陈天宇（意外惊喜=父到）"
+    }
+   ]
+  },
+  {
+   "type": "@",
+   "canonical": "金世遗",
+   "aliases": [
+    "毒手疯丐",
+    "世遗哥",
+    "世遗哥哥",
+    "世遗兄",
+    "疯丐",
+    "金大侠"
+   ],
+   "sources": [
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036",
+    "037",
+    "038",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现1142次/23回；首见 冰川天女传#pn-r18.73"
+  },
+  {
+   "type": "@",
+   "canonical": "龙灵矫",
+   "aliases": [
+    "年先生",
+    "灵矫",
+    "龙三",
+    "龙三先生",
+    "龙先生",
+    "龙某",
+    "龙老三"
+   ],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "018",
+    "019",
+    "032",
+    "033",
+    "034",
+    "035",
+    "037",
+    "038",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现460次/17回；首见 冰川天女传#pn-r10.19；2026-11-06 复核：并入 灵矫/龙三/龙三先生（同指）"
+  },
+  {
+   "type": "@",
+   "canonical": "萧青峰",
+   "aliases": [
+    "萧先生",
+    "萧老师",
+    "萧老弟",
+    "青峰",
+    "萧教师",
+    "萧老儿",
+    "萧青锋"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "009",
+    "010",
+    "020",
+    "021",
+    "022",
+    "028",
+    "029",
+    "032",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现416次/16回；首见 冰川天女传#pn-r1.25"
+  },
+  {
+   "type": "@",
+   "canonical": "幽萍",
+   "aliases": [],
+   "sources": [
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "019",
+    "020",
+    "022",
+    "023",
+    "025",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "037",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现392次/24回；首见 冰川天女传#pn-r7.54"
+  },
+  {
+   "type": "@",
+   "canonical": "雷震子",
+   "aliases": [
+    "雷大哥",
+    "大师兄",
+    "玉面狐狸",
+    "雷兄",
+    "雷师兄"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "009",
+    "021",
+    "022",
+    "023",
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现319次/11回；首见 冰川天女传#pn-r2.19"
+  },
+  {
+   "type": "@",
+   "canonical": "芝娜",
+   "aliases": [
+    "桑玛"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "011",
+    "014",
+    "016",
+    "017",
+    "020",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现311次/19回；首见 冰川天女传#pn-r2.28"
+  },
+  {
+   "type": "@",
+   "canonical": "赤神子",
+   "aliases": [],
+   "sources": [
+    "013",
+    "014",
+    "015",
+    "016",
+    "018",
+    "019",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024",
+    "031",
+    "033",
+    "034",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现303次/15回；首见 冰川天女传#pn-r13.10"
+  },
+  {
+   "type": "@",
+   "canonical": "江南",
+   "aliases": [],
+   "sources": [
+    "001",
+    "008",
+    "020",
+    "021",
+    "026",
+    "031",
+    "032",
+    "034",
+    "035",
+    "036",
+    "037"
+   ],
+   "status": "proposed",
+   "note": "出现273次/11回；首见 冰川天女传#pn-r1.21"
+  },
+  {
+   "type": "@",
+   "canonical": "唐晓澜",
+   "aliases": [
+    "晓澜"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "007",
+    "009",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "016",
+    "017",
+    "018",
+    "020",
+    "022",
+    "023",
+    "025",
+    "026",
+    "031",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036",
+    "038",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现266次/26回；首见 冰川天女传#pn-r2.64；2026-11-06 复核：移除 唐大侠/唐伯伯（本书 57+1 处均指唐经天，见 docs/55）"
+  },
+  {
+   "type": "@",
+   "canonical": "李沁梅",
+   "aliases": [
+    "沁梅",
+    "阿梅",
+    "沁儿"
+   ],
+   "sources": [
+    "014",
+    "015",
+    "023",
+    "026",
+    "031",
+    "032",
+    "037",
+    "038",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现242次/10回；首见 冰川天女传#pn-r14.51"
+  },
+  {
+   "type": "@",
+   "canonical": "俄马登",
+   "aliases": [],
+   "sources": [
+    "001",
+    "002",
+    "008",
+    "014",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现234次/8回；首见 冰川天女传#pn-r1.37"
+  },
+  {
+   "type": "@",
+   "canonical": "铁拐仙",
+   "aliases": [],
+   "sources": [
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "012",
+    "020",
+    "021",
+    "022",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现228次/13回；首见 冰川天女传#pn-r3.20"
+  },
+  {
+   "type": "@",
+   "canonical": "冒川生",
+   "aliases": [
+    "冒大侠",
+    "冒老前辈",
+    "冒老头子",
+    "冒老师",
+    "川生兄"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "007",
+    "012",
+    "014",
+    "019",
+    "020",
+    "021",
+    "023",
+    "024",
+    "025",
+    "026",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现222次/14回；首见 冰川天女传#pn-r2.64"
+  },
+  {
+   "type": "@",
+   "canonical": "董太清",
+   "aliases": [
+    "铁臂和尚",
+    "董兄",
+    "太清道友",
+    "太清"
+   ],
+   "sources": [
+    "031",
+    "032",
+    "033",
+    "034",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现181次/5回；首见 冰川天女传#pn-r31.39"
+  },
+  {
+   "type": "@",
+   "canonical": "黄石道人",
+   "aliases": [],
+   "sources": [
+    "020",
+    "021",
+    "022",
+    "024",
+    "025",
+    "031",
+    "032",
+    "033",
+    "036",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现179次/10回；首见 冰川天女传#pn-r20.34"
+  },
+  {
+   "type": "@",
+   "canonical": "谢云真",
+   "aliases": [
+    "夺命仙子",
+    "云真",
+    "圣手仙娘",
+    "谢云真人",
+    "峨嵋女侠",
+    "谢女侠"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "020",
+    "021",
+    "022",
+    "023",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现170次/12回；首见 冰川天女传#pn-r2.64"
+  },
+  {
+   "type": "@",
+   "canonical": "陈定基",
+   "aliases": [
+    "陈大人"
+   ],
+   "sources": [
+    "001",
+    "008",
+    "010",
+    "014",
+    "026",
+    "027",
+    "028",
+    "029",
+    "031",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现157次/10回；首见 冰川天女传#pn-r1.17"
+  },
+  {
+   "type": "@",
+   "canonical": "唐赛花",
+   "aliases": [
+    "唐老太婆"
+   ],
+   "sources": [
+    "018",
+    "019",
+    "025",
+    "032",
+    "033",
+    "034",
+    "035",
+    "036",
+    "037",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现150次/10回；首见 冰川天女传#pn-r18.36"
+  },
+  {
+   "type": "@",
+   "canonical": "提摩达多",
+   "aliases": [],
+   "sources": [
+    "036",
+    "037",
+    "038",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现150次/4回；首见 冰川天女传#pn-r36.60"
+  },
+  {
+   "type": "@",
+   "canonical": "法王",
+   "aliases": [],
+   "sources": [
+    "015",
+    "016",
+    "017",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现146次/9回；首见 冰川天女传#pn-r15.68"
+  },
+  {
+   "type": "@",
+   "canonical": "杨柳青",
+   "aliases": [
+    "邹伯母",
+    "杨家姑姑",
+    "杨伯母",
+    "杨女侠"
+   ],
+   "sources": [
+    "015",
+    "018",
+    "019",
+    "031",
+    "032",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现143次/8回；首见 冰川天女传#pn-r15.44"
+  },
+  {
+   "type": "@",
+   "canonical": "福康安",
+   "aliases": [
+    "福大帅",
+    "福大人"
+   ],
+   "sources": [
+    "001",
+    "005",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "015",
+    "019",
+    "020",
+    "027",
+    "028",
+    "029",
+    "030",
+    "032",
+    "033",
+    "034",
+    "035",
+    "037",
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现129次/22回；首见 冰川天女传#pn-r1.27"
+  },
+  {
+   "type": "@",
+   "canonical": "邹绛霞",
+   "aliases": [
+    "霞儿",
+    "霞妹",
+    "绛霞"
+   ],
+   "sources": [
+    "018",
+    "019",
+    "025",
+    "031",
+    "032",
+    "034",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现122次/8回；首见 冰川天女传#pn-r18.17"
+  },
+  {
+   "type": "@",
+   "canonical": "吕四娘",
+   "aliases": [
+    "吕大侠",
+    "吕姐姐"
+   ],
+   "sources": [
+    "003",
+    "011",
+    "015",
+    "018",
+    "019",
+    "022",
+    "023",
+    "025",
+    "026",
+    "028",
+    "029",
+    "030",
+    "032",
+    "033",
+    "036",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现118次/17回；首见 冰川天女传#pn-r3.21"
+  },
+  {
+   "type": "@",
+   "canonical": "洞冥子",
+   "aliases": [
+    "洞冥道友"
+   ],
+   "sources": [
+    "024",
+    "025",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现115次/3回；首见 冰川天女传#pn-r24.55"
+  },
+  {
+   "type": "@",
+   "canonical": "云灵子",
+   "aliases": [],
+   "sources": [
+    "012",
+    "013",
+    "015",
+    "016",
+    "024",
+    "032",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现114次/7回；首见 冰川天女传#pn-r12.15"
+  },
+  {
+   "type": "@",
+   "canonical": "崔云子",
+   "aliases": [
+    "崔老三",
+    "崔大哥"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "005",
+    "009",
+    "022",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现99次/7回；首见 冰川天女传#pn-r2.19"
+  },
+  {
+   "type": "@",
+   "canonical": "冯瑛",
+   "aliases": [
+    "瑛妹",
+    "唐夫人"
+   ],
+   "sources": [
+    "007",
+    "012",
+    "014",
+    "015",
+    "016",
+    "020",
+    "022",
+    "023",
+    "025",
+    "026",
+    "031",
+    "032",
+    "034",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现98次/15回；首见 冰川天女传#pn-r7.46"
+  },
+  {
+   "type": "@",
+   "canonical": "尼泊尔王",
+   "aliases": [],
+   "sources": [
+    "035",
+    "036",
+    "037",
+    "038",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现96次/5回；首见 冰川天女传#pn-r35.28"
+  },
+  {
+   "type": "@",
+   "canonical": "唐端",
+   "aliases": [],
+   "sources": [
+    "019",
+    "033",
+    "034",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现86次/4回；首见 冰川天女传#pn-r19.22"
+  },
+  {
+   "type": "@",
+   "canonical": "麦永明",
+   "aliases": [
+    "陕甘大侠",
+    "麦大侠",
+    "麦大哥",
+    "麦老头",
+    "麦老前辈"
+   ],
+   "sources": [
+    "003",
+    "010",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现77次/4回；首见 冰川天女传#pn-r3.36"
+  },
+  {
+   "type": "@",
+   "canonical": "毒龙尊者",
+   "aliases": [],
+   "sources": [
+    "018",
+    "022",
+    "023",
+    "025",
+    "026",
+    "029",
+    "031",
+    "032",
+    "033",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现76次/11回；首见 冰川天女传#pn-r18.35"
+  },
+  {
+   "type": "@",
+   "canonical": "赵灵君",
+   "aliases": [],
+   "sources": [
+    "009",
+    "020",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现75次/3回；首见 冰川天女传#pn-r9.40"
+  },
+  {
+   "type": "@",
+   "canonical": "方今明",
+   "aliases": [
+    "神拳方今明",
+    "方老伯",
+    "方大哥"
+   ],
+   "sources": [
+    "038",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现73次/3回；首见 冰川天女传#pn-r38.27"
+  },
+  {
+   "type": "◆",
+   "canonical": "中国",
+   "aliases": [],
+   "sources": [
+    "005",
+    "009",
+    "014",
+    "021",
+    "033",
+    "034",
+    "035",
+    "036",
+    "037",
+    "038",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现66次/11回；首见 冰川天女传#pn-r5.20"
+  },
+  {
+   "type": "◆",
+   "canonical": "白教",
+   "aliases": [],
+   "sources": [
+    "011",
+    "015",
+    "016",
+    "017",
+    "020",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现65次/10回；首见 冰川天女传#pn-r11.33"
+  },
+  {
+   "type": "@",
+   "canonical": "白教法王",
+   "aliases": [],
+   "sources": [
+    "015",
+    "016",
+    "017",
+    "018",
+    "026",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现62次/9回；首见 冰川天女传#pn-r15.60"
+  },
+  {
+   "type": "@",
+   "canonical": "泰吉提",
+   "aliases": [],
+   "sources": [
+    "034",
+    "035",
+    "036",
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现59次/4回；首见 冰川天女传#pn-r34.9"
+  },
+  {
+   "type": "@",
+   "canonical": "胡僧",
+   "aliases": [],
+   "sources": [
+    "033",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现56次/2回；首见 冰川天女传#pn-r33.27"
+  },
+  {
+   "type": "@",
+   "canonical": "德鲁奇",
+   "aliases": [],
+   "sources": [
+    "027",
+    "028",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现50次/3回；首见 冰川天女传#pn-r27.68"
+  },
+  {
+   "type": "@",
+   "canonical": "颜洛",
+   "aliases": [],
+   "sources": [
+    "010",
+    "013",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现49次/3回；首见 冰川天女传#pn-r10.31"
+  },
+  {
+   "type": "@",
+   "canonical": "桑壁伊",
+   "aliases": [],
+   "sources": [
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现46次/2回；首见 冰川天女传#pn-r29.1"
+  },
+  {
+   "type": "@",
+   "canonical": "武氏兄弟",
+   "aliases": [
+    "武大哥"
+   ],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "014",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现45次/5回；首见 冰川天女传#pn-r10.46"
+  },
+  {
+   "type": "@",
+   "canonical": "佟古拉",
+   "aliases": [],
+   "sources": [
+    "036",
+    "037",
+    "038",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现45次/4回；首见 冰川天女传#pn-r36.34"
+  },
+  {
+   "type": "@",
+   "canonical": "土司",
+   "aliases": [],
+   "sources": [
+    "001",
+    "027",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现42次/4回；首见 冰川天女传#pn-r1.40"
+  },
+  {
+   "type": "@",
+   "canonical": "苦行僧",
+   "aliases": [],
+   "sources": [
+    "011",
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现41次/3回；首见 冰川天女传#pn-r11.2"
+  },
+  {
+   "type": "@",
+   "canonical": "焦春雷",
+   "aliases": [
+    "焦大人"
+   ],
+   "sources": [
+    "011",
+    "012",
+    "033",
+    "037"
+   ],
+   "status": "proposed",
+   "note": "出现40次/4回；首见 冰川天女传#pn-r11.28"
+  },
+  {
+   "type": "◆",
+   "canonical": "崆峒派",
+   "aliases": [],
+   "sources": [
+    "002",
+    "009",
+    "014",
+    "020",
+    "021",
+    "022",
+    "024",
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现33次/8回；首见 冰川天女传#pn-r2.50"
+  },
+  {
+   "type": "@",
+   "canonical": "郝中浩",
+   "aliases": [
+    "郝师兄"
+   ],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现33次/1回；首见 冰川天女传#pn-r23.60"
+  },
+  {
+   "type": "@",
+   "canonical": "王瘤子",
+   "aliases": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "005",
+    "009",
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现32次/6回；首见 冰川天女传#pn-r1.76"
+  },
+  {
+   "type": "@",
+   "canonical": "白衣少年",
+   "aliases": [],
+   "sources": [
+    "006",
+    "007",
+    "008",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现31次/4回；首见 冰川天女传#pn-r6.66"
+  },
+  {
+   "type": "@",
+   "canonical": "叶天任",
+   "aliases": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现30次/1回；首见 冰川天女传#pn-r24.5"
+  },
+  {
+   "type": "@",
+   "canonical": "阿斯罗",
+   "aliases": [],
+   "sources": [
+    "036",
+    "037",
+    "038",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现28次/4回；首见 冰川天女传#pn-r36.34"
+  },
+  {
+   "type": "@",
+   "canonical": "谷石君",
+   "aliases": [],
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现27次/1回；首见 冰川天女传#pn-r18.47"
+  },
+  {
+   "type": "@",
+   "canonical": "华玉公主",
+   "aliases": [],
+   "sources": [
+    "009",
+    "016",
+    "030",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现26次/4回；首见 冰川天女传#pn-r9.6"
+  },
+  {
+   "type": "@",
+   "canonical": "额都",
+   "aliases": [
+    "额都公公"
+   ],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现26次/1回；首见 冰川天女传#pn-r30.26"
+  },
+  {
+   "type": "@",
+   "canonical": "公主",
+   "aliases": [],
+   "sources": [
+    "006",
+    "009",
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现24次/4回；首见 冰川天女传#pn-r6.22"
+  },
+  {
+   "type": "◆",
+   "canonical": "灵山派",
+   "aliases": [],
+   "sources": [
+    "012",
+    "022",
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现24次/3回；首见 冰川天女传#pn-r12.15"
+  },
+  {
+   "type": "@",
+   "canonical": "年羹尧",
+   "aliases": [
+    "年公子"
+   ],
+   "sources": [
+    "015",
+    "032",
+    "034",
+    "038",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现24次/5回；首见 冰川天女传#pn-r15.47"
+  },
+  {
+   "type": "@",
+   "canonical": "唐老太婆",
+   "aliases": [],
+   "sources": [
+    "018",
+    "032",
+    "033",
+    "034",
+    "039",
+    "040"
+   ],
+   "status": "proposed",
+   "note": "出现24次/6回；首见 冰川天女传#pn-r18.36"
+  },
+  {
+   "type": "@",
+   "canonical": "甘凤池",
+   "aliases": [
+    "甘大侠"
+   ],
+   "sources": [
+    "003",
+    "005",
+    "006",
+    "007",
+    "011",
+    "016",
+    "022",
+    "023",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现20次/9回；首见 冰川天女传#pn-r3.21"
+  },
+  {
+   "type": "@",
+   "canonical": "方雪君",
+   "aliases": [
+    "雪儿",
+    "雪妹"
+   ],
+   "sources": [
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现20次/1回；首见 冰川天女传#pn-r38.30"
+  },
+  {
+   "type": "@",
+   "canonical": "龙三",
+   "aliases": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现19次/1回；首见 冰川天女传#pn-r10.16"
+  },
+  {
+   "type": "@",
+   "canonical": "班禅活佛",
+   "aliases": [],
+   "sources": [
+    "016",
+    "028",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现18次/3回；首见 冰川天女传#pn-r16.7"
+  },
+  {
+   "type": "@",
+   "canonical": "圣母",
+   "aliases": [],
+   "sources": [
+    "016",
+    "017",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现18次/3回；首见 冰川天女传#pn-r16.18"
+  },
+  {
+   "type": "@",
+   "canonical": "福大帅",
+   "aliases": [],
+   "sources": [
+    "001",
+    "008",
+    "009",
+    "010",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现17次/6回；首见 冰川天女传#pn-r1.27"
+  },
+  {
+   "type": "@",
+   "canonical": "沁布藩王",
+   "aliases": [],
+   "sources": [
+    "002",
+    "005",
+    "016",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现17次/7回；首见 冰川天女传#pn-r2.28"
+  },
+  {
+   "type": "@",
+   "canonical": "皇上",
+   "aliases": [],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "013",
+    "014",
+    "020",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现17次/7回；首见 冰川天女传#pn-r10.28"
+  },
+  {
+   "type": "◆",
+   "canonical": "黄教",
+   "aliases": [],
+   "sources": [
+    "015",
+    "016",
+    "017",
+    "027",
+    "028",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现17次/7回；首见 冰川天女传#pn-r15.58"
+  },
+  {
+   "type": "@",
+   "canonical": "罗超",
+   "aliases": [],
+   "sources": [
+    "032",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现17次/2回；首见 冰川天女传#pn-r32.47"
+  },
+  {
+   "type": "◆",
+   "canonical": "天山",
+   "aliases": [],
+   "sources": [
+    "002",
+    "014",
+    "020",
+    "021",
+    "022",
+    "033",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现16次/7回；首见 冰川天女传#pn-r2.64"
+  },
+  {
+   "type": "@",
+   "canonical": "基里星",
+   "aliases": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现16次/1回；首见 冰川天女传#pn-r27.68"
+  },
+  {
+   "type": "◆",
+   "canonical": "崆峒",
+   "aliases": [],
+   "sources": [
+    "001",
+    "009",
+    "020",
+    "021",
+    "022",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现15次/6回；首见 冰川天女传#pn-r1.75"
+  },
+  {
+   "type": "@",
+   "canonical": "红衣番僧",
+   "aliases": [],
+   "sources": [
+    "007",
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现13次/3回；首见 冰川天女传#pn-r7.92"
+  },
+  {
+   "type": "@",
+   "canonical": "龙老三",
+   "aliases": [],
+   "sources": [
+    "012",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现13次/2回；首见 冰川天女传#pn-r12.9"
+  },
+  {
+   "type": "@",
+   "canonical": "唐金峰",
+   "aliases": [
+    "唐二先生"
+   ],
+   "sources": [
+    "013",
+    "015",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现13次/3回；首见 冰川天女传#pn-r13.9"
+  },
+  {
+   "type": "@",
+   "canonical": "和硕亲王",
+   "aliases": [],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现12次/4回；首见 冰川天女传#pn-r10.44"
+  },
+  {
+   "type": "@",
+   "canonical": "疯丐",
+   "aliases": [],
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现12次/1回；首见 冰川天女传#pn-r18.55"
+  },
+  {
+   "type": "@",
+   "canonical": "吴绛仙",
+   "aliases": [],
+   "sources": [
+    "005",
+    "020",
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现10次/3回；首见 冰川天女传#pn-r5.7"
+  },
+  {
+   "type": "@",
+   "canonical": "冰娥",
+   "aliases": [],
+   "sources": [
+    "005",
+    "009",
+    "014",
+    "019",
+    "025",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现10次/6回；首见 冰川天女传#pn-r5.53"
+  },
+  {
+   "type": "@",
+   "canonical": "武家兄弟",
+   "aliases": [],
+   "sources": [
+    "010",
+    "011",
+    "012",
+    "014",
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现10次/5回；首见 冰川天女传#pn-r10.57"
+  },
+  {
+   "type": "@",
+   "canonical": "宗洛",
+   "aliases": [],
+   "sources": [
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现10次/2回；首见 冰川天女传#pn-r13.44"
+  },
+  {
+   "type": "@",
+   "canonical": "萧先生",
+   "aliases": [],
+   "sources": [
+    "001",
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 冰川天女传#pn-r1.32"
+  },
+  {
+   "type": "@",
+   "canonical": "洛珠",
+   "aliases": [],
+   "sources": [
+    "005",
+    "029",
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现9次/3回；首见 冰川天女传#pn-r5.41"
+  },
+  {
+   "type": "◆",
+   "canonical": "尼泊尔",
+   "aliases": [],
+   "sources": [
+    "006",
+    "034",
+    "035",
+    "036",
+    "037",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现9次/6回；首见 冰川天女传#pn-r6.56"
+  },
+  {
+   "type": "@",
+   "canonical": "月仙",
+   "aliases": [],
+   "sources": [
+    "006",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 冰川天女传#pn-r6.75"
+  },
+  {
+   "type": "@",
+   "canonical": "唐大侠",
+   "aliases": [],
+   "sources": [
+    "012",
+    "019",
+    "032",
+    "038",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现9次/5回；首见 冰川天女传#pn-r12.35"
+  },
+  {
+   "type": "@",
+   "canonical": "郭台基",
+   "aliases": [
+    "郭镖头"
+   ],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现9次/1回；首见 冰川天女传#pn-r17.35"
+  },
+  {
+   "type": "@",
+   "canonical": "年先生",
+   "aliases": [],
+   "sources": [
+    "034",
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现9次/2回；首见 冰川天女传#pn-r34.9"
+  },
+  {
+   "type": "@",
+   "canonical": "王流子",
+   "aliases": [],
+   "sources": [
+    "002",
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 冰川天女传#pn-r2.64"
+  },
+  {
+   "type": "@",
+   "canonical": "冒大侠",
+   "aliases": [],
+   "sources": [
+    "003",
+    "009",
+    "021",
+    "022",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现8次/5回；首见 冰川天女传#pn-r3.15"
+  },
+  {
+   "type": "@",
+   "canonical": "了因",
+   "aliases": [],
+   "sources": [
+    "003",
+    "015",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现8次/3回；首见 冰川天女传#pn-r3.21"
+  },
+  {
+   "type": "@",
+   "canonical": "桑青娘",
+   "aliases": [],
+   "sources": [
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 冰川天女传#pn-r12.26"
+  },
+  {
+   "type": "@",
+   "canonical": "阿难",
+   "aliases": [],
+   "sources": [
+    "015",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 冰川天女传#pn-r15.68"
+  },
+  {
+   "type": "@",
+   "canonical": "吐谷浑大汗",
+   "aliases": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现8次/1回；首见 冰川天女传#pn-r16.21"
+  },
+  {
+   "type": "@",
+   "canonical": "乾隆",
+   "aliases": [],
+   "sources": [
+    "001",
+    "024",
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现7次/3回；首见 冰川天女传#pn-r1.27"
+  },
+  {
+   "type": "@",
+   "canonical": "老王",
+   "aliases": [],
+   "sources": [
+    "001",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现7次/2回；首见 冰川天女传#pn-r1.30"
+  },
+  {
+   "type": "◆",
+   "canonical": "青城派",
+   "aliases": [],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现7次/4回；首见 冰川天女传#pn-r1.68"
+  },
+  {
+   "type": "@",
+   "canonical": "萨迦土司",
+   "aliases": [],
+   "sources": [
+    "002",
+    "005",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现7次/3回；首见 冰川天女传#pn-r2.28"
+  },
+  {
+   "type": "◆",
+   "canonical": "峨嵋",
+   "aliases": [],
+   "sources": [
+    "002",
+    "003",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现7次/3回；首见 冰川天女传#pn-r2.64"
+  },
+  {
+   "type": "@",
+   "canonical": "萨天刺",
+   "aliases": [
+    "八臂神魔"
+   ],
+   "sources": [
+    "014",
+    "023",
+    "026",
+    "031",
+    "032",
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现7次/6回；首见 冰川天女传#pn-r14.60"
+  },
+  {
+   "type": "@",
+   "canonical": "李青莲",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现7次/1回；首见 冰川天女传#pn-r15.25"
+  },
+  {
+   "type": "@",
+   "canonical": "天宇",
+   "aliases": [],
+   "sources": [
+    "020",
+    "029",
+    "030",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现7次/4回；首见 冰川天女传#pn-r20.6"
+  },
+  {
+   "type": "@",
+   "canonical": "冒老前辈",
+   "aliases": [],
+   "sources": [
+    "020",
+    "023",
+    "024",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现7次/4回；首见 冰川天女传#pn-r20.22"
+  },
+  {
+   "type": "@",
+   "canonical": "钟展",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 冰川天女传#pn-r15.25"
+  },
+  {
+   "type": "@",
+   "canonical": "唐二先生",
+   "aliases": [],
+   "sources": [
+    "015",
+    "019",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现6次/3回；首见 冰川天女传#pn-r15.46"
+  },
+  {
+   "type": "@",
+   "canonical": "阿难尊者",
+   "aliases": [],
+   "sources": [
+    "015",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 冰川天女传#pn-r15.68"
+  },
+  {
+   "type": "@",
+   "canonical": "八臂神魔",
+   "aliases": [],
+   "sources": [
+    "032",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 冰川天女传#pn-r32.4"
+  },
+  {
+   "type": "@",
+   "canonical": "伍子胥",
+   "aliases": [],
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 冰川天女传#pn-r34.10"
+  },
+  {
+   "type": "@",
+   "canonical": "尼泊尔",
+   "aliases": [],
+   "sources": [
+    "035",
+    "036",
+    "037"
+   ],
+   "status": "proposed",
+   "note": "出现6次/3回；首见 冰川天女传#pn-r35.39"
+  },
+  {
+   "type": "@",
+   "canonical": "和珅",
+   "aliases": [],
+   "sources": [
+    "001",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 冰川天女传#pn-r1.17"
+  },
+  {
+   "type": "@",
+   "canonical": "俄马登涅巴",
+   "aliases": [],
+   "sources": [
+    "001",
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 冰川天女传#pn-r1.35"
+  },
+  {
+   "type": "@",
+   "canonical": "江玛古修",
+   "aliases": [],
+   "sources": [
+    "001",
+    "002",
+    "004",
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现5次/4回；首见 冰川天女传#pn-r1.52"
+  },
+  {
+   "type": "@",
+   "canonical": "崔雨子",
+   "aliases": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 冰川天女传#pn-r3.3"
+  },
+  {
+   "type": "◆",
+   "canonical": "天山剑法",
+   "aliases": [],
+   "sources": [
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 冰川天女传#pn-r13.35"
+  },
+  {
+   "type": "@",
+   "canonical": "大武",
+   "aliases": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 冰川天女传#pn-r14.58"
+  },
+  {
+   "type": "@",
+   "canonical": "小武",
+   "aliases": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 冰川天女传#pn-r14.58"
+  },
+  {
+   "type": "@",
+   "canonical": "钟万堂",
+   "aliases": [],
+   "sources": [
+    "015",
+    "016",
+    "020",
+    "032",
+    "037"
+   ],
+   "status": "proposed",
+   "note": "出现5次/5回；首见 冰川天女传#pn-r15.25"
+  },
+  {
+   "type": "◆",
+   "canonical": "红教",
+   "aliases": [],
+   "sources": [
+    "015",
+    "026",
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现5次/3回；首见 冰川天女传#pn-r15.38"
+  },
+  {
+   "type": "@",
+   "canonical": "赤城岛主",
+   "aliases": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 冰川天女传#pn-r23.65"
+  },
+  {
+   "type": "@",
+   "canonical": "毒龙前辈",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 冰川天女传#pn-r32.10"
+  },
+  {
+   "type": "@",
+   "canonical": "龙师叔",
+   "aliases": [],
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 冰川天女传#pn-r33.28"
+  },
+  {
+   "type": "@",
+   "canonical": "经天",
+   "aliases": [],
+   "sources": [
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 冰川天女传#pn-r39.8"
+  },
+  {
+   "type": "@",
+   "canonical": "石广生",
+   "aliases": [],
+   "sources": [
+    "003",
+    "012",
+    "014",
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现4次/4回；首见 冰川天女传#pn-r3.24"
+  },
+  {
+   "type": "@",
+   "canonical": "华玉",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 冰川天女传#pn-r9.1"
+  },
+  {
+   "type": "&",
+   "canonical": "龙家",
+   "aliases": [],
+   "sources": [
+    "010",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 冰川天女传#pn-r10.22"
+  },
+  {
+   "type": "@",
+   "canonical": "武老大",
+   "aliases": [],
+   "sources": [
+    "010",
+    "011",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 冰川天女传#pn-r10.57"
+  },
+  {
+   "type": "@",
+   "canonical": "游一鄂",
+   "aliases": [],
+   "sources": [
+    "011",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 冰川天女传#pn-r11.14"
+  },
+  {
+   "type": "@",
+   "canonical": "皇帝",
+   "aliases": [],
+   "sources": [
+    "013",
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 冰川天女传#pn-r13.48"
+  },
+  {
+   "type": "@",
+   "canonical": "孟曼丽斯",
+   "aliases": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 冰川天女传#pn-r14.64"
+  },
+  {
+   "type": "◆",
+   "canonical": "喇嘛教",
+   "aliases": [],
+   "sources": [
+    "015",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 冰川天女传#pn-r15.61"
+  },
+  {
+   "type": "@",
+   "canonical": "毒手疯丐",
+   "aliases": [],
+   "sources": [
+    "023",
+    "034",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 冰川天女传#pn-r23.6"
+  },
+  {
+   "type": "@",
+   "canonical": "金光长老",
+   "aliases": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 冰川天女传#pn-r25.42"
+  },
+  {
+   "type": "@",
+   "canonical": "宇儿",
+   "aliases": [],
+   "sources": [
+    "028",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现4次/2回；首见 冰川天女传#pn-r28.36"
+  },
+  {
+   "type": "@",
+   "canonical": "珠穆朗玛",
+   "aliases": [],
+   "sources": [
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 冰川天女传#pn-r39.131"
+  },
+  {
+   "type": "@",
+   "canonical": "桑玛",
+   "aliases": [],
+   "sources": [
+    "002",
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 冰川天女传#pn-r2.44"
+  },
+  {
+   "type": "◆",
+   "canonical": "形意门",
+   "aliases": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r3.39"
+  },
+  {
+   "type": "@",
+   "canonical": "桂大侠",
+   "aliases": [],
+   "sources": [
+    "005",
+    "009",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 冰川天女传#pn-r5.28"
+  },
+  {
+   "type": "@",
+   "canonical": "尼泊尔武士",
+   "aliases": [],
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r8.3"
+  },
+  {
+   "type": "@",
+   "canonical": "毛彦",
+   "aliases": [],
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r8.27"
+  },
+  {
+   "type": "@",
+   "canonical": "萧师父",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r9.33"
+  },
+  {
+   "type": "@",
+   "canonical": "龙三先生",
+   "aliases": [],
+   "sources": [
+    "010",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 冰川天女传#pn-r10.16"
+  },
+  {
+   "type": "&",
+   "canonical": "陈家",
+   "aliases": [],
+   "sources": [
+    "010",
+    "029",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 冰川天女传#pn-r10.40"
+  },
+  {
+   "type": "@",
+   "canonical": "武老二",
+   "aliases": [],
+   "sources": [
+    "011",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 冰川天女传#pn-r11.29"
+  },
+  {
+   "type": "@",
+   "canonical": "唐老二",
+   "aliases": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r13.8"
+  },
+  {
+   "type": "@",
+   "canonical": "白教喇嘛",
+   "aliases": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r16.42"
+  },
+  {
+   "type": "&",
+   "canonical": "邹家",
+   "aliases": [],
+   "sources": [
+    "018",
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 冰川天女传#pn-r18.17"
+  },
+  {
+   "type": "&",
+   "canonical": "杨家",
+   "aliases": [],
+   "sources": [
+    "018",
+    "031",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现3次/3回；首见 冰川天女传#pn-r18.31"
+  },
+  {
+   "type": "@",
+   "canonical": "陈公子",
+   "aliases": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r20.4"
+  },
+  {
+   "type": "@",
+   "canonical": "周大人",
+   "aliases": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r20.7"
+  },
+  {
+   "type": "@",
+   "canonical": "白教圣母",
+   "aliases": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r27.69"
+  },
+  {
+   "type": "@",
+   "canonical": "八思巴",
+   "aliases": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r27.85"
+  },
+  {
+   "type": "@",
+   "canonical": "印度苦行僧",
+   "aliases": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r29.37"
+  },
+  {
+   "type": "@",
+   "canonical": "女护法",
+   "aliases": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r30.23"
+  },
+  {
+   "type": "@",
+   "canonical": "晓澜",
+   "aliases": [],
+   "sources": [
+    "031",
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 冰川天女传#pn-r31.50"
+  },
+  {
+   "type": "◆",
+   "canonical": "西藏",
+   "aliases": [],
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 冰川天女传#pn-r36.64"
+  },
+  {
+   "type": "@",
+   "canonical": "本布",
+   "aliases": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r1.40"
+  },
+  {
+   "type": "@",
+   "canonical": "涅巴",
+   "aliases": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r1.40"
+  },
+  {
+   "type": "@",
+   "canonical": "崔老三",
+   "aliases": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r1.75"
+  },
+  {
+   "type": "@",
+   "canonical": "萧老儿",
+   "aliases": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r2.37"
+  },
+  {
+   "type": "@",
+   "canonical": "甘风池",
+   "aliases": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r3.21"
+  },
+  {
+   "type": "@",
+   "canonical": "闲云道人",
+   "aliases": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r4.32"
+  },
+  {
+   "type": "@",
+   "canonical": "桂师叔祖",
+   "aliases": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r4.44"
+  },
+  {
+   "type": "@",
+   "canonical": "麦大侠",
+   "aliases": [],
+   "sources": [
+    "005",
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r5.9"
+  },
+  {
+   "type": "@",
+   "canonical": "呼图克图",
+   "aliases": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r5.32"
+  },
+  {
+   "type": "@",
+   "canonical": "班禅喇嘛",
+   "aliases": [],
+   "sources": [
+    "005",
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r5.32"
+  },
+  {
+   "type": "◆",
+   "canonical": "唐朝",
+   "aliases": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r5.37"
+  },
+  {
+   "type": "@",
+   "canonical": "沁布",
+   "aliases": [],
+   "sources": [
+    "005",
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r5.42"
+  },
+  {
+   "type": "@",
+   "canonical": "诸葛武候",
+   "aliases": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r6.34"
+  },
+  {
+   "type": "@",
+   "canonical": "尼泊尔国王",
+   "aliases": [],
+   "sources": [
+    "008",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r8.3"
+  },
+  {
+   "type": "@",
+   "canonical": "伦博",
+   "aliases": [],
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r8.27"
+  },
+  {
+   "type": "@",
+   "canonical": "阎罗王",
+   "aliases": [],
+   "sources": [
+    "009",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r9.41"
+  },
+  {
+   "type": "@",
+   "canonical": "黄仲则",
+   "aliases": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r14.74"
+  },
+  {
+   "type": "@",
+   "canonical": "桑真娘",
+   "aliases": [],
+   "sources": [
+    "015",
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r15.17"
+  },
+  {
+   "type": "@",
+   "canonical": "冒伯伯",
+   "aliases": [],
+   "sources": [
+    "015",
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r15.50"
+  },
+  {
+   "type": "◆",
+   "canonical": "振威镖局",
+   "aliases": [],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r17.51"
+  },
+  {
+   "type": "@",
+   "canonical": "邹锡九",
+   "aliases": [],
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r18.16"
+  },
+  {
+   "type": "@",
+   "canonical": "桂姐姐",
+   "aliases": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r19.48"
+  },
+  {
+   "type": "@",
+   "canonical": "萧师娘",
+   "aliases": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r20.4"
+  },
+  {
+   "type": "@",
+   "canonical": "石川生",
+   "aliases": [],
+   "sources": [
+    "021"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r21.36"
+  },
+  {
+   "type": "@",
+   "canonical": "大麻疯",
+   "aliases": [],
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r22.1"
+  },
+  {
+   "type": "@",
+   "canonical": "萨天都",
+   "aliases": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r23.39"
+  },
+  {
+   "type": "@",
+   "canonical": "叶横波",
+   "aliases": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r24.3"
+  },
+  {
+   "type": "@",
+   "canonical": "黄袍道士",
+   "aliases": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r24.42"
+  },
+  {
+   "type": "◆",
+   "canonical": "昆仑",
+   "aliases": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r25.39"
+  },
+  {
+   "type": "◆",
+   "canonical": "白喇嘛教",
+   "aliases": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r27.21"
+  },
+  {
+   "type": "@",
+   "canonical": "圣女",
+   "aliases": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r27.71"
+  },
+  {
+   "type": "@",
+   "canonical": "桑壁伊江玛古修",
+   "aliases": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r29.1"
+  },
+  {
+   "type": "@",
+   "canonical": "苦行憎",
+   "aliases": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r29.47"
+  },
+  {
+   "type": "@",
+   "canonical": "铁掌神弹杨仲英",
+   "aliases": [],
+   "sources": [
+    "031",
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r31.39"
+  },
+  {
+   "type": "@",
+   "canonical": "邹伯母",
+   "aliases": [],
+   "sources": [
+    "032",
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r32.9"
+  },
+  {
+   "type": "@",
+   "canonical": "颜兄",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r32.55"
+  },
+  {
+   "type": "@",
+   "canonical": "金大侠",
+   "aliases": [],
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r34.44"
+  },
+  {
+   "type": "@",
+   "canonical": "国王",
+   "aliases": [],
+   "sources": [
+    "035",
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 冰川天女传#pn-r35.27"
+  },
+  {
+   "type": "@",
+   "canonical": "胤禵",
+   "aliases": [
+    "十四皇子"
+   ],
+   "sources": [
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 冰川天女传#pn-r38.27"
+  },
+  {
+   "type": "@",
+   "canonical": "乾隆皇帝",
+   "aliases": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r1.17"
+  },
+  {
+   "type": "◆",
+   "canonical": "天朝",
+   "aliases": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r1.27"
+  },
+  {
+   "type": "◆",
+   "canonical": "大清",
+   "aliases": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r1.27"
+  },
+  {
+   "type": "@",
+   "canonical": "藏兵",
+   "aliases": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r1.51"
+  },
+  {
+   "type": "@",
+   "canonical": "神弓崔老三",
+   "aliases": [],
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r1.76"
+  },
+  {
+   "type": "◆",
+   "canonical": "武当北派",
+   "aliases": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r2.64"
+  },
+  {
+   "type": "&",
+   "canonical": "冒氏",
+   "aliases": [],
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r2.64"
+  },
+  {
+   "type": "@",
+   "canonical": "郑平",
+   "aliases": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r3.3"
+  },
+  {
+   "type": "@",
+   "canonical": "吕青",
+   "aliases": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r3.21"
+  },
+  {
+   "type": "@",
+   "canonical": "铁拐",
+   "aliases": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r3.21"
+  },
+  {
+   "type": "@",
+   "canonical": "万岁爷",
+   "aliases": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r3.64"
+  },
+  {
+   "type": "@",
+   "canonical": "崔贤弟",
+   "aliases": [],
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r3.106"
+  },
+  {
+   "type": "@",
+   "canonical": "怪叫化",
+   "aliases": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r4.5"
+  },
+  {
+   "type": "◆",
+   "canonical": "武当北支",
+   "aliases": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r4.39"
+  },
+  {
+   "type": "◆",
+   "canonical": "武当南支",
+   "aliases": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r4.40"
+  },
+  {
+   "type": "@",
+   "canonical": "闲云道长",
+   "aliases": [],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r4.42"
+  },
+  {
+   "type": "@",
+   "canonical": "天女姐姐",
+   "aliases": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r5.36"
+  },
+  {
+   "type": "@",
+   "canonical": "文成公主",
+   "aliases": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r5.37"
+  },
+  {
+   "type": "@",
+   "canonical": "沁市藩王",
+   "aliases": [],
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r5.59"
+  },
+  {
+   "type": "@",
+   "canonical": "独臂神尼",
+   "aliases": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r6.7"
+  },
+  {
+   "type": "@",
+   "canonical": "因和尚",
+   "aliases": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r6.7"
+  },
+  {
+   "type": "@",
+   "canonical": "李义山",
+   "aliases": [],
+   "sources": [
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r6.78"
+  },
+  {
+   "type": "@",
+   "canonical": "萨迦宗土司",
+   "aliases": [],
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r8.3"
+  },
+  {
+   "type": "@",
+   "canonical": "司马相如",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r9.9"
+  },
+  {
+   "type": "@",
+   "canonical": "卓文君",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r9.9"
+  },
+  {
+   "type": "@",
+   "canonical": "子晋",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r9.9"
+  },
+  {
+   "type": "@",
+   "canonical": "秦穆公",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r9.9"
+  },
+  {
+   "type": "@",
+   "canonical": "弄玉",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r9.9"
+  },
+  {
+   "type": "◆",
+   "canonical": "崆峒门",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r9.62"
+  },
+  {
+   "type": "@",
+   "canonical": "乌蒙道长",
+   "aliases": [],
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r9.67"
+  },
+  {
+   "type": "@",
+   "canonical": "大帅",
+   "aliases": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r10.36"
+  },
+  {
+   "type": "@",
+   "canonical": "天山七剑",
+   "aliases": [],
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r10.46"
+  },
+  {
+   "type": "@",
+   "canonical": "铁拐张华",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.11"
+  },
+  {
+   "type": "@",
+   "canonical": "单刀周五",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.11"
+  },
+  {
+   "type": "@",
+   "canonical": "银虹剑游一鄂",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.13"
+  },
+  {
+   "type": "@",
+   "canonical": "陕甘大侠麦永明",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.14"
+  },
+  {
+   "type": "◆",
+   "canonical": "噶拳派",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.21"
+  },
+  {
+   "type": "@",
+   "canonical": "达赖五世",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.21"
+  },
+  {
+   "type": "@",
+   "canonical": "班禅四世",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.21"
+  },
+  {
+   "type": "@",
+   "canonical": "固始汗",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.21"
+  },
+  {
+   "type": "@",
+   "canonical": "加腾汗",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.21"
+  },
+  {
+   "type": "@",
+   "canonical": "苦行僧人",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.37"
+  },
+  {
+   "type": "&",
+   "canonical": "武家",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.49"
+  },
+  {
+   "type": "◆",
+   "canonical": "清室",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.77"
+  },
+  {
+   "type": "@",
+   "canonical": "谢姑姑",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.82"
+  },
+  {
+   "type": "@",
+   "canonical": "唐天经",
+   "aliases": [],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r11.83"
+  },
+  {
+   "type": "@",
+   "canonical": "李商隐",
+   "aliases": [],
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r12.7"
+  },
+  {
+   "type": "@",
+   "canonical": "惠总管",
+   "aliases": [],
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r12.10"
+  },
+  {
+   "type": "@",
+   "canonical": "苏东坡",
+   "aliases": [],
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r12.11"
+  },
+  {
+   "type": "@",
+   "canonical": "二郎神唐老二",
+   "aliases": [],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r13.9"
+  },
+  {
+   "type": "@",
+   "canonical": "刘邦",
+   "aliases": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r14.14"
+  },
+  {
+   "type": "◆",
+   "canonical": "天山七剑",
+   "aliases": [],
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r14.63"
+  },
+  {
+   "type": "@",
+   "canonical": "经儿",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r15.12"
+  },
+  {
+   "type": "@",
+   "canonical": "萍儿",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r15.15"
+  },
+  {
+   "type": "◆",
+   "canonical": "白发魔女",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r15.27"
+  },
+  {
+   "type": "@",
+   "canonical": "喀尔巴",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r15.38"
+  },
+  {
+   "type": "@",
+   "canonical": "王敖",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r15.44"
+  },
+  {
+   "type": "@",
+   "canonical": "哈布陀",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r15.47"
+  },
+  {
+   "type": "&",
+   "canonical": "年家",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r15.49"
+  },
+  {
+   "type": "@",
+   "canonical": "吐谷浑",
+   "aliases": [],
+   "sources": [
+    "015"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r15.55"
+  },
+  {
+   "type": "@",
+   "canonical": "大汗",
+   "aliases": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r16.25"
+  },
+  {
+   "type": "@",
+   "canonical": "白衣喇嘛",
+   "aliases": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r16.26"
+  },
+  {
+   "type": "◆",
+   "canonical": "萨迦宗",
+   "aliases": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r16.39"
+  },
+  {
+   "type": "@",
+   "canonical": "女菩萨",
+   "aliases": [],
+   "sources": [
+    "016"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r16.46"
+  },
+  {
+   "type": "@",
+   "canonical": "青妹",
+   "aliases": [],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r17.48"
+  },
+  {
+   "type": "@",
+   "canonical": "郭某",
+   "aliases": [],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r17.51"
+  },
+  {
+   "type": "@",
+   "canonical": "朱定",
+   "aliases": [
+    "飞火弹"
+   ],
+   "sources": [
+    "017"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r17.55"
+  },
+  {
+   "type": "@",
+   "canonical": "唐哥哥",
+   "aliases": [],
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r18.13"
+  },
+  {
+   "type": "@",
+   "canonical": "邹伯伯",
+   "aliases": [],
+   "sources": [
+    "018"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r18.37"
+  },
+  {
+   "type": "@",
+   "canonical": "金世遣",
+   "aliases": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r19.16"
+  },
+  {
+   "type": "@",
+   "canonical": "石大侠",
+   "aliases": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r19.22"
+  },
+  {
+   "type": "@",
+   "canonical": "诸葛武侯",
+   "aliases": [],
+   "sources": [
+    "019"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r19.66"
+  },
+  {
+   "type": "@",
+   "canonical": "彩凤",
+   "aliases": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r20.7"
+  },
+  {
+   "type": "@",
+   "canonical": "福大人",
+   "aliases": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r20.7"
+  },
+  {
+   "type": "◆",
+   "canonical": "青城",
+   "aliases": [],
+   "sources": [
+    "020"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r20.15"
+  },
+  {
+   "type": "◆",
+   "canonical": "武当山",
+   "aliases": [],
+   "sources": [
+    "022"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r22.3"
+  },
+  {
+   "type": "@",
+   "canonical": "邹家",
+   "aliases": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r23.13"
+  },
+  {
+   "type": "@",
+   "canonical": "萨天剌",
+   "aliases": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r23.42"
+  },
+  {
+   "type": "@",
+   "canonical": "霍震子",
+   "aliases": [],
+   "sources": [
+    "023"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r23.58"
+  },
+  {
+   "type": "@",
+   "canonical": "天叶散人",
+   "aliases": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r24.3"
+  },
+  {
+   "type": "@",
+   "canonical": "凌一瓢",
+   "aliases": [],
+   "sources": [
+    "024"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r24.6"
+  },
+  {
+   "type": "◆",
+   "canonical": "昆仑派",
+   "aliases": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r25.39"
+  },
+  {
+   "type": "@",
+   "canonical": "金光寺",
+   "aliases": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r25.42"
+  },
+  {
+   "type": "@",
+   "canonical": "冒老师",
+   "aliases": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r25.46"
+  },
+  {
+   "type": "@",
+   "canonical": "金光大师",
+   "aliases": [],
+   "sources": [
+    "025"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r25.53"
+  },
+  {
+   "type": "◆",
+   "canonical": "西藏红教",
+   "aliases": [],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r26.12"
+  },
+  {
+   "type": "@",
+   "canonical": "吕留良",
+   "aliases": [],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r26.25"
+  },
+  {
+   "type": "@",
+   "canonical": "吕葆中",
+   "aliases": [],
+   "sources": [
+    "026"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r26.25"
+  },
+  {
+   "type": "@",
+   "canonical": "忽必烈",
+   "aliases": [],
+   "sources": [
+    "027"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r27.85"
+  },
+  {
+   "type": "@",
+   "canonical": "土司夫人",
+   "aliases": [],
+   "sources": [
+    "028"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r28.43"
+  },
+  {
+   "type": "@",
+   "canonical": "喀林邦大公",
+   "aliases": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r29.21"
+  },
+  {
+   "type": "@",
+   "canonical": "陈大字",
+   "aliases": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r29.51"
+  },
+  {
+   "type": "@",
+   "canonical": "陈天定",
+   "aliases": [],
+   "sources": [
+    "029"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r29.57"
+  },
+  {
+   "type": "@",
+   "canonical": "冰娥小公主",
+   "aliases": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r30.25"
+  },
+  {
+   "type": "@",
+   "canonical": "藩王",
+   "aliases": [],
+   "sources": [
+    "030"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r30.48"
+  },
+  {
+   "type": "@",
+   "canonical": "沁梅",
+   "aliases": [],
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r31.11"
+  },
+  {
+   "type": "@",
+   "canonical": "萧老师",
+   "aliases": [],
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r31.18"
+  },
+  {
+   "type": "@",
+   "canonical": "八臂神魔萨天刺",
+   "aliases": [],
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r31.39"
+  },
+  {
+   "type": "@",
+   "canonical": "柳先开",
+   "aliases": [],
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r31.39"
+  },
+  {
+   "type": "@",
+   "canonical": "陈玄霸",
+   "aliases": [],
+   "sources": [
+    "031"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r31.39"
+  },
+  {
+   "type": "@",
+   "canonical": "杨老前辈",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r32.7"
+  },
+  {
+   "type": "@",
+   "canonical": "毒龙师伯",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r32.10"
+  },
+  {
+   "type": "@",
+   "canonical": "邹太太",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r32.25"
+  },
+  {
+   "type": "@",
+   "canonical": "周御史",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r32.26"
+  },
+  {
+   "type": "@",
+   "canonical": "年寿",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r32.41"
+  },
+  {
+   "type": "@",
+   "canonical": "福安康",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r32.41"
+  },
+  {
+   "type": "@",
+   "canonical": "颜先生",
+   "aliases": [],
+   "sources": [
+    "032"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r32.53"
+  },
+  {
+   "type": "&",
+   "canonical": "颜家",
+   "aliases": [],
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r33.3"
+  },
+  {
+   "type": "@",
+   "canonical": "游兄",
+   "aliases": [],
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r33.7"
+  },
+  {
+   "type": "@",
+   "canonical": "金吐遗",
+   "aliases": [],
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r33.79"
+  },
+  {
+   "type": "@",
+   "canonical": "唐老大婆",
+   "aliases": [],
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r33.82"
+  },
+  {
+   "type": "@",
+   "canonical": "唐老婆",
+   "aliases": [],
+   "sources": [
+    "033"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r33.83"
+  },
+  {
+   "type": "@",
+   "canonical": "年大将军",
+   "aliases": [],
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r34.9"
+  },
+  {
+   "type": "@",
+   "canonical": "吴王",
+   "aliases": [],
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r34.10"
+  },
+  {
+   "type": "◆",
+   "canonical": "尼泊尔军",
+   "aliases": [],
+   "sources": [
+    "034"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r34.14"
+  },
+  {
+   "type": "@",
+   "canonical": "冰娥姐姐",
+   "aliases": [],
+   "sources": [
+    "035"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r35.8"
+  },
+  {
+   "type": "◆",
+   "canonical": "唐门",
+   "aliases": [],
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r36.8"
+  },
+  {
+   "type": "@",
+   "canonical": "柳青",
+   "aliases": [],
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r36.11"
+  },
+  {
+   "type": "@",
+   "canonical": "史密夫",
+   "aliases": [],
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r36.17"
+  },
+  {
+   "type": "◆",
+   "canonical": "祅教",
+   "aliases": [],
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r36.34"
+  },
+  {
+   "type": "◆",
+   "canonical": "尼泊尔皇室",
+   "aliases": [],
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r36.59"
+  },
+  {
+   "type": "◆",
+   "canonical": "尼泊尔王国",
+   "aliases": [],
+   "sources": [
+    "036"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r36.64"
+  },
+  {
+   "type": "@",
+   "canonical": "唐寒花",
+   "aliases": [],
+   "sources": [
+    "037"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r37.1"
+  },
+  {
+   "type": "@",
+   "canonical": "科隆多",
+   "aliases": [],
+   "sources": [
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r38.27"
+  },
+  {
+   "type": "@",
+   "canonical": "车辟邪",
+   "aliases": [],
+   "sources": [
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r38.29"
+  },
+  {
+   "type": "◆",
+   "canonical": "尼泊尔王",
+   "aliases": [],
+   "sources": [
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r38.36"
+  },
+  {
+   "type": "@",
+   "canonical": "年公子",
+   "aliases": [],
+   "sources": [
+    "038"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r38.46"
+  },
+  {
+   "type": "@",
+   "canonical": "阿梅",
+   "aliases": [],
+   "sources": [
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r39.14"
+  },
+  {
+   "type": "@",
+   "canonical": "瑛妹",
+   "aliases": [],
+   "sources": [
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r39.77"
+  },
+  {
+   "type": "@",
+   "canonical": "珠穆策仁玛",
+   "aliases": [],
+   "sources": [
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r39.131"
+  },
+  {
+   "type": "@",
+   "canonical": "珠穆丁结沙桑玛",
+   "aliases": [],
+   "sources": [
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r39.131"
+  },
+  {
+   "type": "@",
+   "canonical": "穆觉本珠桑玛",
+   "aliases": [],
+   "sources": [
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r39.131"
+  },
+  {
+   "type": "@",
+   "canonical": "穆德格日卓桑玛",
+   "aliases": [],
+   "sources": [
+    "039"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 冰川天女传#pn-r39.131"
+  }
+ ],
+ "alias_additions": [
+  {
+   "target_id": "E0032",
+   "target_canonical": "岳鸣珂",
+   "type": "@",
+   "add_alias": "晦明禅师",
+   "occurrences": 6
+  },
+  {
+   "target_id": "E0101",
+   "target_canonical": "武当派",
+   "type": "◆",
+   "add_alias": "武当",
+   "occurrences": 40
+  },
+  {
+   "target_id": "E0110",
+   "target_canonical": "少林派",
+   "type": "◆",
+   "add_alias": "少林",
+   "occurrences": 1
+  },
+  {
+   "target_id": "E0019",
+   "target_canonical": "练霓裳",
+   "type": "@",
+   "add_alias": "白发魔女",
+   "occurrences": 12
+  },
+  {
+   "target_id": "E29486",
+   "target_canonical": "达赖活佛",
+   "type": "@",
+   "add_alias": "达赖",
+   "occurrences": 22
+  },
+  {
+   "target_id": "E29486",
+   "target_canonical": "达赖活佛",
+   "type": "@",
+   "add_alias": "达赖喇嘛",
+   "occurrences": 2
+  },
+  {
+   "target_id": "E0019",
+   "target_canonical": "练霓裳",
+   "type": "@",
+   "add_alias": "玉罗刹",
+   "occurrences": 1
+  },
+  {
+   "target_id": "E118269",
+   "target_canonical": "胤禛",
+   "type": "@",
+   "add_alias": "雍正",
+   "occurrences": 14
+  },
+  {
+   "target_id": "E0238",
+   "target_canonical": "哈玛雅",
+   "type": "@",
+   "add_alias": "飞红巾",
+   "occurrences": 2
+  },
+  {
+   "target_id": "E118269",
+   "target_canonical": "胤禛",
+   "type": "@",
+   "add_alias": "雍正帝",
+   "occurrences": 1
+  },
+  {
+   "target_id": "E5062",
+   "target_canonical": "玄烨",
+   "type": "@",
+   "add_alias": "康熙皇帝",
+   "occurrences": 1
+  },
+  {
+   "target_id": "E29486",
+   "target_canonical": "达赖活佛",
+   "type": "@",
+   "add_alias": "活佛",
+   "occurrences": 7
+  },
+  {
+   "target_id": "E99702",
+   "target_canonical": "杨仲英",
+   "type": "@",
+   "add_alias": "铁掌神弹",
+   "occurrences": 1
+  }
+ ],
+ "skipped": [
+  {
+   "canonical": "崔",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "唐",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  },
+  {
+   "canonical": "陈",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  }
+ ]
+}

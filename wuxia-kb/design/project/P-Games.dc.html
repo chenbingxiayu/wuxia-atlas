@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 游乐场</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .nav{display:flex;gap:20px;align-items:center;font-size:14px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.7}
+  .card{border:1px solid #b9ab90;border-radius:4px;padding:16px 18px;background:#fbf8ef;display:block;color:#2b2b2b}
+  .card:hover{border-color:#a63a2b}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;font-size:13px;background:#fbf8ef;color:#5a544a;margin:3px}
+  h2.sec{font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:20px;margin:30px 0 12px;border-bottom:1px solid #d8cdb8;padding-bottom:5px;letter-spacing:2px}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+  <header style="border-bottom:1px solid #d8cdb8;background:#fbf8ef"><div class="wrap nav" style="height:52px">
+    <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:24px;color:#a63a2b;margin-right:18px">江湖图志</span>
+    <a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#" style="color:#a63a2b;font-weight:700">游戏</a><a href="#">搜索</a><a href="#">关于</a></div></header>
+
+  <main class="wrap" style="flex:1;padding-bottom:48px">
+    <p class="lab" style="margin:14px 0 0"><a href="#">首页</a> / 游戏 · 江湖游乐场</p>
+    <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:36px;letter-spacing:3px;margin:6px 0 4px">江湖游乐场</h1>
+    <p style="color:#5a544a;font-size:15px">每天一个来的理由——猜一场论战、测一位人物、集一套图鉴。答案全部出自原著图谱，不靠瞎编。</p>
+
+    <h2 class="sec">今日 <span class="lab">每天来的理由</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+      <a class="card" href="#"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">每日一谜</b><span class="lab">第 38 题 · 连胜 4</span></div>
+        <p class="lab" style="margin:6px 0 0">谁杀了金独异？——三次机会，逐级解锁提示。</p></a>
+      <a class="card" href="#" style="border-color:#a63a2b"><div class="lab" style="color:#a63a2b">康熙初年 · 塞外 <span style="color:#a63a2b">● 剧情锚</span></div>
+        <b style="font-size:15px">凌未风被囚布达拉宫</b>
+        <p class="lab" style="margin:6px 0 0">七剑下天山·004:12 →（年谱确日事件 · 无确日显示"这一天，江湖风平浪静"）</p></a>
+      <a class="card" href="#" style="border-style:dashed;color:#8c8477"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px;color:#8c8477">今日论战</b><span class="badge" style="border:1.5px dashed #b9ab90;border-radius:3px;padding:0 8px;font-size:11px">筹备中</span></div>
+        <p class="lab" style="margin:6px 0 0">猜一场原著对局的胜负——随武评清洗数据上线。</p></a>
+    </div>
+
+    <h2 class="sec">游乐场 <span class="lab">点开即玩 · 全部纯前端</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+      <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">武林二十问答</b><p class="lab" style="margin:6px 0 0">系统想一位人物，你用是非题把它问出来——每轮选信息增益最大的问题。</p></a>
+      <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">测测你是梁书里的谁</b><p class="lab" style="margin:6px 0 0">十道性格题，出一张你的江湖人物卡：门派、武功、神兵、座次、命定剧情。</p></a>
+      <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">神兵图鉴</b><p class="lab" style="margin:6px 0 0">183 件名物卡片墙——收集你的江湖见闻，随插画逐卡点亮。</p>
+        <div style="height:12px;border:1px solid #b9ab90;border-radius:999px;background:#f5efe4;overflow:hidden;margin-top:8px"><div style="width:43%;height:100%;background:#a63a2b"></div></div>
+        <p class="lab" style="margin:4px 0 0">43% · 79/183</p></a>
+    </div>
+
+    <h2 class="sec">战绩中心 <span class="lab">纯前端 localStorage</span></h2>
+    <div style="background:#f5efe4;border-radius:4px;padding:14px 18px;display:flex;gap:36px;align-items:center">
+      <div style="text-align:center"><div style="font-size:28px;font-weight:900;color:#a63a2b">4</div><div class="lab">当前连胜</div></div>
+      <div style="text-align:center"><div style="font-size:28px;font-weight:900;color:#34546e">72%</div><div class="lab">累计正确率</div></div>
+      <div style="text-align:center"><div style="font-size:28px;font-weight:900;color:#5a544a">38</div><div class="lab">已答题数</div></div>
+      <span class="lab" style="margin-left:auto">答题日历 · 近 5 周 <span class="chip">■对</span><span class="chip">■错</span><span class="chip">□未答</span></span>
+    </div>
+
+    <h2 class="sec">筹备中 <span class="lab">下期立项 · 上线后自动点亮</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+      <div class="card" style="border-style:dashed"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px;color:#8c8477">江湖人生模拟器</b><p class="lab" style="margin:6px 0 0">随机出身，沿真实编年走完你的江湖一生——文字冒险版梁羽生宇宙。</p></div>
+      <div class="card" style="border-style:dashed"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px;color:#8c8477">武林秘卷 · 悬案推理</b><p class="lab" style="margin:6px 0 0">给线索、做推理、破悬案——凶手推理版在考订管线成熟后上线。</p></div>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1480}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

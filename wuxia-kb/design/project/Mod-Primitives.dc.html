@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>模块库 · 基础原语集</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#e9e2d2;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  h3.sec{font-family:"Noto Serif SC","SimSun",serif;font-weight:900;font-size:18px;margin:0 0 8px;padding-bottom:5px;
+    border-bottom:1px solid #d8cdb8;letter-spacing:2px;color:#2b2b2b}
+  .lab{font-size:12px;color:#8c8477;line-height:1.6}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;margin:3px;
+    font-size:13.5px;background:#fbf8ef;color:#2b2b2b}
+  .chip small{color:#8c8477;margin-left:4px;font-family:Consolas,monospace;font-size:11px}
+  .badge{display:inline-block;border:1.5px solid;border-radius:3px;padding:0 8px;font-size:12px;margin:2px}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12.5px;color:#34546e}
+</style>
+</helmet>
+<div style="width:1200px;height:1500px;box-sizing:border-box;padding:48px 56px;background:#fbf8ef;display:flex;flex-direction:column;gap:24px">
+
+  <div style="display:flex;align-items:baseline;gap:14px">
+    <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:24px;letter-spacing:3px">基础原语集</span>
+    <span class="lab">全站共用 · 来自 tokens.css · 模块库 1/7</span>
+  </div>
+
+  <div>
+    <h3 class="sec">面包屑 Breadcrumb（用户词 · 无内部编号）</h3>
+    <div style="background:#f5efe4;padding:10px 16px;border-radius:4px">
+      <span class="lab"><a style="color:#34546e" href="#">首页</a> / <a style="color:#34546e" href="#">人物谱</a> / 练霓裳</span>
+      <span class="lab" style="margin-left:24px"><a style="color:#34546e" href="#">宇宙</a> / 编年史</span>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">SectionHeader（h2 + dim 说明 · 说明收用户词）</h3>
+    <div style="background:#f5efe4;padding:12px 16px;border-radius:4px;display:flex;flex-direction:column;gap:10px">
+      <div style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:18px;border-bottom:1px solid #d8cdb8;padding-bottom:4px">
+        历代流转 <span class="lab">每次易手挂定位符 · 「借」= 暂借，不计入持有人</span></div>
+      <div style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:18px;border-bottom:1px solid #d8cdb8;padding-bottom:4px">
+        关键剧情 <span class="lab">考订锚点 · 按故事先后</span></div>
+      <div style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:18px;border-bottom:1px solid #d8cdb8;padding-bottom:4px">
+        关键事件 <span class="lab">图谱自动抽取 · 前 12 条 · 原文对质用</span></div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">StatsBar（构建期计算 · 不得硬编码）</h3>
+    <div style="background:#f5efe4;padding:10px 16px;border-radius:4px;display:flex;gap:26px;font-size:14px;color:#5a544a">
+      <span>流转 <b style="color:#a63a2b;font-size:18px">12</b> 段</span>
+      <span>证据 <b style="color:#a63a2b;font-size:18px">188</b> 处</span>
+      <span>见于 <span class="chip">白发魔女传</span><span class="chip">七剑下天山</span></span>
+      <span>关系 <b style="color:#34546e;font-size:18px">23</b> 条 · 见于 <b style="color:#34546e;font-size:18px">4</b> 书</span>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">定位符 LocLink（mono 黛青 · 补零可点 · 全站对质原子）</h3>
+    <div style="background:#f5efe4;padding:10px 16px;border-radius:4px;display:flex;gap:24px;align-items:baseline">
+      <a class="loc" href="#" style="border-bottom:1px dashed #b9ab90">白发魔女传·026:53 →</a>
+      <span class="loc" style="color:#8c8477">七剑下天山·009:31（不可点示例）</span>
+      <span class="lab">规则：章号一律三位补零（chapterHref helper）· 纯文本态灰 · 可点态黛青虚下划</span>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">置信徽章（●● high / ●○ med / ○○ low · 文字段：强证/确证/线索）</h3>
+    <div style="background:#f5efe4;padding:10px 16px;border-radius:4px;display:flex;gap:20px;align-items:center">
+      <span style="font-size:13px;color:#b9b1a2;letter-spacing:-1px">●●</span><span class="lab">high 强证</span>
+      <span style="font-size:13px;color:#8c8477;letter-spacing:-1px">●○</span><span class="lab">medium 确证</span>
+      <span style="font-size:13px;color:#b9b1a2;letter-spacing:-1px">○○</span><span class="lab">low 线索（weak，默认排除出界面）</span>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">实体/状态徽章族</h3>
+    <div style="background:#f5efe4;padding:12px 16px;border-radius:4px;display:flex;flex-wrap:wrap;gap:8px;align-items:center">
+      <span class="badge" style="border-color:#a63a2b;color:#a63a2b;transform:rotate(-1.5deg)">跨书换乘</span>
+      <span class="badge" style="border-color:#a63a2b;color:#a63a2b;transform:rotate(1deg)">跨书</span>
+      <span class="badge" style="border-color:#34546e;color:#34546e">统称</span>
+      <span class="badge" style="border-color:#34546e;color:#34546e;border-style:dashed">剑套</span>
+      <span class="badge" style="border-color:#5e7d5a;background:#5e7d5a;color:#fbf8ef">深度解析</span>
+      <span class="badge" style="border-color:#b8860b;color:#b8860b;border-style:dashed">建设中</span>
+      <span class="badge" style="border-color:#b9b1a2;color:#8c8477;border-style:dashed">存目</span>
+      <span class="badge" style="border-color:#b8860b;background:#b8860b;color:#fbf8ef">神兵 · 明文</span>
+      <span class="badge" style="border-color:#8a6607;color:#8a6607;border-style:dashed">品阶待考</span>
+      <span class="badge" style="border-color:#a63a2b;color:#a63a2b">名门正派</span>
+      <span class="badge" style="border-color:#b8860b;color:#b8860b">世家</span>
+      <span class="badge" style="border-color:#5e7d5a;color:#5e7d5a">绿林帮会</span>
+      <span class="badge" style="border-color:#34546e;color:#34546e">朝廷势力</span>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">Chip 族（实体 chip ×频次 / 谓词 chip / 选中态）</h3>
+    <div style="background:#f5efe4;padding:12px 16px;border-radius:4px;line-height:2.4">
+      <a class="chip" href="#" style="border-color:#a63a2b;color:#a63a2b">练霓裳<small>×2678</small></a>
+      <a class="chip" href="#">凌未风<small>×2060</small></a>
+      <a class="chip" href="#" style="border-style:dashed">晦明禅师<small>点拨 · 白发魔女传·007:59</small></a>
+      <span class="chip" style="background:#ece2cf">传授<small>·镇山</small></span>
+      <span class="chip" style="background:#ece2cf">拥有</span>
+      <span class="chip" style="background:#ece2cf">修习</span>
+      <span class="lab">人物谱搜索示例：字号∝频次（&gt;800 次 1rem / 其余 .88rem）· 带换乘标记者印框</span>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">SearchBox + 联想（命中规范名 + 别名 + 招式名）</h3>
+    <div style="background:#f5efe4;padding:12px 16px;border-radius:4px;display:flex;gap:12px;align-items:center">
+      <input style="flex:1;max-width:420px;padding:10px 14px;border:2px solid #2b2b2b;border-radius:4px;font-family:inherit;font-size:15px;background:#fbf8ef" value="白发魔女" aria-label="搜索人物名或别名">
+      <span class="lab">↓ 联想</span>
+      <span class="chip">练霓裳 <small>别名命中 · 白发魔女</small></span>
+      <span class="lab">规则：搜别名必须命中规范名档案（「白发魔女/玉罗刹/晦明禅师」为验收用例）</span>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">EmptyState 空态族（诚实挂账 · 不编造）</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="background:#f5efe4;border:1px dashed #b9ab90;border-radius:4px;padding:12px 16px">
+        <b style="font-size:14px">档案未载</b> <span class="badge" style="border-color:#b9b1a2;color:#8c8477">待撰写</span>
+        <p class="lab" style="margin:4px 0 0">四书事件层没有"金独异"被杀的记录（也可能其死亡为病故/自尽/未直接收录）。</p>
+      </div>
+      <div style="background:#f5efe4;border:1px dashed #b9ab90;border-radius:4px;padding:12px 16px">
+        <b style="font-size:14px">条目说明条（薄页/空壳页）</b>
+        <p class="lab" style="margin:4px 0 0">原著中记载简略，暂无深度考订内容；证据与定位照常提供。</p>
+      </div>
+      <div style="background:#f5efe4;border:1px dashed #b9ab90;border-radius:4px;padding:12px 16px">
+        <b style="font-size:14px">小说中的今天（空态）</b>
+        <p class="lab" style="margin:4px 0 0">这一天，江湖风平浪静。</p>
+      </div>
+      <div style="background:#f5efe4;border:1px dashed #b9ab90;border-radius:4px;padding:12px 16px">
+        <b style="font-size:14px">暂无明文流转（不脑补）</b>
+        <p class="lab" style="margin:4px 0 0">仅共现证据——以下人物曾与此物同场出现，但无明文易手句式，不要当成交接链。</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

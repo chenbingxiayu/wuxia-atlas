@@ -1,0 +1,1222 @@
+{
+ "schema": "entity_registration_proposal/v1",
+ "book": "还剑奇情录",
+ "generated": "2026-11-06T10:27:37",
+ "source": "registry/concordance/还剑奇情录（scan+aggregate 复算）",
+ "scope_types": [
+  "@",
+  "◆",
+  "&"
+ ],
+ "status_policy": "proposed（试点新增待核；合并后进映射表消费，与既有 proposed 同口径）",
+ "counts": {
+  "proposals": 108,
+  "alias_additions": 5,
+  "skipped": 1,
+  "entities": 104,
+  "by_type": {
+   "@": 92,
+   "&": 4,
+   "◆": 8
+  },
+  "alias_filter": {
+   "kept": 18,
+   "dropped": 26
+  },
+  "canonical_drop2": [
+   "先太子",
+   "云姑娘",
+   "罗大人"
+  ],
+  "alias_additions_dropped": 2
+ },
+ "entities": [
+  {
+   "type": "@",
+   "canonical": "云舞阳",
+   "aliases": [
+    "舞阳"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现806次/14回；首见 还剑奇情录#pn-r1.31"
+  },
+  {
+   "type": "@",
+   "canonical": "陈玄机",
+   "aliases": [
+    "机儿",
+    "玄机"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现541次/13回；首见 还剑奇情录#pn-r1.3"
+  },
+  {
+   "type": "@",
+   "canonical": "上官天野",
+   "aliases": [
+    "天野"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "006",
+    "007",
+    "008",
+    "009",
+    "011",
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现458次/12回；首见 还剑奇情录#pn-r1.11"
+  },
+  {
+   "type": "@",
+   "canonical": "云素素",
+   "aliases": [
+    "素儿",
+    "素素"
+   ],
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现261次/11回；首见 还剑奇情录#pn-r2.44"
+  },
+  {
+   "type": "@",
+   "canonical": "石天铎",
+   "aliases": [
+    "天铎"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "005",
+    "006",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现225次/11回；首见 还剑奇情录#pn-r1.33"
+  },
+  {
+   "type": "@",
+   "canonical": "云夫人",
+   "aliases": [
+    "宝珠"
+   ],
+   "sources": [
+    "004",
+    "005",
+    "006",
+    "009",
+    "010",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现198次/6回；首见 还剑奇情录#pn-r4.11"
+  },
+  {
+   "type": "@",
+   "canonical": "萧韵兰",
+   "aliases": [
+    "韵兰"
+   ],
+   "sources": [
+    "001",
+    "002",
+    "009",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现157次/5回；首见 还剑奇情录#pn-r1.10"
+  },
+  {
+   "type": "@",
+   "canonical": "毕凌风",
+   "aliases": [
+    "丐侠",
+    "玉面丐侠"
+   ],
+   "sources": [
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现148次/7回；首见 还剑奇情录#pn-r8.21"
+  },
+  {
+   "type": "@",
+   "canonical": "牟独逸",
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "004",
+    "007",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现76次/12回；首见 还剑奇情录#pn-r1.37"
+  },
+  {
+   "type": "@",
+   "canonical": "陈定方",
+   "sources": [
+    "002",
+    "009",
+    "011",
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现64次/6回；首见 还剑奇情录#pn-r2.20"
+  },
+  {
+   "type": "@",
+   "canonical": "陈雪梅",
+   "aliases": [
+    "雪梅"
+   ],
+   "sources": [
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现54次/3回；首见 还剑奇情录#pn-r12.44"
+  },
+  {
+   "type": "@",
+   "canonical": "智圆长老",
+   "sources": [
+    "002",
+    "007",
+    "008",
+    "009",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现53次/6回；首见 还剑奇情录#pn-r2.70"
+  },
+  {
+   "type": "@",
+   "canonical": "太玄道人",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现43次/1回；首见 还剑奇情录#pn-r10.53"
+  },
+  {
+   "type": "@",
+   "canonical": "张士诚",
+   "sources": [
+    "001",
+    "002",
+    "003",
+    "005",
+    "008",
+    "009",
+    "010",
+    "012",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现42次/9回；首见 还剑奇情录#pn-r1.32"
+  },
+  {
+   "type": "@",
+   "canonical": "禇英",
+   "sources": [
+    "011",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现42次/3回；首见 还剑奇情录#pn-r11.20"
+  },
+  {
+   "type": "@",
+   "canonical": "萧冠英",
+   "sources": [
+    "011",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现38次/3回；首见 还剑奇情录#pn-r11.66"
+  },
+  {
+   "type": "@",
+   "canonical": "素素",
+   "sources": [
+    "002",
+    "004",
+    "005",
+    "008",
+    "009",
+    "010",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现37次/7回；首见 还剑奇情录#pn-r2.76"
+  },
+  {
+   "type": "@",
+   "canonical": "蒲坚",
+   "sources": [
+    "003",
+    "004",
+    "005",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现34次/4回；首见 还剑奇情录#pn-r3.34"
+  },
+  {
+   "type": "@",
+   "canonical": "阳超谷",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现32次/1回；首见 还剑奇情录#pn-r10.59"
+  },
+  {
+   "type": "@",
+   "canonical": "七修道人",
+   "sources": [
+    "003",
+    "004",
+    "005",
+    "008",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现31次/5回；首见 还剑奇情录#pn-r3.22"
+  },
+  {
+   "type": "&",
+   "canonical": "云家",
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "008",
+    "009",
+    "010",
+    "011",
+    "012",
+    "013",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现28次/10回；首见 还剑奇情录#pn-r2.107"
+  },
+  {
+   "type": "@",
+   "canonical": "彭和尚",
+   "sources": [
+    "002",
+    "003",
+    "004",
+    "005",
+    "008",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现23次/6回；首见 还剑奇情录#pn-r2.103"
+  },
+  {
+   "type": "@",
+   "canonical": "禇霸",
+   "sources": [
+    "011",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现22次/3回；首见 还剑奇情录#pn-r11.20"
+  },
+  {
+   "type": "@",
+   "canonical": "谷钟",
+   "aliases": [
+    "阴间秀才"
+   ],
+   "sources": [
+    "007",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现21次/2回；首见 还剑奇情录#pn-r7.8"
+  },
+  {
+   "type": "@",
+   "canonical": "智弘",
+   "sources": [
+    "007",
+    "008",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现20次/3回；首见 还剑奇情录#pn-r7.8"
+  },
+  {
+   "type": "@",
+   "canonical": "牟宝珠",
+   "sources": [
+    "004",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现18次/3回；首见 还剑奇情录#pn-r4.24"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台一羽",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现18次/1回；首见 还剑奇情录#pn-r12.22"
+  },
+  {
+   "type": "&",
+   "canonical": "牟家",
+   "sources": [
+    "002",
+    "004",
+    "007",
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现17次/5回；首见 还剑奇情录#pn-r2.65"
+  },
+  {
+   "type": "@",
+   "canonical": "牟一粟",
+   "aliases": [
+    "一粟"
+   ],
+   "sources": [
+    "004",
+    "007",
+    "009",
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现17次/5回；首见 还剑奇情录#pn-r4.29"
+  },
+  {
+   "type": "@",
+   "canonical": "舞阳",
+   "sources": [
+    "004",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现17次/2回；首见 还剑奇情录#pn-r4.32"
+  },
+  {
+   "type": "@",
+   "canonical": "公冶良",
+   "sources": [
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现17次/2回；首见 还剑奇情录#pn-r11.29"
+  },
+  {
+   "type": "@",
+   "canonical": "韵兰",
+   "sources": [
+    "001",
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现15次/2回；首见 还剑奇情录#pn-r1.7"
+  },
+  {
+   "type": "@",
+   "canonical": "彭莹玉",
+   "aliases": [
+    "彭和尚"
+   ],
+   "sources": [
+    "001",
+    "003",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现10次/3回；首见 还剑奇情录#pn-r1.33"
+  },
+  {
+   "type": "@",
+   "canonical": "智广",
+   "sources": [
+    "007",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现10次/2回；首见 还剑奇情录#pn-r7.8"
+  },
+  {
+   "type": "@",
+   "canonical": "周桐",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现10次/1回；首见 还剑奇情录#pn-r7.8"
+  },
+  {
+   "type": "@",
+   "canonical": "常山龙",
+   "sources": [
+    "011",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现10次/2回；首见 还剑奇情录#pn-r11.27"
+  },
+  {
+   "type": "@",
+   "canonical": "桑令狐",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现9次/1回；首见 还剑奇情录#pn-r10.62"
+  },
+  {
+   "type": "@",
+   "canonical": "先帝",
+   "sources": [
+    "004",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 还剑奇情录#pn-r4.35"
+  },
+  {
+   "type": "@",
+   "canonical": "智圆",
+   "sources": [
+    "007",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现8次/2回；首见 还剑奇情录#pn-r7.8"
+  },
+  {
+   "type": "@",
+   "canonical": "毕凌虚",
+   "sources": [
+    "003",
+    "008",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现7次/3回；首见 还剑奇情录#pn-r3.22"
+  },
+  {
+   "type": "@",
+   "canonical": "陈友谅",
+   "sources": [
+    "001",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 还剑奇情录#pn-r1.32"
+  },
+  {
+   "type": "@",
+   "canonical": "牟一栗",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现6次/1回；首见 还剑奇情录#pn-r2.62"
+  },
+  {
+   "type": "@",
+   "canonical": "天铎",
+   "sources": [
+    "009",
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现6次/2回；首见 还剑奇情录#pn-r9.105"
+  },
+  {
+   "type": "◆",
+   "canonical": "大周",
+   "sources": [
+    "001",
+    "003",
+    "004",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现5次/4回；首见 还剑奇情录#pn-r1.32"
+  },
+  {
+   "type": "@",
+   "canonical": "脱脱不花",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 还剑奇情录#pn-r4.35"
+  },
+  {
+   "type": "@",
+   "canonical": "周公密",
+   "sources": [
+    "009",
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现5次/2回；首见 还剑奇情录#pn-r9.50"
+  },
+  {
+   "type": "@",
+   "canonical": "七修道",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现5次/1回；首见 还剑奇情录#pn-r10.60"
+  },
+  {
+   "type": "@",
+   "canonical": "上官兄",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 还剑奇情录#pn-r1.7"
+  },
+  {
+   "type": "◆",
+   "canonical": "丐帮",
+   "sources": [
+    "003",
+    "008",
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现4次/3回；首见 还剑奇情录#pn-r3.22"
+  },
+  {
+   "type": "@",
+   "canonical": "上宫天野",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 还剑奇情录#pn-r9.3"
+  },
+  {
+   "type": "@",
+   "canonical": "麻翼赞",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现4次/1回；首见 还剑奇情录#pn-r12.29"
+  },
+  {
+   "type": "◆",
+   "canonical": "瓦剌",
+   "sources": [
+    "003",
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 还剑奇情录#pn-r3.32"
+  },
+  {
+   "type": "@",
+   "canonical": "脱欢",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 还剑奇情录#pn-r4.35"
+  },
+  {
+   "type": "@",
+   "canonical": "张宗周",
+   "sources": [
+    "004",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 还剑奇情录#pn-r4.38"
+  },
+  {
+   "type": "@",
+   "canonical": "石天锋",
+   "sources": [
+    "005",
+    "006"
+   ],
+   "status": "proposed",
+   "note": "出现3次/2回；首见 还剑奇情录#pn-r5.25"
+  },
+  {
+   "type": "@",
+   "canonical": "太玄道长",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 还剑奇情录#pn-r10.53"
+  },
+  {
+   "type": "◆",
+   "canonical": "蒙古",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现3次/1回；首见 还剑奇情录#pn-r12.29"
+  },
+  {
+   "type": "@",
+   "canonical": "归藏大师",
+   "sources": [
+    "002",
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 还剑奇情录#pn-r2.46"
+  },
+  {
+   "type": "@",
+   "canonical": "张上诚",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r3.19"
+  },
+  {
+   "type": "@",
+   "canonical": "七修",
+   "sources": [
+    "003",
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 还剑奇情录#pn-r3.21"
+  },
+  {
+   "type": "@",
+   "canonical": "七修道长",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r3.22"
+  },
+  {
+   "type": "@",
+   "canonical": "石英",
+   "aliases": [
+    "轰天雷"
+   ],
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r4.16"
+  },
+  {
+   "type": "@",
+   "canonical": "阿鲁台",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r4.35"
+  },
+  {
+   "type": "@",
+   "canonical": "智弘长老",
+   "sources": [
+    "007",
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 还剑奇情录#pn-r7.15"
+  },
+  {
+   "type": "@",
+   "canonical": "半残神丐",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r8.9"
+  },
+  {
+   "type": "@",
+   "canonical": "独臂怪盗",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r8.9"
+  },
+  {
+   "type": "◆",
+   "canonical": "武当五老",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r8.35"
+  },
+  {
+   "type": "@",
+   "canonical": "云大哥",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r9.66"
+  },
+  {
+   "type": "@",
+   "canonical": "玄机",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r9.104"
+  },
+  {
+   "type": "@",
+   "canonical": "雪梅",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r10.96"
+  },
+  {
+   "type": "@",
+   "canonical": "智圆文",
+   "aliases": [
+    "智圆长老"
+   ],
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r11.80"
+  },
+  {
+   "type": "@",
+   "canonical": "阿图真",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现2次/1回；首见 还剑奇情录#pn-r12.29"
+  },
+  {
+   "type": "◆",
+   "canonical": "飞龙帮",
+   "sources": [
+    "012",
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现2次/2回；首见 还剑奇情录#pn-r12.59"
+  },
+  {
+   "type": "◆",
+   "canonical": "大汉",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r1.32"
+  },
+  {
+   "type": "@",
+   "canonical": "洪武爷",
+   "sources": [
+    "001"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r1.35"
+  },
+  {
+   "type": "@",
+   "canonical": "欧冶子",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r2.23"
+  },
+  {
+   "type": "@",
+   "canonical": "吴王夫差",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r2.30"
+  },
+  {
+   "type": "@",
+   "canonical": "梦窗词人",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r2.31"
+  },
+  {
+   "type": "@",
+   "canonical": "吴文英",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r2.31"
+  },
+  {
+   "type": "@",
+   "canonical": "吴梦窗",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r2.31"
+  },
+  {
+   "type": "@",
+   "canonical": "云太太",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r2.51"
+  },
+  {
+   "type": "@",
+   "canonical": "独逸老人",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r2.68"
+  },
+  {
+   "type": "@",
+   "canonical": "上官义士",
+   "sources": [
+    "002"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r2.96"
+  },
+  {
+   "type": "@",
+   "canonical": "张复初",
+   "sources": [
+    "003"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r3.22"
+  },
+  {
+   "type": "@",
+   "canonical": "宗周",
+   "sources": [
+    "004"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r4.39"
+  },
+  {
+   "type": "&",
+   "canonical": "张家",
+   "sources": [
+    "005"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r5.8"
+  },
+  {
+   "type": "◆",
+   "canonical": "武当南派",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r7.8"
+  },
+  {
+   "type": "@",
+   "canonical": "曾参",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r7.31"
+  },
+  {
+   "type": "@",
+   "canonical": "智广长老",
+   "sources": [
+    "007"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r7.53"
+  },
+  {
+   "type": "@",
+   "canonical": "玉面丐侠",
+   "sources": [
+    "008"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r8.56"
+  },
+  {
+   "type": "@",
+   "canonical": "智圆师伯",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r9.20"
+  },
+  {
+   "type": "@",
+   "canonical": "上官大野",
+   "sources": [
+    "009"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r9.22"
+  },
+  {
+   "type": "@",
+   "canonical": "七修老道",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r10.1"
+  },
+  {
+   "type": "@",
+   "canonical": "陈玄饥",
+   "sources": [
+    "010"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r10.21"
+  },
+  {
+   "type": "@",
+   "canonical": "禇大哥",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r11.18"
+  },
+  {
+   "type": "@",
+   "canonical": "禇二哥",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r11.18"
+  },
+  {
+   "type": "&",
+   "canonical": "金家",
+   "sources": [
+    "011"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r11.36"
+  },
+  {
+   "type": "@",
+   "canonical": "毕清泉",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r12.22"
+  },
+  {
+   "type": "@",
+   "canonical": "凌虚",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r12.22"
+  },
+  {
+   "type": "@",
+   "canonical": "达摩尊老",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r12.27"
+  },
+  {
+   "type": "@",
+   "canonical": "澹台老人",
+   "sources": [
+    "012"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r12.67"
+  },
+  {
+   "type": "@",
+   "canonical": "云韵兰",
+   "aliases": [
+    "韵兰"
+   ],
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r13.39"
+  },
+  {
+   "type": "@",
+   "canonical": "主公",
+   "sources": [
+    "013"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r13.49"
+  },
+  {
+   "type": "@",
+   "canonical": "罗金锋",
+   "sources": [
+    "014"
+   ],
+   "status": "proposed",
+   "note": "出现1次/1回；首见 还剑奇情录#pn-r14.15"
+  }
+ ],
+ "alias_additions": [
+  {
+   "target_id": "E0101",
+   "target_canonical": "武当派",
+   "type": "◆",
+   "add_alias": "武当门",
+   "occurrences": 1
+  },
+  {
+   "target_id": "E0101",
+   "target_canonical": "武当派",
+   "type": "◆",
+   "add_alias": "武当",
+   "occurrences": 38
+  },
+  {
+   "target_id": "E0110",
+   "target_canonical": "少林派",
+   "type": "◆",
+   "add_alias": "少林",
+   "occurrences": 1
+  }
+ ],
+ "skipped": [
+  {
+   "canonical": "我",
+   "reason": "单字不收（歧义过大，映射表同口径）"
+  }
+ ]
+}

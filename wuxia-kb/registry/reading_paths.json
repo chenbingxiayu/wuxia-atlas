@@ -1,0 +1,6280 @@
+{
+  "schema": "reading-paths-v0.1",
+  "meta": {
+    "generated": "2026-11-05",
+    "tool": "build_reading_paths v0.1 (2026-11-05, S/09c)",
+    "data_version": "2026-11-05",
+    "source_refs": {
+      "books": "logs\\export\\staging\\books.json",
+      "chapters": "logs\\export\\staging\\chapters.json",
+      "graph": "logs\\export\\staging\\graph.json",
+      "cards": "registry\\sku\\cards.json",
+      "concordance": "registry/concordance/",
+      "struct": "tagged/<书>/NNN.struct.md"
+    },
+    "source_generated": {
+      "books": "2026-11-05",
+      "chapters": "2026-11-05",
+      "graph": "2026-11-05",
+      "cards": "2026-11-05 20:32:27"
+    },
+    "difficulty_formula": "raw=0.20*z(L)+0.25*z(P)+0.25*z(E)+0.15*z(V)+0.15*z(X); D=quintile(raw) within book (n<10 fallback to all lit chapters); L=non-space chars (struct), P=len(chars), E=events/(L/1000), V=sum(verbs)/(L/1000), X=union books of stream entities in graph.nodes",
+    "spoiler_rule": "楔子 0；按回目进度 ≤20%→0、≤60%→1、≤90%→2；末回→3（09c §5.1）",
+    "difficulty_boundaries": {
+      "七剑下天山": {
+        "q20": -0.411652,
+        "q40": -0.108105,
+        "q60": 0.133974,
+        "q80": 0.46428
+      },
+      "冰魄寒光剑": {
+        "q20": -0.647196,
+        "q40": -0.335584,
+        "q60": 0.12592,
+        "q80": 0.504673
+      },
+      "塞外奇侠传": {
+        "q20": -0.481007,
+        "q40": -0.163161,
+        "q60": 0.098197,
+        "q80": 0.596184
+      },
+      "江湖三女侠": {
+        "q20": -0.438495,
+        "q40": -0.051506,
+        "q60": 0.170041,
+        "q80": 0.358083
+      },
+      "白发魔女传": {
+        "q20": -0.41066,
+        "q40": -0.001055,
+        "q60": 0.117975,
+        "q80": 0.423374
+      }
+    },
+    "counts": {
+      "paths": 17,
+      "by_type": {
+        "main": 1,
+        "theme": 3,
+        "character": 8,
+        "difficulty": 5
+      },
+      "steps": 171,
+      "unlit_books": 29,
+      "chapter_index": 151
+    },
+    "validation": {
+      "passed": true,
+      "errors": [],
+      "counts": {
+        "main": 1,
+        "theme": 3,
+        "character": 8,
+        "difficulty": 5
+      }
+    }
+  },
+  "paths": [
+    {
+      "id": "path-main-天山系列",
+      "type": "main",
+      "title": "天山系列主线（按成书年升序；已点亮 5 部）",
+      "steps": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 1,
+          "pn": "塞外奇侠传#pn-r1",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "series_anchor"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "year": 1955
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 0,
+          "pn": "七剑下天山#pn-r0",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "sequential",
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "year": 1956
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "sequential",
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "year": 1957
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 1,
+          "pn": "白发魔女传#pn-r1",
+          "difficulty": 3,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "sequential",
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "year": 1957
+            }
+          }
+        },
+        {
+          "book": "冰川天女传",
+          "chapter": 0,
+          "pn": "冰川天女传#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 1,
+          "pn": "冰魄寒光剑#pn-r1",
+          "difficulty": 4,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "sequential",
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "year": 1960
+            }
+          }
+        },
+        {
+          "book": "云海玉弓缘",
+          "chapter": 0,
+          "pn": "云海玉弓缘#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "冰河洗剑录",
+          "chapter": 0,
+          "pn": "冰河洗剑录#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "风雷震九州",
+          "chapter": 0,
+          "pn": "风雷震九州#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "侠骨丹心",
+          "chapter": 0,
+          "pn": "侠骨丹心#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "游剑江湖",
+          "chapter": 0,
+          "pn": "游剑江湖#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "牧野流星",
+          "chapter": 0,
+          "pn": "牧野流星#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "弹指惊雷",
+          "chapter": 0,
+          "pn": "弹指惊雷#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "绝塞传烽录",
+          "chapter": 0,
+          "pn": "绝塞传烽录#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "剑网尘丝",
+          "chapter": 0,
+          "pn": "剑网尘丝#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        },
+        {
+          "book": "幻剑灵旗",
+          "chapter": 0,
+          "pn": "幻剑灵旗#pn-r0",
+          "difficulty": null,
+          "spoiler_level": 0,
+          "features": "toc-only",
+          "reason": {
+            "codes": [
+              "series_bridge"
+            ],
+            "evidence": {
+              "series": "天山系列",
+              "note": "未点亮：仅目录级信息（09c §4.3）"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 16,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-theme-师承与门派",
+      "type": "theme",
+      "title": "专题阅读：师承与门派（事件/关系密度优先）",
+      "steps": [
+        {
+          "book": "七剑下天山",
+          "chapter": 25,
+          "pn": "七剑下天山#pn-r25",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "师承与门派",
+              "matched_streams": 8
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 18,
+          "pn": "七剑下天山#pn-r18",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "师承与门派",
+              "matched_streams": 5
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 9,
+          "pn": "江湖三女侠#pn-r9",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "师承与门派",
+              "matched_streams": 5
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 19,
+          "pn": "七剑下天山#pn-r19",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "师承与门派",
+              "matched_streams": 4
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 14,
+          "pn": "七剑下天山#pn-r14",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "师承与门派",
+              "matched_streams": 3
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 3,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-theme-情缘与结义",
+      "type": "theme",
+      "title": "专题阅读：情缘与结义（事件/关系密度优先）",
+      "steps": [
+        {
+          "book": "白发魔女传",
+          "chapter": 32,
+          "pn": "白发魔女传#pn-r32",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "情缘与结义",
+              "matched_streams": 3
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 23,
+          "pn": "江湖三女侠#pn-r23",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "情缘与结义",
+              "matched_streams": 2
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 36,
+          "pn": "江湖三女侠#pn-r36",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "情缘与结义",
+              "matched_streams": 2
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 13,
+          "pn": "七剑下天山#pn-r13",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "情缘与结义",
+              "matched_streams": 1
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 3,
+          "pn": "白发魔女传#pn-r3",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "情缘与结义",
+              "matched_streams": 1
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 3,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-theme-对决与仇怨",
+      "type": "theme",
+      "title": "专题阅读：对决与仇怨（事件/关系密度优先）",
+      "steps": [
+        {
+          "book": "七剑下天山",
+          "chapter": 25,
+          "pn": "七剑下天山#pn-r25",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "对决与仇怨",
+              "matched_streams": 21
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 9,
+          "pn": "江湖三女侠#pn-r9",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "对决与仇怨",
+              "matched_streams": 16
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 19,
+          "pn": "七剑下天山#pn-r19",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "对决与仇怨",
+              "matched_streams": 14
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 5,
+          "pn": "七剑下天山#pn-r5",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "对决与仇怨",
+              "matched_streams": 12
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 4,
+          "pn": "江湖三女侠#pn-r4",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "theme_match"
+            ],
+            "evidence": {
+              "theme": "对决与仇怨",
+              "matched_streams": 12
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 3,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-character-练霓裳",
+      "type": "character",
+      "title": "角色线：练霓裳（8 回，跨 5 部）",
+      "steps": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 16,
+          "pn": "塞外奇侠传#pn-r16",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0019"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 18,
+          "pn": "塞外奇侠传#pn-r18",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0019"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 19,
+          "pn": "塞外奇侠传#pn-r19",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0019"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 21,
+          "pn": "塞外奇侠传#pn-r21",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0019"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 22,
+          "pn": "塞外奇侠传#pn-r22",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0019"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 27,
+          "pn": "塞外奇侠传#pn-r27",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0019"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 28,
+          "pn": "塞外奇侠传#pn-r28",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0019"
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 19,
+          "pn": "七剑下天山#pn-r19",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0019"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 5,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-character-卓一航",
+      "type": "character",
+      "title": "角色线：卓一航（8 回，跨 3 部）",
+      "steps": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 15,
+          "pn": "塞外奇侠传#pn-r15",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0003"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 16,
+          "pn": "塞外奇侠传#pn-r16",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0003"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 17,
+          "pn": "塞外奇侠传#pn-r17",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0003"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 18,
+          "pn": "塞外奇侠传#pn-r18",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0003"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 19,
+          "pn": "塞外奇侠传#pn-r19",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0003"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 21,
+          "pn": "塞外奇侠传#pn-r21",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0003"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 22,
+          "pn": "塞外奇侠传#pn-r22",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0003"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 26,
+          "pn": "塞外奇侠传#pn-r26",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0003"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 3,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-character-凌未风",
+      "type": "character",
+      "title": "角色线：凌未风（8 回，跨 3 部）",
+      "steps": [
+        {
+          "book": "七剑下天山",
+          "chapter": 1,
+          "pn": "七剑下天山#pn-r1",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0590"
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 3,
+          "pn": "七剑下天山#pn-r3",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0590"
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 4,
+          "pn": "七剑下天山#pn-r4",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0590"
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 5,
+          "pn": "七剑下天山#pn-r5",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0590"
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 6,
+          "pn": "七剑下天山#pn-r6",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0590"
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 7,
+          "pn": "七剑下天山#pn-r7",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0590"
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 8,
+          "pn": "七剑下天山#pn-r8",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0590"
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 9,
+          "pn": "七剑下天山#pn-r9",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0590"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 3,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-character-岳鸣珂",
+      "type": "character",
+      "title": "角色线：岳鸣珂（8 回，跨 5 部）",
+      "steps": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 1,
+          "pn": "塞外奇侠传#pn-r1",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0032"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 2,
+          "pn": "塞外奇侠传#pn-r2",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0032"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 6,
+          "pn": "塞外奇侠传#pn-r6",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0032"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 11,
+          "pn": "塞外奇侠传#pn-r11",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0032"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 15,
+          "pn": "塞外奇侠传#pn-r15",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0032"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 20,
+          "pn": "塞外奇侠传#pn-r20",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0032"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 21,
+          "pn": "塞外奇侠传#pn-r21",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0032"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 22,
+          "pn": "塞外奇侠传#pn-r22",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e0032"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 5,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-character-冯琳",
+      "type": "character",
+      "title": "角色线：冯琳（8 回，跨 2 部）",
+      "steps": [
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99706"
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 2,
+          "pn": "江湖三女侠#pn-r2",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99706"
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 3,
+          "pn": "江湖三女侠#pn-r3",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99706"
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 4,
+          "pn": "江湖三女侠#pn-r4",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99706"
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 11,
+          "pn": "江湖三女侠#pn-r11",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99706"
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 13,
+          "pn": "江湖三女侠#pn-r13",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99706"
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 14,
+          "pn": "江湖三女侠#pn-r14",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99706"
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 17,
+          "pn": "江湖三女侠#pn-r17",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99706"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 2,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-character-楚昭南",
+      "type": "character",
+      "title": "角色线：楚昭南（8 回，跨 4 部）",
+      "steps": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 1,
+          "pn": "塞外奇侠传#pn-r1",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e1278"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 2,
+          "pn": "塞外奇侠传#pn-r2",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e1278"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 5,
+          "pn": "塞外奇侠传#pn-r5",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e1278"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 6,
+          "pn": "塞外奇侠传#pn-r6",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e1278"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 7,
+          "pn": "塞外奇侠传#pn-r7",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e1278"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 8,
+          "pn": "塞外奇侠传#pn-r8",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e1278"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 9,
+          "pn": "塞外奇侠传#pn-r9",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e1278"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 15,
+          "pn": "塞外奇侠传#pn-r15",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e1278"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 4,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-character-杨云骢",
+      "type": "character",
+      "title": "角色线：杨云骢（8 回，跨 3 部）",
+      "steps": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 1,
+          "pn": "塞外奇侠传#pn-r1",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e9190"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 2,
+          "pn": "塞外奇侠传#pn-r2",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e9190"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 3,
+          "pn": "塞外奇侠传#pn-r3",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e9190"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 4,
+          "pn": "塞外奇侠传#pn-r4",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e9190"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 5,
+          "pn": "塞外奇侠传#pn-r5",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e9190"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 6,
+          "pn": "塞外奇侠传#pn-r6",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e9190"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 7,
+          "pn": "塞外奇侠传#pn-r7",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e9190"
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 8,
+          "pn": "塞外奇侠传#pn-r8",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e9190"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 3,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-character-桂华生",
+      "type": "character",
+      "title": "角色线：桂华生（8 回，跨 2 部）",
+      "steps": [
+        {
+          "book": "江湖三女侠",
+          "chapter": 44,
+          "pn": "江湖三女侠#pn-r44",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99707"
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 1,
+          "pn": "冰魄寒光剑#pn-r1",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99707"
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 2,
+          "pn": "冰魄寒光剑#pn-r2",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99707"
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 3,
+          "pn": "冰魄寒光剑#pn-r3",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99707"
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 4,
+          "pn": "冰魄寒光剑#pn-r4",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99707"
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 5,
+          "pn": "冰魄寒光剑#pn-r5",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99707"
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 6,
+          "pn": "冰魄寒光剑#pn-r6",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99707"
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 7,
+          "pn": "冰魄寒光剑#pn-r7",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "character_arc"
+            ],
+            "evidence": {
+              "card": "card.person.e99707"
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 2,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-difficulty-saiwai",
+      "type": "difficulty",
+      "title": "《塞外奇侠传》难度渐进（L1→L5；每档 3-4 回）",
+      "steps": [
+        {
+          "book": "塞外奇侠传",
+          "chapter": 1,
+          "pn": "塞外奇侠传#pn-r1",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 6,
+          "pn": "塞外奇侠传#pn-r6",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 13,
+          "pn": "塞外奇侠传#pn-r13",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 14,
+          "pn": "塞外奇侠传#pn-r14",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 3,
+          "pn": "塞外奇侠传#pn-r3",
+          "difficulty": 2,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 12,
+          "pn": "塞外奇侠传#pn-r12",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 16,
+          "pn": "塞外奇侠传#pn-r16",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 2,
+          "pn": "塞外奇侠传#pn-r2",
+          "difficulty": 3,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 4,
+          "pn": "塞外奇侠传#pn-r4",
+          "difficulty": 3,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 8,
+          "pn": "塞外奇侠传#pn-r8",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 10,
+          "pn": "塞外奇侠传#pn-r10",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 7,
+          "pn": "塞外奇侠传#pn-r7",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 11,
+          "pn": "塞外奇侠传#pn-r11",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 5,
+          "pn": "塞外奇侠传#pn-r5",
+          "difficulty": 5,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "塞外奇侠传",
+          "chapter": 9,
+          "pn": "塞外奇侠传#pn-r9",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 1,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-difficulty-qijian",
+      "type": "difficulty",
+      "title": "《七剑下天山》难度渐进（L1→L5；每档 3-4 回）",
+      "steps": [
+        {
+          "book": "七剑下天山",
+          "chapter": 0,
+          "pn": "七剑下天山#pn-r0",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 2,
+          "pn": "七剑下天山#pn-r2",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 8,
+          "pn": "七剑下天山#pn-r8",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 9,
+          "pn": "七剑下天山#pn-r9",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 6,
+          "pn": "七剑下天山#pn-r6",
+          "difficulty": 2,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 10,
+          "pn": "七剑下天山#pn-r10",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 3,
+          "pn": "七剑下天山#pn-r3",
+          "difficulty": 3,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 4,
+          "pn": "七剑下天山#pn-r4",
+          "difficulty": 3,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 18,
+          "pn": "七剑下天山#pn-r18",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 1,
+          "pn": "七剑下天山#pn-r1",
+          "difficulty": 4,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 5,
+          "pn": "七剑下天山#pn-r5",
+          "difficulty": 4,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 7,
+          "pn": "七剑下天山#pn-r7",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 13,
+          "pn": "七剑下天山#pn-r13",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 11,
+          "pn": "七剑下天山#pn-r11",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 14,
+          "pn": "七剑下天山#pn-r14",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "七剑下天山",
+          "chapter": 15,
+          "pn": "七剑下天山#pn-r15",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 1,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-difficulty-jianghu",
+      "type": "difficulty",
+      "title": "《江湖三女侠》难度渐进（L1→L5；每档 3-4 回）",
+      "steps": [
+        {
+          "book": "江湖三女侠",
+          "chapter": 1,
+          "pn": "江湖三女侠#pn-r1",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 6,
+          "pn": "江湖三女侠#pn-r6",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 8,
+          "pn": "江湖三女侠#pn-r8",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 15,
+          "pn": "江湖三女侠#pn-r15",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 2,
+          "pn": "江湖三女侠#pn-r2",
+          "difficulty": 2,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 5,
+          "pn": "江湖三女侠#pn-r5",
+          "difficulty": 2,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 17,
+          "pn": "江湖三女侠#pn-r17",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 22,
+          "pn": "江湖三女侠#pn-r22",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 7,
+          "pn": "江湖三女侠#pn-r7",
+          "difficulty": 3,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 10,
+          "pn": "江湖三女侠#pn-r10",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 16,
+          "pn": "江湖三女侠#pn-r16",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 21,
+          "pn": "江湖三女侠#pn-r21",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 4,
+          "pn": "江湖三女侠#pn-r4",
+          "difficulty": 4,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 11,
+          "pn": "江湖三女侠#pn-r11",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 13,
+          "pn": "江湖三女侠#pn-r13",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 14,
+          "pn": "江湖三女侠#pn-r14",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 3,
+          "pn": "江湖三女侠#pn-r3",
+          "difficulty": 5,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 9,
+          "pn": "江湖三女侠#pn-r9",
+          "difficulty": 5,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 12,
+          "pn": "江湖三女侠#pn-r12",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "江湖三女侠",
+          "chapter": 19,
+          "pn": "江湖三女侠#pn-r19",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 1,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-difficulty-bainv",
+      "type": "difficulty",
+      "title": "《白发魔女传》难度渐进（L1→L5；每档 3-4 回）",
+      "steps": [
+        {
+          "book": "白发魔女传",
+          "chapter": 2,
+          "pn": "白发魔女传#pn-r2",
+          "difficulty": 1,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 15,
+          "pn": "白发魔女传#pn-r15",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 17,
+          "pn": "白发魔女传#pn-r17",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 19,
+          "pn": "白发魔女传#pn-r19",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 3,
+          "pn": "白发魔女传#pn-r3",
+          "difficulty": 2,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 4,
+          "pn": "白发魔女传#pn-r4",
+          "difficulty": 2,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 6,
+          "pn": "白发魔女传#pn-r6",
+          "difficulty": 2,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 9,
+          "pn": "白发魔女传#pn-r9",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 1,
+          "pn": "白发魔女传#pn-r1",
+          "difficulty": 3,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 8,
+          "pn": "白发魔女传#pn-r8",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 14,
+          "pn": "白发魔女传#pn-r14",
+          "difficulty": 3,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 5,
+          "pn": "白发魔女传#pn-r5",
+          "difficulty": 4,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 10,
+          "pn": "白发魔女传#pn-r10",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 12,
+          "pn": "白发魔女传#pn-r12",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 7,
+          "pn": "白发魔女传#pn-r7",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 11,
+          "pn": "白发魔女传#pn-r11",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 13,
+          "pn": "白发魔女传#pn-r13",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        },
+        {
+          "book": "白发魔女传",
+          "chapter": 16,
+          "pn": "白发魔女传#pn-r16",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 1,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    },
+    {
+      "id": "path-difficulty-bingpo",
+      "type": "difficulty",
+      "title": "《冰魄寒光剑》难度渐进（L1→L5；每档 3-4 回）",
+      "steps": [
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 3,
+          "pn": "冰魄寒光剑#pn-r3",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 5,
+          "pn": "冰魄寒光剑#pn-r5",
+          "difficulty": 1,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 1
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 6,
+          "pn": "冰魄寒光剑#pn-r6",
+          "difficulty": 2,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 2
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 2,
+          "pn": "冰魄寒光剑#pn-r2",
+          "difficulty": 3,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 3
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 1,
+          "pn": "冰魄寒光剑#pn-r1",
+          "difficulty": 4,
+          "spoiler_level": 0,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 4,
+          "pn": "冰魄寒光剑#pn-r4",
+          "difficulty": 4,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 4
+            }
+          }
+        },
+        {
+          "book": "冰魄寒光剑",
+          "chapter": 7,
+          "pn": "冰魄寒光剑#pn-r7",
+          "difficulty": 5,
+          "spoiler_level": 1,
+          "features": "full",
+          "reason": {
+            "codes": [
+              "difficulty_step"
+            ],
+            "evidence": {
+              "level": 5
+            }
+          }
+        }
+      ],
+      "constraints": {
+        "max_books": 1,
+        "spoiler_cap": 1
+      },
+      "enabled": true
+    }
+  ],
+  "chapter_index": {
+    "塞外奇侠传": [
+      {
+        "chapter": 1,
+        "title": "第一回　师兄弟沙漠奇逢",
+        "difficulty": 1,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 3413,
+          "P": 6,
+          "E": 0.0,
+          "V": 6.1529,
+          "X": 0,
+          "fences": 1,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 2,
+        "title": "第二回　劫后忽逢奇女子",
+        "difficulty": 3,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 3472,
+          "P": 10,
+          "E": 0.0,
+          "V": 29.6659,
+          "X": 0,
+          "fences": 1,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 3,
+        "title": "第三回　仇人的女儿",
+        "difficulty": 2,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 3443,
+          "P": 3,
+          "E": 0.2904,
+          "V": 22.0738,
+          "X": 3,
+          "fences": 0,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 4,
+        "title": "第四回　女侠飞红巾",
+        "difficulty": 3,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 3297,
+          "P": 7,
+          "E": 0.3033,
+          "V": 15.7719,
+          "X": 4,
+          "fences": 1,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 5,
+        "title": "第五回　古堡夜战",
+        "difficulty": 5,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 3373,
+          "P": 7,
+          "E": 0.5929,
+          "V": 51.5861,
+          "X": 4,
+          "fences": 0,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 6,
+        "title": "第六回　女侠与叛徒",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3750,
+          "P": 6,
+          "E": 0.0,
+          "V": 9.3333,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 7,
+        "title": "第七回　歌手的死亡旅程",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3680,
+          "P": 6,
+          "E": 0.5435,
+          "V": 16.8478,
+          "X": 4,
+          "fences": 1,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 8,
+        "title": "第八回　草原夜祭",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3507,
+          "P": 6,
+          "E": 0.5703,
+          "V": 8.5543,
+          "X": 4,
+          "fences": 0,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 9,
+        "title": "第九回　比武定盟",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3614,
+          "P": 10,
+          "E": 0.8301,
+          "V": 27.6702,
+          "X": 4,
+          "fences": 0,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 10,
+        "title": "第十回　内心的骄傲",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3519,
+          "P": 4,
+          "E": 0.5683,
+          "V": 16.7661,
+          "X": 4,
+          "fences": 0,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 11,
+        "title": "第十一回　幽谷战双凶",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3584,
+          "P": 8,
+          "E": 0.8371,
+          "V": 29.2969,
+          "X": 3,
+          "fences": 0,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 12,
+        "title": "第十二回　黑泉水之谜",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3392,
+          "P": 8,
+          "E": 0.0,
+          "V": 42.158,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 13,
+        "title": "第十三回　爱恨难分还孽债",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3765,
+          "P": 4,
+          "E": 0.0,
+          "V": 22.842,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 14,
+        "title": "第十四回　草原心盟",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3592,
+          "P": 3,
+          "E": 0.0,
+          "V": 9.4655,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 15,
+        "title": "第十五回　恶毒的诬蔑",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3496,
+          "P": 10,
+          "E": 0.286,
+          "V": 19.4508,
+          "X": 2,
+          "fences": 0,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 16,
+        "title": "第十六回　多铎说亲",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 3578,
+          "P": 10,
+          "E": 0.0,
+          "V": 18.1666,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 17,
+        "title": "第十七回　生离死别",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 3281,
+          "P": 9,
+          "E": 0.3048,
+          "V": 5.1813,
+          "X": 3,
+          "fences": 0,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 18,
+        "title": "第十八回　麦盖提和曼铃娜",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 3784,
+          "P": 13,
+          "E": 0.2643,
+          "V": 25.6342,
+          "X": 5,
+          "fences": 0,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 19,
+        "title": "第十九回　猜疑",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 2905,
+          "P": 12,
+          "E": 0.0,
+          "V": 9.2943,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 20,
+        "title": "第二十回　活捉楚昭南",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 3476,
+          "P": 11,
+          "E": 0.5754,
+          "V": 33.9471,
+          "X": 4,
+          "fences": 0,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 21,
+        "title": "第二十一回　不速之客",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 2996,
+          "P": 10,
+          "E": 1.3351,
+          "V": 10.0134,
+          "X": 4,
+          "fences": 0,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 22,
+        "title": "第二十二回　负气出奔",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 3095,
+          "P": 12,
+          "E": 0.9693,
+          "V": 23.2633,
+          "X": 5,
+          "fences": 0,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 23,
+        "title": "第二十三回　孕育着新的生命",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 2478,
+          "P": 7,
+          "E": 0.0,
+          "V": 14.5278,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 24,
+        "title": "第二十四回　一个女孩子的诞生",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 2807,
+          "P": 7,
+          "E": 0.7125,
+          "V": 23.1564,
+          "X": 4,
+          "fences": 0,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 25,
+        "title": "第二十五回　天龙剑阵",
+        "difficulty": 4,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 2973,
+          "P": 13,
+          "E": 0.6727,
+          "V": 24.5543,
+          "X": 3,
+          "fences": 0,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 26,
+        "title": "第二十六回　独臂丐侠",
+        "difficulty": 4,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 2768,
+          "P": 12,
+          "E": 0.3613,
+          "V": 33.9595,
+          "X": 3,
+          "fences": 0,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 27,
+        "title": "第二十七回　白发魔女",
+        "difficulty": 4,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 2739,
+          "P": 17,
+          "E": 0.3651,
+          "V": 15.6992,
+          "X": 5,
+          "fences": 0,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 28,
+        "title": "第二十八回　杭州大婚",
+        "difficulty": 2,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 2335,
+          "P": 11,
+          "E": 0.4283,
+          "V": 17.5589,
+          "X": 2,
+          "fences": 2,
+          "events": 1
+        }
+      }
+    ],
+    "七剑下天山": [
+      {
+        "chapter": 0,
+        "title": "楔子　一阕词来　南国清秋魂梦绕　十年人散　绣房红烛剑光寒",
+        "difficulty": 1,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 7263,
+          "P": 9,
+          "E": 0.1377,
+          "V": 24.2324,
+          "X": 3,
+          "fences": 1,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 1,
+        "title": "第一回　一女独寻仇　十六年间经几劫　群雄齐出手　五台山上震三军",
+        "difficulty": 4,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 14132,
+          "P": 30,
+          "E": 0.4953,
+          "V": 28.2338,
+          "X": 4,
+          "fences": 1,
+          "events": 7
+        }
+      },
+      {
+        "chapter": 2,
+        "title": "第二回　浪迹江湖　水尽萍枯风不语　隐身古刹　空灵幻灭色难留",
+        "difficulty": 1,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 10867,
+          "P": 23,
+          "E": 0.2761,
+          "V": 18.1283,
+          "X": 4,
+          "fences": 1,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 3,
+        "title": "第三回　剑气珠光　不觉坐行皆梦梦　琴声笛韵　无端啼笑尽非非",
+        "difficulty": 3,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 11361,
+          "P": 30,
+          "E": 0.2641,
+          "V": 14.5234,
+          "X": 5,
+          "fences": 1,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 4,
+        "title": "第四回　比剑压凶人　同门决战　展图寻绮梦　旧侣重来",
+        "difficulty": 3,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 10449,
+          "P": 19,
+          "E": 0.957,
+          "V": 30.4335,
+          "X": 5,
+          "fences": 1,
+          "events": 10
+        }
+      },
+      {
+        "chapter": 5,
+        "title": "第五回　难受温柔　岂为新知忘旧好　惊心恶斗　喜从古窟得真经",
+        "difficulty": 4,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 9901,
+          "P": 16,
+          "E": 1.212,
+          "V": 37.875,
+          "X": 5,
+          "fences": 0,
+          "events": 12
+        }
+      },
+      {
+        "chapter": 6,
+        "title": "第六回　雾气弥漫　荒村来异士　湖光潋滟　幽谷出征骑",
+        "difficulty": 2,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 11654,
+          "P": 24,
+          "E": 0.429,
+          "V": 33.0359,
+          "X": 3,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 7,
+        "title": "第七回　剑胆琴心　似喜似嗔同命鸟　雪泥鸿爪　亦真亦幻异乡人",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13429,
+          "P": 26,
+          "E": 0.7447,
+          "V": 23.0099,
+          "X": 4,
+          "fences": 2,
+          "events": 10
+        }
+      },
+      {
+        "chapter": 8,
+        "title": "第八回　恩怨难明　空山惊恶斗　灵根未断　一语醒迷茫",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 15882,
+          "P": 22,
+          "E": 0.0,
+          "V": 20.3375,
+          "X": 0,
+          "fences": 2,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 9,
+        "title": "第九回　扑朔迷离　耐心详怪梦　寻幽探秘　无意会高人",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 9590,
+          "P": 19,
+          "E": 0.3128,
+          "V": 20.8551,
+          "X": 3,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 10,
+        "title": "第十回　叱咤深山　黄衣藏隐秘　纵横双剑　幽谷会群豪",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 14533,
+          "P": 30,
+          "E": 0.0688,
+          "V": 17.7527,
+          "X": 3,
+          "fences": 2,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 11,
+        "title": "第十一回　一女灵机　桂仲明无心获宝剑　群豪慑服　凌未风赌技夺黄金",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 22667,
+          "P": 30,
+          "E": 0.3971,
+          "V": 23.6467,
+          "X": 4,
+          "fences": 2,
+          "events": 9
+        }
+      },
+      {
+        "chapter": 12,
+        "title": "第十二回　幽谷缔良缘　喜有金环联彩笔　江湖偕俪影　争看宝剑配神砂",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 9264,
+          "P": 30,
+          "E": 0.1079,
+          "V": 12.4136,
+          "X": 3,
+          "fences": 2,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 13,
+        "title": "第十三回　一剑败三魔　宝玉明珠藏相府　清歌惊远客　澄波碧海赞词人",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 16804,
+          "P": 30,
+          "E": 0.4761,
+          "V": 16.4842,
+          "X": 3,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 14,
+        "title": "第十四回　埋恨深宫　花迎剑佩星初落　扬威三峡　柳拂旌旗露未干",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13186,
+          "P": 30,
+          "E": 0.7584,
+          "V": 25.7849,
+          "X": 5,
+          "fences": 2,
+          "events": 10
+        }
+      },
+      {
+        "chapter": 15,
+        "title": "第十五回　侠骨结同心　百尺楼头飞剑影　幽兰托知己　一生恨事向谁言",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 10816,
+          "P": 28,
+          "E": 0.9246,
+          "V": 38.9238,
+          "X": 5,
+          "fences": 2,
+          "events": 10
+        }
+      },
+      {
+        "chapter": 16,
+        "title": "第十六回　云海寄遐思　塞外奇峰曾入梦　血光消罪孽　京华孤女报深仇",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 15351,
+          "P": 25,
+          "E": 0.0651,
+          "V": 10.3576,
+          "X": 2,
+          "fences": 2,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 17,
+        "title": "第十七回　睹画思人　冒浣莲心伤内苑　挟符闯狱　凌未风夜探天牢",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13066,
+          "P": 28,
+          "E": 0.3827,
+          "V": 30.5373,
+          "X": 5,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 18,
+        "title": "第十八回　孽债情缘　公主情多徒怅怅　泪痕剑影　王妃梦断恨绵绵",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13360,
+          "P": 22,
+          "E": 0.4491,
+          "V": 23.8024,
+          "X": 5,
+          "fences": 3,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 19,
+        "title": "第十九回　生死两难忘　半世浮萍随逝水　恩仇终解脱　一宵冷雨丧名花",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 17747,
+          "P": 30,
+          "E": 1.0143,
+          "V": 38.4854,
+          "X": 5,
+          "fences": 2,
+          "events": 18
+        }
+      },
+      {
+        "chapter": 20,
+        "title": "第二十回　有意护仙花　枯洞窟中藏异土　无心防骗子　喇嘛寺内失奇书",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 11112,
+          "P": 29,
+          "E": 0.18,
+          "V": 20.7883,
+          "X": 3,
+          "fences": 2,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 21,
+        "title": "第二十一回　情孽难消　独上天山拜魔女　尘缘未断　横穿瀚海觅伊人",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 10725,
+          "P": 20,
+          "E": 0.6527,
+          "V": 10.0699,
+          "X": 5,
+          "fences": 2,
+          "events": 7
+        }
+      },
+      {
+        "chapter": 22,
+        "title": "第二十二回　边塞逃亡　荒漠奇缘逢女侠　草原恶战　武林绝学骇群雄",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 8094,
+          "P": 27,
+          "E": 0.3706,
+          "V": 13.5903,
+          "X": 5,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 23,
+        "title": "第二十三回　诡计多端　毒酒甜言求秘笈　艰难几度　痴情蜜意获芳心",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 16660,
+          "P": 30,
+          "E": 0.7803,
+          "V": 42.6771,
+          "X": 5,
+          "fences": 2,
+          "events": 13
+        }
+      },
+      {
+        "chapter": 24,
+        "title": "第二十四回　漠外擒凶　石窟绝招诛怪物　草原较技　天山神剑伏奇人",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 9079,
+          "P": 29,
+          "E": 0.6609,
+          "V": 17.1825,
+          "X": 5,
+          "fences": 2,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 25,
+        "title": "第二十五回　牧野飞霜　碧血金戈千古恨　冰河洗剑　青蓑铁马一生愁",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 19815,
+          "P": 30,
+          "E": 1.4635,
+          "V": 34.7212,
+          "X": 5,
+          "fences": 2,
+          "events": 29
+        }
+      },
+      {
+        "chapter": 26,
+        "title": "第二十六回　品茗谈心　喜有良朋消永夜　因词寄意　永留知已在人间",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 11896,
+          "P": 30,
+          "E": 0.2522,
+          "V": 6.7249,
+          "X": 5,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 27,
+        "title": "第二十七回　矢志复仇　易兰珠虔心练剑　师门留恨　武琼瑶有意试招",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 12574,
+          "P": 30,
+          "E": 0.3181,
+          "V": 15.1901,
+          "X": 5,
+          "fences": 1,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 28,
+        "title": "第二十八回　心愿难偿　一纸断肠愁绝塞　情怀依旧　十年幽梦禁迷宫",
+        "difficulty": 3,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 9494,
+          "P": 20,
+          "E": 0.8426,
+          "V": 34.9695,
+          "X": 5,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 29,
+        "title": "第二十九回　无限深情　舍己为人甘替死　绝招雪恨　闯关破敌勇除奸",
+        "difficulty": 5,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 13072,
+          "P": 29,
+          "E": 0.459,
+          "V": 39.4737,
+          "X": 5,
+          "fences": 2,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 30,
+        "title": "第三十回　生死茫茫　侠骨柔情埋瀚海　恩仇了了　英雄儿女隐天山",
+        "difficulty": 4,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 8001,
+          "P": 30,
+          "E": 0.6249,
+          "V": 29.9963,
+          "X": 5,
+          "fences": 1,
+          "events": 5
+        }
+      }
+    ],
+    "江湖三女侠": [
+      {
+        "chapter": 1,
+        "title": "第一回　赠宝收徒　孪生怜玉女　飞头滴血　一剑探知交",
+        "difficulty": 1,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 12360,
+          "P": 26,
+          "E": 0.0809,
+          "V": 14.4013,
+          "X": 1,
+          "fences": 3,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 2,
+        "title": "第二回　血溅荒村　十年完旧约　案牵大内　午夜出征骑",
+        "difficulty": 2,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 9179,
+          "P": 23,
+          "E": 0.4358,
+          "V": 36.2785,
+          "X": 3,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 3,
+        "title": "第三回　诡计多端　奸徒欺寡妇　奇能各显　四侠斗双魔",
+        "difficulty": 5,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 18891,
+          "P": 30,
+          "E": 0.5294,
+          "V": 24.2973,
+          "X": 3,
+          "fences": 2,
+          "events": 10
+        }
+      },
+      {
+        "chapter": 4,
+        "title": "第四回　风急天高　荒山腾剑气　月明林下　一女儆凶顽",
+        "difficulty": 4,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 8594,
+          "P": 10,
+          "E": 1.629,
+          "V": 53.1766,
+          "X": 2,
+          "fences": 2,
+          "events": 14
+        }
+      },
+      {
+        "chapter": 5,
+        "title": "第五回　铁掌神弹　武师传绝技　纵情使气　玉女肆娇嗔",
+        "difficulty": 2,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 12262,
+          "P": 30,
+          "E": 0.0816,
+          "V": 16.3106,
+          "X": 2,
+          "fences": 3,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 6,
+        "title": "第六回　慧果兰因　深心托毫素　轻颦浅笑　何处不关情",
+        "difficulty": 1,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 12007,
+          "P": 8,
+          "E": 0.0833,
+          "V": 17.8229,
+          "X": 1,
+          "fences": 2,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 7,
+        "title": "第七回　酒市藏龙　采花传怪案　渔舟蕴玉　破浪见仙踪",
+        "difficulty": 3,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 17746,
+          "P": 30,
+          "E": 0.1127,
+          "V": 13.3551,
+          "X": 1,
+          "fences": 2,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 8,
+        "title": "第八回　笑傲孤峰　单骑来闯席　剑惊巨盗　一女显神威",
+        "difficulty": 1,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 12666,
+          "P": 16,
+          "E": 0.3948,
+          "V": 13.2639,
+          "X": 2,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 9,
+        "title": "第九回　相互追踪　海隅逢异士　连环探案　大厦见奇情",
+        "difficulty": 5,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 12417,
+          "P": 30,
+          "E": 1.5302,
+          "V": 33.6635,
+          "X": 3,
+          "fences": 2,
+          "events": 19
+        }
+      },
+      {
+        "chapter": 10,
+        "title": "第十回　戒律难持　禅师迷困惑　笺文误释　童子弄权谋",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 12110,
+          "P": 30,
+          "E": 0.3303,
+          "V": 8.7531,
+          "X": 4,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 11,
+        "title": "第十一回　沥血呕心　名师遭毒害　狼心辣手　巨室出枭雄",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 14138,
+          "P": 30,
+          "E": 0.2829,
+          "V": 24.6145,
+          "X": 3,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 12,
+        "title": "第十二回　语隐机锋　微词刺巡抚　技惊四座　大侠显神通",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 10893,
+          "P": 30,
+          "E": 0.459,
+          "V": 26.898,
+          "X": 5,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 13,
+        "title": "第十三回　真个情痴　十年如一日　几疑梦幻　卅载困幽宫",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13352,
+          "P": 30,
+          "E": 0.4494,
+          "V": 30.8568,
+          "X": 2,
+          "fences": 2,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 14,
+        "title": "第十四回　梦幻尘缘　深宫藏恨事　瓢零蓬梗　一剑上仙霞",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 11534,
+          "P": 30,
+          "E": 0.5202,
+          "V": 26.7904,
+          "X": 3,
+          "fences": 2,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 15,
+        "title": "第十五回　论世谈词　微言晓大义　寻幽探隐　游侠露锋芒",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 10445,
+          "P": 24,
+          "E": 0.1915,
+          "V": 10.6271,
+          "X": 2,
+          "fences": 3,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 16,
+        "title": "第十六回　较技索镖　当场显身手　解纷排难　一语释前嫌",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 14591,
+          "P": 30,
+          "E": 0.2056,
+          "V": 21.3145,
+          "X": 2,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 17,
+        "title": "第十七回　剑杖交锋　凶僧闹湖上　性灵未昧　玉女出京华",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 12413,
+          "P": 26,
+          "E": 0.3222,
+          "V": 30.3714,
+          "X": 2,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 18,
+        "title": "第十八回　疑雨疑云　谎言谈旧事　亦真亦幻　有意溯前情",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 12270,
+          "P": 30,
+          "E": 0.0815,
+          "V": 12.3879,
+          "X": 1,
+          "fences": 2,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 19,
+        "title": "第十九回　梦碎魂消　禁宫愁永别　天南地北　军旅喜相逢",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13890,
+          "P": 30,
+          "E": 0.576,
+          "V": 35.3492,
+          "X": 2,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 20,
+        "title": "第二十回　暗器连珠　飞针伤女侠　诡谋密运　毒手害禅师",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 10991,
+          "P": 28,
+          "E": 0.6369,
+          "V": 33.7549,
+          "X": 2,
+          "fences": 2,
+          "events": 7
+        }
+      },
+      {
+        "chapter": 21,
+        "title": "第二十一回　沉痛释真禅　传经避劫　凄凉谈往事　借酒浇愁",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13421,
+          "P": 30,
+          "E": 0.5961,
+          "V": 21.6824,
+          "X": 1,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 22,
+        "title": "第二十二回　烛影摇红　允禛登大宝　剑光惊梦　侠女入深宫",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 12441,
+          "P": 30,
+          "E": 0.2411,
+          "V": 14.3879,
+          "X": 3,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 23,
+        "title": "第二十三回　铁马金戈　将军擅征战　晓风残月　玉女剑纵横",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 19125,
+          "P": 30,
+          "E": 0.5752,
+          "V": 24.8366,
+          "X": 2,
+          "fences": 2,
+          "events": 11
+        }
+      },
+      {
+        "chapter": 24,
+        "title": "第二十四回　姐妹花并开　张冠李戴　恩仇结难解　苍狗白云",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 6452,
+          "P": 27,
+          "E": 0.775,
+          "V": 48.2021,
+          "X": 3,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 25,
+        "title": "第二十五回　无意发藏书　坐行梦梦　有心求伴侣　误会重重",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13915,
+          "P": 25,
+          "E": 0.5749,
+          "V": 22.0625,
+          "X": 5,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 26,
+        "title": "第二十六回　心腹互猜疑　双魔进酒　同门齐聚集　联剑诛凶",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 11105,
+          "P": 24,
+          "E": 0.9905,
+          "V": 23.8631,
+          "X": 3,
+          "fences": 2,
+          "events": 11
+        }
+      },
+      {
+        "chapter": 27,
+        "title": "第二十七回　白日飞头　同门增敌忾　清流照影　玉女费疑猜",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13252,
+          "P": 30,
+          "E": 0.6037,
+          "V": 26.7884,
+          "X": 2,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 28,
+        "title": "第二十八回　矢志扶持　真情萌爱念　金针度劫　怪症触芳心",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 11264,
+          "P": 24,
+          "E": 0.5327,
+          "V": 23.9702,
+          "X": 2,
+          "fences": 2,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 29,
+        "title": "第二十九回　玉女露机心　疑团莫释　君王贪绝色　险象环生",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 12938,
+          "P": 20,
+          "E": 0.3865,
+          "V": 15.3038,
+          "X": 2,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 30,
+        "title": "第三十回　密室藏奸　将军露真相　深宵喋血　君主费心机",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 11800,
+          "P": 19,
+          "E": 0.4237,
+          "V": 25.0,
+          "X": 2,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 31,
+        "title": "第三十一回　巧计救佳人　深恩图报　疑心生暗鬼　醋气难消",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 13740,
+          "P": 30,
+          "E": 0.2911,
+          "V": 6.4047,
+          "X": 4,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 32,
+        "title": "第三十二回　箭发弹飞　剑光惊巨擘　舞休歌罢　杀气隐华堂",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 9832,
+          "P": 23,
+          "E": 0.6103,
+          "V": 20.5452,
+          "X": 2,
+          "fences": 2,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 33,
+        "title": "第三十三回　中伏难逃　英雄入圈套　改装代嫁　玉女弄玄虚",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 10416,
+          "P": 25,
+          "E": 0.288,
+          "V": 18.7212,
+          "X": 1,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 34,
+        "title": "第三十四回　红烛高烧　喜筵腾杀气　寒潮低拍　海角盼孤舟",
+        "difficulty": 4,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 14352,
+          "P": 25,
+          "E": 0.8361,
+          "V": 21.6695,
+          "X": 2,
+          "fences": 2,
+          "events": 12
+        }
+      },
+      {
+        "chapter": 35,
+        "title": "第三十五回　一死解冤仇　魔头送药　片言开梗塞　良友谈心",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 13150,
+          "P": 23,
+          "E": 0.3802,
+          "V": 17.1863,
+          "X": 2,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 36,
+        "title": "第三十六回　以爱消仇　魔头复人性　为朋冒险　侠女入京华",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 11519,
+          "P": 18,
+          "E": 1.0418,
+          "V": 28.6483,
+          "X": 2,
+          "fences": 2,
+          "events": 12
+        }
+      },
+      {
+        "chapter": 37,
+        "title": "第三十七回　寄语送遗书　情怀怅惘　舍身图救难　心力空抛",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 9990,
+          "P": 22,
+          "E": 0.3003,
+          "V": 23.7237,
+          "X": 2,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 38,
+        "title": "第三十八回　费尽心机　名医解奇症　浪抛精力　妙药付东流",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 15412,
+          "P": 30,
+          "E": 0.5191,
+          "V": 20.5035,
+          "X": 3,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 39,
+        "title": "第三十九回　历劫喜团圆　家人聚首　奔驰图一面　玉女惊心",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 12873,
+          "P": 29,
+          "E": 0.3884,
+          "V": 16.9347,
+          "X": 2,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 40,
+        "title": "第四十回　嬉笑逞奇能　飞刀削发　临危施妙手　联剑惩凶",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 10390,
+          "P": 24,
+          "E": 0.1925,
+          "V": 18.6718,
+          "X": 2,
+          "fences": 2,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 41,
+        "title": "第四十一回　噩耗传来　悬头惊侠女　奇人忽现　铁掌败妖僧",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 12140,
+          "P": 24,
+          "E": 0.5766,
+          "V": 27.2652,
+          "X": 5,
+          "fences": 2,
+          "events": 7
+        }
+      },
+      {
+        "chapter": 42,
+        "title": "第四十二回　托子拜奸儒　将军远虑　借刀诛恶贼　侠士见机",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 12110,
+          "P": 30,
+          "E": 0.6606,
+          "V": 14.5334,
+          "X": 2,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 43,
+        "title": "第四十三回　毅力虔心　十年待知己　盗名欺世　一旦现原形",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 15244,
+          "P": 30,
+          "E": 0.2624,
+          "V": 10.8239,
+          "X": 2,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 44,
+        "title": "第四十四回　魂断洪波　生难偿宿愿　心伤大变　死却惹思量",
+        "difficulty": 3,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 10074,
+          "P": 16,
+          "E": 1.0919,
+          "V": 31.9635,
+          "X": 4,
+          "fences": 2,
+          "events": 11
+        }
+      },
+      {
+        "chapter": 45,
+        "title": "第四十五回　互斗权谋　将军悲失势　自寻了断　长老做凶徒",
+        "difficulty": 3,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 15093,
+          "P": 30,
+          "E": 0.265,
+          "V": 14.51,
+          "X": 3,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 46,
+        "title": "第四十六回　末路穷途　功名随逝水　荒山古刹　剑气射寒星",
+        "difficulty": 2,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 10179,
+          "P": 30,
+          "E": 0.393,
+          "V": 14.8345,
+          "X": 2,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 47,
+        "title": "第四十七回　佳节闹元宵　宫中喋血　御河逃大侠　水底潜踪",
+        "difficulty": 5,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 16764,
+          "P": 30,
+          "E": 0.7158,
+          "V": 31.675,
+          "X": 2,
+          "fences": 2,
+          "events": 12
+        }
+      },
+      {
+        "chapter": 48,
+        "title": "第四十八回　三女屠龙　终须消大恨　一番逐鹿　各自缔良缘",
+        "difficulty": 5,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 10295,
+          "P": 30,
+          "E": 1.0685,
+          "V": 25.7407,
+          "X": 2,
+          "fences": 1,
+          "events": 11
+        }
+      }
+    ],
+    "白发魔女传": [
+      {
+        "chapter": 1,
+        "title": "第一回　铁矢神弓　少年扶巨宦　金鞍宝马　大盗震虚声",
+        "difficulty": 3,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 16958,
+          "P": 27,
+          "E": 0.1769,
+          "V": 11.3221,
+          "X": 5,
+          "fences": 3,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 2,
+        "title": "第二回　震动京华　惊传梃击案　波翻大内　巧遇夜行人",
+        "difficulty": 1,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 9933,
+          "P": 22,
+          "E": 0.0,
+          "V": 9.5641,
+          "X": 0,
+          "fences": 2,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 3,
+        "title": "第三回　手足相残　深宫腾剑气　恩仇难解　古洞结奇缘",
+        "difficulty": 2,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 10704,
+          "P": 30,
+          "E": 0.5605,
+          "V": 16.4425,
+          "X": 1,
+          "fences": 2,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 4,
+        "title": "第四回　七绝阵成空　大奸授首　卅年情若梦　石壁留经",
+        "difficulty": 2,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 12878,
+          "P": 19,
+          "E": 0.6212,
+          "V": 21.8202,
+          "X": 5,
+          "fences": 2,
+          "events": 8
+        }
+      },
+      {
+        "chapter": 5,
+        "title": "第五回　平地波澜　奸人施毒手　小城烽火　密室露阴谋",
+        "difficulty": 4,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 13842,
+          "P": 26,
+          "E": 0.289,
+          "V": 24.9964,
+          "X": 5,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 6,
+        "title": "第六回　月夜诉情怀　孽缘纠结　荒山斗奇士　剑掌争雄",
+        "difficulty": 2,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 10910,
+          "P": 20,
+          "E": 0.1833,
+          "V": 30.2475,
+          "X": 5,
+          "fences": 2,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 7,
+        "title": "第七回　剑谱惹奇灾　风波叠起　掌门承重托　误会横生",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 14828,
+          "P": 20,
+          "E": 1.0116,
+          "V": 26.0993,
+          "X": 5,
+          "fences": 2,
+          "events": 15
+        }
+      },
+      {
+        "chapter": 8,
+        "title": "第八回　谦谢掌门　情缘难斩断　难收覆水　恨意未全消",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 10049,
+          "P": 29,
+          "E": 0.398,
+          "V": 32.5406,
+          "X": 3,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 9,
+        "title": "第九回　江湖术士　施诈骗红丸　颖异少年　有心求剑诀",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13711,
+          "P": 30,
+          "E": 0.1459,
+          "V": 15.6079,
+          "X": 5,
+          "fences": 2,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 10,
+        "title": "第十回　剑术通玄　天山传侠客　京华说怪　内苑出淫邪",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 11259,
+          "P": 30,
+          "E": 0.4441,
+          "V": 30.4645,
+          "X": 5,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 11,
+        "title": "第十一回　糜烂叹宫闱　英雄气短　蜩螗悲国事　侠士心伤",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13608,
+          "P": 30,
+          "E": 0.6614,
+          "V": 32.1135,
+          "X": 5,
+          "fences": 2,
+          "events": 9
+        }
+      },
+      {
+        "chapter": 12,
+        "title": "第十二回　块垒难消　伤心悲国事　权奸弄柄　设计害将军",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 11211,
+          "P": 30,
+          "E": 0.3568,
+          "V": 32.1113,
+          "X": 5,
+          "fences": 2,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 13,
+        "title": "第十三回　风雨多经　断肠遗旧恨　市朝易改　历劫剩新愁",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 14680,
+          "P": 30,
+          "E": 1.0899,
+          "V": 34.8774,
+          "X": 5,
+          "fences": 2,
+          "events": 16
+        }
+      },
+      {
+        "chapter": 14,
+        "title": "第十四回　名将胸襟　女魔甘折服　秘魔崖下　鬼母逞豪强",
+        "difficulty": 3,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 10853,
+          "P": 28,
+          "E": 0.4607,
+          "V": 23.1272,
+          "X": 5,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 15,
+        "title": "第十五回　神剑施威　胆寒惊绝技　毒珠空掷　心冷敛锋芒",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 11006,
+          "P": 14,
+          "E": 0.2726,
+          "V": 35.0718,
+          "X": 5,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 16,
+        "title": "第十六回　父子喜相逢　指挥解甲　忠奸难并立　经略归农",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 14737,
+          "P": 30,
+          "E": 0.8821,
+          "V": 31.1461,
+          "X": 5,
+          "fences": 2,
+          "events": 13
+        }
+      },
+      {
+        "chapter": 17,
+        "title": "第十七回　珠宝招强人　荒林恶斗　神威折魔女　群盗倾心",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13203,
+          "P": 30,
+          "E": 0.0757,
+          "V": 6.8166,
+          "X": 3,
+          "fences": 2,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 18,
+        "title": "第十八回　冤狱毁长城　将星摇落　苦心护良友　剑气腾空",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 11428,
+          "P": 30,
+          "E": 0.175,
+          "V": 12.1631,
+          "X": 5,
+          "fences": 2,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 19,
+        "title": "第十九回　孽债难偿　问花花不语　前缘未证　对月月无言",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 8046,
+          "P": 16,
+          "E": 0.6214,
+          "V": 21.6257,
+          "X": 3,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 20,
+        "title": "第二十回　一曲箫声　竟成广陵散　多年梦醒　惭作未亡人",
+        "difficulty": 4,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 17406,
+          "P": 17,
+          "E": 0.5171,
+          "V": 27.0596,
+          "X": 5,
+          "fences": 2,
+          "events": 9
+        }
+      },
+      {
+        "chapter": 21,
+        "title": "第二十一回　毁寨剩余哀　情留块土　试招余一笑　慨赠藏珍",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 6991,
+          "P": 16,
+          "E": 0.5722,
+          "V": 20.4549,
+          "X": 5,
+          "fences": 3,
+          "events": 4
+        }
+      },
+      {
+        "chapter": 22,
+        "title": "第二十二回　六月飞霜　京城构冤狱　深宫读折　侠女送奇书",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 18347,
+          "P": 30,
+          "E": 0.4905,
+          "V": 23.1646,
+          "X": 5,
+          "fences": 2,
+          "events": 9
+        }
+      },
+      {
+        "chapter": 23,
+        "title": "第二十三回　剑气腾霄　三番惊大内　宫闱窥秘　一愤走天涯",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 12768,
+          "P": 22,
+          "E": 0.3916,
+          "V": 15.7425,
+          "X": 5,
+          "fences": 2,
+          "events": 5
+        }
+      },
+      {
+        "chapter": 24,
+        "title": "第二十四回　转念弃屠刀　深仇顿解　真情传彩笔　旧侣难忘",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 11616,
+          "P": 30,
+          "E": 0.5165,
+          "V": 13.5158,
+          "X": 5,
+          "fences": 4,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 25,
+        "title": "第二十五回　莲出污泥　决心离父母　胸无杂念　一意会情郎",
+        "difficulty": 1,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 7914,
+          "P": 15,
+          "E": 0.3791,
+          "V": 15.0366,
+          "X": 1,
+          "fences": 2,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 26,
+        "title": "第二十六回　剑闯名山　红颜觅知己　霞辉幽谷　白发换青丝",
+        "difficulty": 4,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 16330,
+          "P": 19,
+          "E": 0.7961,
+          "V": 19.8408,
+          "X": 5,
+          "fences": 2,
+          "events": 13
+        }
+      },
+      {
+        "chapter": 27,
+        "title": "第二十七回　无意留名　少年求庇护　忏情遗恨　公子苦相寻",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 12885,
+          "P": 29,
+          "E": 0.5433,
+          "V": 20.4889,
+          "X": 3,
+          "fences": 2,
+          "events": 7
+        }
+      },
+      {
+        "chapter": 28,
+        "title": "第二十八回　塞外收徒　专心传剑法　天涯访友　一意觅伊人",
+        "difficulty": 4,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 12507,
+          "P": 30,
+          "E": 0.5597,
+          "V": 21.348,
+          "X": 5,
+          "fences": 2,
+          "events": 7
+        }
+      },
+      {
+        "chapter": 29,
+        "title": "第二十九回　空谷传声　伊人仍不见　荒山露迹　奸党有阴谋",
+        "difficulty": 5,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 15628,
+          "P": 29,
+          "E": 0.4479,
+          "V": 21.2439,
+          "X": 5,
+          "fences": 2,
+          "events": 7
+        }
+      },
+      {
+        "chapter": 30,
+        "title": "第三十回　天际看寒星　情怀惘惘　草原惊恶斗　暗气森森",
+        "difficulty": 3,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 7962,
+          "P": 27,
+          "E": 0.8792,
+          "V": 15.1972,
+          "X": 5,
+          "fences": 2,
+          "events": 7
+        }
+      },
+      {
+        "chapter": 31,
+        "title": "第三十一回　幽恨寄遥天　相思种种　琴声飞大漠　误会重重",
+        "difficulty": 1,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 14138,
+          "P": 16,
+          "E": 0.0,
+          "V": 12.0243,
+          "X": 0,
+          "fences": 2,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 32,
+        "title": "第三十二回　漠漠黄沙　埋情伤只影　迢迢银汉　传恨盼双星",
+        "difficulty": 5,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 10783,
+          "P": 20,
+          "E": 1.2056,
+          "V": 30.6965,
+          "X": 5,
+          "fences": 1,
+          "events": 13
+        }
+      }
+    ],
+    "冰魄寒光剑": [
+      {
+        "chapter": 1,
+        "title": "第一回　横跨昆仑来绝域",
+        "difficulty": 4,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 8574,
+          "P": 22,
+          "E": 0.2333,
+          "V": 11.4299,
+          "X": 2,
+          "fences": 1,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 2,
+        "title": "第二回　藏身冰谷遇奇人",
+        "difficulty": 3,
+        "spoiler_level": 0,
+        "features": "full",
+        "metrics": {
+          "L": 7507,
+          "P": 7,
+          "E": 0.2664,
+          "V": 18.7825,
+          "X": 2,
+          "fences": 0,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 3,
+        "title": "第三回　魔鬼城中闻玉笛",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 6629,
+          "P": 18,
+          "E": 0.0,
+          "V": 12.8224,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 4,
+        "title": "第四回　寒冰窟里见奇珍",
+        "difficulty": 4,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13365,
+          "P": 17,
+          "E": 0.1496,
+          "V": 12.196,
+          "X": 2,
+          "fences": 0,
+          "events": 2
+        }
+      },
+      {
+        "chapter": 5,
+        "title": "第五回　布达拉宫参活佛",
+        "difficulty": 1,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 8257,
+          "P": 13,
+          "E": 0.0,
+          "V": 11.3843,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 6,
+        "title": "第六回　珠峰脚下遇奇人",
+        "difficulty": 2,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 8586,
+          "P": 17,
+          "E": 0.0,
+          "V": 15.9562,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 7,
+        "title": "第七回　古堡深宵龙虎斗",
+        "difficulty": 5,
+        "spoiler_level": 1,
+        "features": "full",
+        "metrics": {
+          "L": 13803,
+          "P": 13,
+          "E": 0.2173,
+          "V": 17.0977,
+          "X": 2,
+          "fences": 0,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 8,
+        "title": "第八回　王宫异事露阴谋",
+        "difficulty": 2,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 7889,
+          "P": 26,
+          "E": 0.0,
+          "V": 5.5774,
+          "X": 0,
+          "fences": 0,
+          "events": 0
+        }
+      },
+      {
+        "chapter": 9,
+        "title": "第九回　冰弹玉剑伏魔头",
+        "difficulty": 5,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 10720,
+          "P": 28,
+          "E": 0.5597,
+          "V": 18.5634,
+          "X": 2,
+          "fences": 0,
+          "events": 6
+        }
+      },
+      {
+        "chapter": 10,
+        "title": "第十回　幽谷寒泉困豪杰",
+        "difficulty": 3,
+        "spoiler_level": 2,
+        "features": "full",
+        "metrics": {
+          "L": 9726,
+          "P": 15,
+          "E": 0.1028,
+          "V": 16.4508,
+          "X": 1,
+          "fences": 0,
+          "events": 1
+        }
+      },
+      {
+        "chapter": 11,
+        "title": "第十一回　华堂武士拼生死",
+        "difficulty": 5,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 9668,
+          "P": 19,
+          "E": 0.3103,
+          "V": 22.0314,
+          "X": 2,
+          "fences": 0,
+          "events": 3
+        }
+      },
+      {
+        "chapter": 12,
+        "title": "第十二回　洞房红烛结鸳鸯",
+        "difficulty": 1,
+        "spoiler_level": 3,
+        "features": "full",
+        "metrics": {
+          "L": 7122,
+          "P": 12,
+          "E": 0.0,
+          "V": 18.3937,
+          "X": 0,
+          "fences": 1,
+          "events": 0
+        }
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "book": "塞外奇侠传",
+      "current": {
+        "chapter": 15,
+        "pn": "塞外奇侠传#pn-r15"
+      },
+      "next": {
+        "chapter": 16,
+        "difficulty": 2,
+        "reason_codes": [
+          "sequential",
+          "difficulty_step"
+        ]
+      },
+      "skip_candidates": [
+        {
+          "chapter": 1,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 0
+          }
+        },
+        {
+          "chapter": 2,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 0
+          }
+        },
+        {
+          "chapter": 3,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 1
+          }
+        }
+      ],
+      "warnings": [
+        {
+          "chapter": 2,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 3,
+            "delta": 2
+          }
+        },
+        {
+          "chapter": 5,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 5,
+            "delta": 2
+          }
+        },
+        {
+          "chapter": 6,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 1,
+            "delta": -4
+          }
+        }
+      ],
+      "spoiler_level": 0
+    },
+    {
+      "book": "七剑下天山",
+      "current": {
+        "chapter": 16,
+        "pn": "七剑下天山#pn-r16"
+      },
+      "next": {
+        "chapter": 17,
+        "difficulty": 4,
+        "reason_codes": [
+          "sequential",
+          "difficulty_step"
+        ]
+      },
+      "skip_candidates": [
+        {
+          "chapter": 8,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 0
+          }
+        },
+        {
+          "chapter": 10,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 1
+          }
+        },
+        {
+          "chapter": 12,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 1
+          }
+        }
+      ],
+      "warnings": [
+        {
+          "chapter": 2,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 1,
+            "delta": -3
+          }
+        },
+        {
+          "chapter": 3,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 3,
+            "delta": 2
+          }
+        },
+        {
+          "chapter": 6,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 2,
+            "delta": -2
+          }
+        }
+      ],
+      "spoiler_level": 0
+    },
+    {
+      "book": "江湖三女侠",
+      "current": {
+        "chapter": 25,
+        "pn": "江湖三女侠#pn-r25"
+      },
+      "next": {
+        "chapter": 26,
+        "difficulty": 4,
+        "reason_codes": [
+          "sequential",
+          "difficulty_step"
+        ]
+      },
+      "skip_candidates": [
+        {
+          "chapter": 1,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 1
+          }
+        },
+        {
+          "chapter": 5,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 1
+          }
+        },
+        {
+          "chapter": 6,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 1
+          }
+        }
+      ],
+      "warnings": [
+        {
+          "chapter": 3,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 5,
+            "delta": 3
+          }
+        },
+        {
+          "chapter": 5,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 2,
+            "delta": -2
+          }
+        },
+        {
+          "chapter": 7,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 3,
+            "delta": 2
+          }
+        }
+      ],
+      "spoiler_level": 0
+    },
+    {
+      "book": "白发魔女传",
+      "current": {
+        "chapter": 17,
+        "pn": "白发魔女传#pn-r17"
+      },
+      "next": {
+        "chapter": 18,
+        "difficulty": 2,
+        "reason_codes": [
+          "sequential",
+          "difficulty_step"
+        ]
+      },
+      "skip_candidates": [
+        {
+          "chapter": 2,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 0
+          }
+        },
+        {
+          "chapter": 17,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 1
+          }
+        }
+      ],
+      "warnings": [
+        {
+          "chapter": 2,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 1,
+            "delta": -2
+          }
+        },
+        {
+          "chapter": 5,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 4,
+            "delta": 2
+          }
+        },
+        {
+          "chapter": 6,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 2,
+            "delta": -2
+          }
+        }
+      ],
+      "spoiler_level": 0
+    },
+    {
+      "book": "冰魄寒光剑",
+      "current": {
+        "chapter": 7,
+        "pn": "冰魄寒光剑#pn-r7"
+      },
+      "next": {
+        "chapter": 8,
+        "difficulty": 2,
+        "reason_codes": [
+          "sequential",
+          "difficulty_step"
+        ]
+      },
+      "skip_candidates": [
+        {
+          "chapter": 3,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 0
+          }
+        },
+        {
+          "chapter": 5,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 0
+          }
+        },
+        {
+          "chapter": 6,
+          "reason_codes": [
+            "low_event_density"
+          ],
+          "evidence": {
+            "events": 0
+          }
+        }
+      ],
+      "warnings": [
+        {
+          "chapter": 3,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 1,
+            "delta": -2
+          }
+        },
+        {
+          "chapter": 4,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 4,
+            "delta": 3
+          }
+        },
+        {
+          "chapter": 5,
+          "kind": "difficulty_spike",
+          "evidence": {
+            "difficulty": 1,
+            "delta": -3
+          }
+        }
+      ],
+      "spoiler_level": 0
+    }
+  ],
+  "unlit_books": [
+    {
+      "book": "女帝奇英传",
+      "series": "唐代·武周篇（独立）",
+      "year": 1961,
+      "leads": [
+        "李逸",
+        "武玄霜",
+        "上官婉儿"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "大唐游侠传",
+      "series": "大唐三部曲",
+      "year": 1963,
+      "leads": [
+        "段珪璋",
+        "南霁云",
+        "铁摩勒"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "龙凤宝钗缘",
+      "series": "大唐三部曲",
+      "year": 1964,
+      "leads": [
+        "段克邪",
+        "史若梅"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "慧剑心魔",
+      "series": "大唐三部曲",
+      "year": 1966,
+      "leads": [
+        "展伯承"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "冰川天女传",
+      "series": "天山系列",
+      "year": 1959,
+      "leads": [
+        "唐经天",
+        "桂冰娥"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "云海玉弓缘",
+      "series": "天山系列",
+      "year": 1961,
+      "leads": [
+        "金世遗",
+        "厉胜男",
+        "谷之华"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "冰河洗剑录",
+      "series": "天山系列",
+      "year": 1963,
+      "leads": [
+        "江海天"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "风雷震九州",
+      "series": "天山系列",
+      "year": 1967,
+      "leads": [],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "侠骨丹心",
+      "series": "天山系列",
+      "year": 1971,
+      "leads": [
+        "金逐流"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "游剑江湖",
+      "series": "天山系列",
+      "year": 1972,
+      "leads": [
+        "缪长风",
+        "云紫萝"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "牧野流星",
+      "series": "天山系列",
+      "year": 1976,
+      "leads": [
+        "孟华"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "弹指惊雷",
+      "series": "天山系列",
+      "year": 1977,
+      "leads": [
+        "杨炎",
+        "龙灵珠"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "绝塞传烽录",
+      "series": "天山系列",
+      "year": 1979,
+      "leads": [
+        "杨炎",
+        "冷冰儿"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "剑网尘丝",
+      "series": "天山系列",
+      "year": 1980,
+      "leads": [],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "幻剑灵旗",
+      "series": "天山系列",
+      "year": 1981,
+      "leads": [],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "狂侠天骄魔女",
+      "series": "宋代系列",
+      "year": 1964,
+      "leads": [
+        "柳清瑶",
+        "华谷涵",
+        "檀羽冲"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "瀚海雄风",
+      "series": "宋代系列",
+      "year": 1966,
+      "leads": [
+        "李思南",
+        "杨婉"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "鸣镝风云录",
+      "series": "宋代系列",
+      "year": 1966,
+      "leads": [
+        "谷啸风"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "武林天骄",
+      "series": "宋代系列",
+      "year": 1970,
+      "leads": [
+        "檀羽冲"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "风云雷电",
+      "series": "宋代系列",
+      "year": 1970,
+      "leads": [
+        "风天扬"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "飞凤潜龙",
+      "series": "宋代系列（互文实证）",
+      "year": 1966,
+      "leads": [],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "萍踪侠影录",
+      "series": "明代系列",
+      "year": 1959,
+      "leads": [
+        "张丹枫",
+        "云蕾"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "散花女侠",
+      "series": "明代系列",
+      "year": 1960,
+      "leads": [
+        "于承珠",
+        "铁镜心"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "联剑风云录",
+      "series": "明代系列",
+      "year": 1961,
+      "leads": [
+        "张玉虎",
+        "龙剑虹"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "广陵剑",
+      "series": "明代系列",
+      "year": 1972,
+      "leads": [
+        "陈石星",
+        "云瑚"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "还剑奇情录",
+      "series": "明代系列·序篇",
+      "year": 1959,
+      "leads": [
+        "陈玄机"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "龙虎斗京华",
+      "series": "晚清民国",
+      "year": 1954,
+      "leads": [
+        "柳梦蝶",
+        "娄无畏",
+        "丁晓"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "草莽龙蛇传",
+      "series": "晚清民国",
+      "year": 1954,
+      "leads": [
+        "丁晓"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    },
+    {
+      "book": "武当一剑",
+      "series": "独立（互文连还剑奇情录）",
+      "year": 1983,
+      "leads": [
+        "耿玉京"
+      ],
+      "features": "toc-only",
+      "difficulty": null,
+      "spoiler_level": 0,
+      "reason_codes": [
+        "no_chapter_features"
+      ],
+      "reason": "未点亮：仅目录级信息，不估难度（09c §4.3）"
+    }
+  ]
+}

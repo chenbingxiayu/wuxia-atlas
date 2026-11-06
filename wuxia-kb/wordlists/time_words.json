@@ -1,0 +1,438 @@
+{
+ "meta": {
+  "schema": "wordlist-v1",
+  "generated": "2026-11-05",
+  "source": "time_words_source.md",
+  "spec_version": "0.4-draft",
+  "totals": {
+   "all": 34,
+   "auto": 0,
+   "review": 34,
+   "watch": 0,
+   "auto_ready": 0
+  },
+  "p4_note": "2026-11-05 P4 回写：+15 条（年龄约数 9 / 节日与日内时点 6），来源 江湖三女侠 L1L2 反思批次 judgment time_boundary 15 条"
+ },
+ "items": [
+  {
+   "surface": "半月",
+   "canonical": "半月",
+   "type": "时长",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "实测11次；时长词"
+  },
+  {
+   "surface": "万历",
+   "canonical": "万历",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "实测5次；朝代年号锚（\"明万历四十三年\"）"
+  },
+  {
+   "surface": "这一年",
+   "canonical": "这一年",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "实测5次；指代性时点"
+  },
+  {
+   "surface": "是夜",
+   "canonical": "是夜",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "实测5次；日内时点（文言残存）"
+  },
+  {
+   "surface": "过了数月",
+   "canonical": "过了数月",
+   "type": "时长",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "实测2次；模糊量时长"
+  },
+  {
+   "surface": "一十二年",
+   "canonical": "一十二年",
+   "type": "时长",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "实测2次；学艺/闭关跨年（卓一航案）"
+  },
+  {
+   "surface": "三个月",
+   "canonical": "三个月",
+   "type": "时长",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "实测1次"
+  },
+  {
+   "surface": "三更",
+   "canonical": "三更",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "日内时辰刻度；待语料验证"
+  },
+  {
+   "surface": "五更",
+   "canonical": "五更",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "日内时辰刻度"
+  },
+  {
+   "surface": "翌日",
+   "canonical": "翌日",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "文言（实测0次，白话语料缺位记录）"
+  },
+  {
+   "surface": "次年",
+   "canonical": "次年",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "文言；\"只有年份关系不补日月\"（01g）"
+  },
+  {
+   "surface": "第二天",
+   "canonical": "第二天",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "白话双轨"
+  },
+  {
+   "surface": "隔日",
+   "canonical": "隔日",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "白话双轨"
+  },
+  {
+   "surface": "转过年",
+   "canonical": "转过年",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "白话年转锚"
+  },
+  {
+   "surface": "开春",
+   "canonical": "开春",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "白话季节锚"
+  },
+  {
+   "surface": "入夏",
+   "canonical": "入夏",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "白话季节锚"
+  },
+  {
+   "surface": "凉秋九月",
+   "canonical": "凉秋九月",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "季节锚（样本甲原文）"
+  },
+  {
+   "surface": "元宵",
+   "canonical": "元宵",
+   "type": "时令",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "时令锚（D05 锚点类型学）"
+  },
+  {
+   "surface": "中秋",
+   "canonical": "中秋",
+   "type": "时令",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "时令锚"
+  },
+  {
+   "surface": "五十左右",
+   "canonical": "五十左右",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "三十左右",
+   "canonical": "三十左右",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "三十有余",
+   "canonical": "三十有余",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "五十有余",
+   "canonical": "五十有余",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "四十许",
+   "canonical": "四十许",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "十龄",
+   "canonical": "十龄",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "近六十",
+   "canonical": "近六十",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "近八十",
+   "canonical": "近八十",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "六十",
+   "canonical": "六十",
+   "type": "年龄",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：年龄约数式；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "今早",
+   "canonical": "今早",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：节日名/日内时点；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "明早",
+   "canonical": "明早",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：节日名/日内时点；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "清明节",
+   "canonical": "清明节",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：节日名/日内时点；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "清明佳节",
+   "canonical": "清明佳节",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：节日名/日内时点；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "端阳节后",
+   "canonical": "端阳节后",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：节日名/日内时点；原 accept 判 % 无时间线索"
+  },
+  {
+   "surface": "五鼓",
+   "canonical": "五鼓",
+   "type": "时点",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:1-48"
+   ],
+   "version": "0.4-draft",
+   "note": "P4 回写（03c1-052）：节日名/日内时点；原 accept 判 % 无时间线索"
+  }
+ ]
+}

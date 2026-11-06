@@ -1,0 +1,10469 @@
+{
+ "book": "冰川天女传",
+ "generated": "2026-11-06",
+ "generated_at": "2026-11-06 12:02:35",
+ "script": "scripts/relation_validator.py",
+ "script_version": "0.1",
+ "spec_version": "0.3-draft",
+ "schema": "relations-v0.1",
+ "mode": "default",
+ "source": [
+  "tagged/<书>/*.tagged.md（只读）",
+  "registry/concordance/<书>.json",
+  "registry/entities.json",
+  "skills/SKILL_关系体系_武侠版.md §7.2/§8",
+  "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
+ ],
+ "snapshot": {
+  "exported_at": "2026-11-06 12:02:35",
+  "tagged_chapters": 40,
+  "concordance_generated": "2026-11-06T01:48:49+08:00",
+  "registry_entities": 1374,
+  "corpus_chapters": 40,
+  "paragraphs": 2709,
+  "verbs": 4551,
+  "verbs_in_quote": 690,
+  "entities": 28172
+ },
+ "predicate_table": {
+  "version": "D06@0.3-draft",
+  "count": 55,
+  "used": [
+   "交手",
+   "到达",
+   "同门",
+   "婚约",
+   "师承",
+   "押送",
+   "掌握",
+   "杀害",
+   "治愈",
+   "点穴",
+   "离开",
+   "转移",
+   "配偶"
+  ]
+ },
+ "edge_schema": {
+  "required": [
+   "subject",
+   "predicate",
+   "object",
+   "subject_type",
+   "object_type",
+   "confidence",
+   "loc",
+   "evidence",
+   "rule"
+  ],
+  "confidence_values": [
+   "strong",
+   "ok",
+   "weak"
+  ],
+  "subject_type": "标注层实体符号（@人物/◆组织/&家族/☆武功/•器物/=/地点/;职衔）",
+  "evidence": {
+   "fields": [
+    "loc",
+    "type",
+    "rule"
+   ],
+   "type_values": [
+    "E1明文",
+    "E2动作+共现",
+    "E3推导"
+   ]
+  },
+  "loc_format": "NNN:段（回号:PN 段号）",
+  "source": "D06 §7.2 谓词总表 / §8.1 证据三级 / §6.2 离线表 schema"
+ },
+ "offline_interface": {
+  "types": [
+   "情感",
+   "恩义",
+   "背叛",
+   "主仆"
+  ],
+  "schema": "D06 §6.2（rel_id/subject/object/type/subtype/direction/states/manner/conf/evidence/event_ids/related_predicates/notes）",
+  "emitted": [],
+  "note": "四类离线关系行内不设符号（01g 铁律）；本脚本只出放弃原因（治愈/转移→恩义候选、隶属终止→背叛候选等），离线表由人工裁定流程维护，N5 不写。"
+ },
+ "counts": {
+  "candidates": 358,
+  "edges": 213,
+  "dropped": 233,
+  "derived_edges": 8,
+  "tongmen_edges": 8,
+  "lineage_labels": 11,
+  "by_predicate": {
+   "交手": 94,
+   "离开": 22,
+   "到达": 61,
+   "师承": 17,
+   "同门": 8,
+   "婚约": 1,
+   "押送": 1,
+   "掌握": 1,
+   "杀害": 2,
+   "治愈": 2,
+   "点穴": 2,
+   "转移": 1,
+   "配偶": 1
+  },
+  "by_confidence": {
+   "ok": 170,
+   "strong": 18,
+   "weak": 25
+  },
+  "by_layer": {
+   "人": 128,
+   "实": 85
+  },
+  "by_rule": {
+   "X-COMBAT": 92,
+   "X-LEAVE": 16,
+   "X-ARRIVE": 53,
+   "语式-师承": 13,
+   "04f-L26": 2,
+   "04f-L21": 3,
+   "04f-L24": 5,
+   "D06#45/B3": 8,
+   "语式-婚约": 1,
+   "语式-拜师": 4,
+   "04f-L23": 1,
+   "04f-L04": 1,
+   "04f-L08": 2,
+   "04f-L09": 2,
+   "04f-L05": 2,
+   "04f-L22": 6,
+   "04f-L11": 1,
+   "04f-L20": 1
+  },
+  "drop_by_reason": {
+   "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）": 5,
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 23,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 8,
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 32,
+   "强制档实体缺失（04f#9 医者/伤者未同现）": 10,
+   "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）": 7,
+   "实体缺失（04f#5 点穴须施者/受者）": 13,
+   "传闻降权（D06 §8.3，不入正式表）": 11,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 14,
+   "恩义属离线表（D06 §6.4），不进 SPO 关系表": 2,
+   "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）": 5,
+   "强制档实体缺失（04f#1/#4 武功名未在句）": 6,
+   "实体缺失（04f#26 交手须双方人物角色）": 19,
+   "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库": 9,
+   "强制档实体缺失（掌握主语人物未在句）": 2,
+   "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）": 8,
+   "自指/主宾同一实体": 58,
+   "主宾类型/谓词表校验不符（D06 §7.2）": 1
+  }
+ },
+ "edges": [
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "赤神子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:18",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:31",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:36",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "018:54",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:34",
+     "type": "E2动作+共现",
+     "rule": "04f-L26"
+    },
+    {
+     "loc": "024:34",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 8,
+   "loc": "013:18",
+   "chapter": 13,
+   "para": 18,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "013:18",
+    "013:19",
+    "013:31",
+    "013:36",
+    "013:42",
+    "018:54",
+    "024:34",
+    "024:34"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0001"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "洞冥子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:4",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:9",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:9",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:9",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:9",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:14",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 7,
+   "loc": "025:3",
+   "chapter": 25,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "025:3",
+    "025:4",
+    "025:9",
+    "025:9",
+    "025:9",
+    "025:9",
+    "025:14"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0002"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂冰娥",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:28",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "015:34",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 6,
+   "loc": "013:28",
+   "chapter": 13,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "013:28",
+    "015:34",
+    "024:46",
+    "024:46",
+    "024:46",
+    "024:46"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0003"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄石道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "024:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:49",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "039:122",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 6,
+   "loc": "024:45",
+   "chapter": 24,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "024:45",
+    "024:46",
+    "024:46",
+    "024:46",
+    "024:49",
+    "039:122"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0004"
+  },
+  {
+   "subject": "萧青峰",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "002:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:102",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:103",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:103",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:104",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:106",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 6,
+   "loc": "002:50",
+   "chapter": 2,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "002:50",
+    "003:102",
+    "003:103",
+    "003:103",
+    "003:104",
+    "003:106"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0005"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "021:6",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:5",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:6",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:9",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 5,
+   "loc": "021:6",
+   "chapter": 21,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "021:6",
+    "025:3",
+    "025:5",
+    "025:6",
+    "025:9"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0006"
+  },
+  {
+   "subject": "云灵子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "唐经天",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:41",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:41",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "016:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "016:49",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "013:41",
+   "chapter": 13,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "013:41",
+    "013:41",
+    "016:42",
+    "016:49"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0007"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "洞冥子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:14",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:25",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:28",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "025:14",
+   "chapter": 25,
+   "para": 14,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "025:14",
+    "025:21",
+    "025:25",
+    "025:28"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0008"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈天宇",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "028:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "028:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "028:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "028:10",
+   "chapter": 28,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:10",
+    "028:11",
+    "028:11",
+    "028:11"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0009"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄石道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "024:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "024:42",
+   "chapter": 24,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "024:42",
+    "024:46",
+    "025:10",
+    "025:11"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0010"
+  },
+  {
+   "subject": "萧青峰",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "麦永明",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "003:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:58",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:59",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "003:50",
+   "chapter": 3,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "003:50",
+    "003:50",
+    "003:58",
+    "003:59"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0011"
+  },
+  {
+   "subject": "董太清",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:44",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:48",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:48",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "031:43",
+   "chapter": 31,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:43",
+    "031:44",
+    "031:48",
+    "031:48"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0012"
+  },
+  {
+   "subject": "云灵子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂冰娥",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "012:18",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:34",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:37",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "012:18",
+   "chapter": 12,
+   "para": 18,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "012:18",
+    "013:34",
+    "013:37"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0013"
+  },
+  {
+   "subject": "冯琳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "提摩达多",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "037:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "037:26",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "037:27",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "037:21",
+   "chapter": 37,
+   "para": 21,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "037:21",
+    "037:26",
+    "037:27"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0014"
+  },
+  {
+   "subject": "唐晓澜",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "提摩达多",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "038:79",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "039:77",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "039:95",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "038:79",
+   "chapter": 38,
+   "para": 79,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "038:79",
+    "039:77",
+    "039:95"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0015"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "苦行僧",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "028:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "028:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "028:11",
+   "chapter": 28,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:11",
+    "028:19",
+    "028:21"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0016"
+  },
+  {
+   "subject": "德鲁奇",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈天宇",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "028:14",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "030:40",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "028:13",
+   "chapter": 28,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:13",
+    "028:14",
+    "030:40"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0017"
+  },
+  {
+   "subject": "杨柳青",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "董太清",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "031:42",
+   "chapter": 31,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:42",
+    "031:42",
+    "031:42"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0018"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "武氏兄弟",
+   "object_type": "◎",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "014:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "014:20",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "014:20",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "014:17",
+   "chapter": 14,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "014:17",
+    "014:20",
+    "014:20"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0019"
+  },
+  {
+   "subject": "洞冥子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "025:3",
+   "chapter": 25,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "025:3",
+    "025:19",
+    "025:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0020"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "冰宫",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:104",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    },
+    {
+     "loc": "008:18",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    },
+    {
+     "loc": "008:28",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 3,
+   "loc": "007:104",
+   "chapter": 7,
+   "para": 104,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "007:104",
+    "008:18",
+    "008:28"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0021"
+  },
+  {
+   "subject": "俄马登",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈天宇",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "029:41",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "029:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "029:41",
+   "chapter": 29,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "029:41",
+    "029:42"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0022"
+  },
+  {
+   "subject": "冯琳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "031:51",
+   "chapter": 31,
+   "para": 51,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:51",
+    "031:51"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0023"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "德鲁奇",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "028:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "028:13",
+   "chapter": 28,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:13",
+    "028:21"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0024"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "泰吉提",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "035:53",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "038:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "035:53",
+   "chapter": 35,
+   "para": 53,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "035:53",
+    "038:45"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0025"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "021:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:30",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "021:3",
+   "chapter": 21,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "021:3",
+    "025:30"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0026"
+  },
+  {
+   "subject": "唐赛花",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "033:71",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "033:76",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "033:71",
+   "chapter": 33,
+   "para": 71,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "033:71",
+    "033:76"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0027"
+  },
+  {
+   "subject": "唐赛花",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙灵矫",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "033:77",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "033:77",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "033:77",
+   "chapter": 33,
+   "para": 77,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "033:77",
+    "033:77"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0028"
+  },
+  {
+   "subject": "崔云子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "002:41",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:62",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "002:41",
+   "chapter": 2,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "002:41",
+    "009:62"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0029"
+  },
+  {
+   "subject": "幽萍",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈天宇",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:12",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "029:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "010:12",
+   "chapter": 10,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "010:12",
+    "029:46"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0030"
+  },
+  {
+   "subject": "德鲁奇",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "法王",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "027:72",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "027:72",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "027:72",
+   "chapter": 27,
+   "para": 72,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "027:72",
+    "027:72"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0031"
+  },
+  {
+   "subject": "李沁梅",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:5",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:6",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "026:5",
+   "chapter": 26,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "026:5",
+    "026:6"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0032"
+  },
+  {
+   "subject": "杨柳青",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "邹绛霞",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "031:42",
+   "chapter": 31,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:42",
+    "031:42"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0033"
+  },
+  {
+   "subject": "武老二",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙灵矫",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:29",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:29",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "011:29",
+   "chapter": 11,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:29",
+    "011:29"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0034"
+  },
+  {
+   "subject": "苦行僧",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈天宇",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:15",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "028:15",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "028:15",
+   "chapter": 28,
+   "para": 15,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:15",
+    "028:15"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0035"
+  },
+  {
+   "subject": "董太清",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "邹绛霞",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "031:42",
+   "chapter": 31,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:42",
+    "031:43"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0036"
+  },
+  {
+   "subject": "赤神子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "033:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "033:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "033:50",
+   "chapter": 33,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "033:50",
+    "033:50"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0037"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄石道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:28",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "031:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "025:28",
+   "chapter": 25,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "025:28",
+    "031:45"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0038"
+  },
+  {
+   "subject": "铁拐仙",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈天宇",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:99",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:100",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "007:99",
+   "chapter": 7,
+   "para": 99,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "007:99",
+    "007:100"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0039"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "客店",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "015:62",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "017:1",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "015:62",
+   "chapter": 15,
+   "para": 62,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "015:62",
+    "017:1"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0040"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "雀儿山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "017:20",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "018:38",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "017:20",
+   "chapter": 17,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "017:20",
+    "018:38"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0041"
+  },
+  {
+   "subject": "幽萍",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "拉萨",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "009:76",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "030:9",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "009:76",
+   "chapter": 9,
+   "para": 76,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "009:76",
+    "030:9"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0042"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "拉萨",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "032:29",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "034:4",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "032:29",
+   "chapter": 32,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "032:29",
+    "034:4"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0043"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "蛇岛",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "022:48",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "023:3",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "022:48",
+   "chapter": 22,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "022:48",
+    "023:3"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0044"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "中堂",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:23",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "010:23",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "010:23",
+   "chapter": 10,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "010:23",
+    "010:23"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0045"
+  },
+  {
+   "subject": "芝娜",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "铁拐仙",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）；明文章式『拜…为师』（E1）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "005:13",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    },
+    {
+     "loc": "029:50",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 2,
+   "loc": "005:13",
+   "chapter": 5,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "005:13",
+    "029:50"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0046"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "毒龙尊者",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "026:15",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    },
+    {
+     "loc": "032:8",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 2,
+   "loc": "026:15",
+   "chapter": 26,
+   "para": 15,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "026:15",
+    "032:8"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0047"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "铁拐仙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的师父",
+   "params": {},
+   "notes": "语式『的师父』（D06 §8.4；来源=pronoun）；须拜师实写复核；明文章式『拜…为师』（E1）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "005:27",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    },
+    {
+     "loc": "007:77",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 2,
+   "loc": "005:27",
+   "chapter": 5,
+   "para": 27,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "005:27",
+    "007:77"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0048"
+  },
+  {
+   "subject": "云灵子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "大汗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:25",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:25",
+   "chapter": 16,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "016:25"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0049"
+  },
+  {
+   "subject": "云灵子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "芝娜",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:25",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:25",
+   "chapter": 16,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "016:25"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0050"
+  },
+  {
+   "subject": "云灵子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "赤神子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "013:42",
+   "chapter": 13,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "013:42"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0051"
+  },
+  {
+   "subject": "云灵子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "颜洛",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "032:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "032:50",
+   "chapter": 32,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "032:50"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0052"
+  },
+  {
+   "subject": "俄马登",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂冰娥",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "030:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "030:13",
+   "chapter": 30,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "030:13"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0053"
+  },
+  {
+   "subject": "俄马登",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈定基",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:44",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "028:44",
+   "chapter": 28,
+   "para": 44,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:44"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0054"
+  },
+  {
+   "subject": "冒川生",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂冰娥",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "024:41",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "024:41",
+   "chapter": 24,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "024:41"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0055"
+  },
+  {
+   "subject": "冒川生",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "洞冥子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:2",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "025:2",
+   "chapter": 25,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "025:2"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0056"
+  },
+  {
+   "subject": "冒川生",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:2",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "025:2",
+   "chapter": 25,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "025:2"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0057"
+  },
+  {
+   "subject": "冯琳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "董太清",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:56",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "031:56",
+   "chapter": 31,
+   "para": 56,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:56"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0058"
+  },
+  {
+   "subject": "冯瑛",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "唐晓澜",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "039:103",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "039:103",
+   "chapter": 39,
+   "para": 103,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "039:103"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0059"
+  },
+  {
+   "subject": "冯瑛",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "毒龙尊者",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "022:55",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "022:55",
+   "chapter": 22,
+   "para": 55,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "022:55"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0060"
+  },
+  {
+   "subject": "叶天任",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "唐经天",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "024:28",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "024:28",
+   "chapter": 24,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "024:28"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0061"
+  },
+  {
+   "subject": "叶天任",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "024:5",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "024:5",
+   "chapter": 24,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "024:5"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0062"
+  },
+  {
+   "subject": "和硕亲王",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂冰娥",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:67",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:67",
+   "chapter": 11,
+   "para": 67,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:67"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0063"
+  },
+  {
+   "subject": "唐家",
+   "subject_type": "&",
+   "predicate": "交手",
+   "object": "胡僧",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "033:71",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "033:71",
+   "chapter": 33,
+   "para": 71,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "033:71"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0064"
+  },
+  {
+   "subject": "唐晓澜",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "泰吉提",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "038:82",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "038:82",
+   "chapter": 38,
+   "para": 82,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "038:82"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0065"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "圣母",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "017:15",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "017:15",
+   "chapter": 17,
+   "para": 15,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "017:15"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0066"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "提摩达多",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "037:12",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "037:12",
+   "chapter": 37,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "037:12"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0067"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桑真娘",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "032:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "032:51",
+   "chapter": 32,
+   "para": 51,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "032:51"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0068"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "法王",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "031:3",
+   "chapter": 31,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:3"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0069"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "白教喇嘛",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:43",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:43",
+   "chapter": 16,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "016:43"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0070"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "群犬",
+   "object_type": "◎",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "017:12",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "017:12",
+   "chapter": 17,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "017:12"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0071"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "胡僧",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "035:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "035:21",
+   "chapter": 35,
+   "para": 21,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "035:21"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0072"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "赤神子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:34",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "013:34",
+   "chapter": 13,
+   "para": 34,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "013:34"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0073"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈定基",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "028:44",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "028:44",
+   "chapter": 28,
+   "para": 44,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:44"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0074"
+  },
+  {
+   "subject": "圣母",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "白教法王",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "017:12",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "017:12",
+   "chapter": 17,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "017:12"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0075"
+  },
+  {
+   "subject": "基里星",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "法王",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "027:72",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "027:72",
+   "chapter": 27,
+   "para": 72,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "027:72"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0076"
+  },
+  {
+   "subject": "大汗",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "芝娜",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:25",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:25",
+   "chapter": 16,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "016:25"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0077"
+  },
+  {
+   "subject": "崔云子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "赵灵君",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:42",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:42",
+   "chapter": 9,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "009:42"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0078"
+  },
+  {
+   "subject": "幽萍",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂冰娥",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L26",
+   "rule_row": 26,
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "018:65",
+     "type": "E2动作+共现",
+     "rule": "04f-L26"
+    }
+   ],
+   "count": 1,
+   "loc": "018:65",
+   "chapter": 18,
+   "para": 65,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "018:65"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0079"
+  },
+  {
+   "subject": "幽萍",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "班禅",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "030:37",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "030:37",
+   "chapter": 30,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "030:37"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0080"
+  },
+  {
+   "subject": "幽萍",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "赵灵君",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:61",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:61",
+   "chapter": 9,
+   "para": 61,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "009:61"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0081"
+  },
+  {
+   "subject": "幽萍",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙灵矫",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:27",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:27",
+   "chapter": 11,
+   "para": 27,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:27"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0082"
+  },
+  {
+   "subject": "提摩达多",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "038:75",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "038:75",
+   "chapter": 38,
+   "para": 75,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "038:75"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0083"
+  },
+  {
+   "subject": "方今明",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "泰吉提",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "038:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "038:46",
+   "chapter": 38,
+   "para": 46,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "038:46"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0084"
+  },
+  {
+   "subject": "李青莲",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桂冰娥",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "015:31",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "015:31",
+   "chapter": 15,
+   "para": 31,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "015:31"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0085"
+  },
+  {
+   "subject": "杨柳青",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "031:46",
+   "chapter": 31,
+   "para": 46,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:46"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0086"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桑青娘",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:32",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "013:32",
+   "chapter": 13,
+   "para": 32,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "013:32"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0087"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "芝娜",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:35",
+   "chapter": 16,
+   "para": 35,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "016:35"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0088"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "谷石君",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "018:57",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "018:57",
+   "chapter": 18,
+   "para": 57,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "018:57"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0089"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁拐仙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "006:39",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "006:39",
+   "chapter": 6,
+   "para": 39,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "006:39"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0090"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈天宇",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "029:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "029:46",
+   "chapter": 29,
+   "para": 46,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "029:46"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0091"
+  },
+  {
+   "subject": "武氏兄弟",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙灵矫",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:29",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:29",
+   "chapter": 11,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:29"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0092"
+  },
+  {
+   "subject": "武琼瑶",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "赤神子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "013:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "013:19",
+   "chapter": 13,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "013:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0093"
+  },
+  {
+   "subject": "武老大",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙灵矫",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:29",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:29",
+   "chapter": 11,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:29"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0094"
+  },
+  {
+   "subject": "焦春雷",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙灵矫",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:30",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:30",
+   "chapter": 11,
+   "para": 30,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:30"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0095"
+  },
+  {
+   "subject": "红衣番僧",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "铁拐仙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:95",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "007:95",
+   "chapter": 7,
+   "para": 95,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "007:95"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0096"
+  },
+  {
+   "subject": "董太清",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "赤神子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "033:54",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "033:54",
+   "chapter": 33,
+   "para": 54,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "033:54"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0097"
+  },
+  {
+   "subject": "董太清",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "黄石道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "031:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "031:45",
+   "chapter": 31,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:45"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0098"
+  },
+  {
+   "subject": "谷石君",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "赤神子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "018:56",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "018:56",
+   "chapter": 18,
+   "para": 56,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "018:56"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0099"
+  },
+  {
+   "subject": "赵灵君",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:52",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:52",
+   "chapter": 9,
+   "para": 52,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "009:52"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0100"
+  },
+  {
+   "subject": "郝中浩",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "023:68",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "023:68",
+   "chapter": 23,
+   "para": 68,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "023:68"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0101"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "004:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "004:3",
+   "chapter": 4,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "004:3"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0102"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙灵矫",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:52",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "010:52",
+   "chapter": 10,
+   "para": 52,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "010:52"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0103"
+  },
+  {
+   "subject": "龙三",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "龙灵矫",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L26",
+   "rule_row": 26,
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:19",
+     "type": "E2动作+共现",
+     "rule": "04f-L26"
+    }
+   ],
+   "count": 1,
+   "loc": "010:19",
+   "chapter": 10,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "010:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0104"
+  },
+  {
+   "subject": "俄马登",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "土司堡",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "030:24",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "030:24",
+   "chapter": 30,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "030:24"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0105"
+  },
+  {
+   "subject": "俄马登",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "宣慰使衙门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "029:1",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "029:1",
+   "chapter": 29,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "029:1"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0106"
+  },
+  {
+   "subject": "冯琳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "店",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "031:49",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "031:49",
+   "chapter": 31,
+   "para": 49,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:49"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0107"
+  },
+  {
+   "subject": "冯琳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "酒店",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "031:67",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "031:67",
+   "chapter": 31,
+   "para": 67,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:67"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0108"
+  },
+  {
+   "subject": "吕四娘",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "珠峰",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "040:17",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "040:17",
+   "chapter": 40,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "040:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0109"
+  },
+  {
+   "subject": "吕四娘",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "珠穆朗玛峰",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "040:17",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "040:17",
+   "chapter": 40,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "040:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0110"
+  },
+  {
+   "subject": "吴绛仙",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "成都",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:15",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "020:15",
+   "chapter": 20,
+   "para": 15,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "020:15"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0111"
+  },
+  {
+   "subject": "唐晓澜",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "喜马拉雅山脚",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "039:107",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "039:107",
+   "chapter": 39,
+   "para": 107,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "039:107"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0112"
+  },
+  {
+   "subject": "唐晓澜",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "悬岩",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "039:98",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "039:98",
+   "chapter": 39,
+   "para": 98,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "039:98"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0113"
+  },
+  {
+   "subject": "唐晓澜",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "蛇岛",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L21",
+   "rule_row": 21,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "022:55",
+     "type": "E2动作+共现",
+     "rule": "04f-L21"
+    }
+   ],
+   "count": 1,
+   "loc": "022:55",
+   "chapter": 22,
+   "para": 55,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "022:55"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0114"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "书房",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "027:28",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "027:28",
+   "chapter": 27,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "027:28"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0115"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "内室",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:30",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "028:30",
+   "chapter": 28,
+   "para": 30,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:30"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0116"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "前山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "012:2",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "012:2",
+   "chapter": 12,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "012:2"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0117"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "哈吉尔城",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "015:57",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "015:57",
+   "chapter": 15,
+   "para": 57,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "015:57"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0118"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "喜马拉雅山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "035:10",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "035:10",
+   "chapter": 35,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "035:10"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0119"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "四川",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "019:62",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "019:62",
+   "chapter": 19,
+   "para": 62,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "019:62"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0120"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "宣慰使衙门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "029:19",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "029:19",
+   "chapter": 29,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "029:19"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0121"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "峨嵋",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "021:24",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "021:24",
+   "chapter": 21,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "021:24"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0122"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "峨嵋山",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L21",
+   "rule_row": 21,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "023:42",
+     "type": "E2动作+共现",
+     "rule": "04f-L21"
+    }
+   ],
+   "count": 1,
+   "loc": "023:42",
+   "chapter": 23,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "023:42"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0123"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "驼峰",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "015:41",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "015:41",
+   "chapter": 15,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "015:41"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0124"
+  },
+  {
+   "subject": "基里星",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "墙边",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "027:72",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "027:72",
+   "chapter": 27,
+   "para": 72,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "027:72"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0125"
+  },
+  {
+   "subject": "幽萍",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "哈吉尔",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "018:38",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "018:38",
+   "chapter": 18,
+   "para": 38,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "018:38"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0126"
+  },
+  {
+   "subject": "提摩达多",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "中国",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "036:62",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "036:62",
+   "chapter": 36,
+   "para": 62,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "036:62"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0127"
+  },
+  {
+   "subject": "杨柳青",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "拉萨",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "032:28",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "032:28",
+   "chapter": 32,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "032:28"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0128"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "回疆",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "014:12",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "014:12",
+   "chapter": 14,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "014:12"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0129"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "市区",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "014:11",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "014:11",
+   "chapter": 14,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "014:11"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0130"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "石峰",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "034:26",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "034:26",
+   "chapter": 34,
+   "para": 26,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "034:26"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0131"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "西北方",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:52",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:52",
+   "chapter": 7,
+   "para": 52,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "007:52"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0132"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "谷口",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "037:31",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "037:31",
+   "chapter": 37,
+   "para": 31,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "037:31"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0133"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "金光寺",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "024:36",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "024:36",
+   "chapter": 24,
+   "para": 36,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "024:36"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0134"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "雀儿山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "018:41",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "018:41",
+   "chapter": 18,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "018:41"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0135"
+  },
+  {
+   "subject": "桑壁伊",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "客厅",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "029:3",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "029:3",
+   "chapter": 29,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "029:3"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0136"
+  },
+  {
+   "subject": "武氏兄弟",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "天山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:49",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "011:49",
+   "chapter": 11,
+   "para": 49,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:49"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0137"
+  },
+  {
+   "subject": "法王",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "庭院",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "017:1",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "017:1",
+   "chapter": 17,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "017:1"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0138"
+  },
+  {
+   "subject": "法王",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "灵堂",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "030:48",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "030:48",
+   "chapter": 30,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "030:48"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0139"
+  },
+  {
+   "subject": "游一鄂",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "拉萨",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "033:2",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "033:2",
+   "chapter": 33,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "033:2"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0140"
+  },
+  {
+   "subject": "白教法王",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "萨迦",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "029:26",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "029:26",
+   "chapter": 29,
+   "para": 26,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "029:26"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0141"
+  },
+  {
+   "subject": "白教法王",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "雀儿山",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "018:38",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "018:38",
+   "chapter": 18,
+   "para": 38,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "018:38"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0142"
+  },
+  {
+   "subject": "福康安",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "葡萄山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "014:2",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "014:2",
+   "chapter": 14,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "014:2"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0143"
+  },
+  {
+   "subject": "芝娜",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "园中",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "006:79",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "006:79",
+   "chapter": 6,
+   "para": 79,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "006:79"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0144"
+  },
+  {
+   "subject": "萧青峰",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "寺门",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "021:24",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "021:24",
+   "chapter": 21,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "021:24"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0145"
+  },
+  {
+   "subject": "郝中浩",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "峨嵋",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L21",
+   "rule_row": 21,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "023:65",
+     "type": "E2动作+共现",
+     "rule": "04f-L21"
+    }
+   ],
+   "count": 1,
+   "loc": "023:65",
+   "chapter": 23,
+   "para": 65,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "023:65"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0146"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "园中",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "019:29",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "019:29",
+   "chapter": 19,
+   "para": 29,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "019:29"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0147"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "峨嵋山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "023:19",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "023:19",
+   "chapter": 23,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "023:19"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0148"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "石屋",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "038:58",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "038:58",
+   "chapter": 38,
+   "para": 58,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "038:58"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0149"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "草原",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "033:65",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "033:65",
+   "chapter": 33,
+   "para": 65,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "033:65"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0150"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "书房",
+   "object_type": "=",
+   "confidence": "weak",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L24",
+   "rule_row": 24,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "027:25",
+     "type": "E2动作+共现",
+     "rule": "04f-L24"
+    }
+   ],
+   "count": 1,
+   "loc": "027:25",
+   "chapter": 27,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "027:25"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0151"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "卧房",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:41",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:41",
+   "chapter": 7,
+   "para": 41,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "007:41"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0152"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "厅房",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:37",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:37",
+   "chapter": 10,
+   "para": 37,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "010:37"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0153"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "后花园",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "026:43",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "026:43",
+   "chapter": 26,
+   "para": 43,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "026:43"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0154"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "衙门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "030:51",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "030:51",
+   "chapter": 30,
+   "para": 51,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "030:51"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0155"
+  },
+  {
+   "subject": "陈定基",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "衙门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:32",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "028:32",
+   "chapter": 28,
+   "para": 32,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "028:32"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0156"
+  },
+  {
+   "subject": "陈定基",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "西藏",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "001:42",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "001:42",
+   "chapter": 1,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "001:42"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0157"
+  },
+  {
+   "subject": "龙灵矫",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "杏黄旗",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:27",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "011:27",
+   "chapter": 11,
+   "para": 27,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:27"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0158"
+  },
+  {
+   "subject": "龙灵矫",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "花圃",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "038:21",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "038:21",
+   "chapter": 38,
+   "para": 21,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "038:21"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0159"
+  },
+  {
+   "subject": "冯瑛",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "毒龙尊者"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "026:15",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "039:7",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "026:15",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "冰川天女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "026:15",
+    "039:7"
+   ],
+   "id": "冰川天女传#R0160"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "天宇",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "萧青峰"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "009:50",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "009:50",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "冰川天女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "009:50",
+    "020:6",
+    "020:6"
+   ],
+   "id": "冰川天女传#R0161"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "江南",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "萧青峰"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "009:50",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "009:50",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "冰川天女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "009:50",
+    "020:6",
+    "020:6"
+   ],
+   "id": "冰川天女传#R0162"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "萧青峰"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "009:50",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "009:50",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "冰川天女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "009:50",
+    "020:6",
+    "020:6"
+   ],
+   "id": "冰川天女传#R0163"
+  },
+  {
+   "subject": "天宇",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "江南",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "萧青峰"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "009:50",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "009:50",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "冰川天女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "009:50",
+    "020:6",
+    "020:6"
+   ],
+   "id": "冰川天女传#R0164"
+  },
+  {
+   "subject": "天宇",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "萧青峰"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "009:50",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "009:50",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "冰川天女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "009:50",
+    "020:6",
+    "020:6"
+   ],
+   "id": "冰川天女传#R0165"
+  },
+  {
+   "subject": "江南",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "萧青峰"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "009:50",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "020:6",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "009:50",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "冰川天女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "009:50",
+    "020:6",
+    "020:6"
+   ],
+   "id": "冰川天女传#R0166"
+  },
+  {
+   "subject": "芝娜",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "陈天宇",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "铁拐仙"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "005:13",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "005:27",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "005:13",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "冰川天女传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "005:13",
+    "005:27"
+   ],
+   "id": "冰川天女传#R0167"
+  },
+  {
+   "subject": "唐晓澜",
+   "subject_type": "@",
+   "predicate": "婚约",
+   "object": "杨柳青",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-婚约",
+   "rule_row": 41,
+   "subtype": "未婚妻",
+   "params": {},
+   "notes": "语式『未婚妻』；近邻配对启发式，待人工复核；婚约→配偶状态机（永不自动生成配偶边）",
+   "evidence": [
+    {
+     "loc": "018:16",
+     "type": "E1明文",
+     "rule": "语式-婚约"
+    }
+   ],
+   "count": 1,
+   "loc": "018:16",
+   "chapter": 18,
+   "para": 16,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "018:16"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0168"
+  },
+  {
+   "subject": "冯瑛",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "毒龙尊者",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "039:7",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "039:7",
+   "chapter": 39,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "039:7"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0169"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "萧青峰",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师",
+   "params": {},
+   "notes": "明文章式『拜…为师』（E1）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "021:18",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "021:18",
+   "chapter": 21,
+   "para": 18,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "021:18"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0170"
+  },
+  {
+   "subject": "天宇",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "萧青峰",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师",
+   "params": {},
+   "notes": "明文章式『拜…为师』（E1）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "020:6",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "020:6",
+   "chapter": 20,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "020:6"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0171"
+  },
+  {
+   "subject": "崔云子",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "郑平",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "003:3",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "003:3",
+   "chapter": 3,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "003:3"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0172"
+  },
+  {
+   "subject": "崔云子",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "002:50",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "002:50",
+   "chapter": 2,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "002:50"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0173"
+  },
+  {
+   "subject": "李沁梅",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "白教法王",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "026:35",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "026:35",
+   "chapter": 26,
+   "para": 35,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "026:35"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0174"
+  },
+  {
+   "subject": "李青莲",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "唐晓澜",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "015:25",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "015:25",
+   "chapter": 15,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "015:25"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0175"
+  },
+  {
+   "subject": "桂仲明",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "辛龙子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "015:7",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "015:7",
+   "chapter": 15,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "015:7"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0176"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "芝娜",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师(代词)",
+   "params": {},
+   "notes": "代词宾语句式启发式（master=前文最近角色）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "005:57",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "005:57",
+   "chapter": 5,
+   "para": 57,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "005:57"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0177"
+  },
+  {
+   "subject": "江南",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "萧青峰",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师",
+   "params": {},
+   "notes": "明文章式『拜…为师』（E1）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "020:6",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "020:6",
+   "chapter": 20,
+   "para": 6,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "020:6"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0178"
+  },
+  {
+   "subject": "泰吉提",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "提摩达多",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "038:48",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "038:48",
+   "chapter": 38,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "038:48"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0179"
+  },
+  {
+   "subject": "谢云真",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "甘凤池",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "005:4",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "005:4",
+   "chapter": 5,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "005:4"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0180"
+  },
+  {
+   "subject": "赤神子",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "唐金峰",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "015:46",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "015:46",
+   "chapter": 15,
+   "para": 46,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "015:46"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0181"
+  },
+  {
+   "subject": "雷震子",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "萧青峰",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "009:50",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "009:50",
+   "chapter": 9,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "009:50"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0182"
+  },
+  {
+   "subject": "基里星",
+   "subject_type": "@",
+   "predicate": "押送",
+   "object": "法王",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L23",
+   "rule_row": 23,
+   "subtype": "",
+   "params": {
+    "讫地": ""
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "027:73",
+     "type": "E2动作+共现",
+     "rule": "04f-L23"
+    }
+   ],
+   "count": 1,
+   "loc": "027:73",
+   "chapter": 27,
+   "para": 73,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "027:73"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0183"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "掌握",
+   "object": "剑法",
+   "object_type": "☆",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L04",
+   "rule_row": 4,
+   "subtype": "偷学",
+   "params": {
+    "武功": "剑法"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "008:9",
+     "type": "E2动作+共现",
+     "rule": "04f-L04"
+    }
+   ],
+   "count": 1,
+   "loc": "008:9",
+   "chapter": 8,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "008:9"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0184"
+  },
+  {
+   "subject": "桑壁伊",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "藩王",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "030:48",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "030:48",
+   "chapter": 30,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "030:48"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0185"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "铁拐仙",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "010:47",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "010:47",
+   "chapter": 10,
+   "para": 47,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "010:47"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0186"
+  },
+  {
+   "subject": "唐晓澜",
+   "subject_type": "@",
+   "predicate": "治愈",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L09",
+   "rule_row": 9,
+   "subtype": "",
+   "params": {},
+   "notes": "治愈另触发恩义候选（离线表，§6.4；本脚本不落离线表）",
+   "evidence": [
+    {
+     "loc": "039:104",
+     "type": "E2动作+共现",
+     "rule": "04f-L09"
+    }
+   ],
+   "count": 1,
+   "loc": "039:104",
+   "chapter": 39,
+   "para": 104,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "039:104"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0187"
+  },
+  {
+   "subject": "阿斯罗",
+   "subject_type": "@",
+   "predicate": "治愈",
+   "object": "桂冰娥",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L09",
+   "rule_row": 9,
+   "subtype": "",
+   "params": {},
+   "notes": "治愈另触发恩义候选（离线表，§6.4；本脚本不落离线表）",
+   "evidence": [
+    {
+     "loc": "036:57",
+     "type": "E2动作+共现",
+     "rule": "04f-L09"
+    }
+   ],
+   "count": 1,
+   "loc": "036:57",
+   "chapter": 36,
+   "para": 57,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "036:57"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0188"
+  },
+  {
+   "subject": "冒川生",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "雷震子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": "三焦穴"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "023:54",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "023:54",
+   "chapter": 23,
+   "para": 54,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "023:54"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0189"
+  },
+  {
+   "subject": "法王",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "基里星",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": "穴道"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "027:77",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "027:77",
+   "chapter": 27,
+   "para": 77,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "027:77"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "冰川天女传#R0190"
+  },
+  {
+   "subject": "冯瑛",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "石屋",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "039:11",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "039:11",
+   "chapter": 39,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "039:11"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0191"
+  },
+  {
+   "subject": "吴绛仙",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "西藏",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:15",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "020:15",
+   "chapter": 20,
+   "para": 15,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "020:15"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0192"
+  },
+  {
+   "subject": "唐晓澜",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "天山",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "032:22",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "032:22",
+   "chapter": 32,
+   "para": 22,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "032:22"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0193"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "哈吉尔城",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "017:17",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "017:17",
+   "chapter": 17,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "017:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0194"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "寺门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "025:60",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "025:60",
+   "chapter": 25,
+   "para": 60,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "025:60"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0195"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "山脚",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "019:51",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "019:51",
+   "chapter": 19,
+   "para": 51,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "019:51"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0196"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "帐幕",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "014:67",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "014:67",
+   "chapter": 14,
+   "para": 67,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "014:67"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0197"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "西北",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "014:53",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "014:53",
+   "chapter": 14,
+   "para": 53,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "014:53"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0198"
+  },
+  {
+   "subject": "李沁梅",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "中国",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "039:39",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "039:39",
+   "chapter": 39,
+   "para": 39,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "039:39"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0199"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "尼泊尔",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "030:23",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "030:23",
+   "chapter": 30,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "030:23"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0200"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "拉萨",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "014:12",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "014:12",
+   "chapter": 14,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "014:12"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0201"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "甬道",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "032:42",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "032:42",
+   "chapter": 32,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "032:42"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0202"
+  },
+  {
+   "subject": "桂冰娥",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "花园",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:42",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:42",
+   "chapter": 7,
+   "para": 42,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "007:42"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0203"
+  },
+  {
+   "subject": "江南",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "石林",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "031:19",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "031:19",
+   "chapter": 31,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:19"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0204"
+  },
+  {
+   "subject": "萧青峰",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "石阵",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:13",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "020:13",
+   "chapter": 20,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "020:13"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0205"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "冰塔群",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "039:50",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "039:50",
+   "chapter": 39,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "039:50"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0206"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "喇嘛宫",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "030:58",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "030:58",
+   "chapter": 30,
+   "para": 58,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "030:58"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0207"
+  },
+  {
+   "subject": "金世遗",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "蛇岛",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "022:56",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "022:56",
+   "chapter": 22,
+   "para": 56,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "022:56"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0208"
+  },
+  {
+   "subject": "陈天宇",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "峡谷",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "011:88",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "011:88",
+   "chapter": 11,
+   "para": 88,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "011:88"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0209"
+  },
+  {
+   "subject": "黄石道人",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "店",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "031:49",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "031:49",
+   "chapter": 31,
+   "para": 49,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "031:49"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0210"
+  },
+  {
+   "subject": "龙灵矫",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "峡谷",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "012:1",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "012:1",
+   "chapter": 12,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "012:1"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0211"
+  },
+  {
+   "subject": "唐经天",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "金世遗",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L11",
+   "rule_row": 11,
+   "subtype": "赠",
+   "params": {
+    "物": "碧灵丹",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "029:17",
+     "type": "E2动作+共现",
+     "rule": "04f-L11"
+    }
+   ],
+   "count": 1,
+   "loc": "029:17",
+   "chapter": 29,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "029:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "冰川天女传#R0212"
+  },
+  {
+   "subject": "谢云真",
+   "subject_type": "@",
+   "predicate": "配偶",
+   "object": "铁拐仙",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "04f-L20",
+   "rule_row": 20,
+   "subtype": "",
+   "params": {},
+   "notes": "婚约→成婚状态机（D06 §4.4）；本边只记成婚实写",
+   "evidence": [
+    {
+     "loc": "020:15",
+     "type": "E1明文",
+     "rule": "04f-L20"
+    }
+   ],
+   "count": 1,
+   "loc": "020:15",
+   "chapter": 20,
+   "para": 15,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "冰川天女传"
+   ],
+   "locs": [
+    "020:15"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "冰川天女传#R0213"
+  }
+ ],
+ "derived": {
+  "tongmen_edges": [
+   {
+    "subject": "冯瑛",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "金世遗",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "毒龙尊者"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "026:15",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "039:7",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "026:15",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "冰川天女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "026:15",
+     "039:7"
+    ],
+    "id": "冰川天女传#R0160"
+   },
+   {
+    "subject": "唐经天",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "天宇",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "萧青峰"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "009:50",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "009:50",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "冰川天女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "009:50",
+     "020:6",
+     "020:6"
+    ],
+    "id": "冰川天女传#R0161"
+   },
+   {
+    "subject": "唐经天",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "江南",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "萧青峰"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "009:50",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "009:50",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "冰川天女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "009:50",
+     "020:6",
+     "020:6"
+    ],
+    "id": "冰川天女传#R0162"
+   },
+   {
+    "subject": "唐经天",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "雷震子",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "萧青峰"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "009:50",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "009:50",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "冰川天女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "009:50",
+     "020:6",
+     "020:6"
+    ],
+    "id": "冰川天女传#R0163"
+   },
+   {
+    "subject": "天宇",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "江南",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "萧青峰"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "009:50",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "009:50",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "冰川天女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "009:50",
+     "020:6",
+     "020:6"
+    ],
+    "id": "冰川天女传#R0164"
+   },
+   {
+    "subject": "天宇",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "雷震子",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "萧青峰"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "009:50",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "009:50",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "冰川天女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "009:50",
+     "020:6",
+     "020:6"
+    ],
+    "id": "冰川天女传#R0165"
+   },
+   {
+    "subject": "江南",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "雷震子",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "萧青峰"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "009:50",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "020:6",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "009:50",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "冰川天女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "009:50",
+     "020:6",
+     "020:6"
+    ],
+    "id": "冰川天女传#R0166"
+   },
+   {
+    "subject": "芝娜",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "陈天宇",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "铁拐仙"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "005:13",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "005:27",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "005:13",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "冰川天女传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "005:13",
+     "005:27"
+    ],
+    "id": "冰川天女传#R0167"
+   }
+  ],
+  "tongmen_pairs": [
+   {
+    "a": "冯瑛",
+    "b": "金世遗",
+    "master": "毒龙尊者",
+    "rule": "B3",
+    "confidence": "weak"
+   },
+   {
+    "a": "唐经天",
+    "b": "天宇",
+    "master": "萧青峰",
+    "rule": "B3",
+    "confidence": "weak"
+   },
+   {
+    "a": "唐经天",
+    "b": "江南",
+    "master": "萧青峰",
+    "rule": "B3",
+    "confidence": "weak"
+   },
+   {
+    "a": "唐经天",
+    "b": "雷震子",
+    "master": "萧青峰",
+    "rule": "B3",
+    "confidence": "weak"
+   },
+   {
+    "a": "天宇",
+    "b": "江南",
+    "master": "萧青峰",
+    "rule": "B3",
+    "confidence": "weak"
+   },
+   {
+    "a": "天宇",
+    "b": "雷震子",
+    "master": "萧青峰",
+    "rule": "B3",
+    "confidence": "weak"
+   },
+   {
+    "a": "江南",
+    "b": "雷震子",
+    "master": "萧青峰",
+    "rule": "B3",
+    "confidence": "weak"
+   },
+   {
+    "a": "芝娜",
+    "b": "陈天宇",
+    "master": "铁拐仙",
+    "rule": "B3",
+    "confidence": "weak"
+   }
+  ],
+  "lineage_labels": [
+   {
+    "kind": "辈分",
+    "person": "崔云子",
+    "value": "师祖",
+    "relative_to": "萧青峰",
+    "chain": [
+     "崔云子",
+     "雷震子",
+     "萧青峰"
+    ],
+    "rule": "B1",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "桂冰娥",
+    "value": "师祖",
+    "relative_to": "铁拐仙",
+    "chain": [
+     "桂冰娥",
+     "芝娜",
+     "铁拐仙"
+    ],
+    "rule": "B1",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "崔云子",
+    "value": "师叔伯（性别未判）",
+    "relative_to": "天宇",
+    "rule": "B2",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "崔云子",
+    "value": "师叔伯（性别未判）",
+    "relative_to": "江南",
+    "rule": "B2",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "崔云子",
+    "value": "师叔伯（性别未判）",
+    "relative_to": "唐经天",
+    "rule": "B2",
+    "confidence": "weak"
+   },
+   {
+    "kind": "辈分",
+    "person": "桂冰娥",
+    "value": "师叔伯（性别未判）",
+    "relative_to": "陈天宇",
+    "rule": "B2",
+    "confidence": "weak"
+   },
+   {
+    "kind": "长幼",
+    "person": "金世遗",
+    "value": "师兄/姐（按拜师定位符时序）",
+    "relative_to": "冯瑛",
+    "rule": "B5",
+    "confidence": "weak",
+    "basis": "拜师定位符时序，性别未判"
+   },
+   {
+    "kind": "长幼",
+    "person": "雷震子",
+    "value": "师兄/姐（按拜师定位符时序）",
+    "relative_to": "天宇",
+    "rule": "B5",
+    "confidence": "weak",
+    "basis": "拜师定位符时序，性别未判"
+   },
+   {
+    "kind": "长幼",
+    "person": "天宇",
+    "value": "师兄/姐（按拜师定位符时序）",
+    "relative_to": "江南",
+    "rule": "B5",
+    "confidence": "weak",
+    "basis": "拜师定位符时序，性别未判"
+   },
+   {
+    "kind": "长幼",
+    "person": "江南",
+    "value": "师兄/姐（按拜师定位符时序）",
+    "relative_to": "唐经天",
+    "rule": "B5",
+    "confidence": "weak",
+    "basis": "拜师定位符时序，性别未判"
+   },
+   {
+    "kind": "长幼",
+    "person": "芝娜",
+    "value": "师兄/姐（按拜师定位符时序）",
+    "relative_to": "陈天宇",
+    "rule": "B5",
+    "confidence": "weak",
+    "basis": "拜师定位符时序，性别未判"
+   }
+  ],
+  "trees": {
+   "master_tree": {
+    "nodes": [
+     {
+      "person": "冯瑛",
+      "master": "毒龙尊者",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "唐晓澜",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "唐经天",
+      "master": "萧青峰",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "唐金峰",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "天宇",
+      "master": "萧青峰",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "崔云子",
+      "master": "雷震子",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "提摩达多",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "李沁梅",
+      "master": "白教法王",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "李青莲",
+      "master": "唐晓澜",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "桂仲明",
+      "master": "辛龙子",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "桂冰娥",
+      "master": "芝娜",
+      "generation": 2,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "毒龙尊者",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "江南",
+      "master": "萧青峰",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "泰吉提",
+      "master": "提摩达多",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "甘凤池",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "白教法王",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "芝娜",
+      "master": "铁拐仙",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "萧青峰",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "谢云真",
+      "master": "甘凤池",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "赤神子",
+      "master": "唐金峰",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "辛龙子",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "郑平",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "金世遗",
+      "master": "毒龙尊者",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "铁拐仙",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "陈天宇",
+      "master": "铁拐仙",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "雷震子",
+      "master": "萧青峰",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     }
+    ],
+    "roots": [
+     "唐晓澜",
+     "唐金峰",
+     "提摩达多",
+     "毒龙尊者",
+     "甘凤池",
+     "白教法王",
+     "萧青峰",
+     "辛龙子",
+     "郑平",
+     "铁拐仙"
+    ],
+    "edge_count": 17
+   },
+   "blood_tree": {
+    "nodes": [],
+    "note": "亲属/血缘抽取不在 04f 27 行联动内，留候选池待语式扩展（本脚本不产出）"
+   }
+  },
+  "cycles": [],
+  "reciprocal_conflicts": []
+ },
+ "dropped": {
+  "total": 233,
+  "by_reason": {
+   "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）": 5,
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 23,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 8,
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 32,
+   "强制档实体缺失（04f#9 医者/伤者未同现）": 10,
+   "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）": 7,
+   "实体缺失（04f#5 点穴须施者/受者）": 13,
+   "传闻降权（D06 §8.3，不入正式表）": 11,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 14,
+   "恩义属离线表（D06 §6.4），不进 SPO 关系表": 2,
+   "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）": 5,
+   "强制档实体缺失（04f#1/#4 武功名未在句）": 6,
+   "实体缺失（04f#26 交手须双方人物角色）": 19,
+   "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库": 9,
+   "强制档实体缺失（掌握主语人物未在句）": 2,
+   "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）": 8,
+   "自指/主宾同一实体": 58,
+   "主宾类型/谓词表校验不符（D06 §7.2）": 1
+  },
+  "samples": [
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "定亲",
+    "loc": "001:58"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "未婚妻",
+    "loc": "001:60"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "001:60"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "001:68"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "002:6"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "002:23"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "002:41"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "002:44"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "002:49"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "002:49"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "语式-师承",
+    "rule_row": 6,
+    "predicate": "师承",
+    "loc": "003:21",
+    "note": "甘风池 师承 甘凤池"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "003:48"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "003:50"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "003:52"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "003:57"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "003:65"
+   },
+   {
+    "reason": "恩义属离线表（D06 §6.4），不进 SPO 关系表",
+    "rule": "语式-恩义",
+    "rule_row": "语式",
+    "predicate": "",
+    "note": "救命之恩",
+    "loc": "003:66"
+   },
+   {
+    "reason": "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）",
+    "rule": "04f-L15",
+    "rule_row": 15,
+    "predicate": "毁损",
+    "note": "器物=铁拐",
+    "loc": "003:66"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "003:80"
+   },
+   {
+    "reason": "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）",
+    "rule": "04f-L15",
+    "rule_row": 15,
+    "predicate": "毁损",
+    "note": "器物=铁拐",
+    "loc": "004:3"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "004:22"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "语式-收徒",
+    "rule_row": 7,
+    "predicate": "师承",
+    "loc": "005:8",
+    "note": "陈天宇 师承 萧青峰"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-LEAVE",
+    "rule_row": "X-LEAVE",
+    "predicate": "离开",
+    "loc": "005:8",
+    "note": "陈天宇 离开 中原"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-ARRIVE",
+    "rule_row": "X-ARRIVE",
+    "predicate": "到达",
+    "loc": "005:8",
+    "note": "萧青峰 到达 中原"
+   },
+   {
+    "reason": "强制档实体缺失（04f#1/#4 武功名未在句）",
+    "rule": "04f-L01",
+    "rule_row": 1,
+    "predicate": "掌握",
+    "note": "",
+    "loc": "005:8"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "006:27"
+   },
+   {
+    "reason": "强制档实体缺失（04f#1/#4 武功名未在句）",
+    "rule": "04f-L01",
+    "rule_row": 1,
+    "predicate": "掌握",
+    "note": "",
+    "loc": "006:36"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "006:42"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "006:53"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "006:61"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "007:75"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "007:78"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "007:84"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "007:91"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "loc": "009:35",
+    "note": "白发魔女 离开 武当山"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "009:62"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:65",
+    "note": "陈天宇 交手 赵灵君"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:65",
+    "note": "赵灵君 交手 陈天宇"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "009:66"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "010:1"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "010:10"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "010:44"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "011:10"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "011:14"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "011:25"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "011:30"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "011:34"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "011:66"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "011:68"
+   },
+   {
+    "reason": "恩义属离线表（D06 §6.4），不进 SPO 关系表",
+    "rule": "语式-恩义",
+    "rule_row": "语式",
+    "predicate": "",
+    "note": "救命之恩",
+    "loc": "012:1"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "012:2"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "012:16"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "012:42"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "013:21"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "013:23"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "014:13"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "014:17"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "014:25"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "014:25"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "014:47"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "014:49"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "014:56"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "014:67"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "015:17"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "015:18"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "015:19"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "015:41"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "015:62"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "015:65"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "015:74"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "016:3"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "016:10"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "016:49"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "017:14"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "017:31"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "019:10"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "019:34"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "019:61"
+   },
+   {
+    "reason": "强制档实体缺失（掌握主语人物未在句）",
+    "rule": "04f-L01",
+    "rule_row": 1,
+    "predicate": "掌握",
+    "note": "",
+    "loc": "020:43"
+   },
+   {
+    "reason": "强制档实体缺失（04f#1/#4 武功名未在句）",
+    "rule": "04f-L01",
+    "rule_row": 1,
+    "predicate": "掌握",
+    "note": "",
+    "loc": "020:44"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "020:51"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "021:11"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "021:20"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "022:22"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "022:22"
+   },
+   {
+    "reason": "强制档实体缺失（04f#1/#4 武功名未在句）",
+    "rule": "04f-L01",
+    "rule_row": 1,
+    "predicate": "掌握",
+    "note": "",
+    "loc": "022:49"
+   },
+   {
+    "reason": "强制档实体缺失（04f#1/#4 武功名未在句）",
+    "rule": "04f-L01",
+    "rule_row": 1,
+    "predicate": "掌握",
+    "note": "",
+    "loc": "022:51"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "022:55"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "022:55"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "023:10"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "023:13"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "023:13"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "023:54"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "023:54"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "023:70"
+   },
+   {
+    "reason": "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）",
+    "rule": "04f-L03",
+    "rule_row": 3,
+    "predicate": "",
+    "note": "",
+    "loc": "023:70"
+   },
+   {
+    "reason": "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）",
+    "rule": "04f-L03",
+    "rule_row": 3,
+    "predicate": "",
+    "note": "",
+    "loc": "023:70"
+   },
+   {
+    "reason": "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）",
+    "rule": "04f-L03",
+    "rule_row": 3,
+    "predicate": "",
+    "note": "",
+    "loc": "023:71"
+   },
+   {
+    "reason": "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）",
+    "rule": "04f-L03",
+    "rule_row": 3,
+    "predicate": "",
+    "note": "",
+    "loc": "023:71"
+   },
+   {
+    "reason": "建议档泛指授艺（04f#3：记子型‘指点’，不生成三元组）",
+    "rule": "04f-L03",
+    "rule_row": 3,
+    "predicate": "",
+    "note": "",
+    "loc": "023:71"
+   }
+  ]
+ },
+ "validation": {
+  "hard_errors": [],
+  "warnings": [
+   {
+    "check": "互斥",
+    "rule": "D06 §4.2",
+    "detail": "崔云子 存在 2 位师父 ['郑平', '雷震子']，active 唯一性须 N4 时间轴复核"
+   }
+  ],
+  "checks": [
+   "无环(师承)",
+   "方向(徒→师/无互为师徒)",
+   "类型(55 谓词主宾)",
+   "证据级(E1 名分类)",
+   "自指",
+   "传闻(§8.3)",
+   "共现生边(交手≠敌对)",
+   "时序(师承 vs 隶属终止, 定位符级)"
+  ],
+  "pending": [
+   "N4 时间轴未上线：active 互斥（配偶唯一/师承唯一）无法按时段判定，只做定位符级提示",
+   "亲属/血缘树：04f 27 行联动无亲属触发词，未产出",
+   "仇怨：event_ids 必填（D06#44）而事件层 N4/D03 未产出"
+  ]
+ },
+ "rows_stats": {
+  "1": {
+   "rule": "04f-L01",
+   "predicate": "掌握",
+   "triggers": "练成/学会/悟出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 8,
+   "extension": false,
+   "note": ""
+  },
+  "2": {
+   "rule": "04f-L02",
+   "predicate": "传授",
+   "triggers": "传授（具体武功名在句）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 8,
+   "extension": false,
+   "note": ""
+  },
+  "3": {
+   "rule": "04f-L03",
+   "predicate": null,
+   "triggers": "授艺/教（泛指）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 8,
+   "extension": false,
+   "note": ""
+  },
+  "4": {
+   "rule": "04f-L04",
+   "predicate": "掌握",
+   "triggers": "偷学/窃艺",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "5": {
+   "rule": "04f-L05",
+   "predicate": "点穴",
+   "triggers": "点穴（穴道名在句）",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 2,
+   "dropped": 13,
+   "extension": false,
+   "note": ""
+  },
+  "6": {
+   "rule": "04f-L06",
+   "predicate": "师承",
+   "triggers": "拜师/拜…为师",
+   "strength": "强制",
+   "candidates": 21,
+   "emitted": 17,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "7": {
+   "rule": "04f-L07",
+   "predicate": "师承",
+   "triggers": "收徒/授艺（具体对象）",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 0,
+   "dropped": 2,
+   "extension": false,
+   "note": ""
+  },
+  "8": {
+   "rule": "04f-L08",
+   "predicate": "杀害",
+   "triggers": "杀/杀死/斩杀",
+   "strength": "强制",
+   "candidates": 3,
+   "emitted": 2,
+   "dropped": 15,
+   "extension": false,
+   "note": ""
+  },
+  "9": {
+   "rule": "04f-L09",
+   "predicate": "治愈",
+   "triggers": "疗伤/救活/治愈",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 2,
+   "dropped": 10,
+   "extension": false,
+   "note": ""
+  },
+  "10": {
+   "rule": "04f-L10",
+   "predicate": "投毒",
+   "triggers": "下毒/投毒（致害成立）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "11": {
+   "rule": "04f-L11",
+   "predicate": "转移",
+   "triggers": "赠/赠送/相赠",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 1,
+   "dropped": 10,
+   "extension": false,
+   "note": ""
+  },
+  "12": {
+   "rule": "04f-L12",
+   "predicate": "转移",
+   "triggers": "夺/抢（夺物义）",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 0,
+   "dropped": 14,
+   "extension": false,
+   "note": ""
+  },
+  "13": {
+   "rule": "04f-L13b",
+   "predicate": "转移",
+   "triggers": "借/还",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "14": {
+   "rule": "04f-L14",
+   "predicate": "制造",
+   "triggers": "铸/炼制/打造",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "15": {
+   "rule": "04f-L15",
+   "predicate": null,
+   "triggers": "折断/烧毁/焚毁",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 5,
+   "extension": false,
+   "note": ""
+  },
+  "16": {
+   "rule": "04f-L16",
+   "predicate": "组织成员",
+   "triggers": "拜师→◆组织",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "17": {
+   "rule": "04f-L17",
+   "predicate": "任职",
+   "triggers": "任命/继任/接任",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "18": {
+   "rule": "04f-L18",
+   "predicate": "隶属终止",
+   "triggers": "逐出/叛出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "19": {
+   "rule": "04f-L19",
+   "predicate": "结义",
+   "triggers": "结义/结拜",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "20": {
+   "rule": "04f-L20",
+   "predicate": "配偶",
+   "triggers": "娶/嫁/成亲",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "21": {
+   "rule": "04f-L21",
+   "predicate": "到达",
+   "triggers": "抵达/来到（行程级）",
+   "strength": "强制",
+   "candidates": 3,
+   "emitted": 3,
+   "dropped": 15,
+   "extension": false,
+   "note": ""
+  },
+  "22": {
+   "rule": "04f-L22",
+   "predicate": "离开",
+   "triggers": "离开（行程级）",
+   "strength": "强制",
+   "candidates": 8,
+   "emitted": 6,
+   "dropped": 8,
+   "extension": false,
+   "note": ""
+  },
+  "23": {
+   "rule": "04f-L23",
+   "predicate": "押送",
+   "triggers": "押解/解往",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "24": {
+   "rule": "04f-L24",
+   "predicate": "到达",
+   "triggers": "潜入/混入",
+   "strength": "强制",
+   "candidates": 5,
+   "emitted": 5,
+   "dropped": 10,
+   "extension": false,
+   "note": "04f『进入』无 D06 同名谓词，按 §7.3 对号入座最近落位 #18 到达（weak）"
+  },
+  "25": {
+   "rule": "04f-L25",
+   "predicate": null,
+   "triggers": "追踪/跟踪（行程级）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 9,
+   "extension": false,
+   "note": ""
+  },
+  "26": {
+   "rule": "04f-L26",
+   "predicate": "交手",
+   "triggers": "交手/比武",
+   "strength": "建议",
+   "candidates": 4,
+   "emitted": 2,
+   "dropped": 19,
+   "extension": false,
+   "note": ""
+  },
+  "27": {
+   "rule": "04f-L27",
+   "predicate": null,
+   "triggers": "使用阵法（结阵/布阵）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "X-RESCUE": {
+   "rule": "X-RESCUE",
+   "predicate": "解救",
+   "triggers": "救/救出/救下/营救",
+   "strength": "扩展",
+   "candidates": 1,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": true,
+   "note": "04f#9 只列疗伤/救活/治愈；『救』按 D06#51 解救 候选（E2）"
+  },
+  "X-ARRIVE": {
+   "rule": "X-ARRIVE",
+   "predicate": "到达",
+   "triggers": "■ 行程动词（回到/走到/走进/赶到…）",
+   "strength": "扩展",
+   "candidates": 60,
+   "emitted": 53,
+   "dropped": 1,
+   "extension": true,
+   "note": ""
+  },
+  "X-LEAVE": {
+   "rule": "X-LEAVE",
+   "predicate": "离开",
+   "triggers": "■ 离开类动词（走出/退出/逃出…）",
+   "strength": "扩展",
+   "candidates": 18,
+   "emitted": 16,
+   "dropped": 1,
+   "extension": true,
+   "note": ""
+  },
+  "X-COMBAT": {
+   "rule": "X-COMBAT",
+   "predicate": "交手",
+   "triggers": "⊞ 攻击/防御动词（近邻双角色）",
+   "strength": "扩展",
+   "candidates": 232,
+   "emitted": 92,
+   "dropped": 4,
+   "extension": true,
+   "note": ""
+  }
+ }
+}

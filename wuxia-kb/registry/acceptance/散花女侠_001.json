@@ -1,0 +1,252 @@
+{
+ "schema": "wuxia-acceptance-v1",
+ "book": "散花女侠",
+ "chapters": [
+  1
+ ],
+ "chapter_label": "001",
+ "generated_at": "2026-11-06T11:02:37",
+ "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
+ "rule_version": "SKILL_03a v1.8",
+ "sample_ratio_requested": 0.1,
+ "seed": "20261104",
+ "readonly": true,
+ "global_gate": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\pipeline_wuxia.py 散花女侠 check",
+  "exit_code": 0,
+  "lint_codes": {
+   "lint-pn": 0,
+   "integrity": 0,
+   "symbol-lint": 0,
+   "md-lint": 0,
+   "fence-format": 0
+  },
+  "passed": true,
+  "log": "logs\\acceptance\\check_global.log"
+ },
+ "fix_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 散花女侠 --chapters 1 --dry-run",
+  "exit": 0,
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "log": "logs\\acceptance\\fix_dry_run.log"
+ },
+ "chapters_data": {
+  "001": {
+   "chapter": 1,
+   "structural": "pass",
+   "paragraphs": 83,
+   "chars": 16139,
+   "entity_tokens": 899,
+   "verb_tokens": 131,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [
+    {
+     "pn": 62,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 樊大哥→樊英 与登记表 樊大哥→老樊 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@樊大哥|樊英"
+    },
+    {
+     "pn": 62,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 樊大哥→樊英 与登记表 樊大哥→老樊 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@樊大哥|樊英"
+    },
+    {
+     "pn": 75,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 皇帝→祈钰 与登记表 皇帝→祈镇 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@皇帝|祈钰"
+    },
+    {
+     "pn": 75,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 皇帝→祈钰 与登记表 皇帝→祈镇 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@皇帝|祈钰"
+    }
+   ],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 43,
+     "type": "verb_domain_risk",
+     "detail": "■ 强制移动 vs 拘押/社会处置边界：押解",
+     "display": "押解",
+     "suggestion": "掳/押：强制移动归■；拘押判刑归⊡；逐出师门归⊡",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    3,
+    27,
+    45,
+    49,
+    54,
+    60,
+    74,
+    75
+   ],
+   "sample_size": 8,
+   "sample_ratio_actual": 0.0964,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [
+    {
+     "chapter": 1,
+     "removed": 13,
+     "added": 3,
+     "for": "E%"
+    }
+   ],
+   "entity_dist": {
+    "#": 91,
+    "$": 108,
+    "%": 30,
+    "+": 16,
+    ";": 29,
+    "=": 69,
+    "@": 429,
+    "^": 9,
+    "{": 19,
+    "~": 3,
+    "•": 61,
+    "◆": 21,
+    "◎": 1,
+    "☆": 13
+   },
+   "verb_dist": {
+    "⊞": 42,
+    "⊟": 20,
+    "⊠": 12,
+    "⊡": 4,
+    "■": 53
+   },
+   "pipe_counts": {
+    "⟦⊠": 1,
+    "⟦⊡": 3,
+    "〖%": 29,
+    "〖@": 84
+   },
+   "pipe_sources": {
+    "registry": 84
+   }
+  }
+ },
+ "summary": {
+  "chapters_total": 1,
+  "accepted": 1,
+  "needs_fix": 0,
+  "accepted_chapters": [
+   1
+  ],
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
+  "warnings": 4,
+  "pipe_unsourced": 0,
+  "judgment_items": 1,
+  "sampled_paragraphs": 8,
+  "total_paragraphs": 83,
+  "total_chars": 16139,
+  "entity_tokens": 899,
+  "verb_tokens": 131,
+  "rhetoric_tokens": 2,
+  "llm_used": false
+ },
+ "risk_stats": [
+  {
+   "category": "① 管道",
+   "hits": 117,
+   "hard": 0,
+   "judgment": 0,
+   "note": "@ 管道 84 条，无来源 0 条，登记表映射冲突 4 条（warning）"
+  },
+  {
+   "category": "② 层-码错位",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "实体/动词括号内码位一致性"
+  },
+  {
+   "category": "③ 括号/标点",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "未闭合/闭合符误写/嵌套/标注内标点；修辞 〘※说时迟、那时快〙 标点属固定表达不判"
+  },
+  {
+   "category": "④ 围栏/套语",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "回目/回末/套语 0；韵文围栏动词 0；回末对实体限实指 1"
+  },
+  {
+   "category": "⑤ 动词域高风险",
+   "hits": 1,
+   "hard": 0,
+   "judgment": 1,
+   "note": "⊠/⊡/⊞ 拘押判刑处死语境 + verbs.json 候选域差异"
+  },
+  {
+   "category": "⑥ 时间/数量边界",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "% 无时间线索 + $ 裸数词/裸量词"
+  },
+  {
+   "category": "⑦ D1/谦辞/纯亲属（抽样）",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "抽样段 #/; 全类型检查"
+  },
+  {
+   "category": "⑧ 计划/否定/假想语境",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "前接 要/想/欲/若/待/将/否则/不/没/未 的动词"
+  }
+ ],
+ "qa_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\qa_annotation_report.py --book 散花女侠 --chapters 1 --out C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\logs\\acceptance\\qa_structure_A_B_001.md --mapping-file logs/mapping_散花女侠",
+  "exit_code": 0,
+  "report": "logs\\acceptance\\qa_structure_A_B_001.md",
+  "strip_mismatch": 0,
+  "pipe_issues": 0,
+  "title_tokens": 0,
+  "fence_tokens": 0,
+  "tao_tokens": 0,
+  "parsed": true
+ },
+ "mapping_loaded": true,
+ "mapping_source": {
+  "registry": "registry/entities.json",
+  "mapping_file": "logs/mapping_散花女侠",
+  "mapping_pairs": 0,
+  "mapping_loaded": true,
+  "scoped": {
+   "registry_entries": 164,
+   "mapping_entries": 0
+  }
+ },
+ "pipe_sources": {
+  "at_pipes": 84,
+  "text_only": 0,
+  "unsourced": 0,
+  "detail_by_source": {
+   "001": {
+    "registry": 84
+   }
+  }
+ },
+ "sample_coverage": {
+  "entity": "@=◆~;#•{%$",
+  "verb": "⊞⊡⊟■",
+  "coverage_swaps": 1
+ }
+}

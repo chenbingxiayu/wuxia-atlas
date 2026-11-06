@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>模块库 · 榜单组件</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#e9e2d2;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  h3.sec{font-family:"Noto Serif SC","SimSun",serif;font-weight:900;font-size:18px;margin:0 0 8px;padding-bottom:5px;
+    border-bottom:1px solid #d8cdb8;letter-spacing:2px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.6}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:3px 14px;font-size:13px;background:#fbf8ef;color:#5a544a;margin:2px;cursor:pointer}
+  .chip.on{border-color:#a63a2b;color:#a63a2b;font-weight:700}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:#34546e}
+  table{border-collapse:collapse;width:100%;font-size:13.5px}
+  th{color:#8c8477;text-align:left;padding:6px 10px;border-bottom:1.5px solid #b9ab90;font-weight:400}
+  td{padding:8px 10px;border-bottom:1px solid #d8cdb8}
+</style>
+</helmet>
+<div style="width:1200px;height:1120px;box-sizing:border-box;padding:48px 56px;background:#fbf8ef;display:flex;flex-direction:column;gap:22px">
+
+  <div style="display:flex;align-items:baseline;gap:14px">
+    <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:24px;letter-spacing:3px">榜单组件</span>
+    <span class="lab">武评总榜/单挑榜/待考区 · 模块库 7/7 · 宁可榜小，不可榜错</span>
+  </div>
+
+  <div>
+    <h3 class="sec">FilterBar（榜域 · 层 · 分档 · 门派 · 搜索）</h3>
+    <div style="background:#f5efe4;padding:10px 14px;border-radius:4px;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <span class="chip on">合成榜</span><span class="chip">书内榜</span>
+      <span style="color:#b9ab90">|</span>
+      <span class="chip on">全部</span><span class="chip">单挑（明文一对一）</span>
+      <span style="color:#b9ab90">|</span>
+      <span class="chip">绝顶</span><span class="chip">超一流</span><span class="chip">一流</span>
+      <span style="color:#b9ab90">|</span>
+      <input style="padding:5px 12px;border:1px solid #b9ab90;border-radius:4px;font-family:inherit;font-size:13px;background:#fbf8ef;width:160px" value="搜索人物…" aria-label="搜索人物">
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">代表作卡（榜首 · 绝顶证据直读）</h3>
+    <div style="background:#fbf8ef;border:1px solid #b8860b;border-left:4px solid #b8860b;border-radius:4px;padding:14px 18px;display:flex;gap:18px;align-items:center">
+      <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:34px;color:#b8860b">榜首</span>
+      <div style="flex:1">
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <b style="font-size:18px;font-family:'Noto Serif SC','SimSun',serif">吕四娘</b>
+          <span style="color:#b8860b;font-weight:700;font-size:14px;border:1.5px solid #b8860b;border-radius:3px;padding:0 8px">绝顶</span>
+          <b style="font-size:20px;color:#a63a2b">1662</b><span class="lab">±32</span>
+          <span class="lab">6 战 6 胜 · 三女侠</span>
+        </div>
+        <div class="lab" style="margin-top:4px">凭据：六战全胜且每战挂定位符 —— <a href="#" class="loc">M213 →</a> <a href="#" class="loc">M301 →</a> <a href="#" class="loc">M389 →</a> <a href="#" class="loc">共 6 场</a></div>
+      </div>
+      <a href="#" class="lab" style="color:#34546e;border-bottom:1px solid #34546e">巅峰曲线 →</a>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">主榜 Table（行内证据链展开态）</h3>
+    <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:6px 10px;margin-top:8px">
+      <table>
+        <thead><tr><th style="width:3em">名次</th><th>人物</th><th>评分</th><th>分档</th><th>胜/平/负</th><th>门派</th><th>证据</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><a href="#" style="color:#34546e">吕四娘</a></td><td><b>1662</b> ±32</td><td><span style="color:#b8860b;font-weight:700">绝顶</span></td><td>6/0/0</td><td>—</td><td><button style="border:1px solid #34546e;background:none;color:#34546e;border-radius:999px;padding:1px 10px;font-size:12px;cursor:pointer;font-family:inherit">收起</button></td></tr>
+          <tr><td colspan="7" style="background:#f5efe4">
+            <div class="lab" style="padding:6px 10px;line-height:2">
+              近 5 场对局（每条可对质）：<br>
+              ① 吕四娘 <span style="color:#a63a2b">胜</span> 了因 —— 江湖三女侠·031:14 →<br>
+              ② 吕四娘 <span style="color:#a63a2b">胜</span> 哈布陀 —— 江湖三女侠·029:88 →<br>
+              ③ 吕四娘 <span style="color:#a63a2b">胜</span> 甘天龙 —— 江湖三女侠·028:41 →<br>
+              层：L2 明文配对 · 软分 1.0 · 口径见方法论页
+            </div>
+          </td></tr>
+          <tr><td>2</td><td><a href="#" style="color:#34546e">冯琳</a></td><td><b>1654</b> ±105</td><td><span style="color:#b8860b;font-weight:700">绝顶</span></td><td>5/1/0</td><td>—</td><td><button style="border:1px solid #b9ab90;background:none;color:#34546e;border-radius:999px;padding:1px 10px;font-size:12px;cursor:pointer;font-family:inherit">证据链</button></td></tr>
+          <tr><td>3</td><td><a href="#" style="color:#34546e">了因</a></td><td><b>1625</b> ±126</td><td><span style="color:#b8860b;font-weight:700">绝顶</span></td><td>4/2/1</td><td>少林派</td><td><button style="border:1px solid #b9ab90;background:none;color:#34546e;border-radius:999px;padding:1px 10px;font-size:12px;cursor:pointer;font-family:inherit">证据链</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    <div>
+      <h3 class="sec">待考区（RD/不确定度过宽 · 折叠不占名次）</h3>
+      <div style="background:#f5efe4;border:1px dashed #b9ab90;border-radius:4px;padding:12px 16px">
+        <b style="font-size:14px">待考区 · 对局不足或区间过宽，暂不排名</b>
+        <div class="lab" style="margin:6px 0">展开查个人数据（108 人）：岳鸣珂 ±261 · 年羹尧 ±195 · 易兰珠 ±179 …</div>
+        <button style="border:1px solid #b9ab90;background:none;color:#34546e;border-radius:999px;padding:2px 14px;font-size:12px;cursor:pointer;font-family:inherit">展开全部 ▾</button>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">武评卡（人物档案内嵌版 · 不动版式）</h3>
+      <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-left:4px solid #a63a2b;border-radius:4px;padding:12px 16px">
+        <div style="display:flex;align-items:baseline;gap:10px"><b>武评</b>
+          <b style="font-size:20px;color:#a63a2b">1451</b><span class="lab">±101</span>
+          <span style="color:#8c8477;border:1.5px solid currentColor;border-radius:3px;padding:0 8px;font-size:12px;transform:rotate(-1.5deg)">三流</span></div>
+        <div class="lab" style="margin-top:4px">生涯对局 14 场（6 胜 1 平 7 负）· <a href="#" style="color:#34546e">总榜 →</a> <a href="#" style="color:#34546e">对主要对手 →</a> <a href="#" style="color:#34546e">口径 →</a> · <a href="#" style="color:#34546e">巅峰曲线 →</a></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1120}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 数据说书篇页</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .art{max-width:900px;margin:0 auto;padding:0 40px}
+  .nav{display:flex;gap:20px;align-items:center;font-size:14px}
+  .headwrap{border-bottom:1px solid #d8cdb8;background:#fbf8ef}
+  .lab{font-size:12px;color:#8c8477;line-height:1.7}
+  p{line-height:2;color:#2b2b2b;font-size:15px}
+  h2{font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:19px;margin:30px 0 12px;border-bottom:1px solid #d8cdb8;padding-bottom:5px;letter-spacing:1px}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:#8c8477}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+  <header class="headwrap"><div class="wrap nav" style="height:52px;max-width:1240px;margin:0 auto;padding:0 48px">
+    <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:24px;color:#a63a2b;margin-right:18px">江湖图志</span>
+    <a href="#">作品</a><a href="#">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a></div></header>
+
+  <main style="flex:1;padding-bottom:48px">
+    <div class="art" style="padding-top:20px">
+      <p class="lab"><a href="#">数据说书</a> · 关系 · 可复算（命令与数据版本见文末）</p>
+      <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:34px;letter-spacing:2px;margin:6px 0 8px">一夜白头：卓练温度曲线</h1>
+      <p style="color:#5a544a;margin:0">用《白发魔女传》的 506 起同场事件、131 起冲突，量化全书最著名的一段虐恋。</p>
+
+      <h2>目录</h2>
+      <p class="lab" style="margin:0"><a href="#">命题</a> · <a href="#">图表</a> · <a href="#">读图三问</a> · <a href="#">证据链</a> · <a href="#">方法与复跑</a></p>
+
+      <h2>命题</h2>
+      <p>梁羽生的爱情悲剧里，最锋利的从来不是误会本身，而是误会背后的<b>干预者</b>。我们本想画出一条"温度曲线"——正负互动逐回消长。但数据给出了一个更冷峻的形状：</p>
+      <div style="border-left:4px solid #a63a2b;background:#fbf8ef;padding:.9em 1.2em;line-height:2">
+        全书 32 回，卓练同场 30 回、共现事件 506 起；其中正面互动事件 <b style="color:#a63a2b;font-size:1.3em">0 起</b>，负面冲突 131 起。</div>
+      <p>温情从未进入"事件"的量级——它只存在于关键词密度与并肩作战的对手重合里。<b>这正是这段关系的形状：正面的东西从来不成"事件"，负面的东西从来不成"绝境"。</b></p>
+
+      <h2>图表</h2>
+      <div style="border:1px solid #b9ab90;border-radius:4px;padding:10px;background:#fbf8ef">
+        <svg viewBox="0 0 860 240" style="width:100%;height:auto;display:block" role="img" aria-label="卓练温度曲线">
+          <line x1="230" y1="20" x2="230" y2="200" stroke="#b5a687" stroke-dasharray="3 4"/><text x="230" y="14" font-size="11" fill="#5a544a" text-anchor="middle">劫镖初会</text>
+          <line x1="640" y1="20" x2="640" y2="200" stroke="#b5a687" stroke-dasharray="3 4"/><text x="640" y="14" font-size="11" fill="#5a544a" text-anchor="middle">一夜白头</text>
+          <path d="M30 200 L110 200 L200 155 L280 90 L360 125 L450 150 L550 135 L640 175 L830 195 L830 200 Z" fill="#34546e" opacity=".1"/>
+          <path d="M30 200 L200 155 L280 90 L360 125 L450 150 L550 135 L640 175 L830 195" fill="none" stroke="#34546e" stroke-width="1.8"/>
+          <path d="M30 198 L200 150 L280 85 L360 118 L450 143 L550 130 L640 172 L830 193" fill="none" stroke="#a63a2b" stroke-width="2.2"/>
+          <line x1="30" y1="222" x2="830" y2="222" stroke="#d8cdb8"/>
+          <text x="30" y="236" font-size="11" fill="#8c8477" font-family="monospace">001</text>
+          <text x="830" y="236" font-size="11" fill="#8c8477" font-family="monospace" text-anchor="end">032</text>
+        </svg>
+        <div style="display:flex;gap:18px;padding:4px 8px" class="lab">
+          <span><span style="display:inline-block;width:9px;height:9px;background:#34546e;opacity:.35;margin-right:5px"></span>同场事件（506 起）</span>
+          <span><span style="display:inline-block;width:9px;height:9px;background:#a63a2b;margin-right:5px"></span>负面/对抗（131 起）</span>
+          <span>锚点虚线 = 剧情锚点表</span>
+        </div>
+      </div>
+
+      <h2>读图三问</h2>
+      <p><b>① 为什么正面事件是 0？</b>事件层收录的是"人物—动词—人物"的叙事动作；卓练之间发生的只有捉、扣、刺、避。温情发生在动词够不着的地方：029 回银针杀雷蒙救卓，事件登记为"杀"，温度藏在宾语之外。</p>
+      <p><b>② 峰值在 004–006 与 013？</b>两段高冲突都不是感情破裂，而是感情的存在证明。<b>冲突密度 = 关系强度</b>，这是曲线最反直觉的读法。</p>
+      <p><b>③ 026 之后呢？</b>不是和好，是<b>退出彼此的事件</b>。只剩关键词：029 一粒温情词，031 一记"刺"。</p>
+
+      <h2>证据链</h2>
+      <ul style="list-style:none;padding:0;font-size:14px">
+        <li style="padding:.4em 0;border-bottom:1px dashed #d8cdb8"><span class="loc">003:81</span> 练霓裳 捉 卓一航（黄龙洞段）<a href="#" style="font-size:12px;margin-left:10px">回目页 →</a></li>
+        <li style="padding:.4em 0;border-bottom:1px dashed #d8cdb8"><span class="loc">026:53</span> 秘魔崖一夜白头（全书转折）<a href="#" style="font-size:12px;margin-left:10px">回目页 →</a></li>
+        <li style="padding:.4em 0;border-bottom:1px dashed #d8cdb8"><span class="loc">031:203</span> 练霓裳 刺 卓一航（塞外）<a href="#" style="font-size:12px;margin-left:10px">回目页 →</a></li>
+      </ul>
+
+      <h2>方法与复跑</h2>
+      <p class="lab">口径：同章在场 = 登记表 chapters 交集；互动动词极性词表见脚本头注释；锚点全部来自剧情锚点考订表。摘录仅本地扫描，切片只含计数与定位符（L0）。本文图表由脚本从考订数据生成——<code style="background:#ece2cf;border-radius:3px;padding:0 4px">python scripts/build_stories.py --story temperature-curve</code> · 数据版本 2026-11-02 · 图表为构建期 SVG，欢迎复算。</p>
+
+      <div style="margin-top:34px;border-top:1px solid #d8cdb8;padding-top:14px;display:flex;gap:20px" class="lab">
+        <a href="#">← 上一篇：武功食物链</a>
+        <a href="#" style="margin-left:auto">下一篇：凌未风 · 囚徒十年 →</a>
+      </div>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1620}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "meta": {
+    "schema": "wordlist-v1",
+    "generated": "2026-11-04",
+    "source": "006 回语义 Review P3-4 项目裁定（docs/32 §四 / docs/33）",
+    "spec_version": "0.3-draft",
+    "kind": "fossil-verb-objects",
+    "rule": "固化动宾词项整体收录，触发词边界『不吞宾语』规则对其不适用；词项须语义完全固化、宾语不指称具体对象；新增须有回内证据并经项目裁定，标注时不得现场自造",
+    "totals": { "all": 3, "auto": 0, "review": 3, "watch": 0 }
+  },
+  "items": [
+    {
+      "surface": "害命",
+      "canonical": "害命",
+      "type": "⊠",
+      "domain": "⊠",
+      "domain_name": "生命健康",
+      "tier": "review",
+      "status": "已裁定收录",
+      "conf": "strong",
+      "evidence": ["白发魔女传 006[16] ⟦⊟劫⟧书⟦⊠害命⟧（与 ⟦⊟劫⟧ 分域：劫财⊟/害命⊠）"],
+      "version": "0.3-draft",
+      "note": "P3-4 整体收录；‛害‛收窄待定例不采纳"
+    },
+    {
+      "surface": "下杀手",
+      "canonical": "下杀手",
+      "type": "⊞",
+      "domain": "⊞",
+      "domain_name": "战斗交锋",
+      "tier": "review",
+      "status": "已裁定收录",
+      "conf": "strong",
+      "evidence": ["白发魔女传 006[1] ⟦⊞痛下杀手⟧（痛＝方式修饰随整词收录口径，参照 ⟦⊞猝击⟧→猝⟦⊞击⟧ 修订精神单列复核）"],
+      "version": "0.3-draft",
+      "note": "P3-4 整体收录；方式修饰（痛/猛）前置时是否外置随词项复核"
+    },
+    {
+      "surface": "拼命",
+      "canonical": "拼命",
+      "type": "⊞",
+      "domain": "⊞",
+      "domain_name": "战斗交锋",
+      "tier": "review",
+      "status": "已裁定收录",
+      "conf": "strong",
+      "evidence": ["白发魔女传 006[7] ⟦⊞拼命⟧"],
+      "version": "0.3-draft",
+      "note": "P3-4 整体收录"
+    }
+  ]
+}

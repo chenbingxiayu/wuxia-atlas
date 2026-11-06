@@ -1,0 +1,965 @@
+{
+ "schema": "wuxia-acceptance-v1",
+ "book": "冰魄寒光剑",
+ "chapters": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12
+ ],
+ "chapter_label": "001-012",
+ "generated_at": "2026-11-06T11:56:35",
+ "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
+ "rule_version": "SKILL_03a v1.8",
+ "sample_ratio_requested": 0.1,
+ "seed": "20261104",
+ "readonly": true,
+ "global_gate": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\pipeline_wuxia.py 冰魄寒光剑 check",
+  "exit_code": 0,
+  "lint_codes": {
+   "lint-pn": 0,
+   "integrity": 0,
+   "symbol-lint": 0,
+   "md-lint": 0,
+   "fence-format": 0
+  },
+  "passed": true,
+  "log": "logs\\acceptance\\check_global.log"
+ },
+ "fix_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 冰魄寒光剑 --chapters 1-12 --dry-run",
+  "exit": 0,
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "log": "logs\\acceptance\\fix_dry_run.log"
+ },
+ "chapters_data": {
+  "001": {
+   "chapter": 1,
+   "structural": "pass",
+   "paragraphs": 61,
+   "chars": 8558,
+   "entity_tokens": 393,
+   "verb_tokens": 69,
+   "rhetoric_tokens": 0,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 1,
+     "type": "fence_entity_real_only",
+     "detail": "围栏[诗]内实体（限实指，需人工确认）：昆仑",
+     "display": "昆仑",
+     "suggestion": "确认是实指而非泛指/修辞；回末对限实指",
+     "sampled": false
+    },
+    {
+     "pn": 55,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：明末",
+     "display": "明末",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    4,
+    42,
+    43,
+    45,
+    48,
+    60
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.0984,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [
+    {
+     "chapter": 1,
+     "removed": 3,
+     "added": 4,
+     "for": "E◎"
+    }
+   ],
+   "entity_dist": {
+    "#": 6,
+    "$": 22,
+    "%": 17,
+    "&": 13,
+    "+": 3,
+    ";": 4,
+    "=": 71,
+    "@": 221,
+    "^": 2,
+    "{": 3,
+    "~": 3,
+    "•": 16,
+    "◆": 7,
+    "◎": 2,
+    "☆": 3
+   },
+   "verb_dist": {
+    "⊞": 6,
+    "⊟": 9,
+    "⊠": 18,
+    "⊡": 3,
+    "■": 31,
+    "▣": 2
+   },
+   "pipe_counts": {
+    "⟦⊠": 2,
+    "〖%": 17,
+    "〖@": 14
+   },
+   "pipe_sources": {
+    "chapter_text": 3,
+    "registry": 11
+   }
+  },
+  "002": {
+   "chapter": 2,
+   "structural": "pass",
+   "paragraphs": 57,
+   "chars": 7507,
+   "entity_tokens": 377,
+   "verb_tokens": 95,
+   "rhetoric_tokens": 1,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    6,
+    18,
+    22,
+    25,
+    29,
+    44
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.1053,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 26,
+    "$": 21,
+    "%": 5,
+    "+": 5,
+    ";": 40,
+    "=": 55,
+    "@": 120,
+    "^": 22,
+    "{": 3,
+    "•": 57,
+    "◆": 10,
+    "◎": 1,
+    "☆": 12
+   },
+   "verb_dist": {
+    "⊞": 37,
+    "⊟": 14,
+    "⊠": 8,
+    "⊡": 1,
+    "■": 35
+   },
+   "pipe_counts": {
+    "⟦⊠": 1,
+    "〖%": 5
+   },
+   "pipe_sources": {}
+  },
+  "003": {
+   "chapter": 3,
+   "structural": "pass",
+   "paragraphs": 46,
+   "chars": 6629,
+   "entity_tokens": 232,
+   "verb_tokens": 56,
+   "rhetoric_tokens": 3,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    16,
+    26,
+    39,
+    41,
+    45
+   ],
+   "sample_size": 5,
+   "sample_ratio_actual": 0.1087,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 3,
+    "$": 21,
+    "%": 17,
+    ";": 3,
+    "=": 43,
+    "@": 99,
+    "^": 3,
+    "{": 1,
+    "•": 36,
+    "◆": 1,
+    "☆": 5
+   },
+   "verb_dist": {
+    "⊞": 28,
+    "⊟": 9,
+    "⊠": 1,
+    "■": 18
+   },
+   "pipe_counts": {
+    "〖%": 17
+   },
+   "pipe_sources": {}
+  },
+  "004": {
+   "chapter": 4,
+   "structural": "pass",
+   "paragraphs": 84,
+   "chars": 13365,
+   "entity_tokens": 679,
+   "verb_tokens": 119,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 34,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：二十左右",
+     "display": "二十左右",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    15,
+    24,
+    27,
+    28,
+    45,
+    50,
+    62,
+    65
+   ],
+   "sample_size": 8,
+   "sample_ratio_actual": 0.0952,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 22,
+    "$": 35,
+    "%": 30,
+    "+": 6,
+    "=": 92,
+    "@": 290,
+    "^": 29,
+    "{": 13,
+    "•": 108,
+    "◆": 3,
+    "☆": 51
+   },
+   "verb_dist": {
+    "⊞": 33,
+    "⊟": 27,
+    "⊠": 8,
+    "■": 48,
+    "▣": 3
+   },
+   "pipe_counts": {
+    "〖%": 30
+   },
+   "pipe_sources": {}
+  },
+  "005": {
+   "chapter": 5,
+   "structural": "pass",
+   "paragraphs": 50,
+   "chars": 8257,
+   "entity_tokens": 429,
+   "verb_tokens": 69,
+   "rhetoric_tokens": 1,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 7,
+     "type": "plan_negation_verb",
+     "detail": "计划/否定/假想语境动词（前接“要”）：离去",
+     "display": "离去",
+     "suggestion": "v1.8：计划/意图/否定/命令内容不标；确认后摘除该动词标记",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    2,
+    22,
+    29,
+    36,
+    40
+   ],
+   "sample_size": 5,
+   "sample_ratio_actual": 0.1,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 15,
+    "$": 32,
+    "%": 19,
+    ";": 1,
+    "=": 95,
+    "@": 156,
+    "^": 13,
+    "{": 1,
+    "•": 84,
+    "◆": 8,
+    "☆": 5
+   },
+   "verb_dist": {
+    "⊞": 24,
+    "⊟": 4,
+    "■": 40,
+    "▣": 1
+   },
+   "pipe_counts": {
+    "〖%": 19,
+    "〖@": 7
+   },
+   "pipe_sources": {
+    "registry": 7
+   }
+  },
+  "006": {
+   "chapter": 6,
+   "structural": "pass",
+   "paragraphs": 53,
+   "chars": 8586,
+   "entity_tokens": 416,
+   "verb_tokens": 87,
+   "rhetoric_tokens": 0,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 11,
+     "type": "plan_negation_verb",
+     "detail": "计划/否定/假想语境动词（前接“想”）：捉",
+     "display": "捉",
+     "suggestion": "v1.8：计划/意图/否定/命令内容不标；确认后摘除该动词标记",
+     "sampled": false
+    },
+    {
+     "pn": 26,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：乾隆",
+     "display": "乾隆",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    25,
+    26,
+    36,
+    38,
+    51
+   ],
+   "sample_size": 5,
+   "sample_ratio_actual": 0.0943,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "$": 25,
+    "%": 32,
+    "+": 22,
+    "=": 66,
+    "@": 212,
+    "^": 12,
+    "~": 2,
+    "•": 14,
+    "◆": 6,
+    "☆": 25
+   },
+   "verb_dist": {
+    "⊞": 38,
+    "⊟": 4,
+    "⊠": 9,
+    "⊡": 3,
+    "■": 33
+   },
+   "pipe_counts": {
+    "〖%": 32,
+    "〖@": 9
+   },
+   "pipe_sources": {
+    "registry": 9
+   }
+  },
+  "007": {
+   "chapter": 7,
+   "structural": "pass",
+   "paragraphs": 90,
+   "chars": 13803,
+   "entity_tokens": 690,
+   "verb_tokens": 163,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 19,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：华灯初上",
+     "display": "华灯初上",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    },
+    {
+     "pn": 34,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊠ 与 verbs.json 候选域 ⊟ 不同：折断",
+     "display": "折断",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    12,
+    16,
+    20,
+    25,
+    29,
+    44,
+    46,
+    60,
+    61
+   ],
+   "sample_size": 9,
+   "sample_ratio_actual": 0.1,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 31,
+    "$": 47,
+    "%": 24,
+    "+": 5,
+    ";": 48,
+    "=": 79,
+    "@": 331,
+    "^": 10,
+    "{": 10,
+    "•": 57,
+    "◆": 22,
+    "☆": 26
+   },
+   "verb_dist": {
+    "⊞": 67,
+    "⊟": 15,
+    "⊠": 6,
+    "■": 75
+   },
+   "pipe_counts": {
+    "⟦⊠": 1,
+    "〖%": 24
+   },
+   "pipe_sources": {}
+  },
+  "008": {
+   "chapter": 8,
+   "structural": "pass",
+   "paragraphs": 36,
+   "chars": 7889,
+   "entity_tokens": 367,
+   "verb_tokens": 34,
+   "rhetoric_tokens": 3,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    9,
+    14,
+    24,
+    28
+   ],
+   "sample_size": 4,
+   "sample_ratio_actual": 0.1111,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 23,
+    "$": 15,
+    "%": 8,
+    "+": 13,
+    ";": 13,
+    "=": 52,
+    "@": 194,
+    "{": 5,
+    "•": 39,
+    "◆": 5
+   },
+   "verb_dist": {
+    "⊞": 1,
+    "⊟": 6,
+    "⊠": 8,
+    "⊡": 1,
+    "■": 18
+   },
+   "pipe_counts": {
+    "⟦⊠": 1,
+    "〖%": 8,
+    "〖@": 4
+   },
+   "pipe_sources": {
+    "registry": 4
+   }
+  },
+  "009": {
+   "chapter": 9,
+   "structural": "pass",
+   "paragraphs": 70,
+   "chars": 10720,
+   "entity_tokens": 633,
+   "verb_tokens": 137,
+   "rhetoric_tokens": 3,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    1,
+    21,
+    24,
+    26,
+    44,
+    61,
+    70
+   ],
+   "sample_size": 7,
+   "sample_ratio_actual": 0.1,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 4,
+    "$": 30,
+    "%": 37,
+    "+": 30,
+    ";": 5,
+    "=": 62,
+    "@": 357,
+    "^": 18,
+    "{": 13,
+    "~": 3,
+    "•": 57,
+    "◆": 2,
+    "☆": 15
+   },
+   "verb_dist": {
+    "⊞": 44,
+    "⊟": 21,
+    "⊠": 18,
+    "■": 54
+   },
+   "pipe_counts": {
+    "〖%": 37,
+    "〖@": 21
+   },
+   "pipe_sources": {
+    "chapter_text": 17,
+    "registry": 4
+   }
+  },
+  "010": {
+   "chapter": 10,
+   "structural": "pass",
+   "paragraphs": 61,
+   "chars": 9726,
+   "entity_tokens": 503,
+   "verb_tokens": 107,
+   "rhetoric_tokens": 0,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 24,
+     "type": "verb_domain_risk",
+     "detail": "⊠ 用于纯攻击动作（04f：攻击归⊞/杀伤结果归⊠）：刺",
+     "display": "刺",
+     "suggestion": "按 04f §2.2 受伤阈值裁决：未达阈值改 ⊞，达阈值保留 ⊠",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    9,
+    11,
+    15,
+    21,
+    30,
+    44
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.0984,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 4,
+    "$": 10,
+    "%": 46,
+    "+": 6,
+    ";": 2,
+    "=": 42,
+    "@": 263,
+    "^": 45,
+    "{": 2,
+    "•": 57,
+    "◆": 1,
+    "☆": 25
+   },
+   "verb_dist": {
+    "⊞": 47,
+    "⊟": 14,
+    "⊠": 4,
+    "⊡": 1,
+    "■": 40,
+    "▣": 1
+   },
+   "pipe_counts": {
+    "⟦⊡": 1,
+    "〖%": 46,
+    "〖@": 4
+   },
+   "pipe_sources": {
+    "registry": 4
+   }
+  },
+  "011": {
+   "chapter": 11,
+   "structural": "pass",
+   "paragraphs": 55,
+   "chars": 9668,
+   "entity_tokens": 516,
+   "verb_tokens": 126,
+   "rhetoric_tokens": 0,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 47,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊠ 与 verbs.json 候选域 ⊞ 不同：反击",
+     "display": "反击",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    },
+    {
+     "pn": 55,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：一早",
+     "display": "一早",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    7,
+    12,
+    31,
+    32,
+    47,
+    53
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.1091,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 6,
+    "$": 49,
+    "%": 18,
+    "+": 4,
+    "=": 36,
+    "@": 290,
+    "^": 33,
+    "{": 1,
+    "~": 1,
+    "•": 47,
+    "◆": 3,
+    "☆": 28
+   },
+   "verb_dist": {
+    "⊞": 62,
+    "⊟": 14,
+    "⊠": 25,
+    "■": 25
+   },
+   "pipe_counts": {
+    "〖%": 18,
+    "〖@": 4
+   },
+   "pipe_sources": {
+    "registry": 4
+   }
+  },
+  "012": {
+   "chapter": 12,
+   "structural": "pass",
+   "paragraphs": 74,
+   "chars": 7122,
+   "entity_tokens": 387,
+   "verb_tokens": 85,
+   "rhetoric_tokens": 0,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 39,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：燃灯佳节",
+     "display": "燃灯佳节",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    },
+    {
+     "pn": 41,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：燃灯节",
+     "display": "燃灯节",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    9,
+    14,
+    18,
+    40,
+    51,
+    64,
+    72
+   ],
+   "sample_size": 7,
+   "sample_ratio_actual": 0.0946,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 25,
+    "$": 21,
+    "%": 13,
+    "+": 1,
+    ";": 11,
+    "=": 39,
+    "@": 162,
+    "^": 8,
+    "{": 3,
+    "~": 1,
+    "•": 84,
+    "◆": 1,
+    "☆": 18
+   },
+   "verb_dist": {
+    "⊞": 44,
+    "⊟": 15,
+    "⊠": 2,
+    "■": 24
+   },
+   "pipe_counts": {
+    "〖%": 13
+   },
+   "pipe_sources": {}
+  }
+ },
+ "summary": {
+  "chapters_total": 12,
+  "accepted": 12,
+  "needs_fix": 0,
+  "accepted_chapters": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12
+  ],
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
+  "warnings": 0,
+  "pipe_unsourced": 0,
+  "judgment_items": 13,
+  "sampled_paragraphs": 74,
+  "total_paragraphs": 737,
+  "total_chars": 111830,
+  "entity_tokens": 5622,
+  "verb_tokens": 1147,
+  "rhetoric_tokens": 15,
+  "llm_used": false
+ },
+ "risk_stats": [
+  {
+   "category": "① 管道",
+   "hits": 335,
+   "hard": 0,
+   "judgment": 0,
+   "note": "@ 管道 63 条，无来源 0 条，登记表映射冲突 0 条（warning）"
+  },
+  {
+   "category": "② 层-码错位",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "实体/动词括号内码位一致性"
+  },
+  {
+   "category": "③ 括号/标点",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "未闭合/闭合符误写/嵌套/标注内标点；修辞 〘※说时迟、那时快〙 标点属固定表达不判"
+  },
+  {
+   "category": "④ 围栏/套语",
+   "hits": 1,
+   "hard": 0,
+   "judgment": 1,
+   "note": "回目/回末/套语 0；韵文围栏动词 0；回末对实体限实指 1"
+  },
+  {
+   "category": "⑤ 动词域高风险",
+   "hits": 3,
+   "hard": 0,
+   "judgment": 3,
+   "note": "⊠/⊡/⊞ 拘押判刑处死语境 + verbs.json 候选域差异"
+  },
+  {
+   "category": "⑥ 时间/数量边界",
+   "hits": 7,
+   "hard": 0,
+   "judgment": 7,
+   "note": "% 无时间线索 + $ 裸数词/裸量词"
+  },
+  {
+   "category": "⑦ D1/谦辞/纯亲属（抽样）",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "抽样段 #/; 全类型检查"
+  },
+  {
+   "category": "⑧ 计划/否定/假想语境",
+   "hits": 2,
+   "hard": 0,
+   "judgment": 2,
+   "note": "前接 要/想/欲/若/待/将/否则/不/没/未 的动词"
+  }
+ ],
+ "qa_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\qa_annotation_report.py --book 冰魄寒光剑 --chapters 1-12 --out C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\logs\\acceptance\\qa_structure_A_B_001-012.md --mapping-file logs/mapping_冰魄寒光剑",
+  "exit_code": 0,
+  "report": "logs\\acceptance\\qa_structure_A_B_001-012.md",
+  "strip_mismatch": 0,
+  "pipe_issues": 0,
+  "title_tokens": 0,
+  "fence_tokens": 2,
+  "tao_tokens": 0,
+  "parsed": true
+ },
+ "mapping_loaded": true,
+ "mapping_source": {
+  "registry": "registry/entities.json",
+  "mapping_file": "logs/mapping_冰魄寒光剑",
+  "mapping_pairs": 0,
+  "mapping_loaded": true,
+  "scoped": {
+   "registry_entries": 15,
+   "mapping_entries": 0
+  }
+ },
+ "pipe_sources": {
+  "at_pipes": 63,
+  "text_only": 20,
+  "unsourced": 0,
+  "detail_by_source": {
+   "001": {
+    "chapter_text": 3,
+    "registry": 11
+   },
+   "002": {},
+   "003": {},
+   "004": {},
+   "005": {
+    "registry": 7
+   },
+   "006": {
+    "registry": 9
+   },
+   "007": {},
+   "008": {
+    "registry": 4
+   },
+   "009": {
+    "chapter_text": 17,
+    "registry": 4
+   },
+   "010": {
+    "registry": 4
+   },
+   "011": {
+    "registry": 4
+   },
+   "012": {}
+  }
+ },
+ "sample_coverage": {
+  "entity": "@◎=◆&~;#☆•+{^%$",
+  "verb": "⊞⊠⊡⊟▣■",
+  "coverage_swaps": 1
+ }
+}

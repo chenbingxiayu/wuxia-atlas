@@ -1,0 +1,1144 @@
+{
+ "schema": "wuxia-acceptance-v1",
+ "book": "白发魔女传",
+ "chapters": [
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32
+ ],
+ "chapter_label": "020-032",
+ "generated_at": "2026-11-06T11:58:07",
+ "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
+ "rule_version": "SKILL_03a v1.8",
+ "sample_ratio_requested": 0.1,
+ "seed": "20261104",
+ "readonly": true,
+ "global_gate": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\pipeline_wuxia.py 白发魔女传 check",
+  "exit_code": 0,
+  "lint_codes": {
+   "lint-pn": 0,
+   "integrity": 0,
+   "symbol-lint": 0,
+   "md-lint": 0,
+   "fence-format": 0
+  },
+  "passed": true,
+  "log": "logs\\acceptance\\check_global.log"
+ },
+ "fix_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 白发魔女传 --chapters 20-32 --dry-run",
+  "exit": 0,
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "log": "logs\\acceptance\\fix_dry_run.log"
+ },
+ "chapters_data": {
+  "020": {
+   "chapter": 20,
+   "structural": "pass",
+   "paragraphs": 87,
+   "chars": 17406,
+   "entity_tokens": 1254,
+   "verb_tokens": 313,
+   "rhetoric_tokens": 3,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 71,
+     "type": "verb_domain_risk",
+     "detail": "■ 强制移动 vs 拘押/社会处置边界：掳",
+     "display": "掳",
+     "suggestion": "掳/押：强制移动归■；拘押判刑归⊡；逐出师门归⊡",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    9,
+    11,
+    26,
+    28,
+    29,
+    31,
+    35,
+    61,
+    75
+   ],
+   "sample_size": 9,
+   "sample_ratio_actual": 0.1034,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 95,
+    "$": 77,
+    "%": 30,
+    "+": 2,
+    ";": 20,
+    "=": 94,
+    "@": 774,
+    "^": 22,
+    "{": 5,
+    "•": 82,
+    "◆": 21,
+    "☆": 32
+   },
+   "verb_dist": {
+    "⊞": 120,
+    "⊟": 21,
+    "⊠": 34,
+    "⊡": 3,
+    "■": 134,
+    "▣": 1
+   },
+   "pipe_counts": {
+    "〖%": 30,
+    "〖@": 319
+   },
+   "pipe_sources": {
+    "registry+mapping_frozen": 319
+   }
+  },
+  "021": {
+   "chapter": 21,
+   "structural": "pass",
+   "paragraphs": 59,
+   "chars": 6991,
+   "entity_tokens": 495,
+   "verb_tokens": 106,
+   "rhetoric_tokens": 0,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 50,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊟ 与 verbs.json 候选域 ⊞/⊠ 不同：劈",
+     "display": "劈",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    17,
+    26,
+    30,
+    36,
+    40,
+    56
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.1017,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 56,
+    "$": 30,
+    "%": 15,
+    "&": 1,
+    ";": 11,
+    "=": 45,
+    "@": 279,
+    "^": 2,
+    "{": 1,
+    "•": 41,
+    "◆": 3,
+    "☆": 11
+   },
+   "verb_dist": {
+    "⊞": 28,
+    "⊟": 14,
+    "⊠": 6,
+    "⊡": 3,
+    "■": 55
+   },
+   "pipe_counts": {
+    "〖%": 15,
+    "〖@": 117
+   },
+   "pipe_sources": {
+    "registry": 5,
+    "registry+mapping_frozen": 112
+   }
+  },
+  "022": {
+   "chapter": 22,
+   "structural": "pass",
+   "paragraphs": 124,
+   "chars": 18347,
+   "entity_tokens": 1275,
+   "verb_tokens": 287,
+   "rhetoric_tokens": 4,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [
+    {
+     "pn": 92,
+     "display": "先帝",
+     "canonical": "顺治",
+     "reason": "registry canonical/aliases、mapping_frozen、本回正文共现三处均无证据"
+    }
+   ],
+   "judgment_items": [
+    {
+     "pn": 11,
+     "type": "verb_domain_risk",
+     "detail": "⊠ 用于纯攻击动作（04f：攻击归⊞/杀伤结果归⊠）：劈",
+     "display": "劈",
+     "suggestion": "按 04f §2.2 受伤阈值裁决：未达阈值改 ⊞，达阈值保留 ⊠",
+     "sampled": false
+    },
+    {
+     "pn": 115,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：早上",
+     "display": "早上",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    9,
+    16,
+    17,
+    42,
+    72,
+    93,
+    94,
+    106,
+    111,
+    112,
+    120,
+    124
+   ],
+   "sample_size": 12,
+   "sample_ratio_actual": 0.0968,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 51,
+    "$": 94,
+    "%": 35,
+    "&": 8,
+    "+": 2,
+    ";": 19,
+    "=": 109,
+    "@": 710,
+    "^": 17,
+    "{": 28,
+    "•": 127,
+    "◆": 33,
+    "◎": 22,
+    "☆": 20
+   },
+   "verb_dist": {
+    "⊞": 101,
+    "⊟": 37,
+    "⊠": 24,
+    "⊡": 13,
+    "■": 112
+   },
+   "pipe_counts": {
+    "⟦⊞": 1,
+    "⟦⊡": 1,
+    "〖%": 35,
+    "〖@": 249
+   },
+   "pipe_sources": {
+    "registry": 12,
+    "registry+mapping_frozen": 236
+   }
+  },
+  "023": {
+   "chapter": 23,
+   "structural": "pass",
+   "paragraphs": 103,
+   "chars": 12768,
+   "entity_tokens": 787,
+   "verb_tokens": 130,
+   "rhetoric_tokens": 4,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 75,
+     "type": "verb_domain_risk",
+     "detail": "⊠ 用于纯攻击动作（04f：攻击归⊞/杀伤结果归⊠）：刺",
+     "display": "刺",
+     "suggestion": "按 04f §2.2 受伤阈值裁决：未达阈值改 ⊞，达阈值保留 ⊠",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    34,
+    36,
+    42,
+    58,
+    61,
+    71,
+    79,
+    88,
+    94,
+    101
+   ],
+   "sample_size": 10,
+   "sample_ratio_actual": 0.0971,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 61,
+    "$": 47,
+    "%": 12,
+    ";": 13,
+    "=": 42,
+    "@": 508,
+    "^": 8,
+    "{": 10,
+    "•": 52,
+    "◆": 23,
+    "☆": 11
+   },
+   "verb_dist": {
+    "⊞": 58,
+    "⊟": 21,
+    "⊠": 12,
+    "⊡": 1,
+    "■": 38
+   },
+   "pipe_counts": {
+    "〖%": 12,
+    "〖@": 138
+   },
+   "pipe_sources": {
+    "registry": 12,
+    "registry+mapping_frozen": 126
+   }
+  },
+  "024": {
+   "chapter": 24,
+   "structural": "pass",
+   "paragraphs": 88,
+   "chars": 11616,
+   "entity_tokens": 836,
+   "verb_tokens": 112,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    15,
+    18,
+    21,
+    46,
+    47,
+    59,
+    70,
+    80,
+    83
+   ],
+   "sample_size": 9,
+   "sample_ratio_actual": 0.1023,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 23,
+    "$": 56,
+    "%": 37,
+    "+": 5,
+    ";": 10,
+    "=": 63,
+    "@": 537,
+    "^": 12,
+    "{": 9,
+    "•": 70,
+    "◆": 8,
+    "☆": 6
+   },
+   "verb_dist": {
+    "⊞": 17,
+    "⊟": 12,
+    "⊠": 26,
+    "⊡": 1,
+    "■": 55,
+    "▣": 1
+   },
+   "pipe_counts": {
+    "⟦⊡": 1,
+    "〖%": 37,
+    "〖@": 131
+   },
+   "pipe_sources": {
+    "registry": 6,
+    "registry+mapping_frozen": 125
+   }
+  },
+  "025": {
+   "chapter": 25,
+   "structural": "pass",
+   "paragraphs": 55,
+   "chars": 7914,
+   "entity_tokens": 500,
+   "verb_tokens": 76,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 31,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊠ 与 verbs.json 候选域 ⊟ 不同：折断",
+     "display": "折断",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    4,
+    19,
+    35,
+    39,
+    43,
+    46
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.1091,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 28,
+    "$": 38,
+    "%": 15,
+    "&": 1,
+    "+": 3,
+    ";": 5,
+    "=": 37,
+    "@": 323,
+    "^": 4,
+    "{": 1,
+    "•": 37,
+    "◆": 1,
+    "☆": 7
+   },
+   "verb_dist": {
+    "⊞": 33,
+    "⊟": 10,
+    "⊠": 8,
+    "⊡": 2,
+    "■": 23
+   },
+   "pipe_counts": {
+    "⟦⊞": 1,
+    "〖%": 15,
+    "〖@": 124
+   },
+   "pipe_sources": {
+    "registry": 6,
+    "registry+mapping_frozen": 118
+   }
+  },
+  "026": {
+   "chapter": 26,
+   "structural": "pass",
+   "paragraphs": 105,
+   "chars": 16330,
+   "entity_tokens": 1167,
+   "verb_tokens": 197,
+   "rhetoric_tokens": 3,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 72,
+     "type": "verb_domain_risk",
+     "detail": "⊠ 用于纯攻击动作（04f：攻击归⊞/杀伤结果归⊠）：刺",
+     "display": "刺",
+     "suggestion": "按 04f §2.2 受伤阈值裁决：未达阈值改 ⊞，达阈值保留 ⊠",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    3,
+    16,
+    20,
+    39,
+    42,
+    49,
+    81,
+    83,
+    103,
+    104
+   ],
+   "sample_size": 10,
+   "sample_ratio_actual": 0.0952,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 80,
+    "$": 98,
+    "%": 27,
+    "+": 3,
+    ";": 49,
+    "=": 56,
+    "@": 655,
+    "^": 26,
+    "{": 8,
+    "•": 74,
+    "◆": 40,
+    "☆": 51
+   },
+   "verb_dist": {
+    "⊞": 109,
+    "⊟": 8,
+    "⊠": 14,
+    "■": 62,
+    "▣": 4
+   },
+   "pipe_counts": {
+    "〖%": 27,
+    "〖@": 357
+   },
+   "pipe_sources": {
+    "chapter_text": 11,
+    "registry": 4,
+    "registry+mapping_frozen": 342
+   }
+  },
+  "027": {
+   "chapter": 27,
+   "structural": "pass",
+   "paragraphs": 99,
+   "chars": 12885,
+   "entity_tokens": 879,
+   "verb_tokens": 161,
+   "rhetoric_tokens": 6,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 68,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊠ 与 verbs.json 候选域 ⊟ 不同：削断",
+     "display": "削断",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    15,
+    38,
+    50,
+    60,
+    63,
+    66,
+    70,
+    78,
+    81,
+    83
+   ],
+   "sample_size": 10,
+   "sample_ratio_actual": 0.101,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 45,
+    "$": 93,
+    "%": 23,
+    "+": 3,
+    ";": 13,
+    "=": 83,
+    "@": 512,
+    "^": 6,
+    "•": 51,
+    "◆": 17,
+    "◎": 16,
+    "☆": 17
+   },
+   "verb_dist": {
+    "⊞": 62,
+    "⊟": 15,
+    "⊠": 36,
+    "⊡": 5,
+    "■": 43
+   },
+   "pipe_counts": {
+    "⟦⊠": 1,
+    "〖%": 23,
+    "〖@": 59
+   },
+   "pipe_sources": {
+    "chapter_text": 4,
+    "registry": 15,
+    "registry+mapping_frozen": 40
+   }
+  },
+  "028": {
+   "chapter": 28,
+   "structural": "pass",
+   "paragraphs": 63,
+   "chars": 12507,
+   "entity_tokens": 852,
+   "verb_tokens": 172,
+   "rhetoric_tokens": 5,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 4,
+     "type": "verb_domain_risk",
+     "detail": "■ 强制移动 vs 拘押/社会处置边界：逐出",
+     "display": "逐出",
+     "suggestion": "掳/押：强制移动归■；拘押判刑归⊡；逐出师门归⊡",
+     "sampled": false
+    },
+    {
+     "pn": 5,
+     "type": "verb_domain_risk",
+     "detail": "■ 强制移动 vs 拘押/社会处置边界：驱逐",
+     "display": "驱逐",
+     "suggestion": "掳/押：强制移动归■；拘押判刑归⊡；逐出师门归⊡",
+     "sampled": false
+    },
+    {
+     "pn": 5,
+     "type": "verb_domain_risk",
+     "detail": "■ 强制移动 vs 拘押/社会处置边界：驱逐",
+     "display": "驱逐",
+     "suggestion": "掳/押：强制移动归■；拘押判刑归⊡；逐出师门归⊡",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    5,
+    19,
+    33,
+    41,
+    53,
+    58
+   ],
+   "sample_size": 6,
+   "sample_ratio_actual": 0.0952,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 42,
+    "$": 70,
+    "%": 46,
+    "+": 9,
+    ";": 15,
+    "=": 77,
+    "@": 452,
+    "^": 13,
+    "{": 2,
+    "~": 1,
+    "•": 82,
+    "◆": 10,
+    "◎": 6,
+    "☆": 27
+   },
+   "verb_dist": {
+    "⊞": 59,
+    "⊟": 19,
+    "⊠": 20,
+    "⊡": 10,
+    "■": 58,
+    "▣": 6
+   },
+   "pipe_counts": {
+    "〖%": 46,
+    "〖@": 261
+   },
+   "pipe_sources": {
+    "registry": 13,
+    "registry+mapping_frozen": 248
+   }
+  },
+  "029": {
+   "chapter": 29,
+   "structural": "pass",
+   "paragraphs": 112,
+   "chars": 15628,
+   "entity_tokens": 964,
+   "verb_tokens": 215,
+   "rhetoric_tokens": 1,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 12,
+     "type": "plan_negation_verb",
+     "detail": "计划/否定/假想语境动词（前接“别”）：下山",
+     "display": "下山",
+     "suggestion": "v1.8：计划/意图/否定/命令内容不标；确认后摘除该动词标记",
+     "sampled": false
+    },
+    {
+     "pn": 101,
+     "type": "plan_negation_verb",
+     "detail": "计划/否定/假想语境动词（前接“要”）：捉",
+     "display": "捉",
+     "suggestion": "v1.8：计划/意图/否定/命令内容不标；确认后摘除该动词标记",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    32,
+    35,
+    55,
+    61,
+    66,
+    69,
+    73,
+    92,
+    99,
+    102,
+    110
+   ],
+   "sample_size": 11,
+   "sample_ratio_actual": 0.0982,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [
+    {
+     "chapter": 29,
+     "removed": 13,
+     "added": 35,
+     "for": "V▣"
+    }
+   ],
+   "entity_dist": {
+    "#": 40,
+    "$": 106,
+    "%": 29,
+    "+": 16,
+    ";": 38,
+    "=": 71,
+    "@": 500,
+    "^": 8,
+    "~": 22,
+    "•": 76,
+    "◆": 34,
+    "☆": 24
+   },
+   "verb_dist": {
+    "⊞": 99,
+    "⊟": 19,
+    "⊠": 12,
+    "⊡": 3,
+    "■": 79,
+    "▣": 3
+   },
+   "pipe_counts": {
+    "⟦⊡": 2,
+    "〖%": 29,
+    "〖@": 65
+   },
+   "pipe_sources": {
+    "registry": 2,
+    "registry+mapping_frozen": 63
+   }
+  },
+  "030": {
+   "chapter": 30,
+   "structural": "pass",
+   "paragraphs": 70,
+   "chars": 7962,
+   "entity_tokens": 493,
+   "verb_tokens": 82,
+   "rhetoric_tokens": 0,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    9,
+    18,
+    34,
+    41,
+    49,
+    54,
+    61
+   ],
+   "sample_size": 7,
+   "sample_ratio_actual": 0.1,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 11,
+    "$": 30,
+    "%": 26,
+    "+": 2,
+    ";": 17,
+    "=": 32,
+    "@": 310,
+    "^": 2,
+    "{": 8,
+    "~": 7,
+    "•": 17,
+    "◆": 13,
+    "◎": 6,
+    "☆": 12
+   },
+   "verb_dist": {
+    "⊞": 31,
+    "⊟": 6,
+    "⊠": 5,
+    "⊡": 2,
+    "■": 37,
+    "▣": 1
+   },
+   "pipe_counts": {
+    "⟦⊞": 1,
+    "⟦⊠": 1,
+    "⟦⊡": 1,
+    "〖%": 26,
+    "〖@": 28
+   },
+   "pipe_sources": {
+    "registry": 4,
+    "registry+mapping_frozen": 24
+   }
+  },
+  "031": {
+   "chapter": 31,
+   "structural": "pass",
+   "paragraphs": 108,
+   "chars": 14138,
+   "entity_tokens": 840,
+   "verb_tokens": 116,
+   "rhetoric_tokens": 0,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 35,
+     "type": "verb_domain_risk",
+     "detail": "■ 强制移动 vs 拘押/社会处置边界：绑架",
+     "display": "绑架",
+     "suggestion": "掳/押：强制移动归■；拘押判刑归⊡；逐出师门归⊡",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    8,
+    20,
+    33,
+    34,
+    56,
+    62,
+    67,
+    70,
+    74,
+    76,
+    95
+   ],
+   "sample_size": 11,
+   "sample_ratio_actual": 0.1019,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 46,
+    "$": 108,
+    "%": 29,
+    "+": 34,
+    ";": 24,
+    "=": 66,
+    "@": 366,
+    "^": 13,
+    "{": 17,
+    "~": 10,
+    "•": 68,
+    "◆": 20,
+    "☆": 39
+   },
+   "verb_dist": {
+    "⊞": 44,
+    "⊟": 20,
+    "⊠": 9,
+    "■": 42,
+    "▣": 1
+   },
+   "pipe_counts": {
+    "⟦⊟": 1,
+    "〖%": 29,
+    "〖@": 66
+   },
+   "pipe_sources": {
+    "registry": 1,
+    "registry+mapping_frozen": 65
+   }
+  },
+  "032": {
+   "chapter": 32,
+   "structural": "pass",
+   "paragraphs": 98,
+   "chars": 10783,
+   "entity_tokens": 713,
+   "verb_tokens": 212,
+   "rhetoric_tokens": 4,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    5,
+    12,
+    20,
+    30,
+    35,
+    37,
+    43,
+    45,
+    56,
+    81
+   ],
+   "sample_size": 10,
+   "sample_ratio_actual": 0.102,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 37,
+    "$": 55,
+    "%": 25,
+    "&": 2,
+    "+": 2,
+    ";": 24,
+    "=": 39,
+    "@": 411,
+    "^": 14,
+    "{": 5,
+    "•": 60,
+    "◆": 19,
+    "☆": 20
+   },
+   "verb_dist": {
+    "⊞": 95,
+    "⊟": 27,
+    "⊠": 13,
+    "⊡": 10,
+    "■": 66,
+    "▣": 1
+   },
+   "pipe_counts": {
+    "⟦⊞": 1,
+    "⟦⊡": 2,
+    "〖%": 25,
+    "〖@": 98
+   },
+   "pipe_sources": {
+    "registry": 9,
+    "registry+mapping_frozen": 89
+   }
+  }
+ },
+ "summary": {
+  "chapters_total": 13,
+  "accepted": 13,
+  "needs_fix": 0,
+  "accepted_chapters": [
+   20,
+   21,
+   22,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32
+  ],
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
+  "warnings": 0,
+  "pipe_unsourced": 1,
+  "judgment_items": 14,
+  "sampled_paragraphs": 117,
+  "total_paragraphs": 1171,
+  "total_chars": 165275,
+  "entity_tokens": 11055,
+  "verb_tokens": 2179,
+  "rhetoric_tokens": 34,
+  "llm_used": false
+ },
+ "risk_stats": [
+  {
+   "category": "① 管道",
+   "hits": 2375,
+   "hard": 0,
+   "judgment": 0,
+   "note": "@ 管道 2,012 条，无来源 1 条，登记表映射冲突 0 条（warning）"
+  },
+  {
+   "category": "② 层-码错位",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "实体/动词括号内码位一致性"
+  },
+  {
+   "category": "③ 括号/标点",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "未闭合/闭合符误写/嵌套/标注内标点；修辞 〘※说时迟、那时快〙 标点属固定表达不判"
+  },
+  {
+   "category": "④ 围栏/套语",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "回目/回末/套语 0；韵文围栏动词 0；回末对实体限实指 1"
+  },
+  {
+   "category": "⑤ 动词域高风险",
+   "hits": 11,
+   "hard": 0,
+   "judgment": 11,
+   "note": "⊠/⊡/⊞ 拘押判刑处死语境 + verbs.json 候选域差异"
+  },
+  {
+   "category": "⑥ 时间/数量边界",
+   "hits": 1,
+   "hard": 0,
+   "judgment": 1,
+   "note": "% 无时间线索 + $ 裸数词/裸量词"
+  },
+  {
+   "category": "⑦ D1/谦辞/纯亲属（抽样）",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "抽样段 #/; 全类型检查"
+  },
+  {
+   "category": "⑧ 计划/否定/假想语境",
+   "hits": 2,
+   "hard": 0,
+   "judgment": 2,
+   "note": "前接 要/想/欲/若/待/将/否则/不/没/未 的动词"
+  }
+ ],
+ "qa_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\qa_annotation_report.py --book 白发魔女传 --chapters 20-32 --out C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\logs\\acceptance\\qa_structure_A_B_020-032.md",
+  "exit_code": 0,
+  "report": "logs\\acceptance\\qa_structure_A_B_020-032.md",
+  "strip_mismatch": 0,
+  "pipe_issues": 0,
+  "title_tokens": 0,
+  "fence_tokens": 0,
+  "tao_tokens": 0,
+  "parsed": true
+ },
+ "mapping_loaded": true,
+ "pipe_sources": {
+  "at_pipes": 2012,
+  "text_only": 15,
+  "unsourced": 1,
+  "detail_by_source": {
+   "020": {
+    "registry+mapping_frozen": 319
+   },
+   "021": {
+    "registry": 5,
+    "registry+mapping_frozen": 112
+   },
+   "022": {
+    "registry": 12,
+    "registry+mapping_frozen": 236
+   },
+   "023": {
+    "registry": 12,
+    "registry+mapping_frozen": 126
+   },
+   "024": {
+    "registry": 6,
+    "registry+mapping_frozen": 125
+   },
+   "025": {
+    "registry": 6,
+    "registry+mapping_frozen": 118
+   },
+   "026": {
+    "chapter_text": 11,
+    "registry": 4,
+    "registry+mapping_frozen": 342
+   },
+   "027": {
+    "chapter_text": 4,
+    "registry": 15,
+    "registry+mapping_frozen": 40
+   },
+   "028": {
+    "registry": 13,
+    "registry+mapping_frozen": 248
+   },
+   "029": {
+    "registry": 2,
+    "registry+mapping_frozen": 63
+   },
+   "030": {
+    "registry": 4,
+    "registry+mapping_frozen": 24
+   },
+   "031": {
+    "registry": 1,
+    "registry+mapping_frozen": 65
+   },
+   "032": {
+    "registry": 9,
+    "registry+mapping_frozen": 89
+   }
+  }
+ },
+ "sample_coverage": {
+  "entity": "@◎=◆&~;#☆•+{^%$",
+  "verb": "⊞⊠⊡⊟▣■",
+  "coverage_swaps": 1
+ }
+}

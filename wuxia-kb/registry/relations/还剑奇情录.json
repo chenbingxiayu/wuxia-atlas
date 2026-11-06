@@ -1,0 +1,3245 @@
+{
+ "book": "还剑奇情录",
+ "generated": "2026-11-06",
+ "generated_at": "2026-11-06 08:44:37",
+ "script": "scripts/relation_validator.py",
+ "script_version": "0.1",
+ "spec_version": "0.3-draft",
+ "schema": "relations-v0.1",
+ "mode": "default",
+ "source": [
+  "tagged/<书>/*.tagged.md（只读）",
+  "registry/concordance/<书>.json",
+  "registry/entities.json",
+  "skills/SKILL_关系体系_武侠版.md §7.2/§8",
+  "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
+ ],
+ "snapshot": {
+  "exported_at": "2026-11-06 08:44:37",
+  "tagged_chapters": 14,
+  "concordance_generated": "2026-11-06T03:30:48+08:00",
+  "registry_entities": 738,
+  "corpus_chapters": 14,
+  "paragraphs": 996,
+  "verbs": 1116,
+  "verbs_in_quote": 282,
+  "entities": 6501
+ },
+ "predicate_table": {
+  "version": "D06@0.3-draft",
+  "count": 55,
+  "used": [
+   "交手",
+   "到达",
+   "同门",
+   "师承",
+   "掌握",
+   "杀害",
+   "离开",
+   "转移",
+   "配偶"
+  ]
+ },
+ "edge_schema": {
+  "required": [
+   "subject",
+   "predicate",
+   "object",
+   "subject_type",
+   "object_type",
+   "confidence",
+   "loc",
+   "evidence",
+   "rule"
+  ],
+  "confidence_values": [
+   "strong",
+   "ok",
+   "weak"
+  ],
+  "subject_type": "标注层实体符号（@人物/◆组织/&家族/☆武功/•器物/=/地点/;职衔）",
+  "evidence": {
+   "fields": [
+    "loc",
+    "type",
+    "rule"
+   ],
+   "type_values": [
+    "E1明文",
+    "E2动作+共现",
+    "E3推导"
+   ]
+  },
+  "loc_format": "NNN:段（回号:PN 段号）",
+  "source": "D06 §7.2 谓词总表 / §8.1 证据三级 / §6.2 离线表 schema"
+ },
+ "offline_interface": {
+  "types": [
+   "情感",
+   "恩义",
+   "背叛",
+   "主仆"
+  ],
+  "schema": "D06 §6.2（rel_id/subject/object/type/subtype/direction/states/manner/conf/evidence/event_ids/related_predicates/notes）",
+  "emitted": [],
+  "note": "四类离线关系行内不设符号（01g 铁律）；本脚本只出放弃原因（治愈/转移→恩义候选、隶属终止→背叛候选等），离线表由人工裁定流程维护，N5 不写。"
+ },
+ "counts": {
+  "candidates": 102,
+  "edges": 57,
+  "dropped": 35,
+  "derived_edges": 1,
+  "tongmen_edges": 1,
+  "lineage_labels": 1,
+  "by_predicate": {
+   "交手": 31,
+   "到达": 6,
+   "师承": 6,
+   "掌握": 4,
+   "同门": 1,
+   "杀害": 1,
+   "离开": 6,
+   "转移": 1,
+   "配偶": 1
+  },
+  "by_confidence": {
+   "ok": 42,
+   "weak": 6,
+   "strong": 9
+  },
+  "by_layer": {
+   "人": 40,
+   "实": 17
+  },
+  "by_rule": {
+   "X-COMBAT": 30,
+   "X-ARRIVE": 6,
+   "语式-拜师": 4,
+   "04f-L01": 4,
+   "04f-L26": 1,
+   "D06#45/B3": 1,
+   "语式-收徒": 1,
+   "语式-师承": 1,
+   "04f-L08": 1,
+   "X-LEAVE": 4,
+   "04f-L22": 2,
+   "04f-L13b": 1,
+   "04f-L20": 1
+  },
+  "drop_by_reason": {
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 2,
+   "实体缺失（04f#5 点穴须施者/受者）": 3,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 5,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 2,
+   "实体缺失（04f#26 交手须双方人物角色）": 4,
+   "强制档实体缺失（掌握主语人物未在句）": 1,
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 1,
+   "强制档实体缺失（04f#6 拜师双方未同现）": 2,
+   "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库": 1,
+   "自指/主宾同一实体": 10,
+   "互为师徒环（D06 §9.3 无环拦截）：双向证据冲突，双放弃待人工裁定": 4
+  }
+ },
+ "edges": [
+  {
+   "subject": "罗金峰",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈玄机",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:59",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:60",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:18",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:22",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:22",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 7,
+   "loc": "009:59",
+   "chapter": 9,
+   "para": 59,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:59",
+    "009:60",
+    "010:17",
+    "010:18",
+    "010:19",
+    "010:22",
+    "010:22"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0001"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "罗金峰",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:30",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:34",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 5,
+   "loc": "010:30",
+   "chapter": 10,
+   "para": 30,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:30",
+    "010:34",
+    "010:35",
+    "010:35",
+    "010:35"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0002"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "太玄道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:65",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:73",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:73",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:84",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "010:65",
+   "chapter": 10,
+   "para": 65,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:65",
+    "010:73",
+    "010:73",
+    "010:84"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0003"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "阳超谷",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:65",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:69",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:70",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:75",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "010:65",
+   "chapter": 10,
+   "para": 65,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:65",
+    "010:69",
+    "010:70",
+    "010:75"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0004"
+  },
+  {
+   "subject": "石天铎",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "蒲坚",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "003:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:35",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "003:38",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "003:35",
+   "chapter": 3,
+   "para": 35,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "003:35",
+    "003:35",
+    "003:35",
+    "003:38"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0005"
+  },
+  {
+   "subject": "上官天野",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "罗金峰",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:58",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:60",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:60",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "009:58",
+   "chapter": 9,
+   "para": 58,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:58",
+    "009:60",
+    "009:60"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0006"
+  },
+  {
+   "subject": "上官天野",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈玄机",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:45",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:57",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:63",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "009:45",
+   "chapter": 9,
+   "para": 45,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:45",
+    "009:57",
+    "009:63"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0007"
+  },
+  {
+   "subject": "云夫人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "太玄道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:64",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:66",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:67",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "010:64",
+   "chapter": 10,
+   "para": 64,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:64",
+    "010:66",
+    "010:67"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0008"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "石天铎",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:39",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "008:46",
+     "type": "E2动作+共现",
+     "rule": "04f-L26"
+    }
+   ],
+   "count": 2,
+   "loc": "005:39",
+   "chapter": 5,
+   "para": 39,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "005:39",
+    "008:46"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0009"
+  },
+  {
+   "subject": "公冶良",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "勾魂双煞",
+   "object_type": "◎",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:31",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:31",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "011:31",
+   "chapter": 11,
+   "para": 31,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "011:31",
+    "011:31"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0010"
+  },
+  {
+   "subject": "云夫人",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "书房",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:49",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "009:98",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "004:49",
+   "chapter": 4,
+   "para": 49,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "004:49",
+    "009:98"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0011"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "书房",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:1",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "013:40",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "005:1",
+   "chapter": 5,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "005:1",
+    "013:40"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0012"
+  },
+  {
+   "subject": "上官天野",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "云素素",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师",
+   "params": {},
+   "notes": "明文章式『拜…为师』（E1）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）；代词宾语句式启发式（master=前文最近角色）",
+   "evidence": [
+    {
+     "loc": "008:28",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    },
+    {
+     "loc": "008:38",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 2,
+   "loc": "008:28",
+   "chapter": 8,
+   "para": 28,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "008:28",
+    "008:38"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "还剑奇情录#R0013"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "掌握",
+   "object": "达摩剑法",
+   "object_type": "☆",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L01",
+   "rule_row": 1,
+   "subtype": "",
+   "params": {
+    "武功": "达摩剑法"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:23",
+     "type": "E2动作+共现",
+     "rule": "04f-L01"
+    },
+    {
+     "loc": "007:59",
+     "type": "E2动作+共现",
+     "rule": "04f-L01"
+    }
+   ],
+   "count": 2,
+   "loc": "005:23",
+   "chapter": 5,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "005:23",
+    "007:59"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0014"
+  },
+  {
+   "subject": "七修道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "石天铎",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "003:38",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "003:38",
+   "chapter": 3,
+   "para": 38,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "003:38"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0015"
+  },
+  {
+   "subject": "七修道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "蒲坚",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "003:47",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "003:47",
+   "chapter": 3,
+   "para": 47,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "003:47"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0016"
+  },
+  {
+   "subject": "上官天野",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "常山龙",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:76",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:76",
+   "chapter": 11,
+   "para": 76,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "011:76"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0017"
+  },
+  {
+   "subject": "云夫人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "云舞阳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:69",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "010:69",
+   "chapter": 10,
+   "para": 69,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:69"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0018"
+  },
+  {
+   "subject": "云夫人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "桑令狐",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:63",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "010:63",
+   "chapter": 10,
+   "para": 63,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:63"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0019"
+  },
+  {
+   "subject": "云家",
+   "subject_type": "&",
+   "predicate": "交手",
+   "object": "罗金峰",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:66",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:66",
+   "chapter": 9,
+   "para": 66,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:66"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0020"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "五老",
+   "object_type": "◎",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "008:53",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "008:53",
+   "chapter": 8,
+   "para": 53,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "008:53"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0021"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "周桐",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:38",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "007:38",
+   "chapter": 7,
+   "para": 38,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "007:38"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0022"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "张士诚",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "002:92",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "002:92",
+   "chapter": 2,
+   "para": 92,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "002:92"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0023"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "智弘",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:48",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "007:48",
+   "chapter": 7,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "007:48"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0024"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "武当五老",
+   "object_type": "◎",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "008:47",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "008:47",
+   "chapter": 8,
+   "para": 47,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "008:47"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0025"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "谷钟",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "007:38",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "007:38",
+   "chapter": 7,
+   "para": 38,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "007:38"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0026"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "陈玄机",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "002:101",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "002:101",
+   "chapter": 2,
+   "para": 101,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "002:101"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0027"
+  },
+  {
+   "subject": "公冶良",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "萧韵兰",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:48",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:48",
+   "chapter": 11,
+   "para": 48,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "011:48"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0028"
+  },
+  {
+   "subject": "张士诚",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "朱元璋",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "003:18",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "003:18",
+   "chapter": 3,
+   "para": 18,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "003:18"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0029"
+  },
+  {
+   "subject": "智广",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "智弘",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "008:50",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "008:50",
+   "chapter": 8,
+   "para": 50,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "008:50"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0030"
+  },
+  {
+   "subject": "桑令狐",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "阳超谷",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:75",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "010:75",
+   "chapter": 10,
+   "para": 75,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:75"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0031"
+  },
+  {
+   "subject": "武当五老",
+   "subject_type": "◎",
+   "predicate": "交手",
+   "object": "毕凌风",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "008:46",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "008:46",
+   "chapter": 8,
+   "para": 46,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "008:46"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0032"
+  },
+  {
+   "subject": "毕凌风",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "罗金峰",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L26",
+   "rule_row": 26,
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:74",
+     "type": "E2动作+共现",
+     "rule": "04f-L26"
+    }
+   ],
+   "count": 1,
+   "loc": "010:74",
+   "chapter": 10,
+   "para": 74,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:74"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0033"
+  },
+  {
+   "subject": "石家",
+   "subject_type": "&",
+   "predicate": "交手",
+   "object": "罗金峰",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "010:40",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "010:40",
+   "chapter": 10,
+   "para": 40,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:40"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0034"
+  },
+  {
+   "subject": "禇英",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "禇霸",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:22",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:22",
+   "chapter": 11,
+   "para": 22,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "011:22"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0035"
+  },
+  {
+   "subject": "上官天野",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "武当山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "009:17",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "009:17",
+   "chapter": 9,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0036"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "贺兰山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "004:26",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "004:26",
+   "chapter": 4,
+   "para": 26,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "004:26"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0037"
+  },
+  {
+   "subject": "张士诚",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "漠北",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:18",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "003:18",
+   "chapter": 3,
+   "para": 18,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "003:18"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0038"
+  },
+  {
+   "subject": "陈玄机",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "贺兰山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:100",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:100",
+   "chapter": 10,
+   "para": 100,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:100"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0039"
+  },
+  {
+   "subject": "上官天野",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "毕凌风",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "云舞阳"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "009:13",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "009:14",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "009:13",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "还剑奇情录"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "009:13",
+    "009:14"
+   ],
+   "id": "还剑奇情录#R0040"
+  },
+  {
+   "subject": "上官天野",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "云舞阳",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师(代词)",
+   "params": {},
+   "notes": "代词宾语句式启发式（master=前文最近角色）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "009:14",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "009:14",
+   "chapter": 9,
+   "para": 14,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:14"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "还剑奇情录#R0041"
+  },
+  {
+   "subject": "毕凌风",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "云舞阳",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-收徒",
+   "rule_row": 7,
+   "subtype": "收…为徒(代词)",
+   "params": {},
+   "notes": "代词宾语句式启发式（disciple=前文最近角色）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "009:13",
+     "type": "E1明文",
+     "rule": "语式-收徒"
+    }
+   ],
+   "count": 1,
+   "loc": "009:13",
+   "chapter": 9,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:13"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "还剑奇情录#R0042"
+  },
+  {
+   "subject": "毕凌风",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "张士诚",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师(代词)",
+   "params": {},
+   "notes": "代词宾语句式启发式（master=前文最近角色）",
+   "evidence": [
+    {
+     "loc": "008:23",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "008:23",
+   "chapter": 8,
+   "para": 23,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "008:23"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "还剑奇情录#R0043"
+  },
+  {
+   "subject": "毕凌风",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "彭莹玉",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的弟子",
+   "params": {},
+   "notes": "语式『的弟子』（D06 §8.4；来源=字面）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "008:24",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "008:24",
+   "chapter": 8,
+   "para": 24,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "008:24"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "还剑奇情录#R0044"
+  },
+  {
+   "subject": "毕凌风",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "陈玄机",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-拜师",
+   "rule_row": 6,
+   "subtype": "拜…为师",
+   "params": {},
+   "notes": "明文章式『拜…为师』（E1）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "009:34",
+     "type": "E1明文",
+     "rule": "语式-拜师"
+    }
+   ],
+   "count": 1,
+   "loc": "009:34",
+   "chapter": 9,
+   "para": 34,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:34"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "还剑奇情录#R0045"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "掌握",
+   "object": "一指禅功",
+   "object_type": "☆",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L01",
+   "rule_row": 1,
+   "subtype": "",
+   "params": {
+    "武功": "一指禅功"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "002:83",
+     "type": "E2动作+共现",
+     "rule": "04f-L01"
+    }
+   ],
+   "count": 1,
+   "loc": "002:83",
+   "chapter": 2,
+   "para": 83,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "002:83"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0046"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "掌握",
+   "object": "剑术",
+   "object_type": "☆",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L01",
+   "rule_row": 1,
+   "subtype": "",
+   "params": {
+    "武功": "剑术"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:26",
+     "type": "E2动作+共现",
+     "rule": "04f-L01"
+    }
+   ],
+   "count": 1,
+   "loc": "005:26",
+   "chapter": 5,
+   "para": 26,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "005:26"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0047"
+  },
+  {
+   "subject": "蒲坚",
+   "subject_type": "@",
+   "predicate": "掌握",
+   "object": "五禽掌法",
+   "object_type": "☆",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L01",
+   "rule_row": 1,
+   "subtype": "",
+   "params": {
+    "武功": "五禽掌法"
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "003:36",
+     "type": "E2动作+共现",
+     "rule": "04f-L01"
+    }
+   ],
+   "count": 1,
+   "loc": "003:36",
+   "chapter": 3,
+   "para": 36,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "003:36"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0048"
+  },
+  {
+   "subject": "云素素",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "石天铎",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "007:56",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "007:56",
+   "chapter": 7,
+   "para": 56,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "007:56"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "还剑奇情录#R0049"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "武当山",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "009:17",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "009:17",
+   "chapter": 9,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "009:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0050"
+  },
+  {
+   "subject": "罗金峰",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "院子",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "010:11",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "010:11",
+   "chapter": 10,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "010:11"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0051"
+  },
+  {
+   "subject": "陈玄机",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "后门",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "006:16",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "006:16",
+   "chapter": 6,
+   "para": 16,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "006:16"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0052"
+  },
+  {
+   "subject": "陈玄机",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "房间",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "002:36",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "002:36",
+   "chapter": 2,
+   "para": 36,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "002:36"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0053"
+  },
+  {
+   "subject": "陈玄机",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "石室",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "008:66",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "008:66",
+   "chapter": 8,
+   "para": 66,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "008:66"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0054"
+  },
+  {
+   "subject": "陈玄机",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "石洞",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "002:115",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "002:115",
+   "chapter": 2,
+   "para": 115,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "002:115"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0055"
+  },
+  {
+   "subject": "毕凌风",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "陈定方",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L13b",
+   "rule_row": 13,
+   "subtype": "还",
+   "params": {
+    "物": "宝剑",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "014:33",
+     "type": "E2动作+共现",
+     "rule": "04f-L13b"
+    }
+   ],
+   "count": 1,
+   "loc": "014:33",
+   "chapter": 14,
+   "para": 33,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "014:33"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "还剑奇情录#R0056"
+  },
+  {
+   "subject": "云舞阳",
+   "subject_type": "@",
+   "predicate": "配偶",
+   "object": "石天铎",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "04f-L20",
+   "rule_row": 20,
+   "subtype": "",
+   "params": {},
+   "notes": "婚约→成婚状态机（D06 §4.4）；本边只记成婚实写",
+   "evidence": [
+    {
+     "loc": "004:25",
+     "type": "E1明文",
+     "rule": "04f-L20"
+    }
+   ],
+   "count": 1,
+   "loc": "004:25",
+   "chapter": 4,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "还剑奇情录"
+   ],
+   "locs": [
+    "004:25"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "还剑奇情录#R0057"
+  }
+ ],
+ "derived": {
+  "tongmen_edges": [
+   {
+    "subject": "上官天野",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "毕凌风",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "云舞阳"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "009:13",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "009:14",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "009:13",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "还剑奇情录"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "009:13",
+     "009:14"
+    ],
+    "id": "还剑奇情录#R0040"
+   }
+  ],
+  "tongmen_pairs": [
+   {
+    "a": "上官天野",
+    "b": "毕凌风",
+    "master": "云舞阳",
+    "rule": "B3",
+    "confidence": "weak"
+   }
+  ],
+  "lineage_labels": [
+   {
+    "kind": "长幼",
+    "person": "毕凌风",
+    "value": "师兄/姐（按拜师定位符时序）",
+    "relative_to": "上官天野",
+    "rule": "B5",
+    "confidence": "weak",
+    "basis": "拜师定位符时序，性别未判"
+   }
+  ],
+  "trees": {
+   "master_tree": {
+    "nodes": [
+     {
+      "person": "上官天野",
+      "master": "云素素",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "云素素",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "云舞阳",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "张士诚",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "彭莹玉",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "毕凌风",
+      "master": "张士诚",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "陈玄机",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     }
+    ],
+    "roots": [
+     "云素素",
+     "云舞阳",
+     "张士诚",
+     "彭莹玉",
+     "陈玄机"
+    ],
+    "edge_count": 6
+   },
+   "blood_tree": {
+    "nodes": [],
+    "note": "亲属/血缘抽取不在 04f 27 行联动内，留候选池待语式扩展（本脚本不产出）"
+   }
+  },
+  "cycles": [],
+  "reciprocal_conflicts": [
+   [
+    "智圆文",
+    "上官天野",
+    "008:15",
+    "008:16"
+   ],
+   [
+    "上官天野",
+    "智圆文",
+    "008:16",
+    "008:15"
+   ],
+   [
+    "上官天野",
+    "毕凌风",
+    "009:14",
+    "009:34"
+   ],
+   [
+    "毕凌风",
+    "上官天野",
+    "009:34",
+    "009:14"
+   ]
+  ]
+ },
+ "dropped": {
+  "total": 35,
+  "by_reason": {
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 2,
+   "实体缺失（04f#5 点穴须施者/受者）": 3,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 5,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 2,
+   "实体缺失（04f#26 交手须双方人物角色）": 4,
+   "强制档实体缺失（掌握主语人物未在句）": 1,
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 1,
+   "强制档实体缺失（04f#6 拜师双方未同现）": 2,
+   "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库": 1,
+   "自指/主宾同一实体": 10,
+   "互为师徒环（D06 §9.3 无环拦截）：双向证据冲突，双放弃待人工裁定": 4
+  },
+  "samples": [
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "002:3"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "003:44"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "003:44"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "005:30"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "005:42"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "005:45"
+   },
+   {
+    "reason": "强制档实体缺失（掌握主语人物未在句）",
+    "rule": "04f-L01",
+    "rule_row": 1,
+    "predicate": "掌握",
+    "note": "",
+    "loc": "007:59"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "008:28"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "008:31"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "008:32"
+   },
+   {
+    "reason": "强制档实体缺失（04f#6 拜师双方未同现）",
+    "rule": "04f-L06",
+    "rule_row": 6,
+    "predicate": "师承",
+    "note": "",
+    "loc": "008:38"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "008:40"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "008:40"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "009:15"
+   },
+   {
+    "reason": "强制档实体缺失（04f#6 拜师双方未同现）",
+    "rule": "04f-L06",
+    "rule_row": 6,
+    "predicate": "师承",
+    "note": "",
+    "loc": "009:33"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "009:77"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "010:21"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "010:61"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "010:62"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "013:4"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "013:39"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "002:81"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "003:35"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "003:49"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "007:45"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:45"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:60"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "010:18"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "010:22"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "010:48"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "011:81"
+   },
+   {
+    "reason": "互为师徒环（D06 §9.3 无环拦截）：双向证据冲突，双放弃待人工裁定",
+    "rule": "语式-师承",
+    "rule_row": "B",
+    "predicate": "师承",
+    "loc": "008:15",
+    "note": "智圆文→上官天野@008:15 / 上官天野→智圆文@008:16"
+   },
+   {
+    "reason": "互为师徒环（D06 §9.3 无环拦截）：双向证据冲突，双放弃待人工裁定",
+    "rule": "语式-师承",
+    "rule_row": "B",
+    "predicate": "师承",
+    "loc": "008:16",
+    "note": "上官天野→智圆文@008:16 / 智圆文→上官天野@008:15"
+   },
+   {
+    "reason": "互为师徒环（D06 §9.3 无环拦截）：双向证据冲突，双放弃待人工裁定",
+    "rule": "语式-师承",
+    "rule_row": "B",
+    "predicate": "师承",
+    "loc": "009:14",
+    "note": "上官天野→毕凌风@009:14 / 毕凌风→上官天野@009:34"
+   },
+   {
+    "reason": "互为师徒环（D06 §9.3 无环拦截）：双向证据冲突，双放弃待人工裁定",
+    "rule": "语式-师承",
+    "rule_row": "B",
+    "predicate": "师承",
+    "loc": "009:34",
+    "note": "毕凌风→上官天野@009:34 / 上官天野→毕凌风@009:14"
+   }
+  ]
+ },
+ "validation": {
+  "hard_errors": [],
+  "warnings": [
+   {
+    "check": "互斥",
+    "rule": "D06 §4.2",
+    "detail": "上官天野 存在 2 位师父 ['云素素', '云舞阳']，active 唯一性须 N4 时间轴复核"
+   },
+   {
+    "check": "互斥",
+    "rule": "D06 §4.2",
+    "detail": "毕凌风 存在 4 位师父 ['云舞阳', '张士诚', '彭莹玉', '陈玄机']，active 唯一性须 N4 时间轴复核"
+   },
+   {
+    "check": "无环(已消解)",
+    "rule": "D06 §9.3",
+    "detail": "互为师徒对 智圆文 ⇄ 上官天野（008:15/008:16）双放弃，待人工裁定"
+   },
+   {
+    "check": "无环(已消解)",
+    "rule": "D06 §9.3",
+    "detail": "互为师徒对 上官天野 ⇄ 智圆文（008:16/008:15）双放弃，待人工裁定"
+   },
+   {
+    "check": "无环(已消解)",
+    "rule": "D06 §9.3",
+    "detail": "互为师徒对 上官天野 ⇄ 毕凌风（009:14/009:34）双放弃，待人工裁定"
+   },
+   {
+    "check": "无环(已消解)",
+    "rule": "D06 §9.3",
+    "detail": "互为师徒对 毕凌风 ⇄ 上官天野（009:34/009:14）双放弃，待人工裁定"
+   }
+  ],
+  "checks": [
+   "无环(师承)",
+   "方向(徒→师/无互为师徒)",
+   "类型(55 谓词主宾)",
+   "证据级(E1 名分类)",
+   "自指",
+   "传闻(§8.3)",
+   "共现生边(交手≠敌对)",
+   "时序(师承 vs 隶属终止, 定位符级)"
+  ],
+  "pending": [
+   "N4 时间轴未上线：active 互斥（配偶唯一/师承唯一）无法按时段判定，只做定位符级提示",
+   "亲属/血缘树：04f 27 行联动无亲属触发词，未产出",
+   "仇怨：event_ids 必填（D06#44）而事件层 N4/D03 未产出"
+  ]
+ },
+ "rows_stats": {
+  "1": {
+   "rule": "04f-L01",
+   "predicate": "掌握",
+   "triggers": "练成/学会/悟出",
+   "strength": "强制",
+   "candidates": 5,
+   "emitted": 4,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "2": {
+   "rule": "04f-L02",
+   "predicate": "传授",
+   "triggers": "传授（具体武功名在句）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 2,
+   "extension": false,
+   "note": ""
+  },
+  "3": {
+   "rule": "04f-L03",
+   "predicate": null,
+   "triggers": "授艺/教（泛指）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "4": {
+   "rule": "04f-L04",
+   "predicate": "掌握",
+   "triggers": "偷学/窃艺",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "5": {
+   "rule": "04f-L05",
+   "predicate": "点穴",
+   "triggers": "点穴（穴道名在句）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 3,
+   "extension": false,
+   "note": ""
+  },
+  "6": {
+   "rule": "04f-L06",
+   "predicate": "师承",
+   "triggers": "拜师/拜…为师",
+   "strength": "强制",
+   "candidates": 10,
+   "emitted": 5,
+   "dropped": 2,
+   "extension": false,
+   "note": ""
+  },
+  "7": {
+   "rule": "04f-L07",
+   "predicate": "师承",
+   "triggers": "收徒/授艺（具体对象）",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "8": {
+   "rule": "04f-L08",
+   "predicate": "杀害",
+   "triggers": "杀/杀死/斩杀",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 5,
+   "extension": false,
+   "note": ""
+  },
+  "9": {
+   "rule": "04f-L09",
+   "predicate": "治愈",
+   "triggers": "疗伤/救活/治愈",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "10": {
+   "rule": "04f-L10",
+   "predicate": "投毒",
+   "triggers": "下毒/投毒（致害成立）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "11": {
+   "rule": "04f-L11",
+   "predicate": "转移",
+   "triggers": "赠/赠送/相赠",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "12": {
+   "rule": "04f-L12",
+   "predicate": "转移",
+   "triggers": "夺/抢（夺物义）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "13": {
+   "rule": "04f-L13b",
+   "predicate": "转移",
+   "triggers": "借/还",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "14": {
+   "rule": "04f-L14",
+   "predicate": "制造",
+   "triggers": "铸/炼制/打造",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "15": {
+   "rule": "04f-L15",
+   "predicate": null,
+   "triggers": "折断/烧毁/焚毁",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "16": {
+   "rule": "04f-L16",
+   "predicate": "组织成员",
+   "triggers": "拜师→◆组织",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "17": {
+   "rule": "04f-L17",
+   "predicate": "任职",
+   "triggers": "任命/继任/接任",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "18": {
+   "rule": "04f-L18",
+   "predicate": "隶属终止",
+   "triggers": "逐出/叛出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "19": {
+   "rule": "04f-L19",
+   "predicate": "结义",
+   "triggers": "结义/结拜",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "20": {
+   "rule": "04f-L20",
+   "predicate": "配偶",
+   "triggers": "娶/嫁/成亲",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "21": {
+   "rule": "04f-L21",
+   "predicate": "到达",
+   "triggers": "抵达/来到（行程级）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "22": {
+   "rule": "04f-L22",
+   "predicate": "离开",
+   "triggers": "离开（行程级）",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 2,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "23": {
+   "rule": "04f-L23",
+   "predicate": "押送",
+   "triggers": "押解/解往",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "24": {
+   "rule": "04f-L24",
+   "predicate": "到达",
+   "triggers": "潜入/混入",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": "04f『进入』无 D06 同名谓词，按 §7.3 对号入座最近落位 #18 到达（weak）"
+  },
+  "25": {
+   "rule": "04f-L25",
+   "predicate": null,
+   "triggers": "追踪/跟踪（行程级）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "26": {
+   "rule": "04f-L26",
+   "predicate": "交手",
+   "triggers": "交手/比武",
+   "strength": "建议",
+   "candidates": 2,
+   "emitted": 1,
+   "dropped": 4,
+   "extension": false,
+   "note": ""
+  },
+  "27": {
+   "rule": "04f-L27",
+   "predicate": null,
+   "triggers": "使用阵法（结阵/布阵）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "X-RESCUE": {
+   "rule": "X-RESCUE",
+   "predicate": "解救",
+   "triggers": "救/救出/救下/营救",
+   "strength": "扩展",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": true,
+   "note": "04f#9 只列疗伤/救活/治愈；『救』按 D06#51 解救 候选（E2）"
+  },
+  "X-ARRIVE": {
+   "rule": "X-ARRIVE",
+   "predicate": "到达",
+   "triggers": "■ 行程动词（回到/走到/走进/赶到…）",
+   "strength": "扩展",
+   "candidates": 8,
+   "emitted": 6,
+   "dropped": 0,
+   "extension": true,
+   "note": ""
+  },
+  "X-LEAVE": {
+   "rule": "X-LEAVE",
+   "predicate": "离开",
+   "triggers": "■ 离开类动词（走出/退出/逃出…）",
+   "strength": "扩展",
+   "candidates": 4,
+   "emitted": 4,
+   "dropped": 0,
+   "extension": true,
+   "note": ""
+  },
+  "X-COMBAT": {
+   "rule": "X-COMBAT",
+   "predicate": "交手",
+   "triggers": "⊞ 攻击/防御动词（近邻双角色）",
+   "strength": "扩展",
+   "candidates": 66,
+   "emitted": 30,
+   "dropped": 0,
+   "extension": true,
+   "note": ""
+  }
+ }
+}

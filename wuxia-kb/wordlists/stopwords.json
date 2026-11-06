@@ -1,0 +1,215 @@
+{
+ "meta": {
+  "schema": "wordlist-v1",
+  "generated": "2026-11-03",
+  "source": "stopwords_source.md",
+  "spec_version": "0.3-draft",
+  "totals": {
+   "all": 18,
+   "auto": 0,
+   "review": 18,
+   "watch": 0,
+   "auto_ready": 0
+  }
+ },
+ "items": [
+  {
+   "surface": "那汉子",
+   "canonical": "那汉子",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "01g 负规则一示例"
+  },
+  {
+   "surface": "老者",
+   "canonical": "老者",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "01g 负规则一示例"
+  },
+  {
+   "surface": "那姑娘",
+   "canonical": "那姑娘",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "01g 负规则一示例"
+  },
+  {
+   "surface": "蒙面人",
+   "canonical": "蒙面人",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "01g 负规则一示例"
+  },
+  {
+   "surface": "众人",
+   "canonical": "众人",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "04f 不标清单"
+  },
+  {
+   "surface": "群盗",
+   "canonical": "群盗",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "04f 不标清单"
+  },
+  {
+   "surface": "众镖师",
+   "canonical": "众镖师",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "01g 负规则一/实验实测误标"
+  },
+  {
+   "surface": "白马少年",
+   "canonical": "白马少年",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "qwen 实验 v1 不标清单"
+  },
+  {
+   "surface": "虬髯汉子",
+   "canonical": "虬髯汉子",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "qwen 实验 v1 不标清单"
+  },
+  {
+   "surface": "矮胖老头",
+   "canonical": "矮胖老头",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "qwen 实验 v1 不标清单"
+  },
+  {
+   "surface": "老镖头",
+   "canonical": "老镖头",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "qwen 实验 v1 不标清单"
+  },
+  {
+   "surface": "女魔头",
+   "canonical": "女魔头",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "评价代称（01g：贬称须别名证据才标）"
+  },
+  {
+   "surface": "红面老人",
+   "canonical": "红面老人",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "qwen 实验 v1 不标清单"
+  },
+  {
+   "surface": "手下",
+   "canonical": "手下",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "04f 通名与泛量词"
+  },
+  {
+   "surface": "弟子们",
+   "canonical": "弟子们",
+   "type": "泛称",
+   "tier": "review",
+   "status": "已核准",
+   "conf": "ok",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "泛量复数"
+  },
+  {
+   "surface": "群豪",
+   "canonical": "群豪",
+   "type": "泛称",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "doc05 模式词表（群豪/众弟子族），试点复核"
+  },
+  {
+   "surface": "众弟子",
+   "canonical": "众弟子",
+   "type": "泛称",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "doc05 模式词表"
+  },
+  {
+   "surface": "各派掌门",
+   "canonical": "各派掌门",
+   "type": "泛称",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "doc05 模式词表（复数集合，单数掌门归职衔）"
+  }
+ ]
+}

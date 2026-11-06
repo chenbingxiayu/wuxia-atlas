@@ -1,0 +1,173 @@
+{
+ "meta": {
+  "schema": "wordlist-v1",
+  "generated": "2026-11-03",
+  "source": "structure_markers_source.md",
+  "spec_version": "0.3-draft",
+  "totals": {
+   "all": 12,
+   "auto": 2,
+   "review": 4,
+   "watch": 6,
+   "auto_ready": 0
+  }
+ },
+ "items": [
+  {
+   "surface": "`第N回`（行首）",
+   "canonical": "`第N回`（行首）",
+   "type": "套语",
+   "tier": "auto",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "强｜回目行标志｜第二确认：行首 + 章回号模式｜实测:32/32"
+  },
+  {
+   "surface": "`欲[知/如]后事如何` + `[请听/且听/且看]下回分解`",
+   "canonical": "`欲[知/如]后事如何` + `[请听/且听/且看]下回分解`",
+   "type": "套语",
+   "tier": "auto",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "强｜回末套语（回末标志）｜第二确认：回末位置｜实测:27"
+  },
+  {
+   "surface": "`正是`（行首）",
+   "canonical": "`正是`（行首）",
+   "type": "套语",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1-32"
+   ],
+   "version": "0.3-draft",
+   "note": "弱｜对句引出词｜第二确认：后接对仗两联（支路 C 过门槛）｜实测:31"
+  },
+  {
+   "surface": "`调寄/右调 + 词牌名`",
+   "canonical": "`调寄/右调 + 词牌名`",
+   "type": "套语",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:27"
+   ],
+   "version": "0.3-draft",
+   "note": "弱｜词牌署名（G0 普查上调为真实信号）｜第二确认：前接韵文候选块｜实测:白发32回=1；全库=27"
+  },
+  {
+   "surface": "`且说`（行首）",
+   "canonical": "`且说`（行首）",
+   "type": "套语",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:302"
+   ],
+   "version": "0.3-draft",
+   "note": "弱｜场景/叙事线切换候选｜第二确认：§7.3 双转移判定｜实测:白发32回=29；全库=302"
+  },
+  {
+   "surface": "`却说`（行首）",
+   "canonical": "`却说`（行首）",
+   "type": "套语",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:7"
+   ],
+   "version": "0.3-draft",
+   "note": "弱｜同且说（低频变体）｜第二确认：同上｜实测:白发32回=5；全库=7"
+  },
+  {
+   "surface": "`看官（听说/须知）`",
+   "canonical": "`看官（听说/须知）`",
+   "type": "套语",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:27"
+   ],
+   "version": "0.3-draft",
+   "note": "弱（低频，G0 普查上调）｜说书旁白候选｜第二确认：行首 + 面向读者第二人称｜实测:白发32回=1；全库=27"
+  },
+  {
+   "surface": "`但见`",
+   "canonical": "`但见`",
+   "type": "套语",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:1909"
+   ],
+   "version": "0.3-draft",
+   "note": "**伪**（普查坐实）｜叙事动词（\"但见剑光\"）｜第二确认：仅当后接独立成段韵文/对联｜实测:白发32回=39；全库=1909"
+  },
+  {
+   "surface": "`只见`",
+   "canonical": "`只见`",
+   "type": "套语",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:7549"
+   ],
+   "version": "0.3-draft",
+   "note": "**伪**（普查坐实，最强伪信号）｜第二确认：同上｜实测:白发32回=190；全库=7549"
+  },
+  {
+   "surface": "有诗为证",
+   "canonical": "有诗为证",
+   "type": "套语",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:1"
+   ],
+   "version": "0.3-draft",
+   "note": "缺位监视转正：普查实测 1 次（孤立个案），暂不设围栏类型，逐例登记｜第二确认：—｜实测:白发32回=0；全库=1"
+  },
+  {
+   "surface": "花开两朵各表一枝",
+   "canonical": "花开两朵各表一枝",
+   "type": "套语",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:38"
+   ],
+   "version": "0.3-draft",
+   "note": "缺位监视转正：普查实测 38 次（非白发系书目）；不设围栏类型，作分线叙事参考信号｜第二确认：—｜实测:白发32回=0；全库=38"
+  },
+  {
+   "surface": "不在话下",
+   "canonical": "不在话下",
+   "type": "套语",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "全库:40"
+   ],
+   "version": "0.3-draft",
+   "note": "缺位监视转正：普查实测 40 次；叙事收束套语，不设围栏类型｜第二确认：—｜实测:白发32回=0；全库=40"
+  }
+ ]
+}

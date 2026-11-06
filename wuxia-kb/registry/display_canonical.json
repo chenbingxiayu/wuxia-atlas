@@ -1,0 +1,50 @@
+{
+ "meta": {
+  "schema": "display-canonical-v1",
+  "generated": "2026-11-05T17:42:00+08:00",
+  "policy": "展示层（display）与规范层（canonical）分离：默认 display==canonical（未登记的条目直接回落，不在此表重复 452 条恒等映射）；仅对“公众认知名 ≠ 规范名”的实体登记覆盖，供站点/导出展示文案使用。display 不参与身份归并、registry 合并、accept 管道三来源判定、concordance registration 或任何 canonical 字段。priority=1 表示强制覆盖（预留多候选排序；数字越小优先级越高）。扩展方式：在 entries 追加 {canonical(必须存在于 registry/entities.json), display, type, scope, priority, reason} 即可，无需改导出器。",
+  "source": "skills/SKILL_03b_人名消歧_武侠版.md 附录 B（B-1 帝王展示年号 / B-2 飞红巾系列 display）；docs/55 §一/§五.2；canonical 取值对齐 registry/entities.json（452 条，2026-11-05 task-12 校准后）"
+ },
+ "entries": [
+  {
+   "canonical": "玄烨",
+   "display": "康熙",
+   "type": "@",
+   "scope": "series",
+   "priority": 1,
+   "reason": "B-1 帝王展示年号：清圣祖以年号「康熙」为读者认知最高频名；规范层 canonical 保留史实本名玄烨（task-8 校准，SKILL_03b §8.1/§8.5#1），display 仅影响展示文案。"
+  },
+  {
+   "canonical": "朱由检",
+   "display": "崇祯",
+   "type": "@",
+   "scope": "series",
+   "priority": 1,
+   "reason": "B-1 帝王展示年号：明思宗以年号「崇祯」为读者认知最高频名；canonical 保留史实本名朱由检（task-8 合并三条同人条目，SKILL_03b §8.1定版表）。"
+  },
+  {
+   "canonical": "福临",
+   "display": "顺治",
+   "type": "@",
+   "scope": "series",
+   "priority": 1,
+   "reason": "B-1 帝王展示年号：清世祖以年号「顺治」为读者认知最高频名；canonical 保留史实本名福临（task-8 合并 E31206/E43934/E63886 三条，SKILL_03b §8.5#2）。"
+  },
+  {
+   "canonical": "胤禛",
+   "display": "雍正",
+   "type": "@",
+   "scope": "series",
+   "priority": 1,
+   "reason": "B-1 帝王展示年号：清世宗以年号「雍正」为读者认知最高频名；canonical 保留史实本名胤禛（task-8 新增 E118269，SKILL_03b §8.5#3）。"
+  },
+  {
+   "canonical": "哈玛雅",
+   "display": "飞红巾",
+   "type": "@",
+   "scope": "series",
+   "priority": 1,
+   "reason": "B-2 系列展示：飞红巾为三书沿用、读者认知最高频名（塞外/七剑/白发），书内 canonical=哈玛雅（task-12 双层 canonical，SKILL_03b §8.5#4）；系列 display 只用于展示，不改 canonical。"
+  }
+ ]
+}

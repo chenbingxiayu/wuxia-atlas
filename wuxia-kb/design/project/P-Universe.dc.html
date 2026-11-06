@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>页面组装 · 宇宙门户</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#f5efe4;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  a{color:#34546e;text-decoration:none}a:hover{color:#a63a2b}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 48px}
+  .nav{display:flex;gap:20px;align-items:center;font-size:14px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.7}
+  .badge{display:inline-block;border:1.5px solid;border-radius:3px;padding:0 8px;font-size:12px}
+  .card{border:1px solid #b9ab90;border-radius:4px;padding:14px 18px;background:#fbf8ef;display:block;color:#2b2b2b}
+  .card:hover{border-color:#a63a2b}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:1px 10px;font-size:12px;background:#f5efe4;color:#5a544a;margin:2px}
+  h2.sec{font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:20px;margin:32px 0 10px;border-bottom:1px solid #d8cdb8;padding-bottom:5px;letter-spacing:2px}
+</style>
+</helmet>
+<div style="min-height:100%;display:flex;flex-direction:column">
+  <header style="border-bottom:1px solid #d8cdb8;background:#fbf8ef"><div class="wrap nav" style="height:52px">
+    <span style="font-family:'Ma Shan Zheng','KaiTi','STKaiti',cursive;font-size:24px;color:#a63a2b;margin-right:18px">江湖图志</span>
+    <a href="#">作品</a><a href="#" style="color:#a63a2b;font-weight:700">宇宙</a><a href="#">人物</a><a href="#">武功</a><a href="#">名物</a><a href="#">门派</a><a href="#">地图</a><a href="#">武评</a><a href="#">游戏</a><a href="#">搜索</a><a href="#">关于</a></div></header>
+
+  <main class="wrap" style="flex:1;padding-bottom:48px">
+    <p class="lab" style="margin:14px 0 0"><a href="#">首页</a> / 宇宙</p>
+    <h1 style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:36px;letter-spacing:3px;margin:6px 0 4px">梁羽生宇宙</h1>
+    <p style="color:#5a544a;font-size:15px">六条系列线路、34 部作品、22 位跨书换乘人物。哪条线怎么读、按什么顺序读、人物怎么串起来——这张宇宙地图一次说清，每个结论都带原著定位。</p>
+
+    <div class="card" style="margin-top:16px;padding:18px 22px">
+      <svg viewBox="0 0 1100 250" style="width:100%;height:auto;display:block" role="img" aria-label="宇宙地铁图">
+        <g><text x="4" y="26" font-size="12" font-weight="700" fill="#c0392b">天山</text><line x1="55" y1="22" x2="1050" y2="22" stroke="#c0392b" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="85" cy="22" r="9" fill="#5e7d5a" stroke="#c0392b" stroke-width="3"/><text x="85" y="46" font-size="10.5" text-anchor="middle">白发魔女传</text>
+          <circle cx="147" cy="22" r="7" fill="#fbf8ef" stroke="#c0392b" stroke-width="3"/><text x="147" y="46" font-size="10.5" text-anchor="middle" fill="#8c8477">塞外奇侠传</text>
+          <circle cx="209" cy="22" r="9" fill="#5e7d5a" stroke="#c0392b" stroke-width="3"/><text x="209" y="46" font-size="10.5" text-anchor="middle">七剑下天山</text>
+          <circle cx="271" cy="22" r="7" fill="#fbf8ef" stroke="#c0392b" stroke-width="3"/><text x="271" y="46" font-size="10.5" text-anchor="middle" fill="#8c8477">江湖三女侠</text>
+          <circle cx="333" cy="22" r="7" fill="#fbf8ef" stroke="#c0392b" stroke-width="3"/><text x="333" y="46" font-size="10.5" text-anchor="middle" fill="#8c8477">冰川天女传</text></g>
+        <g><text x="4" y="86" font-size="12" font-weight="700" fill="#2980b9">明代</text><line x1="55" y1="82" x2="500" y2="82" stroke="#2980b9" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="85" cy="82" r="7" fill="#fbf8ef" stroke="#2980b9" stroke-width="3"/><text x="85" y="106" font-size="10.5" text-anchor="middle" fill="#8c8477">还剑奇情录</text>
+          <circle cx="147" cy="82" r="7" fill="#fbf8ef" stroke="#2980b9" stroke-width="3"/><text x="147" y="106" font-size="10.5" text-anchor="middle" fill="#8c8477">萍踪侠影录</text></g>
+        <g><text x="4" y="146" font-size="12" font-weight="700" fill="#8e44ad">大唐</text><line x1="55" y1="142" x2="360" y2="142" stroke="#8e44ad" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="85" cy="142" r="7" fill="#fbf8ef" stroke="#8e44ad" stroke-width="3"/><text x="85" y="166" font-size="10.5" text-anchor="middle" fill="#8c8477">大唐游侠传</text></g>
+        <g><text x="4" y="206" font-size="12" font-weight="700" fill="#27ae60">宋代</text><line x1="55" y1="202" x2="620" y2="202" stroke="#27ae60" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="85" cy="202" r="7" fill="#fbf8ef" stroke="#b9b1a2" stroke-width="3" stroke-dasharray="4 3"/><text x="85" y="226" font-size="10.5" text-anchor="middle" fill="#8c8477">挑灯看剑录*</text></g>
+        <g><text x="4" y="246" font-size="12" font-weight="700" fill="#7f8c8d">晚清</text><line x1="55" y1="242" x2="300" y2="242" stroke="#7f8c8d" stroke-width="5" stroke-linecap="round"/></g>
+      </svg>
+      <div style="display:flex;justify-content:space-between;padding:6px 8px">
+        <span class="lab">图例：实心=深度解析 · 金色=建设中 · 虚线=存目（缺佚）</span>
+        <span class="lab"><a href="#">线路导读（入坑起点 · 巅峰之作 · 可跳过）→</a></span>
+      </div>
+    </div>
+
+    <h2 class="sec">三件套</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px">
+      <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">编年史</b><p class="lab" style="margin:6px 0 0">故事年代与出版年份双轨对照：先有故事还是先有书，一眼分清。附事件年谱。</p></a>
+      <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">AB 路径</b><p class="lab" style="margin:6px 0 0">任意两位侠客的最短关联，每一步都能翻回原文对质。</p></a>
+      <a class="card" href="#"><b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">互文图谱</b><p class="lab" style="margin:6px 0 0">「事见拙著《X》」——梁羽生亲笔写下的跨书接口，任何百科都没有。</p></a>
+    </div>
+
+    <h2 class="sec">谁才是梁书第一主角？ <span class="lab">按名目出现次数统计（含对白提及）· 别名绰号未归并——玉罗刹与练霓裳分列</span></h2>
+    <div class="card" style="text-align:center;padding:18px">
+      <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:32px;color:#a63a2b">蓬莱魔女</span>
+      <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:25px;color:#34546e">金世遗</span>
+      <span style="font-size:20px;color:#5a544a">江海天</span>
+      <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:22px;color:#a63a2b">张丹枫</span>
+      <span style="font-size:17px;color:#5a544a">金逐流</span>
+      <span style="font-size:16px;color:#8c8477">陈石星</span>
+      <span style="font-size:15px;color:#8c8477">玉罗刹</span>
+      <div class="lab" style="margin-top:10px;border-top:1px dashed #d8cdb8;padding-top:8px">绰号比本名更响也是江湖的一部分 · 点击词目可搜索</div>
+    </div>
+
+    <h2 class="sec">换乘站 · 跨书人物 <span class="lab">宇宙的骨架 · 22 人</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+      <a class="card" href="#"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:15px">练霓裳（白发魔女）</b><span class="lab">档案 →</span></div>
+        <div class="lab" style="margin-top:6px;line-height:2">白发·玉罗刹绿林领袖 → 塞外·白头隐居 → 七剑·已成传说<br><span class="chip">白发魔女传</span><span class="chip">塞外奇侠传</span><span class="chip">七剑下天山</span></div></a>
+      <a class="card" href="#"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:15px">岳鸣珂 · 晦明禅师</b><span class="lab">档案 →</span></div>
+        <div class="lab" style="margin-top:6px;line-height:2">白发·霍天都弟子 → 七剑·天山掌门铸剑<br><span class="chip">白发魔女传</span><span class="chip">七剑下天山</span></div></a>
+      <a class="card" href="#"><div style="display:flex;justify-content:space-between;align-items:baseline"><b style="font-size:15px">周青</b><span class="lab">档案 →</span></div>
+        <div class="lab" style="margin-top:6px;line-height:2">三女侠·凌未风记名弟子，追风剑中原唯一传人<br><span class="chip">江湖三女侠</span></div></a>
+    </div>
+
+    <h2 class="sec">尚无定论的事 <span class="lab">证据已收集 · 结论待考</span></h2>
+    <ul style="list-style:none;padding:0;font-size:14px;line-height:2.2">
+      <li>①《冰魄寒光剑》与《江湖三女侠》的故事先后（均界于七剑与冰川之间）——<span class="chip">冰魄寒光剑</span><span class="chip">江湖三女侠</span></li>
+      <li>②《草莽龙蛇传》与《龙虎斗京华》的故事先后（草莽·010「后来」线索两义）——<span class="chip">草莽龙蛇传</span></li>
+      <li>③《飞凤潜龙》在宋代线的位置：穴道铜人来历被《武林天骄》回指，疑最早，待考。</li>
+    </ul>
+    <p class="lab">这些先后与关系问题，证据已收集、结论待考——考订表持续更新。</p>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1360,"height":1900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

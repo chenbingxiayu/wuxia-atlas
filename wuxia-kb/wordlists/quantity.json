@@ -1,0 +1,413 @@
+{
+ "meta": {
+  "schema": "wordlist-v1",
+  "generated": "2026-11-03",
+  "source": "quantity_source.md",
+  "spec_version": "0.3-draft",
+  "totals": {
+   "all": 36,
+   "auto": 0,
+   "review": 36,
+   "watch": 0,
+   "auto_ready": 0
+  }
+ },
+ "items": [
+  {
+   "surface": "招",
+   "canonical": "招",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "武功计次（一招/这招）；进数字+量词正则"
+  },
+  {
+   "surface": "式",
+   "canonical": "式",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "招式计次（这一式）；与 ☆ 武功名易混，语境审"
+  },
+  {
+   "surface": "两",
+   "canonical": "两",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "银两计价（三两银子）；兼作数词，语境审"
+  },
+  {
+   "surface": "里",
+   "canonical": "里",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "路程（三百里）；进数字+量词正则"
+  },
+  {
+   "surface": "年",
+   "canonical": "年",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "年岁/时长（二十年功力）；与 % 时间分工：数量侧重\"数值+单位\""
+  },
+  {
+   "surface": "斤",
+   "canonical": "斤",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "重量（五十斤铁）"
+  },
+  {
+   "surface": "丈",
+   "canonical": "丈",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "长度/高度（一丈开外）"
+  },
+  {
+   "surface": "尺",
+   "canonical": "尺",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "长度（三尺青锋）"
+  },
+  {
+   "surface": "寸",
+   "canonical": "寸",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "长度（七寸）"
+  },
+  {
+   "surface": "石",
+   "canonical": "石",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "容量/粮食（一石米）"
+  },
+  {
+   "surface": "斛",
+   "canonical": "斛",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "容量（十斛）"
+  },
+  {
+   "surface": "柄",
+   "canonical": "柄",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "兵器计件（两柄短剑）；与 • 器物分工见 01g"
+  },
+  {
+   "surface": "骑",
+   "canonical": "骑",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "人马计数（五百骑）"
+  },
+  {
+   "surface": "名",
+   "canonical": "名",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "计人（三名高手）；高频歧义，语境审"
+  },
+  {
+   "surface": "成",
+   "canonical": "成",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "比例（十成把握/三成内力）"
+  },
+  {
+   "surface": "折",
+   "canonical": "折",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "比例/折扣（七折）"
+  },
+  {
+   "surface": "匹",
+   "canonical": "匹",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "马匹计件（八匹马）"
+  },
+  {
+   "surface": "张",
+   "canonical": "张",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "平面物（一张告示/三张弓）"
+  },
+  {
+   "surface": "把",
+   "canonical": "把",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "有柄物（一把戒刀）"
+  },
+  {
+   "surface": "枚",
+   "canonical": "枚",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "小件（三枚暗器）"
+  },
+  {
+   "surface": "锭",
+   "canonical": "锭",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "银锭计件（十锭银子）"
+  },
+  {
+   "surface": "担",
+   "canonical": "担",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "挑载计量（百担粮草）"
+  },
+  {
+   "surface": "斗",
+   "canonical": "斗",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "容量（一斗酒）"
+  },
+  {
+   "surface": "贯",
+   "canonical": "贯",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "钱串（一千贯）"
+  },
+  {
+   "surface": "层",
+   "canonical": "层",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "功力层级（第七层）；与 ^ 内功层级易混，语境审"
+  },
+  {
+   "surface": "重",
+   "canonical": "重",
+   "type": "量词",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "功法层级（第一重）"
+  },
+  {
+   "surface": "名高手",
+   "canonical": "名高手",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "\"N名高手\"整串召回；勿拆\"高手\"入实体层"
+  },
+  {
+   "surface": "十成",
+   "canonical": "十成",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "比例惯用语（十成把握）"
+  },
+  {
+   "surface": "数十",
+   "canonical": "数十",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "模糊数量（数十名）"
+  },
+  {
+   "surface": "数百",
+   "canonical": "数百",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "模糊数量（数百骑）"
+  },
+  {
+   "surface": "数千",
+   "canonical": "数千",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "模糊数量（数千教众）"
+  },
+  {
+   "surface": "数万",
+   "canonical": "数万",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "模糊数量（数万斤）"
+  },
+  {
+   "surface": "上百",
+   "canonical": "上百",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "模糊数量（上百弟子）"
+  },
+  {
+   "surface": "上千",
+   "canonical": "上千",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "模糊数量（上千斤）"
+  },
+  {
+   "surface": "好几",
+   "canonical": "好几",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "模糊数量（好几招）"
+  },
+  {
+   "surface": "半数",
+   "canonical": "半数",
+   "type": "模式",
+   "tier": "review",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [],
+   "version": "0.3-draft",
+   "note": "比例（折损半数）"
+  }
+ ]
+}

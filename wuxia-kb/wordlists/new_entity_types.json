@@ -1,0 +1,3501 @@
+{
+ "meta": {
+  "schema": "wordlist-v1",
+  "generated": "2026-11-05",
+  "source": "new_entity_types_source.md",
+  "spec_version": "0.3-draft",
+  "totals": {
+   "all": 268,
+   "auto": 0,
+   "review": 239,
+   "watch": 29,
+   "auto_ready": 0
+  }
+ },
+ "items": [
+  {
+   "surface": "七星手",
+   "canonical": "七星手",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "三转法轮",
+   "canonical": "三转法轮",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "上下交征",
+   "canonical": "上下交征",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=武当掌法｜kb招式表"
+  },
+  {
+   "surface": "倒卷星河",
+   "canonical": "倒卷星河",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "倒挂冰河",
+   "canonical": "倒挂冰河",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:28"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "倒洒金钱",
+   "canonical": "倒洒金钱",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=毒砂掌｜kb招式表"
+  },
+  {
+   "surface": "倒海翻江",
+   "canonical": "倒海翻江",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=伏虎拳｜kb招式表"
+  },
+  {
+   "surface": "凤凰展翅",
+   "canonical": "凤凰展翅",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=五虎断门刀｜kb招式表"
+  },
+  {
+   "surface": "剑挟风雷",
+   "canonical": "剑挟风雷",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:27"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "回风扫柳",
+   "canonical": "回风扫柳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:25"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=连环三鞭｜kb招式表"
+  },
+  {
+   "surface": "如封似闭",
+   "canonical": "如封似闭",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "山舞银蛇",
+   "canonical": "山舞银蛇",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=七十二手连环夺命剑｜kb招式表"
+  },
+  {
+   "surface": "带马归槽",
+   "canonical": "带马归槽",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "旋风扫叶",
+   "canonical": "旋风扫叶",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "无常夺命",
+   "canonical": "无常夺命",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "星横斗转",
+   "canonical": "星横斗转",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "横身打虎",
+   "canonical": "横身打虎",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=阴阳双撞掌｜kb招式表"
+  },
+  {
+   "surface": "毒蛇吐信",
+   "canonical": "毒蛇吐信",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "泰山压顶",
+   "canonical": "泰山压顶",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=轻功｜kb招式表"
+  },
+  {
+   "surface": "流星疾驶",
+   "canonical": "流星疾驶",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:13"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "渔夫晒网",
+   "canonical": "渔夫晒网",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "猛鸡啄栗",
+   "canonical": "猛鸡啄栗",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "猛鸡夺粟",
+   "canonical": "猛鸡夺粟",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "玉女穿针",
+   "canonical": "玉女穿针",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:23"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "白猿探路",
+   "canonical": "白猿探路",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "白虹贯日",
+   "canonical": "白虹贯日",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=天山剑法｜kb招式表"
+  },
+  {
+   "surface": "白蛇出洞",
+   "canonical": "白蛇出洞",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "移星摘斗",
+   "canonical": "移星摘斗",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:18"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=天山剑法｜kb招式表"
+  },
+  {
+   "surface": "童子拜观音",
+   "canonical": "童子拜观音",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=阴阳双撞掌｜kb招式表"
+  },
+  {
+   "surface": "达摩剑式",
+   "canonical": "达摩剑式",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=达摩剑｜kb招式表"
+  },
+  {
+   "surface": "迅雷击顶",
+   "canonical": "迅雷击顶",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=轻功｜kb招式表"
+  },
+  {
+   "surface": "金针度线",
+   "canonical": "金针度线",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=阴阳双撞掌｜kb招式表"
+  },
+  {
+   "surface": "金雕展翅",
+   "canonical": "金雕展翅",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "铁布衫",
+   "canonical": "铁布衫",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:23"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=七十二路神拳｜kb招式表"
+  },
+  {
+   "surface": "银河倒挂",
+   "canonical": "银河倒挂",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "长蛇入洞",
+   "canonical": "长蛇入洞",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=摩云剑法｜kb招式表"
+  },
+  {
+   "surface": "降龙手",
+   "canonical": "降龙手",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=雷霆八卦掌｜kb招式表"
+  },
+  {
+   "surface": "雪卷苍山",
+   "canonical": "雪卷苍山",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "风雷交击",
+   "canonical": "风雷交击",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "飞鹰抓兔",
+   "canonical": "飞鹰抓兔",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "鹤膊手",
+   "canonical": "鹤膊手",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=飞龙掌｜kb招式表"
+  },
+  {
+   "surface": "鹰击长空",
+   "canonical": "鹰击长空",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:14"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=轻功｜kb招式表"
+  },
+  {
+   "surface": "黑虎卷尾",
+   "canonical": "黑虎卷尾",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:27"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "龙卷暴伸",
+   "canonical": "龙卷暴伸",
+   "type": "☆",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=待考｜kb招式表"
+  },
+  {
+   "surface": "龙形十八式",
+   "canonical": "龙形十八式",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=黑虎拳｜kb招式表"
+  },
+  {
+   "surface": "龙门鼓浪",
+   "canonical": "龙门鼓浪",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "招式｜父式=五禽剑法｜kb招式表"
+  },
+  {
+   "surface": "天山剑法",
+   "canonical": "天山剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "追风剑",
+   "canonical": "追风剑",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "飞龙掌",
+   "canonical": "飞龙掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "阴阳双撞掌",
+   "canonical": "阴阳双撞掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "天山剑",
+   "canonical": "天山剑",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "伏虎拳",
+   "canonical": "伏虎拳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "武当掌法",
+   "canonical": "武当掌法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "天山掌法",
+   "canonical": "天山掌法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:28"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "毒砂掌",
+   "canonical": "毒砂掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "五虎断门刀",
+   "canonical": "五虎断门刀",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "连环三鞭",
+   "canonical": "连环三鞭",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:25"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "七十二手连环夺命剑",
+   "canonical": "七十二手连环夺命剑",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "少林拳",
+   "canonical": "少林拳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "追风剑法",
+   "canonical": "追风剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "达摩剑",
+   "canonical": "达摩剑",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "七十二路神拳",
+   "canonical": "七十二路神拳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:23"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "雷霆八卦掌",
+   "canonical": "雷霆八卦掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "黑虎拳",
+   "canonical": "黑虎拳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜父式名（招式表 parent_art）"
+  },
+  {
+   "surface": "阴风毒砂掌",
+   "canonical": "阴风毒砂掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（32 例）"
+  },
+  {
+   "surface": "武当剑法",
+   "canonical": "武当剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（9 例）"
+  },
+  {
+   "surface": "七绝阵",
+   "canonical": "七绝阵",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（8 例）"
+  },
+  {
+   "surface": "七十二手连环剑",
+   "canonical": "七十二手连环剑",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（7 例）"
+  },
+  {
+   "surface": "大擒拿手",
+   "canonical": "大擒拿手",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（5 例）"
+  },
+  {
+   "surface": "绵掌",
+   "canonical": "绵掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（5 例）"
+  },
+  {
+   "surface": "七十二手连环剑法",
+   "canonical": "七十二手连环剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（5 例）"
+  },
+  {
+   "surface": "鹰爪功",
+   "canonical": "鹰爪功",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（5 例）"
+  },
+  {
+   "surface": "柔功",
+   "canonical": "柔功",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（5 例）"
+  },
+  {
+   "surface": "神拳",
+   "canonical": "神拳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（5 例）"
+  },
+  {
+   "surface": "达摩剑法",
+   "canonical": "达摩剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:19"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（5 例）"
+  },
+  {
+   "surface": "五行剑",
+   "canonical": "五行剑",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（4 例）"
+  },
+  {
+   "surface": "三环套月",
+   "canonical": "三环套月",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（4 例）"
+  },
+  {
+   "surface": "连环剑",
+   "canonical": "连环剑",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（4 例）"
+  },
+  {
+   "surface": "太乙玄功",
+   "canonical": "太乙玄功",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:15"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（4 例）"
+  },
+  {
+   "surface": "擒拿手",
+   "canonical": "擒拿手",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（3 例）"
+  },
+  {
+   "surface": "李广射石",
+   "canonical": "李广射石",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:13"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（3 例）"
+  },
+  {
+   "surface": "黏字诀",
+   "canonical": "黏字诀",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（3 例）"
+  },
+  {
+   "surface": "野狐拳",
+   "canonical": "野狐拳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:27"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（3 例）"
+  },
+  {
+   "surface": "九宫神行掌",
+   "canonical": "九宫神行掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "旱地拔葱",
+   "canonical": "旱地拔葱",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "蹑云剑法",
+   "canonical": "蹑云剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "铁琵琶手",
+   "canonical": "铁琵琶手",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "举火撩天",
+   "canonical": "举火撩天",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "撑椽手",
+   "canonical": "撑椽手",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "太极拳",
+   "canonical": "太极拳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "鸳鸯连环腿",
+   "canonical": "鸳鸯连环腿",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "金针度世",
+   "canonical": "金针度世",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "少林神拳",
+   "canonical": "少林神拳",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "沾衣十八跌",
+   "canonical": "沾衣十八跌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "摘叶飞花",
+   "canonical": "摘叶飞花",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "大摔碑手",
+   "canonical": "大摔碑手",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "八门五步",
+   "canonical": "八门五步",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:15"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "玉女投梭",
+   "canonical": "玉女投梭",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "峨眉剑法",
+   "canonical": "峨眉剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "连环夺命剑法",
+   "canonical": "连环夺命剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:18"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "七煞掌",
+   "canonical": "七煞掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "连环剑法",
+   "canonical": "连环剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "天龙剑法",
+   "canonical": "天龙剑法",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:30"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "横架金梁",
+   "canonical": "横架金梁",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "玄功内运",
+   "canonical": "玄功内运",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:20"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（2 例）"
+  },
+  {
+   "surface": "铁沙掌",
+   "canonical": "铁沙掌",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "八方风雨",
+   "canonical": "八方风雨",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "凤点头",
+   "canonical": "凤点头",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "抽撒连环",
+   "canonical": "抽撒连环",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "三绝招",
+   "canonical": "三绝招",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "青蚨传信",
+   "canonical": "青蚨传信",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "鲤鱼打挺",
+   "canonical": "鲤鱼打挺",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "石家蹑云剑",
+   "canonical": "石家蹑云剑",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "大鹏展翅",
+   "canonical": "大鹏展翅",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "蹬脚",
+   "canonical": "蹬脚",
+   "type": "☆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "武功｜语料 ☆ 具名技艺（1 例）"
+  },
+  {
+   "surface": "铜钹",
+   "canonical": "铜钹",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "拂尘",
+   "canonical": "拂尘",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:20"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "龙泉",
+   "canonical": "龙泉",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "逍遥车",
+   "canonical": "逍遥车",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜—｜kb神兵表"
+  },
+  {
+   "surface": "铁烟杆",
+   "canonical": "铁烟杆",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "尚方宝剑",
+   "canonical": "尚方宝剑",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜剑｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "护心铜镜",
+   "canonical": "护心铜镜",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:13"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜护甲｜—｜kb神兵表"
+  },
+  {
+   "surface": "九星定形针",
+   "canonical": "九星定形针",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:25"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜—｜kb神兵表"
+  },
+  {
+   "surface": "毒蒺藜",
+   "canonical": "毒蒺藜",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜—｜kb神兵表"
+  },
+  {
+   "surface": "独脚铜人",
+   "canonical": "独脚铜人",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "金丝手套",
+   "canonical": "金丝手套",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "五行轮",
+   "canonical": "五行轮",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "白狐裘子",
+   "canonical": "白狐裘子",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "金马鞍",
+   "canonical": "金马鞍",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:21"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "和阗美玉",
+   "canonical": "和阗美玉",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:24"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "巨阙",
+   "canonical": "巨阙",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "日月双钩",
+   "canonical": "日月双钩",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:20"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜—｜kb神兵表"
+  },
+  {
+   "surface": "湛卢",
+   "canonical": "湛卢",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "碾玉人像",
+   "canonical": "碾玉人像",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:24"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "蛇焰箭",
+   "canonical": "蛇焰箭",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "赤毒珠",
+   "canonical": "赤毒珠",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:15"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "铁菩提",
+   "canonical": "铁菩提",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "飞叉",
+   "canonical": "飞叉",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:32"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "铁鸳鸯枕",
+   "canonical": "铁鸳鸯枕",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "上方剑",
+   "canonical": "上方剑",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:18"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜剑｜—｜kb神兵表"
+  },
+  {
+   "surface": "干将",
+   "canonical": "干将",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "断玉剑",
+   "canonical": "断玉剑",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:28"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜剑｜利器｜kb神兵表"
+  },
+  {
+   "surface": "毒药蝴蝶镖",
+   "canonical": "毒药蝴蝶镖",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜—｜kb神兵表"
+  },
+  {
+   "surface": "滚刀环",
+   "canonical": "滚刀环",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "猫儿绿宝珠",
+   "canonical": "猫儿绿宝珠",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "碧玉珊瑚",
+   "canonical": "碧玉珊瑚",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "纯钩",
+   "canonical": "纯钩",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "绿玉箫",
+   "canonical": "绿玉箫",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:21"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "莫邪",
+   "canonical": "莫邪",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "虎头钩",
+   "canonical": "虎头钩",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:23"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "金背斫山刀",
+   "canonical": "金背斫山刀",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜刀｜—｜kb神兵表"
+  },
+  {
+   "surface": "铁烟袋",
+   "canonical": "铁烟袋",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "鱼肠",
+   "canonical": "鱼肠",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "龙形铁棒",
+   "canonical": "龙形铁棒",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:25"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "九星定形飞针",
+   "canonical": "九星定形飞针",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:30"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜—｜kb神兵表"
+  },
+  {
+   "surface": "劈水犀角",
+   "canonical": "劈水犀角",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "喂毒蝴蝶镖",
+   "canonical": "喂毒蝴蝶镖",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "天虹宝剑",
+   "canonical": "天虹宝剑",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "白发魔女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜剑｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "寒光飞钹",
+   "canonical": "寒光飞钹",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "没羽箭",
+   "canonical": "没羽箭",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:29"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜—｜kb神兵表"
+  },
+  {
+   "surface": "游龙剑",
+   "canonical": "游龙剑",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:1"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜剑｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "龙头拐杖",
+   "canonical": "龙头拐杖",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:11"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "方便铲",
+   "canonical": "方便铲",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:30"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "游龙宝剑",
+   "canonical": "游龙宝剑",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:47"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜剑｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "犀牛皮",
+   "canonical": "犀牛皮",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "塞外奇侠传:16"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "梅花针",
+   "canonical": "梅花针",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:24"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "百宝囊",
+   "canonical": "百宝囊",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:18"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "硫磺弹",
+   "canonical": "硫磺弹",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "塞外奇侠传:20"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "铁琵琶",
+   "canonical": "铁琵琶",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:26"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "青钢剑",
+   "canonical": "青钢剑",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:6"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜剑｜利器｜kb神兵表"
+  },
+  {
+   "surface": "厚背赤铜刀",
+   "canonical": "厚背赤铜刀",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:6"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜刀｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "大力金钢杵",
+   "canonical": "大力金钢杵",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:30"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "七煞白眉针",
+   "canonical": "七煞白眉针",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "江湖三女侠:28"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜—｜kb神兵表"
+  },
+  {
+   "surface": "七煞针",
+   "canonical": "七煞针",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:20"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "七绝诛魄剑",
+   "canonical": "七绝诛魄剑",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:30"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜剑｜—｜kb神兵表"
+  },
+  {
+   "surface": "万岁牌",
+   "canonical": "万岁牌",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:45"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "三棱透骨钉",
+   "canonical": "三棱透骨钉",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "江湖三女侠:12"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "丧门棒",
+   "canonical": "丧门棒",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:1"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "丧门钉",
+   "canonical": "丧门钉",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:1"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "丧门锉",
+   "canonical": "丧门锉",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:0"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜—｜kb神兵表"
+  },
+  {
+   "surface": "五花斧",
+   "canonical": "五花斧",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:1"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "伏弩",
+   "canonical": "伏弩",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:29"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "佛牙",
+   "canonical": "佛牙",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:4"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "佩玉",
+   "canonical": "佩玉",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "塞外奇侠传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "八卦混元牌",
+   "canonical": "八卦混元牌",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "塞外奇侠传:20"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "八卦紫金刀",
+   "canonical": "八卦紫金刀",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "七剑下天山:4"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜刀｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "凤尾镖",
+   "canonical": "凤尾镖",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:8"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜—｜kb神兵表"
+  },
+  {
+   "surface": "厚背斫山刀",
+   "canonical": "厚背斫山刀",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "江湖三女侠:34"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜刀｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "商代三脚香炉",
+   "canonical": "商代三脚香炉",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:36"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "喂毒飞刀",
+   "canonical": "喂毒飞刀",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:25"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜刀｜—｜kb神兵表"
+  },
+  {
+   "surface": "喷火筒",
+   "canonical": "喷火筒",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:47"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "回环钩",
+   "canonical": "回环钩",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "江湖三女侠:19"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜奇门｜神兵｜kb神兵表"
+  },
+  {
+   "surface": "多面透风镖",
+   "canonical": "多面透风镖",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:2"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜暗器｜—｜kb神兵表"
+  },
+  {
+   "surface": "夜明珠",
+   "canonical": "夜明珠",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:36"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "天山神芒",
+   "canonical": "天山神芒",
+   "type": "•",
+   "tier": "review",
+   "status": "待审",
+   "conf": "strong",
+   "evidence": [
+    "江湖三女侠:1"
+   ],
+   "version": "0.3-draft",
+   "note": "器物｜宝物｜—｜kb神兵表"
+  },
+  {
+   "surface": "玄功要诀",
+   "canonical": "玄功要诀",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "联剑风云录:20"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜内功心法总纲（跨书高频 26 例）"
+  },
+  {
+   "surface": "毒龙秘笈",
+   "canonical": "毒龙秘笈",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "云海玉弓缘:4"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜毒功秘本（12 例）"
+  },
+  {
+   "surface": "百毒真经",
+   "canonical": "百毒真经",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "云海玉弓缘:49"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜毒经（6 例）"
+  },
+  {
+   "surface": "龙泉百炼诀",
+   "canonical": "龙泉百炼诀",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜铸剑/内功诀（本书 5 例）"
+  },
+  {
+   "surface": "易筋经",
+   "canonical": "易筋经",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜少林内功经（本书 2 例）"
+  },
+  {
+   "surface": "达摩一百零八式",
+   "canonical": "达摩一百零八式",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:26"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜达摩武学图谱（本书 1 例）"
+  },
+  {
+   "surface": "维摩经",
+   "canonical": "维摩经",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:16"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜佛经（3 例）"
+  },
+  {
+   "surface": "华严经",
+   "canonical": "华严经",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "幻剑灵旗:12"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜佛经（2 例）"
+  },
+  {
+   "surface": "佛国记",
+   "canonical": "佛国记",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "冰魄寒光剑:2"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜行记（2 例）"
+  },
+  {
+   "surface": "本草纲目",
+   "canonical": "本草纲目",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "冰魄寒光剑:7"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜医书（3 例）"
+  },
+  {
+   "surface": "奇经八脉考",
+   "canonical": "奇经八脉考",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "冰魄寒光剑:7"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜医书（3 例）"
+  },
+  {
+   "surface": "庄子",
+   "canonical": "庄子",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:16"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜诸子（10 例）"
+  },
+  {
+   "surface": "诗经",
+   "canonical": "诗经",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "冰川天女传:11"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜经部（5 例）"
+  },
+  {
+   "surface": "史记",
+   "canonical": "史记",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "女帝奇英传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜史部（3 例）"
+  },
+  {
+   "surface": "离骚",
+   "canonical": "离骚",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "女帝奇英传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜楚辞（3 例）"
+  },
+  {
+   "surface": "左传",
+   "canonical": "左传",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜春秋经传（本书 2 例）"
+  },
+  {
+   "surface": "西厢记",
+   "canonical": "西厢记",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "侠骨丹心:33"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜戏曲（2 例）"
+  },
+  {
+   "surface": "西游记",
+   "canonical": "西游记",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "剑网尘丝:12"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜小说（4 例）"
+  },
+  {
+   "surface": "封神榜",
+   "canonical": "封神榜",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "幻剑灵旗:5"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜小说（3 例）"
+  },
+  {
+   "surface": "过秦论",
+   "canonical": "过秦论",
+   "type": "{",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "广陵剑:15"
+   ],
+   "version": "0.3-draft",
+   "note": "典籍｜史论（2 例）"
+  },
+  {
+   "surface": "剑谱",
+   "canonical": "剑谱",
+   "type": "{",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:7"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜通名（本书 81 例，需内容对象指称）"
+  },
+  {
+   "surface": "剑诀",
+   "canonical": "剑诀",
+   "type": "{",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜通名（本书 12 例）"
+  },
+  {
+   "surface": "拳经",
+   "canonical": "拳经",
+   "type": "{",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:20"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜通名（本书 2 例）"
+  },
+  {
+   "surface": "秘笈",
+   "canonical": "秘笈",
+   "type": "{",
+   "tier": "watch",
+   "status": "待审",
+   "conf": "weak",
+   "evidence": [
+    "白发魔女传:20"
+   ],
+   "version": "0.3-draft",
+   "note": "秘籍｜通名（本书 5 例）"
+  },
+  {
+   "surface": "武当派",
+   "canonical": "武当派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜武林泰山北斗"
+  },
+  {
+   "surface": "武当",
+   "canonical": "武当",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜武当派省称"
+  },
+  {
+   "surface": "少林",
+   "canonical": "少林",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜少林寺/少林派省称"
+  },
+  {
+   "surface": "少林派",
+   "canonical": "少林派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜少林派"
+  },
+  {
+   "surface": "天龙派",
+   "canonical": "天龙派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:28"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜西藏天龙派"
+  },
+  {
+   "surface": "峨嵋派",
+   "canonical": "峨嵋派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜峨嵋派"
+  },
+  {
+   "surface": "昆仑派",
+   "canonical": "昆仑派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:8"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜昆仑派"
+  },
+  {
+   "surface": "华山派",
+   "canonical": "华山派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜华山派"
+  },
+  {
+   "surface": "雪山派",
+   "canonical": "雪山派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:4"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜雪山派"
+  },
+  {
+   "surface": "嵩阳派",
+   "canonical": "嵩阳派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜嵩阳派"
+  },
+  {
+   "surface": "太极派",
+   "canonical": "太极派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:6"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜太极派"
+  },
+  {
+   "surface": "崐卢剑派",
+   "canonical": "崐卢剑派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:14"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜崐卢剑派"
+  },
+  {
+   "surface": "天山派",
+   "canonical": "天山派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜天山派"
+  },
+  {
+   "surface": "天台派",
+   "canonical": "天台派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "江湖三女侠:38"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜天台派（门派世系表）"
+  },
+  {
+   "surface": "无极派",
+   "canonical": "无极派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:3"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜无极派（门派世系表）"
+  },
+  {
+   "surface": "长白山派",
+   "canonical": "长白山派",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:1"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜长白山派（门派世系表）"
+  },
+  {
+   "surface": "密宗",
+   "canonical": "密宗",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "门派｜西藏密宗"
+  },
+  {
+   "surface": "龙门帮",
+   "canonical": "龙门帮",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "帮会｜龙门帮"
+  },
+  {
+   "surface": "东林党",
+   "canonical": "东林党",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "党社｜东林党"
+  },
+  {
+   "surface": "阉党",
+   "canonical": "阉党",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "党社｜阉党"
+  },
+  {
+   "surface": "锦衣卫",
+   "canonical": "锦衣卫",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "机构｜明代特务机构"
+  },
+  {
+   "surface": "东厂",
+   "canonical": "东厂",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "机构｜明代宦官特务机构"
+  },
+  {
+   "surface": "西厂",
+   "canonical": "西厂",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "机构｜明代宦官特务机构"
+  },
+  {
+   "surface": "东西两厂",
+   "canonical": "东西两厂",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:3"
+   ],
+   "version": "0.3-draft",
+   "note": "机构｜东厂西厂合称"
+  },
+  {
+   "surface": "东西厂",
+   "canonical": "东西厂",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "机构｜东厂西厂合称"
+  },
+  {
+   "surface": "北镇抚司",
+   "canonical": "北镇抚司",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "机构｜锦衣卫北镇抚司"
+  },
+  {
+   "surface": "风砂堡",
+   "canonical": "风砂堡",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:31"
+   ],
+   "version": "0.3-draft",
+   "note": "堡寨｜塞外风砂堡"
+  },
+  {
+   "surface": "长安镖局",
+   "canonical": "长安镖局",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:13"
+   ],
+   "version": "0.3-draft",
+   "note": "镖局｜长安镖局"
+  },
+  {
+   "surface": "兵部",
+   "canonical": "兵部",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:9"
+   ],
+   "version": "0.3-draft",
+   "note": "官署｜兵部"
+  },
+  {
+   "surface": "户部",
+   "canonical": "户部",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "官署｜户部"
+  },
+  {
+   "surface": "吏部",
+   "canonical": "吏部",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:5"
+   ],
+   "version": "0.3-draft",
+   "note": "官署｜吏部"
+  },
+  {
+   "surface": "礼部",
+   "canonical": "礼部",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:10"
+   ],
+   "version": "0.3-draft",
+   "note": "官署｜礼部"
+  },
+  {
+   "surface": "刑部",
+   "canonical": "刑部",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:19"
+   ],
+   "version": "0.3-draft",
+   "note": "官署｜刑部"
+  },
+  {
+   "surface": "工部",
+   "canonical": "工部",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "武当一剑:1"
+   ],
+   "version": "0.3-draft",
+   "note": "官署｜工部"
+  },
+  {
+   "surface": "皇室",
+   "canonical": "皇室",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "政权类（01g ◆ 定义含国家/政权）｜皇室"
+  },
+  {
+   "surface": "王室",
+   "canonical": "王室",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "政权类（01g ◆ 定义含国家/政权）｜王室"
+  },
+  {
+   "surface": "朝廷",
+   "canonical": "朝廷",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "政权类（01g ◆ 定义含国家/政权）｜朝廷"
+  },
+  {
+   "surface": "明朝",
+   "canonical": "明朝",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "政权类（01g ◆ 定义含国家/政权）｜明朝"
+  },
+  {
+   "surface": "大明",
+   "canonical": "大明",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "政权｜大明"
+  },
+  {
+   "surface": "明廷",
+   "canonical": "明廷",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:18"
+   ],
+   "version": "0.3-draft",
+   "note": "政权｜明廷"
+  },
+  {
+   "surface": "满洲",
+   "canonical": "满洲",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:1"
+   ],
+   "version": "0.3-draft",
+   "note": "政权｜满洲"
+  },
+  {
+   "surface": "满州",
+   "canonical": "满州",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:12"
+   ],
+   "version": "0.3-draft",
+   "note": "政权｜满洲异写"
+  },
+  {
+   "surface": "大清",
+   "canonical": "大清",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:18"
+   ],
+   "version": "0.3-draft",
+   "note": "政权类（01g ◆ 定义含国家/政权）｜大清"
+  },
+  {
+   "surface": "满清",
+   "canonical": "满清",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:22"
+   ],
+   "version": "0.3-draft",
+   "note": "政权类（01g ◆ 定义含国家/政权）｜满清"
+  },
+  {
+   "surface": "清廷",
+   "canonical": "清廷",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "七剑下天山:1"
+   ],
+   "version": "0.3-draft",
+   "note": "政权｜清廷"
+  },
+  {
+   "surface": "清宫",
+   "canonical": "清宫",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "机构｜清宫"
+  },
+  {
+   "surface": "禁卫军",
+   "canonical": "禁卫军",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:23"
+   ],
+   "version": "0.3-draft",
+   "note": "军队｜禁卫军"
+  },
+  {
+   "surface": "御林军",
+   "canonical": "御林军",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:17"
+   ],
+   "version": "0.3-draft",
+   "note": "军队｜御林军"
+  },
+  {
+   "surface": "大内",
+   "canonical": "大内",
+   "type": "◆",
+   "tier": "review",
+   "status": "待审",
+   "conf": "ok",
+   "evidence": [
+    "白发魔女传:2"
+   ],
+   "version": "0.3-draft",
+   "note": "机构｜大内"
+  }
+ ]
+}

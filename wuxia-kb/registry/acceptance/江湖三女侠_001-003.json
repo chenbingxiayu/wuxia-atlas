@@ -1,0 +1,454 @@
+{
+ "schema": "wuxia-acceptance-v1",
+ "book": "江湖三女侠",
+ "chapters": [
+  1,
+  2,
+  3
+ ],
+ "chapter_label": "001-003",
+ "generated_at": "2026-11-05T10:42:51",
+ "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
+ "rule_version": "SKILL_03a v1.8",
+ "sample_ratio_requested": 0.1,
+ "seed": "20261104",
+ "readonly": true,
+ "global_gate": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\pipeline_wuxia.py 江湖三女侠 check",
+  "exit_code": 0,
+  "lint_codes": {
+   "lint-pn": 0,
+   "integrity": 0,
+   "symbol-lint": 0,
+   "md-lint": 0,
+   "fence-format": 0
+  },
+  "passed": true,
+  "log": "logs\\acceptance\\check_global.log"
+ },
+ "fix_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 江湖三女侠 --chapters 1-3 --dry-run",
+  "exit": 0,
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "log": "logs\\acceptance\\fix_dry_run.log"
+ },
+ "chapters_data": {
+  "001": {
+   "chapter": 1,
+   "structural": "pass",
+   "paragraphs": 72,
+   "chars": 12308,
+   "entity_tokens": 661,
+   "verb_tokens": 122,
+   "rhetoric_tokens": 1,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 27,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊞ 与 verbs.json 候选域 ⊟ 不同：交换",
+     "display": "交换",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    },
+    {
+     "pn": 51,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：五十左右",
+     "display": "五十左右",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    },
+    {
+     "pn": 71,
+     "type": "fence_entity_real_only",
+     "detail": "围栏[回末对]内实体（限实指，需人工确认）：午夜",
+     "display": "午夜",
+     "suggestion": "确认是实指而非泛指/修辞；回末对限实指",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    6,
+    9,
+    10,
+    15,
+    34,
+    41,
+    63
+   ],
+   "sample_size": 7,
+   "sample_ratio_actual": 0.0972,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 13,
+    "$": 59,
+    "%": 68,
+    "&": 6,
+    "+": 6,
+    "=": 45,
+    "@": 313,
+    "^": 7,
+    "{": 2,
+    "•": 84,
+    "◆": 17,
+    "☆": 41
+   },
+   "verb_dist": {
+    "⊞": 30,
+    "⊟": 17,
+    "⊠": 16,
+    "⊡": 1,
+    "■": 49,
+    "▣": 9
+   },
+   "pipe_counts": {
+    "〖%": 68,
+    "〖@": 35
+   },
+   "pipe_sources": {
+    "mapping_snapshot": 18,
+    "registry+mapping_snapshot": 17
+   }
+  },
+  "002": {
+   "chapter": 2,
+   "structural": "pass",
+   "paragraphs": 41,
+   "chars": 9179,
+   "entity_tokens": 638,
+   "verb_tokens": 195,
+   "rhetoric_tokens": 2,
+   "hard_errors": [],
+   "warnings": [],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 2,
+     "type": "time_boundary",
+     "detail": "% 无时间线索（显示串非时间词）：三十左右",
+     "display": "三十左右",
+     "suggestion": "核对宽口径边界：确属时点/时长/年龄才标 %，否则摘除",
+     "sampled": false
+    },
+    {
+     "pn": 17,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊞ 与 verbs.json 候选域 ⊠ 不同：杀",
+     "display": "杀",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    },
+    {
+     "pn": 30,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊠ 与 verbs.json 候选域 ⊟ 不同：折断",
+     "display": "折断",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    },
+    {
+     "pn": 39,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ⊞ 与 verbs.json 候选域 ⊠ 不同：杀",
+     "display": "杀",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    4,
+    5,
+    11,
+    17
+   ],
+   "sample_size": 4,
+   "sample_ratio_actual": 0.0976,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [],
+   "entity_dist": {
+    "#": 35,
+    "$": 66,
+    "%": 15,
+    "&": 6,
+    "+": 4,
+    ";": 1,
+    "=": 20,
+    "@": 342,
+    "^": 6,
+    "{": 3,
+    "•": 113,
+    "◆": 4,
+    "◎": 2,
+    "☆": 21
+   },
+   "verb_dist": {
+    "⊞": 93,
+    "⊟": 14,
+    "⊠": 39,
+    "⊡": 2,
+    "■": 43,
+    "▣": 4
+   },
+   "pipe_counts": {
+    "⟦▣": 1,
+    "〖%": 15,
+    "〖@": 16
+   },
+   "pipe_sources": {
+    "mapping_snapshot": 12,
+    "registry+mapping_snapshot": 4
+   }
+  },
+  "003": {
+   "chapter": 3,
+   "structural": "pass",
+   "paragraphs": 78,
+   "chars": 18891,
+   "entity_tokens": 1117,
+   "verb_tokens": 306,
+   "rhetoric_tokens": 1,
+   "hard_errors": [],
+   "warnings": [
+    {
+     "pn": 67,
+     "type": "pipe_mapping_conflict",
+     "detail": "@ 管道 霞妹→邝练霞 与登记表 霞妹→孟秋霞 冲突（回级文内证据优先；需 S-03b 补语境注记）",
+     "snippet": "@霞妹|邝练霞"
+    }
+   ],
+   "pipe_unsourced": [],
+   "judgment_items": [
+    {
+     "pn": 47,
+     "type": "verb_domain_risk",
+     "detail": "⊠ 用于纯攻击动作（04f：攻击归⊞/杀伤结果归⊠）：削",
+     "display": "削",
+     "suggestion": "按 04f §2.2 受伤阈值裁决：未达阈值改 ⊞，达阈值保留 ⊠",
+     "sampled": false
+    },
+    {
+     "pn": 47,
+     "type": "verb_domain_risk",
+     "detail": "⊠ 用于纯攻击动作（04f：攻击归⊞/杀伤结果归⊠）：削",
+     "display": "削",
+     "suggestion": "按 04f §2.2 受伤阈值裁决：未达阈值改 ⊞，达阈值保留 ⊠",
+     "sampled": false
+    },
+    {
+     "pn": 50,
+     "type": "verb_domain_risk",
+     "detail": "■ 强制移动 vs 拘押/社会处置边界：逐出",
+     "display": "逐出",
+     "suggestion": "掳/押：强制移动归■；拘押判刑归⊡；逐出师门归⊡",
+     "sampled": false
+    },
+    {
+     "pn": 50,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ■ 与 verbs.json 候选域 ⊡ 不同：逐出",
+     "display": "逐出",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    },
+    {
+     "pn": 53,
+     "type": "verb_wordlist_candidate",
+     "detail": "标注域 ■ 与 verbs.json 候选域 ⊞ 不同：突围",
+     "display": "突围",
+     "suggestion": "按 SKILL_04f 域规则裁决（04f 优先；词表多义词待校准）",
+     "sampled": false
+    }
+   ],
+   "sample_judgment_items": 0,
+   "sampled_paragraphs": [
+    10,
+    11,
+    27,
+    28,
+    41,
+    44,
+    51,
+    72
+   ],
+   "sample_size": 8,
+   "sample_ratio_actual": 0.1026,
+   "sample_hard_violations": 0,
+   "status": "accepted",
+   "coverage_swaps": [
+    {
+     "chapter": 3,
+     "removed": 9,
+     "added": 28,
+     "for": "E{"
+    }
+   ],
+   "entity_dist": {
+    "#": 42,
+    "$": 84,
+    "%": 38,
+    "&": 2,
+    "+": 3,
+    ";": 2,
+    "=": 96,
+    "@": 585,
+    "^": 11,
+    "{": 5,
+    "•": 155,
+    "◆": 4,
+    "◎": 49,
+    "☆": 41
+   },
+   "verb_dist": {
+    "⊞": 116,
+    "⊟": 64,
+    "⊠": 27,
+    "⊡": 4,
+    "■": 91,
+    "▣": 4
+   },
+   "pipe_counts": {
+    "⟦⊞": 1,
+    "⟦⊠": 1,
+    "⟦⊡": 1,
+    "〖%": 38,
+    "〖@": 78
+   },
+   "pipe_sources": {
+    "chapter_text": 44,
+    "mapping_snapshot": 26,
+    "registry+mapping_snapshot": 8
+   }
+  }
+ },
+ "summary": {
+  "chapters_total": 3,
+  "accepted": 3,
+  "needs_fix": 0,
+  "accepted_chapters": [
+   1,
+   2,
+   3
+  ],
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
+  "warnings": 1,
+  "pipe_unsourced": 0,
+  "judgment_items": 12,
+  "sampled_paragraphs": 19,
+  "total_paragraphs": 191,
+  "total_chars": 40378,
+  "entity_tokens": 2416,
+  "verb_tokens": 623,
+  "rhetoric_tokens": 4,
+  "llm_used": false
+ },
+ "risk_stats": [
+  {
+   "category": "① 管道",
+   "hits": 254,
+   "hard": 0,
+   "judgment": 0,
+   "note": "@ 管道 129 条，无来源 0 条，登记表映射冲突 1 条（warning）"
+  },
+  {
+   "category": "② 层-码错位",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "实体/动词括号内码位一致性"
+  },
+  {
+   "category": "③ 括号/标点",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "未闭合/闭合符误写/嵌套/标注内标点；修辞 〘※说时迟、那时快〙 标点属固定表达不判"
+  },
+  {
+   "category": "④ 围栏/套语",
+   "hits": 1,
+   "hard": 0,
+   "judgment": 1,
+   "note": "回目/回末/套语 0；韵文围栏动词 0；回末对实体限实指 1"
+  },
+  {
+   "category": "⑤ 动词域高风险",
+   "hits": 9,
+   "hard": 0,
+   "judgment": 9,
+   "note": "⊠/⊡/⊞ 拘押判刑处死语境 + verbs.json 候选域差异"
+  },
+  {
+   "category": "⑥ 时间/数量边界",
+   "hits": 2,
+   "hard": 0,
+   "judgment": 2,
+   "note": "% 无时间线索 + $ 裸数词/裸量词"
+  },
+  {
+   "category": "⑦ D1/谦辞/纯亲属（抽样）",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "抽样段 #/; 全类型检查"
+  },
+  {
+   "category": "⑧ 计划/否定/假想语境",
+   "hits": 0,
+   "hard": 0,
+   "judgment": 0,
+   "note": "前接 要/想/欲/若/待/将/否则/不/没/未 的动词"
+  }
+ ],
+ "qa_probe": {
+  "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\qa_annotation_report.py --book 江湖三女侠 --chapters 1-3 --out C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\logs\\acceptance\\qa_structure_A_B_001-003.md --mapping-file logs/mapping_江湖三女侠/ch_003.json",
+  "exit_code": 0,
+  "report": "logs\\acceptance\\qa_structure_A_B_001-003.md",
+  "strip_mismatch": 0,
+  "pipe_issues": 0,
+  "title_tokens": 0,
+  "fence_tokens": 1,
+  "tao_tokens": 0,
+  "parsed": true
+ },
+ "mapping_loaded": true,
+ "mapping_source": {
+  "registry": "registry/entities.json",
+  "mapping_file": "logs/mapping_江湖三女侠/ch_003.json",
+  "mapping_pairs": 24,
+  "mapping_loaded": true
+ },
+ "pipe_sources": {
+  "at_pipes": 129,
+  "text_only": 44,
+  "unsourced": 0,
+  "detail_by_source": {
+   "001": {
+    "mapping_snapshot": 18,
+    "registry+mapping_snapshot": 17
+   },
+   "002": {
+    "mapping_snapshot": 12,
+    "registry+mapping_snapshot": 4
+   },
+   "003": {
+    "chapter_text": 44,
+    "mapping_snapshot": 26,
+    "registry+mapping_snapshot": 8
+   }
+  }
+ },
+ "sample_coverage": {
+  "entity": "@◎=◆&;#☆•+{^%$",
+  "verb": "⊞⊠⊡⊟▣■",
+  "coverage_swaps": 1
+ }
+}

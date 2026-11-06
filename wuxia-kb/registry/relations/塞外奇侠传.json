@@ -1,0 +1,3213 @@
+{
+ "book": "塞外奇侠传",
+ "generated": "2026-11-06",
+ "generated_at": "2026-11-06 08:44:33",
+ "script": "scripts/relation_validator.py",
+ "script_version": "0.1",
+ "spec_version": "0.3-draft",
+ "schema": "relations-v0.1",
+ "mode": "default",
+ "source": [
+  "tagged/<书>/*.tagged.md（只读）",
+  "registry/concordance/<书>.json",
+  "registry/entities.json",
+  "skills/SKILL_关系体系_武侠版.md §7.2/§8",
+  "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
+ ],
+ "snapshot": {
+  "exported_at": "2026-11-06 08:44:33",
+  "tagged_chapters": 28,
+  "concordance_generated": "2026-11-06T00:28:03+08:00",
+  "registry_entities": 738,
+  "corpus_chapters": 28,
+  "paragraphs": 558,
+  "verbs": 1283,
+  "verbs_in_quote": 181,
+  "entities": 5117
+ },
+ "predicate_table": {
+  "version": "D06@0.3-draft",
+  "count": 55,
+  "used": [
+   "交手",
+   "任职",
+   "到达",
+   "同门",
+   "婚约",
+   "师承",
+   "押送",
+   "杀害",
+   "点穴",
+   "离开",
+   "转移"
+  ]
+ },
+ "edge_schema": {
+  "required": [
+   "subject",
+   "predicate",
+   "object",
+   "subject_type",
+   "object_type",
+   "confidence",
+   "loc",
+   "evidence",
+   "rule"
+  ],
+  "confidence_values": [
+   "strong",
+   "ok",
+   "weak"
+  ],
+  "subject_type": "标注层实体符号（@人物/◆组织/&家族/☆武功/•器物/=/地点/;职衔）",
+  "evidence": {
+   "fields": [
+    "loc",
+    "type",
+    "rule"
+   ],
+   "type_values": [
+    "E1明文",
+    "E2动作+共现",
+    "E3推导"
+   ]
+  },
+  "loc_format": "NNN:段（回号:PN 段号）",
+  "source": "D06 §7.2 谓词总表 / §8.1 证据三级 / §6.2 离线表 schema"
+ },
+ "offline_interface": {
+  "types": [
+   "情感",
+   "恩义",
+   "背叛",
+   "主仆"
+  ],
+  "schema": "D06 §6.2（rel_id/subject/object/type/subtype/direction/states/manner/conf/evidence/event_ids/related_predicates/notes）",
+  "emitted": [],
+  "note": "四类离线关系行内不设符号（01g 铁律）；本脚本只出放弃原因（治愈/转移→恩义候选、隶属终止→背叛候选等），离线表由人工裁定流程维护，N5 不写。"
+ },
+ "counts": {
+  "candidates": 101,
+  "edges": 49,
+  "dropped": 82,
+  "derived_edges": 1,
+  "tongmen_edges": 1,
+  "lineage_labels": 1,
+  "by_predicate": {
+   "交手": 25,
+   "到达": 8,
+   "任职": 1,
+   "同门": 1,
+   "婚约": 1,
+   "师承": 2,
+   "押送": 1,
+   "杀害": 1,
+   "点穴": 1,
+   "离开": 5,
+   "转移": 3
+  },
+  "by_confidence": {
+   "ok": 38,
+   "strong": 8,
+   "weak": 3
+  },
+  "by_layer": {
+   "人": 32,
+   "实": 17
+  },
+  "by_rule": {
+   "X-COMBAT": 25,
+   "X-ARRIVE": 7,
+   "04f-L17": 1,
+   "04f-L21": 1,
+   "D06#45/B3": 1,
+   "语式-婚约": 1,
+   "语式-师承": 2,
+   "04f-L23": 1,
+   "04f-L08": 1,
+   "04f-L05": 1,
+   "X-LEAVE": 4,
+   "04f-L22": 1,
+   "04f-L12": 2,
+   "04f-L11": 1
+  },
+  "drop_by_reason": {
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 17,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 5,
+   "实体缺失（04f#26 交手须双方人物角色）": 3,
+   "实体缺失（04f#5 点穴须施者/受者）": 4,
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 8,
+   "传闻降权（D06 §8.3，不入正式表）": 6,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 1,
+   "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）": 5,
+   "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）": 1,
+   "强制档实体缺失（04f#9 医者/伤者未同现）": 1,
+   "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库": 1,
+   "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）": 2,
+   "强制档实体缺失（04f#6 拜师双方未同现）": 1,
+   "自指/主宾同一实体": 27
+  }
+ },
+ "edges": [
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "楚昭南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "002:7",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "005:23",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:6",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:7",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "024:14",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 5,
+   "loc": "002:7",
+   "chapter": 2,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "002:7",
+    "005:23",
+    "007:6",
+    "007:7",
+    "024:14"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0001"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "邱东洛",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "011:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 5,
+   "loc": "011:11",
+   "chapter": 11,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "011:11",
+    "011:11",
+    "011:13",
+    "011:13",
+    "011:13"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0002"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "巴拉",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:27",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "009:27",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:1",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "010:1",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "009:27",
+   "chapter": 9,
+   "para": 27,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "009:27",
+    "009:27",
+    "010:1",
+    "010:1"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0003"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "杨云骢",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "020:1",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:1",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "022:4",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 4,
+   "loc": "020:1",
+   "chapter": 20,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "020:1",
+    "020:1",
+    "020:3",
+    "022:4"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0004"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "楚昭南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "005:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:4",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "005:17",
+   "chapter": 5,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "005:17",
+    "005:21",
+    "020:4"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0005"
+  },
+  {
+   "subject": "伊士达",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "杨云骢",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "012:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "012:13",
+   "chapter": 12,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "012:13",
+    "026:10"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0006"
+  },
+  {
+   "subject": "哈合图",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "哈玛雅",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "020:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "020:3",
+   "chapter": 20,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "020:3",
+    "020:3"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0007"
+  },
+  {
+   "subject": "哈合图",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "杨云骢",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "020:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "020:3",
+   "chapter": 20,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "020:3",
+    "020:3"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0008"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "押不庐",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:7",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "007:14",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "005:7",
+   "chapter": 5,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "005:7",
+    "007:14"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0009"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "纳兰明慧",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:4",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:6",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "016:4",
+   "chapter": 16,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "016:4",
+    "025:6"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0010"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "纳兰秀吉",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "003:32",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "013:2",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "003:32",
+   "chapter": 3,
+   "para": 32,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "003:32",
+    "013:2"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0011"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "麦盖提",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "018:1",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "018:1",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "018:1",
+   "chapter": 18,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "018:1",
+    "018:1"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0012"
+  },
+  {
+   "subject": "甘天立",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "罗铁臂",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:9",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "026:9",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "026:9",
+   "chapter": 26,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "026:9",
+    "026:9"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0013"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "回疆",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "021:4",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "027:2",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "021:4",
+   "chapter": 21,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "021:4",
+    "027:2"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0014"
+  },
+  {
+   "subject": "纳兰明慧",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "伊犁城",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "016:4",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    },
+    {
+     "loc": "025:1",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 2,
+   "loc": "016:4",
+   "chapter": 16,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "016:4",
+    "025:1"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0015"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "杨云骢",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "016:2",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "016:2",
+   "chapter": 16,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "016:2"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0016"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "纽祜庐",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "017:11",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "017:11",
+   "chapter": 17,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "017:11"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0017"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "德卡",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:22",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:22",
+   "chapter": 9,
+   "para": 22,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "009:22"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0018"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "王大须子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "024:4",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "024:4",
+   "chapter": 24,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "024:4"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0019"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "柳西岩",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "011:13",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "011:13",
+   "chapter": 11,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "011:13"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0020"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "焦化",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "026:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "026:10",
+   "chapter": 26,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "026:10"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0021"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "纽祜庐",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "002:10",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "002:10",
+   "chapter": 2,
+   "para": 10,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "002:10"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0022"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "018:25",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "018:25",
+   "chapter": 18,
+   "para": 25,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "018:25"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0023"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "罗大洪",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:20",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "005:20",
+   "chapter": 5,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "005:20"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0024"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "阿盖",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "009:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "009:19",
+   "chapter": 9,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "009:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0025"
+  },
+  {
+   "subject": "王大须子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "纳兰明慧",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "024:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "024:3",
+   "chapter": 24,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "024:3"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0026"
+  },
+  {
+   "subject": "红云道人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "练霓裳",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "022:7",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "022:7",
+   "chapter": 22,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "022:7"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0027"
+  },
+  {
+   "subject": "多铎",
+   "subject_type": "@",
+   "predicate": "任职",
+   "object": "定远将军",
+   "object_type": ";",
+   "confidence": "strong",
+   "evidence_type": "E1明文",
+   "rule": "04f-L17",
+   "rule_row": 17,
+   "subtype": "",
+   "params": {
+    "组织": ""
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "016:8",
+     "type": "E1明文",
+     "rule": "04f-L17"
+    }
+   ],
+   "count": 1,
+   "loc": "016:8",
+   "chapter": 16,
+   "para": 8,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "016:8"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0028"
+  },
+  {
+   "subject": "多铎",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "回疆",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "016:13",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "016:13",
+   "chapter": 16,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "016:13"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0029"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "喀尔沁草原",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "019:3",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "019:3",
+   "chapter": 19,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "019:3"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0030"
+  },
+  {
+   "subject": "楚昭南",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "古堡",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "005:17",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "005:17",
+   "chapter": 5,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "005:17"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0031"
+  },
+  {
+   "subject": "楚昭南",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "城头",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "019:13",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "019:13",
+   "chapter": 19,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "019:13"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0032"
+  },
+  {
+   "subject": "纳兰明慧",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "伊犁",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L21",
+   "rule_row": 21,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "028:11",
+     "type": "E2动作+共现",
+     "rule": "04f-L21"
+    }
+   ],
+   "count": 1,
+   "loc": "028:11",
+   "chapter": 28,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "028:11"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0033"
+  },
+  {
+   "subject": "罗铁臂",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "回疆",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "027:5",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "027:5",
+   "chapter": 27,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "027:5"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0034"
+  },
+  {
+   "subject": "伊士达",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "哈玛雅",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "岳鸣珂"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:20",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "027:8",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:20",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:20",
+    "027:8"
+   ],
+   "id": "塞外奇侠传#R0035"
+  },
+  {
+   "subject": "纳兰明慧",
+   "subject_type": "@",
+   "predicate": "婚约",
+   "object": "纳兰秀吉",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-婚约",
+   "rule_row": 41,
+   "subtype": "定亲",
+   "params": {},
+   "notes": "语式『定亲』；近邻配对启发式，待人工复核；婚约→配偶状态机（永不自动生成配偶边）；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "016:13",
+     "type": "E1明文",
+     "rule": "语式-婚约"
+    }
+   ],
+   "count": 1,
+   "loc": "016:13",
+   "chapter": 16,
+   "para": 13,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "016:13"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0036"
+  },
+  {
+   "subject": "伊士达",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "岳鸣珂",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的师父",
+   "params": {},
+   "notes": "语式『的师父』（D06 §8.4；来源=pronoun）；须拜师实写复核",
+   "evidence": [
+    {
+     "loc": "027:8",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "027:8",
+   "chapter": 27,
+   "para": 8,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "027:8"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "塞外奇侠传#R0037"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "师承",
+   "object": "岳鸣珂",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E1明文",
+   "rule": "语式-师承",
+   "rule_row": 6,
+   "subtype": "的徒弟",
+   "params": {},
+   "notes": "语式『的徒弟』（D06 §8.4；来源=字面）；须拜师实写复核；对话内自述/转述（§8.3 单方视角，weak，待人工复核）",
+   "evidence": [
+    {
+     "loc": "006:20",
+     "type": "E1明文",
+     "rule": "语式-师承"
+    }
+   ],
+   "count": 1,
+   "loc": "006:20",
+   "chapter": 6,
+   "para": 20,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "006:20"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "塞外奇侠传#R0038"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "押送",
+   "object": "邱东洛",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L23",
+   "rule_row": 23,
+   "subtype": "",
+   "params": {
+    "讫地": ""
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "012:2",
+     "type": "E2动作+共现",
+     "rule": "04f-L23"
+    }
+   ],
+   "count": 1,
+   "loc": "012:2",
+   "chapter": 12,
+   "para": 2,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "012:2"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "塞外奇侠传#R0039"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "杀害",
+   "object": "麦盖提",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L08",
+   "rule_row": 8,
+   "subtype": "",
+   "params": {},
+   "notes": "杀害边；死者事件留事件层（04a），另行触发亲属仇怨候选",
+   "evidence": [
+    {
+     "loc": "018:1",
+     "type": "E2动作+共现",
+     "rule": "04f-L08"
+    }
+   ],
+   "count": 1,
+   "loc": "018:1",
+   "chapter": 18,
+   "para": 1,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "018:1"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "塞外奇侠传#R0040"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "点穴",
+   "object": "楚昭南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L05",
+   "rule_row": 5,
+   "subtype": "",
+   "params": {
+    "穴道": ""
+   },
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "020:7",
+     "type": "E2动作+共现",
+     "rule": "04f-L05"
+    }
+   ],
+   "count": 1,
+   "loc": "020:7",
+   "chapter": 20,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "020:7"
+   ],
+   "layer": "人",
+   "direction": "→",
+   "id": "塞外奇侠传#R0041"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "南疆",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "019:7",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "019:7",
+   "chapter": 19,
+   "para": 7,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "019:7"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0042"
+  },
+  {
+   "subject": "哈玛雅",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "帐幕",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "024:12",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "024:12",
+   "chapter": 24,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "024:12"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0043"
+  },
+  {
+   "subject": "孟禄",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "山沟",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "015:9",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "015:9",
+   "chapter": 15,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "015:9"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0044"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "北高峰",
+   "object_type": "=",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L22",
+   "rule_row": 22,
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "027:9",
+     "type": "E2动作+共现",
+     "rule": "04f-L22"
+    }
+   ],
+   "count": 1,
+   "loc": "027:9",
+   "chapter": 27,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "027:9"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0045"
+  },
+  {
+   "subject": "楚昭南",
+   "subject_type": "@",
+   "predicate": "离开",
+   "object": "古堡",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-LEAVE",
+   "rule_row": "X-LEAVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "007:9",
+     "type": "E2动作+共现",
+     "rule": "X-LEAVE"
+    }
+   ],
+   "count": 1,
+   "loc": "007:9",
+   "chapter": 7,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "007:9"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0046"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "哈玛雅",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L12",
+   "rule_row": 12,
+   "subtype": "夺",
+   "params": {
+    "物": "宝剑",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "007:9",
+     "type": "E2动作+共现",
+     "rule": "04f-L12"
+    }
+   ],
+   "count": 1,
+   "loc": "007:9",
+   "chapter": 7,
+   "para": 9,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "007:9"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0047"
+  },
+  {
+   "subject": "杨云骢",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "邱东洛",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L12",
+   "rule_row": 12,
+   "subtype": "夺",
+   "params": {
+    "物": "长剑",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "011:11",
+     "type": "E2动作+共现",
+     "rule": "04f-L12"
+    }
+   ],
+   "count": 1,
+   "loc": "011:11",
+   "chapter": 11,
+   "para": 11,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "011:11"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0048"
+  },
+  {
+   "subject": "楚昭南",
+   "subject_type": "@",
+   "predicate": "转移",
+   "object": "辛龙子",
+   "object_type": "@",
+   "confidence": "strong",
+   "evidence_type": "E2动作+共现",
+   "rule": "04f-L11",
+   "rule_row": 11,
+   "subtype": "赠",
+   "params": {
+    "物": "游龙剑",
+    "物类型": "•"
+   },
+   "notes": "转移二元核=施者→受者；物/mode 为参数（D06#28）",
+   "evidence": [
+    {
+     "loc": "021:5",
+     "type": "E2动作+共现",
+     "rule": "04f-L11"
+    }
+   ],
+   "count": 1,
+   "loc": "021:5",
+   "chapter": 21,
+   "para": 5,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "021:5"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "塞外奇侠传#R0049"
+  }
+ ],
+ "derived": {
+  "tongmen_edges": [
+   {
+    "subject": "伊士达",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "哈玛雅",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "岳鸣珂"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:20",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "027:8",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:20",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "塞外奇侠传"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:20",
+     "027:8"
+    ],
+    "id": "塞外奇侠传#R0035"
+   }
+  ],
+  "tongmen_pairs": [
+   {
+    "a": "伊士达",
+    "b": "哈玛雅",
+    "master": "岳鸣珂",
+    "rule": "B3",
+    "confidence": "weak"
+   }
+  ],
+  "lineage_labels": [
+   {
+    "kind": "长幼",
+    "person": "哈玛雅",
+    "value": "师兄/姐（按拜师定位符时序）",
+    "relative_to": "伊士达",
+    "rule": "B5",
+    "confidence": "weak",
+    "basis": "拜师定位符时序，性别未判"
+   }
+  ],
+  "trees": {
+   "master_tree": {
+    "nodes": [
+     {
+      "person": "伊士达",
+      "master": "岳鸣珂",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "哈玛雅",
+      "master": "岳鸣珂",
+      "generation": 1,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "岳鸣珂",
+      "master": "",
+      "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     }
+    ],
+    "roots": [
+     "岳鸣珂"
+    ],
+    "edge_count": 2
+   },
+   "blood_tree": {
+    "nodes": [],
+    "note": "亲属/血缘抽取不在 04f 27 行联动内，留候选池待语式扩展（本脚本不产出）"
+   }
+  },
+  "cycles": [],
+  "reciprocal_conflicts": []
+ },
+ "dropped": {
+  "total": 82,
+  "by_reason": {
+   "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）": 17,
+   "强制档实体缺失（04f#8 凶手/死者未同现）": 5,
+   "实体缺失（04f#26 交手须双方人物角色）": 3,
+   "实体缺失（04f#5 点穴须施者/受者）": 4,
+   "强制档实体缺失（04f#21/#22 行程动词须人物+地点）": 8,
+   "传闻降权（D06 §8.3，不入正式表）": 6,
+   "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）": 1,
+   "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）": 5,
+   "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）": 1,
+   "强制档实体缺失（04f#9 医者/伤者未同现）": 1,
+   "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库": 1,
+   "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）": 2,
+   "强制档实体缺失（04f#6 拜师双方未同现）": 1,
+   "自指/主宾同一实体": 27
+  },
+  "samples": [
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "001:14"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "001:16"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "002:7"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "002:9"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "002:15"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "003:23"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "003:33"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "004:4"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "004:14"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "005:10"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "005:12",
+    "note": "楚昭南 交手 哈玛雅"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L21",
+    "rule_row": 21,
+    "predicate": "到达",
+    "note": "",
+    "loc": "005:12"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "005:15"
+   },
+   {
+    "reason": "强制档实体缺失（04f#2 传授须师+徒+武功名齐备）",
+    "rule": "04f-L02",
+    "rule_row": 2,
+    "predicate": "传授",
+    "note": "",
+    "loc": "005:23"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "005:23"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "007:4"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "007:6"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "010:1"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L22",
+    "rule_row": 22,
+    "predicate": "离开",
+    "note": "",
+    "loc": "010:7"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "011:3"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "011:4"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "011:13"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "011:15"
+   },
+   {
+    "reason": "D06 无『毁损』SPO 谓词（毁弃留事件层 ⊟）",
+    "rule": "04f-L15",
+    "rule_row": 15,
+    "predicate": "毁损",
+    "note": "器物=原油",
+    "loc": "012:3"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "012:4"
+   },
+   {
+    "reason": "强制档实体缺失（04f#9 医者/伤者未同现）",
+    "rule": "04f-L09",
+    "rule_row": 9,
+    "predicate": "治愈",
+    "note": "",
+    "loc": "012:6"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "012:13"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "012:13"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "012:17"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "013:11",
+    "note": "杨云骢 交手 杨云骢"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "013:11",
+    "note": "杨云骢 交手 纳兰明慧"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "014:2"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "014:7"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇人",
+    "loc": "015:7"
+   },
+   {
+    "reason": "D06 55 谓词无『追踪』（04f#25 建议档），留候选池不落库",
+    "rule": "04f-L25",
+    "rule_row": 25,
+    "predicate": "",
+    "note": "",
+    "loc": "015:9"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "016:2"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "016:5"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "定亲",
+    "loc": "016:9"
+   },
+   {
+    "reason": "语式命中但实体不足（婚约须双方人物；一方未出场→待实体消歧）",
+    "rule": "语式-婚约",
+    "rule_row": "语式",
+    "predicate": "婚约",
+    "note": "定亲",
+    "loc": "016:10"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "017:10"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "018:19"
+   },
+   {
+    "reason": "实体缺失（04f#5 点穴须施者/受者）",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "note": "",
+    "loc": "020:1"
+   },
+   {
+    "reason": "强制档实体缺失（04f#6 拜师双方未同现）",
+    "rule": "04f-L06",
+    "rule_row": 6,
+    "predicate": "师承",
+    "note": "",
+    "loc": "021:4"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "语式-师承",
+    "rule_row": 6,
+    "predicate": "师承",
+    "loc": "021:6",
+    "note": "辛龙子 师承 练霓裳"
+   },
+   {
+    "reason": "实体缺失（04f#26 交手须双方人物角色）",
+    "rule": "04f-L26",
+    "rule_row": 26,
+    "predicate": "交手",
+    "note": "",
+    "loc": "023:7"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "X-ARRIVE",
+    "rule_row": "X-ARRIVE",
+    "predicate": "到达",
+    "loc": "025:2",
+    "note": "杨云骢 到达 伊犁"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "note": "mode=赠",
+    "loc": "025:2"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "025:4"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "025:6"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "026:1"
+   },
+   {
+    "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "note": "mode=夺",
+    "loc": "026:4"
+   },
+   {
+    "reason": "强制档实体缺失（04f#8 凶手/死者未同现）",
+    "rule": "04f-L08",
+    "rule_row": 8,
+    "predicate": "杀害",
+    "note": "",
+    "loc": "026:10"
+   },
+   {
+    "reason": "仇怨语式命中但 event_ids 必填（D06#44；事件层 N4/D03 未产出）",
+    "rule": "语式-仇怨",
+    "rule_row": "语式",
+    "predicate": "仇怨",
+    "note": "仇家",
+    "loc": "027:4"
+   },
+   {
+    "reason": "传闻降权（D06 §8.3，不入正式表）",
+    "rule": "04f-L11",
+    "rule_row": 11,
+    "predicate": "转移",
+    "loc": "027:7",
+    "note": "张天蒙 转移 伊士达"
+   },
+   {
+    "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
+    "rule": "04f-L24",
+    "rule_row": 24,
+    "predicate": "到达",
+    "note": "",
+    "loc": "028:10"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "001:20"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "003:32"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "04f-L12",
+    "rule_row": 12,
+    "predicate": "转移",
+    "loc": "003:34"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "04f-L05",
+    "rule_row": 5,
+    "predicate": "点穴",
+    "loc": "003:34"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "003:34"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "005:2"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "005:2"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "005:7"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "005:7"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "007:7"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "007:8"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:16"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:23"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "009:27"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "011:13"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "011:13"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "011:13"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "012:6"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "015:7"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "016:1"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "019:5"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "020:1"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "020:1"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "020:1"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "020:4"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "020:5"
+   },
+   {
+    "reason": "自指/主宾同一实体",
+    "rule": "X-COMBAT",
+    "rule_row": "X-COMBAT",
+    "predicate": "交手",
+    "loc": "021:2"
+   }
+  ]
+ },
+ "validation": {
+  "hard_errors": [],
+  "warnings": [],
+  "checks": [
+   "无环(师承)",
+   "方向(徒→师/无互为师徒)",
+   "类型(55 谓词主宾)",
+   "证据级(E1 名分类)",
+   "自指",
+   "传闻(§8.3)",
+   "共现生边(交手≠敌对)",
+   "时序(师承 vs 隶属终止, 定位符级)"
+  ],
+  "pending": [
+   "N4 时间轴未上线：active 互斥（配偶唯一/师承唯一）无法按时段判定，只做定位符级提示",
+   "亲属/血缘树：04f 27 行联动无亲属触发词，未产出",
+   "仇怨：event_ids 必填（D06#44）而事件层 N4/D03 未产出"
+  ]
+ },
+ "rows_stats": {
+  "1": {
+   "rule": "04f-L01",
+   "predicate": "掌握",
+   "triggers": "练成/学会/悟出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "2": {
+   "rule": "04f-L02",
+   "predicate": "传授",
+   "triggers": "传授（具体武功名在句）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "3": {
+   "rule": "04f-L03",
+   "predicate": null,
+   "triggers": "授艺/教（泛指）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "4": {
+   "rule": "04f-L04",
+   "predicate": "掌握",
+   "triggers": "偷学/窃艺",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "5": {
+   "rule": "04f-L05",
+   "predicate": "点穴",
+   "triggers": "点穴（穴道名在句）",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 1,
+   "dropped": 4,
+   "extension": false,
+   "note": ""
+  },
+  "6": {
+   "rule": "04f-L06",
+   "predicate": "师承",
+   "triggers": "拜师/拜…为师",
+   "strength": "强制",
+   "candidates": 3,
+   "emitted": 2,
+   "dropped": 2,
+   "extension": false,
+   "note": ""
+  },
+  "7": {
+   "rule": "04f-L07",
+   "predicate": "师承",
+   "triggers": "收徒/授艺（具体对象）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "8": {
+   "rule": "04f-L08",
+   "predicate": "杀害",
+   "triggers": "杀/杀死/斩杀",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 5,
+   "extension": false,
+   "note": ""
+  },
+  "9": {
+   "rule": "04f-L09",
+   "predicate": "治愈",
+   "triggers": "疗伤/救活/治愈",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "10": {
+   "rule": "04f-L10",
+   "predicate": "投毒",
+   "triggers": "下毒/投毒（致害成立）",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "11": {
+   "rule": "04f-L11",
+   "predicate": "转移",
+   "triggers": "赠/赠送/相赠",
+   "strength": "强制",
+   "candidates": 2,
+   "emitted": 1,
+   "dropped": 4,
+   "extension": false,
+   "note": ""
+  },
+  "12": {
+   "rule": "04f-L12",
+   "predicate": "转移",
+   "triggers": "夺/抢（夺物义）",
+   "strength": "强制",
+   "candidates": 3,
+   "emitted": 2,
+   "dropped": 14,
+   "extension": false,
+   "note": ""
+  },
+  "13": {
+   "rule": "04f-L13b",
+   "predicate": "转移",
+   "triggers": "借/还",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "14": {
+   "rule": "04f-L14",
+   "predicate": "制造",
+   "triggers": "铸/炼制/打造",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "15": {
+   "rule": "04f-L15",
+   "predicate": null,
+   "triggers": "折断/烧毁/焚毁",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "16": {
+   "rule": "04f-L16",
+   "predicate": "组织成员",
+   "triggers": "拜师→◆组织",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "17": {
+   "rule": "04f-L17",
+   "predicate": "任职",
+   "triggers": "任命/继任/接任",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "18": {
+   "rule": "04f-L18",
+   "predicate": "隶属终止",
+   "triggers": "逐出/叛出",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "19": {
+   "rule": "04f-L19",
+   "predicate": "结义",
+   "triggers": "结义/结拜",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "20": {
+   "rule": "04f-L20",
+   "predicate": "配偶",
+   "triggers": "娶/嫁/成亲",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "21": {
+   "rule": "04f-L21",
+   "predicate": "到达",
+   "triggers": "抵达/来到（行程级）",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "22": {
+   "rule": "04f-L22",
+   "predicate": "离开",
+   "triggers": "离开（行程级）",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "23": {
+   "rule": "04f-L23",
+   "predicate": "押送",
+   "triggers": "押解/解往",
+   "strength": "强制",
+   "candidates": 1,
+   "emitted": 1,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "24": {
+   "rule": "04f-L24",
+   "predicate": "到达",
+   "triggers": "潜入/混入",
+   "strength": "强制",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 6,
+   "extension": false,
+   "note": "04f『进入』无 D06 同名谓词，按 §7.3 对号入座最近落位 #18 到达（weak）"
+  },
+  "25": {
+   "rule": "04f-L25",
+   "predicate": null,
+   "triggers": "追踪/跟踪（行程级）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 1,
+   "extension": false,
+   "note": ""
+  },
+  "26": {
+   "rule": "04f-L26",
+   "predicate": "交手",
+   "triggers": "交手/比武",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 3,
+   "extension": false,
+   "note": ""
+  },
+  "27": {
+   "rule": "04f-L27",
+   "predicate": null,
+   "triggers": "使用阵法（结阵/布阵）",
+   "strength": "建议",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": false,
+   "note": ""
+  },
+  "X-RESCUE": {
+   "rule": "X-RESCUE",
+   "predicate": "解救",
+   "triggers": "救/救出/救下/营救",
+   "strength": "扩展",
+   "candidates": 0,
+   "emitted": 0,
+   "dropped": 0,
+   "extension": true,
+   "note": "04f#9 只列疗伤/救活/治愈；『救』按 D06#51 解救 候选（E2）"
+  },
+  "X-ARRIVE": {
+   "rule": "X-ARRIVE",
+   "predicate": "到达",
+   "triggers": "■ 行程动词（回到/走到/走进/赶到…）",
+   "strength": "扩展",
+   "candidates": 10,
+   "emitted": 7,
+   "dropped": 1,
+   "extension": true,
+   "note": ""
+  },
+  "X-LEAVE": {
+   "rule": "X-LEAVE",
+   "predicate": "离开",
+   "triggers": "■ 离开类动词（走出/退出/逃出…）",
+   "strength": "扩展",
+   "candidates": 4,
+   "emitted": 4,
+   "dropped": 0,
+   "extension": true,
+   "note": ""
+  },
+  "X-COMBAT": {
+   "rule": "X-COMBAT",
+   "predicate": "交手",
+   "triggers": "⊞ 攻击/防御动词（近邻双角色）",
+   "strength": "扩展",
+   "candidates": 77,
+   "emitted": 25,
+   "dropped": 3,
+   "extension": true,
+   "note": ""
+  }
+ }
+}

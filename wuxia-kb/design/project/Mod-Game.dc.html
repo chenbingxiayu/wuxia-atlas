@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>模块库 · 游戏组件</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body{margin:0;background:#e9e2d2;font-family:"LXGW WenKai TC","LXGW WenKai","KaiTi","STKaiti","Noto Serif SC","SimSun",serif;color:#2b2b2b}
+  h3.sec{font-family:"Noto Serif SC","SimSun",serif;font-weight:900;font-size:18px;margin:0 0 8px;padding-bottom:5px;
+    border-bottom:1px solid #d8cdb8;letter-spacing:2px}
+  .lab{font-size:12px;color:#8c8477;line-height:1.6}
+  .chip{display:inline-block;border:1px solid #b9ab90;border-radius:999px;padding:2px 12px;font-size:13px;background:#fbf8ef;color:#5a544a;margin:3px}
+  .loc{font-family:"JetBrains Mono",Consolas,monospace;font-size:12px;color:#8c8477}
+</style>
+</helmet>
+<div style="width:1200px;height:1240px;box-sizing:border-box;padding:48px 56px;background:#fbf8ef;display:flex;flex-direction:column;gap:22px">
+
+  <div style="display:flex;align-items:baseline;gap:14px">
+    <span style="font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:24px;letter-spacing:3px">游戏组件</span>
+    <span class="lab">让玩家用数据，不背数据 · 模块库 6/7 · 全部纯前端 + localStorage</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sec">每日一谜（三次机会 · 提示逐级解锁）</h3>
+      <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:16px 20px">
+        <div style="display:flex;align-items:baseline;gap:10px">
+          <b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">第 38 题 · 谁杀了金独异？</b>
+          <span class="lab" style="margin-left:auto">剩余机会 ●●○</span>
+        </div>
+        <div style="margin:12px 0;display:flex;gap:10px;flex-wrap:wrap">
+          <span class="chip">凶手姓名 3 个字</span>
+          <span class="chip" style="border-style:dashed">提示 2 · 案发在《七剑下天山》</span>
+          <span class="chip" style="border-style:dashed;color:#b9b1a2">提示 3 · 未解锁</span>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input style="flex:1;padding:9px 14px;border:2px solid #2b2b2b;border-radius:4px;font-family:inherit;background:#fbf8ef" value="输入答案…" aria-label="答案">
+          <button style="border:2px solid #a63a2b;background:#a63a2b;color:#fbf8ef;border-radius:4px;padding:8px 22px;font-family:inherit;cursor:pointer">答</button>
+        </div>
+        <div class="lab" style="margin-top:10px;border-top:1px dashed #d8cdb8;padding-top:8px">
+          答对揭晓：谜底 + 定位符可点（楚昭南 · 七剑下天山·025:99 →）· emoji 分享 ·
+          <b style="color:#a63a2b">killer 题全部来自 audit「验证通过」死者</b></div>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">今日论战（下期 · 先猜后揭晓）</h3>
+      <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:16px 20px">
+        <b style="font-family:'Noto Serif SC','SimSun',serif;font-size:16px">今日论战</b>
+        <p class="lab" style="margin:8px 0">七剑 005 回 · 布达拉宫下——凌未风单骑夺剑，楚昭南以游龙剑压阵。这一场，谁占了上风？</p>
+        <div style="display:flex;gap:10px">
+          <button style="flex:1;border:2px solid #34546e;background:none;color:#34546e;border-radius:4px;padding:8px;font-family:inherit;cursor:pointer;font-size:14px">凌未风 占上风</button>
+          <button style="flex:1;border:2px solid #8c8477;background:none;color:#5a544a;border-radius:4px;padding:8px;font-family:inherit;cursor:pointer;font-size:14px">楚昭南 占上风</button>
+          <button style="flex:1;border:2px solid #8c8477;background:none;color:#5a544a;border-radius:4px;padding:8px;font-family:inherit;cursor:pointer;font-size:14px">不分胜负</button>
+        </div>
+        <div class="lab" style="margin-top:10px;border-top:1px dashed #d8cdb8;padding-top:8px">
+          揭晓后：明文裁决 + 定位符对质 · 数据来自武评工具 E 清洗对局表（L1/L2 层）</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+    <div>
+      <h3 class="sec">人物测试（十道性格题 → 人物卡 · 传播型）</h3>
+      <div style="background:#fbf8ef;border:1px solid #d8cdb4;border-radius:4px;padding:16px 20px">
+        <p style="margin:0;font-family:'Noto Serif SC','SimSun',serif;font-weight:900;font-size:16px">第 3/10 题 · 仇家寻上门，你——</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:10px">
+          <button style="text-align:left;border:1.5px solid #b9ab90;background:#fbf8ef;border-radius:4px;padding:8px 14px;font-family:inherit;font-size:14px;cursor:pointer">A. 先动手，江湖没有第二次机会</button>
+          <button style="text-align:left;border:1.5px solid #b9ab90;background:#fbf8ef;border-radius:4px;padding:8px 14px;font-family:inherit;font-size:14px;cursor:pointer">B. 先讲理，理讲不通再动手</button>
+          <button style="text-align:left;border:1.5px solid #b9ab90;background:#fbf8ef;border-radius:4px;padding:8px 14px;font-family:inherit;font-size:14px;cursor:pointer">C. 先走，留得青山在</button>
+        </div>
+        <div style="margin-top:12px;border-top:1px dashed #d8cdb8;padding-top:10px;display:flex;gap:12px;align-items:center">
+          <span class="lab">结果人物卡：</span>
+          <span class="chip">门派</span><span class="chip">武功</span><span class="chip">神兵</span><span class="chip">武评座次</span><span class="chip">命定剧情</span>
+        </div>
+        <div class="lab" style="margin-top:6px">座次在武评数据可信前显示「武评考订中」· 结果卡可保存分享 · 点人物名跳档案页</div>
+      </div>
+    </div>
+    <div>
+      <h3 class="sec">小说中的今天（确日事件 · 空态诚实）</h3>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="background:#fbf8ef;border:1px solid #a63a2b;border-radius:4px;padding:14px 18px">
+          <div class="lab">天启二年 · 秋 <span style="color:#a63a2b">■ 史实锚</span></div>
+          <b style="font-size:15px">练霓裳一夜白头</b>
+          <div class="lab" style="margin-top:4px">秘魔崖 · 卓练诀别——白发魔女传·026:53 →</div>
+        </div>
+        <div style="background:#fbf8ef;border:1px dashed #b9ab90;border-radius:4px;padding:12px 18px">
+          <span class="lab">这一天，江湖风平浪静。</span>
+        </div>
+        <div class="lab">只收原著明文到「月·日」的事件（年谱数据）；无确日不编造——空态是设计的一部分。</div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="sec">战绩中心（localStorage · 跨游戏汇总）</h3>
+    <div style="background:#f5efe4;border-radius:4px;padding:14px 18px;display:flex;gap:32px;align-items:center;flex-wrap:wrap">
+      <div style="text-align:center"><div style="font-size:30px;font-weight:900;color:#a63a2b">4</div><div class="lab">当前连胜</div></div>
+      <div style="text-align:center"><div style="font-size:30px;font-weight:900;color:#34546e">72%</div><div class="lab">累计正确率</div></div>
+      <div style="text-align:center"><div style="font-size:30px;font-weight:900;color:#5a544a">38</div><div class="lab">已答题数</div></div>
+      <div style="flex:1;min-width:280px">
+        <div class="lab" style="margin-bottom:6px">答题日历（近 5 周）</div>
+        <div style="display:grid;grid-template-columns:repeat(35,1fr);gap:3px">
+          <div style="height:12px;border-radius:2px;background:#a63a2b"></div><div style="height:12px;border-radius:2px;background:#5e7d5a"></div>
+          <div style="height:12px;border-radius:2px;background:#a63a2b"></div><div style="height:12px;border-radius:2px;background:#d8cdb8"></div>
+          <div style="height:12px;border-radius:2px;background:#5e7d5a"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#a63a2b"></div><div style="height:12px;border-radius:2px;background:#d8cdb8"></div>
+          <div style="height:12px;border-radius:2px;background:#5e7d5a"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#d8cdb8"></div><div style="height:12px;border-radius:2px;background:#d8cdb8"></div>
+          <div style="height:12px;border-radius:2px;background:#5e7d5a"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#a63a2b"></div><div style="height:12px;border-radius:2px;background:#d8cdb8"></div>
+          <div style="height:12px;border-radius:2px;background:#5e7d5a"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#a63a2b"></div><div style="height:12px;border-radius:2px;background:#5e7d5a"></div>
+          <div style="height:12px;border-radius:2px;background:#d8cdb8"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#5e7d5a"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#a63a2b"></div><div style="height:12px;border-radius:2px;background:#d8cdb8"></div>
+          <div style="height:12px;border-radius:2px;background:#5e7d5a"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#d8cdb8"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#5e7d5a"></div><div style="height:12px;border-radius:2px;background:#a63a2b"></div>
+          <div style="height:12px;border-radius:2px;background:#a63a2b"></div><div style="height:12px;border-radius:2px;background:#5e7d5a"></div>
+          <div style="height:12px;border-radius:2px;background:#d8cdb8"></div>
+        </div>
+      </div>
+      <span class="lab">红=答对 · 青=答错 · 灰=未答</span>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1200,"height":1240}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
