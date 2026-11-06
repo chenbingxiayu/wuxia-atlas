@@ -1,12 +1,20 @@
 ---
 import Base from '../../layouts/Base.astro';
+import books from '@data/books.json';
+import characters from '@data/characters.json';
+import chapters from '@data/chapters.json';
+import dossiers from '@data/dossiers.json';
+
+const litBooks = Object.entries(chapters as Record<string, any>)
+  .filter(([k, v]) => k !== 'meta' && v?.lit)
+  .map(([k]) => k);
 
 const files = [
-  { f: 'books.json', s: '34 部作品元数据＋互文出入边（site-books-v1）' },
+  { f: 'books.json', s: `${books.meta.totals.books} 部作品元数据＋互文出入边（site-books-v1）` },
   { f: 'universe.json', s: '六线谱系＋编年主线＋换乘站（site-universe-v1）' },
-  { f: 'characters.json', s: '2,390 规范实体索引，405 跨书（site-characters-v1）' },
-  { f: 'dossiers.json', s: 'Top40 人物档案 SKU（site-dossiers-v1）' },
-  { f: 'chapters.json', s: '34 部回目＋三部曲逐章事件流/动词密度（chapters-v1）' },
+  { f: 'characters.json', s: `${characters.meta.totals.merged_entities.toLocaleString()} 实体档案，${characters.meta.totals.cross_book.toLocaleString()} 跨书（site-characters-v1）` },
+  { f: 'dossiers.json', s: `${dossiers.dossiers.length} 人物档案 SKU（site-dossiers-v1）` },
+  { f: 'chapters.json', s: `${books.meta.totals.books} 部回目＋${litBooks.length} 部逐章事件流/动词密度（chapters-v1）` },
 ];
 const repo = 'https://github.com/chenbingxiayu/wuxia-atlas';
 ---

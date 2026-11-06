@@ -1,1423 +1,2889 @@
 {
  "meta": {
-  "generated": "2026-11-02",
-  "schema": "audit-v0",
+  "generated": "2026-11-06",
+  "schema": "audit-v1",
   "rules": [
-   "R1 死亡一致性"
+   "C4 死亡角色再出场（旧 audit R1 字段对接规则）",
+   "N8/D11 39 条常识与设定一致性规则（全集与逐书状态见 rule_coverage）"
   ],
   "pending_rules": [
-   "R2 武功习得时序（待工具 A 招式表考订接数）",
-   "R3 毒理一致性（待工具 C 丹药扩展表）"
+   "C4 死亡角色再出场（旧 audit R1 字段对接规则）：5 书命中 0（需 N5 杀害边 + 原文致死结构证据；本批结构证据通过者 0→0 命中）→ 旧 R1 两可/通过清单为空，totals 旧 R1 计数置 null",
+   "manual/exempt 规则 12 条：J3、J4、J5、S6、T3、W9、J2、J8、S8、T5、T7、W3（N8 kind=manual/exempt；其中 J3/J4/W9 本批有手工/半自动命中，详见 by_rule）",
+   "数据缺口规则 19 条：C2、C3、C4、J1、J7、S1、S10、S2、S3、S4、S5、S7、T2、T6、W1、W4、W5、W7、W8（自动规则但本批缺数据，见 rule_coverage.status_by_book）"
   ],
-  "note": "两可清单：\"杀\"事件可能非致死（未遂/重伤），也可能是真穿帮——每条都可点开定位符对质原文；v0 不做断言"
+  "note": "N8/D11 lint_consistency 产出按旧 audit.json 契约投影：旧 R1『死亡一致性』对应 N8 规则 C4（本批 0 命中 → 两可清单为空）；旧 R1 计数无新来源置 null；新增 violations/rule_coverage/by_* 等字段承载 44 条命中与 39 规则覆盖。原文引文按 01g §9.10 / 03d §6.1 发布边界不出口（仅定位符+结构化字段+原创分析）。",
+  "source": "N8/D11 registry/consistency（lint_consistency v0.1，5 书）+ 旧 audit 契约基线",
+  "engine": {
+   "tool": "lint_consistency v0.1 (2026-11-05, N8/D11)",
+   "tools": [
+    "lint_consistency v0.1 (2026-11-05, N8/D11)"
+   ],
+   "spec": {
+    "skill": "skills/SKILL_常识与设定一致性_武侠版.md",
+    "sections": [
+     "§三 34 条种子规则",
+     "§四 五项检查",
+     "§六 A-E 评级",
+     "§七 反常三分流",
+     "§3.5 lint 关系",
+     "§1.4 方向反转"
+    ],
+    "task": "docs/17 §2.3 / docs/50 §三（N8/D11）"
+   },
+   "schema_in": [
+    "wuxia-consistency-v1"
+   ],
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "generated_at_range": [
+    "2026-11-05 17:50:01",
+    "2026-11-05 17:50:02"
+   ]
+  },
+  "interfaces": {
+   "N4": {
+    "used": [
+     "time_points(age/year_ce/t_days/narrative_mode)",
+     "book_anchors",
+     "errors(T15/T11)"
+    ],
+    "purpose": "C1 年龄跨回 / T4 纪年自洽 / W2/W8 时点差 / T1/T2 时代锚"
+   },
+   "N5": {
+    "used": [
+     "edges(predicate=师承/任职/杀害/掌握/同门)",
+     "derived.lineage_labels",
+     "derived.reciprocal_conflicts",
+     "validation.warnings"
+    ],
+    "purpose": "S1/S2/S5/C2/C4/C5 关系证据"
+   },
+   "entities": {
+    "used": [
+     "canonical/aliases/status"
+    ],
+    "purpose": "人物归一与跨段同一人判定"
+   },
+   "tagged": {
+    "used": [
+     "段落/围栏/对白/叙述模式/证据引文"
+    ],
+    "purpose": "证据与 04a 叙述模式豁免"
+   }
+  },
+  "field_gaps": [
+   "totals.death_events / totals.checked：旧 audit v0 的『杀事件数/死者检查数』来自旧事件表 R1 引擎；N8 当前无对应计数（C4 需 N5 杀害边+原文致死结构证据），置 null（非 0，避免误读）",
+   "totals.passes / r1_passes：N8 不产出 R1 通过清单（旧 R1 的 5 条验证通过展品无新来源），置 null/[]；C4 规则状态见 rule_coverage",
+   "r1_ambiguous：旧 R1 字段，N8 对应规则=C4（死亡角色再出场）；本批 5 书 C4 命中 0 → 空数组；若未来 C4 有命中，EX-8 按旧 item schema（name/death/deaths_n/after_n/live_n/samples）自动映射",
+   "quote：violations 原文引文按 01g §9.10 / SKILL_03d §6.1 发布边界一律不出口（只保留 quote_len + 定位符 + 规则 + 原创分析性 rationale，rationale ≤300 字截断）",
+   "旧 meta.rules/pending_rules 的 R1/R2/R3 体系已由 N8 39 规则体系取代：R2 武功习得时序→C2、R3 毒理一致性→W8/J7（本批均为数据缺口/0 命中，见 rule_coverage）"
+  ],
+  "notes": [
+   "N8 5 书合计 violations 44 条（48h 快照）：severity={'warning': 28, 'info': 16} · grade={'C': 28, 'B': 16} · area={'检查项': 24, '江湖': 4, '武学': 11, '时代': 4, '门派': 1}",
+   "N8 规则覆盖 39 条：命中规则 11 条、豁免 2 次；逐书明细见 by_book",
+   "脱敏：violations.quote 已移除（quote_redacted=true / quote_len 保留长度）；extra 中疑似原文键（quote/snippet/text/excerpt）一并剔除",
+   "旧 audit 页面（site/src/pages/audit/index.astro）只读 r1_ambiguous/r1_passes/totals，本批两可清单为空且不报错；N8 明细在新增字段，待 W 组重建审计页消费"
+  ],
+  "redaction": {
+   "policy": "01g §9.10 / SKILL_03d §6.1：不发布原文正文、标注正文与可还原正文的连续片段；violations.quote 一律不出口（仅保留 quote_len + 定位符 + 结构化字段 + 原创分析）",
+   "quote_in_output": false,
+   "rationale_max_chars": 300,
+   "text_max_chars": 200
+  },
+  "snapshot": {
+   "exported_at": "2026-11-06 12:03:04",
+   "consistency_books": {
+    "七剑下天山": {
+     "generated_at": "2026-11-05 17:50:01",
+     "violations": 8,
+     "rules_with_hits": 4,
+     "chapters": 31,
+     "paragraphs": 2392
+    },
+    "冰魄寒光剑": {
+     "generated_at": "2026-11-05 17:50:01",
+     "violations": 2,
+     "rules_with_hits": 1,
+     "chapters": 12,
+     "paragraphs": 737
+    },
+    "塞外奇侠传": {
+     "generated_at": "2026-11-05 17:50:01",
+     "violations": 2,
+     "rules_with_hits": 1,
+     "chapters": 28,
+     "paragraphs": 564
+    },
+    "江湖三女侠": {
+     "generated_at": "2026-11-05 17:50:01",
+     "violations": 15,
+     "rules_with_hits": 6,
+     "chapters": 48,
+     "paragraphs": 3343
+    },
+    "白发魔女传": {
+     "generated_at": "2026-11-05 17:50:02",
+     "violations": 17,
+     "rules_with_hits": 8,
+     "chapters": 32,
+     "paragraphs": 2263
+    }
+   },
+   "engine_tool": [
+    "lint_consistency v0.1 (2026-11-05, N8/D11)"
+   ],
+   "schema_in": [
+    "wuxia-consistency-v1"
+   ],
+   "old_audit": {
+    "generated": "2026-11-06",
+    "r1_ambiguous": 0,
+    "r1_passes": 0
+   }
+  }
  },
  "totals": {
-  "death_events": 87,
-  "checked": 52,
-  "ambiguous": 47,
-  "passes": 5
+  "death_events": null,
+  "checked": null,
+  "ambiguous": 0,
+  "passes": null
  },
- "r1_ambiguous": [
+ "r1_ambiguous": [],
+ "r1_passes": [],
+ "violations": [
   {
-   "name": "练霓裳",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "004:33",
-    "by": "郑洪台等七人"
+   "vid": "七剑-C5-001",
+   "book": "七剑下天山",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "易兰珠",
+   "object": "",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 关系互斥：易兰珠 存在 2 位师父 ['哈玛雅', '辛龙子']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+   "extra": {
+    "n5_check": "互斥",
+    "n5_rule": "D06 §4.2"
    },
-   "deaths_n": 4,
-   "after_n": 381,
-   "live_n": 356,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "004:35",
-     "role": "主",
-     "v": "刺伤"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "004:35",
-     "role": "宾",
-     "v": "扑"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "004:37",
-     "role": "主",
-     "v": "刺"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "004:39",
-     "role": "主",
-     "v": "削"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "004:39",
-     "role": "主",
-     "v": "抛"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 0
   },
   {
-   "name": "岳鸣珂",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "011:35",
-    "by": null
+   "vid": "七剑-C5-002",
+   "book": "七剑下天山",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "玄真",
+   "object": "",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 关系互斥：玄真 存在 2 位师父 ['卓一航', '黄叶道人']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+   "extra": {
+    "n5_check": "互斥",
+    "n5_rule": "D06 §4.2"
    },
-   "deaths_n": 2,
-   "after_n": 116,
-   "live_n": 110,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "011:37",
-     "role": "主",
-     "v": "削"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "011:37",
-     "role": "主",
-     "v": "点"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "011:37",
-     "role": "主",
-     "v": "刺"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "011:39",
-     "role": "主",
-     "v": "割"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "011:41",
-     "role": "宾",
-     "v": "迫"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 0
   },
   {
-   "name": "了因",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "010:5",
-    "by": "易兰珠"
+   "vid": "七剑-C1-001",
+   "book": "七剑下天山",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "016:19",
+   "chapter": 16,
+   "pn": 19,
+   "subject": "凌未风",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：五十岁（50 岁）→ 十六岁（16 岁），年龄差 -34 岁 vs 时点差 0.4 年（偏差 34.4 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 50,
+    "age2": 16,
+    "delta_age": -34,
+    "delta_years": 0.38,
+    "loc1": "010:72",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 1,
-   "after_n": 109,
-   "live_n": 107,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "010:13",
-     "role": "主",
-     "v": "打"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "010:13",
-     "role": "主",
-     "v": "缠"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "011:93",
-     "role": "主",
-     "v": "擒"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "011:93",
-     "role": "主",
-     "v": "点"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "014:89",
-     "role": "主",
-     "v": "抓"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "卓一航",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "014:69",
-    "by": null
+   "vid": "七剑-C1-002",
+   "book": "七剑下天山",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "019:27",
+   "chapter": 19,
+   "pn": 27,
+   "subject": "凌未风",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：五十岁（50 岁）→ 三十岁多点（30 岁），年龄差 -20 岁 vs 时点差 5.4 年（偏差 25.4 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 50,
+    "age2": 30,
+    "delta_age": -20,
+    "delta_years": 5.38,
+    "loc1": "010:72",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 1,
-   "after_n": 69,
-   "live_n": 64,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "015:35",
-     "role": "宾",
-     "v": "扯"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "016:9",
-     "role": "宾",
-     "v": "指定"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "018:91",
-     "role": "主",
-     "v": "斜刺"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "018:95",
-     "role": "宾",
-     "v": "扣"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "026:153",
-     "role": "主",
-     "v": "劈"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "年羹尧",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "021:9",
-    "by": "本无大师"
+   "vid": "七剑-C1-003",
+   "book": "七剑下天山",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "019:27",
+   "chapter": 19,
+   "pn": 27,
+   "subject": "凌未风",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：十六岁（16 岁）→ 三十岁多点（30 岁），年龄差 +14 岁 vs 时点差 5.0 年（偏差 9.0 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 16,
+    "age2": 30,
+    "delta_age": 14,
+    "delta_years": 5.0,
+    "loc1": "016:19",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 3,
-   "after_n": 52,
-   "live_n": 42,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "021:11",
-     "role": "宾",
-     "v": "掷"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "021:13",
-     "role": "主",
-     "v": "打"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "023:135",
-     "role": "主",
-     "v": "歼"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "023:135",
-     "role": "主",
-     "v": "杀"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "023:135",
-     "role": "主",
-     "v": "擒"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "易兰珠",
-   "death": {
-    "book": "七剑下天山",
-    "loc": "029:71",
-    "by": null
+   "vid": "七剑-J4-001",
+   "book": "七剑下天山",
+   "rule_id": "J4",
+   "rule_title": "绿林道惯例",
+   "area": "江湖",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "013:26",
+   "chapter": 13,
+   "pn": 26,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.3 J4（明文惯例被违反 ∧ 无解释 → info）",
+   "rationale": "明写绿林惯例『不劫你的镖』后被违反且无解释 → info（§3.3 J4）",
+   "extra": {
+    "custom_loc": "013:25"
    },
-   "deaths_n": 3,
-   "after_n": 39,
-   "live_n": 37,
-   "samples": [
-    {
-     "book": "七剑下天山",
-     "loc": "029:75",
-     "role": "宾",
-     "v": "斗"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "009:7",
-     "role": "宾",
-     "v": "传"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "009:13",
-     "role": "主",
-     "v": "刺"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "009:23",
-     "role": "主",
-     "v": "扫断"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "009:31",
-     "role": "宾",
-     "v": "拜师"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 59
   },
   {
-   "name": "毒龙尊者",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "036:47",
-    "by": null
+   "vid": "七剑-J4-002",
+   "book": "七剑下天山",
+   "rule_id": "J4",
+   "rule_title": "绿林道惯例",
+   "area": "江湖",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "015:47",
+   "chapter": 15,
+   "pn": 47,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.3 J4（明文惯例被违反 ∧ 无解释 → info）",
+   "rationale": "明写绿林惯例『不劫他的镖』后被违反且无解释 → info（§3.3 J4）",
+   "extra": {
+    "custom_loc": "013:26"
    },
-   "deaths_n": 1,
-   "after_n": 35,
-   "live_n": 35,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "036:55",
-     "role": "宾",
-     "v": "点"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "036:55",
-     "role": "宾",
-     "v": "刺"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "036:57",
-     "role": "主",
-     "v": "拍"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "036:57",
-     "role": "宾",
-     "v": "点"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "036:57",
-     "role": "主",
-     "v": "崩砸"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 56
   },
   {
-   "name": "海云和尚",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "028:81",
-    "by": "李治"
-   },
-   "deaths_n": 1,
-   "after_n": 32,
-   "live_n": 32,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "028:83",
-     "role": "宾",
-     "v": "刺"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "028:83",
-     "role": "宾",
-     "v": "点"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "028:95",
-     "role": "宾",
-     "v": "挑断"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "029:27",
-     "role": "宾",
-     "v": "厮杀"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "029:31",
-     "role": "宾",
-     "v": "厮杀"
-    }
-   ]
+   "vid": "七剑-W6-001",
+   "book": "七剑下天山",
+   "rule_id": "W6",
+   "rule_title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "026:24",
+   "chapter": 26,
+   "pn": 24,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "rationale": "大数『百万军』+修辞标志词且无后续引用 → 夸张修辞标签（识别不改，§3.1 W6）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 92
   },
   {
-   "name": "周青",
-   "death": {
-    "book": "七剑下天山",
-    "loc": "029:59",
-    "by": "成天挺"
-   },
-   "deaths_n": 1,
-   "after_n": 28,
-   "live_n": 26,
-   "samples": [
-    {
-     "book": "七剑下天山",
-     "loc": "029:87",
-     "role": "主",
-     "v": "了结"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "001:109",
-     "role": "主",
-     "v": "抛"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "001:123",
-     "role": "主",
-     "v": "刺"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "001:123",
-     "role": "宾",
-     "v": "射"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "001:125",
-     "role": "主",
-     "v": "杀"
-    }
-   ]
+   "vid": "冰魄-W6-001",
+   "book": "冰魄寒光剑",
+   "rule_id": "W6",
+   "rule_title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "001:47",
+   "chapter": 1,
+   "pn": 47,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "rationale": "大数『千军』+修辞标志词且无后续引用 → 夸张修辞标签（识别不改，§3.1 W6）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 92
   },
   {
-   "name": "多铎",
-   "death": {
-    "book": "七剑下天山",
-    "loc": "001:87",
-    "by": "通明和尚"
-   },
-   "deaths_n": 2,
-   "after_n": 27,
-   "live_n": 23,
-   "samples": [
-    {
-     "book": "七剑下天山",
-     "loc": "001:89",
-     "role": "宾",
-     "v": "打"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "001:91",
-     "role": "宾",
-     "v": "劈"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "001:91",
-     "role": "宾",
-     "v": "斩"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "001:101",
-     "role": "宾",
-     "v": "射"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "001:107",
-     "role": "主",
-     "v": "劈"
-    }
-   ]
+   "vid": "冰魄-W6-002",
+   "book": "冰魄寒光剑",
+   "rule_id": "W6",
+   "rule_title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "010:59",
+   "chapter": 10,
+   "pn": 59,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "rationale": "大数『百丈』+修辞标志词且无后续引用 → 夸张修辞标签（识别不改，§3.1 W6）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 92
   },
   {
-   "name": "本无大师",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "020:111",
-    "by": "董巨川"
-   },
-   "deaths_n": 2,
-   "after_n": 25,
-   "live_n": 22,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "020:113",
-     "role": "主",
-     "v": "拂"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "020:113",
-     "role": "主",
-     "v": "震"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "020:113",
-     "role": "主",
-     "v": "拂"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "020:113",
-     "role": "宾",
-     "v": "射"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "020:113",
-     "role": "宾",
-     "v": "进击"
-    }
-   ]
+   "vid": "塞外-W6-001",
+   "book": "塞外奇侠传",
+   "rule_id": "W6",
+   "rule_title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "025:6",
+   "chapter": 25,
+   "pn": 6,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "对白",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "rationale": "大数『千里』+修辞标志词且无后续引用 → 夸张修辞标签（识别不改，§3.1 W6）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 92
   },
   {
-   "name": "唐金峰",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "032:15",
-    "by": null
-   },
-   "deaths_n": 1,
-   "after_n": 22,
-   "live_n": 21,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "032:35",
-     "role": "主",
-     "v": "斗"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "032:41",
-     "role": "宾",
-     "v": "劈"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "032:73",
-     "role": "主",
-     "v": "打"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "032:77",
-     "role": "主",
-     "v": "射"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "032:79",
-     "role": "主",
-     "v": "伤"
-    }
-   ]
+   "vid": "塞外-W6-002",
+   "book": "塞外奇侠传",
+   "rule_id": "W6",
+   "rule_title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "027:9",
+   "chapter": 27,
+   "pn": 9,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "rationale": "大数『千丈』+修辞标志词且无后续引用 → 夸张修辞标签（识别不改，§3.1 W6）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 92
   },
   {
-   "name": "纳兰明慧",
-   "death": {
-    "book": "塞外奇侠传",
-    "loc": "015:21",
-    "by": null
+   "vid": "江湖-C5-001",
+   "book": "江湖三女侠",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "冯琳",
+   "object": "",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 关系互斥：冯琳 存在 2 位师父 ['易兰珠', '钟万堂']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+   "extra": {
+    "n5_check": "互斥",
+    "n5_rule": "D06 §4.2"
    },
-   "deaths_n": 2,
-   "after_n": 22,
-   "live_n": 18,
-   "samples": [
-    {
-     "book": "塞外奇侠传",
-     "loc": "024:5",
-     "role": "主",
-     "v": "削"
-    },
-    {
-     "book": "塞外奇侠传",
-     "loc": "024:5",
-     "role": "宾",
-     "v": "斩"
-    },
-    {
-     "book": "塞外奇侠传",
-     "loc": "024:5",
-     "role": "主",
-     "v": "击"
-    },
-    {
-     "book": "塞外奇侠传",
-     "loc": "024:7",
-     "role": "宾",
-     "v": "抓"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "000:47",
-     "role": "宾",
-     "v": "打"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 0
   },
   {
-   "name": "白石道人",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "014:67",
-    "by": "公孙大娘"
+   "vid": "江湖-C5-002",
+   "book": "江湖三女侠",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "易兰珠",
+   "object": "唐晓澜",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 互为师徒对 易兰珠 ⇄ 唐晓澜（016:44）→ 辈分/称谓系统性冲突候选（§4.5 检查项五；待人工裁定）",
+   "extra": {
+    "n5_rule": "D06 §9.3"
    },
-   "deaths_n": 2,
-   "after_n": 18,
-   "live_n": 17,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "014:69",
-     "role": "宾",
-     "v": "挑"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "014:69",
-     "role": "宾",
-     "v": "戮"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "014:69",
-     "role": "宾",
-     "v": "掷"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "015:83",
-     "role": "宾",
-     "v": "打"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "017:35",
-     "role": "主",
-     "v": "收"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 0
   },
   {
-   "name": "铁珊瑚",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "013:73",
-    "by": "练霓裳"
+   "vid": "江湖-C5-003",
+   "book": "江湖三女侠",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "唐晓澜",
+   "object": "易兰珠",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 互为师徒对 唐晓澜 ⇄ 易兰珠（024:4）→ 辈分/称谓系统性冲突候选（§4.5 检查项五；待人工裁定）",
+   "extra": {
+    "n5_rule": "D06 §9.3"
    },
-   "deaths_n": 1,
-   "after_n": 15,
-   "live_n": 15,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "013:77",
-     "role": "主",
-     "v": "跑"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "013:87",
-     "role": "主",
-     "v": "冲"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "013:89",
-     "role": "主",
-     "v": "飞"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "019:27",
-     "role": "主",
-     "v": "杀"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "019:47",
-     "role": "主",
-     "v": "点"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 0
   },
   {
-   "name": "清兵",
-   "death": {
-    "book": "塞外奇侠传",
-    "loc": "004:65",
-    "by": null
+   "vid": "江湖-T1-001",
+   "book": "江湖三女侠",
+   "rule_id": "T1",
+   "rule_title": "朝代锚·器物与物品",
+   "area": "时代",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:44",
+   "chapter": 1,
+   "pn": 44,
+   "subject": "",
+   "object": "银元",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.4 T1（锚外器物 ∧ 未明写架空 → error；边界器物挂人工）",
+   "rationale": "本书 N4 年锚上限约 1722，出现『银元』（约 1889 年后方有）（边界器物单例，挂人工核实型制与传入年代，不预设结论） → warning 边界器物（§3.4 T1）",
+   "extra": {
+    "item": "银元",
+    "intro_year": 1889,
+    "book_year": 1722
    },
-   "deaths_n": 3,
-   "after_n": 22,
-   "live_n": 15,
-   "samples": [
-    {
-     "book": "塞外奇侠传",
-     "loc": "012:29",
-     "role": "宾",
-     "v": "射"
-    },
-    {
-     "book": "塞外奇侠传",
-     "loc": "012:43",
-     "role": "宾",
-     "v": "摔"
-    },
-    {
-     "book": "塞外奇侠传",
-     "loc": "013:5",
-     "role": "宾",
-     "v": "抓"
-    },
-    {
-     "book": "塞外奇侠传",
-     "loc": "018:43",
-     "role": "宾",
-     "v": "弹"
-    },
-    {
-     "book": "塞外奇侠传",
-     "loc": "018:43",
-     "role": "宾",
-     "v": "抓"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 49
   },
   {
-   "name": "邝琏",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "038:35",
-    "by": "冯瑛"
+   "vid": "江湖-C1-001",
+   "book": "江湖三女侠",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "005:49",
+   "chapter": 5,
+   "pn": 49,
+   "subject": "杨柳青",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：七岁（7 岁）→ 十九岁（19 岁），年龄差 +12 岁 vs 时点差 20.0 年（偏差 8.0 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 7,
+    "age2": 19,
+    "delta_age": 12,
+    "delta_years": 20.0,
+    "loc1": "006:17",
+    "mode1": "对白",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 1,
-   "after_n": 16,
-   "live_n": 15,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "038:83",
-     "role": "主",
-     "v": "追捕"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "038:89",
-     "role": "主",
-     "v": "点"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "038:91",
-     "role": "主",
-     "v": "点打"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "038:91",
-     "role": "主",
-     "v": "震"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "038:93",
-     "role": "宾",
-     "v": "刺"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "应修阳",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "010:91",
-    "by": "岳鸣珂"
+   "vid": "江湖-T4-001",
+   "book": "江湖三女侠",
+   "rule_id": "T4",
+   "rule_title": "纪年自洽",
+   "area": "时代",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "022:49",
+   "chapter": 22,
+   "pn": 49,
+   "subject": "",
+   "object": "康熙六十一年一月十三日",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.4 T4（同一书纪年体系冲突 ∧ 无跨时叙述 → error）",
+   "rationale": "N4 纪年换算冲突登记（T15）：朝代锚『康熙六十一年一月十三日』与书内相对链冲突，按 §2.5 规则5 以朝代锚为主并登记 → 疑似纪年体系冲突（N4 相对链可能漂移，需回读原文区分倒叙/误置，暂判 warning；§3.4 T4）",
+   "extra": {
+    "n4_code": "T15",
+    "n4_detail": "朝代锚 康熙六十一年一月十三日=1722 与相对链 t=13538 日冲突（Δ=+0 日）→ 朝代锚为主，登记换算冲突"
    },
-   "deaths_n": 1,
-   "after_n": 13,
-   "live_n": 13,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "011:33",
-     "role": "主",
-     "v": "跳"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "011:33",
-     "role": "主",
-     "v": "卷"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "011:33",
-     "role": "宾",
-     "v": "削"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "011:35",
-     "role": "宾",
-     "v": "卷"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "011:37",
-     "role": "宾",
-     "v": "削"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "慕容冲",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "020:83",
-    "by": "岳鸣珂"
+   "vid": "江湖-C1-003",
+   "book": "江湖三女侠",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "025:12",
+   "chapter": 25,
+   "pn": 12,
+   "subject": "年羹尧",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：十一岁（11 岁）→ 十四岁（14 岁），年龄差 +3 岁 vs 时点差 11.1 年（偏差 8.1 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 11,
+    "age2": 14,
+    "delta_age": 3,
+    "delta_years": 11.11,
+    "loc1": "020:53",
+    "mode1": "对白",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 3,
-   "after_n": 13,
-   "live_n": 13,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "020:139",
-     "role": "宾",
-     "v": "杀"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "020:151",
-     "role": "宾",
-     "v": "杀"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "023:139",
-     "role": "宾",
-     "v": "掷"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "024:25",
-     "role": "宾",
-     "v": "抓"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "024:25",
-     "role": "主",
-     "v": "打"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "清军",
-   "death": {
-    "book": "塞外奇侠传",
-    "loc": "016:5",
-    "by": "卓一航"
+   "vid": "江湖-C1-005",
+   "book": "江湖三女侠",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "025:12",
+   "chapter": 25,
+   "pn": 12,
+   "subject": "年羹尧",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：十四岁（14 岁）→ 十四岁（14 岁），年龄差 +0 岁 vs 时点差 9.2 年（偏差 9.2 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 14,
+    "age2": 14,
+    "delta_age": 0,
+    "delta_years": 9.15,
+    "loc1": "011:31",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 1,
-   "after_n": 15,
-   "live_n": 13,
-   "samples": [
-    {
-     "book": "塞外奇侠传",
-     "loc": "026:21",
-     "role": "宾",
-     "v": "结果"
-    },
-    {
-     "book": "塞外奇侠传",
-     "loc": "028:19",
-     "role": "主",
-     "v": "击"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "009:5",
-     "role": "主",
-     "v": "杀"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "009:21",
-     "role": "宾",
-     "v": "冲杀"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "023:53",
-     "role": "宾",
-     "v": "打伤"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "玄真",
-   "death": {
-    "book": "七剑下天山",
-    "loc": "027:67",
-    "by": "桂仲明"
+   "vid": "江湖-C1-006",
+   "book": "江湖三女侠",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "025:12",
+   "chapter": 25,
+   "pn": 12,
+   "subject": "年羹尧",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：二十一岁（21 岁）→ 十四岁（14 岁），年龄差 -7 岁 vs 时点差 1.1 年（偏差 8.1 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 21,
+    "age2": 14,
+    "delta_age": -7,
+    "delta_years": 1.11,
+    "loc1": "019:30",
+    "mode1": "传言",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 2,
-   "after_n": 13,
-   "live_n": 13,
-   "samples": [
-    {
-     "book": "七剑下天山",
-     "loc": "027:69",
-     "role": "宾",
-     "v": "斗"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "027:87",
-     "role": "主",
-     "v": "撞"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "027:91",
-     "role": "主",
-     "v": "刺伤"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "027:91",
-     "role": "主",
-     "v": "战"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "027:103",
-     "role": "宾",
-     "v": "撩"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "神大元",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "027:119",
-    "by": "王照希"
+   "vid": "江湖-C1-002",
+   "book": "江湖三女侠",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "011:31",
+   "chapter": 11,
+   "pn": 31,
+   "subject": "年羹尧",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：十一岁（11 岁）→ 十四岁（14 岁），年龄差 +3 岁 vs 时点差 2.0 年（偏差 1.0 年 >1） → info（§4.1 检查项一）",
+   "extra": {
+    "age1": 11,
+    "age2": 14,
+    "delta_age": 3,
+    "delta_years": 1.96,
+    "loc1": "020:53",
+    "mode1": "对白",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 1,
-   "after_n": 11,
-   "live_n": 11,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "027:127",
-     "role": "主",
-     "v": "杀"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "027:143",
-     "role": "宾",
-     "v": "勾撕"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "027:143",
-     "role": "主",
-     "v": "击"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "027:153",
-     "role": "主",
-     "v": "抓"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "027:153",
-     "role": "主",
-     "v": "抓"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "李思永",
-   "death": {
-    "book": "七剑下天山",
-    "loc": "022:61",
-    "by": "成天挺"
-   },
-   "deaths_n": 2,
-   "after_n": 11,
-   "live_n": 11,
-   "samples": [
-    {
-     "book": "七剑下天山",
-     "loc": "023:17",
-     "role": "宾",
-     "v": "扫去"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "023:17",
-     "role": "主",
-     "v": "摔上半空"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "023:21",
-     "role": "宾",
-     "v": "推"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "023:53",
-     "role": "主",
-     "v": "打"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "023:57",
-     "role": "宾",
-     "v": "夹断"
-    }
-   ]
+   "vid": "江湖-W6-001",
+   "book": "江湖三女侠",
+   "rule_id": "W6",
+   "rule_title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "015:47",
+   "chapter": 15,
+   "pn": 47,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "rationale": "大数『千丈』+修辞标志词且无后续引用 → 夸张修辞标签（识别不改，§3.1 W6）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 92
   },
   {
-   "name": "甘天龙",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "012:31",
-    "by": "吕四娘"
+   "vid": "江湖-C1-004",
+   "book": "江湖三女侠",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "019:30",
+   "chapter": 19,
+   "pn": 30,
+   "subject": "年羹尧",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：十四岁（14 岁）→ 二十一岁（21 岁），年龄差 +7 岁 vs 时点差 8.0 年（偏差 1.0 年 >1） → info（§4.1 检查项一）",
+   "extra": {
+    "age1": 14,
+    "age2": 21,
+    "delta_age": 7,
+    "delta_years": 8.04,
+    "loc1": "011:31",
+    "mode1": "正常叙事",
+    "mode2": "传言"
    },
-   "deaths_n": 1,
-   "after_n": 10,
-   "live_n": 10,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "012:83",
-     "role": "主",
-     "v": "刺"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "012:83",
-     "role": "宾",
-     "v": "击落"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "013:17",
-     "role": "主",
-     "v": "袭"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "013:17",
-     "role": "宾",
-     "v": "插"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "023:11",
-     "role": "宾",
-     "v": "打"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "武琼瑶",
-   "death": {
-    "book": "七剑下天山",
-    "loc": "025:133",
-    "by": "刘郁芳"
+   "vid": "江湖-W9-001",
+   "book": "江湖三女侠",
+   "rule_id": "W9",
+   "rule_title": "少年天才需铺垫",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "019:31",
+   "chapter": 19,
+   "pn": 31,
+   "subject": "冯琳",
+   "object": "岳钟琪",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W9（<16 岁击败成名一流 ∧ 无奇遇/家学/名师 → info 待人工）",
+   "rationale": "冯琳 年龄锚 14 岁（<16）击败成名人物 岳钟琪，无奇遇/家学/名师明写 → info 待人工（§3.1 W9）",
+   "extra": {
+    "age": 14,
+    "age_loc": "019:31"
    },
-   "deaths_n": 1,
-   "after_n": 8,
-   "live_n": 8,
-   "samples": [
-    {
-     "book": "七剑下天山",
-     "loc": "026:41",
-     "role": "主",
-     "v": "斗"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "027:101",
-     "role": "主",
-     "v": "打下"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "027:103",
-     "role": "主",
-     "v": "撩"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "027:107",
-     "role": "主",
-     "v": "扎"
-    },
-    {
-     "book": "七剑下天山",
-     "loc": "027:107",
-     "role": "宾",
-     "v": "扫"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 75
   },
   {
-   "name": "叶横波",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "028:37",
-    "by": "李治"
-   },
-   "deaths_n": 1,
-   "after_n": 8,
-   "live_n": 8,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "028:45",
-     "role": "宾",
-     "v": "拚斗"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "032:93",
-     "role": "宾",
-     "v": "刺"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "032:111",
-     "role": "主",
-     "v": "传"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "033:109",
-     "role": "宾",
-     "v": "劈"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "033:111",
-     "role": "主",
-     "v": "刺"
-    }
-   ]
+   "vid": "江湖-W6-002",
+   "book": "江湖三女侠",
+   "rule_id": "W6",
+   "rule_title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "028:33",
+   "chapter": 28,
+   "pn": 33,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "rationale": "大数『三百里』+修辞标志词且无后续引用 → 夸张修辞标签（识别不改，§3.1 W6）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 92
   },
   {
-   "name": "额音和布",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "047:191",
-    "by": "吕四娘"
+   "vid": "江湖-C1-007",
+   "book": "江湖三女侠",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "034:87",
+   "chapter": 34,
+   "pn": 87,
+   "subject": "冯瑛",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：七岁（7 岁）→ 十七八岁（18 岁），年龄差 +11 岁 vs 时点差 8.7 年（偏差 2.3 年 >1） → info（§4.1 检查项一）",
+   "extra": {
+    "age1": 7,
+    "age2": 18,
+    "delta_age": 11,
+    "delta_years": 8.7,
+    "loc1": "018:37",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
    },
-   "deaths_n": 1,
-   "after_n": 8,
-   "live_n": 7,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "048:11",
-     "role": "主",
-     "v": "中"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "048:57",
-     "role": "主",
-     "v": "迫"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "048:59",
-     "role": "宾",
-     "v": "刺"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "048:67",
-     "role": "主",
-     "v": "擒"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "048:67",
-     "role": "主",
-     "v": "点"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 46
   },
   {
-   "name": "方今明",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "023:147",
-    "by": "车辟邪"
+   "vid": "白发-C5-001",
+   "book": "白发魔女传",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "李申时",
+   "object": "",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 关系互斥：李申时 存在 2 位师父 ['白石道人', '黄叶道人']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+   "extra": {
+    "n5_check": "互斥",
+    "n5_rule": "D06 §4.2"
    },
-   "deaths_n": 1,
-   "after_n": 6,
-   "live_n": 6,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "023:151",
-     "role": "宾",
-     "v": "中"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "023:171",
-     "role": "主",
-     "v": "踢"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "045:105",
-     "role": "主",
-     "v": "掴"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "045:113",
-     "role": "宾",
-     "v": "戳"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "045:113",
-     "role": "主",
-     "v": "捣"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 0
   },
   {
-   "name": "王照希",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "027:127",
-    "by": "神大元"
+   "vid": "白发-C5-002",
+   "book": "白发魔女传",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "卓一航",
+   "object": "",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 关系互斥：卓一航 存在 3 位师父 ['岳鸣珂', '紫阳道长', '达摩租师']，active 唯一性须 N4 时间轴复核 → 辈分/称谓系统性冲突候选（§4.5 检查项五；弱信号 warning）",
+   "extra": {
+    "n5_check": "互斥",
+    "n5_rule": "D06 §4.2"
    },
-   "deaths_n": 1,
-   "after_n": 5,
-   "live_n": 5,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "027:135",
-     "role": "宾",
-     "v": "捉拿"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "027:143",
-     "role": "主",
-     "v": "刺"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "027:153",
-     "role": "宾",
-     "v": "抓"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "027:153",
-     "role": "宾",
-     "v": "抓"
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "027:163",
-     "role": "宾",
-     "v": "剪"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 0
   },
   {
-   "name": "关东四侠",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "023:89",
-    "by": "李治"
+   "vid": "白发-C5-003",
+   "book": "白发魔女传",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "卓一航",
+   "object": "辛龙子",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 互为师徒对 卓一航 ⇄ 辛龙子（029:35）→ 辈分/称谓系统性冲突候选（§4.5 检查项五；待人工裁定）",
+   "extra": {
+    "n5_rule": "D06 §9.3"
    },
-   "deaths_n": 1,
-   "after_n": 4,
-   "live_n": 4,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "023:159",
-     "role": "主",
-     "v": "中"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "046:31",
-     "role": "主",
-     "v": "打"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "046:45",
-     "role": "宾",
-     "v": "恶斗"
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "046:61",
-     "role": "宾",
-     "v": "误伤"
-    }
-   ]
+   "quote_redacted": true,
+   "quote_len": 0
+  },
+  {
+   "vid": "白发-C5-004",
+   "book": "白发魔女传",
+   "rule_id": "C5",
+   "rule_title": "称谓辈分错乱",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "001:0",
+   "chapter": 1,
+   "pn": 0,
+   "subject": "辛龙子",
+   "object": "卓一航",
+   "narrative_mode": "未知",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "rationale": "N5 互为师徒对 辛龙子 ⇄ 卓一航（029:35）→ 辈分/称谓系统性冲突候选（§4.5 检查项五；待人工裁定）",
+   "extra": {
+    "n5_rule": "D06 §9.3"
+   },
+   "quote_redacted": true,
+   "quote_len": 0
+  },
+  {
+   "vid": "白发-C1-001",
+   "book": "白发魔女传",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "002:33",
+   "chapter": 2,
+   "pn": 33,
+   "subject": "卓一航",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：七岁（7 岁）→ 十九岁（19 岁），年龄差 +12 岁 vs 时点差 0.0 年（偏差 12.0 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 7,
+    "age2": 19,
+    "delta_age": 12,
+    "delta_years": 0.0,
+    "loc1": "002:32",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
+   },
+   "quote_redacted": true,
+   "quote_len": 46
+  },
+  {
+   "vid": "白发-W2-001",
+   "book": "白发魔女传",
+   "rule_id": "W2",
+   "rule_title": "内伤/内力恢复速度",
+   "area": "武学",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "010:27",
+   "chapter": 10,
+   "pn": 27,
+   "subject": "尊胜禅师",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W2（轻伤≥半日/重伤≥3日/内力耗尽≥7日；灵药/渡功/运功豁免）",
+   "rationale": "伤情（内伤）到恢复（痊愈）约 0.0 日 < 阈值 0.5 日，且无灵药/疗养/运功明写（§3.1 W2）",
+   "extra": {
+    "gap_days": 0.0,
+    "threshold_days": 0.5,
+    "injury_loc": "010:27"
+   },
+   "quote_redacted": true,
+   "quote_len": 92
+  },
+  {
+   "vid": "白发-W2-002",
+   "book": "白发魔女传",
+   "rule_id": "W2",
+   "rule_title": "内伤/内力恢复速度",
+   "area": "武学",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "010:36",
+   "chapter": 10,
+   "pn": 36,
+   "subject": "镜明长老",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W2（轻伤≥半日/重伤≥3日/内力耗尽≥7日；灵药/渡功/运功豁免）",
+   "rationale": "伤情（重伤）到恢复（如常）约 0.0 日 < 阈值 3 日，且无灵药/疗养/运功明写（§3.1 W2）",
+   "extra": {
+    "gap_days": 0.0,
+    "threshold_days": 3,
+    "injury_loc": "010:35"
+   },
+   "quote_redacted": true,
+   "quote_len": 92
+  },
+  {
+   "vid": "白发-C1-005",
+   "book": "白发魔女传",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "016:17",
+   "chapter": 16,
+   "pn": 17,
+   "subject": "李申时",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：十二岁（12 岁）→ 三岁（3 岁），年龄差 -9 岁 vs 时点差 0.0 年（偏差 9.0 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 12,
+    "age2": 3,
+    "delta_age": -9,
+    "delta_years": 0.0,
+    "loc1": "016:3",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
+   },
+   "quote_redacted": true,
+   "quote_len": 46
+  },
+  {
+   "vid": "白发-T4-001",
+   "book": "白发魔女传",
+   "rule_id": "T4",
+   "rule_title": "纪年自洽",
+   "area": "时代",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "018:18",
+   "chapter": 18,
+   "pn": 18,
+   "subject": "",
+   "object": "天启四年",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.4 T4（同一书纪年体系冲突 ∧ 无跨时叙述 → error）",
+   "rationale": "N4 纪年换算冲突登记（T15）：朝代锚『天启四年』与书内相对链冲突，按 §2.5 规则5 以朝代锚为主并登记 → 疑似纪年体系冲突（N4 相对链可能漂移，需回读原文区分倒叙/误置，暂判 warning；§3.4 T4）",
+   "extra": {
+    "n4_code": "T15",
+    "n4_detail": "朝代锚 天启四年=1624 与相对链 t=11024 日冲突（Δ=+0 日）→ 朝代锚为主，登记换算冲突"
+   },
+   "quote_redacted": true,
+   "quote_len": 46
+  },
+  {
+   "vid": "白发-T4-002",
+   "book": "白发魔女传",
+   "rule_id": "T4",
+   "rule_title": "纪年自洽",
+   "area": "时代",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "022:68",
+   "chapter": 22,
+   "pn": 68,
+   "subject": "",
+   "object": "天启四年",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.4 T4（同一书纪年体系冲突 ∧ 无跨时叙述 → error）",
+   "rationale": "N4 纪年换算冲突登记（T15）：朝代锚『天启四年』与书内相对链冲突，按 §2.5 规则5 以朝代锚为主并登记 → 疑似纪年体系冲突（N4 相对链可能漂移，需回读原文区分倒叙/误置，暂判 warning；§3.4 T4）",
+   "extra": {
+    "n4_code": "T15",
+    "n4_detail": "朝代锚 天启四年=1624 与相对链 t=11042 日冲突（Δ=+0 日）→ 朝代锚为主，登记换算冲突"
+   },
+   "quote_redacted": true,
+   "quote_len": 46
+  },
+  {
+   "vid": "白发-S9-001",
+   "book": "白发魔女传",
+   "rule_id": "S9",
+   "rule_title": "失传绝学再现",
+   "area": "门派",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "030:33",
+   "chapter": 30,
+   "pn": 33,
+   "subject": "",
+   "object": "剑法",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.2 S9（明写失传 ∧ 后文再现 ∧ 无秘籍/隐脉 → warning）",
+   "rationale": "028:45 明写『失传』，030:33 又见使出且无秘籍/隐脉明写 → warning（§3.2 S9）",
+   "extra": {
+    "lost_loc": "028:45"
+   },
+   "quote_redacted": true,
+   "quote_len": 92
+  },
+  {
+   "vid": "白发-C1-004",
+   "book": "白发魔女传",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "031:36",
+   "chapter": 31,
+   "pn": 36,
+   "subject": "何绿华",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：十岁（10 岁）→ 十七八岁（18 岁），年龄差 +8 岁 vs 时点差 0.5 年（偏差 7.5 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 10,
+    "age2": 18,
+    "delta_age": 8,
+    "delta_years": 0.52,
+    "loc1": "009:1",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
+   },
+   "quote_redacted": true,
+   "quote_len": 46
+  },
+  {
+   "vid": "白发-C1-002",
+   "book": "白发魔女传",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "032:23",
+   "chapter": 32,
+   "pn": 23,
+   "subject": "卓一航",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：七岁（7 岁）→ 三十多岁（30 岁），年龄差 +23 岁 vs 时点差 30.6 年（偏差 7.6 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 7,
+    "age2": 30,
+    "delta_age": 23,
+    "delta_years": 30.55,
+    "loc1": "002:32",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
+   },
+   "quote_redacted": true,
+   "quote_len": 46
+  },
+  {
+   "vid": "白发-C1-003",
+   "book": "白发魔女传",
+   "rule_id": "C1",
+   "rule_title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "severity": "warning",
+   "grade": "C",
+   "confidence": "medium",
+   "locator": "032:23",
+   "chapter": 32,
+   "pn": 23,
+   "subject": "卓一航",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "rationale": "年龄跨回：十九岁（19 岁）→ 三十多岁（30 岁），年龄差 +11 岁 vs 时点差 30.6 年（偏差 19.6 年 >1） → warning（§4.1 检查项一）",
+   "extra": {
+    "age1": 19,
+    "age2": 30,
+    "delta_age": 11,
+    "delta_years": 30.55,
+    "loc1": "002:33",
+    "mode1": "正常叙事",
+    "mode2": "正常叙事"
+   },
+   "quote_redacted": true,
+   "quote_len": 46
+  },
+  {
+   "vid": "白发-J6-001",
+   "book": "白发魔女传",
+   "rule_id": "J6",
+   "rule_title": "官府缺位",
+   "area": "江湖",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "010:47",
+   "chapter": 10,
+   "pn": 47,
+   "subject": "云燕平",
+   "object": "",
+   "narrative_mode": "正常叙事",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.3 J6（缉拿明写 ∧ 公然行动无规避 → info）",
+   "rationale": "明写缉拿（通缉）后 云燕平 公然行动且无规避描写 → info（§3.3 J6）",
+   "extra": {
+    "wanted_loc": "008:51"
+   },
+   "quote_redacted": true,
+   "quote_len": 63
+  },
+  {
+   "vid": "白发-W6-001",
+   "book": "白发魔女传",
+   "rule_id": "W6",
+   "rule_title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "017:19",
+   "chapter": 17,
+   "pn": 19,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "传言",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "rationale": "大数『百人』+修辞标志词且无后续引用 → 夸张修辞标签（识别不改，§3.1 W6）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 92
+  },
+  {
+   "vid": "白发-J3-001",
+   "book": "白发魔女传",
+   "rule_id": "J3",
+   "rule_title": "比武彩头兑现",
+   "area": "江湖",
+   "severity": "info",
+   "grade": "B",
+   "confidence": "medium",
+   "locator": "032:35",
+   "chapter": 32,
+   "pn": 35,
+   "subject": "",
+   "object": "",
+   "narrative_mode": "对白",
+   "exempted": false,
+   "exemption": "",
+   "spec_cite": "§3.3 J3（彩头被违背 ∧ 无解释 → info）",
+   "rationale": "赛前明写彩头，后文未见兑现/解释 → info 待人工（§3.3 J3）",
+   "extra": {},
+   "quote_redacted": true,
+   "quote_len": 66
   }
  ],
- "r1_passes": [
+ "rule_coverage": [
   {
-   "name": "满洲",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "004:37",
-    "by": "卓一航"
+   "rule_id": "C1",
+   "area": "检查项",
+   "title": "人物年龄跨回自洽",
+   "kind": "semi",
+   "spec_cite": "§4.1（年龄差 ≠ 时点差 ±1 年容差 → error/warning/info）",
+   "hits": 15,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现",
+    "冰魄寒光剑": "已实现（本批 0 命中）",
+    "塞外奇侠传": "已实现（本批 0 命中）",
+    "江湖三女侠": "已实现",
+    "白发魔女传": "已实现"
    },
-   "deaths_n": 1,
-   "after_n": 4,
-   "live_n": 0,
-   "samples": [
-    {
-     "book": "白发魔女传",
-     "loc": "014:41",
-     "in_quote": true
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "014:41",
-     "in_quote": true
-    },
-    {
-     "book": "白发魔女传",
-     "loc": "014:41",
-     "in_quote": true
-    }
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "C2",
+   "area": "检查项",
+   "title": "武功习得顺序（未学先使）",
+   "kind": "semi",
+   "spec_cite": "§4.2（使用时点 < 习得时点 → error/warning/info）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：N5『掌握』边稀疏（本批 2 条），习得事件层未建）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：N5『掌握』边稀疏（本批 2 条），习得事件层未建）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：N5『掌握』边稀疏（本批 2 条），习得事件层未建）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：N5『掌握』边稀疏（本批 2 条），习得事件层未建）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：N5『掌握』边稀疏（本批 2 条），习得事件层未建）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "N5『掌握』边稀疏（本批 2 条），习得事件层未建"
    ]
   },
   {
-   "name": "天龙派",
-   "death": {
-    "book": "白发魔女传",
-    "loc": "031:167",
-    "by": null
+   "rule_id": "C3",
+   "area": "检查项",
+   "title": "门派存续期（灭派后再出场）",
+   "kind": "semi",
+   "spec_cite": "§4.3（灭派后整建制再现 ∧ 无重建 → error/warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：同 S3（复用），需门派事件层）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：同 S3（复用），需门派事件层）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：同 S3（复用），需门派事件层）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：同 S3（复用），需门派事件层）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：同 S3（复用），需门派事件层）"
    },
-   "deaths_n": 1,
-   "after_n": 1,
-   "live_n": 0,
-   "samples": [
-    {
-     "book": "七剑下天山",
-     "loc": "023:105",
-     "in_quote": true
-    }
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "同 S3（复用），需门派事件层"
    ]
   },
   {
-   "name": "纳兰秀吉",
-   "death": {
-    "book": "塞外奇侠传",
-    "loc": "019:19",
-    "by": null
+   "rule_id": "C4",
+   "area": "检查项",
+   "title": "死亡角色再出场",
+   "kind": "semi",
+   "spec_cite": "§4.4（正常叙事活体行动 ∧ 无假死/翻案 → error/warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需 N5 杀害边 + 原文致死结构证据；本批结构证据通过者 0→0 命中）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需 N5 杀害边 + 原文致死结构证据；本批结构证据通过者 0→0 命中）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需 N5 杀害边 + 原文致死结构证据；本批结构证据通过者 0→0 命中）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需 N5 杀害边 + 原文致死结构证据；本批结构证据通过者 0→0 命中）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需 N5 杀害边 + 原文致死结构证据；本批结构证据通过者 0→0 命中）"
    },
-   "deaths_n": 1,
-   "after_n": 1,
-   "live_n": 0,
-   "samples": [
-    {
-     "book": "七剑下天山",
-     "loc": "004:25",
-     "in_quote": true
-    }
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需 N5 杀害边 + 原文致死结构证据；本批结构证据通过者 0→0 命中"
    ]
   },
   {
-   "name": "冯广潮",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "002:67",
-    "by": null
+   "rule_id": "C5",
+   "area": "检查项",
+   "title": "称谓辈分错乱",
+   "kind": "semi",
+   "spec_cite": "§4.5（关系边与称谓系统性冲突 → error/warning/info）",
+   "hits": 9,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现",
+    "冰魄寒光剑": "已实现（本批 0 命中）",
+    "塞外奇侠传": "已实现（本批 0 命中）",
+    "江湖三女侠": "已实现",
+    "白发魔女传": "已实现"
    },
-   "deaths_n": 1,
-   "after_n": 2,
-   "live_n": 0,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "005:95",
-     "in_quote": true
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "005:95",
-     "in_quote": true
-    }
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "J1",
+   "area": "江湖",
+   "title": "镖程备案",
+   "kind": "auto",
+   "spec_cite": "§3.3 J1（★方向反转：>凡人 3 倍=info 备案，不判异常）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：同 W1：需镖程距离+耗时同段）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：同 W1：需镖程距离+耗时同段）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：同 W1：需镖程距离+耗时同段）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：同 W1：需镖程距离+耗时同段）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：同 W1：需镖程距离+耗时同段）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "同 W1：需镖程距离+耗时同段"
    ]
   },
   {
-   "name": "神魔双老",
-   "death": {
-    "book": "江湖三女侠",
-    "loc": "036:49",
-    "by": null
+   "rule_id": "J2",
+   "area": "江湖",
+   "title": "寻仇母题",
+   "kind": "exempt",
+   "spec_cite": "§3.3 J2（★方向反转：灭门/寻仇不自带异常，不标记）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "豁免（默认不扫描）",
+    "冰魄寒光剑": "豁免（默认不扫描）",
+    "塞外奇侠传": "豁免（默认不扫描）",
+    "江湖三女侠": "豁免（默认不扫描）",
+    "白发魔女传": "豁免（默认不扫描）"
    },
-   "deaths_n": 1,
-   "after_n": 3,
-   "live_n": 0,
-   "samples": [
-    {
-     "book": "江湖三女侠",
-     "loc": "036:109",
-     "in_quote": true
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "036:109",
-     "in_quote": true
-    },
-    {
-     "book": "江湖三女侠",
-     "loc": "045:143",
-     "in_quote": true
-    }
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "J3",
+   "area": "江湖",
+   "title": "比武彩头兑现",
+   "kind": "manual",
+   "spec_cite": "§3.3 J3（彩头被违背 ∧ 无解释 → info）",
+   "hits": 1,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需彩头/赌注明写 + 后文未兑现）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需彩头/赌注明写 + 后文未兑现）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需彩头/赌注明写 + 后文未兑现）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需彩头/赌注明写 + 后文未兑现）",
+    "白发魔女传": "已实现"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需彩头/赌注明写 + 后文未兑现"
+   ]
+  },
+  {
+   "rule_id": "J4",
+   "area": "江湖",
+   "title": "绿林道惯例",
+   "kind": "manual",
+   "spec_cite": "§3.3 J4（明文惯例被违反 ∧ 无解释 → info）",
+   "hits": 2,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需绿林惯例明写 + 后文违反）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需绿林惯例明写 + 后文违反）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需绿林惯例明写 + 后文违反）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需绿林惯例明写 + 后文违反）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需绿林惯例明写 + 后文违反"
+   ]
+  },
+  {
+   "rule_id": "J5",
+   "area": "江湖",
+   "title": "江湖经济",
+   "kind": "manual",
+   "spec_cite": "§3.3 J5（整体豁免；仅关键物前后价差悬殊 → info）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需同一器物两处价差 ≥5 倍（本批无））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需同一器物两处价差 ≥5 倍（本批无））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需同一器物两处价差 ≥5 倍（本批无））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需同一器物两处价差 ≥5 倍（本批无））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需同一器物两处价差 ≥5 倍（本批无））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需同一器物两处价差 ≥5 倍（本批无）"
+   ]
+  },
+  {
+   "rule_id": "J6",
+   "area": "江湖",
+   "title": "官府缺位",
+   "kind": "semi",
+   "spec_cite": "§3.3 J6（缉拿明写 ∧ 公然行动无规避 → info）",
+   "hits": 1,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需缉拿明写 + 后文公然行动）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需缉拿明写 + 后文公然行动）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需缉拿明写 + 后文公然行动）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需缉拿明写 + 后文公然行动）",
+    "白发魔女传": "已实现"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需缉拿明写 + 后文公然行动"
+   ]
+  },
+  {
+   "rule_id": "J7",
+   "area": "江湖",
+   "title": "迷药药性自洽",
+   "kind": "semi",
+   "spec_cite": "§3.3 J7（药性明文 ∧ 情节矛盾 → warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需药性明写（无色无味）+ 情节矛盾（香味））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需药性明写（无色无味）+ 情节矛盾（香味））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需药性明写（无色无味）+ 情节矛盾（香味））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需药性明写（无色无味）+ 情节矛盾（香味））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需药性明写（无色无味）+ 情节矛盾（香味））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需药性明写（无色无味）+ 情节矛盾（香味）"
+   ]
+  },
+  {
+   "rule_id": "J8",
+   "area": "江湖",
+   "title": "传言≠事实",
+   "kind": "exempt",
+   "spec_cite": "§3.3 J8（★方向反转：传言≠事实，可靠性过滤豁免）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "豁免（默认不扫描）",
+    "冰魄寒光剑": "豁免（默认不扫描）",
+    "塞外奇侠传": "豁免（默认不扫描）",
+    "江湖三女侠": "豁免（默认不扫描）",
+    "白发魔女传": "豁免（默认不扫描）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "S1",
+   "area": "门派",
+   "title": "掌门在位年长",
+   "kind": "auto",
+   "spec_cite": "§3.2 S1（同一掌门在位 >50 年 ∧ 无长寿/驻颜设定 → info 备案）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需 ≥2 条『任职』边且 N4 年可估（本批任职边仅 1–2 条））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需 ≥2 条『任职』边且 N4 年可估（本批任职边仅 1–2 条））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需 ≥2 条『任职』边且 N4 年可估（本批任职边仅 1–2 条））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需 ≥2 条『任职』边且 N4 年可估（本批任职边仅 1–2 条））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需 ≥2 条『任职』边且 N4 年可估（本批任职边仅 1–2 条））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需 ≥2 条『任职』边且 N4 年可估（本批任职边仅 1–2 条）"
+   ]
+  },
+  {
+   "rule_id": "S10",
+   "area": "门派",
+   "title": "世仇结盟铺垫",
+   "kind": "semi",
+   "spec_cite": "§3.2 S10（世仇 ∧ 结盟 ∧ 无和解 → info 待人工）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需两派世仇明写 + 后文结盟段（本批世仇1例））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需两派世仇明写 + 后文结盟段（本批世仇1例））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需两派世仇明写 + 后文结盟段（本批世仇1例））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需两派世仇明写 + 后文结盟段（本批世仇1例））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需两派世仇明写 + 后文结盟段（本批世仇1例））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需两派世仇明写 + 后文结盟段（本批世仇1例）"
+   ]
+  },
+  {
+   "rule_id": "S2",
+   "area": "门派",
+   "title": "继任节奏",
+   "kind": "auto",
+   "spec_cite": "§3.2 S2（掌门死亡 >3 年无继任 / <5 年更替 3+ 任 → info）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需同一门派 ≥3 任任职边（本批无））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需同一门派 ≥3 任任职边（本批无））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需同一门派 ≥3 任任职边（本批无））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需同一门派 ≥3 任任职边（本批无））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需同一门派 ≥3 任任职边（本批无））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需同一门派 ≥3 任任职边（本批无）"
+   ]
+  },
+  {
+   "rule_id": "S3",
+   "area": "门派",
+   "title": "灭派存续",
+   "kind": "semi",
+   "spec_cite": "§3.2 S3（整派被灭后整建制再现 ∧ 无重建 → error 候选）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需灭派事件明写 + 后文整建制再现场景（本批 N5 无门派事件边））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需灭派事件明写 + 后文整建制再现场景（本批 N5 无门派事件边））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需灭派事件明写 + 后文整建制再现场景（本批 N5 无门派事件边））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需灭派事件明写 + 后文整建制再现场景（本批 N5 无门派事件边））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需灭派事件明写 + 后文整建制再现场景（本批 N5 无门派事件边））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需灭派事件明写 + 后文整建制再现场景（本批 N5 无门派事件边）"
+   ]
+  },
+  {
+   "rule_id": "S4",
+   "area": "门派",
+   "title": "辈分跨级晋升",
+   "kind": "auto",
+   "spec_cite": "§3.2 S4（跨辈晋升 / 入门<3 年即长老掌门 ∧ 无明写 → warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需『入门<3 年即长老/掌门』句式）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需『入门<3 年即长老/掌门』句式）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需『入门<3 年即长老/掌门』句式）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需『入门<3 年即长老/掌门』句式）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需『入门<3 年即长老/掌门』句式）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需『入门<3 年即长老/掌门』句式"
+   ]
+  },
+  {
+   "rule_id": "S5",
+   "area": "门派",
+   "title": "师承代际时距",
+   "kind": "auto",
+   "spec_cite": "§3.2 S5（师徒链 <10 年跨三代；师父比徒弟年轻 15+ → warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需师承边双方均有 N4 年龄锚（本批覆盖有限））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需师承边双方均有 N4 年龄锚（本批覆盖有限））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需师承边双方均有 N4 年龄锚（本批覆盖有限））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需师承边双方均有 N4 年龄锚（本批覆盖有限））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需师承边双方均有 N4 年龄锚（本批覆盖有限））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需师承边双方均有 N4 年龄锚（本批覆盖有限）"
+   ]
+  },
+  {
+   "rule_id": "S6",
+   "area": "门派",
+   "title": "门规与行事",
+   "kind": "manual",
+   "spec_cite": "§3.2 S6（刚性门规被反复违反 ∧ 无处罚 → info）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需门规条文 + 后续 ≥2 次违反且无处罚（人工为主））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需门规条文 + 后续 ≥2 次违反且无处罚（人工为主））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需门规条文 + 后续 ≥2 次违反且无处罚（人工为主））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需门规条文 + 后续 ≥2 次违反且无处罚（人工为主））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需门规条文 + 后续 ≥2 次违反且无处罚（人工为主））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需门规条文 + 后续 ≥2 次违反且无处罚（人工为主）"
+   ]
+  },
+  {
+   "rule_id": "S7",
+   "area": "门派",
+   "title": "比武规矩自洽",
+   "kind": "semi",
+   "spec_cite": "§3.2 S7（赛前明文规则 ∧ 结果违反 ∧ 无变故 → warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需赛前明文规则（点到即止/三局两胜等）+ 结果违反）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需赛前明文规则（点到即止/三局两胜等）+ 结果违反）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需赛前明文规则（点到即止/三局两胜等）+ 结果违反）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需赛前明文规则（点到即止/三局两胜等）+ 结果违反）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需赛前明文规则（点到即止/三局两胜等）+ 结果违反）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需赛前明文规则（点到即止/三局两胜等）+ 结果违反"
+   ]
+  },
+  {
+   "rule_id": "S8",
+   "area": "门派",
+   "title": "同门相残",
+   "kind": "exempt",
+   "spec_cite": "§3.2 S8（★方向反转：同门相残为母题，不标记）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "豁免（默认不扫描）",
+    "冰魄寒光剑": "豁免（默认不扫描）",
+    "塞外奇侠传": "豁免（默认不扫描）",
+    "江湖三女侠": "豁免（默认不扫描）",
+    "白发魔女传": "豁免（默认不扫描）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "S9",
+   "area": "门派",
+   "title": "失传绝学再现",
+   "kind": "semi",
+   "spec_cite": "§3.2 S9（明写失传 ∧ 后文再现 ∧ 无秘籍/隐脉 → warning）",
+   "hits": 1,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需失传声明段 + 后文同武功再现段（且无秘籍/隐脉解释））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需失传声明段 + 后文同武功再现段（且无秘籍/隐脉解释））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需失传声明段 + 后文同武功再现段（且无秘籍/隐脉解释））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需失传声明段 + 后文同武功再现段（且无秘籍/隐脉解释））",
+    "白发魔女传": "已实现"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需失传声明段 + 后文同武功再现段（且无秘籍/隐脉解释）"
+   ]
+  },
+  {
+   "rule_id": "T1",
+   "area": "时代",
+   "title": "朝代锚·器物与物品",
+   "kind": "auto",
+   "spec_cite": "§3.4 T1（锚外器物 ∧ 未明写架空 → error；边界器物挂人工）",
+   "hits": 1,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚（冰魄无年锚→不可比））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚（冰魄无年锚→不可比））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚（冰魄无年锚→不可比））",
+    "江湖三女侠": "已实现",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚（冰魄无年锚→不可比））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需 N4 朝代年锚（冰魄无年锚→不可比）"
+   ]
+  },
+  {
+   "rule_id": "T2",
+   "area": "时代",
+   "title": "朝代锚·制度官职与地名",
+   "kind": "auto",
+   "spec_cite": "§3.4 T2（朝代与官制/地名错配 → error）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚与官制词表冲突（本批无冲突项））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚与官制词表冲突（本批无冲突项））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚与官制词表冲突（本批无冲突项））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚与官制词表冲突（本批无冲突项））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需 N4 朝代年锚与官制词表冲突（本批无冲突项））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需 N4 朝代年锚与官制词表冲突（本批无冲突项）"
+   ]
+  },
+  {
+   "rule_id": "T3",
+   "area": "时代",
+   "title": "历史人物客串",
+   "kind": "manual",
+   "spec_cite": "§3.4 T3（★方向反转：演义自由，info 资产备案，不判穿帮）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）",
+    "冰魄寒光剑": "已实现（本批 0 命中）",
+    "塞外奇侠传": "已实现（本批 0 命中）",
+    "江湖三女侠": "已实现（本批 0 命中）",
+    "白发魔女传": "已实现（本批 0 命中）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "T4",
+   "area": "时代",
+   "title": "纪年自洽",
+   "kind": "auto",
+   "spec_cite": "§3.4 T4（同一书纪年体系冲突 ∧ 无跨时叙述 → error）",
+   "hits": 3,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现",
+    "冰魄寒光剑": "已实现（本批 0 命中）",
+    "塞外奇侠传": "已实现（本批 0 命中）",
+    "江湖三女侠": "已实现",
+    "白发魔女传": "已实现"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "T5",
+   "area": "时代",
+   "title": "兵器谱年代",
+   "kind": "exempt",
+   "spec_cite": "§3.4 T5（通用兵器白名单内一律豁免）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "豁免（默认不扫描）",
+    "冰魄寒光剑": "豁免（默认不扫描）",
+    "塞外奇侠传": "豁免（默认不扫描）",
+    "江湖三女侠": "豁免（默认不扫描）",
+    "白发魔女传": "豁免（默认不扫描）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "T6",
+   "area": "时代",
+   "title": "称谓与服饰时代感",
+   "kind": "semi",
+   "spec_cite": "§3.4 T6（古代背景现代称谓/跨朝代服饰 ∧ 无叙述模式豁免 → warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需现代称谓/跨朝代服饰词表命中（本批仅『银元』边界））",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需现代称谓/跨朝代服饰词表命中（本批仅『银元』边界））",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需现代称谓/跨朝代服饰词表命中（本批仅『银元』边界））",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需现代称谓/跨朝代服饰词表命中（本批仅『银元』边界））",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需现代称谓/跨朝代服饰词表命中（本批仅『银元』边界））"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需现代称谓/跨朝代服饰词表命中（本批仅『银元』边界）"
+   ]
+  },
+  {
+   "rule_id": "T7",
+   "area": "时代",
+   "title": "修订版权威",
+   "kind": "exempt",
+   "spec_cite": "§3.4 T7（修订版优先；需版本字段，本批无版本数据 → 不扫描）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "豁免（默认不扫描）",
+    "冰魄寒光剑": "豁免（默认不扫描）",
+    "塞外奇侠传": "豁免（默认不扫描）",
+    "江湖三女侠": "豁免（默认不扫描）",
+    "白发魔女传": "豁免（默认不扫描）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "W1",
+   "area": "武学",
+   "title": "轻功远程奔袭",
+   "kind": "auto",
+   "spec_cite": "§3.1 W1（★方向反转：≥300 里/日=info 备案，不判异常）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需同段内『距离(里)+耗时(日/天)』明写；本批原文多为概称→0）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需同段内『距离(里)+耗时(日/天)』明写；本批原文多为概称→0）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需同段内『距离(里)+耗时(日/天)』明写；本批原文多为概称→0）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需同段内『距离(里)+耗时(日/天)』明写；本批原文多为概称→0）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需同段内『距离(里)+耗时(日/天)』明写；本批原文多为概称→0）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需同段内『距离(里)+耗时(日/天)』明写；本批原文多为概称→0"
+   ]
+  },
+  {
+   "rule_id": "W2",
+   "area": "武学",
+   "title": "内伤/内力恢复速度",
+   "kind": "semi",
+   "spec_cite": "§3.1 W2（轻伤≥半日/重伤≥3日/内力耗尽≥7日；灵药/渡功/运功豁免）",
+   "hits": 2,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需伤势与恢复同句/邻段且无处置明写）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需伤势与恢复同句/邻段且无处置明写）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需伤势与恢复同句/邻段且无处置明写）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需伤势与恢复同句/邻段且无处置明写）",
+    "白发魔女传": "已实现"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需伤势与恢复同句/邻段且无处置明写"
+   ]
+  },
+  {
+   "rule_id": "W3",
+   "area": "武学",
+   "title": "高龄高手出战",
+   "kind": "exempt",
+   "spec_cite": "§3.1 W3（★方向反转：≥60 岁出战不标记，豁免性规则）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "豁免（默认不扫描）",
+    "冰魄寒光剑": "豁免（默认不扫描）",
+    "塞外奇侠传": "豁免（默认不扫描）",
+    "江湖三女侠": "豁免（默认不扫描）",
+    "白发魔女传": "豁免（默认不扫描）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "W4",
+   "area": "武学",
+   "title": "神功速成",
+   "kind": "semi",
+   "spec_cite": "§3.1 W4（非 X 年不能有成 ∧ <X/3 年大成 ∧ 无奇遇 → warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需『非 X 年不能有成』明示句 + 习得/大成时点）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需『非 X 年不能有成』明示句 + 习得/大成时点）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需『非 X 年不能有成』明示句 + 习得/大成时点）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需『非 X 年不能有成』明示句 + 习得/大成时点）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需『非 X 年不能有成』明示句 + 习得/大成时点）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需『非 X 年不能有成』明示句 + 习得/大成时点"
+   ]
+  },
+  {
+   "rule_id": "W5",
+   "area": "武学",
+   "title": "武功相克反转",
+   "kind": "semi",
+   "spec_cite": "§3.1 W5（明文相克 ∧ 后文乙胜甲 ∧ 无破法解释 → info 待人工）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需明文相克关系（☆武功成对）+ 后文胜负反转）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需明文相克关系（☆武功成对）+ 后文胜负反转）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需明文相克关系（☆武功成对）+ 后文胜负反转）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需明文相克关系（☆武功成对）+ 后文胜负反转）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需明文相克关系（☆武功成对）+ 后文胜负反转）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需明文相克关系（☆武功成对）+ 后文胜负反转"
+   ]
+  },
+  {
+   "rule_id": "W6",
+   "area": "武学",
+   "title": "轻功/剑气数值夸饰",
+   "kind": "auto",
+   "spec_cite": "§3.1 W6（大数+修辞标志词且无情节依赖 → 修辞标签 info）",
+   "hits": 8,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现",
+    "冰魄寒光剑": "已实现",
+    "塞外奇侠传": "已实现",
+    "江湖三女侠": "已实现",
+    "白发魔女传": "已实现"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  },
+  {
+   "rule_id": "W7",
+   "area": "武学",
+   "title": "内力外放设定边界",
+   "kind": "semi",
+   "spec_cite": "§3.1 W7（设定不会内功 ∧ 后文隔空伤人 ∧ 无习得 → warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需『不会武功/内力平平』设定句 + 后文隔空伤人）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需『不会武功/内力平平』设定句 + 后文隔空伤人）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需『不会武功/内力平平』设定句 + 后文隔空伤人）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需『不会武功/内力平平』设定句 + 后文隔空伤人）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需『不会武功/内力平平』设定句 + 后文隔空伤人）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需『不会武功/内力平平』设定句 + 后文隔空伤人"
+   ]
+  },
+  {
+   "rule_id": "W8",
+   "area": "武学",
+   "title": "毒发时限自洽",
+   "kind": "semi",
+   "spec_cite": "§3.1 W8（超明示时限 1.5 倍 ∧ 无解药/逼毒 → warning）",
+   "hits": 0,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）（数据缺口：需『X 日毒发』时限句 + N4 时点差）",
+    "冰魄寒光剑": "已实现（本批 0 命中）（数据缺口：需『X 日毒发』时限句 + N4 时点差）",
+    "塞外奇侠传": "已实现（本批 0 命中）（数据缺口：需『X 日毒发』时限句 + N4 时点差）",
+    "江湖三女侠": "已实现（本批 0 命中）（数据缺口：需『X 日毒发』时限句 + N4 时点差）",
+    "白发魔女传": "已实现（本批 0 命中）（数据缺口：需『X 日毒发』时限句 + N4 时点差）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": [
+    "需『X 日毒发』时限句 + N4 时点差"
+   ]
+  },
+  {
+   "rule_id": "W9",
+   "area": "武学",
+   "title": "少年天才需铺垫",
+   "kind": "manual",
+   "spec_cite": "§3.1 W9（<16 岁击败成名一流 ∧ 无奇遇/家学/名师 → info 待人工）",
+   "hits": 1,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "status_by_book": {
+    "七剑下天山": "已实现（本批 0 命中）",
+    "冰魄寒光剑": "已实现（本批 0 命中）",
+    "塞外奇侠传": "已实现（本批 0 命中）",
+    "江湖三女侠": "已实现",
+    "白发魔女传": "已实现（本批 0 命中）"
+   },
+   "selected_by_book": {
+    "七剑下天山": true,
+    "冰魄寒光剑": true,
+    "塞外奇侠传": true,
+    "江湖三女侠": true,
+    "白发魔女传": true
+   },
+   "notes": []
+  }
+ ],
+ "exemptions": [
+  {
+   "book": "七剑下天山",
+   "rule_id": "T4",
+   "locator": "007:12",
+   "reason": "叙述模式豁免（04a/作者按语）",
+   "subject": ""
+  },
+  {
+   "book": "江湖三女侠",
+   "rule_id": "T4",
+   "locator": "031:11",
+   "reason": "叙述模式豁免（04a/回忆）",
+   "subject": ""
+  }
+ ],
+ "by_severity": {
+  "warning": 28,
+  "info": 16
+ },
+ "by_grade": {
+  "C": 28,
+  "B": 16
+ },
+ "by_area": {
+  "检查项": 24,
+  "江湖": 4,
+  "武学": 11,
+  "时代": 4,
+  "门派": 1
+ },
+ "by_rule": {
+  "C1": {
+   "title": "人物年龄跨回自洽",
+   "area": "检查项",
+   "hits": 15,
+   "by_severity": {
+    "warning": 12,
+    "info": 3
+   },
+   "by_grade": {
+    "C": 12,
+    "B": 3
+   },
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
+   ]
+  },
+  "C5": {
+   "title": "称谓辈分错乱",
+   "area": "检查项",
+   "hits": 9,
+   "by_severity": {
+    "warning": 9
+   },
+   "by_grade": {
+    "C": 9
+   },
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
+   ]
+  },
+  "J3": {
+   "title": "比武彩头兑现",
+   "area": "江湖",
+   "hits": 1,
+   "by_severity": {
+    "info": 1
+   },
+   "by_grade": {
+    "B": 1
+   },
+   "books": [
+    "白发魔女传"
+   ]
+  },
+  "J4": {
+   "title": "绿林道惯例",
+   "area": "江湖",
+   "hits": 2,
+   "by_severity": {
+    "info": 2
+   },
+   "by_grade": {
+    "B": 2
+   },
+   "books": [
+    "七剑下天山"
+   ]
+  },
+  "J6": {
+   "title": "官府缺位",
+   "area": "江湖",
+   "hits": 1,
+   "by_severity": {
+    "info": 1
+   },
+   "by_grade": {
+    "B": 1
+   },
+   "books": [
+    "白发魔女传"
+   ]
+  },
+  "S9": {
+   "title": "失传绝学再现",
+   "area": "门派",
+   "hits": 1,
+   "by_severity": {
+    "warning": 1
+   },
+   "by_grade": {
+    "C": 1
+   },
+   "books": [
+    "白发魔女传"
+   ]
+  },
+  "T1": {
+   "title": "朝代锚·器物与物品",
+   "area": "时代",
+   "hits": 1,
+   "by_severity": {
+    "warning": 1
+   },
+   "by_grade": {
+    "C": 1
+   },
+   "books": [
+    "江湖三女侠"
+   ]
+  },
+  "T4": {
+   "title": "纪年自洽",
+   "area": "时代",
+   "hits": 3,
+   "by_severity": {
+    "warning": 3
+   },
+   "by_grade": {
+    "C": 3
+   },
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ]
+  },
+  "W2": {
+   "title": "内伤/内力恢复速度",
+   "area": "武学",
+   "hits": 2,
+   "by_severity": {
+    "warning": 2
+   },
+   "by_grade": {
+    "C": 2
+   },
+   "books": [
+    "白发魔女传"
+   ]
+  },
+  "W6": {
+   "title": "轻功/剑气数值夸饰",
+   "area": "武学",
+   "hits": 8,
+   "by_severity": {
+    "info": 8
+   },
+   "by_grade": {
+    "B": 8
+   },
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ]
+  },
+  "W9": {
+   "title": "少年天才需铺垫",
+   "area": "武学",
+   "hits": 1,
+   "by_severity": {
+    "info": 1
+   },
+   "by_grade": {
+    "B": 1
+   },
+   "books": [
+    "江湖三女侠"
    ]
   }
- ]
+ },
+ "by_book": {
+  "七剑下天山": {
+   "generated_at": "2026-11-05 17:50:01",
+   "chapters": 31,
+   "paragraphs": 2392,
+   "violations": 8,
+   "by_severity": {
+    "warning": 5,
+    "info": 3
+   },
+   "by_grade": {
+    "C": 5,
+    "B": 3
+   },
+   "by_rule": {
+    "C5": 2,
+    "C1": 3,
+    "J4": 2,
+    "W6": 1
+   },
+   "rules_total": 39,
+   "rules_selected": 39,
+   "rules_with_hits": 4,
+   "exemptions": 1
+  },
+  "冰魄寒光剑": {
+   "generated_at": "2026-11-05 17:50:01",
+   "chapters": 12,
+   "paragraphs": 737,
+   "violations": 2,
+   "by_severity": {
+    "info": 2
+   },
+   "by_grade": {
+    "B": 2
+   },
+   "by_rule": {
+    "W6": 2
+   },
+   "rules_total": 39,
+   "rules_selected": 39,
+   "rules_with_hits": 1,
+   "exemptions": 0
+  },
+  "塞外奇侠传": {
+   "generated_at": "2026-11-05 17:50:01",
+   "chapters": 28,
+   "paragraphs": 564,
+   "violations": 2,
+   "by_severity": {
+    "info": 2
+   },
+   "by_grade": {
+    "B": 2
+   },
+   "by_rule": {
+    "W6": 2
+   },
+   "rules_total": 39,
+   "rules_selected": 39,
+   "rules_with_hits": 1,
+   "exemptions": 0
+  },
+  "江湖三女侠": {
+   "generated_at": "2026-11-05 17:50:01",
+   "chapters": 48,
+   "paragraphs": 3343,
+   "violations": 15,
+   "by_severity": {
+    "warning": 9,
+    "info": 6
+   },
+   "by_grade": {
+    "C": 9,
+    "B": 6
+   },
+   "by_rule": {
+    "C5": 3,
+    "T1": 1,
+    "C1": 7,
+    "T4": 1,
+    "W6": 2,
+    "W9": 1
+   },
+   "rules_total": 39,
+   "rules_selected": 39,
+   "rules_with_hits": 6,
+   "exemptions": 1
+  },
+  "白发魔女传": {
+   "generated_at": "2026-11-05 17:50:02",
+   "chapters": 32,
+   "paragraphs": 2263,
+   "violations": 17,
+   "by_severity": {
+    "warning": 14,
+    "info": 3
+   },
+   "by_grade": {
+    "C": 14,
+    "B": 3
+   },
+   "by_rule": {
+    "C5": 4,
+    "C1": 5,
+    "W2": 2,
+    "T4": 2,
+    "S9": 1,
+    "J6": 1,
+    "W6": 1,
+    "J3": 1
+   },
+   "rules_total": 39,
+   "rules_selected": 39,
+   "rules_with_hits": 8,
+   "exemptions": 0
+  }
+ }
 }

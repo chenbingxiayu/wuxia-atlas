@@ -1,4 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
+import {
+  dsp,
+  dspText,
+  fetchDisplayLookup,
+  type DisplayLookup,
+} from '../lib/display-shared';
 
 /**
  * G1 武林二十问答：Akinator 式是非题，系统想一个人物，玩家 ≤20 问猜出。
@@ -21,12 +27,17 @@ export default function GameTwenty() {
   const [log, setLog] = useState<{ text: string; ans: string }[]>([]);
   const [guess, setGuess] = useState<Char | null>(null);
   const [done, setDone] = useState(false);
+  const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
 
   useEffect(() => {
-    fetch(B + 'data/games/twenty.json').then((r) => r.json()).then((d) => {
+    Promise.all([
+      fetch(B + 'data/games/twenty.json').then((r) => r.json()),
+      fetchDisplayLookup(B),
+    ]).then(([d, lk]) => {
       setChars(d.chars);
       setQs(d.questions);
       setPool(d.chars);
+      setLookup(lk);
     });
   }, []);
 
@@ -89,11 +100,11 @@ export default function GameTwenty() {
       {done || out ? (
         <div className="g20-result">
           {pool.length === 1 && <p className="g20-only">候选只剩一人——</p>}
-          <p className="g20-guess">{guess ? guess.name : '我认输，江湖高人到底是谁？'}</p>
+          <p className="g20-guess">{guess ? dsp(lookup.display, guess.name) : '我认输，江湖高人到底是谁？'}</p>
           {guess && (
             <>
               {guess.sect && <p className="dim">{guess.sect} · {guess.books.join('、')}</p>}
-              <a className="g20-link" href={`${B}characters/${encodeURIComponent(guess.name)}/`}>看 TA 的档案 →</a>
+              <a className="g20-link" href={`${B}characters/${encodeURIComponent(guess.href || guess.name)}/`}>看 TA 的档案 →</a>
               <div className="g20-btns">
                 <button className="yes" onClick={() => { setDone(true); }}>猜对了</button>
                 <button className="no" onClick={wrongGuess}>猜错了，继续</button>
@@ -107,12 +118,12 @@ export default function GameTwenty() {
         </div>
       ) : (
         <div className="g20-q">
-          <p className="g20-text">{nextQ ? nextQ.text : '问题用尽'}</p>
+          <p className="g20-text">{nextQ ? dspText(lookup.display, nextQ.text) : '问题用尽'}</p>
           <div className="g20-btns">
             <button className="yes" onClick={() => answer('yes')}>是</button>
             <button className="no" onClick={() => answer('no')}>否</button>
             <button className="unsure" onClick={() => answer('unsure')}>不知道</button>
-            {pool.length > 1 && <button className="guess" onClick={makeGuess}>直接猜（{[...pool].sort((a, b) => b.total - a.total)[0]?.name}？）</button>}
+            {pool.length > 1 && <button className="guess" onClick={makeGuess}>直接猜（{dsp(lookup.display, [...pool].sort((a, b) => b.total - a.total)[0]?.name || '')}？）</button>}
           </div>
         </div>
       )}
@@ -120,7 +131,7 @@ export default function GameTwenty() {
       {log.length > 0 && (
         <ol className="g20-log">
           {log.map((l, i) => (
-            <li key={i}><span className="mono">{i + 1}.</span> {l.text} <b className={l.ans}>{l.ans === 'yes' ? '是' : l.ans === 'no' ? '否' : '？'}</b></li>
+            <li key={i}><span className="mono">{i + 1}.</span> {dspText(lookup.display, l.text)} <b className={l.ans}>{l.ans === 'yes' ? '是' : l.ans === 'no' ? '否' : '？'}</b></li>
           ))}
         </ol>
       )}

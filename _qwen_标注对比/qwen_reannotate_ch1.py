@@ -4,6 +4,7 @@
 流程：原文按段落切块 → 逐块调 LLM 插标 → difflib 对齐把标记机械回锚到原文
 （保证剥标后与原文逐字一致）→ 拼装 YAML+围栏 → 自检。
 """
+import argparse
 import difflib
 import json
 import os
@@ -15,23 +16,44 @@ import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "_qwen_标注对比")
-RAW_DIR = os.path.join(OUT_DIR, "raw")
 ORIG_PATH = os.path.join(ROOT, "章回版", "白发魔女传",
                          "001　第一回　铁矢神弓　少年扶巨宦　金鞍宝马　大盗震虚声.txt")
-DST_PATH = os.path.join(OUT_DIR, "001_第一回.tagged.md")
 
-API_URL = "https://tbqqujafrvwvmxmc.polylink.org/v1/chat/completions"
-HEADERS = {
-    "Content-Type": "application/json",
-    "CF-Access-Client-Id": "8fb9e43ab389ffad0cf5a0d83ec98a11.access",
-    "CF-Access-Client-Secret": "cfast_Wg36l0A3lpvELtx3ouhLd8O3pdretH8y6lpdGnOl6736bdcd",
-    "Authorization": "Bearer 8bFbhnBPK0vcnGxvZD1SaR66otAZb7R7yZ60CkE9Woh+3C0YewDqHghXpi0rCpYd",
-}
-MODEL = "qwen3.8-27B"
 CHUNK_BUDGET = 2800
 MAX_RETRIES = 3
 
 TAG_RE = re.compile(r"(〖[^〖〗]*〗|⟦[^⟦⟧]*⟧)")
+
+
+def parse_args():
+    p = argparse.ArgumentParser()
+    p.add_argument("--model", default="qwen3.8-27B")
+    p.add_argument("--api-url",
+                   default="https://tbqqujafrvwvmxmc.polylink.org/v1/chat/completions")
+    p.add_argument("--cf-id", default="8fb9e43ab389ffad0cf5a0d83ec98a11.access")
+    p.add_argument("--cf-secret",
+                   default="cfast_Wg36l0A3lpvELtx3ouhLd8O3pdretH8y6lpdGnOl6736bdcd")
+    p.add_argument("--key",
+                   default="8bFbhnBPK0vcnGxvZD1SaR66otAZb7R7yZ60CkE9Woh+3C0YewDqHghXpi0rCpYd")
+    p.add_argument("--tag", default=None, help="输出文件名后缀，如 deepseek")
+    p.add_argument("--no-thinking-kwarg", action="store_true",
+                   help="不发送 chat_template_kwargs.enable_thinking")
+    p.add_argument("--prompt-file", default=None,
+                   help="用指定文件内容覆盖内置 SYSTEM_PROMPT")
+    a = p.parse_args()
+    if a.tag is None:
+        a.tag = "qwen" if "qwen" in a.model.lower() else re.sub(r"[^0-9a-zA-Z]+", "-", a.model).strip("-").lower()
+    a.raw_dir = os.path.join(OUT_DIR, f"raw_{a.tag}")
+    if a.prompt_file:
+        with open(a.prompt_file, encoding="utf-8") as f:
+            a.system_prompt = f.read()
+    else:
+        a.system_prompt = SYSTEM_PROMPT
+    a.dst_path = os.path.join(OUT_DIR, f"001_第一回.tagged.{a.tag}.md")
+    return a
+
+
+ARGS = None  # main() 里赋值
 
 
 def tag_surface(tok):
@@ -101,23 +123,30 @@ def call_llm(chunk_text, idx, total):
     user = (f"以下是《白发魔女传》第一回的第 {idx}/{total} 块正文。请按系统规则输出标注后的正文，"
             f"只输出正文本身：\n\n{chunk_text}")
     payload = {
-        "model": MODEL,
+        "model": ARGS.model,
         "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": ARGS.system_prompt},
             {"role": "user", "content": user},
         ],
         "temperature": 0.1,
         "top_p": 0.8,
         "max_tokens": 8000,
         "stream": True,
-        "chat_template_kwargs": {"enable_thinking": False},
+    }
+    if not ARGS.no_thinking_kwarg:
+        payload["chat_template_kwargs"] = {"enable_thinking": False}
+    headers = {
+        "Content-Type": "application/json",
+        "CF-Access-Client-Id": ARGS.cf_id,
+        "CF-Access-Client-Secret": ARGS.cf_secret,
+        "Authorization": f"Bearer {ARGS.key}",
     }
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         t0 = time.time()
         try:
             # 流式：读超时只约束相邻字节间隔，长生成不会被总时长砍断
-            r = requests.post(API_URL, headers=HEADERS, json=payload,
+            r = requests.post(ARGS.api_url, headers=headers, json=payload,
                               timeout=(60, 120), stream=True)
             if r.status_code != 200:
                 raise RuntimeError(f"HTTP {r.status_code}: {r.text[:200]}")
@@ -206,8 +235,10 @@ def reanchor(orig, model_text):
 
 
 def main():
+    global ARGS
+    ARGS = parse_args()
     sys.stdout.reconfigure(encoding="utf-8")
-    os.makedirs(RAW_DIR, exist_ok=True)
+    os.makedirs(ARGS.raw_dir, exist_ok=True)
     with open(ORIG_PATH, encoding="utf-8") as f:
         lines = f.read().split("\n")
 
@@ -232,7 +263,7 @@ def main():
 
     tagged_by_idx, stats, failed = {}, [], []
     for ci, idxs in enumerate(chunks, 1):
-        raw_path = os.path.join(RAW_DIR, f"chunk_{ci:02d}.txt")
+        raw_path = os.path.join(ARGS.raw_dir, f"chunk_{ci:02d}.txt")
         if os.path.exists(raw_path) and os.path.getsize(raw_path) > 0:
             with open(raw_path, encoding="utf-8") as f:
                 raw = f.read()
@@ -275,7 +306,7 @@ def main():
     out = ["---", "book: 白发魔女传", "chapter: 1",
            f"title: {lines[idx_title]}", 
            f"source: 章回版/白发魔女传/{os.path.basename(ORIG_PATH)}",
-           "schema: wuxia-tagged-v0.2", "annotator: qwen3.8-27B-api", "---"]
+           "schema: wuxia-tagged-v0.2", f"annotator: {ARGS.model}-api", "---"]
     for i, ln in enumerate(lines):
         if ln.startswith("正是："):
             out.append("::: 回末")
@@ -286,11 +317,11 @@ def main():
         out.pop()
     out.append(":::")
     text = "\n".join(out) + "\n"
-    with open(DST_PATH, "w", encoding="utf-8", newline="\n") as f:
+    with open(ARGS.dst_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(text)
 
     total = sum(s[2] for s in stats); drop = sum(s[3] for s in stats)
-    print(f"\n写入 {DST_PATH}", flush=True)
+    print(f"\n写入 {ARGS.dst_path}", flush=True)
     print(f"标记总数 {total}，丢弃 {drop}，平均相似度 "
           f"{sum(s[4] for s in stats)/len(stats):.4f}", flush=True)
     if failed:

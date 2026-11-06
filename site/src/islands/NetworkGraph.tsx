@@ -1,4 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
+import {
+  fetchDisplayLookup,
+  dsp,
+  type DisplayLookup,
+} from '../lib/display-shared';
 
 /**
  * NetworkGraph —— 江湖关系网络图（ECharts graph · 按类型/书目着色 · 邻接高亮 · 点击进档案）。
@@ -19,6 +24,7 @@ const CAT_COLOR: Record<string, string> = {
 export default function NetworkGraph() {
   const ref = useRef<HTMLDivElement>(null);
   const [status, setStatus] = useState('关系图加载中…');
+  const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
 
   useEffect(() => {
     let chart: any = null;
@@ -29,8 +35,10 @@ export default function NetworkGraph() {
       import('echarts/components'),
       import('echarts/renderers'),
       fetch(B + 'data/graph.json').then((r) => r.json()),
-    ]).then(([core, charts, comps, renderers, graph]) => {
+      fetchDisplayLookup(B),
+    ]).then(([core, charts, comps, renderers, graph, lk]) => {
       if (disposed || !ref.current) return;
+      setLookup(lk);
       core.use([charts.GraphChart, comps.TooltipComponent, comps.LegendComponent, renderers.CanvasRenderer]);
       const catIdx: Record<string, number> = {};
       const categories = CATS.map((name) => ({ name }));
@@ -46,7 +54,7 @@ export default function NetworkGraph() {
           if (!CATS.includes(cat)) cat = '人物';
         }
         const size = n.type === '@' ? Math.min(34, 8 + Math.sqrt(n.n || 1) * 1.6) : n.type === '◆' ? 16 : 10;
-        return { id: n.id, name: n.id, category: catIdx[cat], symbolSize: size, _type: n.type };
+        return { id: n.id, name: dsp(lk.display, n.id), _canonical: n.id, category: catIdx[cat], symbolSize: size, _type: n.type };
       });
       const nodeSet = new Set(nodes.map((n: { id: string }) => n.id));
       const edges = graph.edges.map((e: { s: string; t: string; kind: string; label: string; n: number; locs: string[] }) => ({
@@ -70,11 +78,12 @@ export default function NetworkGraph() {
           scaleLimit: { min: 0.4, max: 6 },
         }],
       });
-      chart.on('click', (p: { dataType: string; data: { name?: string; _type?: string } }) => {
+      chart.on('click', (p: { dataType: string; data: { name?: string; _canonical?: string; _type?: string } }) => {
         if (p.dataType !== 'node' || !p.data.name) return;
         const t = p.data._type;
         const route = t === '☆' ? 'arts' : t === '◆' ? 'sects' : 'characters';
-        window.open(`${B}${route}/${encodeURIComponent(p.data.name)}/`, '_blank');
+        // URL/内部 key 保持 canonical（_canonical），展示名仅用于 label/tooltip
+        window.open(`${B}${route}/${encodeURIComponent(p.data._canonical || p.data.name)}/`, '_blank');
       });
       setStatus('');
     });

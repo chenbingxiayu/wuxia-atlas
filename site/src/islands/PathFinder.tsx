@@ -1,4 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import {
+  dsp,
+  fetchDisplayLookup,
+  toCanonical,
+  type DisplayLookup,
+} from '../lib/display-shared';
 
 /**
  * PathFinder —— 江湖 AB 路径（规格 N1/7b）：任意两人最短关联路径，每一步挂一条证据。
@@ -21,18 +27,33 @@ export default function PathFinder() {
   const [result, setResult] = useState<{ hops: { node: string; edge?: Edge; from: string }[]; n: number } | null>(null);
   const [miss, setMiss] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
+  const lookupRef = useRef<DisplayLookup>({ display: {}, canonicalOf: {} });
 
   useEffect(() => {
-    fetch(B + 'data/graph.json').then((r) => r.json()).then((g: Graph) => {
+    Promise.all([
+      fetch(B + 'data/graph.json').then((r) => r.json()),
+      fetchDisplayLookup(B),
+    ]).then(([g, lk]: [Graph, DisplayLookup]) => {
       setGraph(g);
+      setLookup(lk);
+      lookupRef.current = lk;
       const q = new URLSearchParams(location.search);
-      const qa = q.get('a') || '', qb = q.get('b') || '';
-      if (qa && qb) { setA(qa); setB(qb); run(g, qa, qb); }
+      const qa = toCanonical(lk, q.get('a') || '');
+      const qb = toCanonical(lk, q.get('b') || '');
+      if (qa && qb) {
+        setA(dsp(lk.display, qa));
+        setB(dsp(lk.display, qb));
+        run(g, qa, qb);
+      }
     });
   }, []);
 
   function run(g: Graph | null = graph, xa: string = a, xb: string = b) {
     if (!g || !xa.trim() || !xb.trim()) return;
+    // 输入可以是展示名（康熙）或规范名（玄烨）：内部寻路/URL 一律 canonical
+    const ca = toCanonical(lookupRef.current, xa);
+    const cb = toCanonical(lookupRef.current, xb);
     setBusy(true);
     try {
       const adj = new Map<string, { to: string; edge: Edge }[]>();
@@ -43,11 +64,11 @@ export default function PathFinder() {
         adj.get(e.t)!.push({ to: e.s, edge: e });
       }
       const prev = new Map<string, { from: string; edge: Edge } | null>();
-      prev.set(xa, null);
-      const dq: string[] = [xa];
+      prev.set(ca, null);
+      const dq: string[] = [ca];
       while (dq.length) {
         const cur = dq.shift()!;
-        if (cur === xb) break;
+        if (cur === cb) break;
         for (const { to, edge } of adj.get(cur) || []) {
           if (!prev.has(to)) {
             prev.set(to, { from: cur, edge });
@@ -55,23 +76,23 @@ export default function PathFinder() {
           }
         }
       }
-      if (!prev.has(xb)) { setMiss(true); setResult(null); return; }
+      if (!prev.has(cb)) { setMiss(true); setResult(null); return; }
       const hops: { node: string; edge?: Edge; from: string }[] = [];
-      let cur = xb;
-      while (cur !== xa) {
+      let cur = cb;
+      while (cur !== ca) {
         const p = prev.get(cur)!;
         hops.unshift({ node: cur, edge: p.edge, from: p.from });
         cur = p.from;
       }
       setResult({ hops, n: hops.length });
       setMiss(false);
-      history.replaceState(null, '', `${location.pathname}?a=${encodeURIComponent(xa)}&b=${encodeURIComponent(xb)}`);
+      history.replaceState(null, '', `${location.pathname}?a=${encodeURIComponent(ca)}&b=${encodeURIComponent(cb)}`);
     } finally {
       setBusy(false);
     }
   }
 
-  const persons = useMemoPersons(graph);
+  const persons = useMemoPersons(graph, lookup);
 
   return (
     <div className="pf">
@@ -89,13 +110,13 @@ export default function PathFinder() {
       {result && (
         <div className="pf-result">
           <p className="pf-sum">
-            {result.hops[0].from} → {result.hops[result.n - 1].node}：<b>{result.n} 跳</b>，每跳挂证（BFS 最短）。
+            {dsp(lookup.display, result.hops[0].from)} → {dsp(lookup.display, result.hops[result.n - 1].node)}：<b>{result.n} 跳</b>，每跳挂证（BFS 最短）。
           </p>
           <ol className="pf-path">
             {result.hops.map((h, i) => (
               <li key={i}>
                 <div className="pf-from">
-                  <a href={personHref(h.from)}>{h.from}</a>
+                  <a href={personHref(h.from)}>{dsp(lookup.display, h.from)}</a>
                 </div>
                 <div className="pf-edge">
                   <span className="pf-kind">{KIND_LABEL[h.edge!.kind] || h.edge!.kind}{h.edge!.label && h.edge!.kind !== '对局' && h.edge!.kind !== '师承' ? `·${h.edge!.label}` : ''}</span>
@@ -105,14 +126,14 @@ export default function PathFinder() {
                     const book = bi > 0 ? loc.slice(0, bi) : '';
                     const chap = bi > 0 ? parseInt(loc.slice(bi + 1), 10) : NaN;
                     return book && !isNaN(chap)
-                      ? <a key={loc} className="mono" href={`${B}books/${encodeURIComponent(book)}/${chap}/`}>{loc} →</a>
+                      ? <a key={loc} className="mono" href={`${B}books/${encodeURIComponent(book)}/${String(chap).padStart(3, '0')}/`}>{loc} →</a>
                       : <span key={loc} className="mono">{loc}</span>;
                   })}
                 </div>
               </li>
             ))}
             <li className="pf-end">
-              <a href={personHref(result.hops[result.n - 1].node)}>{result.hops[result.n - 1].node}</a>
+              <a href={personHref(result.hops[result.n - 1].node)}>{dsp(lookup.display, result.hops[result.n - 1].node)}</a>
             </li>
           </ol>
           <p className="fine">这是 BFS 最短路径之一——同一对人可能有多条考据路径（换条边再试）。
@@ -150,11 +171,14 @@ export default function PathFinder() {
 function personHref(name: string) {
   return `${B}characters/${encodeURIComponent(name)}/`;
 }
-function useMemoPersons(graph: Graph | null) {
+function useMemoPersons(graph: Graph | null, lookup: DisplayLookup) {
   const [names, setNames] = useState<string[]>([]);
   useEffect(() => {
     if (!graph) return;
-    setNames(graph.nodes.filter((n) => n.type === '@').map((n) => n.id).sort().slice(0, 450));
-  }, [graph]);
+    // 候选展示名（datalist 值）：用户可输入展示名，run() 内以 toCanonical 归一回内部 key
+    setNames(
+      graph.nodes.filter((n) => n.type === '@').map((n) => dsp(lookup.display, n.id)).sort().slice(0, 450),
+    );
+  }, [graph, lookup]);
   return names;
 }

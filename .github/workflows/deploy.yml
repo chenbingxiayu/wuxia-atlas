@@ -38,9 +38,8 @@ jobs:
       - name: Pagefind index
         run: cd site && npx pagefind --site dist
 
-      # ---- 版权闸门（M1 实现 scripts/copyright_gate.py 后启用）----
-      # - name: Copyright gate (L0 assertion)
-      #   run: python scripts/copyright_gate.py site/dist
+      - name: Copyright gate (L0 assertion)
+        run: python scripts/copyright_gate.py site/dist wuxia-atlas
 
       # ---- Cloudflare Pages（可选通道）----
       # 注意：GitHub 的 if 条件表达式中不可使用 secrets 上下文（workflow 文件级校验会失败），

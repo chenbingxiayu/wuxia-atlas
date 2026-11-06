@@ -1,8 +1,9 @@
 {
  "meta": {
-  "generated": "2026-10-31",
+  "generated": "2026-11-06",
   "schema": "site-universe-v1",
-  "source": "kb/系列谱系考订表.json"
+  "source": "kb/系列谱系考订表.json（只读；人工考订）",
+  "field_gaps": []
  },
  "lines": [
   {

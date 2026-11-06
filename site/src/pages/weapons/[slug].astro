@@ -2,6 +2,8 @@
 import Base from '../../layouts/Base.astro';
 import weaponsJson from '@data/weapons.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
+import { personTarget } from '@lib/links';
 
 export function getStaticPaths() {
   return weaponsJson.weapons.map((x) => ({ params: { slug: x.canonical }, props: { x } }));
@@ -36,7 +38,12 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
       <b class="forge-label">来历</b>
       <span class="forge-body">
         {(x.makers || []).length > 0 && <>铸造／炼制：
-          {x.makers.map((m) => <a class="chip" href={`${B}characters/${encodeURIComponent(m.name)}/`}>{m.name}</a>)}
+          {x.makers.map((m) => {
+            const tg = personTarget(m.name);
+            return tg
+              ? <a class="chip" href={`${B}characters/${encodeURIComponent(tg)}/`}>{dsp(m.name)}</a>
+              : <span class="chip">{dsp(m.name)}</span>;
+          })}
         </>}
         {forgeEdges.map((e) => (
           <span class="mono loc">{e.book}·{e.loc}</span>
@@ -53,7 +60,12 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
           <div class="trow">
             <div class="tedge">
               <span class="tverb" style={e.verb === '借' ? 'color:#8a8172;border-color:#8a8172' : ''}>{VERB[e.verb] ?? e.verb}{e.verb === '借' ? '（暂借）' : ''}</span>
-              <span class="tholder">{e.persons.map((p) => <a href={`${B}characters/${encodeURIComponent(p)}/`}>{p}</a>)}</span>
+              <span class="tholder">{e.persons.map((p) => {
+                const tg = personTarget(p);
+                return tg
+                  ? <a href={`${B}characters/${encodeURIComponent(tg)}/`}>{dsp(p)}</a>
+                  : <span>{dsp(p)}</span>;
+              })}</span>
               <span class="tconf">{e.conf}</span>
               <span class="tloc mono">{e.book}·{e.loc}</span>
             </div>
@@ -73,7 +85,7 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
     <div class="card" style="padding:10px 24px">
       <ul class="ev">
         {sideEv.slice(0, 8).map((e) => (
-          <li><span class="who">{e.persons.join(' × ')}</span><span class="loc mono">{e.book}·{e.loc}</span></li>
+          <li><span class="who">{e.persons.map((p) => dsp(p)).join(' × ')}</span><span class="loc mono">{e.book}·{e.loc}</span></li>
         ))}
       </ul>
     </div>
@@ -82,13 +94,18 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
   <h2 class="sec">相关人物 <span class="dim2">持有人为主 · 借用单列（暂借 ≠ 持有）</span></h2>
   <p class="chipsrow">
     <span class="dim">持有人：</span>
-    {(x.holders || []).map((h) => <a class="chip" href={`${B}characters/${encodeURIComponent(h.name)}/`}>{h.name}<small>×{h.n}</small></a>)}
+    {(x.holders || []).map((h) => {
+      const tg = personTarget(h.name);
+      return tg
+        ? <a class="chip" href={`${B}characters/${encodeURIComponent(tg)}/`}>{dsp(h.name)}<small>×{h.n}</small></a>
+        : <span class="chip">{dsp(h.name)}<small>×{h.n}</small></span>;
+    })}
     {(x.holders || []).length === 0 && <span class="dim">—</span>}
   </p>
   {(x.borrowers || []).length > 0 && (
     <p class="chipsrow">
       <span class="dim">借用 / 暂持：</span>
-      {x.borrowers.map((b2) => <span class="chip dashed">{b2.name}<small>×{b2.n}</small></span>)}
+      {x.borrowers.map((b2) => <span class="chip dashed">{dsp(b2.name)}<small>×{b2.n}</small></span>)}
     </p>
   )}
   {(x.aliases || []).length > 0 && <p class="meta">别名/变体：{x.aliases.map((a) => <span class="chip">{a}</span>)}</p>}

@@ -26,3 +26,16 @@ site/.astro/
 
 # site/public/data 为 astro 构建时从 site/data 镜像的运行时副本（生成物，不重复入库）
 site/public/data/
+
+# ============================================================
+# wuxia-kb（2026-11-06 首库）：方法与图谱层入库，语料层按版权红线本地保留
+# （同 kb/ 先例：梁作版权至 2059；tagged=标注全文、content=引文卡片、
+#   sentence_index/ast/structure=原文句/块/段层 —— 永不入库，本地可由管线再生）
+# ============================================================
+wuxia-kb/tagged/
+wuxia-kb/content/
+wuxia-kb/registry/sentence_index/
+wuxia-kb/registry/ast/
+wuxia-kb/registry/structure/
+wuxia-kb/logs/
+wuxia-kb/backup/

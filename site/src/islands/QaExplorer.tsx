@@ -1,4 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
+import {
+  buildDisplayLookup,
+  dsp,
+  toCanonical,
+  type DisplayLookup,
+} from '../lib/display-shared';
 
 /**
  * QaExplorer —— 江湖问答（KG-QA · 预置模板客户端确定性求解，答案必带定位符）。
@@ -29,10 +35,19 @@ export default function QaExplorer() {
   const [busy, setBusy] = useState(false);
   const [suggest, setSuggest] = useState<string[]>([]);
   const data = useRef<Record<string, unknown>>({});
+  // 展示层（B-1/B-2）：canonical 做数据检索，display 做展示文案；输入两者皆可（toCanonical 归一）。
+  const lookupRef = useRef<DisplayLookup>({ display: {}, canonicalOf: {} });
+  const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
 
   useEffect(() => {
     getJSON('entity-index.json').then((idx) => {
-      const names = (idx?.entities || []).filter((e: { t: string }) => e.t === '@').map((e: { c: string }) => e.c);
+      const entities = idx?.entities || [];
+      const lk = buildDisplayLookup(entities);
+      lookupRef.current = lk;
+      setLookup(lk);
+      const names = entities
+        .filter((e: { t: string }) => e.t === '@')
+        .map((e: { c: string; display?: string }) => e.display || e.c);
       setSuggest(names.slice(0, 400));
     });
     const q = new URLSearchParams(location.search);
@@ -41,9 +56,11 @@ export default function QaExplorer() {
       setTpl(t);
       const x = q.get('x') || '';
       const y = q.get('y') || '';
-      setX(x);
-      setY(y);
-      if (x && (!t.y || y)) ask(t, x, y);
+      const cx = toCanonical(lookupRef.current, x);
+      const cy = toCanonical(lookupRef.current, y);
+      setX(dsp(lookupRef.current.display, cx));
+      setY(dsp(lookupRef.current.display, cy));
+      if (cx && (!t.y || cy)) ask(t, cx, cy);
     }
   }, []);
 
@@ -60,12 +77,15 @@ export default function QaExplorer() {
   }
 
   async function ask(t: Tpl = tpl, xvArg = xv, yvArg = yv) {
-    if (!xvArg.trim() || (t.y && !yvArg.trim())) return;
+    // 输入归一：用户可输入展示名（康熙）或规范名（玄烨）——检索一律用 canonical，URL 深链写 canonical。
+    const X = toCanonical(lookupRef.current, xvArg);
+    const Y = toCanonical(lookupRef.current, yvArg);
+    if (!X || (t.y && !Y)) return;
     setBusy(true);
     try {
-      setAns(await solve(t, xvArg.trim(), yvArg.trim()));
-      const q = new URLSearchParams({ t: t.id, x: xvArg.trim() });
-      if (t.y) q.set('y', yvArg.trim());
+      setAns(await solve(t, X, Y));
+      const q = new URLSearchParams({ t: t.id, x: X });
+      if (t.y) q.set('y', Y);
       history.replaceState(null, '', `${location.pathname}?${q.toString()}`);
     } finally {
       setBusy(false);
@@ -73,18 +93,21 @@ export default function QaExplorer() {
   }
 
   async function solve(t: Tpl, X: string, Y: string) {
+    // X/Y 为 canonical（检索用）；dx/dy 为展示名（文案用），二者分离。
+    const dx = dsp(lookupRef.current.display, X);
+    const dy = dsp(lookupRef.current.display, Y);
     if (t.id === 'killer') {
       const hits: { t: string; href?: string; loc?: string }[] = [];
       for (const s of await slices()) {
         for (const evs of Object.values(s.events)) {
           for (const e of evs) {
             if (e.b === X && /杀|诛|毙|刺死/.test(e.v)) {
-              hits.push({ t: `${e.a} ${e.v} ${e.b}`, loc: `${s.title}·${e.l}`, href: `${B}books/${encodeURIComponent(s.title)}/${parseInt(e.l, 10)}/` });
+              hits.push({ t: `${dsp(lookupRef.current.display, e.a)} ${e.v} ${dsp(lookupRef.current.display, e.b)}`, loc: `${s.title}·${e.l}`, href: `${B}books/${encodeURIComponent(s.title)}/${String(parseInt(e.l, 10)).padStart(3, '0')}/` });
             }
           }
         }
       }
-      return finish(hits.length ? `击杀 ${X} 的记录：${hits.length} 起（去重后 ${new Set(hits.map((h) => h.t)).size} 名凶手）` : `档案未载：四书事件层没有"${X}"被杀的记录（也可能其死亡为病故/自尽/未直接收录）。`,
+      return finish(hits.length ? `击杀 ${dx} 的记录：${hits.length} 起（去重后 ${new Set(hits.map((h) => h.t)).size} 名凶手）` : `档案未载：四书事件层没有"${dx}"被杀的记录（也可能其死亡为病故/自尽/未直接收录）。`,
         hits.slice(0, 10), '口径：事件表 verb∈{杀,诛,毙} 且宾语=X，L0 定位符。');
     }
     if (t.id === 'chaps') {
@@ -94,20 +117,20 @@ export default function QaExplorer() {
         const p = s.persons[X];
         if (p) {
           total += p.n;
-          rows.push({ t: `${s.title}：第 ${p.chaps.join('、')} 回（出现 ${p.n} 次）`, href: `${B}books/${encodeURIComponent(s.title)}/${p.chaps[0]}/`, loc: `${s.title}` });
+          rows.push({ t: `${s.title}：第 ${p.chaps.join('、')} 回（出现 ${p.n} 次）`, href: `${B}books/${encodeURIComponent(s.title)}/${String(p.chaps[0]).padStart(3, '0')}/`, loc: `${s.title}` });
         }
       }
-      return finish(rows.length ? `${X} 共出现 ${total} 次，见于 ${rows.length} 部书：` : `档案未载：${X}`, rows, '口径：实体登记表 chapters（@ 实体定位符归并）。');
+      return finish(rows.length ? `${dx} 共出现 ${total} 次，见于 ${rows.length} 部书：` : `档案未载：${dx}`, rows, '口径：实体登记表 chapters（@ 实体定位符归并）。');
     }
     if (t.id === 'lineage') {
       const d = await getJSON('dossiers.json');
       const p = (d?.dossiers || []).find((z: { canonical: string; aliases: unknown[] }) =>
         z.canonical === X || (Array.isArray(z.aliases) ? z.aliases : []).some((a: { alias?: string }) => (typeof a === 'string' ? a : a?.alias) === X));
-      if (!p) return finish(`档案未载：${X}（人物谱 Top40 之外）`, [], '口径：dossiers.json lineage（动词分级：收徒/传授=strong）。');
+      if (!p) return finish(`档案未载：${dx}（人物谱 Top40 之外）`, [], '口径：dossiers.json lineage（动词分级：收徒/传授=strong）。');
       const rows: { t: string; href?: string; loc?: string }[] = [];
-      for (const m of p.lineage?.masters || []) rows.push({ t: `师承 ${m.person}（${m.tier}）`, loc: (m.locs || []).join('，'), href: `${B}characters/${encodeURIComponent(m.person)}/` });
-      for (const m of p.lineage?.disciples || []) rows.push({ t: `传人 ${m.person}（${m.tier}）`, loc: (m.locs || []).join('，'), href: `${B}characters/${encodeURIComponent(m.person)}/` });
-      return finish(rows.length ? `${p.canonical} 的师承谱系（动词分级）：` : `${p.canonical}：无 strong/ok 级师承线索（对话称呼不进事件层，见边界案例库）。`, rows.slice(0, 10), '口径：◇ 传授/拜师事件 + 师承考订；weak=相传级。');
+      for (const m of p.lineage?.masters || []) rows.push({ t: `师承 ${dsp(lookupRef.current.display, m.person)}（${m.tier}）`, loc: (m.locs || []).join('，'), href: `${B}characters/${encodeURIComponent(m.person)}/` });
+      for (const m of p.lineage?.disciples || []) rows.push({ t: `传人 ${dsp(lookupRef.current.display, m.person)}（${m.tier}）`, loc: (m.locs || []).join('，'), href: `${B}characters/${encodeURIComponent(m.person)}/` });
+      return finish(rows.length ? `${dsp(lookupRef.current.display, p.canonical)} 的师承谱系（动词分级）：` : `${dsp(lookupRef.current.display, p.canonical)}：无 strong/ok 级师承线索（对话称呼不进事件层，见边界案例库）。`, rows.slice(0, 10), '口径：◇ 传授/拜师事件 + 师承考订；weak=相传级。');
     }
     if (t.id === 'sectarts') {
       const arts = await getJSON('arts.json');
@@ -122,7 +145,7 @@ export default function QaExplorer() {
         }
       }
       rows.sort((p, q2) => (p.t.includes('镇山') ? -1 : 0) - (q2.t.includes('镇山') ? -1 : 0));
-      return finish(rows.length ? `${X} 名下武功 ${rows.length} 门（镇山置顶）：` : `档案未载：关系表没有 ${X} 的"拥有/镇山"武功。`, rows.slice(0, 12), '口径：关系表「门派—拥有/镇山—武功」，按证据定位符。');
+      return finish(rows.length ? `${dx} 名下武功 ${rows.length} 门（镇山置顶）：` : `档案未载：关系表没有 ${dx} 的"拥有/镇山"武功。`, rows.slice(0, 12), '口径：关系表「门派—拥有/镇山—武功」，按证据定位符。');
     }
     if (t.id === 'versus') {
       const hits: { t: string; href?: string; loc?: string }[] = [];
@@ -130,12 +153,12 @@ export default function QaExplorer() {
         for (const evs of Object.values(s.events)) {
           for (const e of evs) {
             if ((e.a === X && e.b === Y) || (e.a === Y && e.b === X)) {
-              hits.push({ t: `${e.a} ${e.v} ${e.b}`, loc: `${s.title}·${e.l}`, href: `${B}books/${encodeURIComponent(s.title)}/${parseInt(e.l, 10)}/` });
+              hits.push({ t: `${dsp(lookupRef.current.display, e.a)} ${e.v} ${dsp(lookupRef.current.display, e.b)}`, loc: `${s.title}·${e.l}`, href: `${B}books/${encodeURIComponent(s.title)}/${String(parseInt(e.l, 10)).padStart(3, '0')}/` });
             }
           }
         }
       }
-      return finish(hits.length ? `${X} × ${Y}：同场交手/互动 ${hits.length} 起。` : `${X} × ${Y}：四书事件层无直接交手记录（同场≠同事件，可在时空页查共现）。`,
+      return finish(hits.length ? `${dx} × ${dy}：同场交手/互动 ${hits.length} 起。` : `${dx} × ${dy}：四书事件层无直接交手记录（同场≠同事件，可在时空页查共现）。`,
         hits.slice(0, 10), '口径：事件表主客双向匹配，L0。');
     }
     if (t.id === 'artifact') {
@@ -154,7 +177,7 @@ export default function QaExplorer() {
         }
       }
       rows.sort((p, q2) => (q2.t.includes('[') ? 1 : 0) - (p.t.includes('[') ? 1 : 0));
-      return finish(rows.length ? `${X} 的持物/关联名物 ${rows.length} 件（明文流转置顶）：` : `档案未载：神兵表中没有 ${X} 的持物线索。`, rows.slice(0, 10), '口径：神兵表 holders/chain（工具 C）；暂持 ≠ 归属。');
+      return finish(rows.length ? `${dx} 的持物/关联名物 ${rows.length} 件（明文流转置顶）：` : `档案未载：神兵表中没有 ${dx} 的持物线索。`, rows.slice(0, 10), '口径：神兵表 holders/chain（工具 C）；暂持 ≠ 归属。');
     }
     return finish('未知模板', [], '');
   }

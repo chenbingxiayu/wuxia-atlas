@@ -5,6 +5,7 @@ import books from '@data/books.json';
 import characters from '@data/characters.json';
 import chaptersAll from '@data/chapters.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
 
 export function getStaticPaths() {
   return books.books.map((w) => ({ params: { slug: w.book }, props: { w } }));
@@ -23,7 +24,7 @@ const topChars = characters.entities
 const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
 ---
 
-<Base title={w.book} description={`${w.book}：${w.leads.join('、')}。${w.era}。回数 ${w.chapters}，初刊 ${w.year} 年。`}>
+<Base title={w.book} description={`${w.book}：${w.leads.map((l) => dsp(l)).join('、')}。${w.era}。回数 ${w.chapters}，初刊 ${w.year} 年。`}>
   <p class="crumb"><a href={`${B}books/`}>作品库</a> / {w.book}</p>
   <h1>{w.book}
     {w.kb_status === '已点亮' && <span class="badge badge-lit">已点亮</span>}
@@ -36,13 +37,13 @@ const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
     背景年代：{w.era} · 系列：{w.series}
   </p>
   {w.leads.length > 0 && (
-    <p class="meta">主角：{w.leads.map((l) => <span class="chip">{l}</span>)}</p>
+    <p class="meta">主角：{w.leads.map((l) => <span class="chip">{dsp(l)}</span>)}</p>
   )}
 
   <section class="stats card">
     <span><b>{w.chapters}</b> 回</span>
     <span><b>{w.chars.toLocaleString()}</b> 字</span>
-    {lit && <span><b>{ch.kb.entities.toLocaleString()}</b> 规范实体</span>}
+    {lit && <span><b>{ch.kb.entities.toLocaleString()}</b> 实体</span>}
     {lit && <span><b>{ch.kb.events_narrative.toLocaleString()}</b> 叙事事件</span>}
     {lit && <span><b>{ch.kb.relations}</b> 武功关系</span>}
     <span>互文 <b>{w.intertext_out}</b> 出 / <b>{w.intertext_in}</b> 入</span>
@@ -60,7 +61,7 @@ const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
       <h2>本书高频人物</h2>
       <p class="chips">
         {topChars.map((c) => (
-          <span class="chip">{c.canonical}<small>×{c.books[w.book].count}</small>
+          <span class="chip">{dsp(c.display || c.canonical)}<small>×{c.books[w.book].count}</small>
             {c.cross_book && <em class="badge badge-cross" style="font-size:.68em">跨书</em>}
           </span>
         ))}

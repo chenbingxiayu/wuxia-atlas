@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import weaponsJson from '@data/weapons.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
 
 const w = weaponsJson.weapons;
 const t = weaponsJson.meta.totals;
@@ -42,7 +43,7 @@ const strongEdges = t.chain_strong;
               </div>
               <div class="chain">
                 {x.chain.filter((e) => e.conf === 'strong').slice(0, 4).map((e) => (
-                  <span class="edge"><i>{e.verb}</i>{e.persons.join('+')}</span>
+                  <span class="edge"><i>{e.verb}</i>{e.persons.map((p) => dsp(p)).join('+')}</span>
                 ))}
                 {x.chain.filter((e) => e.conf === 'strong').length === 0 && <span class="none">共现证据 {x.ev_total} 处</span>}
               </div>

@@ -2,6 +2,8 @@
 import Base from '../../layouts/Base.astro';
 import artsJson from '@data/arts.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
+import { personTarget, sectTarget } from '@lib/links';
 
 export function getStaticPaths() {
   return artsJson.arts.map((a) => ({ params: { slug: a.canonical }, props: { a } }));
@@ -43,6 +45,12 @@ const aliasesPure = (a.aliases || []).filter((x) => !GONGFA.test(x) && !childNam
 const teachers = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '传授')).map(([p]) => p);
 const learners = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '修习' || r.pred === '独门') && !teachers.includes(p)).map(([p]) => p);
 const solo = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '独门') && !teachers.includes(p) && !learners.includes(p)).map(([p]) => p);
+// 链接目标解析（task-49）：门派/人物/功法先解析为有页的 canonical；无页 → 纯文本。
+const sectAggRows = sectAgg.map((sa) => ({ ...sa, target: sectTarget(sa.sect) }));
+const teacherRows = teachers.map((t2) => ({ name: t2, target: personTarget(t2) }));
+const learnerRows = learners.map((l) => ({ name: l, target: personTarget(l) }));
+const soloRows = solo.map((sp) => ({ name: sp, target: personTarget(sp) }));
+const personRows = [...persons.entries()].map(([p, rs]) => ({ name: p, rs, target: personTarget(p) }));
 ---
 
 <Base title={a.canonical} description={`${a.canonical}（${a.category}）：门派归属、修习者、别名与证据定位符。`}>
@@ -60,50 +68,60 @@ const solo = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred ==
     <section>
       <h2>门派归属 <span class="dim2">每派一条 · 证据可跨多部小说</span></h2>
       <p class="chips">
-        {sectAgg.map((sa) => (
-          <a class="chip" href={`${B}sects/${encodeURIComponent(sa.sect)}/`}>
-            {sa.sect}<small>{sa.preds.join('/')} · {sa.books.length} 书 · {sa.ev} 证</small>
-          </a>
+        {sectAggRows.map((sa) => (
+          sa.target ? (
+            <a class="chip" href={`${B}sects/${encodeURIComponent(sa.target)}/`}>
+              {sa.sect}<small>{sa.preds.join('/')} · {sa.books.length} 书 · {sa.ev} 证</small>
+            </a>
+          ) : (
+            <span class="chip">{sa.sect}<small>{sa.preds.join('/')} · {sa.books.length} 书 · {sa.ev} 证</small></span>
+          )
         ))}
       </p>
     </section>
   )}
 
-  {(teachers.length > 0 || learners.length > 0 || solo.length > 0) && (
+  {(teacherRows.length > 0 || learnerRows.length > 0 || soloRows.length > 0) && (
     <section>
       <h2>传授关系图 <span class="dim2">传授者 → 修习者 · 按关系表谓词连线（各带定位符）</span></h2>
       <div class="card" style="padding:16px 22px">
-        <svg viewBox={`0 0 900 ${Math.max(140, Math.max(teachers.length, learners.length, solo.length, 1) * 56 + 70)}`} style="width:100%;height:auto" role="img" aria-label="传授关系图">
+        <svg viewBox={`0 0 900 ${Math.max(140, Math.max(teacherRows.length, learnerRows.length, soloRows.length, 1) * 56 + 70)}`} style="width:100%;height:auto" role="img" aria-label="传授关系图">
           <text x="120" y="26" font-size="14" font-weight="700" fill="#a23527" text-anchor="middle">传授者</text>
           <text x="780" y="26" font-size="14" font-weight="700" fill="#31536c" text-anchor="middle">修习者</text>
-          {teachers.map((t, i) => {
+          {teacherRows.map((t2, i) => {
             const y = 60 + i * 56;
             return (
               <g>
                 <rect x="30" y={y - 18} width="180" height="36" rx="4" fill="#f6e8d9" stroke="#a23527" />
-                <a href={`${B}characters/${encodeURIComponent(t)}/`}><text x="120" y={y + 5} font-size="14" fill="#262420" text-anchor="middle">{t}</text></a>
-                {learners.map((l, j) => {
+                {t2.target
+                  ? <a href={`${B}characters/${encodeURIComponent(t2.target)}/`}><text x="120" y={y + 5} font-size="14" fill="#262420" text-anchor="middle">{dsp(t2.name)}</text></a>
+                  : <text x="120" y={y + 5} font-size="14" fill="#262420" text-anchor="middle">{dsp(t2.name)}</text>}
+                {learnerRows.map((l, j) => {
                   const yl = 60 + j * 56;
-                  return <line x1="212" y1={y} x2="688" y2={yl} stroke="#b5a687" stroke-width="1.2" stroke-dasharray="4 3"><title>{t} 传授 {l}</title></line>;
+                  return <line x1="212" y1={y} x2="688" y2={yl} stroke="#b5a687" stroke-width="1.2" stroke-dasharray="4 3"><title>{dsp(t2.name)} 传授 {dsp(l.name)}</title></line>;
                 })}
               </g>
             );
           })}
-          {learners.map((l, j) => {
+          {learnerRows.map((l, j) => {
             const yl = 60 + j * 56;
             return (
               <g>
                 <rect x="690" y={yl - 18} width="180" height="36" rx="4" fill="#eef2e6" stroke="#31536c" />
-                <a href={`${B}characters/${encodeURIComponent(l)}/`}><text x="780" y={yl + 5} font-size="14" fill="#262420" text-anchor="middle">{l}</text></a>
+                {l.target
+                  ? <a href={`${B}characters/${encodeURIComponent(l.target)}/`}><text x="780" y={yl + 5} font-size="14" fill="#262420" text-anchor="middle">{dsp(l.name)}</text></a>
+                  : <text x="780" y={yl + 5} font-size="14" fill="#262420" text-anchor="middle">{dsp(l.name)}</text>}
               </g>
             );
           })}
-          {solo.map((sp, i) => {
-            const y = 60 + (Math.max(teachers.length, learners.length) + i) * 56;
+          {soloRows.map((sp, i) => {
+            const y = 60 + (Math.max(teacherRows.length, learnerRows.length) + i) * 56;
             return (
               <g>
                 <rect x="360" y={y - 18} width="180" height="36" rx="4" fill="#f0e9d8" stroke="#8a6607" stroke-dasharray="4 3" />
-                <a href={`${B}characters/${encodeURIComponent(sp)}/`}><text x="450" y={y + 5} font-size="14" fill="#8a6607" text-anchor="middle">{sp}（独门）</text></a>
+                {sp.target
+                  ? <a href={`${B}characters/${encodeURIComponent(sp.target)}/`}><text x="450" y={y + 5} font-size="14" fill="#8a6607" text-anchor="middle">{dsp(sp.name)}（独门）</text></a>
+                  : <text x="450" y={y + 5} font-size="14" fill="#8a6607" text-anchor="middle">{dsp(sp.name)}（独门）</text>}
               </g>
             );
           })}
@@ -112,14 +130,18 @@ const solo = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred ==
       </div>
     </section>
   )}
-  {persons.size > 0 && (
+  {personRows.length > 0 && (
     <section>
       <h2>全部涉及者</h2>
       <p class="chips">
-        {[...persons.entries()].map(([p, rs]) => (
-          <a class="chip" href={`${B}characters/${encodeURIComponent(p)}/`}>
-            {p}<small>{[...new Set(rs.map((r) => r.pred))].join('/')} · {rs[0].book}·{rs[0].locs[0]}</small>
-          </a>
+        {personRows.map((row) => (
+          row.target ? (
+            <a class="chip" href={`${B}characters/${encodeURIComponent(row.target)}/`}>
+              {dsp(row.name)}<small>{[...new Set(row.rs.map((r) => r.pred))].join('/')} · {row.rs[0].book}·{row.rs[0].locs[0]}</small>
+            </a>
+          ) : (
+            <span class="chip">{dsp(row.name)}<small>{[...new Set(row.rs.map((r) => r.pred))].join('/')} · {row.rs[0].book}·{row.rs[0].locs[0]}</small></span>
+          )
         ))}
       </p>
     </section>
@@ -154,7 +176,7 @@ const solo = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred ==
         rs.map((r) => (
           <li>
             <span class="pred">{PRED_LABEL[r.pred] ?? r.pred}</span>
-            <span class="who">{r.s}</span>
+            <span class="who">{r.st === '@' ? dsp(r.s) : r.s}</span>
             <span class="loc">{r.book}·{r.locs.join('，')}</span>
             {r.note && <span class="note">「{r.note}」</span>}
           </li>

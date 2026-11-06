@@ -11,8 +11,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "_qwen_标注对比")
 
 OLD = os.path.join(ROOT, "kb", "tagged", "白发魔女传", "001_第一回.tagged.md")
-NEW = os.path.join(OUT_DIR, "001_第一回.tagged.md")
-REPORT = os.path.join(OUT_DIR, "对比报告-第一回.md")
+NEW = os.path.join(OUT_DIR, sys.argv[1] if len(sys.argv) > 1 else "001_第一回.tagged.md")
+REPORT = os.path.join(OUT_DIR, sys.argv[2] if len(sys.argv) > 2 else "对比报告-第一回.md")
+LABEL = sys.argv[3] if len(sys.argv) > 3 else "qwen"
 
 TAG_RE = re.compile(r"(〖[^〖〗]*〗|⟦[^⟦⟧]*⟧)")
 CODE_NAME = {
@@ -64,7 +65,7 @@ def main():
     rows = []
     rows.append("# qwen3.8-27B 重标注第一回 · 对比报告\n")
     rows.append("- 基线：`kb/tagged/白发魔女传/001_第一回.tagged.md`（annotator: manual-seed，人工种子）")
-    rows.append("- 新标：`_qwen_标注对比/001_第一回.tagged.md`（annotator: qwen3.8-27B-api，分块调用 + 机械回锚）")
+    rows.append(f"- 新标：`_qwen_标注对比/{os.path.basename(NEW)}`（annotator: {LABEL}-api，分块调用 + 机械回锚）")
     rows.append(f"- 段落数：{len(old_paras)}（两文件一致，段序即原文叙事段序）\n")
 
     # 一、总量与分布

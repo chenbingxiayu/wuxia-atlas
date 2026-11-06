@@ -1,36 +1,263 @@
 ---
 import Base from '../layouts/Base.astro';
-const base = import.meta.env.BASE_URL;
+
+// D4：搜索页从 Pagefind 原位切换为「JSON 索引轻量搜索」。
+// 数据源：data/search-index.json（由 wuxia-kb/scripts/build_search_index.py 从 dist HTML 生成）。
+// 支持 display / canonical / 别名 / 标题 / 摘要 多字段匹配；若构建时另生成了
+// Pagefind 索引（dist/pagefind/），自动追加「全文检索（可选）」区块，否则自动隐藏。
+const RAW = import.meta.env.BASE_URL || '/';
+const base = RAW.endsWith('/') ? RAW : RAW + '/';
+const B = base;
 ---
 
-<Base title="搜索" description="全站全文检索（Pagefind）。">
-  <h1>搜索</h1>
-  <link rel="stylesheet" href={`${base}pagefind/pagefind-ui.css`} />
-  <div id="search"></div>
-  <noscript>搜索需要启用 JavaScript。</noscript>
-  <script is:inline>
-    window.addEventListener('DOMContentLoaded', () => {
-      const el = document.getElementById('search');
-      if (window.PagefindUI) {
-        new window.PagefindUI({ element: '#search', showSubResults: true, translations: {
-          placeholder: '搜索人物、武功、书目、回目……',
-          search: '搜索',
-        }});
-      } else {
-        el.innerHTML = '<p class="dim">搜索索引未构建：本地请先 <code>npm run build && npm run pagefind</code>。</p>';
+<Base
+  title="搜索"
+  description="全站检索：人物、作品、武功、门派、回目……支持展示名（康熙/飞红巾）与规范名（玄烨/哈玛雅）双匹配。"
+>
+  <section class="search-hero">
+    <h1>搜索</h1>
+    <p class="lead">
+      输入人物、作品、武功、门派、回目或地名。人物支持<strong>展示名与规范名双匹配</strong>：
+      「康熙」与「玄烨」、「飞红巾」与「哈玛雅」都会命中同一页。数据来自
+      <code>data/search-index.json</code>（构建时由 <code>build_search_index.py</code> 从站点 HTML 生成）。
+    </p>
+    <form id="search-form" class="search-form" role="search" autocomplete="off">
+      <label class="sr-only" for="q">搜索关键词</label>
+      <input id="q" type="search" name="q" placeholder="搜索人物、武功、门派、回目……" enterkeyhint="search" />
+      <button type="submit">搜索</button>
+    </form>
+    <p id="search-status" class="status dim" role="status" aria-live="polite">正在加载索引……</p>
+  </section>
+
+  <section id="results-section" hidden>
+    <h2>结果</h2>
+    <ol id="results" class="results"></ol>
+  </section>
+
+  <section id="pagefind-section" hidden>
+    <h2>全文检索（Pagefind，可选）</h2>
+    <p class="dim">
+      本站在构建时若额外生成了 Pagefind 索引（<code>npm run pagefind</code> 或
+      <code>python scripts/build_search_index.py --pagefind</code>），可用下方全文检索检索正文段落；
+      未生成时上方 JSON 搜索已覆盖全部页面。
+    </p>
+    <div id="pagefind-search"></div>
+  </section>
+
+  <script is:inline define:vars={{ B }}>
+    (function () {
+      'use strict';
+      var B = (typeof B !== 'undefined' && B) ? B : '/wuxia-atlas/';
+
+      var form = document.getElementById('search-form');
+      var input = document.getElementById('q');
+      var statusEl = document.getElementById('search-status');
+      var listEl = document.getElementById('results');
+      var resultsSection = document.getElementById('results-section');
+      var pfSection = document.getElementById('pagefind-section');
+      if (!form || !input || !listEl) return;
+
+      var ENTRIES = null;
+      var TYPE_LABEL = {
+        characters: '人物', books: '作品', arts: '武功', weapons: '名物', sects: '门派',
+        chapters: '回目', ratings: '武评', universe: '宇宙', atlas: '地图', games: '游戏',
+        qa: '问答', about: '关于', stories: '故事', page: '页面'
+      };
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
       }
-    });
+      function tokens(q) {
+        return String(q || '').trim().split(/\s+/).filter(Boolean);
+      }
+      function fields(e) {
+        return [e.display, e.canonical, e.title].concat(e.aliases || []);
+      }
+      function scoreOne(e, tok) {
+        var fs = fields(e), best = 0;
+        for (var i = 0; i < fs.length; i++) {
+          var f = String(fs[i] == null ? '' : fs[i]);
+          if (!f) continue;
+          if (f === tok) best = Math.max(best, 120);
+          else if (f.indexOf(tok) === 0) best = Math.max(best, 90);
+          else if (f.indexOf(tok) >= 0) best = Math.max(best, 60);
+        }
+        var sum = String(e.summary || '');
+        if (sum.indexOf(tok) >= 0) best = Math.max(best, 25);
+        return best;
+      }
+      function score(e, toks) {
+        var total = 0;
+        for (var i = 0; i < toks.length; i++) {
+          var s = scoreOne(e, toks[i]);
+          if (!s) return 0;
+          total += s;
+        }
+        return total;
+      }
+      function search(q, limit) {
+        if (!ENTRIES) return [];
+        var toks = tokens(q);
+        if (!toks.length) return [];
+        var hit = [];
+        for (var i = 0; i < ENTRIES.length; i++) {
+          var e = ENTRIES[i];
+          var s = score(e, toks);
+          if (s > 0) hit.push([s, e]);
+        }
+        if (!hit.length) { // AND 无结果 → 单词 OR 兜底
+          for (var j = 0; j < ENTRIES.length; j++) {
+            var e2 = ENTRIES[j], best = 0;
+            for (var k = 0; k < toks.length; k++) best = Math.max(best, scoreOne(e2, toks[k]));
+            if (best > 0) hit.push([best, e2]);
+          }
+        }
+        hit.sort(function (a, b) {
+          if (b[0] !== a[0]) return b[0] - a[0];
+          if (a[1].type !== b[1].type) return a[1].type < b[1].type ? -1 : 1;
+          return a[1].url < b[1].url ? -1 : 1;
+        });
+        return hit.slice(0, limit || 40).map(function (x) { return x[1]; });
+      }
+      function highlight(text, toks) {
+        var out = esc(text);
+        toks.forEach(function (t) {
+          var re = new RegExp(esc(t).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+          out = out.replace(re, function (m) { return '<mark>' + m + '</mark>'; });
+        });
+        return out;
+      }
+      function renderHit(e, toks) {
+        var href = B + e.url;
+        var kind = TYPE_LABEL[e.type] || e.type;
+        var canon = (e.canonical && e.canonical !== e.display)
+          ? '<span class="canon">规范名：' + esc(e.canonical) + '</span>' : '';
+        return '<li class="result">' +
+          '<div class="result-head"><a href="' + esc(href) + '">' + highlight(e.display || e.title, toks) + '</a>' +
+          '<span class="kind">' + esc(kind) + '</span>' + canon + '</div>' +
+          '<p class="result-summary">' + highlight(e.summary || '', toks) + '</p>' +
+          '</li>';
+      }
+      function render() {
+        if (!ENTRIES) return;
+        var q = input.value;
+        var url = new URL(location.href);
+        if (q) url.searchParams.set('q', q); else url.searchParams.delete('q');
+        history.replaceState(null, '', url);
+        resultsSection.hidden = false;
+        if (!tokens(q).length) {
+          listEl.innerHTML = '';
+          statusEl.textContent = '索引 ' + ENTRIES.length + ' 条 · 可搜索人物 / 作品 / 武功 / 门派 / 回目';
+          return;
+        }
+        var hits = search(q, 40);
+        var toks = tokens(q);
+        statusEl.textContent = hits.length + ' 条结果';
+        if (!hits.length) {
+          listEl.innerHTML = '<li class="empty">没有匹配项，试试缩短关键词或换用规范名/展示名。</li>';
+          return;
+        }
+        listEl.innerHTML = hits.map(function (e) { return renderHit(e, toks); }).join('');
+      }
+
+      async function loadIndex() {
+        try {
+          var r = await fetch(B + 'data/search-index.json', { cache: 'no-cache' });
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          var data = await r.json();
+          ENTRIES = data.entries || [];
+          var gen = (data.meta && data.meta.generated) || '';
+          var pf = (data.meta && data.meta.pagefind) || {};
+          var pfOn = !!(pf && (pf.ok || pf.available));
+          window.__wuxiaIndex = { entries: ENTRIES.length, generated: gen, pagefind: pfOn };
+          window.__wuxiaSearch = function (q) {
+            return search(q, 40).map(function (e) { return { url: e.url, display: e.display, canonical: e.canonical, type: e.type }; });
+          };
+          statusEl.textContent = '索引 ' + ENTRIES.length + ' 条' + (gen ? ' · ' + gen : '');
+          var initQ = new URLSearchParams(location.search).get('q') || '';
+          if (initQ) { input.value = initQ; }
+          render();
+          if (pfOn) enhancePagefind();
+        } catch (err) {
+          statusEl.textContent = '搜索索引加载失败：请先运行 python scripts/build_search_index.py（' + err.message + '）';
+          window.__wuxiaIndex = { error: String(err) };
+        }
+      }
+
+      async function enhancePagefind() {
+        try {
+          // Pagefind 1.5+ 采用 Component UI：<pagefind-config base-url> 可正确支持 /wuxia-atlas/ 子路径。
+          var probe = await fetch(B + 'pagefind/pagefind-component-ui.js', { cache: 'force-cache' });
+          if (!probe.ok) return;
+          var css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.href = B + 'pagefind/pagefind-component-ui.css';
+          document.head.appendChild(css);
+          var holder = document.getElementById('pagefind-search');
+          if (!holder) return;
+          holder.innerHTML =
+            '<pagefind-config base-url="' + B + '" bundle-path="' + B + 'pagefind/"></pagefind-config>' +
+            '<pagefind-input placeholder="全文检索（含正文段落）……"></pagefind-input>' +
+            '<pagefind-results></pagefind-results>';
+          var js = document.createElement('script');
+          js.src = B + 'pagefind/pagefind-component-ui.js';
+          js.onload = function () { pfSection.hidden = false; };
+          js.onerror = function () { pfSection.hidden = true; };
+          document.head.appendChild(js);
+        } catch (e) { /* 无 Pagefind 索引：JSON 搜索兜底 */ }
+      }
+
+      form.addEventListener('submit', function (ev) { ev.preventDefault(); render(); });
+      var timer = null;
+      input.addEventListener('input', function () {
+        clearTimeout(timer);
+        timer = setTimeout(render, 120);
+      });
+      loadIndex();
+    })();
   </script>
 </Base>
 
 <style>
-  .dim { color: var(--ink-faint); }
+  .search-hero { margin-bottom: var(--space-5); }
+  .lead { color: var(--ink-light); max-width: var(--measure); }
+  .lead code { font-family: var(--font-mono); font-size: .88em; background: var(--paper-deep); padding: 0 .25em; border-radius: 3px; }
+  .search-form { display: flex; gap: var(--space-2); margin: var(--space-4) 0 var(--space-2); }
+  .search-form input {
+    flex: 1; min-width: 0; padding: .6em .8em; font-family: var(--font-body); font-size: 1.05rem;
+    color: var(--ink); background: #fffdf8; border: 1px solid var(--line-strong); border-radius: var(--radius);
+  }
+  .search-form input:focus { outline: 2px solid var(--azure); outline-offset: 1px; }
+  .search-form button {
+    padding: .6em 1.1em; font-family: var(--font-title); font-size: 1rem; color: #fffdf8;
+    background: var(--seal); border: 0; border-radius: var(--radius); cursor: pointer;
+  }
+  .search-form button:hover { background: var(--seal-deep); }
+  .status { margin: var(--space-2) 0 0; font-size: .9rem; }
+  .results { list-style: none; padding: 0; margin: var(--space-3) 0 0; }
+  .result { border-top: 1px solid var(--line); padding: var(--space-3) 0; }
+  .result-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); }
+  .result-head a { font-family: var(--font-title); font-size: 1.12rem; font-weight: 700; color: var(--azure); }
+  .kind {
+    font-size: .78rem; color: var(--ink-faint); border: 1px solid var(--line);
+    border-radius: 999px; padding: 0 .5em;
+  }
+  .canon { font-size: .82rem; color: var(--ink-faint); }
+  .result-summary { margin: .2em 0 0; color: var(--ink-light); font-size: .95rem; }
+  .result mark, :global(.pagefind-ui__result-excerpt mark) {
+    background: rgba(166, 58, 43, .16); color: var(--seal); padding: 0 .1em;
+  }
+  .empty { color: var(--ink-faint); }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
+  #pagefind-section { margin-top: var(--space-6); }
   :global(.pagefind-ui__search-input) {
-    font-family: var(--font-body);
-    border-color: var(--line-strong);
-    border-radius: var(--radius);
+    font-family: var(--font-body); border-color: var(--line-strong); border-radius: var(--radius);
   }
   :global(.pagefind-ui__search-clear) { color: var(--ink-faint); }
   :global(.pagefind-ui__result-link) { color: var(--azure); font-weight: 700; }
-  :global(.pagefind-ui__result-excerpt mark) { background: rgba(166, 58, 43, .16); color: var(--seal); }
 </style>

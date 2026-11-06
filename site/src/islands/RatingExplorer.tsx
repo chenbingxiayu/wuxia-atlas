@@ -1,7 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
+import {
+  buildDisplayLookup,
+  dsp,
+  type DisplayLookup,
+} from '../lib/display-shared';
 
 /**
- * RatingExplorer —— 侠谱总榜交互岛（规格 P1）。
+ * RatingExplorer —— 武评总榜交互岛（规格 P1）。
  * 榜域切换（合成榜/书内榜）· 分档/门派过滤 · 搜索 · 行内展开证据链（matches 定位符）。
  * 榜头横幅：v0 未过人工抽检（规格 §六 异常规则已触发，见方法论页）。
  */
@@ -18,6 +23,7 @@ export default function RatingExplorer() {
   const [players, setPlayers] = useState<Player[]>([]);
   const [matches, setMatches] = useState<Match[]>([]);
   const [sectOf, setSectOf] = useState<Record<string, string>>({});
+  const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
   const [domain, setDomain] = useState<string>('合成榜');
   const [tier, setTier] = useState<string>('全部');
   const [sect, setSect] = useState<string>('全部');
@@ -29,9 +35,11 @@ export default function RatingExplorer() {
       fetch(B + 'data/ratings.json').then((r) => r.json()),
       fetch(B + 'data/matches.json').then((r) => r.json()),
       fetch(B + 'data/dossiers.json').then((r) => r.json()),
-    ]).then(([rt, mt, ds]) => {
+      fetch(B + 'data/entity-index.json').then((r) => (r.ok ? r.json() : { entities: [] })),
+    ]).then(([rt, mt, ds, idx]) => {
       setPlayers(rt.players);
       setMatches(mt.matches);
+      setLookup(buildDisplayLookup(idx?.entities || []));
       const sects: Record<string, string> = {};
       for (const d of ds.dossiers || []) {
         const sa = (d.sect_affinity || []).find((x: { tier: string }) => x.tier !== 'weak');
@@ -49,10 +57,11 @@ export default function RatingExplorer() {
     }).filter(Boolean) as (Player & { viewRating: number })[];
     if (tier !== '全部') rows = rows.filter((p) => p.tier === tier);
     if (sect !== '全部') rows = rows.filter((p) => sectOf[p.name] === sect);
-    if (q.trim()) rows = rows.filter((p) => p.name.includes(q.trim()));
+    // 搜索同时匹配展示名与规范名（默认 display==canonical 时行为不变）
+    if (q.trim()) rows = rows.filter((p) => dsp(lookup.display, p.name).includes(q.trim()) || p.name.includes(q.trim()));
     rows.sort((a, b) => b.viewRating - a.viewRating);
     return rows;
-  }, [players, domain, tier, sect, q, sectOf]);
+  }, [players, domain, tier, sect, q, sectOf, lookup]);
 
   const sects = useMemo(() => Object.values(sectOf).filter(Boolean).sort(), [sectOf]);
   const matchesOf = (name: string) =>
@@ -98,7 +107,7 @@ export default function RatingExplorer() {
             <>
               <tr key={p.name}>
                 <td className="mono rk">{i + 1}</td>
-                <td><a className="nm" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{p.name}</a></td>
+                <td><a className="nm" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(lookup.display, p.name)}</a></td>
                 <td className="mono">{p.viewRating}±{p.rd}{p.rd > 150 && <span className="few" title="区间宽=对局少">数据不足</span>}</td>
                 <td><span className="tier" style={{ color: TIER_COLOR[p.tier], borderColor: TIER_COLOR[p.tier] }}>{p.tier}</span></td>
                 <td className="dim">{sectOf[p.name] || '—'}</td>
@@ -116,8 +125,8 @@ export default function RatingExplorer() {
                         return (
                           <li key={m.id}>
                             <span className={'mono ' + (m.outcome === 'draw' ? '' : win ? 'w' : 'l')}>{win ? '胜' : m.outcome === 'draw' ? '平' : '负'}</span>
-                            {m.a} vs {m.b}（{m.kind}{m.modifiers.length ? ' · ' + m.modifiers.join('/') : ''} · w{m.weight}）
-                            <a className="mono" href={`${B}books/${encodeURIComponent(m.book)}/${parseInt(m.loc, 10)}/`}>{m.book}·{m.loc} →</a>
+                            {dsp(lookup.display, m.a)} vs {dsp(lookup.display, m.b)}（{m.kind}{m.modifiers.length ? ' · ' + m.modifiers.join('/') : ''} · w{m.weight}）
+                            <a className="mono" href={`${B}books/${encodeURIComponent(m.book)}/${String(parseInt(m.loc, 10)).padStart(3, '0')}/`}>{m.book}·{m.loc} →</a>
                           </li>
                         );
                       })}

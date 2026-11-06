@@ -1,4 +1,10 @@
 import { useEffect, useState } from 'react';
+import {
+  buildDisplayLookup,
+  dsp,
+  toCanonical,
+  type DisplayLookup,
+} from '../lib/display-shared';
 
 /**
  * VersusTool —— 对局详情（规格 P3，单页 + URL 参数 ?a=&b=，不生成 N² 静态页）。
@@ -15,17 +21,21 @@ export default function VersusTool() {
   const [matches, setMatches] = useState<Match[]>([]);
   const [a, setA] = useState('');
   const [b, setB] = useState('');
+  const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
 
   useEffect(() => {
     Promise.all([
       fetch(B + 'data/ratings.json').then((r) => r.json()),
       fetch(B + 'data/matches.json').then((r) => r.json()),
-    ]).then(([rt, mt]) => {
+      fetch(B + 'data/entity-index.json').then((r) => (r.ok ? r.json() : { entities: [] })),
+    ]).then(([rt, mt, idx]) => {
+      const lk = buildDisplayLookup(idx?.entities || []);
+      setLookup(lk);
       setPlayers(rt.players.filter((p: Player) => p.matches_n > 0));
       setMatches(mt.matches);
       const q = new URLSearchParams(location.search);
       const qa = q.get('a') || '', qb = q.get('b') || '';
-      if (qa && qb) { setA(qa); setB(qb); }
+      if (qa && qb) { setA(toCanonical(lk, qa)); setB(toCanonical(lk, qb)); }
     });
   }, []);
 
@@ -43,12 +53,12 @@ export default function VersusTool() {
       <div className="vt-sel">
         <select value={a} onChange={(e) => setA(e.target.value)} aria-label="人物 A">
           <option value="">选人物 A…</option>
-          {players.map((p) => <option key={p.name}>{p.name}</option>)}
+          {players.map((p) => <option key={p.name} value={p.name}>{dsp(lookup.display, p.name)}</option>)}
         </select>
         <span className="vs">×</span>
         <select value={b} onChange={(e) => setB(e.target.value)} aria-label="人物 B">
           <option value="">选人物 B…</option>
-          {players.map((p) => <option key={p.name}>{p.name}</option>)}
+          {players.map((p) => <option key={p.name} value={p.name}>{dsp(lookup.display, p.name)}</option>)}
         </select>
       </div>
 
@@ -57,7 +67,7 @@ export default function VersusTool() {
           <div className="vt-head">
             {[pa, pb].map((p, i) => (
               <div className="vt-side" key={p.name}>
-                <a className="vt-name" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{p.name}</a>
+                <a className="vt-name" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(lookup.display, p.name)}</a>
                 <div className="vt-rating mono">{p.rating}±{p.rd}</div>
                 <div className="dim">{p.tier} · {p.matches_n} 场</div>
                 {i === 0 && expected != null && <div className="vt-exp">预期胜率 <b>{Math.round(expected * 100)}%</b></div>}
@@ -74,9 +84,9 @@ export default function VersusTool() {
             <ul className="vt-list">
               {h2h.map((m) => (
                 <li key={m.id}>
-                  <b>{m.a}</b> <span className={'mono ' + m.outcome}>{m.outcome === 'draw' ? '平' : m.outcome === 'win' ? `${m.a} 胜` : `${m.b} 胜`}</span>
+                  <b>{dsp(lookup.display, m.a)}</b> <span className={'mono ' + m.outcome}>{m.outcome === 'draw' ? '平' : m.outcome === 'win' ? `${dsp(lookup.display, m.a)} 胜` : `${dsp(lookup.display, m.b)} 胜`}</span>
                   <span className="dim">（{m.kind}{m.modifiers.length ? ' · ' + m.modifiers.join('/') : ''} · w{m.weight}）</span>
-                  <a className="mono loc" href={`${B}books/${encodeURIComponent(m.book)}/${parseInt(m.loc, 10)}/`}>{m.book}·{m.loc} →</a>
+                  <a className="mono loc" href={`${B}books/${encodeURIComponent(m.book)}/${String(parseInt(m.loc, 10)).padStart(3, '0')}/`}>{m.book}·{m.loc} →</a>
                 </li>
               ))}
             </ul>

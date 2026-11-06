@@ -3,6 +3,8 @@ import Base from '../../layouts/Base.astro';
 import sectsJson from '@data/sects.json';
 import matchesJson from '@data/matches.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
+import { artTarget, personTarget, sectTarget } from '@lib/links';
 
 export function getStaticPaths() {
   return sectsJson.sects.map((s) => ({ params: { slug: s.canonical }, props: { s } }));
@@ -27,7 +29,7 @@ const splitArts = (list) => {
 
 /* 人物 → 门派（用于恩怨对头的组织级聚合） */
 const personSect = new Map();
-for (const x of all) for (const m of x.members) if (!personSect.has(m.name)) personSect.set(m.name, x.canonical);
+for (const x of all) for (const m of x.members) if (m.name && !personSect.has(m.name)) personSect.set(m.name, x.canonical);
 const memberNames = new Set(s.members.map((m) => m.name));
 const foes = new Map();
 for (const m of matchesJson.matches) {
@@ -48,6 +50,17 @@ const foeRows = [...foes.entries()].sort((a, b) => b[1].n - a[1].n).slice(0, 5);
 const tenured = new Set();
 for (const t of s.tenures || []) for (const m of t.members || []) tenured.add(typeof m === 'string' ? m : m.name);
 const restMembers = s.members.filter((m) => !tenured.has(m.name));
+// 链接目标解析（task-49）：无页人物/门派/功法 → 纯文本；别名/展示名 → canonical。
+const tenureRows = (s.tenures || []).map((t2) => ({
+  ...t2,
+  leaderTarget: personTarget(t2.leader),
+  memberRows: (t2.members || []).map((m) => {
+    const name = typeof m === 'string' ? m : m.name;
+    return { name, target: personTarget(name) };
+  }),
+}));
+const restMemberRows = restMembers.map((m) => ({ ...m, target: personTarget(m.name) }));
+const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(osect) }));
 ---
 
 <Base title={s.canonical} description={`${s.canonical}：武功册、掌门世系、成员册与恩怨对头——梁羽生武侠宇宙门派志。`}>
@@ -76,11 +89,12 @@ const restMembers = s.members.filter((m) => !tenured.has(m.name));
           <div>
             <h3 class="sub">{pred}（{gongfa.length}）</h3>
             <p class="chips">
-              {gongfa.map((a) => (
-                <a class="chip" href={`${B}arts/${encodeURIComponent(a.art)}/`}>
-                  {a.art}<small>·{a.book}{a.ev > 1 ? ` · ${a.ev} 证` : ''}</small>
-                </a>
-              ))}
+              {gongfa.map((a) => {
+                const tg = artTarget(a.art);
+                return tg
+                  ? <a class="chip" href={`${B}arts/${encodeURIComponent(tg)}/`}>{a.art}<small>·{a.book}{a.ev > 1 ? ` · ${a.ev} 证` : ''}</small></a>
+                  : <span class="chip">{a.art}<small>·{a.book}{a.ev > 1 ? ` · ${a.ev} 证` : ''}</small></span>;
+              })}
             </p>
             {moves.length > 0 && (
               <p class="dim moves-note">另有招式级 {moves.length} 个（{moves.map((m) => m.art).join('、')}）——归各武功页招式名表，不入门派武功册。</p>
@@ -95,21 +109,24 @@ const restMembers = s.members.filter((m) => !tenured.has(m.name));
     <section>
       <h2>掌门世系与成员册 <span class="dim">（工具 B 门派世系表 · 每代掌门列门下成员）</span></h2>
       <div class="tenures">
-        {(s.tenures || []).map((t) => (
+        {tenureRows.map((t) => (
           <div class="tenure">
             <div class="t-head">
-              <b>掌门：<a href={`${B}characters/${encodeURIComponent(t.leader)}/`}>{t.leader}</a></b>
+              <b>掌门：{t.leaderTarget
+                ? <a href={`${B}characters/${encodeURIComponent(t.leaderTarget)}/`}>{dsp(t.leader)}</a>
+                : <span>{dsp(t.leader)}</span>}</b>
               <span class="mono dim">{t.period?.from || ''}{t.period?.to ? ` → ${t.period.to}` : ''}</span>
               {t.conf && <span class="badge">{t.conf}</span>}
-              {t.successor && <span class="dim">继任：{t.successor}</span>}
+              {t.successor && <span class="dim">继任：{dsp(t.successor)}</span>}
             </div>
             {(t.members || []).length > 0 ? (
               <p class="chips">
                 <span class="dim">门下：</span>
-                {t.members.map((m) => {
-                  const name = typeof m === 'string' ? m : m.name;
-                  return <a class="chip" href={`${B}characters/${encodeURIComponent(name)}/`}>{name}</a>;
-                })}
+                {t.memberRows.map((m) => (
+                  m.target
+                    ? <a class="chip" href={`${B}characters/${encodeURIComponent(m.target)}/`}>{dsp(m.name)}</a>
+                    : <span class="chip">{dsp(m.name)}</span>
+                ))}
               </p>
             ) : (
               <p class="dim">门下成员待考订归组（世系表 members 空）。</p>
@@ -135,10 +152,14 @@ const restMembers = s.members.filter((m) => !tenured.has(m.name));
     <section>
       <h2>其余成员 <span class="dim">（derived：强证/确证级门派线索，未入世系分组）</span></h2>
       <p class="chips">
-        {restMembers.map((m) => (
-          <a class="chip" href={`${B}characters/${encodeURIComponent(m.name)}/`}>
-            {m.name}<small>{m.tier === 'strong' ? '强证' : '确证'} · 经{m.via.slice(0, 2).join('、')}</small>
-          </a>
+        {restMemberRows.map((m) => (
+          m.target ? (
+            <a class="chip" href={`${B}characters/${encodeURIComponent(m.target)}/`}>
+              {dsp(m.name)}<small>{m.tier === 'strong' ? '强证' : '确证'} · 经{m.via.slice(0, 2).join('、')}</small>
+            </a>
+          ) : (
+            <span class="chip">{dsp(m.name)}<small>{m.tier === 'strong' ? '强证' : '确证'} · 经{m.via.slice(0, 2).join('、')}</small></span>
+          )
         ))}
       </p>
     </section>
@@ -148,11 +169,13 @@ const restMembers = s.members.filter((m) => !tenured.has(m.name));
     <section>
       <h2>恩怨对头 <span class="dim">（matches 事件 · 本派成员交手对象的门派聚合）</span></h2>
       <p class="chips">
-        {foeRows.map(([osect, f]) => (
-          <a class="chip" href={`${B}sects/${encodeURIComponent(osect)}/`}>{osect}<small>{f.n} 场</small></a>
+        {foeRowRows.map(({ osect, f, target }) => (
+          target
+            ? <a class="chip" href={`${B}sects/${encodeURIComponent(target)}/`}>{osect}<small>{f.n} 场</small></a>
+            : <span class="chip">{osect}<small>{f.n} 场</small></span>
         ))}
       </p>
-      <p class="dim">交手最多：{[...foeRows[0][1].names.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([n, c]) => `${n}×${c}`).join('、')}（详见各人对局详情页）。</p>
+      <p class="dim">交手最多：{[...foeRows[0][1].names.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3).map(([n, c]) => `${dsp(n)}×${c}`).join('、')}（详见各人对局详情页）。</p>
     </section>
   )}
 </Base>

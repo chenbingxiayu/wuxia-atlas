@@ -2,10 +2,11 @@
 import Base from '../../layouts/Base.astro';
 import ratings from '@data/ratings.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
 const conflicts = ratings.conflicts;
 ---
-<Base title="明文冲突页">
-  <p class="crumb"><a href={`${B}ratings/`}>侠谱总榜</a> / 明文冲突（穿帮雷达子页）</p>
+<Base title="武评 · 明文冲突">
+  <p class="crumb"><a href={`${B}ratings/`}>武评总榜</a> / 明文冲突</p>
   <h1>明文 × 数据</h1>
   <div class="note">
     <b>冲突 ≠ 穿帮。</b>可能是剧情保护（主角光环）、旁白夸张、或数据抽取遗漏——
@@ -16,8 +17,8 @@ const conflicts = ratings.conflicts;
     {conflicts.map((c) => (
       <div class="card">
         <div class="claim">「{c.claim}」<span class="mono loc">{c.claim_loc}</span></div>
-        <div class="data">数据结论：<a href={`${B}characters/${encodeURIComponent(c.data.winner)}/`}>{c.data.winner}</a>（低分方）
-          胜 <a href={`${B}characters/${encodeURIComponent(c.data.loser)}/`}>{c.data.loser}</a>
+        <div class="data">数据结论：<a href={`${B}characters/${encodeURIComponent(c.data.winner)}/`}>{dsp(c.data.winner)}</a>（低分方）
+          胜 <a href={`${B}characters/${encodeURIComponent(c.data.loser)}/`}>{dsp(c.data.loser)}</a>
           —— 倒置分差 <b>{c.data.delta}</b>（{c.data.match}）</div>
         <div class="note2">{c.note} · <a href={`${B}ratings/versus/?a=${encodeURIComponent(c.data.winner)}&b=${encodeURIComponent(c.data.loser)}`}>对局详情 →</a></div>
       </div>

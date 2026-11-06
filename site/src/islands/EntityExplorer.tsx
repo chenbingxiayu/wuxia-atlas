@@ -2,7 +2,8 @@ import { useMemo, useState } from 'react';
 
 export interface Ent {
   t: string;                       // '@'人物 | '☆'武功 | '◆'门派组织
-  c: string;                       // 规范名
+  c: string;                       // 规范名（内部 key / URL slug，保持 canonical）
+  display?: string;                // 展示名（display-canonical-v1；缺省回落 canonical）
   n: number;                       // 总频次
   b: Record<string, number>;       // 逐书频次
   x: boolean;                      // 跨书
@@ -14,6 +15,9 @@ const RAW = import.meta.env.BASE_URL || '/';
 const B = RAW.endsWith('/') ? RAW : RAW + '/';
 const BASE: Record<string, string> = { '@': B + 'characters/', '☆': B + 'arts/', '◆': B + 'sects/' };
 const PAGE_SIZE = 300;
+
+/** 展示名：display 优先，缺省回落 canonical（展示层，B-1/B-2）。 */
+const shown = (e: Ent) => e.display || e.c;
 
 export default function EntityExplorer({
   entities,
@@ -33,11 +37,12 @@ export default function EntityExplorer({
         (e) =>
           e.t === type &&
           (!crossOnly || e.x) &&
-          (!q || e.c.includes(q)),
+          // 搜索同时匹配展示名与规范名（输入 canonical 也能搜到；匹配逻辑不改变 URL）
+          (!q || shown(e).includes(q) || e.c.includes(q)),
       ),
     [entities, type, q, crossOnly],
   );
-  const shown = list.slice(0, limit);
+  const shownList = list.slice(0, limit);
 
   return (
     <div className="explorer">
@@ -64,22 +69,23 @@ export default function EntityExplorer({
         </label>
       </div>
       <p className="meta">
-        {list.length} 条{list.length > shown.length ? `，显示前 ${shown.length}（继续筛选缩小范围）` : ''}
+        {list.length} 条{list.length > shownList.length ? `，显示前 ${shownList.length}（继续筛选缩小范围）` : ''}
       </p>
       <div className="chips">
-        {shown.map((e) => (
+        {shownList.map((e) => (
           <a
             key={e.t + e.c}
             className={e.x ? 'chip cross' : 'chip'}
             href={BASE[e.t] + encodeURIComponent(e.c) + '/'}
+            title={`规范名：${e.c}`}
             style={{ fontSize: e.n > 800 ? '1rem' : '.88rem' }}
           >
-            {e.c}
+            {shown(e)}
             <small>×{e.n}</small>
             {e.x && <em>换乘</em>}
           </a>
         ))}
-        {shown.length === 0 && <p className="meta">无匹配结果。</p>}
+        {shownList.length === 0 && <p className="meta">无匹配结果。</p>}
       </div>
     </div>
   );

@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import books from '@data/books.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
 
 const works = [...books.books].sort((a, b) => a.no - b.no);
 const byStatus = (s: string) => works.filter((w) => w.kb_status === s).length;
@@ -10,10 +11,10 @@ const tagging = byStatus('标注中');
 ---
 
 <Base title="作品库" description="梁羽生 34 部作品总目：初刊年、背景年代、系列归属、主角、互文引用计数——未点亮的书也有完整档案。">
-  <h1>作品库 <span class="badge badge-lit">已上线</span></h1>
+  <h1>作品库</h1>
   <p class="lead">
     共 {books.meta.totals.books} 部 / {books.meta.totals.chapters} 回 / {books.meta.totals.chars.toLocaleString()} 字（非空白实测）。
-    已点亮 <b>{lit}</b> 部、标注中 <b>{tagging}</b> 部；互文出/入边为作者明示与书名引用（authorial+quoted）。
+    深度解析 <b>{lit}</b> 部、建设中 <b>{tagging}</b> 部；互文出/入边为作者明示与书名引用（authorial+quoted）。
   </p>
 
   <table class="booktable">
@@ -28,7 +29,7 @@ const tagging = byStatus('标注中');
           <td>{w.year}{w.year_conf === 'approx' ? '*' : ''}</td>
           <td class="dim">{w.era}</td>
           <td class="dim">{w.series}</td>
-          <td class="dim">{w.leads.join('、') || '—'}</td>
+          <td class="dim">{w.leads.map((l) => dsp(l)).join('、') || '—'}</td>
           <td>{w.chapters}</td>
           <td class="dim">{w.intertext_out}/{w.intertext_in}</td>
           <td>

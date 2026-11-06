@@ -15,13 +15,14 @@ VERIFY_DIR = os.path.join(OUT_DIR, "_verify")
 
 
 def main():
-    src = os.path.join(OUT_DIR, "001_第一回.tagged.md")
+    name = sys.argv[1] if len(sys.argv) > 1 else "001_第一回.tagged.md"
+    src = os.path.join(OUT_DIR, name)
     book = "白发魔女传"
     vbook = os.path.join(VERIFY_DIR, book)
     vorig = os.path.join(VERIFY_DIR, "章回版", book)
     os.makedirs(vbook, exist_ok=True)
     os.makedirs(vorig, exist_ok=True)
-    dst = os.path.join(vbook, "001_第一回.tagged.md")
+    dst = os.path.join(vbook, name)
     shutil.copy(src, dst)
     for fn in os.listdir(os.path.join(ROOT, "章回版", book)):
         if fn.startswith("001") and fn.endswith(".txt"):

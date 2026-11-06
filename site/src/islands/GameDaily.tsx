@@ -1,4 +1,10 @@
 import { useEffect, useMemo, useState } from 'react';
+import {
+  dsp,
+  dspText,
+  fetchDisplayLookup,
+  type DisplayLookup,
+} from '../lib/display-shared';
 
 /**
  * G7 每日一谜：日期哈希全网同题（零后端），3 次机会 + 三级提示，emoji 战绩本地分享。
@@ -30,6 +36,7 @@ export default function GameDaily() {
   const [input, setInput] = useState('');
   const [state, setState] = useState<'play' | 'win' | 'lose'>('play');
   const [copied, setCopied] = useState(false);
+  const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
 
   const day = todayKey();
   const puzzle = useMemo(() => {
@@ -38,7 +45,13 @@ export default function GameDaily() {
   }, [bank, day]);
 
   useEffect(() => {
-    fetch(B + 'data/games/daily.json').then((r) => r.json()).then((d) => setBank(d.puzzles));
+    Promise.all([
+      fetch(B + 'data/games/daily.json').then((r) => r.json()),
+      fetchDisplayLookup(B),
+    ]).then(([d, lk]) => {
+      setBank(d.puzzles);
+      setLookup(lk);
+    });
     try {
       const hist = JSON.parse(localStorage.getItem(LS) || '{}');
       if (hist[day]) {
@@ -58,7 +71,13 @@ export default function GameDaily() {
 
   function submit() {
     if (!puzzle || state !== 'play' || !input.trim()) return;
-    const ok = norm(input) === norm(puzzle.answer);
+    // 答案接受 canonical 与 display 两种写法（展示层与规范层分离，判定口径不变）
+    const accepted = new Set(
+      [puzzle.answer, dsp(lookup.display, puzzle.answer), ...(puzzle.aliases || [])]
+        .filter(Boolean)
+        .map((x) => norm(dsp(lookup.display, x))),
+    );
+    const ok = accepted.has(norm(input));
     const nextTries = [...tries, ok ? 'win' : 'miss'];
     setTries(nextTries);
     setInput('');
@@ -66,11 +85,11 @@ export default function GameDaily() {
     if (nextTries.length >= 3) { setState('lose'); persist(nextTries, 'lose'); }
   }
 
-  function share() {
+  const share = () => {
     const marks = tries.map((t) => (t === 'win' ? '🟩' : '🟥')).join('');
-    const text = `江湖每日一谜 ${day.slice(0, 4)}/${day.slice(4, 6)}/${day.slice(6, 8)} ${marks || '⬜'}\n${puzzle?.q}`;
+    const text = `江湖每日一谜 ${day.slice(0, 4)}/${day.slice(4, 6)}/${day.slice(6, 8)} ${marks || '⬜'}\n${puzzle ? dspText(lookup.display, puzzle.q) : ''}`;
     navigator.clipboard?.writeText(text).then(() => setCopied(true)).catch(() => setCopied(false));
-  }
+  };
 
   if (!puzzle) return <div className="gd-loading">出题中…</div>;
   const hintsShown = Math.min(tries.length, puzzle.hints.length);
@@ -80,12 +99,12 @@ export default function GameDaily() {
     <div className="gd">
       <div className="riddle">
         <div className="rh">
-          <b className="gd-q">{puzzle.q}</b>
+          <b className="gd-q">{dspText(lookup.display, puzzle.q)}</b>
           <span className="mono gd-day">{day.slice(0, 4)}/{day.slice(4, 6)}/{day.slice(6, 8)} · 第 {tries.length}/3 次</span>
         </div>
 
         {puzzle.hints.slice(0, state === 'play' ? hintsShown : puzzle.hints.length).map((h, i) => (
-          <div className="hint" key={i}><span className="hn">提示 {i + 1}</span>{h}</div>
+          <div className="hint" key={i}><span className="hn">提示 {i + 1}</span>{dspText(lookup.display, h)}</div>
         ))}
 
         {state === 'play' ? (
@@ -96,9 +115,9 @@ export default function GameDaily() {
           </div>
         ) : (
           <div className={'answer ' + (state === 'win' ? 'ok' : 'no')}>
-            {state === 'win' ? `恭喜！答案就是「${puzzle.answer}」。` : `今日谜底：「${puzzle.answer}」。`}
+            {state === 'win' ? `恭喜！答案就是「${dsp(lookup.display, puzzle.answer)}」。` : `今日谜底：「${dsp(lookup.display, puzzle.answer)}」。`}
             <span className="gd-loc">{puzzle.loc}</span>
-            <p className="gd-explain">{puzzle.explain}</p>
+            <p className="gd-explain">{dspText(lookup.display, puzzle.explain)}</p>
           </div>
         )}
 

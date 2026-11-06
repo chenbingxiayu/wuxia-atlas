@@ -4,13 +4,13 @@ import EntityExplorer from '../../islands/EntityExplorer';
 import entityIndex from '@data/entity-index.json';
 ---
 
-<Base title="人物谱" description="梁羽生武侠宇宙人物谱：全部规范人物档案，跨书人物即换乘站。">
-  <h1>人物谱 <span class="badge badge-lit">已上线</span></h1>
+<Base title="人物谱" description="梁羽生武侠宇宙人物谱：全部人物档案，跨书人物即换乘站。">
+  <h1>人物谱</h1>
   <p class="lead">
-    三部曲全部 <b>{entityIndex.meta.totals.by_type['@']}</b> 位规范人物均有档案页
-    （别名组/师承传人/战绩/武功/出场曲线，全带定位符）。
+    全部 <b>{entityIndex.meta.totals.by_type['@']}</b> 位人物均有档案页
+    （关键剧情/师承传人/武功神兵/战绩评分，全带定位符）。
     字号越大出场越多；带「换乘」标记的是跨书人物。
-    新书点亮后此处自动生长。
+    新书深度解析后此处自动生长。
   </p>
   <EntityExplorer client:visible entities={entityIndex.entities} initialType="@" />
 </Base>

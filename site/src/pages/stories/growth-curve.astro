@@ -66,7 +66,7 @@ const firstOpp = rows.find((r) => r.opponents.length)?.opponents[0];
     <ul class="ev">
       {notable.map((r) => (
         <li>
-          <a class="mono" href={`${B}books/白发魔女传/${r.c}/`}>第 {String(r.c).padStart(3, '0')} 回 →</a>
+          <a class="mono" href={`${B}books/白发魔女传/${String(r.c).padStart(3, '0')}/`}>第 {String(r.c).padStart(3, '0')} 回 →</a>
           主 {r.active} / 客 {r.passive} · 杀 {r.kills} · 对手 {r.opponents.join('、') || '—'}
         </li>
       ))}
@@ -75,7 +75,7 @@ const firstOpp = rows.find((r) => r.opponents.length)?.opponents[0];
     <h2>方法与复跑</h2>
     <p class="method">
       口径：◈◉▲ 事件（含 medium/low，不含 dropped）中卓一航为主/客的逐回计数；"对手分量" = 对手档案 appearance_total 均值（√ 缩放）；
-      不做胜/负 NLP 判定——事件动词极性足以支撑主客口径，胜负词表属侠谱评分模块（M4）。
+      不做胜/负 NLP 判定——事件动词极性足以支撑主客口径，胜负词表属武评模块。
       里程碑"首次杀伤/主客翻转"由脚本从数据计算，非手填。复跑：<code>python scripts/build_stories.py</code> · 数据版本 <code>{data.meta.generated}</code>。
     </p>
   </article>

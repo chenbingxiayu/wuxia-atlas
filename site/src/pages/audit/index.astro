@@ -2,11 +2,13 @@
 import Base from '../../layouts/Base.astro';
 import audit from '@data/audit.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
+import { bookTarget, chapterNo } from '@lib/links';
 const amb = audit.r1_ambiguous;
 const passes = audit.r1_passes;
 ---
 <Base title="穿帮雷达">
-  <p class="crumb">工具 · 穿帮雷达（v0 · 规则引擎构建期输出）</p>
+  <p class="crumb">穿帮雷达（规则引擎构建期输出）</p>
   <h1>穿帮雷达</h1>
   <p class="lead">
     规则 R1「死亡一致性」：事件层"杀"事件的对象，此后是否仍以非引述身份出场。
@@ -26,12 +28,17 @@ const passes = audit.r1_passes;
     <div class="cards">
       {amb.map((v) => (
         <div class="card">
-          <div class="head"><b>{v.name}</b><span class="mono">死于 {v.death.book}·{v.death.loc}{v.death.by ? `（${v.death.by}）` : ''}</span></div>
+          <div class="head"><b>{dsp(v.name)}</b><span class="mono">死于 {v.death.book}·{v.death.loc}{v.death.by ? `（${dsp(v.death.by)}）` : ''}</span></div>
           <p>此后非引述出场 <b>{v.live_n}</b> 次 / 共 {v.after_n} 次
             {v.deaths_n > 1 && <span class="dim"> · 另有 {v.deaths_n - 1} 起"杀"事件（复杀疑云）</span>}</p>
           <ul>
             {v.samples.map((s) => (
-              <li><a class="mono" href={`${B}books/${encodeURIComponent(s.book)}/${parseInt(s.loc, 10)}/`}>{s.book}·{s.loc} →</a> 以{s.role}方「{s.v}」</li>
+              <li>{(() => {
+                const ch = chapterNo(s.book, s.loc);
+                return ch
+                  ? <a class="mono" href={`${B}books/${encodeURIComponent(bookTarget(s.book) || s.book)}/${ch}/`}>{s.book}·{s.loc} →</a>
+                  : <span class="mono">{s.book}·{s.loc}</span>;
+              })()} 以{s.role}方「{s.v}」</li>
             ))}
           </ul>
         </div>
@@ -44,7 +51,7 @@ const passes = audit.r1_passes;
     <div class="cards">
       {passes.map((v) => (
         <div class="card pass">
-          <div class="head"><b>{v.name}</b><span class="mono">{v.death.book}·{v.death.loc}</span></div>
+          <div class="head"><b>{dsp(v.name)}</b><span class="mono">{v.death.book}·{v.death.loc}</span></div>
           <p>此后 {v.after_n} 次提及全部为引述（in_quote）——<b>✓ 通过</b></p>
         </div>
       ))}

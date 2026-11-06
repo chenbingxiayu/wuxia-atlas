@@ -1,5 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
+import {
+  dsp,
+  fetchDisplayLookup,
+  toCanonical,
+  type DisplayLookup,
+  type DisplayMap,
+} from '../lib/display-shared';
 
 /**
  * MapTrail —— 时空页交互岛（M6 · jiangshan 形态）。
@@ -72,6 +79,8 @@ export default function MapTrail() {
   const [manifest, setManifest] = useState<Manifest | null>(null);
   const [bookTitle, setBookTitle] = useState<string>('');
   const [slice, setSlice] = useState<BookSlice | null>(null);
+  const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
+  const lookupRef = useRef<DisplayLookup>({ display: {}, canonicalOf: {} });
   const [chap, setChap] = useState(1);
   const [ghostChap, setGhostChap] = useState(1);
   const [ghostOn, setGhostOn] = useState(false);
@@ -87,13 +96,16 @@ export default function MapTrail() {
   useEffect(() => {
     const d: Record<string, string> = {};
     new URLSearchParams(location.search).forEach((v, k) => (d[k] = v));
-    fetch(B + 'data/atlas/state.json')
-      .then((r) => r.json())
-      .then((m: Manifest) => {
-        setManifest(m);
-        const pick = d.book && m.books.find((b) => b.title === d.book);
-        setBookTitle(pick ? pick.title : m.books.find((b) => b.title === '白发魔女传')?.title || m.books[0].title);
-      });
+    Promise.all([
+      fetch(B + 'data/atlas/state.json').then((r) => r.json()),
+      fetchDisplayLookup(B),
+    ]).then(([m, lk]: [Manifest, DisplayLookup]) => {
+      setManifest(m);
+      setLookup(lk);
+      lookupRef.current = lk;
+      const pick = d.book && m.books.find((b) => b.title === d.book);
+      setBookTitle(pick ? pick.title : m.books.find((b) => b.title === '白发魔女传')?.title || m.books[0].title);
+    });
   }, []);
 
   /* 换书加载切片 */
@@ -107,8 +119,10 @@ export default function MapTrail() {
         const q = new URLSearchParams(location.search);
         const initChap = q.get('chap') ? +q.get('chap')! : bookTitle === '白发魔女传' ? 26 : Math.ceil(s.chapters / 2);
         setChap(Math.min(Math.max(1, initChap), s.chapters));
-        const ps = (q.get('person') || '').split(',').filter((p) => s.persons[p]);
-        setPersons(ps.length ? ps : [suggestedPerson(s, manifest)]);
+        const ps = (q.get('person') || '').split(',').filter(Boolean)
+          .map((p) => toCanonical(lookupRef.current, p))
+          .filter((p) => s.persons[p]);
+        setPersons(ps.length ? ps : [suggestedPerson(s, manifest, lookupRef.current)]);
         setLens(q.get('lens') === 'fiction' ? 'fiction' : 'real');
         setGhostOn(q.get('mode') === 'ghost');
         setGhostChap(Math.max(1, Math.ceil(s.chapters / 4)));
@@ -246,7 +260,7 @@ export default function MapTrail() {
               className={'mt-chip' + (persons.includes(pid) ? ' on' : '')}
               style={persons.includes(pid) ? { borderColor: PALETTE[persons.indexOf(pid) % 4], color: PALETTE[persons.indexOf(pid) % 4] } : {}}
               onClick={() => setPersons((ps) => ps.includes(pid) ? ps.filter((x) => x !== pid) : [...ps, pid])}>
-              {pid}
+              {dsp(lookup.display, pid)}
             </button>
           ))}
         </div>
@@ -271,7 +285,7 @@ export default function MapTrail() {
             }
             return <path key={t.pid} d={d} fill="none" stroke={t.color} strokeWidth="1.6" strokeDasharray="5 4" opacity="0.75" />;
           })}
-          {placeDots(slice, trails, lens, proj, chap, ghost, selPlace, setSelPlace, dotMode)}
+          {placeDots(slice, trails, lens, proj, chap, ghost, selPlace, setSelPlace, dotMode, lookup.display)}
         </svg>
 
         {/* 内联江湖状态 */}
@@ -304,10 +318,10 @@ export default function MapTrail() {
                 const ppl = (slice.bychap[String(c)] || { p: [] }).p.slice(0, 6);
                 return (
                   <div className="mt-trow" key={c}>
-                    <a className="mt-link mono" href={`${B}books/${encodeURIComponent(bookTitle)}/${c}`}>
+                    <a className="mt-link mono" href={`${B}books/${encodeURIComponent(bookTitle)}/${String(c).padStart(3, '0')}`}>
                       第 {c} 回 →
                     </a>
-                    <span className="mt-faint">{ppl.length ? '在场 ' + ppl.join(' · ') : ''}</span>
+                    <span className="mt-faint">{ppl.length ? '在场 ' + ppl.map((p) => dsp(lookup.display, p)).join(' · ') : ''}</span>
                   </div>
                 );
               })}
@@ -340,7 +354,7 @@ export default function MapTrail() {
           <b>第 {chap} 回事件流</b>
           <span className="mt-faint">{evList.length} 起 · L0 定位符</span>
           <a className="mt-link" style={{ marginLeft: 'auto' }}
-            href={`${B}books/${encodeURIComponent(bookTitle)}/${chap}`}>回目页 →</a>
+            href={`${B}books/${encodeURIComponent(bookTitle)}/${String(chap).padStart(3, '0')}`}>回目页 →</a>
         </div>
         <div className="mt-row">
           <span className="mt-lab">本章行踪：</span>
@@ -358,8 +372,8 @@ export default function MapTrail() {
           {evShown.slice(0, 12).map((e, i) => (
             <div className="mt-ev" key={i}>
               <span className="mt-verb">{e.v || e.code}</span>
-              <span className="mt-who">{e.a || '？'}</span>
-              {e.b && <>→ <span className="mt-who">{e.b}</span></>}
+              <span className="mt-who">{e.a ? dsp(lookup.display, e.a) : '？'}</span>
+              {e.b && <>→ <span className="mt-who">{dsp(lookup.display, e.b)}</span></>}
               {e.place && <span className="mt-place-tag">@{e.place}</span>}
               <span className="mt-loc mono">{e.l}</span>
             </div>
@@ -374,12 +388,17 @@ export default function MapTrail() {
 /* ---- 辅助 ---- */
 interface Trail { pid: string; color: string; visited: Map<string, number[]>; future: Set<string>; order: string[] }
 
-function suggestedPerson(s: BookSlice, manifest: Manifest | null): string {
+function suggestedPerson(s: BookSlice, manifest: Manifest | null, lookup: DisplayLookup): string {
   const book = manifest?.books.find((b) => b.title === s.title);
-  if (book) for (const lead of book.leads) if (s.persons[canonLead(lead)]) return canonLead(lead);
+  if (book) {
+    for (const lead of book.leads) {
+      const c = toCanonical(lookup, lead);
+      if (s.persons[c]) return c;
+      if (s.persons[lead]) return lead;
+    }
+  }
   return Object.keys(s.persons)[0];
 }
-function canonLead(name: string) { return name; }
 
 function collectPoints(feats: GeoFeat[]): [number, number][] {
   const out: [number, number][] = [];
@@ -395,7 +414,7 @@ function placeDots(
   slice: BookSlice, trails: Trail[], lens: 'real' | 'fiction', proj: Proj,
   chap: number, ghost: { added: string[]; removed: string[] } | null,
   selPlace: string | null, onSelect: (p: string) => void,
-  dotMode: 'cur' | 'all',
+  dotMode: 'cur' | 'all', displayMap: DisplayMap,
 ) {
   const nodes: ReactNode[] = [];
   const visitedOf = (pl: string) => trails.filter((t) => t.visited.has(pl));
@@ -425,7 +444,7 @@ function placeDots(
     const evs = evsAt(pl);
     const tip = [
       pl + (p.lat != null ? `（${p.lat.toFixed(2)}, ${p.lng!.toFixed(2)}）` : ' · 虚构 · 待锚定'),
-      ...evs.map((e) => `第${chap}回 ${e.v}：${e.a || '？'}${e.b ? ' → ' + e.b : ''}`),
+      ...evs.map((e) => `第${chap}回 ${e.v}：${e.a ? dsp(displayMap, e.a) : '？'}${e.b ? ' → ' + dsp(displayMap, e.b) : ''}`),
       evs.length === 0 && curHere ? '第' + chap + '回：在场（无定位事件）' : '',
     ].filter(Boolean).join(' ｜ ');
     nodes.push(

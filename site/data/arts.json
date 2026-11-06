@@ -1,32 +1,50 @@
 {
  "meta": {
-  "generated": "2026-11-02",
+  "generated": "2026-11-06",
   "schema": "arts-v1",
   "books": [
    "七剑下天山",
    "塞外奇侠传",
    "江湖三女侠",
-   "白发魔女传"
+   "白发魔女传",
+   "冰魄寒光剑"
   ],
   "totals": {
-   "arts": 116,
-   "cross_book": 17,
+   "arts": 137,
+   "cross_book": 59,
    "by_category": {
-    "其他": 46,
-    "剑法": 23,
-    "掌法": 16,
-    "拳法": 11,
+    "其他": 49,
+    "剑法": 27,
+    "掌法": 22,
+    "拳法": 17,
     "内功": 5,
     "招式": 4,
     "腿法": 2,
     "杖法": 2,
-    "刀法": 2,
+    "刀法": 4,
     "阵法": 2,
     "轻功": 1,
     "爪法": 1,
-    "棍法": 1
+    "棍法": 1,
+    "暗器": 0,
+    "身法": 0,
+    "枪法": 0,
+    "鞭法": 0,
+    "指法": 0,
+    "点穴": 0,
+    "擒拿": 0
    }
-  }
+  },
+  "source": "新 registry/词表 + 旧考订表只读（桥接层 EX-6）",
+  "field_gaps": [
+   "记录口径：arts 顶层=旧站武功/功法级 116 条全量保留 ∪ 招式表 moves 按 parent_art 聚合的父式功法（招式只进 children）；旧站 entries 与旧字段（relations/children）原样保留。",
+   "relations：旧站记录保留旧考订 relation（4 书）；新增父式记录 relations 由招式表子式证据派生（pred=子式，无人工考订），无子式证据者为 {}。",
+   "children：仅收 招式表 conf=strong/ok 且未 rejected 的招式；weak 不入 children（沿用旧站 arts v2 口径）。",
+   "ev_total：旧站记录保留旧值（关系证据合计口径）；新增父式用招式表证据条数或 concordance 出现次数（口径不同，已在报告说明）。",
+   "aliases：旧 aliases + concordance 变体 + 词表 surface 合并；招式表 conflicts 的多父变体经 alias 归一并入 aliases。",
+   "☆ 词表补充：仅保留具名功法（含功法后缀且长度≥3，或 note 标注『武功｜父式名』）；01g B1-1 能力域通名（剑法/掌法/拳法/内功/轻功/身法/招式/武艺/武功/功夫/功力等）归 ^，不入 arts。",
+   "books：覆盖更新为 5 书（含冰魄寒光剑）；旧站独有 8 条 KB 标注层/concordance 无对应（八卦紫金刀连环六十四式等）保留旧 books。"
+  ]
  },
  "arts": [
   {
@@ -50,7 +68,8 @@
     "七剑下天山",
     "塞外奇侠传",
     "江湖三女侠",
-    "白发魔女传"
+    "白发魔女传",
+    "冰魄寒光剑"
    ],
    "cross_book": true,
    "relations": {
@@ -481,7 +500,8 @@
      "conf": "ok",
      "sect": "天山派"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "达摩剑法",
@@ -495,7 +515,8 @@
    "books": [
     "七剑下天山",
     "江湖三女侠",
-    "白发魔女传"
+    "白发魔女传",
+    "冰魄寒光剑"
    ],
    "cross_book": true,
    "relations": {
@@ -667,7 +688,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "五禽剑法",
@@ -814,7 +836,8 @@
      "conf": "ok",
      "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "追风剑法",
@@ -824,9 +847,11 @@
    ],
    "ev_total": 168,
    "books": [
-    "江湖三女侠"
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "江湖三女侠": {
      "relations": [
@@ -891,7 +916,8 @@
      "conf": "ok",
      "sect": "天山派"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "无极剑法",
@@ -1044,8 +1070,29 @@
      "name": "迎风扫柳",
      "conf": "ok",
      "sect": "无极派"
+    },
+    {
+     "name": "力劈华山",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "展翼凌云",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "愚公移山",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "极目沧波",
+     "conf": "ok",
+     "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "达摩一百零八式",
@@ -1142,7 +1189,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "阴风毒砂掌",
@@ -1186,7 +1234,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "七十二手连环夺命剑",
@@ -1260,7 +1309,8 @@
      "conf": "ok",
      "sect": "武当派"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "猫鹰扑击",
@@ -1315,7 +1365,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "玄女剑法",
@@ -1392,7 +1443,8 @@
      "conf": "ok",
      "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "大力鹰爪功",
@@ -1403,9 +1455,10 @@
    ],
    "ev_total": 52,
    "books": [
-    "七剑下天山"
+    "七剑下天山",
+    "冰魄寒光剑"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "七剑下天山": {
      "relations": [
@@ -1463,7 +1516,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "风雷剑法",
@@ -1475,7 +1529,8 @@
    "ev_total": 44,
    "books": [
     "七剑下天山",
-    "塞外奇侠传"
+    "塞外奇侠传",
+    "江湖三女侠"
    ],
    "cross_book": true,
    "relations": {
@@ -1581,7 +1636,8 @@
      "conf": "ok",
      "sect": "长白山派"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "九宫神行掌",
@@ -1690,7 +1746,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "天山掌法",
@@ -1700,9 +1757,12 @@
    ],
    "ev_total": 32,
    "books": [
-    "七剑下天山"
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "七剑下天山": {
      "relations": [
@@ -1767,7 +1827,8 @@
      "conf": "ok",
      "sect": "天山派"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "大须弥剑式",
@@ -1822,7 +1883,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "鸳鸯连环腿",
@@ -1831,6 +1893,7 @@
    "ev_total": 26,
    "books": [
     "七剑下天山",
+    "江湖三女侠",
     "白发魔女传"
    ],
    "cross_book": true,
@@ -1893,7 +1956,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "吴钩剑法",
@@ -1944,7 +2008,24 @@
      "conf": "ok",
      "sect": "清廷"
     }
-   ]
+   ],
+   "source": "legacy"
+  },
+  {
+   "canonical": "大摔碑手",
+   "category": "其他",
+   "aliases": [],
+   "ev_total": 14,
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传",
+    "冰魄寒光剑"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "new"
   },
   {
    "canonical": "轻功",
@@ -1952,9 +2033,13 @@
    "aliases": [],
    "ev_total": 13,
    "books": [
-    "塞外奇侠传"
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传",
+    "冰魄寒光剑"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "塞外奇侠传": {
      "relations": [
@@ -2010,7 +2095,8 @@
      "conf": "ok",
      "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "金刚散手",
@@ -2042,7 +2128,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "天龙掌法",
@@ -2134,7 +2221,8 @@
      "conf": "ok",
      "sect": "天龙派"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "沾衣十八跌",
@@ -2143,7 +2231,8 @@
    "ev_total": 11,
    "books": [
     "塞外奇侠传",
-    "江湖三女侠"
+    "江湖三女侠",
+    "白发魔女传"
    ],
    "cross_book": true,
    "relations": {
@@ -2191,7 +2280,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "绵掌",
@@ -2238,7 +2328,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "大擒拿手",
@@ -2250,7 +2341,9 @@
    "books": [
     "七剑下天山",
     "塞外奇侠传",
-    "白发魔女传"
+    "江湖三女侠",
+    "白发魔女传",
+    "冰魄寒光剑"
    ],
    "cross_book": true,
    "relations": {
@@ -2302,7 +2395,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "鹰爪功",
@@ -2310,9 +2404,10 @@
    "aliases": [],
    "ev_total": 10,
    "books": [
+    "七剑下天山",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -2344,7 +2439,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "敛精内视",
@@ -2396,7 +2492,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "峨眉剑法",
@@ -2456,7 +2553,151 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "长拳",
+   "category": "拳法",
+   "aliases": [],
+   "ev_total": 8,
+   "books": [
+    "江湖三女侠"
+   ],
+   "cross_book": false,
+   "relations": {
+    "江湖三女侠": {
+     "relations": [
+      {
+       "s": "双风贯耳",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "45:113"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      },
+      {
+       "s": "弯弓射雕",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "32:35"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      },
+      {
+       "s": "肘底看锤",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "32:35"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      },
+      {
+       "s": "跨虎登山",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "17:107"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "双风贯耳",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "弯弓射雕",
+     "conf": "ok",
+     "sect": "彝族"
+    },
+    {
+     "name": "肘底看锤",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "跨虎登山",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
+  },
+  {
+   "canonical": "阴阳双撞掌",
+   "category": "掌法",
+   "aliases": [],
+   "ev_total": 7,
+   "books": [
+    "白发魔女传"
+   ],
+   "cross_book": false,
+   "relations": {
+    "白发魔女传": {
+     "relations": [
+      {
+       "s": "横身打虎",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "6:3"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      },
+      {
+       "s": "童子拜观音",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "6:3"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      },
+      {
+       "s": "金针度线",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "1:143"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "横身打虎",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "童子拜观音",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "金针度线",
+     "conf": "ok",
+     "sect": "武当派"
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "天魔杖法",
@@ -2501,7 +2742,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "流云飞袖",
@@ -2546,7 +2788,33 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "神拳",
+   "category": "拳法",
+   "aliases": [],
+   "ev_total": 6,
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "new"
+  },
+  {
+   "canonical": "七十二手连环剑法",
+   "category": "剑法",
+   "aliases": [],
+   "ev_total": 5,
+   "books": [
+    "白发魔女传"
+   ],
+   "cross_book": false,
+   "relations": {},
+   "source": "new"
   },
   {
    "canonical": "八卦紫金刀法",
@@ -2611,7 +2879,8 @@
      "conf": "ok",
      "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "天龙剑法",
@@ -2669,7 +2938,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "天龙剑阵",
@@ -2722,7 +2992,8 @@
      "conf": "ok",
      "sect": "天龙派"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "细胸巧翻云",
@@ -2730,9 +3001,13 @@
    "aliases": [],
    "ev_total": 5,
    "books": [
-    "七剑下天山"
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传",
+    "冰魄寒光剑"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "七剑下天山": {
      "relations": [
@@ -2751,7 +3026,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "迷踪掌法",
@@ -2780,7 +3056,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "雷霆八卦掌",
@@ -2818,7 +3095,57 @@
      "conf": "ok",
      "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
+  },
+  {
+   "canonical": "凌云掌",
+   "category": "掌法",
+   "aliases": [],
+   "ev_total": 4,
+   "books": [
+    "江湖三女侠"
+   ],
+   "cross_book": false,
+   "relations": {
+    "江湖三女侠": {
+     "relations": [
+      {
+       "s": "叶底偷桃",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "6:49"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      },
+      {
+       "s": "风飐落花",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "4:77"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "叶底偷桃",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "风飐落花",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "太乙玄功",
@@ -2847,7 +3174,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "无常夺命",
@@ -2856,6 +3184,7 @@
    "ev_total": 4,
    "books": [
     "七剑下天山",
+    "江湖三女侠",
     "白发魔女传"
    ],
    "cross_book": true,
@@ -2908,7 +3237,57 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "磨身掌",
+   "category": "掌法",
+   "aliases": [],
+   "ev_total": 4,
+   "books": [
+    "江湖三女侠"
+   ],
+   "cross_book": false,
+   "relations": {
+    "江湖三女侠": {
+     "relations": [
+      {
+       "s": "铁骑突出",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "32:41"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      },
+      {
+       "s": "长鼓齐呜",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "32:41"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "铁骑突出",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "长鼓齐呜",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "罗汉拳",
@@ -2946,7 +3325,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "蹑云十三剑",
@@ -2978,7 +3358,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "铁砂掌",
@@ -2986,9 +3367,10 @@
    "aliases": [],
    "ev_total": 4,
    "books": [
-    "七剑下天山"
+    "七剑下天山",
+    "江湖三女侠"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "七剑下天山": {
      "relations": [
@@ -3007,7 +3389,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "风雷刀剑",
@@ -3015,9 +3398,10 @@
    "aliases": [],
    "ev_total": 4,
    "books": [
-    "七剑下天山"
+    "七剑下天山",
+    "塞外奇侠传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "七剑下天山": {
      "relations": [
@@ -3048,7 +3432,8 @@
      "conf": "ok",
      "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "三环套月",
@@ -3056,9 +3441,10 @@
    "aliases": [],
    "ev_total": 3,
    "books": [
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -3076,7 +3462,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "传音入密",
@@ -3084,9 +3471,11 @@
    "aliases": [],
    "ev_total": 3,
    "books": [
-    "江湖三女侠"
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "江湖三女侠": {
      "relations": [
@@ -3104,7 +3493,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "冰川倒泻",
@@ -3150,7 +3540,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "岳家散手",
@@ -3178,7 +3569,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "拂穴",
@@ -3186,9 +3578,10 @@
    "aliases": [],
    "ev_total": 3,
    "books": [
-    "七剑下天山"
+    "七剑下天山",
+    "江湖三女侠"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "七剑下天山": {
      "relations": [
@@ -3224,7 +3617,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "摔跤",
@@ -3252,7 +3646,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "摩云剑法",
@@ -3294,7 +3689,8 @@
      "conf": "ok",
      "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "柔功",
@@ -3322,7 +3718,42 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "武当掌法",
+   "category": "掌法",
+   "aliases": [],
+   "ev_total": 3,
+   "books": [
+    "白发魔女传"
+   ],
+   "cross_book": false,
+   "relations": {
+    "白发魔女传": {
+     "relations": [
+      {
+       "s": "上下交征",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "29:65"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=strong）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "上下交征",
+     "conf": "strong",
+     "sect": "武当"
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "猫鹰爪",
@@ -3350,7 +3781,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "野狐拳",
@@ -3378,7 +3810,34 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "铁沙掌",
+   "category": "掌法",
+   "aliases": [],
+   "ev_total": 3,
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "new"
+  },
+  {
+   "canonical": "黏字诀",
+   "category": "其他",
+   "aliases": [],
+   "ev_total": 3,
+   "books": [
+    "白发魔女传"
+   ],
+   "cross_book": false,
+   "relations": {},
+   "source": "new"
   },
   {
    "canonical": "七十二路神拳",
@@ -3412,7 +3871,8 @@
      "conf": "ok",
      "sect": "哈萨克族"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "七煞掌",
@@ -3439,7 +3899,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "上下交征",
@@ -3466,7 +3927,78 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "五虎断门刀",
+   "category": "刀法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {
+    "白发魔女传": {
+     "relations": [
+      {
+       "s": "凤凰展翅",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "2:23"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "凤凰展翅",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
+  },
+  {
+   "canonical": "五行拳",
+   "category": "拳法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "cross_book": true,
+   "relations": {
+    "江湖三女侠": {
+     "relations": [
+      {
+       "s": "野马分鬃",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "16:17"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "野马分鬃",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "八卦紫金刀连环六十四式",
@@ -3495,7 +4027,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "冲刺三十六式",
@@ -3531,7 +4064,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "地堂腿",
@@ -3558,7 +4092,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "大力金钢手",
@@ -3585,7 +4120,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "天龙十八掌",
@@ -3621,7 +4157,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "太极十三势",
@@ -3657,7 +4194,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "寒涛剑法",
@@ -3667,9 +4205,11 @@
    ],
    "ev_total": 2,
    "books": [
-    "塞外奇侠传"
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "塞外奇侠传": {
      "relations": [
@@ -3695,7 +4235,43 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "少林拳",
+   "category": "拳法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {
+    "白发魔女传": {
+     "relations": [
+      {
+       "s": "左右开弓",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "1:93"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "左右开弓",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "拐杖点穴法",
@@ -3731,7 +4307,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "武当剑法",
@@ -3739,9 +4316,10 @@
    "aliases": [],
    "ev_total": 2,
    "books": [
-    "七剑下天山"
+    "七剑下天山",
+    "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "七剑下天山": {
      "relations": [
@@ -3758,7 +4336,42 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "毒砂掌",
+   "category": "掌法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "白发魔女传"
+   ],
+   "cross_book": false,
+   "relations": {
+    "白发魔女传": {
+     "relations": [
+      {
+       "s": "倒洒金钱",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "6:59"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "倒洒金钱",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "游身掌法",
@@ -3766,9 +4379,10 @@
    "aliases": [],
    "ev_total": 2,
    "books": [
-    "七剑下天山"
+    "七剑下天山",
+    "冰魄寒光剑"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "七剑下天山": {
      "relations": [
@@ -3794,7 +4408,77 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "百步神拳",
+   "category": "拳法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑"
+   ],
+   "cross_book": true,
+   "relations": {
+    "七剑下天山": {
+     "relations": [
+      {
+       "s": "金龙归海",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "30:57"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "金龙归海",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
+  },
+  {
+   "canonical": "盘龙刀法",
+   "category": "刀法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "江湖三女侠"
+   ],
+   "cross_book": false,
+   "relations": {
+    "江湖三女侠": {
+     "relations": [
+      {
+       "s": "拨云见日",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "26:75"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "拨云见日",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "石家蹑云剑",
@@ -3830,7 +4514,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "神魔夺命",
@@ -3866,7 +4551,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "绵掌击石如粉",
@@ -3893,7 +4579,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "罗汉伏虎拳",
@@ -3929,7 +4616,20 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "蹑云剑法",
+   "category": "剑法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "白发魔女传"
+   ],
+   "cross_book": false,
+   "relations": {},
+   "source": "new"
   },
   {
    "canonical": "达摩秘技",
@@ -3956,7 +4656,67 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "连环三鞭",
+   "category": "其他",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {
+    "七剑下天山": {
+     "relations": [
+      {
+       "s": "回风扫柳",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "17:75"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "回风扫柳",
+     "conf": "ok",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
+  },
+  {
+   "canonical": "连环剑法",
+   "category": "剑法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "白发魔女传"
+   ],
+   "cross_book": false,
+   "relations": {},
+   "source": "new"
+  },
+  {
+   "canonical": "连环夺命剑法",
+   "category": "剑法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "白发魔女传"
+   ],
+   "cross_book": false,
+   "relations": {},
+   "source": "new"
   },
   {
    "canonical": "金针度世",
@@ -3983,7 +4743,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "铁指禅",
@@ -3991,9 +4752,10 @@
    "aliases": [],
    "ev_total": 2,
    "books": [
+    "塞外奇侠传",
     "江湖三女侠"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "江湖三女侠": {
      "relations": [
@@ -4019,7 +4781,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "铁琵琶手",
@@ -4046,7 +4809,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "阴阳劈风掌",
@@ -4087,7 +4851,43 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
+  },
+  {
+   "canonical": "黑虎拳",
+   "category": "拳法",
+   "aliases": [],
+   "ev_total": 2,
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {
+    "白发魔女传": {
+     "relations": [
+      {
+       "s": "龙形十八式",
+       "st": "☆",
+       "pred": "子式",
+       "locs": [
+        "8:73"
+       ],
+       "ev": 1,
+       "note": "招式表子式（conf=ok）"
+      }
+     ]
+    }
+   },
+   "children": [
+    {
+     "name": "龙形十八式",
+     "conf": "ok",
+     "sect": "昆仑派"
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "龙形十八式",
@@ -4114,7 +4914,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "七擒掌",
@@ -4140,7 +4941,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "七绝诛魂剑",
@@ -4166,7 +4968,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "伏虎拳",
@@ -4174,9 +4977,11 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
-    "塞外奇侠传"
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "塞外奇侠传": {
      "relations": [
@@ -4204,7 +5009,8 @@
      "conf": "ok",
      "sect": "清廷"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "伏虎棍法",
@@ -4237,7 +5043,8 @@
      "conf": "ok",
      "sect": "少林寺"
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "伏魔铲法",
@@ -4263,7 +5070,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "八方风雨",
@@ -4271,9 +5079,10 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4289,7 +5098,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "大力金刚手",
@@ -4297,9 +5107,10 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
-    "白发魔女传"
+    "白发魔女传",
+    "冰魄寒光剑"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4315,7 +5126,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "大力金钢杵",
@@ -4323,9 +5135,10 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "七剑下天山",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4341,7 +5154,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "天山擒拿手",
@@ -4367,7 +5181,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "天魔掌法",
@@ -4393,7 +5208,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "天龙杖法",
@@ -4419,7 +5235,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "太极拳",
@@ -4427,9 +5244,12 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4445,7 +5265,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "少林神拳",
@@ -4453,9 +5274,10 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4471,7 +5293,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "少林罗汉拳",
@@ -4497,7 +5320,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "山舞银蛇",
@@ -4523,7 +5347,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "嵩阳披风剑",
@@ -4549,7 +5374,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "推血过宫之术",
@@ -4575,7 +5401,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "摔角之技",
@@ -4601,7 +5428,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "撑椽手",
@@ -4609,9 +5437,10 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4627,7 +5456,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "无极拳",
@@ -4653,7 +5483,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "无极掌",
@@ -4679,7 +5510,15 @@
       }
      ]
     }
-   }
+   },
+   "children": [
+    {
+     "name": "五龙扑面",
+     "conf": "strong",
+     "sect": null
+    }
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "明驼千里",
@@ -4687,9 +5526,10 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4705,7 +5545,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "武当剑阵",
@@ -4731,7 +5572,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "玉箫点穴之术",
@@ -4757,7 +5599,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "白鹤啄鱼",
@@ -4765,9 +5608,11 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "七剑下天山",
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4783,7 +5628,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "童子功",
@@ -4809,7 +5655,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "达摩拳",
@@ -4842,7 +5689,8 @@
      "conf": "ok",
      "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "金雕展翅",
@@ -4850,9 +5698,11 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "七剑下天山",
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4868,7 +5718,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "钩镰刀",
@@ -4894,7 +5745,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "铁布衫",
@@ -4902,9 +5754,12 @@
    "aliases": [],
    "ev_total": 1,
    "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -4920,7 +5775,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "铁揩禅",
@@ -4946,7 +5802,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "降龙伏虎拳",
@@ -4972,7 +5829,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "飞云袖底剑",
@@ -4998,7 +5856,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "飞龙掌",
@@ -5040,8 +5899,29 @@
      "name": "鹤膊手",
      "conf": "ok",
      "sect": null
+    },
+    {
+     "name": "云手",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "冲云劈雾",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "大蟒吞鹰",
+     "conf": "ok",
+     "sect": null
+    },
+    {
+     "name": "恶虎掏心",
+     "conf": "ok",
+     "sect": null
     }
-   ]
+   ],
+   "source": "legacy"
   },
   {
    "canonical": "举火撩天",
@@ -5050,9 +5930,14 @@
     "举火燎天"
    ],
    "ev_total": 0,
-   "books": [],
-   "cross_book": false,
-   "relations": {}
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "legacy"
   },
   {
    "canonical": "分筋错骨",
@@ -5061,9 +5946,13 @@
     "分筋错骨手法"
    ],
    "ev_total": 0,
-   "books": [],
-   "cross_book": false,
-   "relations": {}
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "legacy"
   },
   {
    "canonical": "抽撒连环",
@@ -5072,9 +5961,13 @@
     "抽撤连环"
    ],
    "ev_total": 0,
-   "books": [],
-   "cross_book": false,
-   "relations": {}
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "legacy"
   },
   {
    "canonical": "擒拿手",
@@ -5083,9 +5976,16 @@
     "擒拿手法"
    ],
    "ev_total": 0,
-   "books": [],
-   "cross_book": false,
-   "relations": {}
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传",
+    "冰魄寒光剑"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "legacy"
   },
   {
    "canonical": "独门剑法",
@@ -5093,9 +5993,10 @@
    "aliases": [],
    "ev_total": 0,
    "books": [
+    "七剑下天山",
     "白发魔女传"
    ],
-   "cross_book": false,
+   "cross_book": true,
    "relations": {
     "白发魔女传": {
      "relations": [
@@ -5109,7 +6010,8 @@
       }
      ]
     }
-   }
+   },
+   "source": "legacy"
   },
   {
    "canonical": "玉带围腰",
@@ -5118,9 +6020,13 @@
     "玉带缠腰"
    ],
    "ev_total": 0,
-   "books": [],
-   "cross_book": false,
-   "relations": {}
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "legacy"
   },
   {
    "canonical": "金蟾戏浪",
@@ -5130,9 +6036,12 @@
     "金赡戏浪"
    ],
    "ev_total": 0,
-   "books": [],
+   "books": [
+    "七剑下天山"
+   ],
    "cross_book": false,
-   "relations": {}
+   "relations": {},
+   "source": "legacy"
   },
   {
    "canonical": "须弥剑法",
@@ -5141,9 +6050,13 @@
     "须弥剑"
    ],
    "ev_total": 0,
-   "books": [],
-   "cross_book": false,
-   "relations": {}
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "cross_book": true,
+   "relations": {},
+   "source": "legacy"
   },
   {
    "canonical": "风卷落花",
@@ -5152,9 +6065,12 @@
     "风巷落花"
    ],
    "ev_total": 0,
-   "books": [],
+   "books": [
+    "七剑下天山"
+   ],
    "cross_book": false,
-   "relations": {}
+   "relations": {},
+   "source": "legacy"
   }
  ]
 }

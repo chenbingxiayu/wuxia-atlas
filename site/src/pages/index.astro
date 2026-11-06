@@ -14,22 +14,26 @@ const intertextN = works.reduce((s, w) => s + w.intertext_in + w.intertext_out, 
 const litBookChapters = Object.values(chapters)
   .filter((b: any) => b.lit)
   .reduce((s: number, b: any) => s + b.chapters.length, 0);
+const litBooks = Object.entries(chapters as Record<string, any>)
+  .filter(([k, v]) => k !== 'meta' && v?.lit)
+  .map(([k]) => k);
+const personN = characters.meta.totals.by_type?.['@'] ?? 0;
 
 const stats = [
   { n: String(books.meta.totals.books), label: '部作品' },
-  { n: `${litN} / 34`, label: '已点亮' },
-  { n: characters.meta.totals.merged_entities.toLocaleString(), label: '规范实体' },
+  { n: `${litN} / 34`, label: '深度解析' },
+  { n: characters.meta.totals.merged_entities.toLocaleString(), label: '人物档案' },
   { n: totalChapters.toLocaleString(), label: '回目' },
   { n: String(intertextN), label: '互文边' },
 ];
 
 const sections = [
   { href: B + 'universe', title: '宇宙地铁图', desc: '系列为线路，人物为站点，跨书人物是换乘站。天山线已亮，其余幽灵线随管线生长。', live: true },
-  { href: B + 'books', title: '作品库', desc: '34 部书页：回目、节奏指纹、互文引用。未点亮的书也有完整档案。', live: true },
-  { href: B + 'search', title: '搜索', desc: '全站全文检索（Pagefind）。', live: true },
-  { href: B + 'characters', title: '人物谱', desc: '全部 436 位规范人物档案：别名、师承、武功、战绩、出场曲线——每条可展开定位符。', live: true },
+  { href: B + 'books', title: '作品库', desc: `${books.meta.totals.books} 部书页：回目、节奏指纹、互文引用。未点亮的书也有完整档案。`, live: true },
+  { href: B + 'search', title: '搜索', desc: '全站检索：JSON 索引 + 可选 Pagefind 全文（人物支持展示名/规范名双匹配）。', live: true },
+  { href: B + 'characters', title: '人物谱', desc: `全部 ${personN} 位人物档案：别名、师承、武功、战绩、出场曲线——每条可展开定位符。`, live: true },
   { href: B + 'arts', title: '武功谱', desc: '品类、门派归属、修习者、传承证据链。', live: true },
-  { href: B + 'ratings', title: '侠谱评分', desc: 'Glicko-2 战力榜，旁白明文做先验，每条分数可"出示原文"。', live: false, m: 'M4' },
+  { href: B + 'ratings', title: '武评', desc: '用原著交手记录排出江湖座次，每条分数可"出示原文"。', live: true },
   { href: B + 'stories', title: '数据说书', desc: '用图谱证明武侠命题：卓练温度曲线、梁氏悲剧公式、食物链。', live: false, m: 'M5' },
   { href: B + 'qa', title: '江湖问答 · AB 路径', desc: '谁杀了金独异？卓一航怎么认识凌未风？答案带定位符。', live: false, m: 'M5' },
   { href: B + 'games', title: '侠客游戏', desc: '武林二十问答、每日一谜、排位竞猜——题库零幻觉，争议可对质。', live: false, m: 'M5' },
@@ -55,11 +59,8 @@ const metroLines = universe.lines.map((ln) => ({
       ))}
     </ul>
     <p class="note">
-      天山三部曲已点亮（{litBookChapters} 回回目页可浏览）：
-      <span class="badge badge-lit">白发魔女传</span>
-      <span class="badge badge-lit">塞外奇侠传</span>
-      <span class="badge badge-lit">七剑下天山</span>
-      <span class="badge" style="color:var(--gold)">江湖三女侠（标注中）</span>
+      深度解析 {litBooks.length} 部（{litBookChapters} 回回目页可浏览）：
+      {litBooks.map((b) => <span class="badge badge-lit">{b}</span>)}
       ——管线每打通一部书，图集自动生长一部。
     </p>
   </section>
@@ -74,7 +75,7 @@ const metroLines = universe.lines.map((ln) => ({
       <a class="card entry" href={s.href}>
         <h2>
           {s.title}
-          {s.live ? <span class="badge badge-lit">已上线</span> : <span class="badge badge-todo">待建 · {s.m}</span>}
+          {s.live ? <span class="badge badge-lit">已发布</span> : <span class="badge badge-todo">筹备中</span>}
         </h2>
         <p>{s.desc}</p>
       </a>

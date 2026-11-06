@@ -4,6 +4,7 @@ import books from '@data/books.json';
 import chaptersAll from '@data/chapters.json';
 import dossiers from '@data/dossiers.json';
 import { B } from '@lib/base';
+import { dsp } from '@lib/display';
 
 export function getStaticPaths() {
   const paths = [];
@@ -43,8 +44,8 @@ const CONF = { high: '●●', medium: '●○', low: '○○' };
       <p class="chips">
         {c.chars.map((p) => (
           dossierNames.has(p.name)
-            ? <a class="chip link" href={`${B}characters/${p.name}/`}>{p.name}<small>×{p.n}</small></a>
-            : <span class="chip">{p.name}<small>×{p.n}</small></span>
+            ? <a class="chip link" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(p.name)}<small>×{p.n}</small></a>
+            : <span class="chip">{dsp(p.name)}<small>×{p.n}</small></span>
         ))}
       </p>
     </section>
@@ -55,9 +56,9 @@ const CONF = { high: '●●', medium: '●○', low: '○○' };
     <ul class="stream">
       {c.stream.map((e) => (
         <li>
-          <span class="who">{e.s}</span>
+          <span class="who">{dsp(e.s)}</span>
           <span class="verb">{e.v}</span>
-          <span class="who">{e.o}</span>
+          <span class="who">{dsp(e.o)}</span>
           <span class="conf" title={`置信 ${e.c}`}>{CONF[e.c] ?? ''}</span>
           <span class="loc">{w.book}·{e.loc}</span>
         </li>

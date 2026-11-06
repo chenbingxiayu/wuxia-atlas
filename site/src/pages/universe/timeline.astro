@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import universe from '@data/universe.json';
 import booksJson from '@data/books.json';
 import { B } from '@lib/base';
+import { bookTarget } from '@lib/links';
 
 /* 双轨：上轨 = 故事年代（chronology_spine）；下轨标注出版年（真实时间）。书→线颜色。 */
 const lineColor: Record<string, string> = {};
@@ -34,11 +35,11 @@ const lit = (name: string) => bookMeta[name]?.kb === '已点亮' || bookMeta[nam
 ---
 
 <Base title="宇宙编年史">
-  <p class="crumb"><a href="../">宇宙</a> / 编年史（双轨 · M3）</p>
+  <p class="crumb"><a href="../">宇宙</a> / 编年史</p>
   <h1>宇宙编年史</h1>
   <p class="lead">
     双轨对照：<b>上轨是故事年代</b>（唐·武周 → 清·乾隆，来自系列谱系考订），<b>书脊上标真实出版年</b>（1954–1983）。
-    每本书按所属系列线着色；已点亮的书有图谱（亮标）。排序置信：strong ＞ ok ＞ todo，逐线证据见谱系考订表。
+    每本书按所属系列线着色；深度解析的书有图谱（亮标）。排序置信：strong ＞ ok ＞ todo，逐线证据见谱系考订表。
   </p>
 
   <div class="spine">
@@ -49,9 +50,11 @@ const lit = (name: string) => bookMeta[name]?.kb === '已点亮' || bookMeta[nam
           {row.books.map((b) => (
             b.missing
               ? <span class="chip missing" title="缺佚或年代待考">{b.clean}*</span>
-              : <a class="chip" style={`border-color:${b.color};color:${b.color}`} href={`${B}books/${b.clean}/`} title={`${b.line} · 出版 ${b.year ?? '?'}${lit(b.clean) ? ' · 已点亮' : ''}`}>
-                  {b.clean}<small>{b.year ?? ''}{lit(b.clean) ? ' ●' : ''}</small>
-                </a>
+              : bookTarget(b.clean)
+                ? <a class="chip" style={`border-color:${b.color};color:${b.color}`} href={`${B}books/${b.clean}/`} title={`${b.line} · 出版 ${b.year ?? '?'}${lit(b.clean) ? ' · 深度解析' : ''}`}>
+                    {b.clean}<small>{b.year ?? ''}{lit(b.clean) ? ' ●' : ''}</small>
+                  </a>
+                : <span class="chip missing" title="未点亮/缺佚">{b.clean}<small>{b.year ?? ''}</small></span>
           ))}
         </div>
       </div>
@@ -61,7 +64,9 @@ const lit = (name: string) => bookMeta[name]?.kb === '已点亮' || bookMeta[nam
         <div class="era">待考时代</div>
         <div class="books">
           {rest.map((w) => (
-            <a class="chip" style="border-style:dashed" href={`${B}books/${w.book}/`}>{w.book}<small>{w.year ?? ''}</small></a>
+            bookTarget(w.book)
+              ? <a class="chip" style="border-style:dashed" href={`${B}books/${w.book}/`}>{w.book}<small>{w.year ?? ''}</small></a>
+              : <span class="chip missing">{w.book}<small>{w.year ?? ''}</small></span>
           ))}
         </div>
       </div>
@@ -71,7 +76,7 @@ const lit = (name: string) => bookMeta[name]?.kb === '已点亮' || bookMeta[nam
   <p class="fine">
     图例：<span style="color:#c0392b">● 天山</span> · <span style="color:#8a6607">● 明代</span> ·
     <span style="color:#31536c">● 大唐</span> · <span style="color:#4f6e4a">● 宋代</span> ·
-    晚清/独立见 chip · <b>●</b> = 已点亮（KB 完成）· * = 缺佚/待考。
+    晚清/独立见 chip · <b>●</b> = 深度解析· * = 存目/待考。
   </p>
 </Base>
 <style>
