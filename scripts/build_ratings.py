@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# ⚠ X1 裁决 2026-11-07：本脚本（Glicko-2 旧引擎导出）已退役。现行评分=ratings_whr.py（WHR v2）。重导前必须先对齐 matches-v2 产物。
 """侠谱评分 M2/M3：Glicko-2 引擎 + 评分表（build_ratings.py）。
 
 按《侠谱评分功能规格》§五（参数落定）：

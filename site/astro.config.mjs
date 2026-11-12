@@ -1,7 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import { cpSync } from 'node:fs';
+import { cpSync, rmSync } from 'node:fs';
+
+// base 单一事实源：默认 GitHub Pages 子路径；预览/根路径部署用 `npm run build:preview`
+// （SITE_BASE=/）。产物口径写入 build-info 由发布脚本负责（见 wuxia-kb/scripts/release_site.py）。
+const BASE = process.env.SITE_BASE || '/wuxia-atlas';
 
 // 梁羽生武侠宇宙 · 江湖图志
 // 架构决议见《网站完整设计方案》：SSG + 交互岛；版权闸门见 scripts/copyright_gate.py
@@ -10,10 +14,11 @@ import { cpSync } from 'node:fs';
 // 而 Astro 只原样发布 public/ —— 构建与开发启动时把 data/ 镜像进 public/data/
 // （public/data 为生成物，见 .gitignore；单一事实源仍是 site/data）。
 function copySiteData() {
+  const dest = new URL('./public/data', import.meta.url);
   try {
-    cpSync(new URL('./data', import.meta.url), new URL('./public/data', import.meta.url), {
-      recursive: true,
-    });
+    // 先清空镜像目录：只增不清会把已删除/历史备份（如 *.phase0bak.json）永久带进发布产物。
+    rmSync(dest, { recursive: true, force: true });
+    cpSync(new URL('./data', import.meta.url), dest, { recursive: true });
   } catch (e) {
     console.warn('[copy-site-data] site/data 尚不存在，跳过镜像：', e.message);
   }
@@ -31,7 +36,7 @@ const mirrorData = {
 export default defineConfig({
   // GitHub Pages 项目站点（自定义域名/Cloudflare 时改为根路径并更新 site）
   site: 'https://chenbingxiayu.github.io',
-  base: '/wuxia-atlas',
+  base: BASE,
   trailingSlash: 'ignore',
   build: {
     inlineStylesheets: 'auto',

@@ -1,16 +1,19 @@
 ---
 import Base from '../../layouts/Base.astro';
+import EmptyState from '../../components/ui/EmptyState.astro';
 import artsJson from '@data/arts.json';
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
-import { personTarget, sectTarget } from '@lib/links';
+import { chapterHref, personTarget, sectTarget, artTarget } from '@lib/links';
+import { scrubTierNote, tierLabel } from '@lib/tiers';
+import { SCOPE_BOOKS } from '@lib/scope';
 
 export function getStaticPaths() {
   return artsJson.arts.map((a) => ({ params: { slug: a.canonical }, props: { a } }));
 }
 const { a } = Astro.props;
 
-const PRED_LABEL = { 镇山: '镇山', 拥有: '拥有', 独门: '独门', 传授: '传授', 修习: '修习' };
+const PRED_LABEL = { 镇山: '镇山', 拥有: '拥有', 独门: '独门', 传授: '传授', 修习: '修习', 创制: '创制', 子式: '子式' };
 // 按谓词重组（跨书）
 const byPred = new Map();
 const persons = new Map();
@@ -41,27 +44,285 @@ const childNames = new Set(children.map((c) => c.name));
 const GONGFA = /(剑法|掌法|刀法|拳法|剑术|神功|心法|内功|功法|阵法|身法|步法)$/;
 const setsContained = (a.aliases || []).filter((x) => GONGFA.test(x) && !childNames.has(x));
 const aliasesPure = (a.aliases || []).filter((x) => !GONGFA.test(x) && !childNames.has(x));
-/* 传授关系：传授者 → 修习者（同门武功内按谓词配对；独门单列） */
-const teachers = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '传授')).map(([p]) => p);
-const learners = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '修习' || r.pred === '独门') && !teachers.includes(p)).map(([p]) => p);
-const solo = [...persons.entries()].filter(([p, rs]) => rs.some((r) => r.pred === '独门') && !teachers.includes(p) && !learners.includes(p)).map(([p]) => p);
-// 链接目标解析（task-49）：门派/人物/功法先解析为有页的 canonical；无页 → 纯文本。
+/* 薄页（武功页重构设计 §5.1：≤1 关系且无招式）→ 头部后加条目说明条 */
+const relCount = Object.values(a.relations).reduce((t, b) => t + b.relations.length, 0);
+const isThin = relCount <= 1 && children.length === 0;
+/* 镇山绝学：关系表明文「某派以此功镇派」的行（无则整块不渲染） */
+const zhenshanRows = [];
+for (const [book, b] of Object.entries(a.relations)) {
+  for (const r of b.relations) if (r.pred === '镇山') zhenshanRows.push({ ...r, book, target: sectTarget(r.s) });
+}
+/* 链接目标解析（task-49）：门派/人物/功法先解析为有页的 canonical；无页 → 纯文本。 */
 const sectAggRows = sectAgg.map((sa) => ({ ...sa, target: sectTarget(sa.sect) }));
-const teacherRows = teachers.map((t2) => ({ name: t2, target: personTarget(t2) }));
-const learnerRows = learners.map((l) => ({ name: l, target: personTarget(l) }));
-const soloRows = solo.map((sp) => ({ name: sp, target: personTarget(sp) }));
 const personRows = [...persons.entries()].map(([p, rs]) => ({ name: p, rs, target: personTarget(p) }));
+
+/* —— W3-T4（武功页重构设计 §七/§九）：套页面包屑 —— */
+/* 伞形三层 parent 映射：仅原文明文归套的三套（七剑 001:127「天山剑法中攻势最劲的招数」/
+   019:147「天山剑法中的十三路须弥剑法」/ 019:111「天山剑法中攻守兼备的六十四路寒涛剑」）。
+   数据层 arts.json 无 parent 字段（随考订 TSV §八.6 生长），此处构建期小映射，宁缺毋滥。 */
+const ART_PARENTS: Record<string, string> = {
+  '追风剑法': '天山剑法',
+  '须弥剑法': '天山剑法',
+  '寒涛剑法': '天山剑法',
+};
+const parent = ART_PARENTS[a.canonical] ?? null;
+const parentTarget = parent ? artTarget(parent) : null;
+
+/* —— W3-T4（§5.2）：武功「一生」卡 —— 创制行（relations 创制；无创制记录不渲染） */
+const BOOK_ORDER = new Map(SCOPE_BOOKS.map((b, i) => [b, i]));
+const creatorRows = (byPred.get('创制') || [])
+  .slice()
+  .sort((x, y) => (BOOK_ORDER.get(x.book) ?? 99) - (BOOK_ORDER.get(y.book) ?? 99))
+  .map((r) => ({ ...r, target: personTarget(r.s) }));
+
+/* —— W3-T4（§5.3）：L1 原著评语卡（kb/校订/武功评语.tsv 校定行；无评语不渲染） */
+const comments = (a.comments || []) as Array<{ quote: string; book: string; loc: string }>;
+
+/* —— W3-T4（§六）：传承树（传授 note 配对真边，EX-6 lineage 字段；无真边不渲染）。
+   按代分层：人物经 personTarget 归并（晦明禅师=岳鸣珂 同档）后，
+   根=无师承入边的节点，gen=最长师承链；二部图假线（N1）随旧图整段移除。 */
+const TIER_ORDER = ['正式', '记名', '挂名', '点拨'];
+const TIER_CLASS: Record<string, string> = {
+  '正式': 'edge-formal', '记名': 'edge-jiming', '挂名': 'edge-guaming', '点拨': 'edge-dianbo',
+};
+const TIER_LEGEND = '（实线=正式传授 · 点划线=记名 · 虚线=挂名 · 点线=点拨）';
+const BOOK_SHORT: Record<string, string> = {
+  '散花女侠': '散花', '联剑风云录': '联剑', '白发魔女传': '白发', '塞外奇侠传': '塞外',
+  '七剑下天山': '七剑', '冰魄寒光剑': '冰魄', '江湖三女侠': '三女侠',
+};
+
+interface TreeNode { key: string; label: string; aliases: string[]; target: string | null; creator: boolean }
+const treeNodes = new Map<string, TreeNode>();
+function nodeKey(raw: string): string {
+  return personTarget(raw) ?? raw;
+}
+function regNode(raw: string): string {
+  const k = nodeKey(raw);
+  if (!treeNodes.has(k)) {
+    const target = personTarget(raw);
+    treeNodes.set(k, { key: k, label: target ?? raw, aliases: [], target, creator: false });
+  } else {
+    const target = personTarget(raw);
+    if (target && treeNodes.get(k)!.label === raw) treeNodes.get(k)!.label = target;
+  }
+  const n = treeNodes.get(k)!;
+  if (raw !== n.label && !n.aliases.includes(raw)) n.aliases.push(raw);
+  return k;
+}
+interface TreeEdge { tK: string; lK: string; tier: string; books: string[]; locs: Array<{ book: string; loc: string; tier: string }> }
+const edgeGroups = new Map<string, TreeEdge>();
+for (const e of (a.lineage || []) as Array<{ t: string; l: string; book: string; loc: string | null; tier: string }>) {
+  const tK = regNode(e.t);
+  const lK = regNode(e.l);
+  const k = `${tK}|${lK}`;
+  if (!edgeGroups.has(k)) edgeGroups.set(k, { tK, lK, tier: '正式', books: [], locs: [] });
+  const g = edgeGroups.get(k)!;
+  g.locs.push({ book: e.book, loc: e.loc, tier: e.tier });
+  if (!g.books.includes(e.book)) g.books.push(e.book);
+}
+for (const g of edgeGroups.values()) {
+  // 线型取最强档：正式（实线）> 记名 > 挂名 > 点拨；各定位符的档位在边清单逐一呈现
+  g.tier = TIER_ORDER.find((t) => g.locs.some((l) => l.tier === t)) ?? '正式';
+}
+for (const [p] of persons) {
+  if ((byPred.get('创制') || []).some((r) => r.s === p)) {
+    const k = regNode(p);
+    treeNodes.get(k)!.creator = true;
+  }
+}
+/* 分代：根=无入边；gen=最长链（visiting 守卫环） */
+const hasParent = new Set([...edgeGroups.values()].map((g) => g.lK));
+const gen = new Map<string, number>();
+const visiting = new Set<string>();
+function setGen(k: string): number {
+  if (gen.has(k)) return gen.get(k)!;
+  if (visiting.has(k)) return 0;
+  visiting.add(k);
+  let g = 0;
+  if (hasParent.has(k)) {
+    let max = -1;
+    for (const e of edgeGroups.values()) {
+      if (e.lK === k) max = Math.max(max, setGen(e.tK) + 1);
+    }
+    if (max >= 0) g = max;
+  }
+  visiting.delete(k);
+  gen.set(k, g);
+  return g;
+}
+for (const k of treeNodes.keys()) setGen(k);
+const genRows: TreeNode[][] = [];
+const rowOf = new Map<string, number>();
+for (const [k, g] of [...gen.entries()].sort((x, y) => x[1] - y[1])) {
+  if (!genRows[g]) genRows[g] = [];
+  rowOf.set(k, genRows[g].length);
+  genRows[g].push(treeNodes.get(k)!);
+}
+/* SVG 布局（构建期定坐标；375px 横向滚动容器内） */
+const NW = 118, NH = 36, GX = 22, GY = 78, PAD = 30;
+const rowWidths = genRows.map((r) => r.length * NW + Math.max(0, r.length - 1) * GX);
+const TW = Math.max(...rowWidths, 260) + PAD * 2;
+const TH = genRows.length * GY + PAD * 2 - (GY - NH);
+const nodeX = new Map<string, number>();
+const nodeY = new Map<string, number>();
+genRows.forEach((row, gi) => {
+  const startX = (TW - rowWidths[gi]) / 2;
+  row.forEach((n, i) => {
+    nodeX.set(n.key, startX + i * (NW + GX));
+    nodeY.set(n.key, PAD + gi * GY);
+  });
+});
+const treeEdges = [...edgeGroups.values()].map((g) => {
+  const tx = nodeX.get(g.tK)! + NW / 2, ty = nodeY.get(g.tK)! + NH;
+  const lx = nodeX.get(g.lK)! + NW / 2, ly = nodeY.get(g.lK)!;
+  const midX = (tx + lx) / 2, midY = (ty + ly) / 2;
+  return { ...g, d: `M ${tx} ${ty} C ${tx} ${ty + (ly - ty) * 0.45}, ${lx} ${ly - (ly - ty) * 0.45}, ${lx} ${ly}`, mx: midX, my: midY };
+}).sort((x, y) => y.locs.length - x.locs.length);
+const treeEdgeRows = [...edgeGroups.values()]
+  .flatMap((g) => g.locs.map((l) => ({ t: treeNodes.get(g.tK)!, l: treeNodes.get(g.lK)!, ...l })))
+  .sort((x, y) => (BOOK_ORDER.get(x.book) ?? 99) - (BOOK_ORDER.get(y.book) ?? 99));
+/* 传承现状（一生卡）：几代几人，取自传承树统计（无真边不渲染该行） */
+const treePeople = treeNodes.size;
+const GEN_CN = ['一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+const genLabel = (n: number) => (n <= 10 ? GEN_CN[n - 1] : String(n));
 ---
 
-<Base title={a.canonical} description={`${a.canonical}（${a.category}）：门派归属、修习者、别名与证据定位符。`}>
-  <p class="crumb"><a href={`${B}arts/`}>武功谱</a> / {a.canonical}</p>
+<Base title={a.canonical} description={`${a.canonical}（${a.category}）：谁创、谁传、属于哪派、有哪些招，每一条都挂原著定位。`}>
+  <p class="crumb">
+    <a href={`${B}arts/`}>武功谱</a> / {parent && parentTarget && (
+      <a href={`${B}arts/${encodeURIComponent(parentTarget)}/`}>← 属于 {parent}</a>
+    )}{parent && parentTarget && ' · '}{a.canonical}
+  </p>
   <h1>{a.canonical} <span class="badge" style="color:var(--azure)">{a.category}</span>
     {a.cross_book && <span class="badge badge-cross">跨书</span>}
   </h1>
-  <p class="meta">证据合计 <b>{a.ev_total}</b> · 见于 {a.books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}</p>
+  <p class="meta">关系 <b>{relCount}</b> 条 · 见于 {a.books.length} 书{a.books.length > 0 && ' · '}{a.books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}</p>
 
   {aliasesPure.length > 0 && (
     <p class="meta">别名/变体：{aliasesPure.map((x) => <span class="chip">{x}</span>)}</p>
+  )}
+
+  {isThin && <EmptyState variant="记载简略" />}
+
+  {creatorRows.length > 0 && (
+    <section>
+      <h2>一门武功的一生</h2>
+      <div class="card life-card">
+        {creatorRows.map((r) => (
+          <p class="life-row">
+            <span class="life-tag">创制</span>
+            {r.target
+              ? <a class="life-who" href={`${B}characters/${encodeURIComponent(r.target)}/`}>{dsp(r.s)}</a>
+              : <span class="life-who">{dsp(r.s)}</span>}
+            <span class="loc">{r.book}·{r.locs.map((lc, i) => {
+              const ch = chapterHref(r.book, lc);
+              return <>{i > 0 && '，'}{ch ? <a href={ch}>{lc}</a> : <span>{lc}</span>}</>;
+            })}</span>
+            {r.note && <span class="life-note">{scrubTierNote(r.note)}</span>}
+          </p>
+        ))}
+        {treePeople > 0 && (
+          <p class="life-row life-now">
+            <span class="life-tag life-tag-now">传承现状</span>
+            <span>已考订 <b>{genLabel(genRows.length)}</b> 代 <b>{treePeople}</b> 人——按原文明文传授配对，见下方传承树。</span>
+          </p>
+        )}
+      </div>
+    </section>
+  )}
+
+  {comments.length > 0 && (
+    <section>
+      <h2>原著怎么说</h2>
+      <div class="card quotes">
+        {comments.map((c) => {
+          const ch = chapterHref(c.book, c.loc);
+          return (
+            <p class="quote-line">「{c.quote}」
+              <span class="quote-src">—— 原著 · {c.book} {ch ? <a href={ch}>{c.loc}</a> : <span>{c.loc}</span>}</span>
+            </p>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  {treeEdges.length > 0 && (
+    <section>
+      <h2>传承树 <span class="dim2">{TIER_LEGEND}</span></h2>
+      <div class="card tree-scroll">
+        <svg viewBox={`0 0 ${TW} ${TH}`} width={TW} height={TH} style={`width:${TW}px;height:${TH}px;max-width:none`} role="img" aria-label={`${a.canonical} 传承树（按代分层，实线为原文明文传授）`}>
+          {treeEdges.map((e) => (
+            <g>
+              <path d={e.d} class={`tree-edge ${TIER_CLASS[e.tier]}`} />
+              <text x={e.mx} y={e.my - 5} class="tree-book" text-anchor="middle">{e.books.map((b) => BOOK_SHORT[b] ?? b).join('·')}</text>
+            </g>
+          ))}
+          {genRows.map((row, gi) => (
+            <text x={8} y={PAD + gi * GY + NH / 2 + 4} class="tree-gen">{genLabel(gi + 1)}代</text>
+          ))}
+          {genRows.map((row) => row.map((n) => {
+            const x = nodeX.get(n.key)!, y = nodeY.get(n.key)!;
+            const label = n.label + (n.creator ? '（创）' : '');
+            const node = (
+              <g class="tree-node">
+                <rect x={x} y={y} width={NW} height={NH} rx={6} class={{ 'tree-rect': true, 'tree-rect-creator': n.creator }} />
+                {n.target
+                  ? <a href={`${B}characters/${encodeURIComponent(n.target)}/`}>
+                      <text x={x + NW / 2} y={y + (n.aliases.length ? 15 : 23)} text-anchor="middle" class="tree-name">{label}</text>
+                    </a>
+                  : <text x={x + NW / 2} y={y + (n.aliases.length ? 15 : 23)} text-anchor="middle" class="tree-name">{label}</text>}
+                {n.aliases.length > 0 && (
+                  <text x={x + NW / 2} y={y + 29} text-anchor="middle" class="tree-alias">＝{n.aliases.join('、')}</text>
+                )}
+              </g>
+            );
+            return node;
+          }))}
+        </svg>
+      </div>
+      <div class="card tree-list">
+        <p class="evh">明文传授 <span class="dim2">每条边挂原著定位 · 无配对不强造（解析不出的传授表述挂人工考订）</span></p>
+        <ul class="ev">
+          {treeEdgeRows.map((e) => {
+            const ch = chapterHref(e.book, e.loc);
+            const tNode = e.t.target
+              ? <a href={`${B}characters/${encodeURIComponent(e.t.target)}/`}>{dsp(e.t.label)}</a>
+              : <span>{dsp(e.t.label)}</span>;
+            const lNode = e.l.target
+              ? <a href={`${B}characters/${encodeURIComponent(e.l.target)}/`}>{dsp(e.l.label)}</a>
+              : <span>{dsp(e.l.label)}</span>;
+            return (
+              <li>
+                {tNode}<span class="arrow"> → </span>{lNode}
+                <span class={`tier tier-${e.tier}`}>{e.tier}</span>
+                <span class="loc">{e.book}·{ch ? <a href={ch}>{e.loc}</a> : <span>{e.loc ?? '—'}</span>}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  {zhenshanRows.length > 0 && (
+    <section>
+      <h2>镇山绝学 <span class="dim2">下列门派以此功为镇派武功（关系表明文）</span></h2>
+      <ul class="ev">
+        {zhenshanRows.map((r) => (
+          <li>
+            {r.target
+              ? <a class="chip" href={`${B}sects/${encodeURIComponent(r.target)}/`}>{r.s}</a>
+              : <span class="chip">{r.s}</span>}
+            <span class="loc">{r.book}·{r.locs.map((lc, i) => {
+              const ch = chapterHref(r.book, lc);
+              return <>{i > 0 && '，'}{ch ? <a href={ch}>{lc}</a> : <span>{lc}</span>}</>;
+            })}</span>
+            {r.note && <span class="note">「{scrubTierNote(r.note)}」</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
   )}
 
   {sectAgg.length > 0 && (
@@ -81,55 +342,6 @@ const personRows = [...persons.entries()].map(([p, rs]) => ({ name: p, rs, targe
     </section>
   )}
 
-  {(teacherRows.length > 0 || learnerRows.length > 0 || soloRows.length > 0) && (
-    <section>
-      <h2>传授关系图 <span class="dim2">传授者 → 修习者 · 按关系表谓词连线（各带定位符）</span></h2>
-      <div class="card" style="padding:16px 22px">
-        <svg viewBox={`0 0 900 ${Math.max(140, Math.max(teacherRows.length, learnerRows.length, soloRows.length, 1) * 56 + 70)}`} style="width:100%;height:auto" role="img" aria-label="传授关系图">
-          <text x="120" y="26" font-size="14" font-weight="700" fill="#a23527" text-anchor="middle">传授者</text>
-          <text x="780" y="26" font-size="14" font-weight="700" fill="#31536c" text-anchor="middle">修习者</text>
-          {teacherRows.map((t2, i) => {
-            const y = 60 + i * 56;
-            return (
-              <g>
-                <rect x="30" y={y - 18} width="180" height="36" rx="4" fill="#f6e8d9" stroke="#a23527" />
-                {t2.target
-                  ? <a href={`${B}characters/${encodeURIComponent(t2.target)}/`}><text x="120" y={y + 5} font-size="14" fill="#262420" text-anchor="middle">{dsp(t2.name)}</text></a>
-                  : <text x="120" y={y + 5} font-size="14" fill="#262420" text-anchor="middle">{dsp(t2.name)}</text>}
-                {learnerRows.map((l, j) => {
-                  const yl = 60 + j * 56;
-                  return <line x1="212" y1={y} x2="688" y2={yl} stroke="#b5a687" stroke-width="1.2" stroke-dasharray="4 3"><title>{dsp(t2.name)} 传授 {dsp(l.name)}</title></line>;
-                })}
-              </g>
-            );
-          })}
-          {learnerRows.map((l, j) => {
-            const yl = 60 + j * 56;
-            return (
-              <g>
-                <rect x="690" y={yl - 18} width="180" height="36" rx="4" fill="#eef2e6" stroke="#31536c" />
-                {l.target
-                  ? <a href={`${B}characters/${encodeURIComponent(l.target)}/`}><text x="780" y={yl + 5} font-size="14" fill="#262420" text-anchor="middle">{dsp(l.name)}</text></a>
-                  : <text x="780" y={yl + 5} font-size="14" fill="#262420" text-anchor="middle">{dsp(l.name)}</text>}
-              </g>
-            );
-          })}
-          {soloRows.map((sp, i) => {
-            const y = 60 + (Math.max(teacherRows.length, learnerRows.length) + i) * 56;
-            return (
-              <g>
-                <rect x="360" y={y - 18} width="180" height="36" rx="4" fill="#f0e9d8" stroke="#8a6607" stroke-dasharray="4 3" />
-                {sp.target
-                  ? <a href={`${B}characters/${encodeURIComponent(sp.target)}/`}><text x="450" y={y + 5} font-size="14" fill="#8a6607" text-anchor="middle">{dsp(sp.name)}（独门）</text></a>
-                  : <text x="450" y={y + 5} font-size="14" fill="#8a6607" text-anchor="middle">{dsp(sp.name)}（独门）</text>}
-              </g>
-            );
-          })}
-        </svg>
-        <p class="fine">谓词来自关系表（传授/修习/独门，各带定位符）；无传授者时不强连线，避免"看不出谁从谁学"。</p>
-      </div>
-    </section>
-  )}
   {personRows.length > 0 && (
     <section>
       <h2>全部涉及者</h2>
@@ -149,20 +361,24 @@ const personRows = [...persons.entries()].map(([p, rs]) => ({ name: p, rs, targe
 
   {(children.length > 0 || setsContained.length > 0) && (
     <section>
-      <h2>招式名表 <span class="dim2">工具 A 招式表 ·「一招'X'」式样抽取 + 人工考订</span></h2>
+      <h2>招式名表 <span class="dim2">「一招'X'」式样明文抽取</span></h2>
       <div class="card" style="padding:14px 22px">
         {children.length > 0 && (
           <p class="chips" style="margin:0 0 6px">
             {children.map((c) => (
-              <span class="chip">{c.name}<small>{c.conf} · {c.sect || ''}</small></span>
+              <span class="chip">{c.name}<small>{tierLabel(c.conf)} · {c.sect || ''}</small></span>
             ))}
           </p>
         )}
         {setsContained.length > 0 && (
           <p style="margin:8px 0 0;font-size:14px">
             <b>包含剑套 / 分支：</b>
-            {setsContained.map((x2) => <span class="chip" style="border-style:dashed">{x2}<small>套</small></span>)}
-            <span class="fine">（功法级下位名称原误并别名——已按套分层展示，归并待 TSV 考订）</span>
+            {setsContained.map((x2) => {
+              const at = artTarget(x2);
+              return at
+                ? <a class="chip chip-set" href={`${B}arts/${encodeURIComponent(at)}/`}>{x2}<small>套</small></a>
+                : <span class="chip chip-set">{x2}<small>套</small></span>;
+            })}
           </p>
         )}
       </div>
@@ -177,8 +393,11 @@ const personRows = [...persons.entries()].map(([p, rs]) => ({ name: p, rs, targe
           <li>
             <span class="pred">{PRED_LABEL[r.pred] ?? r.pred}</span>
             <span class="who">{r.st === '@' ? dsp(r.s) : r.s}</span>
-            <span class="loc">{r.book}·{r.locs.join('，')}</span>
-            {r.note && <span class="note">「{r.note}」</span>}
+            <span class="loc">{r.book}·{r.locs.map((lc, i) => {
+              const ch = chapterHref(r.book, lc);
+              return <>{i > 0 && '，'}{ch ? <a href={ch}>{lc}</a> : <span>{lc}</span>}</>;
+            })}</span>
+            {r.note && <span class="note">「{scrubTierNote(r.note)}」</span>}
           </li>
         ))
       ))}
@@ -201,14 +420,57 @@ const personRows = [...persons.entries()].map(([p, rs]) => ({ name: p, rs, targe
   }
   .chip small { color: var(--ink-faint); margin-left: .3em; font-family: var(--font-mono); }
   a.chip:hover { border-color: var(--seal); color: var(--seal); }
+  .chip-set { border-style: dashed; }
   .chips { line-height: 2.3; }
   .ev { list-style: none; padding: 0; font-size: .9rem; }
   .ev li { margin: .3em 0; }
   .pred { color: var(--seal); margin-right: .6em; }
   .who { font-weight: 700; margin-right: .6em; }
   .loc { color: var(--ink-faint); font-family: var(--font-mono); font-size: .85em; }
+  .loc a { color: var(--azure); }
+  .evh { font-weight: 700; margin: 0 0 6px; }
+  .arrow { color: var(--seal); margin: 0 .3em; }
   .note { color: var(--ink-light); }
   .dim2 { color: var(--ink-faint); font-weight: 400; font-size: .78rem; }
-  .fine { color: var(--ink-faint); font-size: .8rem; }
   section { margin-top: var(--space-5); }
+
+  /* —— 一生卡（§5.2） —— */
+  .life-card { padding: 14px 22px; }
+  .life-row { margin: .35em 0; font-size: .95rem; }
+  .life-tag {
+    display: inline-block; border: 1px solid var(--seal); color: var(--seal);
+    border-radius: 4px; font-size: .78rem; padding: 0 .5em; margin-right: .6em;
+  }
+  .life-tag-now { border-color: var(--jade); color: var(--jade); }
+  .life-who { font-weight: 700; margin-right: .6em; }
+  .life-note { color: var(--ink-light); margin-left: .6em; }
+  .life-now { color: var(--ink-light); }
+  .life-now b { color: var(--jade); }
+
+  /* —— L1 原著评语卡（§5.3）：全站首个 L1 短引文档位，样式独立可辨识 —— */
+  .quotes { padding: 16px 22px; }
+  .quote-line { margin: .4em 0; font-size: 1.06rem; font-family: var(--font-title); }
+  .quote-src { color: var(--ink-faint); font-size: .85rem; margin-left: .5em; }
+  .quote-src a { color: var(--azure); font-family: var(--font-mono); }
+
+  /* —— 传承树（§六） —— */
+  .tree-scroll { padding: 18px 12px; overflow-x: auto; }
+  .tree-rect { fill: #f6efdf; stroke: var(--line-strong); }
+  .tree-rect-creator { stroke: var(--seal); fill: #f6e8d9; }
+  .tree-name { font-size: 14px; fill: var(--ink); font-weight: 700; }
+  .tree-name:hover { fill: var(--seal); }
+  .tree-alias { font-size: 9px; fill: var(--ink-faint); }
+  .tree-gen { font-size: 12px; fill: var(--ink-faint); }
+  .tree-edge { fill: none; stroke: var(--line-strong); stroke-width: 1.4; }
+  .edge-formal { stroke: var(--azure); stroke-width: 1.8; }              /* 实线=正式传授 */
+  .edge-jiming { stroke: var(--jade); stroke-dasharray: 7 3 2 3; }        /* 点划线=记名 */
+  .edge-guaming { stroke: var(--ghost); stroke-dasharray: 9 5; }          /* 虚线=挂名 */
+  .edge-dianbo { stroke: var(--gold); stroke-dasharray: 2 4; }            /* 点线=点拨 */
+  .tree-book { font-size: 9px; fill: var(--ink-faint); font-family: var(--font-mono); }
+  .tree-list { padding: 12px 22px; margin-top: 10px; }
+  .tier { font-size: .78rem; margin: 0 .5em; border: 1px solid var(--line); border-radius: 4px; padding: 0 .4em; }
+  .tier-正式 { color: var(--azure); border-color: var(--azure); }
+  .tier-记名 { color: var(--jade); border-color: var(--jade); }
+  .tier-挂名 { color: var(--ghost); border-color: var(--ghost); }
+  .tier-点拨 { color: var(--gold); border-color: var(--gold); }
 </style>

@@ -19,15 +19,23 @@
   - tagged/<书>/*.tagged.md             逐段 〖实体〗/⟦动词域⟧ 令牌
   - registry/concordance/<书>.json      逐章人物出现计数（tagged 的登记层聚合）
   - registry/entities.json              跨书规范名/别名（唯一别名映射，避免人物页断链）
+  - ../kb/校订/作品简介.tsv             hook/summary（W2-B8，仅 status=校定 行，站点纯消费）
 
 字段口径（docs/51 §五 契约纪律）：
   - 旧站字段集合"不缺、类型不破"是硬条件；新数据暂缺项置 0/空数组并在
     meta.field_gaps 显式声明，不静默丢字段。
   - 已点亮口径：tagged/<书>/*.tagged.md 存在（当前 5 部，旧站为 3 部）。
   - 计数口径与旧站差异（字数/事件数等）写入 meta.notes，供差异报告追溯。
+
+W0-T3a（天山演示版总体方案 §1.2，2026-11-08）scope 口径：
+  - --scope <profile>：books.json 仅留 in_scope 书目；chapters.json 同；
+  - 互文 out_refs/in_refs 做边过滤（对端书 ∈ scope），指向站外书的边降级新字段
+    refs_ext（与 out_refs 同构的存目数组 + dir=out/in，页面灰显不链接）；
+  - 全量口径（不带 --scope）行为与现状完全一致（无 refs_ext、meta 无 scope，方案 R6）。
 """
 from __future__ import annotations
 
+import csv
 import json
 import re
 import sys
@@ -65,6 +73,16 @@ VERB_OLD_TO_NEW = {"◈": "⊞", "◉": "⊠", "▲": None, "◇": "▣", "○":
 VERB_DOMAINS = ("⊞", "⊠", "⊡", "⊟", "▣", "■")   # 新六域原值同 dict 附出
 
 TOP_CHARS = 30          # 旧站逐章出场人物 Top 30
+
+# W2-B8（作品页重构设计 §四②/§六，2026-11-10）：作品简介 hook/summary 唯一真源。
+# 只消费 status=校定 行（draft/待校 行不进站点）；hook 上限 30 字（设计 §六「钩子 ≤30 字」），
+# 超长报错不截断（简介是人工校定稿，静默截断会悄悄改写编辑文本——超长应回 TSV 改稿）。
+INTRO_TSV = config.LEGACY_KB / "校订" / "作品简介.tsv"
+HOOK_MAX = 30
+
+
+class IntroError(ValueError):
+    """作品简介 TSV 非法（hook 超长/同书重复校定/校定行字段空缺），消息中文，导出即报错。"""
 CONF_HIGH_GAP = 20      # 主语与动词的字符距离阈值 → 启发式置信（宾语侧另受邻近规则约束）
 CONF_MED_GAP = 40
 LOC_CHAPTER_WIDTH = 3   # 定位符 "001:27" 的章号宽度（旧站同格式）
@@ -152,6 +170,38 @@ def load_legacy_metadata() -> dict:
     return {"wmeta": wmeta, "inter": inter}
 
 
+def load_intro_tsv(path: Path | None = None) -> dict:
+    """W2-B8：读 kb/校订/作品简介.tsv → {书名: {"hook":…, "summary":…}}（仅 status=校定 行）。
+
+    - 文件不存在 → {}（缺省口径：hook/summary 置空 + meta.field_gaps 声明，站点落占位话术）；
+    - hook 超过 HOOK_MAX 字 → IntroError（编辑闸门，报错不截断，见模块头 W2-B8 注）；
+    - 同书多行校定 / 校定行 hook 或 summary 空缺 → IntroError（唯一真源、校定行必须齐全）；
+    - draft/待校 行静默跳过（编辑流程分批校定，未校定行不进站点）。
+    """
+    path = path or INTRO_TSV
+    if not path.exists():
+        return {}
+    with open(path, encoding="utf-8", newline="") as f:
+        rows = list(csv.DictReader(f, delimiter="\t"))
+    intro: dict = {}
+    for i, row in enumerate(rows, start=2):      # 行号从表头下一行起（报错定位友好）
+        book = (row.get("book") or "").strip()
+        if not book or (row.get("status") or "").strip() != "校定":
+            continue
+        if book in intro:
+            raise IntroError(f"作品简介.tsv 第 {i} 行：{book} 重复校定行（唯一真源，只允许一行）")
+        hook = (row.get("hook") or "").strip()
+        summary = (row.get("summary") or "").strip()
+        if len(hook) > HOOK_MAX:
+            raise IntroError(
+                f"作品简介.tsv 第 {i} 行：{book} hook 超长（{len(hook)} > {HOOK_MAX} 字），"
+                "请回 TSV 改稿（导出闸门报错不截断）")
+        if not hook or not summary:
+            raise IntroError(f"作品简介.tsv 第 {i} 行：{book} 校定行 hook/summary 存在空值，必须齐全")
+        intro[book] = {"hook": hook, "summary": summary}
+    return intro
+
+
 def intertext_index(edges: list) -> tuple:
     """互文边按旧逻辑索引：只取 authorial/quoted，按 源→目标 / 目标→源 分组。
 
@@ -181,6 +231,35 @@ def pack_refs(edges_by_book: dict, book: str) -> list:
             "sample": es[0]["snippet"][:60],
         })
     return items
+
+
+def scoped_refs(out_edges: dict, in_edges: dict, book: str, scope=None) -> tuple:
+    """书 book 的互文边按 scope 三分（W0-T3a / 方案 §1.2）→ (out_refs, in_refs, refs_ext)。
+
+    - 全量口径（scope=None）：与 pack_refs 旧口径逐字段一致；refs_ext=None（不产出该字段）；
+    - scope 口径：对端书 ∈ scope 的边留在 out_refs/in_refs；对端书 ∉ scope 的边降级
+      refs_ext（与 out_refs 同构的存目数组 + dir=out/in 方向标记，页面灰显不链接）；
+      7 书内部互文边全部保留，边不静默丢弃。
+    """
+    if scope is None:
+        return pack_refs(out_edges, book), pack_refs(in_edges, book), None
+    outs = out_edges.get(book, {})
+    ins = in_edges.get(book, {})
+    out_kept = {t: es for t, es in outs.items() if esc.in_scope(t, scope)}
+    in_kept = {s: es for s, es in ins.items() if esc.in_scope(s, scope)}
+    refs_ext = []
+    for direction, groups in (("out", {t: es for t, es in outs.items() if not esc.in_scope(t, scope)}),
+                              ("in", {s: es for s, es in ins.items() if not esc.in_scope(s, scope)})):
+        for peer, es in sorted(groups.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+            refs_ext.append({
+                "book": peer,
+                "kind": es[0]["kind"],
+                "count": len(es),
+                "locs": [f"{es[0]['source']}·{e['loc']}" for e in es[:5]],
+                "sample": es[0]["snippet"][:60],
+                "dir": direction,
+            })
+    return pack_refs({book: out_kept}, book), pack_refs({book: in_kept}, book), refs_ext
 
 
 def load_registry_canon() -> dict:
@@ -357,9 +436,24 @@ def parse_tagged_chapter(path: Path, chapter_no: int, canon_map: dict):
 
 
 # ---------------------------------------------------------------- books.json
-def build_books(corpus: dict, char_counts: dict) -> tuple:
-    """books.json payload + 口径统计（返回 payload, stats 供 reports/notes 用）。"""
-    legacy = load_legacy_metadata()
+def build_books(corpus: dict, char_counts: dict, scope=None, legacy: dict | None = None,
+                intro: dict | None = None) -> tuple:
+    """books.json payload + 口径统计（返回 payload, stats 供 reports/notes 用）。
+
+    W0-T3a（方案 §1.2）：scope 口径下 books 仅留 in_scope 书目；互文 out_refs/in_refs 做
+    边过滤（对端书 ∈ scope），指向站外书的边降级 refs_ext（存目数组，页面灰显不链接）；
+    legacy 参数供测试注入合成元数据（缺省读 kb 只读资产，行为与旧版一致）。
+    W2-B8：intro 参数供测试注入合成简介（缺省读 kb/校订/作品简介.tsv，仅校定行）；
+    hook/summary 并入对应书记录，只并导出书目内的书（scope 口径下 scope 外行不消费）；
+    缺行书字段置空并记 meta.field_gaps，站点按设计落占位话术。
+    """
+    if legacy is None:
+        legacy = load_legacy_metadata()
+    if intro is None:
+        intro = load_intro_tsv()
+        intro_exists = INTRO_TSV.exists()
+    else:
+        intro_exists = True     # 注入口径视为有源（缺行逻辑照常生效，测试不依赖文件系统）
     wmeta, inter = legacy["wmeta"], legacy["inter"]
     out_edges, in_edges = intertext_index(inter.get("edges") or [])
     lit = set(lit_books(corpus))
@@ -367,7 +461,10 @@ def build_books(corpus: dict, char_counts: dict) -> tuple:
     books = []
     for w in wmeta.get("works") or []:
         book = w["book"]
-        books.append({
+        if not esc.in_scope(book, scope):
+            continue
+        out_refs, in_refs, refs_ext = scoped_refs(out_edges, in_edges, book, scope)
+        rec = {
             "no": w.get("no"),
             "book": book,
             "year": w.get("year"),
@@ -382,29 +479,47 @@ def build_books(corpus: dict, char_counts: dict) -> tuple:
             "chars": char_counts.get(book, w.get("chars") or 0),
             # 新 tagged 存在 → 已点亮；否则沿用旧元数据表口径（待建/标注中 fallback）
             "kb_status": "已点亮" if book in lit else (w.get("kb_status") or "待建"),
-            "intertext_out": sum(len(v) for v in out_edges.get(book, {}).values()),
-            "intertext_in": sum(len(v) for v in in_edges.get(book, {}).values()),
-            "out_refs": pack_refs(out_edges, book),
-            "in_refs": pack_refs(in_edges, book),
-        })
+            "intertext_out": sum(r["count"] for r in out_refs),
+            "intertext_in": sum(r["count"] for r in in_refs),
+            "out_refs": out_refs,
+            "in_refs": in_refs,
+        }
+        if refs_ext is not None:
+            rec["refs_ext"] = refs_ext      # W0-T3a 新增（仅 scope 口径；方案 §1.2）
+        books.append(rec)
 
     # 兜底：底本新增但元数据表未收录的书（当前 0 部），仍按契约结构补位并记 field_gaps
     known = {w["book"] for w in wmeta.get("works") or []}
     extra_books = []
     for i, book in enumerate(sorted(set(corpus) - known), start=len(books) + 1):
+        if not esc.in_scope(book, scope):
+            continue
         extra_books.append(book)
-        books.append({
+        out_refs, in_refs, refs_ext = scoped_refs(out_edges, in_edges, book, scope)
+        rec = {
             "no": i, "book": book, "year": None, "year_conf": "missing",
             "era": "", "era_conf": "todo", "series": "", "series_conf": "todo",
             "leads": [], "leads_conf": "todo",
             "chapters": len(corpus.get(book) or []),
             "chars": char_counts.get(book, 0),
             "kb_status": "已点亮" if book in lit else "待建",
-            "intertext_out": sum(len(v) for v in out_edges.get(book, {}).values()),
-            "intertext_in": sum(len(v) for v in in_edges.get(book, {}).values()),
-            "out_refs": pack_refs(out_edges, book),
-            "in_refs": pack_refs(in_edges, book),
-        })
+            "intertext_out": sum(r["count"] for r in out_refs),
+            "intertext_in": sum(r["count"] for r in in_refs),
+            "out_refs": out_refs,
+            "in_refs": in_refs,
+        }
+        if refs_ext is not None:
+            rec["refs_ext"] = refs_ext
+        books.append(rec)
+
+    # W2-B8：简介 hook/summary 并入（书目过滤之后进行，scope 外行天然不消费；
+    # 只增字段，旧契约 diff 记 extra_keys 不计 hard_gap）
+    for rec in books:
+        row = intro.get(rec["book"]) or {}
+        rec["hook"] = row.get("hook", "")
+        rec["summary"] = row.get("summary", "")
+    intro_missing = sorted(rec["book"] for rec in books if not (rec["hook"] and rec["summary"]))
+    intro_unmatched = sorted(set(intro) - {rec["book"] for rec in books})
 
     totals = {
         "books": len(books),
@@ -412,19 +527,42 @@ def build_books(corpus: dict, char_counts: dict) -> tuple:
         "chars": sum(int(b.get("chars") or 0) for b in books),
     }
     snapshot = _snapshot_block(corpus, sorted(lit), legacy)
+    field_gaps = _books_field_gaps(legacy, extra_books, intro_missing, intro_exists)
+    notes = _books_meta_notes(totals, sorted(lit), char_counts, legacy, extra_books)
+    notes += _intro_notes(intro, intro_missing, intro_unmatched)
+    # 缺佚书存目（W0-T4 · 方案 §1.2）：scope 口径裁掉 scope 外缺佚书；全量口径原样保留（R6）
+    missing_works = legacy["wmeta"].get("missing_works") or []
+    n_missing_src = len(missing_works)
+    if scope is not None:
+        missing_works = [mw for mw in missing_works
+                         if isinstance(mw, dict) and esc.in_scope(mw.get("book"), scope)]
+        field_gaps.append(
+            f"scope 口径（{scope['profile']}）：books 仅留 scope 内 {len(books)} 部；互文边按"
+            "对端书 ∈ scope 过滤，指向站外书的边降级 refs_ext（存目数组，dir=out/in 方向标记，"
+            "页面灰显不链接）；intertext_out/in 为 scope 内边计数。")
+        field_gaps.append(
+            f"scope 口径（{scope['profile']}，W0-T4）：缺佚书 missing_works 裁到 scope"
+            f"（{n_missing_src}→{len(missing_works)} 条）。")
+        notes.append(
+            f"scope 口径（{scope['profile']}）：书目 {totals['books']} 部"
+            f"（{'、'.join(b['book'] for b in books)}）；refs_ext 合计 "
+            f"{sum(len(b.get('refs_ext') or []) for b in books)} 条（站外互文存目）"
+            f"；缺佚书存目 {n_missing_src}→{len(missing_works)} 条（W0-T4）。")
     payload = {
         "meta": {
             "generated": esc.today(),
             "schema": SCHEMA_BOOKS,
             "totals": totals,
             "source": SOURCE,
-            "field_gaps": _books_field_gaps(legacy, extra_books),
-            "notes": _books_meta_notes(totals, sorted(lit), char_counts, legacy, extra_books),
+            "field_gaps": field_gaps,
+            "notes": notes,
             "snapshot": snapshot,
         },
-        "missing_works": legacy["wmeta"].get("missing_works") or [],
+        "missing_works": missing_works,
         "books": books,
     }
+    if scope is not None:
+        payload["meta"]["scope"] = scope["profile"]
     stats = {
         "legacy": legacy,
         "lit": sorted(lit),
@@ -462,7 +600,7 @@ def _books_meta_notes(totals, lit, char_counts, legacy, extra_books) -> list:
     return notes
 
 
-def _books_field_gaps(legacy, extra_books) -> list:
+def _books_field_gaps(legacy, extra_books, intro_missing=None, intro_exists=True) -> list:
     gaps = [
         "year/year_conf/era/era_conf/series/series_conf/leads/leads_conf：新管线暂无考订登记层，"
         "取 kb/作品元数据表.json（只读旧资产）",
@@ -472,7 +610,30 @@ def _books_field_gaps(legacy, extra_books) -> list:
     ]
     if extra_books:
         gaps.append(f"底本新增书 {extra_books} 缺作品元数据（year/era/series/leads 置空）")
+    # W2-B8：hook/summary 缺省口径显式声明（设计 §六：未完成者站点落占位话术，不空着也不硬编码）
+    if not intro_exists:
+        gaps.append(
+            "hook/summary：kb/校订/作品简介.tsv 不存在（W2-B8 简介未校定），全部书字段置空，"
+            "站点按设计落占位话术。")
+    elif intro_missing:
+        gaps.append(
+            f"hook/summary：{'、'.join(intro_missing)} 缺 status=校定 行，字段置空，"
+            "站点按设计落占位话术。")
     return gaps
+
+
+def _intro_notes(intro: dict, intro_missing: list, intro_unmatched: list) -> list:
+    """W2-B8：简介并入情况记 meta.notes（field_gaps 只记缺口，notes 记口径与规模）。"""
+    if not intro:
+        return []
+    merged = len(intro) - len(intro_unmatched)
+    notes = [
+        f"hook/summary：kb/校订/作品简介.tsv 校定行 {len(intro)} 条，并入 {merged} 部"
+        f"（W2-B8；钩子上限 {HOOK_MAX} 字，超长报错不截断；只述第一幕与人物关系的无剧透梗概）。"
+    ]
+    if intro_unmatched:
+        notes.append(f"简介 TSV 未匹配导出书目的行（不并入，请核对书名）：{intro_unmatched}。")
+    return notes
 
 
 # ---------------------------------------------------------------- chapters.json
@@ -491,8 +652,13 @@ def verb_density(counter: Counter) -> dict:
     return out
 
 
-def build_chapters(corpus: dict) -> tuple:
-    """chapters.json payload + 口径统计。"""
+def build_chapters(corpus: dict, scope=None) -> tuple:
+    """chapters.json payload + 口径统计。
+
+    W0-T3a（方案 §1.2）：scope 口径下仅留 in_scope 书目的回目/事件流；全量口径不变。
+    """
+    if scope is not None:
+        corpus = {b: v for b, v in corpus.items() if esc.in_scope(b, scope)}
     lit = lit_books(corpus)
     canon_map = load_registry_canon()
     payload = {}
@@ -556,6 +722,12 @@ def build_chapters(corpus: dict) -> tuple:
         }
 
     snapshot = _snapshot_block(corpus, lit, load_legacy_metadata())
+    field_gaps = _chapters_field_gaps(book_stats)
+    notes = _chapters_meta_notes(lit, book_stats)
+    if scope is not None:
+        field_gaps.append(
+            f"scope 口径（{scope['profile']}）：仅留 scope 内 {len(corpus)} 部书目的回目/事件流，"
+            "scope 外书目键不产出。")
     out = {"meta": {
         "generated": esc.today(),
         "schema": SCHEMA_CHAPTERS,
@@ -563,10 +735,12 @@ def build_chapters(corpus: dict) -> tuple:
         "note": ("回目取自章回版文件名（短句元数据）；已点亮书逐章事件流为 tagged 图谱事实"
                  "（A—动词—B 邻近对），不含摘录"),
         "source": SOURCE,
-        "field_gaps": _chapters_field_gaps(book_stats),
-        "notes": _chapters_meta_notes(lit, book_stats),
+        "field_gaps": field_gaps,
+        "notes": notes,
         "snapshot": snapshot,
     }}
+    if scope is not None:
+        out["meta"]["scope"] = scope["profile"]
     for book in sorted(corpus):
         out[book] = payload[book]
     return out, {"lit": lit, "book_stats": book_stats, "snapshot": snapshot}
@@ -635,7 +809,7 @@ def compare_books(payload: dict) -> list:
              f"新增书名 {sorted(set(nb) - set(ob)) or '无'}；缺失书名 {sorted(set(ob) - set(nb)) or '无'}。"]
     fields = ("no", "year", "year_conf", "era", "era_conf", "series", "series_conf",
               "leads", "leads_conf", "chapters", "chars", "kb_status",
-              "intertext_out", "intertext_in")
+              "intertext_out", "intertext_in", "hook", "summary")   # W2-B8 +hook/summary
     diffs: dict = defaultdict(list)
     for book in sorted(set(ob) & set(nb), key=lambda b: nb[b].get("no") or 0):
         for k in fields:
@@ -722,15 +896,27 @@ def run() -> int:
     if not CORPUS.exists():
         print(f"[EX-1] 底本目录不存在：{CORPUS}")
         return 2
+    # W0-T3a：--scope <profile> 裁剪口径（W0-T1 基础设施；不带 --scope = 全量口径，向后兼容）
+    profile = esc.scope_from_args()
+    scope = esc.load_scope(profile) if profile is not None else None
     corpus = discover_corpus()
+    if scope is not None:
+        corpus = {b: v for b, v in corpus.items() if esc.in_scope(b, scope)}
+        missing = [b for b in scope["books"] if b not in corpus]
+        if missing:
+            print(f"[EX-1] ⚠ scope {scope['profile']} 底本缺失书目：{'、'.join(missing)}（按现有底本导出）")
     char_counts = {book: corpus_char_count(book) for book in corpus}
-    books_payload, books_stats = build_books(corpus, char_counts)
-    chapters_payload, chapters_stats = build_chapters(corpus)
+    books_payload, books_stats = build_books(corpus, char_counts, scope=scope)
+    chapters_payload, chapters_stats = build_chapters(corpus, scope=scope)
 
-    print(f"[EX-1] 底本 {len(corpus)} 部 / {sum(len(v) for v in corpus.values())} 回；"
+    print(f"[EX-1] 底本 {len(corpus)} 部 / {sum(len(v) for v in corpus.values())} 回"
+          f"{'（scope=' + scope['profile'] + '）' if scope is not None else ''}；"
           f"已点亮 {len(chapters_stats['lit'])} 部：{chapters_stats['lit']}")
     print(f"[EX-1] books：{books_stats['intertext_edges']}；"
           f"字数实测 {books_payload['meta']['totals']['chars']}（旧站 17004547）")
+    n_intro = sum(1 for b in books_payload["books"] if b["hook"] and b["summary"])
+    print(f"[EX-1] 简介（W2-B8）：{n_intro}/{len(books_payload['books'])} 部并入 hook/summary"
+          f"（{INTRO_TSV}）")
 
     d_books = esc.finish("books.json", books_payload, exporter=EXPORTER,
                          notes=render_notes(books_payload, "books"))

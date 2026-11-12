@@ -1,19 +1,54 @@
 {
  "meta": {
-  "generated": "2026-11-02",
+  "generated": "2026-11-12",
   "schema": "atlas-state-v1",
-  "note": "leaders（各派当前掌门）待工具 B 门派世系表接入后填充；era 来自作品元数据表"
+  "note": "leaders（各派当前掌门）待工具 B 门派世系表接入后填充；era 来自作品元数据表（W0-T4 起由 EX-7 export_site_gazetteer_universe 接管产出）",
+  "scope": "tianshan-demo",
+  "books": [
+   "散花女侠",
+   "联剑风云录",
+   "白发魔女传",
+   "塞外奇侠传",
+   "七剑下天山",
+   "冰魄寒光剑",
+   "江湖三女侠"
+  ],
+  "field_gaps": [
+   "scope 口径（tianshan-demo）：books = scope 书目（演示顺序，books[0]=散花女侠）；persons/places/chaps 随 atlas/<书>.json 切片（EX-7 仅产 scope 书）。"
+  ]
  },
  "books": [
   {
-   "slug": "七剑下天山",
-   "title": "七剑下天山",
-   "chapters": 30,
-   "era": "清·康熙",
+   "slug": "散花女侠",
+   "title": "散花女侠",
+   "chapters": 36,
+   "era": "明·景泰后",
    "era_conf": "ok",
    "leads": [
-    "凌未风",
-    "易兰珠"
+    "于承珠",
+    "铁镜心"
+   ]
+  },
+  {
+   "slug": "联剑风云录",
+   "title": "联剑风云录",
+   "chapters": 40,
+   "era": "明·成化",
+   "era_conf": "ok",
+   "leads": [
+    "张玉虎",
+    "龙剑虹"
+   ]
+  },
+  {
+   "slug": "白发魔女传",
+   "title": "白发魔女传",
+   "chapters": 32,
+   "era": "明末·万历—崇祯（001回梃击案=万历四十三年）",
+   "era_conf": "ok",
+   "leads": [
+    "卓一航",
+    "练霓裳"
    ]
   },
   {
@@ -29,6 +64,27 @@
    ]
   },
   {
+   "slug": "七剑下天山",
+   "title": "七剑下天山",
+   "chapters": 30,
+   "era": "清·康熙",
+   "era_conf": "ok",
+   "leads": [
+    "凌未风",
+    "易兰珠"
+   ]
+  },
+  {
+   "slug": "冰魄寒光剑",
+   "title": "冰魄寒光剑",
+   "chapters": 12,
+   "era": "清·康熙—雍正间（待考）",
+   "era_conf": "todo",
+   "leads": [
+    "桂华生"
+   ]
+  },
+  {
    "slug": "江湖三女侠",
    "title": "江湖三女侠",
    "chapters": 48,
@@ -38,17 +94,6 @@
     "吕四娘",
     "冯瑛",
     "冯琳"
-   ]
-  },
-  {
-   "slug": "白发魔女传",
-   "title": "白发魔女传",
-   "chapters": 32,
-   "era": "明末·万历—崇祯（001回梃击案=万历四十三年）",
-   "era_conf": "ok",
-   "leads": [
-    "卓一航",
-    "练霓裳"
    ]
   }
  ]

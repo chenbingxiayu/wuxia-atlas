@@ -1,8 +1,8 @@
 {
  "schema": "event-v1",
  "book": "塞外奇侠传",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 12:02:39",
+ "generated": "2026-11-09",
+ "generated_at": "2026-11-09 18:32:04",
  "tool": "event_extractor v0.1 (2026-11-05, EX-5/D03)",
  "spec": {
   "skill": "skills/SKILL_04a_事件识别.md",
@@ -61,9 +61,9 @@
   },
   "by_outcome": {
    "平": 6,
-   "未决": 123,
-   "未知": 372,
-   "胜": 29,
+   "未决": 120,
+   "未知": 377,
+   "胜": 27,
    "负": 1
   },
   "by_domain": {
@@ -75,8 +75,8 @@
    "▣": 1
   },
   "by_confidence": {
-   "low": 955,
-   "high": 296,
+   "low": 944,
+   "high": 307,
    "medium": 33
   },
   "by_narrative_mode": {
@@ -89,7 +89,7 @@
    "推导": 1
   },
   "time_point_hit": 1037,
-  "relation_filled": 299,
+  "relation_filled": 311,
   "fence_skipped_tokens": 2,
   "in_quote": 181,
   "zero_types": [
@@ -97,13 +97,13 @@
    "T10"
   ],
   "by_gate": {
-   "excluded": 228,
-   "review": 759,
-   "ok": 296
+   "excluded": 227,
+   "review": 749,
+   "ok": 307
   },
   "gate_reasons": {
-   "R1 无参与方": 228,
-   "R2 单方参与者（降级）": 726,
+   "R1 无参与方": 227,
+   "R2 单方参与者（降级）": 716,
    "R4 对白内（视角/转述，事实待核）": 33
   },
   "t13_containers": 1,
@@ -134,18 +134,18 @@
   "verbs": 1283,
   "fence": 2,
   "in_quote": 181,
-  "no_participants": 228,
-  "relation_filled": 299,
+  "no_participants": 227,
+  "relation_filled": 311,
   "time_hit": 1037,
   "time_points": 185,
   "by_gate": {
-   "excluded": 228,
-   "review": 759,
-   "ok": 296
+   "excluded": 227,
+   "review": 749,
+   "ok": 307
   },
   "gate_reasons": {
-   "R1 无参与方": 228,
-   "R2 单方参与者（降级）": 726,
+   "R1 无参与方": 227,
+   "R2 单方参与者（降级）": 716,
    "R4 对白内（视角/转述，事实待核）": 33
   },
   "t13": {
@@ -19583,9 +19583,7 @@
     "古堡"
    ],
    "related_concepts": [],
-   "related_relations": [
-    "N5:交手@005:017"
-   ],
+   "related_relations": [],
    "confidence": "high",
    "review_status": "候选",
    "evidence": [
@@ -19621,7 +19619,7 @@
     }
    ],
    "subject": "楚昭南",
-   "object": "楚昭南",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -19631,7 +19629,7 @@
     },
     {
      "role": "受者",
-     "name": "楚昭南",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -19682,7 +19680,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 005:017 行踪迁移（行程迁移）：楚昭南 → 楚昭南",
+   "description": "塞外奇侠传 005:017 行踪迁移（行程迁移）：楚昭南 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -19706,7 +19704,7 @@
     }
    ],
    "subject": "押不庐",
-   "object": "楚昭南",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -19716,7 +19714,7 @@
     },
     {
      "role": "受者",
-     "name": "楚昭南",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -19767,7 +19765,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 005:017 行踪迁移（行程迁移）：押不庐 → 楚昭南",
+   "description": "塞外奇侠传 005:017 行踪迁移（行程迁移）：押不庐 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -19791,7 +19789,7 @@
     }
    ],
    "subject": "押不庐",
-   "object": "楚昭南",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -19801,7 +19799,7 @@
     },
     {
      "role": "受者",
-     "name": "楚昭南",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -19852,7 +19850,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 005:017 行踪迁移（行程迁移）：押不庐 → 楚昭南",
+   "description": "塞外奇侠传 005:017 行踪迁移（行程迁移）：押不庐 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -19876,7 +19874,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "楚昭南",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -19886,7 +19884,7 @@
     },
     {
      "role": "受者",
-     "name": "楚昭南",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -19937,7 +19935,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 005:017 行踪迁移（行程迁移）：飞红巾 → 楚昭南",
+   "description": "塞外奇侠传 005:017 行踪迁移（行程迁移）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -29628,18 +29626,18 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
-   "object": "德卡",
+   "subject": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "德卡",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -29687,7 +29685,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：哈玛雅 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -29710,18 +29708,18 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
-   "object": "德卡",
+   "subject": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "德卡",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -29769,7 +29767,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 夺宝争谱（物件）：哈玛雅 → 德卡",
+   "description": "塞外奇侠传 009:022 夺宝争谱（物件）：德卡 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -29792,18 +29790,18 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
-   "object": "德卡",
+   "subject": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "德卡",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -29851,7 +29849,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：哈玛雅 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -29875,7 +29873,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -29885,13 +29883,13 @@
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -29933,7 +29931,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -29957,7 +29955,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -29967,14 +29965,14 @@
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "胜",
-   "outcome_ref": "飞红巾",
-   "outcome_basis": "触发词胜负投影（动作含明确结果义，weight 0.8）",
-   "outcome_weight": 0.8,
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "塞外奇侠传",
@@ -30005,7 +30003,7 @@
     "N5:交手@009:022"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "009:022",
@@ -30015,7 +30013,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -30038,13 +30036,13 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
+   "subject": "德卡",
    "object": "德卡",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "德卡",
      "entity_type": "@"
     },
     {
@@ -30053,9 +30051,9 @@
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -30097,7 +30095,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：哈玛雅 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 德卡",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -30121,7 +30119,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -30131,13 +30129,13 @@
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -30179,7 +30177,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -30203,7 +30201,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -30213,13 +30211,13 @@
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -30261,7 +30259,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -30285,7 +30283,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -30295,7 +30293,89 @@
     },
     {
      "role": "受者",
+     "name": "飞红巾",
+     "entity_type": "@"
+    }
+   ],
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
+   "manner": "",
+   "condition_tags": [],
+   "book": "塞外奇侠传",
+   "chapter": 9,
+   "pn": 22,
+   "loc": "009:022",
+   "anchor": "saiwai#pn-r9.22",
+   "time_slot": null,
+   "tp_id": null,
+   "narrative_mode": "正常叙事",
+   "narrative_line": "",
+   "source_type": "叙述",
+   "veracity": "叙述",
+   "occurrence_status": "已发生",
+   "completion_status": "完成",
+   "related_skills": [
+    "剑术",
+    "拳脚",
+    "轻功"
+   ],
+   "related_objects": [],
+   "related_orgs": [],
+   "related_places": [],
+   "related_concepts": [
+    "内家重手法"
+   ],
+   "related_relations": [
+    "N5:交手@009:022"
+   ],
+   "confidence": "high",
+   "review_status": "候选",
+   "evidence": [
+    {
+     "loc": "009:022",
+     "para_no": 22,
+     "token": "⟦⊞推⟧",
+     "quote_len": 0,
+     "quote_published": false
+    }
+   ],
+   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 飞红巾",
+   "spec_version": "D03@0.3-draft / 04a",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
+   "seq": 374
+  },
+  {
+   "event_id": "009.022.10",
+   "type": "T01",
+   "type_label": "比武较技",
+   "subtype": "交手",
+   "name": "交手",
+   "verb_domain": "⊞",
+   "verb_domain_label": "战斗交锋",
+   "anchor_verbs": [
+    {
+     "verb": "跃上",
+     "domain": "⊞",
+     "pos": 407,
+     "in_quote": false
+    }
+   ],
+   "subject": "德卡",
+   "object": "飞红巾",
+   "role_mode": "plain",
+   "participants": [
+    {
+     "role": "施者",
      "name": "德卡",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -30338,94 +30418,12 @@
     {
      "loc": "009:022",
      "para_no": 22,
-     "token": "⟦⊞推⟧",
-     "quote_len": 0,
-     "quote_published": false
-    }
-   ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 德卡",
-   "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": true,
-   "gate": "ok",
-   "gate_reason": "",
-   "seq": 374
-  },
-  {
-   "event_id": "009.022.10",
-   "type": "T01",
-   "type_label": "比武较技",
-   "subtype": "交手",
-   "name": "交手",
-   "verb_domain": "⊞",
-   "verb_domain_label": "战斗交锋",
-   "anchor_verbs": [
-    {
-     "verb": "跃上",
-     "domain": "⊞",
-     "pos": 407,
-     "in_quote": false
-    }
-   ],
-   "subject": "德卡",
-   "object": "德卡",
-   "role_mode": "plain",
-   "participants": [
-    {
-     "role": "施者",
-     "name": "德卡",
-     "entity_type": "@"
-    },
-    {
-     "role": "受者",
-     "name": "德卡",
-     "entity_type": "@"
-    }
-   ],
-   "outcome": "未知",
-   "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
-   "outcome_weight": null,
-   "manner": "",
-   "condition_tags": [],
-   "book": "塞外奇侠传",
-   "chapter": 9,
-   "pn": 22,
-   "loc": "009:022",
-   "anchor": "saiwai#pn-r9.22",
-   "time_slot": null,
-   "tp_id": null,
-   "narrative_mode": "正常叙事",
-   "narrative_line": "",
-   "source_type": "叙述",
-   "veracity": "叙述",
-   "occurrence_status": "已发生",
-   "completion_status": "完成",
-   "related_skills": [
-    "剑术",
-    "拳脚",
-    "轻功"
-   ],
-   "related_objects": [],
-   "related_orgs": [],
-   "related_places": [],
-   "related_concepts": [
-    "内家重手法"
-   ],
-   "related_relations": [
-    "N5:交手@009:022"
-   ],
-   "confidence": "high",
-   "review_status": "候选",
-   "evidence": [
-    {
-     "loc": "009:022",
-     "para_no": 22,
      "token": "⟦⊞跃上⟧",
      "quote_len": 0,
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -30449,7 +30447,7 @@
     }
    ],
    "subject": "德卡",
-   "object": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -30459,13 +30457,13 @@
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未知",
+   "outcome": "未决",
    "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
+   "outcome_basis": "双方在场但无胜负词证据",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -30507,7 +30505,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -30531,7 +30529,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -30541,14 +30539,14 @@
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "胜",
-   "outcome_ref": "飞红巾",
-   "outcome_basis": "触发词胜负投影（动作含明确结果义，weight 0.8）",
-   "outcome_weight": 0.8,
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "塞外奇侠传",
@@ -30579,7 +30577,7 @@
     "N5:交手@009:022"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "009:022",
@@ -30589,7 +30587,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -30612,13 +30610,13 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
+   "subject": "德卡",
    "object": "德卡",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "德卡",
      "entity_type": "@"
     },
     {
@@ -30671,7 +30669,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 行踪迁移（行程迁移）：哈玛雅 → 德卡",
+   "description": "塞外奇侠传 009:022 行踪迁移（行程迁移）：德卡 → 德卡",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -30695,7 +30693,7 @@
     }
    ],
    "subject": "德卡",
-   "object": "德卡",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -30705,13 +30703,13 @@
     },
     {
      "role": "受者",
-     "name": "德卡",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未知",
+   "outcome": "未决",
    "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
+   "outcome_basis": "双方在场但无胜负词证据",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -30753,7 +30751,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 德卡",
+   "description": "塞外奇侠传 009:022 比武较技（交手）：德卡 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72127,7 +72125,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -72137,7 +72135,7 @@
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -72207,7 +72205,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 行踪迁移（行程迁移）：飞红巾 → 杨云骢",
+   "description": "塞外奇侠传 020:001 行踪迁移（行程迁移）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72230,18 +72228,18 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
-   "object": "杨云骢",
+   "subject": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -72311,7 +72309,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 行踪迁移（行程迁移）：哈玛雅 → 杨云骢",
+   "description": "塞外奇侠传 020:001 行踪迁移（行程迁移）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72335,7 +72333,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -72345,13 +72343,13 @@
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "切磋",
    "condition_tags": [
@@ -72415,7 +72413,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72438,13 +72436,13 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
+   "subject": "杨云骢",
    "object": "飞红巾",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     },
     {
@@ -72519,7 +72517,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：哈玛雅 → 飞红巾",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72542,13 +72540,13 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
+   "subject": "杨云骢",
    "object": "飞红巾",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     },
     {
@@ -72623,7 +72621,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 夺宝争谱（夺取/转移）：哈玛雅 → 飞红巾",
+   "description": "塞外奇侠传 020:001 夺宝争谱（夺取/转移）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72646,18 +72644,18 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
-   "object": "杨云骢",
+   "subject": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -72727,7 +72725,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：哈玛雅 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72750,18 +72748,18 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
-   "object": "杨云骢",
+   "subject": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -72831,7 +72829,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：哈玛雅 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72855,7 +72853,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -72865,13 +72863,13 @@
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "切磋",
    "condition_tags": [
@@ -72935,7 +72933,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -72958,13 +72956,13 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
+   "subject": "杨云骢",
    "object": "飞红巾",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     },
     {
@@ -73039,7 +73037,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：哈玛雅 → 飞红巾",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -73063,7 +73061,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -73073,13 +73071,13 @@
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "切磋",
    "condition_tags": [
@@ -73143,7 +73141,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -73167,7 +73165,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "ba",
    "participants": [
     {
@@ -73177,13 +73175,13 @@
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "切磋",
    "condition_tags": [
@@ -73247,7 +73245,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -73270,13 +73268,13 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
+   "subject": "杨云骢",
    "object": "飞红巾",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     },
     {
@@ -73351,7 +73349,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：哈玛雅 → 飞红巾",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -73374,18 +73372,18 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
-   "object": "杨云骢",
+   "subject": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -73455,7 +73453,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：哈玛雅 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -73479,7 +73477,7 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "杨云骢",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -73489,111 +73487,7 @@
     },
     {
      "role": "受者",
-     "name": "杨云骢",
-     "entity_type": "@"
-    }
-   ],
-   "outcome": "未知",
-   "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
-   "outcome_weight": null,
-   "manner": "切磋",
-   "condition_tags": [
-    "切磋"
-   ],
-   "book": "塞外奇侠传",
-   "chapter": 20,
-   "pn": 1,
-   "loc": "020:001",
-   "anchor": "saiwai#pn-r20.1",
-   "time_slot": {
-    "tp_id": "saiwai-T125",
-    "display": "五年前",
-    "time_type": "时点",
-    "confidence": "medium",
-    "year_ce": null,
-    "year_range": null
-   },
-   "tp_id": "saiwai-T125",
-   "narrative_mode": "正常叙事",
-   "narrative_line": null,
-   "source_type": "叙述",
-   "veracity": "叙述",
-   "occurrence_status": "已发生",
-   "completion_status": "完成",
-   "related_skills": [
-    "轻功",
-    "细胸巧翻云",
-    "怪蟒翻身"
-   ],
-   "related_objects": [
-    "剑",
-    "大斫刀",
-    "短剑",
-    "大砍刀",
-    "长鞭",
-    "宝剑"
-   ],
-   "related_orgs": [],
-   "related_places": [
-    "城堡",
-    "民房",
-    "府衙",
-    "屋脊"
-   ],
-   "related_concepts": [
-    "穴道",
-    "五年前"
-   ],
-   "related_relations": [
-    "N5:交手@020:001"
-   ],
-   "confidence": "high",
-   "review_status": "候选",
-   "evidence": [
-    {
-     "loc": "020:001",
-     "para_no": 1,
-     "token": "⟦⊞点⟧",
-     "quote_len": 0,
-     "quote_published": false
-    }
-   ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 杨云骢",
-   "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": true,
-   "gate": "ok",
-   "gate_reason": "",
-   "seq": 892
-  },
-  {
-   "event_id": "020.001.15",
-   "type": "T01",
-   "type_label": "比武较技",
-   "subtype": "交手",
-   "name": "交手",
-   "verb_domain": "⊞",
-   "verb_domain_label": "战斗交锋",
-   "anchor_verbs": [
-    {
-     "verb": "刺",
-     "domain": "⊞",
-     "pos": 467,
-     "in_quote": false
-    }
-   ],
-   "subject": "飞红巾",
-   "object": "杨云骢",
-   "role_mode": "plain",
-   "participants": [
-    {
-     "role": "施者",
      "name": "飞红巾",
-     "entity_type": "@"
-    },
-    {
-     "role": "受者",
-     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -73658,20 +73552,20 @@
     {
      "loc": "020:001",
      "para_no": 1,
-     "token": "⟦⊞刺⟧",
+     "token": "⟦⊞点⟧",
      "quote_len": 0,
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
    "gate_reason": "",
-   "seq": 893
+   "seq": 892
   },
   {
-   "event_id": "020.001.16",
+   "event_id": "020.001.15",
    "type": "T01",
    "type_label": "比武较技",
    "subtype": "交手",
@@ -73680,24 +73574,24 @@
    "verb_domain_label": "战斗交锋",
    "anchor_verbs": [
     {
-     "verb": "托",
+     "verb": "刺",
      "domain": "⊞",
-     "pos": 481,
+     "pos": 467,
      "in_quote": false
     }
    ],
-   "subject": "杨云骢",
-   "object": "杨云骢",
+   "subject": "飞红巾",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "杨云骢",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -73762,12 +73656,116 @@
     {
      "loc": "020:001",
      "para_no": 1,
+     "token": "⟦⊞刺⟧",
+     "quote_len": 0,
+     "quote_published": false
+    }
+   ],
+   "description": "塞外奇侠传 020:001 比武较技（交手）：飞红巾 → 飞红巾",
+   "spec_version": "D03@0.3-draft / 04a",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
+   "seq": 893
+  },
+  {
+   "event_id": "020.001.16",
+   "type": "T01",
+   "type_label": "比武较技",
+   "subtype": "交手",
+   "name": "交手",
+   "verb_domain": "⊞",
+   "verb_domain_label": "战斗交锋",
+   "anchor_verbs": [
+    {
+     "verb": "托",
+     "domain": "⊞",
+     "pos": 481,
+     "in_quote": false
+    }
+   ],
+   "subject": "杨云骢",
+   "object": "飞红巾",
+   "role_mode": "plain",
+   "participants": [
+    {
+     "role": "施者",
+     "name": "杨云骢",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "飞红巾",
+     "entity_type": "@"
+    }
+   ],
+   "outcome": "未决",
+   "outcome_ref": "",
+   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_weight": null,
+   "manner": "切磋",
+   "condition_tags": [
+    "切磋"
+   ],
+   "book": "塞外奇侠传",
+   "chapter": 20,
+   "pn": 1,
+   "loc": "020:001",
+   "anchor": "saiwai#pn-r20.1",
+   "time_slot": {
+    "tp_id": "saiwai-T125",
+    "display": "五年前",
+    "time_type": "时点",
+    "confidence": "medium",
+    "year_ce": null,
+    "year_range": null
+   },
+   "tp_id": "saiwai-T125",
+   "narrative_mode": "正常叙事",
+   "narrative_line": null,
+   "source_type": "叙述",
+   "veracity": "叙述",
+   "occurrence_status": "已发生",
+   "completion_status": "完成",
+   "related_skills": [
+    "轻功",
+    "细胸巧翻云",
+    "怪蟒翻身"
+   ],
+   "related_objects": [
+    "剑",
+    "大斫刀",
+    "短剑",
+    "大砍刀",
+    "长鞭",
+    "宝剑"
+   ],
+   "related_orgs": [],
+   "related_places": [
+    "城堡",
+    "民房",
+    "府衙",
+    "屋脊"
+   ],
+   "related_concepts": [
+    "穴道",
+    "五年前"
+   ],
+   "related_relations": [
+    "N5:交手@020:001"
+   ],
+   "confidence": "high",
+   "review_status": "候选",
+   "evidence": [
+    {
+     "loc": "020:001",
+     "para_no": 1,
      "token": "⟦⊞托⟧",
      "quote_len": 0,
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 杨云骢",
+   "description": "塞外奇侠传 020:001 比武较技（交手）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -74447,7 +74445,7 @@
     }
    ],
    "subject": "哈合图",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -74457,7 +74455,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -74525,7 +74523,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 夺宝争谱（夺取/转移）：哈合图 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 夺宝争谱（夺取/转移）：哈合图 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -74549,7 +74547,7 @@
     }
    ],
    "subject": "哈合图",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -74559,7 +74557,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -74627,7 +74625,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：哈合图 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：哈合图 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -74651,7 +74649,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -74661,7 +74659,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -74729,7 +74727,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：飞红巾 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：飞红巾 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -74753,7 +74751,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -74763,7 +74761,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -74831,7 +74829,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：飞红巾 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：飞红巾 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -74855,7 +74853,7 @@
     }
    ],
    "subject": "哈合图",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -74865,7 +74863,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -74933,7 +74931,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：哈合图 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：哈合图 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -74957,7 +74955,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -74967,7 +74965,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -75035,7 +75033,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 比武较技（交手）：飞红巾 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 比武较技（交手）：飞红巾 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -75059,7 +75057,7 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -75069,13 +75067,13 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -75137,7 +75135,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 比武较技（交手）：杨云骢 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 比武较技（交手）：杨云骢 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -75263,7 +75261,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -75273,7 +75271,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -75341,7 +75339,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 比武较技（交手）：飞红巾 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 比武较技（交手）：飞红巾 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -75467,7 +75465,7 @@
     }
    ],
    "subject": "哈合图",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -75477,7 +75475,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -75545,7 +75543,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 生死杀伐（杀伐）：哈合图 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 生死杀伐（杀伐）：哈合图 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -75569,7 +75567,7 @@
     }
    ],
    "subject": "哈合图",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -75579,7 +75577,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -75647,7 +75645,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 生死杀伐（杀伐）：哈合图 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 生死杀伐（杀伐）：哈合图 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -75671,7 +75669,7 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -75681,13 +75679,13 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -75749,7 +75747,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 比武较技（交手）：杨云骢 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 比武较技（交手）：杨云骢 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -75773,7 +75771,7 @@
     }
    ],
    "subject": "哈合图",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -75783,7 +75781,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -75851,7 +75849,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 比武较技（交手）：哈合图 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 比武较技（交手）：哈合图 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -75875,7 +75873,7 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -75885,13 +75883,13 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -75953,7 +75951,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 比武较技（交手）：杨云骢 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 比武较技（交手）：杨云骢 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -75977,7 +75975,7 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -75987,13 +75985,13 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -76055,7 +76053,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 比武较技（交手）：杨云骢 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 比武较技（交手）：杨云骢 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -76079,7 +76077,7 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "哈玛雅",
+   "object": "杨云骢",
    "role_mode": "plain",
    "participants": [
     {
@@ -76089,7 +76087,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "杨云骢",
      "entity_type": "@"
     }
    ],
@@ -76157,7 +76155,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：杨云骢 → 哈玛雅",
+   "description": "塞外奇侠传 020:003 行踪迁移（行程迁移）：杨云骢 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -76181,12 +76179,17 @@
     }
    ],
    "subject": "哈合图",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "哈合图",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "楚昭南",
      "entity_type": "@"
     }
    ],
@@ -76230,8 +76233,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "",
    "evidence": [
     {
@@ -76242,11 +76247,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 行踪迁移（行程迁移）：哈合图 → —",
+   "description": "塞外奇侠传 020:004 行踪迁移（行程迁移）：哈合图 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 919
   },
   {
@@ -76266,11 +76271,16 @@
     }
    ],
    "subject": "楚昭南",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
+     "name": "楚昭南",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
      "name": "楚昭南",
      "entity_type": "@"
     }
@@ -76315,8 +76325,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "候选",
    "evidence": [
     {
@@ -76327,11 +76339,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 比武较技（交手）：楚昭南 → —",
+   "description": "塞外奇侠传 020:004 比武较技（交手）：楚昭南 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 920
   },
   {
@@ -76351,12 +76363,17 @@
     }
    ],
    "subject": "哈玛雅",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "哈玛雅",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "楚昭南",
      "entity_type": "@"
     }
    ],
@@ -76400,8 +76417,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "",
    "evidence": [
     {
@@ -76412,11 +76431,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 夺宝争谱（夺取/转移）：哈玛雅 → —",
+   "description": "塞外奇侠传 020:004 夺宝争谱（夺取/转移）：哈玛雅 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 921
   },
   {
@@ -76436,18 +76455,23 @@
     }
    ],
    "subject": "哈玛雅",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "哈玛雅",
      "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "楚昭南",
+     "entity_type": "@"
     }
    ],
-   "outcome": "未知",
+   "outcome": "未决",
    "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
+   "outcome_basis": "双方在场但无胜负词证据",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -76485,8 +76509,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "候选",
    "evidence": [
     {
@@ -76497,11 +76523,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 比武较技（交手）：哈玛雅 → —",
+   "description": "塞外奇侠传 020:004 比武较技（交手）：哈玛雅 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 922
   },
   {
@@ -76521,11 +76547,16 @@
     }
    ],
    "subject": "楚昭南",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
+     "name": "楚昭南",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
      "name": "楚昭南",
      "entity_type": "@"
     }
@@ -76570,8 +76601,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "候选",
    "evidence": [
     {
@@ -76582,11 +76615,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 比武较技（交手）：楚昭南 → —",
+   "description": "塞外奇侠传 020:004 比武较技（交手）：楚昭南 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 923
   },
   {
@@ -76606,18 +76639,23 @@
     }
    ],
    "subject": "天蒙禅师",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "天蒙禅师",
      "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "楚昭南",
+     "entity_type": "@"
     }
    ],
-   "outcome": "未知",
+   "outcome": "未决",
    "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
+   "outcome_basis": "双方在场但无胜负词证据",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -76655,8 +76693,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "候选",
    "evidence": [
     {
@@ -76667,11 +76707,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 比武较技（交手）：天蒙禅师 → —",
+   "description": "塞外奇侠传 020:004 比武较技（交手）：天蒙禅师 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 924
   },
   {
@@ -76781,18 +76821,23 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "杨云骢",
      "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "楚昭南",
+     "entity_type": "@"
     }
    ],
-   "outcome": "未知",
+   "outcome": "未决",
    "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
+   "outcome_basis": "双方在场但无胜负词证据",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -76830,8 +76875,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "候选",
    "evidence": [
     {
@@ -76842,11 +76889,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 比武较技（交手）：杨云骢 → —",
+   "description": "塞外奇侠传 020:004 比武较技（交手）：杨云骢 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 926
   },
   {
@@ -76866,11 +76913,16 @@
     }
    ],
    "subject": "楚昭南",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
+     "name": "楚昭南",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
      "name": "楚昭南",
      "entity_type": "@"
     }
@@ -76915,8 +76967,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "候选",
    "evidence": [
     {
@@ -76927,11 +76981,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 比武较技（交手）：楚昭南 → —",
+   "description": "塞外奇侠传 020:004 比武较技（交手）：楚昭南 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 927
   },
   {
@@ -76951,18 +77005,23 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "",
+   "object": "楚昭南",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "杨云骢",
      "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "楚昭南",
+     "entity_type": "@"
     }
    ],
-   "outcome": "未知",
+   "outcome": "未决",
    "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
+   "outcome_basis": "双方在场但无胜负词证据",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -77000,8 +77059,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "候选",
    "evidence": [
     {
@@ -77012,11 +77073,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 比武较技（交手）：杨云骢 → —",
+   "description": "塞外奇侠传 020:004 比武较技（交手）：杨云骢 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 928
   },
   {
@@ -77035,19 +77096,24 @@
      "in_quote": false
     }
    ],
-   "subject": "",
+   "subject": "哈玛雅",
    "object": "杨云骢",
    "role_mode": "passive",
    "participants": [
+    {
+     "role": "施者",
+     "name": "哈玛雅",
+     "entity_type": "@"
+    },
     {
      "role": "受者",
      "name": "杨云骢",
      "entity_type": "@"
     }
    ],
-   "outcome": "未知",
+   "outcome": "未决",
    "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
+   "outcome_basis": "双方在场但无胜负词证据",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -77085,8 +77151,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "候选",
    "evidence": [
     {
@@ -77097,11 +77165,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 比武较技（交手）：— → 杨云骢",
+   "description": "塞外奇侠传 020:004 比武较技（交手）：哈玛雅 → 杨云骢",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 929
   },
   {
@@ -77120,10 +77188,21 @@
      "in_quote": false
     }
    ],
-   "subject": "",
-   "object": "",
+   "subject": "哈玛雅",
+   "object": "楚昭南",
    "role_mode": "plain",
-   "participants": [],
+   "participants": [
+    {
+     "role": "施者",
+     "name": "哈玛雅",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "楚昭南",
+     "entity_type": "@"
+    }
+   ],
    "outcome": null,
    "outcome_ref": "",
    "outcome_basis": "",
@@ -77164,8 +77243,10 @@
     "三里穴",
     "十三四岁"
    ],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@020:004"
+   ],
+   "confidence": "high",
    "review_status": "",
    "evidence": [
     {
@@ -77176,11 +77257,11 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 020:004 行踪迁移（行程迁移）：— → —",
+   "description": "塞外奇侠传 020:004 行踪迁移（行程迁移）：哈玛雅 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "excluded",
-   "gate_reason": "R1 无参与方",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 930
   },
   {
@@ -83603,13 +83684,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "练霓裳",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -83677,7 +83758,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 022:007 比武较技（交手）：黄叶 → 练霓裳",
+   "description": "塞外奇侠传 022:007 比武较技（交手）：黄叶三哥 → 练霓裳",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -88556,7 +88637,7 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "王大须子",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -88566,7 +88647,7 @@
     },
     {
      "role": "受者",
-     "name": "王大须子",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -88617,7 +88698,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 024:004 行踪迁移（行程迁移）：杨云骢 → 王大须子",
+   "description": "塞外奇侠传 024:004 行踪迁移（行程迁移）：杨云骢 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -88641,7 +88722,7 @@
     }
    ],
    "subject": "纳兰明慧",
-   "object": "王大须子",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -88651,7 +88732,7 @@
     },
     {
      "role": "受者",
-     "name": "王大须子",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -88702,7 +88783,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 024:004 比武较技（交手）：纳兰明慧 → 王大须子",
+   "description": "塞外奇侠传 024:004 比武较技（交手）：纳兰明慧 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -88726,7 +88807,7 @@
     }
    ],
    "subject": "纳兰明慧",
-   "object": "王大须子",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -88736,7 +88817,7 @@
     },
     {
      "role": "受者",
-     "name": "王大须子",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -88787,7 +88868,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 024:004 行踪迁移（行程迁移）：纳兰明慧 → 王大须子",
+   "description": "塞外奇侠传 024:004 行踪迁移（行程迁移）：纳兰明慧 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -88811,7 +88892,7 @@
     }
    ],
    "subject": "纳兰明慧",
-   "object": "王大须子",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -88821,7 +88902,7 @@
     },
     {
      "role": "受者",
-     "name": "王大须子",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -88872,7 +88953,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 024:004 比武较技（交手）：纳兰明慧 → 王大须子",
+   "description": "塞外奇侠传 024:004 比武较技（交手）：纳兰明慧 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -88895,13 +88976,13 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
+   "subject": "王大须子",
    "object": "飞红巾",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "王大须子",
      "entity_type": "@"
     },
     {
@@ -88957,7 +89038,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 024:004 比武较技（交手）：哈玛雅 → 飞红巾",
+   "description": "塞外奇侠传 024:004 比武较技（交手）：王大须子 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -88980,13 +89061,13 @@
      "in_quote": false
     }
    ],
-   "subject": "哈玛雅",
+   "subject": "王大须子",
    "object": "飞红巾",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "哈玛雅",
+     "name": "王大须子",
      "entity_type": "@"
     },
     {
@@ -89042,7 +89123,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 024:004 行踪迁移（行程迁移）：哈玛雅 → 飞红巾",
+   "description": "塞外奇侠传 024:004 行踪迁移（行程迁移）：王大须子 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -89066,7 +89147,7 @@
     }
    ],
    "subject": "王大须子",
-   "object": "王大须子",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -89076,13 +89157,13 @@
     },
     {
      "role": "受者",
-     "name": "王大须子",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未知",
+   "outcome": "未决",
    "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
+   "outcome_basis": "双方在场但无胜负词证据",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -89127,7 +89208,7 @@
      "quote_published": false
     }
    ],
-   "description": "塞外奇侠传 024:004 比武较技（交手）：王大须子 → 王大须子",
+   "description": "塞外奇侠传 024:004 比武较技（交手）：王大须子 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",

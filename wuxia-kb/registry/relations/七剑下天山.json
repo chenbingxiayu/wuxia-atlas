@@ -1,7 +1,7 @@
 {
  "book": "七剑下天山",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 08:44:31",
+ "generated": "2026-11-07",
+ "generated_at": "2026-11-07 03:43:15",
  "script": "scripts/relation_validator.py",
  "script_version": "0.1",
  "spec_version": "0.3-draft",
@@ -15,10 +15,10 @@
   "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
  ],
  "snapshot": {
-  "exported_at": "2026-11-06 08:44:31",
+  "exported_at": "2026-11-07 03:43:15",
   "tagged_chapters": 31,
   "concordance_generated": "2026-11-05T22:00:10+08:00",
-  "registry_entities": 738,
+  "registry_entities": 2926,
   "corpus_chapters": 31,
   "paragraphs": 2338,
   "verbs": 6167,
@@ -1976,6 +1976,54 @@
    "id": "七剑下天山#R0027"
   },
   {
+   "subject": "天蒙",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "辛龙子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:51",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:52",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 3,
+   "loc": "025:51",
+   "chapter": 25,
+   "para": 51,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "七剑下天山"
+   ],
+   "locs": [
+    "025:51",
+    "025:51",
+    "025:52"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "七剑下天山#R0028"
+  },
+  {
    "subject": "尚云亭",
    "subject_type": "@",
    "predicate": "交手",
@@ -2021,7 +2069,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0028"
+   "id": "七剑下天山#R0029"
   },
   {
    "subject": "张华昭",
@@ -2066,54 +2114,6 @@
     "015:11",
     "015:16",
     "015:23"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "七剑下天山#R0029"
-  },
-  {
-   "subject": "张天蒙",
-   "subject_type": "@",
-   "predicate": "交手",
-   "object": "辛龙子",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "025:51",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    },
-    {
-     "loc": "025:51",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    },
-    {
-     "loc": "025:52",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 3,
-   "loc": "025:51",
-   "chapter": 25,
-   "para": 51,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "七剑下天山"
-   ],
-   "locs": [
-    "025:51",
-    "025:51",
-    "025:52"
    ],
    "layer": "人",
    "direction": "↔",
@@ -2825,7 +2825,7 @@
    "subject": "多铎",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "通明和尚",
+   "object": "通明",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -2862,6 +2862,48 @@
    "layer": "人",
    "direction": "↔",
    "id": "七剑下天山#R0047"
+  },
+  {
+   "subject": "天蒙",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "石天成",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:52",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "025:52",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "025:52",
+   "chapter": 25,
+   "para": 52,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "七剑下天山"
+   ],
+   "locs": [
+    "025:52",
+    "025:52"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "七剑下天山#R0048"
   },
   {
    "subject": "孟武威",
@@ -2903,7 +2945,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0048"
+   "id": "七剑下天山#R0049"
   },
   {
    "subject": "尚云亭",
@@ -2945,7 +2987,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0049"
+   "id": "七剑下天山#R0050"
   },
   {
    "subject": "张华昭",
@@ -2984,48 +3026,6 @@
    "locs": [
     "015:16",
     "027:24"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "七剑下天山#R0050"
-  },
-  {
-   "subject": "张天蒙",
-   "subject_type": "@",
-   "predicate": "交手",
-   "object": "石天成",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "025:52",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    },
-    {
-     "loc": "025:52",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 2,
-   "loc": "025:52",
-   "chapter": 25,
-   "para": 52,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "七剑下天山"
-   ],
-   "locs": [
-    "025:52",
-    "025:52"
    ],
    "layer": "人",
    "direction": "↔",
@@ -3452,7 +3452,7 @@
    "id": "七剑下天山#R0061"
   },
   {
-   "subject": "通明和尚",
+   "subject": "通明",
    "subject_type": "@",
    "predicate": "交手",
    "object": "齐真君",
@@ -4211,7 +4211,7 @@
    "subject": "冒浣莲",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "通明和尚",
+   "object": "通明",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -4712,6 +4712,42 @@
    "id": "七剑下天山#R0095"
   },
   {
+   "subject": "天雄禅师",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "辛龙子",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "025:19",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "025:19",
+   "chapter": 25,
+   "para": 19,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "七剑下天山"
+   ],
+   "locs": [
+    "025:19"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "七剑下天山#R0096"
+  },
+  {
    "subject": "孟坚",
    "subject_type": "@",
    "predicate": "交手",
@@ -4745,7 +4781,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0096"
+   "id": "七剑下天山#R0097"
   },
   {
    "subject": "孟家",
@@ -4781,7 +4817,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0097"
+   "id": "七剑下天山#R0098"
   },
   {
    "subject": "尚云亭",
@@ -4814,42 +4850,6 @@
    ],
    "locs": [
     "024:10"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "七剑下天山#R0098"
-  },
-  {
-   "subject": "岳鸣珂",
-   "subject_type": "@",
-   "predicate": "交手",
-   "object": "韩荆",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "012:12",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 1,
-   "loc": "012:12",
-   "chapter": 12,
-   "para": 12,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "七剑下天山"
-   ],
-   "locs": [
-    "012:12"
    ],
    "layer": "人",
    "direction": "↔",
@@ -4931,7 +4931,7 @@
    "subject": "张华昭",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "通明和尚",
+   "object": "通明",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -5036,42 +5036,6 @@
    "id": "七剑下天山#R0104"
   },
   {
-   "subject": "张天雄",
-   "subject_type": "@",
-   "predicate": "交手",
-   "object": "辛龙子",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "025:19",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 1,
-   "loc": "025:19",
-   "chapter": 25,
-   "para": 19,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "七剑下天山"
-   ],
-   "locs": [
-    "025:19"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "七剑下天山#R0105"
-  },
-  {
    "subject": "张承斌",
    "subject_type": "@",
    "predicate": "交手",
@@ -5105,7 +5069,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0106"
+   "id": "七剑下天山#R0105"
   },
   {
    "subject": "张承斌",
@@ -5141,7 +5105,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0107"
+   "id": "七剑下天山#R0106"
   },
   {
    "subject": "成天挺",
@@ -5177,7 +5141,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0108"
+   "id": "七剑下天山#R0107"
   },
   {
    "subject": "成天挺",
@@ -5213,7 +5177,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "七剑下天山#R0109"
+   "id": "七剑下天山#R0108"
   },
   {
    "subject": "易兰珠",
@@ -5246,6 +5210,42 @@
    ],
    "locs": [
     "023:26"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "七剑下天山#R0109"
+  },
+  {
+   "subject": "晦明禅师",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "韩荆",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "012:12",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "012:12",
+   "chapter": 12,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "七剑下天山"
+   ],
+   "locs": [
+    "012:12"
    ],
    "layer": "人",
    "direction": "↔",
@@ -5543,7 +5543,7 @@
    "subject": "桂仲明",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "通明和尚",
+   "object": "通明",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -7052,10 +7052,10 @@
    "id": "七剑下天山#R0160"
   },
   {
-   "subject": "岳鸣珂",
+   "subject": "康熙",
    "subject_type": "@",
    "predicate": "到达",
-   "object": "滇中",
+   "object": "内室",
    "object_type": "=",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -7066,26 +7066,62 @@
    "notes": "",
    "evidence": [
     {
-     "loc": "006:14",
+     "loc": "002:19",
      "type": "E2动作+共现",
      "rule": "X-ARRIVE"
     }
    ],
    "count": 1,
-   "loc": "006:14",
-   "chapter": 6,
-   "para": 14,
+   "loc": "002:19",
+   "chapter": 2,
+   "para": 19,
    "derived": false,
    "veracity": "叙述",
    "books": [
     "七剑下天山"
    ],
    "locs": [
-    "006:14"
+    "002:19"
    ],
    "layer": "实",
    "direction": "→",
    "id": "七剑下天山#R0161"
+  },
+  {
+   "subject": "康熙",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "王妃府",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "019:12",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "019:12",
+   "chapter": 19,
+   "para": 12,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "七剑下天山"
+   ],
+   "locs": [
+    "019:12"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "七剑下天山#R0162"
   },
   {
    "subject": "张华昭",
@@ -7121,7 +7157,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0162"
+   "id": "七剑下天山#R0163"
   },
   {
    "subject": "张华昭",
@@ -7157,7 +7193,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0163"
+   "id": "七剑下天山#R0164"
   },
   {
    "subject": "张承斌",
@@ -7193,7 +7229,43 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0164"
+   "id": "七剑下天山#R0165"
+  },
+  {
+   "subject": "晦明禅师",
+   "subject_type": "@",
+   "predicate": "到达",
+   "object": "滇中",
+   "object_type": "=",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-ARRIVE",
+   "rule_row": "X-ARRIVE",
+   "subtype": "",
+   "params": {},
+   "notes": "",
+   "evidence": [
+    {
+     "loc": "006:14",
+     "type": "E2动作+共现",
+     "rule": "X-ARRIVE"
+    }
+   ],
+   "count": 1,
+   "loc": "006:14",
+   "chapter": 6,
+   "para": 14,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "七剑下天山"
+   ],
+   "locs": [
+    "006:14"
+   ],
+   "layer": "实",
+   "direction": "→",
+   "id": "七剑下天山#R0166"
   },
   {
    "subject": "杨云骢",
@@ -7229,7 +7301,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0165"
+   "id": "七剑下天山#R0167"
   },
   {
    "subject": "杨云骢",
@@ -7265,7 +7337,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0166"
+   "id": "七剑下天山#R0168"
   },
   {
    "subject": "楚昭南",
@@ -7301,7 +7373,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0167"
+   "id": "七剑下天山#R0169"
   },
   {
    "subject": "楚昭南",
@@ -7337,7 +7409,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0168"
+   "id": "七剑下天山#R0170"
   },
   {
    "subject": "武琼瑶",
@@ -7373,7 +7445,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0169"
+   "id": "七剑下天山#R0171"
   },
   {
    "subject": "武琼瑶",
@@ -7409,7 +7481,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "七剑下天山#R0170"
+   "id": "七剑下天山#R0172"
   },
   {
    "subject": "武琼瑶",
@@ -7442,78 +7514,6 @@
    ],
    "locs": [
     "024:2"
-   ],
-   "layer": "实",
-   "direction": "→",
-   "id": "七剑下天山#R0171"
-  },
-  {
-   "subject": "玄烨",
-   "subject_type": "@",
-   "predicate": "到达",
-   "object": "内室",
-   "object_type": "=",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-ARRIVE",
-   "rule_row": "X-ARRIVE",
-   "subtype": "",
-   "params": {},
-   "notes": "",
-   "evidence": [
-    {
-     "loc": "002:19",
-     "type": "E2动作+共现",
-     "rule": "X-ARRIVE"
-    }
-   ],
-   "count": 1,
-   "loc": "002:19",
-   "chapter": 2,
-   "para": 19,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "七剑下天山"
-   ],
-   "locs": [
-    "002:19"
-   ],
-   "layer": "实",
-   "direction": "→",
-   "id": "七剑下天山#R0172"
-  },
-  {
-   "subject": "玄烨",
-   "subject_type": "@",
-   "predicate": "到达",
-   "object": "王妃府",
-   "object_type": "=",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-ARRIVE",
-   "rule_row": "X-ARRIVE",
-   "subtype": "",
-   "params": {},
-   "notes": "",
-   "evidence": [
-    {
-     "loc": "019:12",
-     "type": "E2动作+共现",
-     "rule": "X-ARRIVE"
-    }
-   ],
-   "count": 1,
-   "loc": "019:12",
-   "chapter": 19,
-   "para": 12,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "七剑下天山"
-   ],
-   "locs": [
-    "019:12"
    ],
    "layer": "实",
    "direction": "→",
@@ -7916,7 +7916,7 @@
    "id": "七剑下天山#R0184"
   },
   {
-   "subject": "通明和尚",
+   "subject": "通明",
    "subject_type": "@",
    "predicate": "到达",
    "object": "京师",
@@ -8107,7 +8107,7 @@
    "rule_row": "B3",
    "subtype": "亲同门",
    "params": {
-    "共同师父": "岳鸣珂"
+    "共同师父": "晦明禅师"
    },
    "notes": "推导关系（derived），不直接登记；不传递（R18）",
    "evidence": [
@@ -8267,7 +8267,7 @@
    "subject": "凌未风",
    "subject_type": "@",
    "predicate": "师承",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E1明文",
@@ -8411,7 +8411,7 @@
    "subject": "楚昭南",
    "subject_type": "@",
    "predicate": "师承",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E1明文",
@@ -10089,7 +10089,7 @@
     "rule_row": "B3",
     "subtype": "亲同门",
     "params": {
-     "共同师父": "岳鸣珂"
+     "共同师父": "晦明禅师"
     },
     "notes": "推导关系（derived），不直接登记；不传递（R18）",
     "evidence": [
@@ -10177,7 +10177,7 @@
    {
     "a": "凌未风",
     "b": "楚昭南",
-    "master": "岳鸣珂",
+    "master": "晦明禅师",
     "rule": "B3",
     "confidence": "weak"
    },
@@ -10265,7 +10265,7 @@
     "nodes": [
      {
       "person": "凌未风",
-      "master": "岳鸣珂",
+      "master": "晦明禅师",
       "generation": 1,
       "status": "active",
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
@@ -10285,16 +10285,16 @@
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },
      {
-      "person": "岳鸣珂",
-      "master": "",
-      "generation": 0,
+      "person": "易兰珠",
+      "master": "辛龙子",
+      "generation": 1,
       "status": "active",
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },
      {
-      "person": "易兰珠",
-      "master": "辛龙子",
-      "generation": 1,
+      "person": "晦明禅师",
+      "master": "",
+      "generation": 0,
       "status": "active",
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },
@@ -10307,7 +10307,7 @@
      },
      {
       "person": "楚昭南",
-      "master": "岳鸣珂",
+      "master": "晦明禅师",
       "generation": 1,
       "status": "active",
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
@@ -10351,7 +10351,7 @@
     "roots": [
      "卓一航",
      "哈玛雅",
-     "岳鸣珂",
+     "晦明禅师",
      "练霓裳",
      "黄叶道人"
     ],
@@ -11155,7 +11155,7 @@
     "rule_row": 6,
     "predicate": "师承",
     "loc": "019:11",
-    "note": "凌未风 师承 岳鸣珂"
+    "note": "凌未风 师承 晦明禅师"
    },
    {
     "reason": "强制档实体缺失（04f#11-#13 转移须施者+受者+物齐备）",

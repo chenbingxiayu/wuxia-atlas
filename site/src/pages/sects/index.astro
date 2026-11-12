@@ -1,36 +1,157 @@
 ---
 import Base from '../../layouts/Base.astro';
 import sectsJson from '@data/sects.json';
+import seatsJson from '@data/sect_seats.json';
+import chinaGeo from '@data/china-simplified.json';
+import TypeBadge from '../../components/ui/TypeBadge.astro';
 import { B } from '@lib/base';
+
+/* 全景势力地图（spec 005 T4）：实锚●/推理◌ 按类型四色落点；待考名单图下——门派志设计 F1 */
+const seats = (seatsJson as any).seats || [];
+const pending = (seatsJson as any).pending || [];
+const china = (chinaGeo as any);
+const pj = china.proj;
+const proj = (lng: number, lat: number): [number, number] =>
+  [pj.ox + (lng - pj.L0) * pj.KX * pj.scale, pj.oy + (pj.T - lat) * pj.scale];
+const seatTargets = new Map<string, string>(
+  sectsJson.sects.map((s: any) => [s.canonical, s.canonical]),
+);
+
+/* W2-B6 势力分区（门派志页重构设计 F2/F3 + §八 文案稿，2026-11-10）：
+   江湖主册三分（名门正派 → 世家 → 绿林帮会）+ 朝廷另册置底区隔 + 其余存目折叠。
+   分层口径：sects.json 有 type 字段者入主册/另册（F3 主要门派），无字段者入存目组。 */
+const sects = sectsJson.sects;
+const stat = (s: any) => ({
+  arts: Object.values(s.arts_by_pred || {}).reduce((x: number, y: any) => x + y.length, 0),
+  members: (s.members || []).length,
+  books: (s.books || []).length,
+});
+const MAIN_GROUPS = ['名门正派', '世家', '绿林帮会'];
+const groups = MAIN_GROUPS
+  .map((t) => ({ type: t, rows: sects.filter((s: any) => s.type === t).map((s: any) => ({ s, ...stat(s) })) }))
+  .filter((g) => g.rows.length > 0);
+const court = sects.filter((s: any) => s.type === '朝廷势力').map((s: any) => ({ s, ...stat(s) }));
+const rest = sects.filter((s: any) => !s.type).map((s: any) => ({ s, ...stat(s) }));
 ---
 
-<Base title="门派志" description="梁羽生武侠宇宙门派与组织：武功册、成员册、事件参与。">
+<Base title="门派志" description="梁羽生武侠宇宙门派与组织：势力版图、武功册、成员册、事件参与。">
   <h1>门派志</h1>
   <p class="lead">
     深度解析书目中考订收录的 <b>{sectsJson.meta.totals.sects}</b> 个门派/组织
-    （跨书 {sectsJson.meta.totals.cross_book} 个）。成员册来自人物档案的门派线索（strong/ok 级）。
+    （跨书 {sectsJson.meta.totals.cross_book} 个）。成员册来自人物档案的门派线索（置信分级）。
   </p>
-  <div class="grid">
-    {sectsJson.sects.map((s) => (
-      <a class="card entry" href={`${B}sects/${encodeURIComponent(s.canonical)}/`}>
-        <h2>{s.canonical}
-          {s.cross_book && <span class="badge badge-cross">跨书</span>}
-        </h2>
-        <p>
-          武功 {Object.values(s.arts_by_pred).reduce((x, y) => x + y.length, 0)} 门 ·
-          成员 {s.members.length} · 事件参与 {s.ev_total}
-        </p>
-      </a>
+
+  <section>
+    <h2>全景势力地图 <span class="lab">仅标注原文明文驻地（●）与推理偏移（◌）；驻地待考名单见图下 · 点击标记进入门派页</span></h2>
+    <div class="pano">
+      <svg viewBox={`0 0 ${china.W} ${china.H}`} style="width:100%;height:auto;display:block" role="img" aria-label="梁羽生宇宙势力驻地图">
+        <path d={china.d} fill="#f1e9d7" stroke="#c9bda2" stroke-width="1.2"/>
+        {seats.map((s: any) => {
+          const [x, y] = proj(s.coords[0], s.coords[1]);
+          const reasoned = s.status === '推理';
+          const target = seatTargets.get(s.sect) || seatTargets.get(s.seat);
+          const dot = (
+            <circle cx={x} cy={y} r={reasoned ? 9 : 8}
+              fill={reasoned ? 'none' : s.color} stroke={s.color} stroke-width="2"
+              stroke-dasharray={reasoned ? '3 3' : undefined}>
+              <title>{`${s.sect} · ${s.seat} · ${s.status}${s.basis ? ' · ' + s.basis : ''}`}</title>
+            </circle>
+          );
+          return (
+            <g>
+              {target
+                ? <a href={`${B}sects/${encodeURIComponent(target)}/`}>{dot}
+                    <text x={x} y={y - 14} font-size="12" text-anchor="middle" font-weight="700" fill={s.color}>{s.sect}</text></a>
+                : <g>{dot}
+                    <text x={x} y={y - 14} font-size="12" text-anchor="middle" font-weight="700" fill={s.color}>{s.sect}</text></g>}
+            </g>
+          );
+        })}
+      </svg>
+      <div class="lab pano-legend">
+        图例：<span style="color:#a63a2b;font-weight:700">● 名门正派</span> ·
+        <span style="color:#b8860b;font-weight:700">● 世家</span> ·
+        <span style="color:#5e7d5a;font-weight:700">● 绿林帮会</span> ·
+        <span style="color:#34546e;font-weight:700">● 朝廷势力</span> ·
+        ◌ 推理偏移（依附近实锚）｜
+        驻地待考（同样可点）：{pending.map((p: any) => p.sect).join(' · ') || '—'}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>江湖势力 <span class="lab">名门正派 → 世家 → 绿林帮会 · 朝廷势力另册置底，不与江湖门派混编</span></h2>
+    {groups.map((g) => (
+      <div class="group">
+        <h3>{g.type}<span class="lab cnt">{g.rows.length} 派</span></h3>
+        <div class="grid">
+          {g.rows.map(({ s, arts, members, books }) => (
+            <a class="card entry" href={`${B}sects/${encodeURIComponent(s.canonical)}/`}>
+              <h2>{s.canonical}
+                <TypeBadge type={s.type} />
+                {s.cross_book && <span class="badge badge-cross">跨书</span>}
+              </h2>
+              <p>武功 {arts} 门 · 成员 {members} 人 · 见于 {books} 书</p>
+            </a>
+          ))}
+        </div>
+      </div>
     ))}
-  </div>
+  </section>
+
+  {court.length > 0 && (
+    <section class="court">
+      <h2>朝廷势力 <span class="lab">另册 · 不与江湖门派混编</span></h2>
+      <div class="grid">
+        {court.map(({ s, arts, members, books }) => (
+          <a class="card entry" href={`${B}sects/${encodeURIComponent(s.canonical)}/`}>
+            <h2>{s.canonical}
+              <TypeBadge type={s.type} />
+              {s.cross_book && <span class="badge badge-cross">跨书</span>}
+            </h2>
+            <p>武功 {arts} 门 · 成员 {members} 人 · 见于 {books} 书</p>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
+
+  {rest.length > 0 && (
+    <details class="rest">
+      <summary>其余势力（记载简略）<span class="lab cnt">{rest.length} 个 · 势力类型考订未覆盖，点击展开</span></summary>
+      <div class="grid">
+        {rest.map(({ s, arts, members, books }) => (
+          <a class="card entry" href={`${B}sects/${encodeURIComponent(s.canonical)}/`}>
+            <h2>{s.canonical}
+              {s.cross_book && <span class="badge badge-cross">跨书</span>}
+            </h2>
+            <p>武功 {arts} 门 · 成员 {members} 人 · 见于 {books} 书</p>
+          </a>
+        ))}
+      </div>
+    </details>
+  )}
 </Base>
 
 <style>
   .lead { color: var(--ink-light); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-3); margin-top: var(--space-4); }
+  .lab { color: var(--ink-faint); font-size: .8rem; line-height: 1.9; font-weight: 400; }
+  .cnt { margin-left: .6em; }
+  .pano { border: 1px solid var(--line-strong); border-radius: 4px; background: #f8f3e6; padding: 8px; margin-top: var(--space-3); }
+  .pano-legend { padding: 6px 12px; }
+  section { margin-top: var(--space-5); }
+  .group h3 { font-size: 1.05rem; margin: var(--space-4) 0 var(--space-2); }
+  .group:first-of-type h3 { margin-top: var(--space-2); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-3); margin-top: var(--space-2); }
   .entry { color: inherit; transition: transform .15s ease, border-color .15s ease; }
   .entry:hover { transform: translateY(-2px); border-color: var(--seal); }
-  .entry h2 { font-size: 1.02rem; margin: 0 0 var(--space-1); }
-  .entry .badge { margin-left: .4em; }
+  .entry h2 { font-size: 1.02rem; margin: 0 0 var(--space-1); display: flex; align-items: baseline; gap: .45em; flex-wrap: wrap; }
   .entry p { margin: 0; font-size: .85rem; color: var(--ink-light); }
+  /* 朝廷另册：与主册区隔——黛青边线 + 淡黛青底（朝廷四色，同地图图例） */
+  .court { border: 1.5px solid var(--azure); background: rgba(52, 84, 110, .05); border-radius: var(--radius); padding: var(--space-3) var(--space-4) var(--space-4); }
+  .court h2 { color: var(--azure); }
+  /* 其余存目组：折叠（复用 universe/timeline 的 details 折叠样式），幽灵虚线框 */
+  .rest { border: 1px dashed var(--line-strong); border-radius: var(--radius); padding: var(--space-2) var(--space-4) var(--space-3); margin-top: var(--space-4); }
+  .rest summary { cursor: pointer; font-weight: 700; padding: 6px 0; color: var(--ink-light); }
+  .rest[open] summary { border-bottom: 1px dashed var(--line); margin-bottom: var(--space-2); }
 </style>

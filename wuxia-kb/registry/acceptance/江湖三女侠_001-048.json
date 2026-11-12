@@ -52,7 +52,7 @@
   48
  ],
  "chapter_label": "001-048",
- "generated_at": "2026-11-06T11:55:52",
+ "generated_at": "2026-11-06T23:57:44",
  "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
  "rule_version": "SKILL_03a v1.8",
  "sample_ratio_requested": 0.1,
@@ -281,9 +281,9 @@
    },
    "pipe_sources": {
     "chapter_text": 1,
-    "mapping_snapshot": 4,
+    "mapping_snapshot": 3,
     "registry": 1,
-    "registry+mapping_snapshot": 72
+    "registry+mapping_snapshot": 73
    }
   },
   "004": {
@@ -334,8 +334,8 @@
     "〖@": 61
    },
    "pipe_sources": {
-    "mapping_snapshot": 30,
-    "registry+mapping_snapshot": 31
+    "mapping_snapshot": 1,
+    "registry+mapping_snapshot": 60
    }
   },
   "005": {
@@ -408,8 +408,8 @@
     "〖@": 60
    },
    "pipe_sources": {
-    "mapping_snapshot": 26,
-    "registry+mapping_snapshot": 34
+    "mapping_snapshot": 5,
+    "registry+mapping_snapshot": 55
    }
   },
   "006": {
@@ -530,8 +530,8 @@
     "〖@": 70
    },
    "pipe_sources": {
-    "mapping_snapshot": 35,
-    "registry+mapping_snapshot": 35
+    "mapping_snapshot": 23,
+    "registry+mapping_snapshot": 47
    }
   },
   "008": {
@@ -583,8 +583,8 @@
     "〖@": 41
    },
    "pipe_sources": {
-    "mapping_snapshot": 29,
-    "registry+mapping_snapshot": 12
+    "mapping_snapshot": 28,
+    "registry+mapping_snapshot": 13
    }
   },
   "009": {
@@ -706,8 +706,8 @@
     "〖@": 43
    },
    "pipe_sources": {
-    "mapping_snapshot": 23,
-    "registry+mapping_snapshot": 20
+    "mapping_snapshot": 18,
+    "registry+mapping_snapshot": 25
    }
   },
   "011": {
@@ -833,8 +833,8 @@
     "〖@": 29
    },
    "pipe_sources": {
-    "mapping_snapshot": 15,
-    "registry+mapping_snapshot": 14
+    "mapping_snapshot": 14,
+    "registry+mapping_snapshot": 15
    }
   },
   "013": {
@@ -970,9 +970,9 @@
    },
    "pipe_sources": {
     "chapter_text": 3,
-    "mapping_snapshot": 13,
+    "mapping_snapshot": 6,
     "registry": 7,
-    "registry+mapping_snapshot": 64
+    "registry+mapping_snapshot": 71
    }
   },
   "015": {
@@ -1027,8 +1027,8 @@
     "〖@": 56
    },
    "pipe_sources": {
-    "mapping_snapshot": 19,
-    "registry+mapping_snapshot": 37
+    "mapping_snapshot": 10,
+    "registry+mapping_snapshot": 46
    }
   },
   "016": {
@@ -1159,8 +1159,8 @@
     "〖@": 50
    },
    "pipe_sources": {
-    "mapping_snapshot": 24,
-    "registry+mapping_snapshot": 26
+    "mapping_snapshot": 13,
+    "registry+mapping_snapshot": 37
    }
   },
   "018": {
@@ -1226,9 +1226,9 @@
     "〖@": 54
    },
    "pipe_sources": {
-    "mapping_snapshot": 3,
+    "mapping_snapshot": 2,
     "registry": 7,
-    "registry+mapping_snapshot": 44
+    "registry+mapping_snapshot": 45
    }
   },
   "019": {
@@ -1296,8 +1296,8 @@
     "〖@": 47
    },
    "pipe_sources": {
-    "mapping_snapshot": 6,
-    "registry+mapping_snapshot": 41
+    "mapping_snapshot": 5,
+    "registry+mapping_snapshot": 42
    }
   },
   "020": {
@@ -1361,8 +1361,8 @@
     "〖@": 79
    },
    "pipe_sources": {
-    "mapping_snapshot": 58,
-    "registry+mapping_snapshot": 21
+    "mapping_snapshot": 51,
+    "registry+mapping_snapshot": 28
    }
   },
   "021": {
@@ -1422,9 +1422,9 @@
     "〖@": 70
    },
    "pipe_sources": {
-    "mapping_snapshot": 41,
+    "mapping_snapshot": 39,
     "registry": 1,
-    "registry+mapping_snapshot": 28
+    "registry+mapping_snapshot": 30
    }
   },
   "022": {
@@ -1564,8 +1564,8 @@
     "〖@": 59
    },
    "pipe_sources": {
-    "mapping_snapshot": 22,
-    "registry+mapping_snapshot": 37
+    "mapping_snapshot": 10,
+    "registry+mapping_snapshot": 49
    }
   },
   "024": {
@@ -1786,8 +1786,8 @@
     "〖@": 22
    },
    "pipe_sources": {
-    "mapping_snapshot": 14,
-    "registry+mapping_snapshot": 8
+    "mapping_snapshot": 8,
+    "registry+mapping_snapshot": 14
    }
   },
   "027": {
@@ -2258,8 +2258,8 @@
     "〖@": 38
    },
    "pipe_sources": {
-    "mapping_snapshot": 7,
-    "registry+mapping_snapshot": 31
+    "mapping_snapshot": 5,
+    "registry+mapping_snapshot": 33
    }
   },
   "034": {
@@ -2388,8 +2388,8 @@
     "〖@": 63
    },
    "pipe_sources": {
-    "mapping_snapshot": 5,
-    "registry+mapping_snapshot": 58
+    "mapping_snapshot": 3,
+    "registry+mapping_snapshot": 60
    }
   },
   "036": {
@@ -3038,8 +3038,8 @@
     "〖@": 98
    },
    "pipe_sources": {
-    "mapping_snapshot": 15,
-    "registry+mapping_snapshot": 83
+    "mapping_snapshot": 9,
+    "registry+mapping_snapshot": 89
    }
   },
   "046": {
@@ -3185,9 +3185,9 @@
     "〖@": 123
    },
    "pipe_sources": {
-    "mapping_snapshot": 8,
+    "mapping_snapshot": 7,
     "registry": 1,
-    "registry+mapping_snapshot": 114
+    "registry+mapping_snapshot": 115
    }
   },
   "048": {
@@ -3245,8 +3245,8 @@
     "〖@": 68
    },
    "pipe_sources": {
-    "mapping_snapshot": 2,
-    "registry+mapping_snapshot": 66
+    "mapping_snapshot": 1,
+    "registry+mapping_snapshot": 67
    }
   }
  },
@@ -3412,29 +3412,29 @@
    },
    "003": {
     "chapter_text": 1,
-    "mapping_snapshot": 4,
+    "mapping_snapshot": 3,
     "registry": 1,
-    "registry+mapping_snapshot": 72
+    "registry+mapping_snapshot": 73
    },
    "004": {
-    "mapping_snapshot": 30,
-    "registry+mapping_snapshot": 31
+    "mapping_snapshot": 1,
+    "registry+mapping_snapshot": 60
    },
    "005": {
-    "mapping_snapshot": 26,
-    "registry+mapping_snapshot": 34
+    "mapping_snapshot": 5,
+    "registry+mapping_snapshot": 55
    },
    "006": {
     "mapping_snapshot": 1,
     "registry+mapping_snapshot": 32
    },
    "007": {
-    "mapping_snapshot": 35,
-    "registry+mapping_snapshot": 35
+    "mapping_snapshot": 23,
+    "registry+mapping_snapshot": 47
    },
    "008": {
-    "mapping_snapshot": 29,
-    "registry+mapping_snapshot": 12
+    "mapping_snapshot": 28,
+    "registry+mapping_snapshot": 13
    },
    "009": {
     "mapping_snapshot": 12,
@@ -3442,16 +3442,16 @@
     "registry+mapping_snapshot": 12
    },
    "010": {
-    "mapping_snapshot": 23,
-    "registry+mapping_snapshot": 20
+    "mapping_snapshot": 18,
+    "registry+mapping_snapshot": 25
    },
    "011": {
     "mapping_snapshot": 1,
     "registry+mapping_snapshot": 43
    },
    "012": {
-    "mapping_snapshot": 15,
-    "registry+mapping_snapshot": 14
+    "mapping_snapshot": 14,
+    "registry+mapping_snapshot": 15
    },
    "013": {
     "mapping_snapshot": 8,
@@ -3459,39 +3459,39 @@
    },
    "014": {
     "chapter_text": 3,
-    "mapping_snapshot": 13,
+    "mapping_snapshot": 6,
     "registry": 7,
-    "registry+mapping_snapshot": 64
+    "registry+mapping_snapshot": 71
    },
    "015": {
-    "mapping_snapshot": 19,
-    "registry+mapping_snapshot": 37
+    "mapping_snapshot": 10,
+    "registry+mapping_snapshot": 46
    },
    "016": {
     "mapping_snapshot": 19,
     "registry+mapping_snapshot": 25
    },
    "017": {
-    "mapping_snapshot": 24,
-    "registry+mapping_snapshot": 26
+    "mapping_snapshot": 13,
+    "registry+mapping_snapshot": 37
    },
    "018": {
-    "mapping_snapshot": 3,
+    "mapping_snapshot": 2,
     "registry": 7,
-    "registry+mapping_snapshot": 44
+    "registry+mapping_snapshot": 45
    },
    "019": {
-    "mapping_snapshot": 6,
-    "registry+mapping_snapshot": 41
+    "mapping_snapshot": 5,
+    "registry+mapping_snapshot": 42
    },
    "020": {
-    "mapping_snapshot": 58,
-    "registry+mapping_snapshot": 21
+    "mapping_snapshot": 51,
+    "registry+mapping_snapshot": 28
    },
    "021": {
-    "mapping_snapshot": 41,
+    "mapping_snapshot": 39,
     "registry": 1,
-    "registry+mapping_snapshot": 28
+    "registry+mapping_snapshot": 30
    },
    "022": {
     "mapping_snapshot": 8,
@@ -3499,8 +3499,8 @@
     "registry+mapping_snapshot": 42
    },
    "023": {
-    "mapping_snapshot": 22,
-    "registry+mapping_snapshot": 37
+    "mapping_snapshot": 10,
+    "registry+mapping_snapshot": 49
    },
    "024": {
     "mapping_snapshot": 1,
@@ -3511,8 +3511,8 @@
     "registry+mapping_snapshot": 23
    },
    "026": {
-    "mapping_snapshot": 14,
-    "registry+mapping_snapshot": 8
+    "mapping_snapshot": 8,
+    "registry+mapping_snapshot": 14
    },
    "027": {
     "mapping_snapshot": 35,
@@ -3538,16 +3538,16 @@
     "registry+mapping_snapshot": 55
    },
    "033": {
-    "mapping_snapshot": 7,
-    "registry+mapping_snapshot": 31
+    "mapping_snapshot": 5,
+    "registry+mapping_snapshot": 33
    },
    "034": {
     "mapping_snapshot": 4,
     "registry+mapping_snapshot": 37
    },
    "035": {
-    "mapping_snapshot": 5,
-    "registry+mapping_snapshot": 58
+    "mapping_snapshot": 3,
+    "registry+mapping_snapshot": 60
    },
    "036": {
     "mapping_snapshot": 1,
@@ -3586,20 +3586,20 @@
     "registry+mapping_snapshot": 60
    },
    "045": {
-    "mapping_snapshot": 15,
-    "registry+mapping_snapshot": 83
+    "mapping_snapshot": 9,
+    "registry+mapping_snapshot": 89
    },
    "046": {
     "registry+mapping_snapshot": 39
    },
    "047": {
-    "mapping_snapshot": 8,
+    "mapping_snapshot": 7,
     "registry": 1,
-    "registry+mapping_snapshot": 114
+    "registry+mapping_snapshot": 115
    },
    "048": {
-    "mapping_snapshot": 2,
-    "registry+mapping_snapshot": 66
+    "mapping_snapshot": 1,
+    "registry+mapping_snapshot": 67
    }
   }
  },

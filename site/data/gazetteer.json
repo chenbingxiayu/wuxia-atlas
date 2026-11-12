@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-06",
+  "generated": "2026-11-12",
   "rev": 1,
   "coord_system": "WGS-84(EPSG:4326)",
   "based_on": {
@@ -19,8 +19,10 @@
   "field_gaps": [
    "unlocatable 31 条（loc_mode=none，含风砂堡/木什塔克/喀沁草原等）不进入站点坐标层 places（旧契约 places 619 条=有坐标条目）；清单见 registry/gazetteer.json meta.stats 与 EX-7 报告。渲染端 D3 降级由下游决定（SKILL §3.6）。",
    "kind 采用 N7 §2.3 十三值归一（旧站为 OSM/中文脏值混用）；旧 kind 原值见 registry/gazetteer.json 各条 source.legacy_kind。",
-   "real 为 N7 nature 兼容派生列：真实→true / 虚构·原型改造→false / 未定→null（迁移暂定，待复核）。"
-  ]
+   "real 为 N7 nature 兼容派生列：真实→true / 虚构·原型改造→false / 未定→null（迁移暂定，待复核）。",
+   "scope 口径（tianshan-demo）：places 按 scope 书目出现过滤（books ∩ scope 为空者不入表），books 键裁到 scope。"
+  ],
+  "scope": "tianshan-demo"
  },
  "places": [
   {

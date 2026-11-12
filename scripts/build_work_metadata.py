@@ -9,6 +9,7 @@
 
 用法：python scripts/build_work_metadata.py
 """
+import csv
 import json
 import re
 import sys
@@ -73,6 +74,25 @@ MISSING = [
 FORWARD_PAT = re.compile(r'请续看|请看续集|姐妹作')
 
 
+def load_synopsis() -> dict:
+    """宇宙页重构 C：kb/作品简介.tsv（列 book/hook/summary/status）→ 仅 status=approved 行，
+    返回 书名 -> {hook, summary}；无 approved 行返回空表，TSV 不存在跳过（诚实缺省：
+    books 条目不加 hook/summary 字段）。"""
+    p = KB / '作品简介.tsv'
+    if not p.exists():
+        return {}
+    out: dict = {}
+    with open(p, encoding='utf-8-sig', newline='') as f:
+        for r in csv.DictReader(f, delimiter='\t'):
+            if (r.get('status') or '').strip() != 'approved':
+                continue
+            bk = (r.get('book') or '').strip()
+            if bk:
+                out[bk] = {'hook': (r.get('hook') or '').strip(),
+                           'summary': (r.get('summary') or '').strip()}
+    return out
+
+
 def corpus_stats() -> dict:
     stats = {}
     for d in sorted(p for p in ZH.iterdir() if p.is_dir()):
@@ -132,6 +152,7 @@ def main() -> None:
             backref[e['source']][e['target']] += 1
 
     works = []
+    synopsis = load_synopsis()
     for i, (book, info) in enumerate(
             sorted(E.items(), key=lambda kv: (kv[1]['year'], kv[1].get('ord', 50), kv[0])), 1):
         s = stats[book]
@@ -144,7 +165,7 @@ def main() -> None:
             lconf = 'todo'   # 候选全部零命中——须回炉
         else:
             lconf = 'todo'
-        works.append({
+        w = {
             'no': i,
             'book': book,
             'year': info['year'],
@@ -162,7 +183,12 @@ def main() -> None:
             'intertext_out': out_cnt.get(book, 0),
             'intertext_in': in_cnt.get(book, 0),
             'intertext_bare': bare_cnt.get(book, 0),
-        })
+        }
+        # 宇宙页重构 C：仅 approved 行注入 hook/summary（无 approved → 字段缺省，诚实空态）
+        if book in synopsis:
+            w['hook'] = synopsis[book]['hook']
+            w['summary'] = synopsis[book]['summary']
+        works.append(w)
 
     todo_fields = []
     for w in works:
@@ -265,6 +291,7 @@ def main() -> None:
 
     print(f"works={len(works)} chapters={meta['totals']['chapters']} chars={meta['totals']['chars']:,}")
     print(f"forward_edges={len(forward)}  todo_fields={len(todo_fields)}")
+    print(f"简介接入 {sum(1 for w in works if 'hook' in w)} 部（approved）")
     print(f"-> {KB / '作品元数据表.json'}")
     print(f"-> {KB / '作品元数据表.md'}")
 

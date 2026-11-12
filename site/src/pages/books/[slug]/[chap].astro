@@ -2,9 +2,9 @@
 import Base from '../../../layouts/Base.astro';
 import books from '@data/books.json';
 import chaptersAll from '@data/chapters.json';
-import dossiers from '@data/dossiers.json';
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
+import { personTarget } from '@lib/links';
 
 export function getStaticPaths() {
   const paths = [];
@@ -22,8 +22,10 @@ const ch = chaptersAll[w.book];
 const idx = ch.chapters.findIndex((x) => x.no === c.no);
 const prev = ch.chapters[idx - 1];
 const next = ch.chapters[idx + 1];
-const dossierNames = new Set(dossiers.dossiers.map((d) => d.canonical));
 const CONF = { high: '●●', medium: '●○', low: '○○' };
+// W0-T5 存目守卫（方案 §2.3）：人物可链与否一律经 @lib/links personTarget
+//（主档 page=true；存目 → 纯文本 chip，×N 定位符保留对质），不再直读 dossiers.json。
+const charTargets = c.chars.map((p) => ({ ...p, target: personTarget(p.name) }));
 ---
 
 <Base title={`${w.book} 第${c.no}回`} description={`${w.book} ${c.title}：出场人物、叙事事件流，均带原著定位符。`}>
@@ -42,10 +44,10 @@ const CONF = { high: '●●', medium: '●○', low: '○○' };
     <section>
       <h2>出场人物 <span class="dim">（按出场频次，含对话提及）</span></h2>
       <p class="chips">
-        {c.chars.map((p) => (
-          dossierNames.has(p.name)
-            ? <a class="chip link" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(p.name)}<small>×{p.n}</small></a>
-            : <span class="chip">{dsp(p.name)}<small>×{p.n}</small></span>
+        {charTargets.map((p) => (
+          p.target
+            ? <a class="chip link" href={`${B}characters/${encodeURIComponent(p.target)}/`}>{dsp(p.name)}<small>×{p.n}</small></a>
+            : <span class="chip" title={`存目 · 出场 ${p.n} 次`}>{dsp(p.name)}<small>×{p.n}</small></span>
         ))}
       </p>
     </section>

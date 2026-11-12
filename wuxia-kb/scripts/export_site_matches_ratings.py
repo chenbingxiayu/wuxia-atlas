@@ -24,6 +24,18 @@
 CLI：
   python scripts/export_site_matches_ratings.py                # 全量 dry-run
   python scripts/export_site_matches_ratings.py --book 白发魔女传  # 单书（调试；仍写两文件）
+  python scripts/export_site_matches_ratings.py --scope tianshan-demo   # 天山 7 书裁剪口径（W0-T3a）
+
+W0-T3a（天山演示版总体方案 §1.2，2026-11-08）scope 口径：
+  - matches/ratings/conflicts 按 book ∈ scope 过滤（对局书单先裁剪）；fighters 按
+    过滤后对局重算；players/w-d-l/per_book/conflicts 由过滤后对局重算（build_ratings）；
+  - 全量口径（不带 --scope）行为与现状完全一致（方案 R6）。
+
+W2-C1（天山演示版总体方案 §3.1 P0-2/§4.3 C1/§5.5，2026-11-09）legacy 中间层声明：
+  本导出器的 matches-v1/glicko2 产物为 legacy 中间层——正式 live 由工具 E
+  scripts/clean_matches.py（matches-v2）与 scripts/ratings_whr.py（whr）覆盖；
+  部署序列必须保证本导出器先跑、工具 E 后跑（scripts/run_pipeline.py 已固化 §5.5
+  唯一顺序），否则页面宣称 WHR 而数据是 glicko2（P0-2 根因复现）。
 """
 from __future__ import annotations
 
@@ -224,6 +236,19 @@ def build_matches(events_by_book: dict, books: list) -> tuple:
     return matches, sorted(fighters), excluded, dict(evidence_src)
 
 
+# ---------------------------------------------------------------- scope 过滤（W0-T3a）
+def filter_matches(matches: list, scope) -> list:
+    """对局按 book ∈ scope 过滤（方案 §1.2）；全量口径（scope=None）原样返回（R6）。"""
+    if scope is None:
+        return list(matches)
+    return [m for m in matches if esc.in_scope(m.get("book"), scope)]
+
+
+def fighters_of(matches: list) -> list:
+    """对局集 → 出场者（fighters 按过滤后对局重算的单一来源）。"""
+    return sorted({p for m in matches for p in (m.get("a"), m.get("b")) if p})
+
+
 # ---------------------------------------------------------------- Glicko-2（PORT build_ratings.py v0.1）
 def glicko2_update(mu, phi, sigma, opponents):
     def g(p):
@@ -311,10 +336,15 @@ def quantile(values: list, q: float) -> float:
     return values[i]
 
 
-def build_ratings(matches: list) -> dict:
+def build_ratings(matches: list, books: list | None = None) -> dict:
+    """Glicko-2 榜单（W0-T3a：books 参数指定 per_book 覆盖书；缺省 CHRONO，全量口径不变）。
+
+    matches 应已按 scope 过滤（filter_matches）——players/conflicts/per_book 均由
+    过滤后对局重算（方案 §1.2）。
+    """
     players = run_glicko(matches)
     per_book = defaultdict(dict)
-    for book in CHRONO:
+    for book in (books if books is not None else CHRONO):
         bm = [m for m in matches if m["book"] == book]
         if not bm:
             continue
@@ -362,12 +392,13 @@ def build_ratings(matches: list) -> dict:
         idx[m["a"]].append(m["id"])
         idx[m["b"]].append(m["id"])
     players_out = []
+    per_book_books = books if books is not None else CHRONO
     for r in sorted(rows, key=lambda r: -r["display"]):
         players_out.append({
             "name": r["name"], "rating": round(r["display"]), "rd": round(r["rd"]),
             "tier": tier_of(r["display"]), "matches_n": r["n"],
             "w/d/l": [r["w"], r["d"], r["l"]],
-            "per_book": {b: per_book.get(r["name"], {}).get(b) for b in CHRONO
+            "per_book": {b: per_book.get(r["name"], {}).get(b) for b in per_book_books
                          if per_book.get(r["name"], {}).get(b) is not None},
             "prior_applied": [],
             "top_evidence": idx.get(r["name"], [])[:3],
@@ -376,81 +407,114 @@ def build_ratings(matches: list) -> dict:
 
 
 # ---------------------------------------------------------------- 落库
-def write_outputs(books: list | None = None) -> int:
+def build_matches_payload(matches: list, fighters: list, excluded: dict, evidence_src: dict,
+                          stats: dict, scope=None) -> dict:
+    """matches.json payload（W0-T3a：scope 口径 meta 加 scope 键；stats=事件层统计）。"""
+    ev_total = stats.get("ev_total", 0)
+    combat_total = stats.get("combat_total", 0)
+    meta = {
+        "generated": esc.today(),
+        "schema": SCHEMA_MATCHES,
+        "wordlist_version": WORDLIST_VERSION,
+        "scene_splitter_version": SCENE_SPLITTER,
+        "totals": {"matches": len(matches), "fighters": len(fighters),
+                   "excluded_narrative": sum(excluded.values())},
+        "excluded_detail": excluded,
+        "note": "对局=场景内 T01/T02 事件对手对；裁决=旧 build_matches v0.1 胜负词表投影到场景"
+                "文本；D03 outcome 五值→win/loss/draw（未决/未知不进榜）；原文/词表命中词不发布（L0）。"
+                "本产物为 legacy 中间层（EX-5 matches-v1/glicko2）：正式 live 由工具 E "
+                "clean_matches/ratings_whr 覆盖（管线顺序见 scripts/run_pipeline.py，方案 §5.5）。",
+        "source": SOURCE,
+        "notes": [
+            f"输入事件层：{ev_total} 事件（其中 T01/T02 对抗事件 {combat_total} 条）；"
+            f"场景切分=同回 PN 距 ≤{SCENE_GAP}",
+            "canonical 归并与事件层/registry 同口径；fighters/top_evidence 可回溯事件 loc",
+            "与旧站 matches（2026-11-02：484 场/206 人，旧事件表 + ◈◉▲ 三码）口径不同："
+            "新数据为 D03 13 类候选层的 T01/T02 子集，数量不可直接相减",
+        ],
+        "coverage": {"matches": len(matches),
+                     "evidence_source": evidence_src,
+                     "dedupe": "同回同场景同对手对只出一场；事件层回退按 (书,回,对手对) 去重",
+                     "scene_gap_pn": SCENE_GAP},
+        "field_gaps": [
+            "旧契约 outcome 仅 win/loss/draw：D03『未决/未知』不映射为契约值，"
+            "未分胜负或证据不足的对局不入 matches（避免虚增战绩）",
+            "旧站 modifiers/weight 词表为 build_matches v0.1；本导出以同词表移植+事件层"
+            "condition_tags 合成，词表命中词与摘录按 L0 不发布",
+            "围攻 v0 整场一对（与旧口径一致）；连续交锋合并/子事件留 v1",
+        ],
+    }
+    if scope is not None:
+        meta["scope"] = scope["profile"]
+        meta["field_gaps"].append(
+            f"scope 口径（{scope['profile']}）：matches/fighters 仅收 scope 内书目的对局"
+            f"（books={'、'.join(scope.get('books', []))}）；fighters 为过滤后对局重算值。")
+    return {"meta": meta, "matches": matches, "fighters": fighters}
+
+
+def build_ratings_payload(ratings: dict, matches: list, scope=None) -> dict:
+    """ratings.json payload（W0-T3a：scope 口径 meta 加 scope 键；players/conflicts 已随
+    过滤后对局重算——调用方先 filter_matches 再 build_ratings）。"""
+    meta = {
+        "generated": esc.today(),
+        "engine": "glicko2",
+        # W2-C1：legacy 中间层声明（EX-5 v1 产物正式 live 由工具 E 覆盖——防部署序列踩踏）
+        "note": "本产物为 legacy 中间层（EX-5 matches-v1/glicko2）：正式 live 由工具 E "
+                "clean_matches/ratings_whr 覆盖（管线顺序见 scripts/run_pipeline.py，方案 §5.5）。",
+        "params": {"r0": R0, "rd0": RD0, "vol": SIGMA, "tau": TAU, "shrink_P": P_SHRINK},
+        "wordlist_version": WORDLIST_VERSION,
+        "calibration": {"holdout_n": 0, "direction_recall": None,
+                        "note": "v0 未做 holdout 抽检；方向来自事件层 outcome 投影，"
+                                "人工抽检 100 场待办（与旧站口径一致）"},
+        "tiers": ratings["thresholds"],
+        "totals": {"players": len(ratings["players"]), "matches": len(matches)},
+        "source": SOURCE,
+        "notes": [f"宇宙编年顺序：{CHRONO}（旧 4 书顺序 + 冰魄寒光剑追加；N4 未给跨书编年，"
+                  f"按旧口径延展）",
+                  "rating/rd 为展示分/评分偏差（Glicko-2 + 长尾收缩）；per_book 每书独立 1500 起评",
+                  "conflicts 阈值与旧站一致：高置信非平局且败方展示分高出 ≥120"],
+        "field_gaps": [
+            "旧站 tiers 由旧 matches 分布决定；新 matches 为 D03 T01/T02 子集，分档阈值随之变化"
+            "（方法口径不变，数值不可直接对比）",
+            "旧站 players=206/conflicts=4（2026-11-02）；新数量见 totals，均为候选级数据",
+            "prior_applied 恒空（无先验分修订流程）；direction_recall 未做 holdout",
+        ],
+    }
+    if scope is not None:
+        meta["scope"] = scope["profile"]
+        meta["field_gaps"].append(
+            f"scope 口径（{scope['profile']}）：players/w-d-l/per_book/conflicts 按过滤后对局"
+            "（book ∈ scope）重算；分档阈值随 scope 内分布变化。")
+    return {"meta": meta, "players": ratings["players"], "conflicts": ratings["conflicts"]}
+
+
+def write_outputs(books: list | None = None, scope=None) -> int:
     all_books = [b for b in config.book_names() if (EVENTS_DIR / f"{b}.json").exists()]
     events_by_book = {}
     for book in all_books:
         payload = esc.load_json(EVENTS_DIR / f"{book}.json")
         events_by_book[book] = payload.get("events") or []
     books = books or all_books
+    # W0-T3a：scope 口径下对局书单先裁剪（build_matches 只遍历 books → matches 天然过滤）
+    if scope is not None:
+        books = [b for b in books if esc.in_scope(b, scope)]
+        missing = [b for b in scope["books"] if b not in all_books]
+        if missing:
+            print(f"[EX-5] ⚠ scope {scope['profile']} 缺事件层书目：{'、'.join(missing)}")
     matches, fighters, excluded, evidence_src = build_matches(events_by_book, books)
-    # 事件层统计（全量，供报告）
-    ev_total = sum(len(v) for v in events_by_book.values())
-    combat_total = sum(1 for v in events_by_book.values() for e in v if e.get("type") in COMBAT_TYPES)
-    ratings = build_ratings(matches)
+    # 事件层统计（报告口径：scope 口径按 scope 书统计，全量口径不变）
+    stat_books = books if scope is not None else all_books
+    ev_total = sum(len(events_by_book.get(b) or []) for b in stat_books)
+    combat_total = sum(1 for b in stat_books for e in events_by_book.get(b) or []
+                       if e.get("type") in COMBAT_TYPES)
+    ratings = build_ratings(matches, books=books if scope is not None else None)
 
-    matches_payload = {
-        "meta": {
-            "generated": esc.today(),
-            "schema": SCHEMA_MATCHES,
-            "wordlist_version": WORDLIST_VERSION,
-            "scene_splitter_version": SCENE_SPLITTER,
-            "totals": {"matches": len(matches), "fighters": len(fighters),
-                       "excluded_narrative": sum(excluded.values())},
-            "excluded_detail": excluded,
-            "note": "对局=场景内 T01/T02 事件对手对；裁决=旧 build_matches v0.1 胜负词表投影到场景"
-                    "文本；D03 outcome 五值→win/loss/draw（未决/未知不进榜）；原文/词表命中词不发布（L0）。",
-            "source": SOURCE,
-            "notes": [
-                f"输入事件层：{ev_total} 事件（其中 T01/T02 对抗事件 {combat_total} 条）；"
-                f"场景切分=同回 PN 距 ≤{SCENE_GAP}",
-                "canonical 归并与事件层/registry 同口径；fighters/top_evidence 可回溯事件 loc",
-                "与旧站 matches（2026-11-02：484 场/206 人，旧事件表 + ◈◉▲ 三码）口径不同："
-                "新数据为 D03 13 类候选层的 T01/T02 子集，数量不可直接相减",
-            ],
-            "coverage": {"matches": len(matches),
-                         "evidence_source": evidence_src,
-                         "dedupe": "同回同场景同对手对只出一场；事件层回退按 (书,回,对手对) 去重",
-                         "scene_gap_pn": SCENE_GAP},
-            "field_gaps": [
-                "旧契约 outcome 仅 win/loss/draw：D03『未决/未知』不映射为契约值，"
-                "未分胜负或证据不足的对局不入 matches（避免虚增战绩）",
-                "旧站 modifiers/weight 词表为 build_matches v0.1；本导出以同词表移植+事件层"
-                "condition_tags 合成，词表命中词与摘录按 L0 不发布",
-                "围攻 v0 整场一对（与旧口径一致）；连续交锋合并/子事件留 v1",
-            ],
-        },
-        "matches": matches,
-        "fighters": fighters,
-    }
+    matches_payload = build_matches_payload(matches, fighters, excluded, evidence_src,
+                                            {"ev_total": ev_total, "combat_total": combat_total},
+                                            scope=scope)
     diff1 = esc.finish("matches.json", matches_payload, exporter=EXPORTER,
                        notes=render_matches_notes(matches_payload, events_by_book))
-    ratings_payload = {
-        "meta": {
-            "generated": esc.today(),
-            "engine": "glicko2",
-            "params": {"r0": R0, "rd0": RD0, "vol": SIGMA, "tau": TAU, "shrink_P": P_SHRINK},
-            "wordlist_version": WORDLIST_VERSION,
-            "calibration": {"holdout_n": 0, "direction_recall": None,
-                            "note": "v0 未做 holdout 抽检；方向来自事件层 outcome 投影，"
-                                    "人工抽检 100 场待办（与旧站口径一致）"},
-            "tiers": ratings["thresholds"],
-            "totals": {"players": len(ratings["players"]), "matches": len(matches)},
-            "source": SOURCE,
-            "notes": [f"宇宙编年顺序：{CHRONO}（旧 4 书顺序 + 冰魄寒光剑追加；N4 未给跨书编年，"
-                      f"按旧口径延展）",
-                      "rating/rd 为展示分/评分偏差（Glicko-2 + 长尾收缩）；per_book 每书独立 1500 起评",
-                      "conflicts 阈值与旧站一致：高置信非平局且败方展示分高出 ≥120"],
-            "field_gaps": [
-                "旧站 tiers 由旧 matches 分布决定；新 matches 为 D03 T01/T02 子集，分档阈值随之变化"
-                "（方法口径不变，数值不可直接对比）",
-                "旧站 players=206/conflicts=4（2026-11-02）；新数量见 totals，均为候选级数据",
-                "prior_applied 恒空（无先验分修订流程）；direction_recall 未做 holdout",
-            ],
-        },
-        "players": ratings["players"],
-        "conflicts": ratings["conflicts"],
-    }
+    ratings_payload = build_ratings_payload(ratings, matches, scope=scope)
     diff2 = esc.finish("ratings.json", ratings_payload, exporter=EXPORTER,
                        notes=render_ratings_notes(ratings_payload, matches_payload))
     print(f"[EX-5] events={ev_total}（combat {combat_total}）→ matches={len(matches)} "
@@ -556,12 +620,15 @@ def render_ratings_notes(payload: dict, matches_payload: dict) -> str:
 def main() -> int:
     if "--apply" in sys.argv:
         print("[EX-5] 注意：--apply 经 export_site_common 备份后写 site/data；本阶段默认 dry-run。")
+    # W0-T3a：--scope <profile> 裁剪口径（W0-T1 基础设施；不带 --scope = 全量口径，向后兼容）
+    profile = esc.scope_from_args()
+    scope = esc.load_scope(profile) if profile is not None else None
     books = None
     if "--book" in sys.argv:
         i = sys.argv.index("--book")
         if i + 1 < len(sys.argv):
             books = [sys.argv[i + 1]]
-    return write_outputs(books)
+    return write_outputs(books, scope=scope)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
   "schema": "wuxia-time-resolve-v1",
   "book": "江湖三女侠",
   "work_id": "jianghu",
-  "generated_at": "2026-11-06 08:44:17",
+  "generated_at": "2026-11-07 03:43:12",
   "tool": "time_resolver_wuxia v0.1 (2026-11-05, N4/D05)",
   "spec": {
     "skill": "skills/SKILL_时间体系_武侠版.md",

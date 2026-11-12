@@ -1,6 +1,17 @@
 # -*- coding: utf-8 -*-
 """G0.5：时空切片 —— 人-回-地共现序列 + 回目事件（L0）+ 内联江湖状态。
 
+【已废弃 · 2026-11-08（W0-T4 · 天山演示版总体方案 §1.2）】
+本脚本不再用于站点导出：atlas/state.json（与 atlas/<书>.json）改由
+wuxia-kb/scripts/export_site_gazetteer_universe.py（EX-7）接管：
+  全量口径  python -X utf8 wuxia-kb/scripts/export_site_gazetteer_universe.py           # 等价全量版
+  演示口径  python -X utf8 wuxia-kb/scripts/export_site_gazetteer_universe.py --scope tianshan-demo
+其 site/data/atlas/state.json 长期停留在 2026-11-02 陈旧 4 书口径（MapTrail.tsx 与
+build_qa_index.py 均消费该文件），EX-7 接管后随导出口径重建（消费键兼容）。
+本文件保留仅作历史参考，勿再运行或接入部署序列。
+
+（以下为原 G0.5 文档，供历史参考）
+
 用法：python scripts/build_atlas_slices.py
 
 输入（全部解析结果，lit_books() 自动发现）：

@@ -1,0 +1,278 @@
+---
+import Base from '../../layouts/Base.astro';
+import { B } from '@lib/base';
+
+/* D6 专栏 [slug] 模板页：五段式（命题→图表→读图→证据链→方法与复跑），
+   替代两篇独立硬编码 astro（《专栏页重构设计.md》§四/§五）。
+   图表 = 构建期 SVG（0 JS），坐标/刻度/图例/注记全部来自 story-v2 json 的 chart 图纸——
+   页面不硬编码回数；新增一篇 = 加配置 + 文案，本页零改动。
+   F5：新增 flow 分支（名物流转横向编年链：书泳道 + verb 节点 + dir 边箭头文案），
+   证据链回目链接按证据自带书名（e.book）跨书跳转；subject 交叉出口按模板分支（名物页/档案页）。 */
+
+export function getStaticPaths() {
+  /* Astro 在模块顶层语句执行前调用本函数——数据装载须自包含（勿引用顶层 const/函数） */
+  const mods = import.meta.glob('../../../data/stories/*.json', { eager: true }) as Record<string, any>;
+  return Object.values(mods)
+    .map((m) => m?.default ?? m)
+    .filter((d) => d?.story_id)
+    .sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
+    .map((p) => ({ params: { slug: String(p.story_id) }, props: { p } }));
+}
+const { p } = Astro.props as { p: any };
+
+/* ---- 公共坐标（全部由 per_chapter 数据推导，无硬编码回数）---- */
+const rows: any[] = p.per_chapter;
+const cs = rows.map((r) => r.c);
+const cMin = Math.min(...cs), cMax = Math.max(...cs);
+const kind = p.chart.kind as 'relation' | 'growth' | 'density' | 'flow';
+const W = 1150, padL = 44, padR = 16;
+/* flow：末段节点贴右缘，loc/name 标签居中会越界 → 右侧留白放大（仅 flow 生效） */
+const padReff = kind === 'flow' ? 44 : padR;
+const innerW = W - padL - padReff;
+const x = (c: number) => padL + ((c - cMin) / Math.max(cMax - cMin, 1)) * innerW;
+const pad3 = (c: number) => String(c).padStart(3, '0');
+/* 刻度：域上 ~8 等分（v1 的 [1,4,8,…] 硬编码由此数据化） */
+const tickN = 8;
+const ticks = [...new Set(Array.from({ length: tickN + 1 }, (_, i) => Math.round(cMin + (i * (cMax - cMin)) / tickN)))];
+/* 锚点注记线：同回多锚点纵向错位（凌未风篇楔子 3 锚同回）；flow 图不渲染竖线注记 */
+const slotCounter: Record<number, number> = {};
+const markerRows = p.markers.map((m: any) => {
+  const slot = slotCounter[m.c] ?? 0;
+  slotCounter[m.c] = slot + 1;
+  return { ...m, slot };
+});
+const maxStack = Math.max(1, ...Object.values(slotCounter));
+const top = 34 + 12 * (maxStack - 1);
+const vMax = (key: string) => Math.max(...rows.map((r) => r[key] ?? 0), 1);
+const linePath = (key: string, yFn: (v: number) => number) =>
+  rows.map((r, i) => `${i ? 'L' : 'M'}${x(r.c).toFixed(1)} ${yFn(r[key] ?? 0).toFixed(1)}`).join('');
+
+const H = kind === 'relation' ? 400 : kind === 'flow' ? 348 : 340;
+
+/* ---- flow（F5 名物流转）：横向编年链，书为泳道，dir 边带箭头文案（who → kind → who）---- */
+let fl: any = {};
+if (kind === 'flow') {
+  const laneBooks: string[] = (p.chart.lanes ?? []).map((l: any) => String(l.book));
+  const laneGap = 104;
+  fl = { laneBooks, laneGap, laneY: (book: string) => top + 40 + Math.max(laneBooks.indexOf(book), 0) * laneGap };
+}
+
+/* ---- relation（温度曲线）：主区双线 + 关键词低带（v1 视觉逐元素保留，仅刻度数据化）---- */
+let rel: any = {};
+if (kind === 'relation') {
+  const gap = 58, lowH = 74;
+  const mainH = H - top - gap - lowH - 20;
+  const maxCo = vMax('co_events'), maxNeg = vMax('neg');
+  const maxKw = Math.max(...rows.map((r) => Math.max(r.kw_pos ?? 0, r.kw_neg ?? 0)), 1);
+  const yMain = (v: number) => top + mainH - (v / maxCo) * (mainH - 10);
+  const yNeg = (v: number) => top + mainH - (v / maxNeg) * (mainH - 10);
+  const yLow = (v: number) => top + mainH + gap + (lowH - 12) - (v / maxKw) * (lowH - 12);
+  rel = { gap, lowH, mainH, maxKw, yMain, yNeg, yLow,
+    pathCo: linePath('co_events', yMain), pathNeg: linePath('neg', yNeg),
+    area: `${linePath('co_events', yMain)}L${x(cMax)} ${top + mainH}L${x(cMin)} ${top + mainH}Z`,
+    lowBars: rows.filter((r) => (r.kw_pos ?? 0) + (r.kw_neg ?? 0) > 0) };
+}
+
+/* ---- growth / density：系列线 + 杀伤点 + 里程碑注记（flow 不进本分支——无 series 曲线）---- */
+let gr: any = {};
+if (kind === 'growth' || kind === 'density') {
+  const mainH = H - top - 46;
+  const countKeys = p.chart.series.filter((s: any) => !s.scale).map((s: any) => s.key);
+  const maxEv = Math.max(...rows.flatMap((r) => countKeys.map((k: string) => r[k] ?? 0)), 1);
+  const yCount = (v: number) => top + mainH - (v / maxEv) * (mainH - 10);
+  const yFor = (s: any) => (s.scale === 'sqrt'
+    ? (v: number) => top + mainH - Math.sqrt(v / vMax(s.key)) * (mainH - 10)
+    : yCount);
+  gr = { mainH, yFor, paths: p.chart.series.map((s: any) => ({ s, d: linePath(s.key, yFor(s)) })),
+    kills: rows.filter((r) => (r.kills ?? 0) > 0),
+    /* 证据链计算件：高烈度回目（密度篇按 total；成长篇按主+客） */
+    notable: [...rows].sort((a, b) => {
+      const va = kind === 'density' ? a.total : a.active + a.passive;
+      const vb = kind === 'density' ? b.total : b.active + b.passive;
+      return vb - va;
+    }).slice(0, 4) };
+}
+
+const bookHref = (book: string, c: number) => `${B}books/${book || p.book}/${pad3(c)}/`;
+const subjectHref = p.template === 'artifact' ? `${B}weapons/${p.subject}/` : `${B}characters/${p.subject}/`;
+const annalsHref = `${B}universe/timeline/?v=annals`;
+---
+
+<Base title={p.title}>
+  <article class="art">
+    <p class="crumb"><a href={`${B}stories/`}>数据说书</a> · {p.tag}命题 · 可复跑（脚本 + 数据版本 {p.meta.generated}）</p>
+    <h1>{p.title}</h1>
+    <p class="sub">
+      {p.template === 'artifact'
+        ? `${p.subject}流转切片：主书《${p.book}》· 链及 ${p.summary?.n_books ?? '—'} 书——明文事件 ${cMax} 段（rev17 编年序）· 方向边 ${p.summary?.n_dir ?? 0} 条 · 关键流转点注记 ${p.markers.length} 处 · 命题句可判真伪。`
+        : `《${p.book}》事件切片：${cMin === 0 ? `楔子至第 ${cMax} 回` : `全书 ${cMax} 回`}逐回曲线 · 锚点注记 ${p.markers.length} 条（剧情锚点表取数）· 命题句可判真伪。`}
+    </p>
+
+    <h2>命题</h2>
+    <blockquote><b>{p.editorial.thesis}</b></blockquote>
+
+    <h2>图表</h2>
+    <div class="chartcard">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={p.chart.title}>
+        {kind !== 'flow' && markerRows.map((m: any) => (
+          <g>
+            <line x1={x(m.c)} y1={top - 6} x2={x(m.c)} y2={(kind === 'relation' ? top + rel.mainH + 14 : top + gr.mainH)} stroke="#b5a687" stroke-dasharray="3 4" />
+            <text x={x(m.c)} y={top - 10 - m.slot * 12} font-size="10.5" fill="#5f584b" text-anchor="middle">{m.label}</text>
+          </g>
+        ))}
+
+        {kind === 'relation' && (
+          <g>
+            <path d={rel.area} fill="#31536c" opacity="0.10" />
+            <path d={rel.pathCo} fill="none" stroke="#31536c" stroke-width="1.8" />
+            <path d={rel.pathNeg} fill="none" stroke="#a23527" stroke-width="2.2" />
+            {rel.lowBars.map((r: any) => (
+              <g>
+                {r.kw_pos > 0 && <rect x={x(r.c) - 3} y={rel.yLow(r.kw_pos)} width="6" height={top + rel.mainH + rel.gap + rel.lowH - 12 - rel.yLow(r.kw_pos)} fill="#b8860b" opacity="0.85"><title>第{r.c}回 温情关键词 ×{r.kw_pos}</title></rect>}
+                {r.kw_neg > 0 && <rect x={x(r.c) + 3.5} y={rel.yLow(r.kw_neg)} width="6" height={top + rel.mainH + rel.gap + rel.lowH - 12 - rel.yLow(r.kw_neg)} fill="#262420" opacity="0.55"><title>第{r.c}回 悲情关键词 ×{r.kw_neg}</title></rect>}
+              </g>
+            ))}
+            <line x1={padL} y1={top + rel.mainH + rel.gap - 6} x2={W - padR} y2={top + rel.mainH + rel.gap - 6} stroke="#d8cdb4" />
+          </g>
+        )}
+
+        {(kind === 'growth' || kind === 'density') && (
+          <g>
+            {gr.paths.map(({ s, d }: any) => (
+              <path d={d} fill="none" stroke={s.color} stroke-width={s.width ?? 1.8}
+                stroke-dasharray={s.dashed ? '2 5' : undefined} opacity={s.dashed ? 0.7 : 1} />
+            ))}
+            {(gr.kills ?? []).map((r: any) => (
+              <circle cx={x(r.c)} cy={gr.yFor(p.chart.series[0])(r[p.chart.series[0].key])} r="4.5" fill="#a23527"><title>第{r.c}回 杀伤×{r.kills}</title></circle>
+            ))}
+            {(p.chart.annotations ?? []).map((a: any) => (
+              <g>
+                <line x1={x(a.c)} y1={top - 4} x2={x(a.c)} y2={top + gr.mainH} stroke={a.color} stroke-dasharray="3 4" />
+                <text x={a.anchor === 'end' ? x(a.c) - 4 : x(a.c) + 4} y={top + 8} font-size="11" fill={a.color} text-anchor={a.anchor}>{a.label}</text>
+              </g>
+            ))}
+          </g>
+        )}
+
+        {kind === 'flow' && (
+          <g>
+            {fl.laneBooks.map((book: string) => (
+              <g>
+                <line x1={padL} y1={fl.laneY(book)} x2={W - padReff} y2={fl.laneY(book)} stroke="#d8cdb4" stroke-dasharray="4 6" />
+                <text x={padL} y={fl.laneY(book) - 34} font-size="12.5" fill="#5f584b">《{book}》</text>
+              </g>
+            ))}
+            {p.chart.nodes.map((n: any) => (
+              <g>
+                {n.dir && (
+                  <text x={x(n.seq)} y={fl.laneY(n.lane) - 16} font-size="11.5" font-weight="bold"
+                    fill={n.dir.kind === '夺' ? '#a23527' : '#31536c'} text-anchor="middle">{n.dir.label}</text>
+                )}
+                {n.suspect ? (
+                  <g>
+                    <circle cx={x(n.seq)} cy={fl.laneY(n.lane)} r="7" fill="none" stroke={n.color} stroke-width="1.6" stroke-dasharray="3 3" />
+                    <line x1={x(n.seq) - 4.2} y1={fl.laneY(n.lane) - 4.2} x2={x(n.seq) + 4.2} y2={fl.laneY(n.lane) + 4.2} stroke={n.color} stroke-width="1.6" />
+                    <line x1={x(n.seq) - 4.2} y1={fl.laneY(n.lane) + 4.2} x2={x(n.seq) + 4.2} y2={fl.laneY(n.lane) - 4.2} stroke={n.color} stroke-width="1.6" />
+                    <title>{`第${n.seq}段 · 《${n.lane}》${n.loc} · ${n.name}（存疑折叠）`}</title>
+                  </g>
+                ) : (
+                  <circle cx={x(n.seq)} cy={fl.laneY(n.lane)} r="7" fill={n.color}>
+                    <title>{`第${n.seq}段 · 《${n.lane}》${n.loc} · ${n.name}`}</title>
+                  </circle>
+                )}
+                <text x={x(n.seq)} y={fl.laneY(n.lane) + 24} font-size="10" fill="#8a8172" font-family="monospace" text-anchor="middle">{n.loc}</text>
+                <text x={x(n.seq)} y={fl.laneY(n.lane) + 36} font-size="10.5" fill="#5f584b" text-anchor="middle">{n.name}</text>
+              </g>
+            ))}
+            {p.chart.end_state && <text x={padL} y={H - 52} font-size="12" fill="#b8860b">⇒ {p.chart.end_state}</text>}
+            <text x={W - padReff} y={H - 52} font-size="11" fill="#8a8172" text-anchor="end">x = 编年序（rev17 链序）</text>
+          </g>
+        )}
+
+        <g font-size="11" fill="#8a8172" font-family="monospace" text-anchor="middle">
+          {ticks.map((c) => <text x={x(c)} y={H - 8}>{kind === 'flow' ? c : pad3(c)}</text>)}
+        </g>
+        <g font-size="12">
+          {(p.chart.series ?? []).map((s: any, i: number) => (
+            <g>
+              {s.dashed
+                ? <line x1={padL + i * 220} y1={H - 25} x2={padL + i * 220 + 26} y2={H - 25} stroke={s.color} stroke-width={s.width ?? 1.8} stroke-dasharray="2 5" />
+                : <rect x={padL + i * 220} y={H - 30} width="10" height="10" fill={s.color} opacity={s.area ? 0.25 : 1} />}
+              <text x={padL + i * 220 + (s.dashed ? 32 : 16)} y={H - 21} fill="#5f584b">{s.label}</text>
+            </g>
+          ))}
+          {p.chart.dots && (
+            <g>
+              <circle cx={padL + 220 * (p.chart.series ?? []).length + 5} cy={H - 25} r="4.5" fill={p.chart.dots.color} />
+              <text x={padL + 220 * (p.chart.series ?? []).length + 16} y={H - 21} fill="#5f584b">{p.chart.dots.label}</text>
+            </g>
+          )}
+          {kind === 'flow' && (p.chart.legend ?? []).map((l: any, i: number) => (
+            <g>
+              <rect x={padL + i * 220} y={H - 30} width="10" height="10" fill={l.color} />
+              <text x={padL + i * 220 + 16} y={H - 21} fill="#5f584b">{l.label}</text>
+            </g>
+          ))}
+          {(p.chart.bands ?? []).map((bd: any) => (
+            <text x={padL + 460} y={H - 21} fill="#5f584b">{bd.label}（0–{rel.maxKw}）</text>
+          ))}
+        </g>
+      </svg>
+    </div>
+
+    <h2>读图三问</h2>
+    {p.editorial.reads.map((qa: any) => <p><b>{qa.q}</b>{qa.a}</p>)}
+
+    <h2>证据链</h2>
+    <ul class="ev">
+      {p.editorial.evidence.map((e: any) => (
+        <li>
+          <span class="loc">{e.loc}</span> {e.text}
+          <a href={bookHref(e.book, parseInt(e.loc.slice(0, 3), 10))}>回目页 →</a>
+          {e.annals && <a href={annalsHref}>事件年谱（小说中的今天） →</a>}
+        </li>
+      ))}
+      {(kind === 'growth' || kind === 'density') && gr.notable.map((r: any) => (
+        <li>
+          <a class="mono" href={bookHref(p.book, r.c)}>第 {pad3(r.c)} 回 →</a>
+          {kind === 'density'
+            ? `复仇线密度 ${r.total}（主 ${r.active} / 客 ${r.passive} · 杀 ${r.kills}）`
+            : `主 ${r.active} / 客 ${r.passive} · 杀 ${r.kills} · 对手 ${(r.opponents ?? []).join('、') || '—'}`}
+        </li>
+      ))}
+    </ul>
+    {p.template === 'artifact' ? (
+      <p class="xref">锚点即档案：本篇 markers（方向边关键流转点）与 <a href={subjectHref}>{p.subject} 名物页</a>历代流转／最终归宿同源——weapons 数据自带方向边，非锚点表口径。</p>
+    ) : (
+      <p class="xref">锚点即档案：本篇 markers 与 <a href={subjectHref}>{p.subject} 档案页</a>剧情列表/剧情地图三点一源；{kind === 'density' ? <>确日联动见<a href={annalsHref}>事件年谱</a>。</> : <>成长数据版见档案页巅峰曲线。</>}</p>
+    )}
+
+    <h2>方法与复跑</h2>
+    <p class="method">
+      {p.editorial.method_note} 数据版本 <code>{p.meta.generated}</code> · schema <code>{p.meta.schema}</code>。
+    </p>
+  </article>
+</Base>
+
+<style>
+  .art { max-width: 900px; margin: 0 auto; }
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { letter-spacing: 1px; }
+  .sub { color: var(--ink-light); margin-top: -4px; }
+  h2 { font-size: 1.15rem; margin-top: 2rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  p { line-height: 2; color: var(--ink); }
+  blockquote { margin: 1em 0; padding: .8em 1.2em; border-left: 4px solid var(--seal); background: rgba(255,255,255,.5); line-height: 2; }
+  blockquote b { color: var(--seal); }
+  .chartcard { border: 1px solid var(--line-strong); border-radius: 4px; padding: 10px; background: #fbf8ef; }
+  svg { width: 100%; height: auto; display: block; }
+  .ev { list-style: none; padding: 0; }
+  .ev li { padding: .35em 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+  .loc { font-family: var(--font-mono); color: var(--ink-faint); margin-right: .8em; }
+  .mono { font-family: var(--font-mono); }
+  .ev a { font-size: .8rem; color: var(--azure); margin-left: .6em; }
+  .xref { font-size: .85rem; color: var(--ink-light); }
+  .xref a { color: var(--azure); }
+  .method { font-size: .85rem; color: var(--ink-light); }
+  .method code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .3em; font-family: var(--font-mono); font-size: .85em; }
+</style>

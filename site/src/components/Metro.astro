@@ -21,6 +21,7 @@ const W = Math.max(...lines.map((l) => X0 + (l.members.length - 1) * SP)) + 30;
 const H = lines.length * LH + (compact ? 8 : 46);
 ---
 
+<div class="metro-scroll">
 <svg
   viewBox={`0 0 ${W} ${H}`}
   class="metro"
@@ -44,6 +45,11 @@ const H = lines.length * LH + (compact ? 8 : 46);
             const labeling = m.kb_status === '标注中';
             const dash = m.missing ? '4 3' : undefined;
             const label = m.book + (m.missing ? '（缺佚）' : '');
+            // kb_status 为数据值——tooltip 展示走用户词映射（纪律：内部术语不上界面）
+            const statusLabel = m.kb_status === '已点亮' ? '深度解析'
+              : m.kb_status === '标注中' ? '建设中'
+              : m.kb_status === '待建' ? '存目'
+              : m.kb_status;
             const target = bookTarget(m.book); // task-49：未点亮/缺佚作品不出链接（避免 404）
             const dot = (
               <circle
@@ -59,8 +65,8 @@ const H = lines.length * LH + (compact ? 8 : 46);
             return (
               <g>
                 {target
-                  ? <a href={`${B}books/${target}/`}><title>{`${label} · ${m.kb_status}`}</title>{dot}</a>
-                  : <g><title>{`${label} · ${m.kb_status}`}</title>{dot}</g>}
+                  ? <a href={`${B}books/${target}/`}><title>{`${label} · ${statusLabel}`}</title>{dot}</a>
+                  : <g><title>{`${label} · ${statusLabel}`}</title>{dot}</g>}
                 <text
                   x={x}
                   y={y + (si % 2 === 0 ? 22 : 34)}
@@ -92,8 +98,10 @@ const H = lines.length * LH + (compact ? 8 : 46);
     )
   }
 </svg>
+</div>
 
 <style>
+  .metro-scroll { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
   .metro { width: 100%; height: auto; }
   .linename { font-size: 12px; font-weight: 700; }
   .stlit { fill: var(--ink); }
@@ -101,4 +109,10 @@ const H = lines.length * LH + (compact ? 8 : 46);
   .legend text { font-size: 11px; fill: var(--ink-light); }
   g a { cursor: pointer; }
   g a:hover circle { stroke-width: 5; }
+
+  /* 移动端：地铁图按可读尺寸横滑，不再整体缩到 4px 字 */
+  @media (max-width: 768px) {
+    .metro { min-width: 700px; }
+    .metro-scroll { padding-bottom: 4px; }
+  }
 </style>

@@ -1,4 +1,4 @@
-# scripts/ · KB 管线脚本目录
+﻿# scripts/ · KB 管线脚本目录
 
 > 承 docs/17 拓扑排序；所有新脚本落本目录，词表数据落 `../wordlists/`。
 > **终版口径快照（docs/66，2026-11-05 23:5x）**：`scripts/*.py` **87 个**（`_oneshot/` 26 另计）；registry 425 / SKU 1,501；5 书 judgment **153**、warnings **0/0/0/0/0**；搜索 **1,443** 条；content 引文 1,495 页/2,194 条（31 pending）；release GO `release_20261105_220127`、发布包 `wuxia-atlas-20261105_220331.zip`（9,126,782B/3,002 文件、sha `6bf4e9ae8411fa3d…`）。下方批次记录中的 45/79/85/263/1,451/1,326/2,007/e67e 等为历史时点，冲突时以 docs/66 §一为准。
@@ -228,5 +228,11 @@
 |---|---|---|
 | `lexical_scan_wuxia.py` | jieba 分词 + 高频候选发现 + 夹心检测（同位复指/父术分裂自证分层） | 只读；报告落 `logs/qa/lexical_scan_<书>.md`；冰魄实测：117,136 字、同位复指 0（合并后基线） |
 | `merge_apposition_names.py` | （见上节，同批） | 已登记 |
+
+### 扩书 P1 新增工具（2026-11-06，docs/71 §七.1 → docs/73 执行）
+
+| 工具 | 用途 | 说明 |
+|---|---|---|
+| `build_mapping_from_registry.py` | **无旧标注换书时的映射来源**：`registry/entities.json` 的 @ 人物别名（全局 aliases + 本书 contextual 注记）＋ 已过审 `tagged/` 的 @ 管道（仅跨书共享规范名，严格过滤）→ 每回《已核准映射表》快照 | 产物 `logs/mapping_<书>/{ch_NNN.json, mapping.json, review.tsv, summary.md}`；第 N 回=首现 <N 回（顺序标注纪律）；单字/通用称谓/器物形/短称/跨书冲突一律不收，人工复核记录在 review.tsv；`--dry-run/--check/--no-gold-transfer`；`--check` 可与 `build_legacy_mapping` 产物对账（江湖：新工具 227 条覆盖 legacy 440 条中的 167 条，其余为旧标注长描述形，属预期差异） |
 
 > 原 `_oneshot/` 7 件保留为历史一次性记录，不再更新；换书一律用本批 `scripts/` 正式版。

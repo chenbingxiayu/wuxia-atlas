@@ -1,7 +1,7 @@
 {
  "book": "冰魄寒光剑",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 08:44:33",
+ "generated": "2026-11-07",
+ "generated_at": "2026-11-07 03:43:23",
  "script": "scripts/relation_validator.py",
  "script_version": "0.1",
  "spec_version": "0.3-draft",
@@ -15,10 +15,10 @@
   "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
  ],
  "snapshot": {
-  "exported_at": "2026-11-06 08:44:33",
+  "exported_at": "2026-11-07 03:43:23",
   "tagged_chapters": 12,
   "concordance_generated": "2026-11-06T00:28:04+08:00",
-  "registry_entities": 738,
+  "registry_entities": 2926,
   "corpus_chapters": 12,
   "paragraphs": 735,
   "verbs": 1147,

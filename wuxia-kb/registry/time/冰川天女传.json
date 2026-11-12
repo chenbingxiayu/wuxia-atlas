@@ -2,7 +2,7 @@
   "schema": "wuxia-time-resolve-v1",
   "book": "冰川天女传",
   "work_id": "bingchuan",
-  "generated_at": "2026-11-06 08:44:17",
+  "generated_at": "2026-11-07 03:43:07",
   "tool": "time_resolver_wuxia v0.1 (2026-11-05, N4/D05)",
   "spec": {
     "skill": "skills/SKILL_时间体系_武侠版.md",
@@ -1437,8 +1437,8 @@
         "segment_anchor": "bingchuan#pn-r2.28",
         "line_no": 56,
         "span_in_line": [
-          461,
-          469
+          466,
+          474
         ]
       },
       "time_raw": "〖%十年|时长〗",
@@ -1476,8 +1476,8 @@
         "segment_anchor": "bingchuan#pn-r2.28",
         "line_no": 56,
         "span_in_line": [
-          608,
-          616
+          613,
+          621
         ]
       },
       "time_raw": "〖%三日|时长〗",
@@ -2512,8 +2512,8 @@
         "segment_anchor": "bingchuan#pn-r3.16",
         "line_no": 32,
         "span_in_line": [
-          315,
-          323
+          329,
+          337
         ]
       },
       "time_raw": "〖%三更|时点〗",
@@ -2551,8 +2551,8 @@
         "segment_anchor": "bingchuan#pn-r3.17",
         "line_no": 34,
         "span_in_line": [
-          158,
-          168
+          161,
+          171
         ]
       },
       "time_raw": "〖%十余年来|时长〗",
@@ -2919,8 +2919,8 @@
         "segment_anchor": "bingchuan#pn-r3.34",
         "line_no": 68,
         "span_in_line": [
-          90,
-          98
+          93,
+          101
         ]
       },
       "time_raw": "〖%一年|时长〗",
@@ -3803,8 +3803,8 @@
         "segment_anchor": "bingchuan#pn-r4.36",
         "line_no": 72,
         "span_in_line": [
-          173,
-          183
+          178,
+          188
         ]
       },
       "time_raw": "〖%半个时分|时长〗",
@@ -5355,8 +5355,8 @@
         "segment_anchor": "bingchuan#pn-r6.28",
         "line_no": 56,
         "span_in_line": [
-          156,
-          164
+          164,
+          172
         ]
       },
       "time_raw": "〖%千年|时长〗",
@@ -5394,8 +5394,8 @@
         "segment_anchor": "bingchuan#pn-r6.28",
         "line_no": 56,
         "span_in_line": [
-          172,
-          180
+          180,
+          188
         ]
       },
       "time_raw": "〖%万古|时长〗",
@@ -5433,8 +5433,8 @@
         "segment_anchor": "bingchuan#pn-r6.28",
         "line_no": 56,
         "span_in_line": [
-          190,
-          198
+          198,
+          206
         ]
       },
       "time_raw": "〖%三年|时长〗",
@@ -10306,8 +10306,8 @@
         "segment_anchor": "bingchuan#pn-r9.42",
         "line_no": 84,
         "span_in_line": [
-          51,
-          60
+          58,
+          67
         ]
       },
       "time_raw": "〖%二十年|时长〗",
@@ -10543,8 +10543,8 @@
         "segment_anchor": "bingchuan#pn-r9.62",
         "line_no": 124,
         "span_in_line": [
-          346,
-          354
+          353,
+          361
         ]
       },
       "time_raw": "〖%数月|时长〗",
@@ -15231,8 +15231,8 @@
         "segment_anchor": "bingchuan#pn-r15.50",
         "line_no": 100,
         "span_in_line": [
-          214,
-          224
+          218,
+          228
         ]
       },
       "time_raw": "〖%三年之后|时点〗",
@@ -16842,8 +16842,8 @@
         "segment_anchor": "bingchuan#pn-r17.17",
         "line_no": 34,
         "span_in_line": [
-          127,
-          136
+          131,
+          140
         ]
       },
       "time_raw": "〖%第二日|时点〗",
@@ -17361,8 +17361,8 @@
         "segment_anchor": "bingchuan#pn-r17.50",
         "line_no": 100,
         "span_in_line": [
-          178,
-          188
+          187,
+          197
         ]
       },
       "time_raw": "〖%四十左右|年龄〗",
@@ -17400,8 +17400,8 @@
         "segment_anchor": "bingchuan#pn-r17.55",
         "line_no": 110,
         "span_in_line": [
-          384,
-          393
+          398,
+          407
         ]
       },
       "time_raw": "〖%数十年|时长〗",
@@ -18836,8 +18836,8 @@
         "segment_anchor": "bingchuan#pn-r19.21",
         "line_no": 42,
         "span_in_line": [
-          73,
-          81
+          80,
+          88
         ]
       },
       "time_raw": "〖%七岁|年龄〗",
@@ -18875,8 +18875,8 @@
         "segment_anchor": "bingchuan#pn-r19.22",
         "line_no": 44,
         "span_in_line": [
-          278,
-          288
+          282,
+          292
         ]
       },
       "time_raw": "〖%三日之内|时长〗",
@@ -18914,8 +18914,8 @@
         "segment_anchor": "bingchuan#pn-r19.22",
         "line_no": 44,
         "span_in_line": [
-          315,
-          325
+          319,
+          329
         ]
       },
       "time_raw": "〖%三日之内|时长〗",
@@ -22204,8 +22204,8 @@
         "segment_anchor": "bingchuan#pn-r21.37",
         "line_no": 74,
         "span_in_line": [
-          385,
-          395
+          392,
+          402
         ]
       },
       "time_raw": "〖%一岁多些|年龄〗",
@@ -22402,8 +22402,8 @@
         "segment_anchor": "bingchuan#pn-r21.52",
         "line_no": 104,
         "span_in_line": [
-          326,
-          334
+          330,
+          338
         ]
       },
       "time_raw": "〖%一晚|时长〗",
@@ -22519,8 +22519,8 @@
         "segment_anchor": "bingchuan#pn-r22.7",
         "line_no": 14,
         "span_in_line": [
-          327,
-          337
+          331,
+          341
         ]
       },
       "time_raw": "〖%一夜之间|时长〗",
@@ -22675,8 +22675,8 @@
         "segment_anchor": "bingchuan#pn-r22.22",
         "line_no": 44,
         "span_in_line": [
-          215,
-          225
+          224,
+          234
         ]
       },
       "time_raw": "〖%天色将晚|时点〗",
@@ -24746,8 +24746,8 @@
         "segment_anchor": "bingchuan#pn-r24.3",
         "line_no": 6,
         "span_in_line": [
-          309,
-          318
+          318,
+          327
         ]
       },
       "time_raw": "〖%三十年|时长〗",
@@ -25109,8 +25109,8 @@
         "segment_anchor": "bingchuan#pn-r24.55",
         "line_no": 110,
         "span_in_line": [
-          294,
-          304
+          303,
+          313
         ]
       },
       "time_raw": "〖%四十年来|时长〗",
@@ -25148,8 +25148,8 @@
         "segment_anchor": "bingchuan#pn-r24.55",
         "line_no": 110,
         "span_in_line": [
-          411,
-          421
+          420,
+          430
         ]
       },
       "time_raw": "〖%四十多岁|年龄〗",
@@ -25189,8 +25189,8 @@
         "segment_anchor": "bingchuan#pn-r24.55",
         "line_no": 110,
         "span_in_line": [
-          483,
-          492
+          492,
+          501
         ]
       },
       "time_raw": "〖%四十年|时长〗",
@@ -25858,8 +25858,8 @@
         "segment_anchor": "bingchuan#pn-r26.6",
         "line_no": 12,
         "span_in_line": [
-          365,
-          373
+          379,
+          387
         ]
       },
       "time_raw": "〖%三天|时长〗",
@@ -27539,8 +27539,8 @@
         "segment_anchor": "bingchuan#pn-r27.89",
         "line_no": 178,
         "span_in_line": [
-          153,
-          163
+          160,
+          170
         ]
       },
       "time_raw": "〖%百余年来|时长〗",
@@ -27973,8 +27973,8 @@
         "segment_anchor": "bingchuan#pn-r28.49",
         "line_no": 98,
         "span_in_line": [
-          127,
-          136
+          140,
+          149
         ]
       },
       "time_raw": "〖%一天半|时长〗",
@@ -28012,8 +28012,8 @@
         "segment_anchor": "bingchuan#pn-r28.49",
         "line_no": 98,
         "span_in_line": [
-          200,
-          208
+          213,
+          221
         ]
       },
       "time_raw": "〖%两天|时长〗",
@@ -28051,8 +28051,8 @@
         "segment_anchor": "bingchuan#pn-r28.49",
         "line_no": 98,
         "span_in_line": [
-          254,
-          262
+          267,
+          275
         ]
       },
       "time_raw": "〖%两天|时长〗",
@@ -28090,8 +28090,8 @@
         "segment_anchor": "bingchuan#pn-r28.49",
         "line_no": 98,
         "span_in_line": [
-          319,
-          327
+          332,
+          340
         ]
       },
       "time_raw": "〖%昨天|时点〗",
@@ -28132,8 +28132,8 @@
         "segment_anchor": "bingchuan#pn-r28.49",
         "line_no": 98,
         "span_in_line": [
-          371,
-          379
+          384,
+          392
         ]
       },
       "time_raw": "〖%当日|时点〗",
@@ -28961,8 +28961,8 @@
         "segment_anchor": "bingchuan#pn-r30.3",
         "line_no": 6,
         "span_in_line": [
-          326,
-          338
+          336,
+          348
         ]
       },
       "time_raw": "〖%今晚三更之前|时点〗",
@@ -29003,8 +29003,8 @@
         "segment_anchor": "bingchuan#pn-r30.24",
         "line_no": 48,
         "span_in_line": [
-          463,
-          471
+          468,
+          476
         ]
       },
       "time_raw": "〖%连夜|时长〗",
@@ -29555,8 +29555,8 @@
         "segment_anchor": "bingchuan#pn-r30.58",
         "line_no": 116,
         "span_in_line": [
-          262,
-          271
+          269,
+          278
         ]
       },
       "time_raw": "〖%大半夜|时长〗",
@@ -30558,8 +30558,8 @@
         "segment_anchor": "bingchuan#pn-r32.7",
         "line_no": 14,
         "span_in_line": [
-          344,
-          353
+          348,
+          357
         ]
       },
       "time_raw": "〖%三十年|时长〗",
@@ -30756,8 +30756,8 @@
         "segment_anchor": "bingchuan#pn-r32.10",
         "line_no": 20,
         "span_in_line": [
-          192,
-          200
+          202,
+          210
         ]
       },
       "time_raw": "〖%去年|时点〗",
@@ -30798,8 +30798,8 @@
         "segment_anchor": "bingchuan#pn-r32.11",
         "line_no": 22,
         "span_in_line": [
-          200,
-          209
+          210,
+          219
         ]
       },
       "time_raw": "〖%十年来|时长〗",
@@ -31191,8 +31191,8 @@
         "segment_anchor": "bingchuan#pn-r32.22",
         "line_no": 44,
         "span_in_line": [
-          184,
-          194
+          193,
+          203
         ]
       },
       "time_raw": "〖%半老徐娘|年龄〗",
@@ -31232,8 +31232,8 @@
         "segment_anchor": "bingchuan#pn-r32.23",
         "line_no": 46,
         "span_in_line": [
-          369,
-          378
+          377,
+          386
         ]
       },
       "time_raw": "〖%两三岁|年龄〗",
@@ -32395,8 +32395,8 @@
         "segment_anchor": "bingchuan#pn-r33.28",
         "line_no": 56,
         "span_in_line": [
-          143,
-          153
+          150,
+          160
         ]
       },
       "time_raw": "〖%半个更次|时长〗",
@@ -33742,8 +33742,8 @@
         "segment_anchor": "bingchuan#pn-r34.23",
         "line_no": 46,
         "span_in_line": [
-          366,
-          374
+          369,
+          377
         ]
       },
       "time_raw": "〖%三天|时长〗",
@@ -34066,8 +34066,8 @@
         "segment_anchor": "bingchuan#pn-r35.7",
         "line_no": 14,
         "span_in_line": [
-          372,
-          382
+          378,
+          388
         ]
       },
       "time_raw": "〖%二十多年|时长〗",
@@ -35943,8 +35943,8 @@
         "segment_anchor": "bingchuan#pn-r38.30",
         "line_no": 60,
         "span_in_line": [
-          369,
-          379
+          376,
+          386
         ]
       },
       "time_raw": "〖%三十多年|时长〗",
@@ -35982,8 +35982,8 @@
         "segment_anchor": "bingchuan#pn-r38.30",
         "line_no": 60,
         "span_in_line": [
-          425,
-          433
+          432,
+          440
         ]
       },
       "time_raw": "〖%几年|时长〗",
@@ -36021,8 +36021,8 @@
         "segment_anchor": "bingchuan#pn-r38.32",
         "line_no": 64,
         "span_in_line": [
-          416,
-          426
+          419,
+          429
         ]
       },
       "time_raw": "〖%未满周岁|年龄〗",
@@ -36339,8 +36339,8 @@
         "segment_anchor": "bingchuan#pn-r38.58",
         "line_no": 116,
         "span_in_line": [
-          170,
-          178
+          179,
+          187
         ]
       },
       "time_raw": "〖%七天|时长〗",
@@ -36771,8 +36771,8 @@
         "segment_anchor": "bingchuan#pn-r39.6",
         "line_no": 12,
         "span_in_line": [
-          193,
-          202
+          202,
+          211
         ]
       },
       "time_raw": "〖%这几天|时长〗",
@@ -37404,8 +37404,8 @@
         "segment_anchor": "bingchuan#pn-r39.57",
         "line_no": 114,
         "span_in_line": [
-          181,
-          189
+          190,
+          198
         ]
       },
       "time_raw": "〖%两天|时长〗",

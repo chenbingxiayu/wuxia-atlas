@@ -23,7 +23,7 @@
   --line-strong: #b9ab90;
   --shadow: 0 1px 3px rgba(43, 43, 43, .08);
 
-  /* 侠谱分档徽章 */
+  /* 武评分档徽章 */
   --tier-绝顶: var(--gold);
   --tier-超一流: var(--seal);
   --tier-一流: var(--azure);
@@ -54,10 +54,13 @@ body {
     radial-gradient(ellipse at top, rgba(255,255,255,.5), transparent 60%),
     var(--paper);
 }
+/* 防横向滚动兜底（真实溢出源应在组件内修复，如 header/超宽 SVG） */
+html, body { max-width: 100%; overflow-x: hidden; }
 h1, h2, h3 { font-family: var(--font-title); line-height: 1.4; }
 a { color: var(--azure); text-decoration: none; }
 a:hover { color: var(--seal); }
 code, .loc { font-family: var(--font-mono); font-size: .92em; }
+code { overflow-wrap: anywhere; }
 
 /* 定位符引用样式（L0 档：白发·026:53） */
 .loc {
@@ -74,6 +77,9 @@ code, .loc { font-family: var(--font-mono); font-size: .92em; }
   box-shadow: var(--shadow);
   padding: var(--space-4);
 }
+
+/* 宽表格横向滚动容器（移动端防裁切） */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
 /* 印章式徽章 */
 .badge {

@@ -1,0 +1,106 @@
+---
+import Base from '../../layouts/Base.astro';
+import manualsJson from '@data/manuals.json';
+import { B } from '@lib/base';
+import { artTarget, chapterHref } from '@lib/links';
+
+export function getStaticPaths() {
+  return manualsJson.manuals.map((x) => ({ params: { slug: x.name }, props: { x } }));
+}
+const { x } = Astro.props;
+const books = Object.keys(x.books);
+const arts = x.related_arts || [];
+const locs = x.locs || [];
+const aliases = x.aliases || [];
+/* 频次口径（数据层双口径分列）：ev_total=标注出现次数（卡片/头部频次）；
+   locs=原文扫描定位符（同段多次提及合一）——只列定位，不作频次主张。 */
+const evFine = x.ev_basis === 'concordance' ? '语料标注出现次数' : '原文扫描计数（原著仅数见）';
+---
+
+<Base title={x.name} description={`${x.name}（${x.category}）：见于 ${books.join('、')} 的考订秘籍，相关武功互链与逐处出场定位符。`}>
+  <p class="crumb"><a href={`${B}manuals/`}>秘籍谱</a> / {x.name}</p>
+  <h1 style="font-size:36px;margin:6px 0 8px;letter-spacing:3px">{x.name}
+    <span class="kind">{x.category}</span>
+    {books.length > 1 && <span class="cross">跨书</span>}
+  </h1>
+  <p class="meta">
+    证据 <b>{x.ev_total}</b> 处<span class="dim">（{evFine}）</span> · 见于
+    {books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}
+  </p>
+  {aliases.length > 0 && (
+    <p class="meta">别名/变体：{aliases.map((a) => <span class="chip">{a}</span>)}</p>
+  )}
+
+  {arts.length > 0 && (
+    <>
+      <h2 class="sec">相关武功 <span class="dim2">秘籍 ↔ 武功 人工配对 · 有专页即互链</span></h2>
+      <div class="card arts">
+        {arts.map((a) => {
+          const tg = artTarget(a);
+          return tg
+            ? <a class="chip art" href={`${B}arts/${encodeURIComponent(tg)}/`}>{a}</a>
+            : <span class="chip">{a}<small>（暂无武功专页）</small></span>;
+        })}
+      </div>
+    </>
+  )}
+
+  <h2 class="sec">出场定位符 <span class="dim2">书 · 回：段 · 逐条可点回原著</span></h2>
+  <div class="card" style="padding:8px 24px">
+    <ul class="ev">
+      {locs.slice(0, 12).map((l) => {
+        const href = chapterHref(l.book, l.loc);
+        return (
+          <li>
+            {href
+              ? <a class="loc mono" href={href}>{l.book}·{l.loc}</a>
+              : <span class="loc mono">{l.book}·{l.loc}</span>}
+          </li>
+        );
+      })}
+      {locs.length > 12 && (
+        <li class="dim"><span>…共 {locs.length} 处出场，完整定位符表随开放数据提供（见<a href={`${B}about/data/`}>「关于 · 数据」</a>页）</span></li>
+      )}
+      {locs.length === 0 && <li class="dim"><span>暂无出场定位符（考订锚点见下）</span></li>}
+    </ul>
+  </div>
+
+  <h2 class="sec">考订注记 <span class="dim2">明文依据 · 不脑补</span></h2>
+  <div class="card notecard">
+    <p class="note">{x.note}</p>
+    <p class="fine">考订锚点：{x.anchor.book}·{x.anchor.loc}（明文）。</p>
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .kind { display: inline-block; border: 1.5px solid #6b5a8e; color: #6b5a8e; border-radius: 3px;
+    padding: 1px 9px; font-size: 13px; transform: rotate(1.5deg); }
+  .cross { display: inline-block; border: 1.5px solid #a23527; color: #a23527; border-radius: 3px;
+    padding: 1px 9px; font-size: 13px; transform: rotate(-1deg); }
+  .meta { color: var(--ink-light); }
+  .meta b { color: #a23527; }
+  .dim { color: #8a8172; }
+  .bookchip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: .02em .6em; margin: 0 .2em; font-size: .85rem; }
+  .sec { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 900; margin: 36px 0 14px; }
+  .sec:after { content: ''; flex: 1; height: 1px; background: #b5a687; }
+  .dim2 { color: var(--ink-faint); font-weight: 400; font-size: 14px; }
+  .arts { padding: 12px 20px; }
+  .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: 2px 12px; font-size: 13.5px; background: #fbf8ef; margin: 3px; }
+  .chip small { color: #8a8172; margin-left: 4px; }
+  a.chip.art { color: #31536c; }
+  a.chip.art:hover { border-color: #a23527; color: #a23527; }
+  .ev { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+  .ev li { padding: 6px 2px; border-bottom: 1px solid #e6ddc8; display: flex; gap: 10px; align-items: baseline; }
+  .loc { color: #8a8172; font-size: 12px; }
+  .mono { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; }
+  .ev a.loc { text-decoration: underline; text-underline-offset: 3px; }
+  .ev a.loc:hover { color: #a23527; }
+  .notecard { border-left: 4px solid #6b5a8e; padding: 12px 24px; }
+  .note { margin: 0; font-size: 15px; line-height: 1.9; }
+  .fine { margin: 6px 0 0; font-size: 13px; color: #8a8172; }
+</style>

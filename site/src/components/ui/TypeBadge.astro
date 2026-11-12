@@ -1,0 +1,47 @@
+---
+/**
+ * L1 原子 · 势力类型徽章（W2-B6 · 门派志页重构设计 §一决策 1/§八 文案稿）。
+ *
+ * 势力四色映射（与全景地图落点/图例同色，方案 §5.1「勿造新色」——tokens.css 无
+ * --type-* 变量，取现有最近色，值与地图页 sect_seats color 完全一致）：
+ *   名门正派 → --seal  印章红（#a63a2b）
+ *   世家     → --gold  泥金（#b8860b）
+ *   绿林帮会 → --jade  竹青（#5e7d5a）
+ *   朝廷势力 → --azure 黛青（#34546e）
+ * 样式与 StatusBadge / tokens .badge 同族：1.5px 边 + 3px 圆角 + 轻微旋转，避免两套视觉。
+ * 纯构建期 Astro 组件，无 JS。
+ */
+interface Props {
+  /** 类型名：名门正派 | 世家 | 绿林帮会 | 朝廷势力；未知值按幽灵虚线中性态渲染 */
+  type: string;
+}
+const { type } = Astro.props;
+const TONE: Record<string, string> = {
+  名门正派: 'tb-sect',
+  世家: 'tb-family',
+  绿林帮会: 'tb-green',
+  朝廷势力: 'tb-court',
+};
+const tone = TONE[type] ?? 'tb-plain';
+---
+
+<span class={`type-badge ${tone}`}>{type}</span>
+<style>
+  .type-badge {
+    display: inline-block;
+    border: 1.5px solid currentColor;
+    border-radius: 3px;
+    padding: 0 .5em;
+    font-size: .78em;
+    line-height: 1.6;
+    font-weight: 700;
+    white-space: nowrap;
+    transform: rotate(-1.2deg);
+    vertical-align: .12em;
+  }
+  .tb-sect   { color: var(--seal); }
+  .tb-family { color: var(--gold); }
+  .tb-green  { color: var(--jade); }
+  .tb-court  { color: var(--azure); }
+  .tb-plain  { color: var(--ink-faint); border-style: dashed; }
+</style>

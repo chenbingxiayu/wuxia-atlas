@@ -813,7 +813,7 @@ def render_book_report(book: str, payload: dict) -> str:
 
 
 def render_summary(payloads: list) -> str:
-    lines = [f"# 事件层（D03/EX-5）· 5 书汇总", "",
+    lines = [f"# 事件层（D03/EX-5）· {len(payloads)} 书汇总", "",
              f"- 生成：{esc.now_iso()} · schema {SCHEMA} · 规范 SKILL_04a 13 类/36 字段",
              f"- 书：{[p['book'] for p in payloads]}", "",
              "| 书 | 事件 | T01 比武 | T02 杀伐 | T03 夺宝 | T04 传艺 | T05 练功 | T06 盟约 | "

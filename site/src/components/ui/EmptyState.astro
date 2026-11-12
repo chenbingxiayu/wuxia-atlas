@@ -1,0 +1,40 @@
+---
+/**
+ * L1 原子 · 条目说明条（天山演示版总体方案 §5.1 / §4.1 A6；
+ * 文案定稿见《武功页重构设计》§5.1、《名物页重构设计》§5.2）。
+ *
+ * 四变体：
+ *   档案未载 —— 原著未见此条（无证据页）
+ *   记载简略 —— 薄页条目说明条（武功 ≤1 关系且无招式 / 名物无铸记录且无 strong 链）
+ *   风平浪静 —— 时间线/行踪等无事件时段
+ *   考订中   —— 内容待人工考订（证据与定位照常提供）
+ *
+ * 样式 = 条目说明条：细边 + dim 字（tokens.css 现有变量）。
+ * 纯构建期 Astro 组件，无 JS。
+ */
+interface Props {
+  /** 变体：档案未载 | 记载简略 | 风平浪静 | 考订中 */
+  variant: '档案未载' | '记载简略' | '风平浪静' | '考订中';
+}
+const { variant } = Astro.props;
+const COPY: Record<Props['variant'], string> = {
+  档案未载: '原著中未载此条，暂无深度考订内容。',
+  记载简略: '原著中记载简略，暂无深度考订内容；证据与定位照常提供。',
+  风平浪静: '此段时期风平浪静，原著中未见相关事件记载。',
+  考订中: '本条内容正在考订中，证据与定位照常提供。',
+};
+---
+
+<p class="empty-state">{COPY[variant]}</p>
+
+<style>
+  .empty-state {
+    margin: 10px 0 0;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--paper-deep);
+    color: var(--ink-faint);
+    font-size: 0.88rem;
+    padding: 0.45em 0.9em;
+  }
+</style>

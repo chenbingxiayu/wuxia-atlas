@@ -1,54 +1,91 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { B } from '@lib/base';
-const games = [
-  { slug: 'twenty', title: '武林二十问答', desc: 'Akinator 式：系统想一位人物，20 个是非题内猜出。题库 = 站内人物档案属性。', status: '已发布' },
-  { slug: 'daily', title: '每日一谜', desc: '日期哈希全网同题、无需服务器；三机会三提示，emoji 战绩本地分享。谜底全部带定位符。', status: '已发布' },
+import GameStatsHub from '../../islands/GameStatsHub';
+import weaponsJson from '@data/weapons.json';
+const weaponN = (weaponsJson.weapons || weaponsJson.artifacts || []).length;
+const live = [
+  { href: `${B}games/daily`, title: '每日一谜', desc: '全网同题、三次机会、逐级解锁提示——谜底全部带定位符，争议可对质。', tag: '每日' },
+  { href: `${B}games/twenty`, title: '武林二十问答', desc: '系统想一位人物，20 个是非题内猜出——属性全部来自人物档案。', tag: '猜人物' },
+  { href: `${B}games/test`, title: '测测你是梁书里的谁', desc: '十道性格题，出一张你的江湖人物卡：门派、武功、神兵、档案链接。', tag: '性格测试' },
+  { href: `${B}games/collection`, title: '神兵图鉴', desc: `${weaponN} 件名物卡片墙——收集你的江湖见闻，随插画逐卡点亮。`, tag: '收集' },
 ];
 const planned = [
-  ['G2 江湖侦探', '凶案三跳提示猜凶手'],
-  ['G3 AB 路径挑战', '拼最短关系路径'],
-  ['G5 剧情排序', '事件卡按发生顺序排列'],
-  ['G6 兵器归属', '神兵谱答案键（M7 已接数）'],
-  ['G11 行踪寻路', '复用 MapTrail 引擎（M6 已就绪）'],
+  { title: '江湖人生模拟器', desc: '随机出身，沿真实编年走完你的江湖一生——文字冒险版梁羽生宇宙。' },
+  { title: '今日论战', desc: '猜一场原著对局的胜负，揭晓后翻回原文对质。' },
 ];
 ---
-<Base title="侠客游戏">
-  <p class="crumb">侠客游戏</p>
-  <h1>侠客游戏</h1>
+
+<Base title="江湖游乐场">
+  <p class="crumb">江湖游乐场</p>
+  <h1>江湖游乐场</h1>
   <p class="lead">
-    考据的娱乐化出口：每道题都有定位符级的标准答案（KB 确定性 = 零幻觉题库）；
-    全部纯静态（日期哈希选题 + 本地存档 + 分享码），无后端。
+    考据的娱乐化出口：每道题都有定位符级的标准答案（图谱确定性 = 零幻觉题库）；
+    全部纯前端（日期哈希选题 + 本地存档 + 分享），无后端。
   </p>
-  <div class="grid">
-    {games.map((g) => (
-      <a class="card" href={`${B}games/${g.slug}/`}>
-        <div class="head"><b>{g.title}</b><span class="st on">{g.status}</span></div>
-        <p>{g.desc}</p>
+
+  <section>
+    <h2>今日 <span class="lab">每天来的理由</span></h2>
+    <div class="grid">
+      <a class="card" href={`${B}games/daily`}>
+        <div class="head"><b>每日一谜</b><span class="tag">每日</span></div>
+        <p>全网同题、三次机会、逐级解锁提示——谜底全部带定位符，争议可对质。</p>
       </a>
-    ))}
-  </div>
-  <h2>规划中</h2>
-  <ul class="planned">
-    {planned.map(([t, d]) => <li><b>{t}</b><span>{d}</span></li>)}
-  </ul>
+      <div class="card off">
+        <div class="head"><b>小说中的今天</b><span class="tag">筹备中</span></div>
+        <p>原著里写明了日子的事，到那天自动亮起——现在去<a href={`${B}`}>首页</a>也能偶遇。</p>
+      </div>
+      <div class="card off">
+        <div class="head"><b>今日论战</b><span class="tag">筹备中</span></div>
+        <p>猜一场原著对局的胜负，揭晓后翻回原文对质。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>战绩中心 <span class="lab">连胜 · 正确率 · 答题日历 · 跨游戏汇总</span></h2>
+    <GameStatsHub client:load />
+  </section>
+
+  <section>
+    <h2>游乐场 <span class="lab">点开即玩 · 全部纯前端</span></h2>
+    <div class="grid">
+      {live.map((g) => (
+        <a class="card" href={g.href}>
+          <div class="head"><b>{g.title}</b><span class="tag">{g.tag}</span></div>
+          <p>{g.desc}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>筹备中 <span class="lab">上线后自动点亮 · 不设排期</span></h2>
+    <div class="grid">
+      {planned.map((g) => (
+        <div class="card off">
+          <div class="head"><b>{g.title}</b></div>
+          <p>{g.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
 </Base>
+
 <style>
   .crumb { font-size: .85rem; color: var(--ink-faint); }
   h1 { letter-spacing: 2px; }
   .lead { color: var(--ink-light); max-width: 820px; line-height: 1.9; }
+  h2 { margin-top: 2rem; font-size: 1.05rem; }
+  .lab { color: var(--ink-faint); font-weight: 400; }
   .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 16px; }
   .card { display: block; border: 1px solid var(--line-strong); border-radius: 4px; padding: 18px 20px;
     background: rgba(255,255,255,.45); color: var(--ink); }
-  .card:hover { border-color: var(--seal); }
+  a.card:hover { border-color: var(--seal); }
+  .card.off { border-style: dashed; color: var(--ink-faint); }
   .head { display: flex; justify-content: space-between; align-items: baseline; }
   .head b { font-size: 1.1rem; }
-  .st { font-size: .72rem; border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 .6em; color: var(--ink-faint); }
-  .st.on { color: #4f6e4a; border-color: #4f6e4a; }
+  .tag { font-size: .72rem; color: var(--seal); border: 1px solid var(--seal); border-radius: 999px; padding: 0 .6em; white-space: nowrap; }
+  .tag.dim { color: var(--ink-faint); border-color: var(--ink-faint); }
   .card p { font-size: .9rem; color: var(--ink-light); line-height: 1.8; }
-  h2 { margin-top: 2rem; font-size: 1.05rem; }
-  .planned { list-style: none; padding: 0; }
-  .planned li { display: flex; gap: 14px; padding: .4em 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
-  .planned b { min-width: 10em; color: var(--ink); }
-  .planned span { color: var(--ink-light); }
 </style>

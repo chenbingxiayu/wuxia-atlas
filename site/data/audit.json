@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-06",
+  "generated": "2026-11-12",
   "schema": "audit-v1",
   "rules": [
    "C4 死亡角色再出场（旧 audit R1 字段对接规则）",
@@ -81,7 +81,8 @@
    "totals.passes / r1_passes：N8 不产出 R1 通过清单（旧 R1 的 5 条验证通过展品无新来源），置 null/[]；C4 规则状态见 rule_coverage",
    "r1_ambiguous：旧 R1 字段，N8 对应规则=C4（死亡角色再出场）；本批 5 书 C4 命中 0 → 空数组；若未来 C4 有命中，EX-8 按旧 item schema（name/death/deaths_n/after_n/live_n/samples）自动映射",
    "quote：violations 原文引文按 01g §9.10 / SKILL_03d §6.1 发布边界一律不出口（只保留 quote_len + 定位符 + 规则 + 原创分析性 rationale，rationale ≤300 字截断）",
-   "旧 meta.rules/pending_rules 的 R1/R2/R3 体系已由 N8 39 规则体系取代：R2 武功习得时序→C2、R3 毒理一致性→W8/J7（本批均为数据缺口/0 命中，见 rule_coverage）"
+   "旧 meta.rules/pending_rules 的 R1/R2/R3 体系已由 N8 39 规则体系取代：R2 武功习得时序→C2、R3 毒理一致性→W8/J7（本批均为数据缺口/0 命中，见 rule_coverage）",
+   "scope 口径（tianshan-demo）：consistency docs 按 book ∈ scope 过滤——violations/r1（C4 映射）/rule_coverage/exemptions/by_* 的 books 维度随之收窄；本批收 5 书（七剑下天山、冰魄寒光剑、塞外奇侠传、江湖三女侠、白发魔女传）。"
   ],
   "notes": [
    "N8 5 书合计 violations 44 条（48h 快照）：severity={'warning': 28, 'info': 16} · grade={'C': 28, 'B': 16} · area={'检查项': 24, '江湖': 4, '武学': 11, '时代': 4, '门派': 1}",
@@ -96,7 +97,7 @@
    "text_max_chars": 200
   },
   "snapshot": {
-   "exported_at": "2026-11-06 12:03:04",
+   "exported_at": "2026-11-12 23:38:34",
    "consistency_books": {
     "七剑下天山": {
      "generated_at": "2026-11-05 17:50:01",
@@ -141,11 +142,12 @@
     "wuxia-consistency-v1"
    ],
    "old_audit": {
-    "generated": "2026-11-06",
+    "generated": "2026-11-12",
     "r1_ambiguous": 0,
     "r1_passes": 0
    }
-  }
+  },
+  "scope": "tianshan-demo"
  },
  "totals": {
   "death_events": null,

@@ -26,6 +26,7 @@ import argparse
 import datetime as dt
 import difflib
 import io
+import os
 import json
 import re
 import subprocess
@@ -33,6 +34,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+import uuid
 from pathlib import Path
 
 _STDOUT_PINS = []          # 防二次 TextIOWrapper 包装后原对象被 GC 连带关闭共享 buffer
@@ -200,6 +202,9 @@ def peak_utc(ts: float) -> bool:
 
 
 def usage_cost(rec: dict) -> float:
+    # opencode-go：DSH 订阅通道，不按 token 计费（token 数仍记录）；费用记 0
+    if rec.get("provider") == "opencode-go":
+        return 0.0
     p = PRICE_OFFPEAK if not rec["peak"] else {k: v * PEAK_MULT for k, v in PRICE_OFFPEAK.items()}
     return (rec["prompt_cache_hit_tokens"] * p["input_hit"]
             + rec["prompt_cache_miss_tokens"] * p["input_miss"]
@@ -243,9 +248,25 @@ class Usage:
 
 # ---------------------------------------------------------------- API ----
 class LLM:
-    def __init__(self, model: str, usage: Usage, retries: int = 4):
-        self.url = api_config.get("deepseek", "url").rstrip("/") + "/chat/completions"
-        self.key = api_config.get("deepseek", "key")
+    """LLM 通道封装。provider:
+       * deepseek   —— 官方 DeepSeek API（默认，原有行为）；
+       * opencode-go —— 当前 DSH Session 使用的模型通道（deepseek-v4.1-flash，
+                         OpenAI 兼容；需 x-opencode-session 头，凭据取 DSH 凭据库）。
+    """
+
+    OPENCODE_BASE = "https://opencode.ai/zen/go/v1"
+
+    def __init__(self, model: str, usage: Usage, retries: int = 4, provider: str = "deepseek"):
+        self.provider = provider
+        if provider == "opencode-go":
+            self.url = self.OPENCODE_BASE + "/chat/completions"
+            self.key = (os.environ.get("OPENCODE_GO_API_KEY")
+                        or api_config.dsh_credential("OPENCODE_GO_API_KEY"))
+            self.extra_headers = {"x-opencode-session": str(uuid.uuid4())}
+        else:
+            self.url = api_config.get("deepseek", "url").rstrip("/") + "/chat/completions"
+            self.key = api_config.get("deepseek", "key")
+            self.extra_headers = {}
         self.model = model
         self.usage = usage
         self.retries = retries
@@ -259,17 +280,32 @@ class LLM:
         body = json.dumps(payload).encode("utf-8")
         last = None
         for attempt in range(1, self.retries + 1):
-            req = urllib.request.Request(
-                self.url, data=body,
-                headers={"Content-Type": "application/json",
-                         "Authorization": "Bearer " + self.key})
             t0 = time.time()
             try:
-                with urllib.request.urlopen(req, timeout=600) as resp:
-                    data = json.loads(resp.read().decode("utf-8"))
+                if self.provider == "opencode-go":
+                    # opencode-go 网关对 urllib 默认头返回 403；requests + 精确头已验证 200
+                    import requests  # 延迟导入，deepseek 通道零依赖变化
+                    resp = requests.post(
+                        self.url,
+                        headers={"Content-Type": "application/json",
+                                 "Authorization": "Bearer " + self.key,
+                                 **self.extra_headers},
+                        json=payload, timeout=(30, 180))
+                    if resp.status_code != 200:
+                        raise urllib.error.HTTPError(
+                            self.url, resp.status_code, resp.text[:200], None, None)
+                    data = json.loads(resp.text)
+                else:
+                    req = urllib.request.Request(
+                        self.url, data=body,
+                        headers={"Content-Type": "application/json",
+                                 "Authorization": "Bearer " + self.key,
+                                 **self.extra_headers})
+                    with urllib.request.urlopen(req, timeout=600) as resp:
+                        data = json.loads(resp.read().decode("utf-8"))
                 u = data.get("usage", {}) or {}
                 created = float(data.get("created") or time.time())
-                rec = {"model": self.model,
+                rec = {"model": self.model, "provider": self.provider,
                        "created_utc": dt.datetime.fromtimestamp(created, tz=dt.timezone.utc).isoformat(),
                        "peak": peak_utc(created),
                        "prompt_tokens": u.get("prompt_tokens", 0),
@@ -773,9 +809,9 @@ def annotate_one(book: str, chapter: int, args, system: str, prompt_ver: str,
 
     report = [f"# 第 {chapter:03d} 回标注执行报告",
               f"- 书：{book}；struct：{struct_p.name}；段数 {len(paras)}；字数 {total_chars}",
-              f"- 分块：{len(chunks)} 块；规则：SKILL_03a {prompt_ver}；模型：{args.model}",
+              f"- 分块：{len(chunks)} 块；规则：SKILL_03a {prompt_ver}；通道：{args.provider}；模型：{args.model}",
               f"- 开始：{dt.datetime.now():%Y-%m-%d %H:%M:%S}", ""]
-    llm = LLM(args.model, usage)
+    llm = LLM(args.model, usage, provider=args.provider)
     t0 = time.time()
     final, draft = annotate_blocks(llm, system, book, chapter, paras, chunks, prompt_ver,
                                   mapping, args.max_tokens, report)
@@ -817,7 +853,7 @@ def annotate_one(book: str, chapter: int, args, system: str, prompt_ver: str,
         "\n".join(report) + "\n")
     usage_log = {
         "task": "章回标注（annotate 阶段）", "book": book, "chapter": chapter,
-        "model": args.model, "prompt": f"SKILL_03a {prompt_ver}",
+        "model": args.model, "provider": args.provider, "prompt": f"SKILL_03a {prompt_ver}",
         "started_at": dt.datetime.now().isoformat(),
         "paras": len(paras), "chars": total_chars, "chunks": len(chunks),
         "tokens": {"E": stats["E_total"], "V": stats["V_total"], "R": stats["R_total"]},
@@ -864,7 +900,10 @@ def main():
     ap.add_argument("--book", default=config.PILOT_BOOK)
     ap.add_argument("--chapter", type=int, default=None)
     ap.add_argument("--chapters", default=None, help="如 20-32 或 20,21,22")
-    ap.add_argument("--model", default=api_config.load().get("deepseek", {}).get("model", "deepseek-flash"))
+    ap.add_argument("--provider", default="deepseek", choices=("deepseek", "opencode-go"),
+                    help="LLM 通道：deepseek=官方 API（默认）；opencode-go=当前 DSH Session 模型通道")
+    ap.add_argument("--model", default=None,
+                    help="缺省：deepseek→deepseek-flash；opencode-go→deepseek-v4.1-flash")
     ap.add_argument("--max-chars", type=int, default=1100, help="每块原文上限（字）")
     ap.add_argument("--max-tokens", type=int, default=8000)
     ap.add_argument("--no-rhetoric", action="store_true", help="跳过修辞层补标")
@@ -874,6 +913,9 @@ def main():
     ap.add_argument("--mapping-file", default=None,
                     help="冻结的《已核准映射表》快照（JSON: [[显示串,规范名],...]）；并行批次用")
     args = ap.parse_args()
+    if not args.model:
+        args.model = ("deepseek-v4.1-flash" if args.provider == "opencode-go"
+                      else api_config.load().get("deepseek", {}).get("model", "deepseek-flash"))
 
     # 0 为合法回号（楔子），必须用 is not None 判空——原 `if args.chapter` 会把 0 当缺省回退到 [20]
     chapters = [args.chapter] if args.chapter is not None else (

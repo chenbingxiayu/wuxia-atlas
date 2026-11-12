@@ -17,7 +17,7 @@ const B = base;
   <section class="search-hero">
     <h1>搜索</h1>
     <p class="lead">
-      输入人物、作品、武功、门派、回目或地名。人物支持<strong>展示名与规范名双匹配</strong>：
+      输入人物、作品、武功、门派、回目或地名。人物支持<b>展示名与规范名双匹配</b>：
       「康熙」与「玄烨」、「飞红巾」与「哈玛雅」都会命中同一页。数据来自
       <code>data/search-index.json</code>（构建时由 <code>build_search_index.py</code> 从站点 HTML 生成）。
     </p>
@@ -47,8 +47,7 @@ const B = base;
   <script is:inline define:vars={{ B }}>
     (function () {
       'use strict';
-      var B = (typeof B !== 'undefined' && B) ? B : '/wuxia-atlas/';
-
+      // base 由 define:vars 注入（构建期 BASE_URL）；不要再在此声明 var B（会提升遮蔽参数）。
       var form = document.getElementById('search-form');
       var input = document.getElementById('q');
       var statusEl = document.getElementById('search-status');
@@ -61,7 +60,7 @@ const B = base;
       var TYPE_LABEL = {
         characters: '人物', books: '作品', arts: '武功', weapons: '名物', sects: '门派',
         chapters: '回目', ratings: '武评', universe: '宇宙', atlas: '地图', games: '游戏',
-        qa: '问答', about: '关于', stories: '故事', page: '页面'
+        qa: '问答', about: '关于', stories: '故事', page: '页面', places: '地名'
       };
 
       function esc(s) {

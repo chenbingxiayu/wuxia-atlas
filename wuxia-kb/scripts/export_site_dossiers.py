@@ -12,19 +12,26 @@
   - fallback 源优先阶段 0 冻结备份 backup/site_data/phase0_20261105/dossiers.json
     （--apply 覆盖 site/data 后仍保持稳定基线），备份缺失时回退当前 site/data。
 
-数量口径：旧站 436 = 旧站 3 书人物档案数；新 = 新管线 5 书 concordance @ 唯一规范名
-（其中 registry @ 375 条全覆盖），差异写入 meta.field_gaps。
+W0-T2（天山演示版总体方案 §二，2026-11-08）：
+  - **主档圈定**：total≥30 ∪ 有实质内容（key_events/lineage.masters|disciples/combat.kills|slain_by/
+    arts 非空，判定源 = fallback 派生字段）。规则与阈值在 scripts/export_site_characters.py
+    （decide_major / major_rule_meta），阈值进 meta.major_rule 不硬编码；
+  - scope 口径（--scope <profile>）：dossiers 仅收主档；存目不进 dossiers、只进 entity-index
+    （page=false，EX-2 产出）；全量口径（不带 --scope）**不裁剪**（向后兼容，方案 R6：
+    规则随 meta.scope 走，回切全量时所有档案仍在）；
+  - 别名归并 TSV（B7）经 EX-2 同批聚合前置生效，三表人物集合保持一致。
+
+数量口径：旧站 436 = 旧站 3 书人物档案数；新 = 新管线 concordance @ 唯一规范名，差异写入 meta.field_gaps。
 
 用法：
   python scripts/export_site_dossiers.py           # dry-run（staging + 报告）
   python scripts/export_site_dossiers.py --apply   # 写 site/data（export_site_common 先备份）
+  python scripts/export_site_dossiers.py --scope tianshan-demo   # 天山 7 书主档口径
 """
 from __future__ import annotations
 
 from collections import Counter
-from pathlib import Path
 
-import config
 import export_site_characters as exc
 import export_site_common as esc
 
@@ -32,37 +39,10 @@ SCHEMA = "site-dossiers-v1"
 SOURCE = "wuxia-kb 新管线 + 旧站 fallback（桥接层 EX-2/EX-3）"
 EXPORTER = "scripts/export_site_dossiers.py（EX-3）"
 COPYRIGHT = "L0 档位：仅定位符与图谱事实，不含原文摘录"
-FALLBACK_TAG = "phase0_20261105"
 ALIAS_TOP_N = 8          # 对齐旧站 build_dossiers.py top_aliases[:8]
 SAMPLE_N = 10
-
-
-# ---------------------------------------------------------------- fallback 源
-def display_path(p: Path) -> str:
-    """仓内相对路径（报告可移植）；仓外路径原样返回。"""
-    for base in (config.ROOT, config.REPO_ROOT):
-        try:
-            return p.resolve().relative_to(base).as_posix()
-        except ValueError:
-            continue
-    return str(p)
-
-
-def load_fallback_dossiers() -> tuple[dict, str]:
-    """旧站人物档案只读基线 → {canonical: record}；返回 (索引, 来源说明)。"""
-    candidates = [
-        esc.BACKUP_ROOT / FALLBACK_TAG / "dossiers.json",   # 阶段 0 冻结备份（首选，稳定）
-        esc.SITE_DATA / "dossiers.json",                     # 回退：当前站数据
-    ]
-    for p in candidates:
-        if not p.exists():
-            continue
-        payload = esc.load_json(p)
-        records = payload.get("dossiers") if isinstance(payload, dict) else payload
-        index = {d["canonical"]: d for d in records or []
-                 if isinstance(d, dict) and isinstance(d.get("canonical"), str)}
-        return index, display_path(p)
-    return {}, "（未找到旧站 dossiers.json → 全部派生字段置空骨架）"
+# 注：fallback 源加载（load_fallback_dossiers/display_path/FALLBACK_TAG）W0-T2 起上移至
+# export_site_characters.py（EX-2 主档内容判定共用），本模块经 exc.* 调用。
 
 
 def empty_derived() -> dict:
@@ -131,8 +111,14 @@ def pick_derived(old: dict | None) -> tuple[dict, list[str]]:
 
 # ---------------------------------------------------------------- 产物构造
 def build_dossiers(agg: dict, books: list[str], fallback: dict,
-                   display_map: dict[str, str] | None = None) -> tuple[list[dict], dict]:
-    """聚合结构 → dossiers（旧契约记录形状 + 新增展示层 display/display_name）。"""
+                   display_map: dict[str, str] | None = None, scope=None,
+                   min_total: int = exc.MIN_TOTAL) -> tuple[list[dict], dict]:
+    """聚合结构 → dossiers（旧契约记录形状 + 新增展示层 display/display_name）。
+
+    W0-T2 主档圈定（方案 §二）：scope 口径下仅收主档（decide_major：scope 内频次≥min_total
+    ∪ 有实质内容）；存目不进 dossiers、只进 entity-index（page=false，EX-2 产出）。
+    全量口径（scope=None）不裁剪——向后兼容（方案 R6：规则随 meta.scope 走）。
+    """
     display_map = display_map or {}
     persons = [(key, rec) for key, rec in agg.items() if key[0] == "@"]
     persons.sort(key=lambda kr: (-kr[1]["total"], kr[0][1]))
@@ -141,11 +127,15 @@ def build_dossiers(agg: dict, books: list[str], fallback: dict,
         "fallback_hits": 0,
         "fallback_empty_derived": 0,
         "fallback_nonempty_derived": 0,
+        "archived": 0,
         "degraded": Counter(),
         "old_reused": set(),
     }
     for (etype, canon), rec in persons:
         old = fallback.get(canon)
+        if scope is not None and not exc.decide_major(rec, old, scope, min_total):
+            stats["archived"] += 1          # 存目：不进 dossiers，entity-index page=false
+            continue
         derived, degraded = pick_derived(old)
         if old is not None:
             stats["fallback_hits"] += 1
@@ -193,7 +183,8 @@ def build_dossiers(agg: dict, books: list[str], fallback: dict,
 
 def build_payload(dossiers: list[dict], books: list[str], stats: dict,
                   fallback: dict, fallback_path: str,
-                  display_meta: dict | None = None) -> dict:
+                  display_meta: dict | None = None, scope=None,
+                  overrides_meta: dict | None = None) -> dict:
     cross = sum(1 for d in dossiers if d["cross_book"])
     old_only = sorted(set(fallback) - stats["old_reused"])
     display_meta = display_meta or {}
@@ -220,40 +211,50 @@ def build_payload(dossiers: list[dict], books: list[str], stats: dict,
         "（旧站 436 档案本身有 224 条全部派生字段为空，回填后仍为空属旧站口径）。",
         "summary/summary_status：旧站 436 条全为 null/『待撰写』（编辑流程未启动），按旧值/默认原样输出，"
         "不生成任何 LLM 文案。",
+        f"主档圈定（W0-T2，方案 §二）：min_total={exc.MIN_TOTAL} ∪ 有实质内容"
+        "（key_events/lineage.masters|disciples/combat.kills|slain_by/arts 非空，判定源=fallback "
+        "派生字段）；规则参数见 meta.major_rule（阈值进 meta 不硬编码）。全量口径（scope=null）"
+        "下 dossiers 不裁剪（向后兼容，方案 R6）；scope 口径下仅主档入本表，"
+        "存目只进 entity-index（page=false）。",
+        exc.alias_overrides_desc(overrides_meta),   # D9：registry 类型内 alias 覆盖
     ]
-    return {
-        "meta": {
-            "generated": esc.now_iso(),
-            "schema": SCHEMA,
-            "limit": None,
-            "books": list(books),
-            "copyright": COPYRIGHT,
-            "source": SOURCE,
-            "source_detail": (
-                "核心字段=registry/entities.json + registry/concordance/<5 书>；"
-                f"派生字段=旧站 dossiers fallback（{fallback_path}，同 canonical 命中 "
-                f"{stats['fallback_hits']}/{len(dossiers)}）"
-            ),
-            "display_layer": display_meta,
-            "totals": {
-                "entities_indexed": len(dossiers),
-                "dossiers_built": len(dossiers),
-                "cross_book": cross,
-            },
-            "field_gaps": gaps,
+    meta = {
+        "generated": esc.now_iso(),
+        "schema": SCHEMA,
+        "limit": None,
+        "books": list(books),
+        "copyright": COPYRIGHT,
+        "source": SOURCE,
+        "source_detail": (
+            "核心字段=registry/entities.json + registry/concordance/<书>.json；"
+            f"派生字段=旧站 dossiers fallback（{fallback_path}，同 canonical 命中 "
+            f"{stats['fallback_hits']}/{len(dossiers)}）"
+        ),
+        "display_layer": display_meta,
+        "major_rule": exc.major_rule_meta(scope),   # W0-T2：规则参数进 meta，不硬编码
+        "totals": {
+            "entities_indexed": len(dossiers),
+            "dossiers_built": len(dossiers),
+            "cross_book": cross,
         },
-        "dossiers": dossiers,
+        "field_gaps": gaps,
     }
+    if scope is not None:
+        meta["scope"] = scope["profile"]
+        meta["totals"]["archived"] = stats.get("archived", 0)   # 存目数（scope 口径）
+    return {"meta": meta, "dossiers": dossiers}
 
 
 # ---------------------------------------------------------------- 抽样回溯 + 一致性校验
 def dossier_samples(dossiers: list[dict], agg: dict, book_payloads: list[dict],
-                    reg_by_id: dict, fallback: dict) -> tuple[list[str], list[str]]:
+                    reg_by_id: dict, fallback: dict,
+                    merges: dict | None = None,
+                    overrides: dict | None = None) -> tuple[list[str], list[str]]:
     """前 10 条（按出场频次）逐条重算：频次/逐回曲线/fallback 命中与首见锚点。"""
     lines, failures = [], []
     for d in dossiers[:SAMPLE_N]:
         key = ("@", d["canonical"])
-        per_book, anchor = exc.trace_entity(key, book_payloads, reg_by_id)
+        per_book, anchor = exc.trace_entity(key, book_payloads, reg_by_id, merges, overrides)
         rec = agg[key]
         if sum(per_book.values()) != d["appearance_total"] or dict(per_book) != {
                 b: info["count"] for b, info in rec["books"].items()}:
@@ -275,25 +276,43 @@ def dossier_samples(dossiers: list[dict], agg: dict, book_payloads: list[dict],
 
 # ---------------------------------------------------------------- 主流程
 def main() -> int:
+    # W0-T2：--scope <profile> 主档口径（W0-T1 基础设施；不带 --scope = 全量口径，向后兼容）
+    profile = esc.scope_from_args()
+    scope = esc.load_scope(profile) if profile is not None else None
     book_payloads = exc.load_book_payloads()
+    if scope is not None:
+        book_payloads = [bp for bp in book_payloads if esc.in_scope(bp["book"], scope)]
+        found = {bp["book"] for bp in book_payloads}
+        missing = [b for b in scope["books"] if b not in found]
+        if missing:
+            raise SystemExit(f"[EX-3] scope {scope['profile']} 缺少 concordance 书目：{'、'.join(missing)}")
     books = [bp["book"] for bp in book_payloads]
     reg_by_id = exc.load_registry()
     display_map, display_meta = exc.load_display_map()
     display_meta = dict(display_meta, map=display_map)
-    agg, norm_stats = exc.aggregate_entities(book_payloads, reg_by_id)
-    fallback, fallback_path = load_fallback_dossiers()
-    dossiers, stats = build_dossiers(agg, books, fallback, display_map)
-    payload = build_payload(dossiers, books, stats, fallback, fallback_path, display_meta)
+    merges, merges_meta = exc.load_alias_merges()    # W0-T2：缺文件 = no-op
+    overrides, overrides_meta = exc.load_alias_overrides()   # D9：registry 类型内 alias 覆盖
+    agg, norm_stats = exc.aggregate_entities(book_payloads, reg_by_id, merges=merges,
+                                             overrides=overrides)
+    fallback, fallback_path = exc.load_fallback_dossiers()
+    dossiers, stats = build_dossiers(agg, books, fallback, display_map, scope=scope)
+    payload = build_payload(dossiers, books, stats, fallback, fallback_path, display_meta,
+                            scope=scope, overrides_meta=overrides_meta)
 
-    sample_lines, failures = dossier_samples(dossiers, agg, book_payloads, reg_by_id, fallback)
+    sample_lines, failures = dossier_samples(dossiers, agg, book_payloads, reg_by_id, fallback,
+                                             merges, overrides)
     # 展示层抽样（task-24）：dossiers 全为 @ 人物，5 条覆盖应全部命中且 canonical 不变
+    # scope 口径下存目人物不进 dossiers → 跳过并记行，不算失败
     by_canon = {d["canonical"]: d for d in dossiers}
     display_lines = []
     for canon in exc.DISPLAY_SAMPLE_CANONICALS:
         expected = display_map.get(canon)
         d = by_canon.get(canon)
         if d is None:
-            failures.append(f"dossiers 缺 @{canon}（展示层抽样）")
+            if scope is None:
+                failures.append(f"dossiers 缺 @{canon}（展示层抽样）")
+            else:
+                display_lines.append(f"| {canon} | {expected} | （scope 外/存目，跳过） | — |")
             continue
         if d.get("display") != expected or d.get("display_name") != expected:
             failures.append(f"dossiers {canon} display={d.get('display')}/"
@@ -302,21 +321,42 @@ def main() -> int:
             failures.append(f"dossiers {canon} canonical/id 被展示层改写（只增字段被违反）")
         display_lines.append(f"| {canon} | {expected} | {d.get('display')} | "
                              f"{d.get('display_name')} | {d.get('appearance_total')} |")
-    # 三表人物集合一致性：dossiers canonical == characters @ == entity-index @
+    # 三表人物集合一致性：全量口径 dossiers == characters @；scope 口径 主档 ⊆ characters @
     chars_at = {rec["canonical"] for key, rec in agg.items() if key[0] == "@"}
-    if chars_at != {d["canonical"] for d in dossiers}:
-        failures.append("dossiers 与 characters @ 集合不一致")
+    dossier_canons = {d["canonical"] for d in dossiers}
+    if scope is None:
+        if chars_at != dossier_canons:
+            failures.append("dossiers 与 characters @ 集合不一致")
+    else:
+        if not dossier_canons <= chars_at:
+            failures.append("scope 口径 dossiers 含 characters @ 之外的记录")
+        if len(dossier_canons) + stats.get("archived", 0) != len(chars_at):
+            failures.append("scope 口径 主档+存目 != characters @ 总数")
     if failures:
         raise SystemExit("[EX-3] 校验失败：" + "；".join(failures))
 
+    major_line = (
+        f"- W0-T2 主档圈定（方案 §二）：规则 total≥{exc.MIN_TOTAL} ∪ 有实质内容；"
+        f"meta.major_rule={payload['meta']['major_rule']}。",
+        f"- 主档（入 dossiers）{len(dossiers)} 条 / 存目（只进 entity-index，page=false）"
+        f"{stats.get('archived', 0)} 条；存目+主档 = characters @ {len(chars_at)} 条（断言通过）。",
+    ) if scope is not None else (
+        f"- W0-T2 主档圈定（方案 §二）：全量口径（scope=null）不裁剪（向后兼容，方案 R6），"
+        f"规则参数见 meta.major_rule={payload['meta']['major_rule']}；"
+        f"entity-index 的 page 字段为规则判定值。",
+    )
     notes = "\n".join([
         "### 记录数对比旧站",
-        f"- dossiers.json：旧 436（3 书）→ 新 {len(dossiers)}（5 书：{'、'.join(books)}）；"
+        f"- dossiers.json：旧 436（3 书）→ 新 {len(dossiers)}"
+        f"（{len(books)} 书：{'、'.join(books)}）；"
         f"cross_book：旧 45 → 新 {payload['meta']['totals']['cross_book']}。",
         f"- 数量口径：旧=旧站人物档案数（=旧 characters @436）；新=新管线 concordance @ 唯一规范名"
         f"（registry @375 全覆盖）。旧 436 中 {len(set(fallback) - stats['old_reused'])} 个规范名"
         "未映射到新 @（旧名差异/别名归一），未回填。",
-        f"- 三表一致性：dossiers canonical == characters @ == entity-index @ = {len(chars_at)} 条（断言通过）。",
+        f"- 三表一致性：{'主档集合 ⊆' if scope is not None else 'dossiers canonical =='} "
+        f"characters @（= entity-index @）= {len(chars_at)} 条（断言通过）。",
+        *major_line,
+        f"- {exc.alias_merge_desc(merges_meta, norm_stats)}。",
         "- 字段覆盖：契约 hard_gap=0（15 个记录级字段全齐，含 summary=null/summary_status=str）。",
         "",
         "### 展示层（display/display_name，task-24）",
@@ -334,7 +374,8 @@ def main() -> int:
         f"- 派生字段（sect_affinity/lineage/ranks/combat/arts/key_events/summary/summary_status）："
         f"旧站 dossiers 同 canonical 整段 fallback，命中 {stats['fallback_hits']}/{len(dossiers)}"
         f"（非空派生 {stats['fallback_nonempty_derived']}、旧站本身空档案 {stats['fallback_empty_derived']}）；"
-        f"未命中 {len(dossiers) - stats['fallback_hits']} 条 = 空骨架（结构完整、不伪造）。",
+        f"未命中 {len(dossiers) - stats['fallback_hits']} 条 = 空骨架（结构完整、不伪造）。"
+        f"fallback 派生字段同时作为主档「有实质内容」判定源。",
         f"- fallback 源：{fallback_path}（阶段 0 冻结备份，--apply 后保持稳定）。",
         "",
         "### 抽样回溯（前 10 条按出场频次；独立重算 concordance 原始条目）",
@@ -343,15 +384,18 @@ def main() -> int:
         *sample_lines,
         "",
         "### 遗留风险",
-        "- 派生字段回填率受旧站覆盖限制：新 5 书新增人物（尤其 冰魄寒光剑/江湖三女侠）无旧档案，"
-        "师承/战绩/门派线索/武功/关键事件为空；需 N5 关系层 + D03 事件层落地后重导（EX-4/EX-5 前置）。",
+        "- 派生字段回填率受旧站覆盖限制：新增书人物（尤其 冰魄寒光剑/江湖三女侠）无旧档案，"
+        "师承/战绩/门派线索/武功/关键事件为空，主档判定对它们退化为纯频次阈值；"
+        "需 N5 关系层 + D03 事件层落地后重导（EX-4/EX-5 前置）。",
         "- summary 仍为 null/待撰写：编辑流程（LLM 草拟→人工校）未启动，桥接期站点人物志卡片显示『待撰写』。",
         "- 旧站 31 个规范名与新 @ 不同名（如 明太祖朱元璋 vs 朱元璋、玉面妖狐 vs 凌霄、唐家 现为 & 家族），"
         "未做别名二次匹配以避免误配；可在 N5 后按 registry aliases 补一轮。",
     ])
 
     diff = esc.finish("dossiers.json", payload, exporter=EXPORTER, notes=notes)
-    print(f"[EX-3] dossiers={len(dossiers)} fallback_hits={stats['fallback_hits']} "
+    print(f"[EX-3] dossiers={len(dossiers)} archived={stats.get('archived', 0)} "
+          f"fallback_hits={stats['fallback_hits']} "
+          f"merges={merges_meta.get('rows', 0)} "
           f"display_overrides={len(display_map)} hard_gaps={diff['hard_gap_count']}")
     return 0 if diff["hard_gap_count"] == 0 else 1
 

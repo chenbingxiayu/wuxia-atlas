@@ -28,6 +28,12 @@
 CLI：
   python scripts/export_site_graph.py            # dry-run（staging + 差异报告）
   python scripts/export_site_graph.py --apply    # 写 site/data（common 自动备份；本阶段默认不用）
+  python scripts/export_site_graph.py --scope tianshan-demo   # 天山 7 书裁剪口径（W0-T3a）
+
+W0-T3a（天山演示版总体方案 §1.2，2026-11-08）scope 口径：
+  - 边 book ∈ scope（relations 按 scope 书过滤）；节点=scope 书边端点（node.books/n 为
+    scope 内重算值）；边 locs 按「书名·章:行」前缀归书校验（esc.loc_book/loc_in_scope）；
+  - 全量口径（不带 --scope）行为与现状完全一致（方案 R6）。
 """
 from __future__ import annotations
 
@@ -157,8 +163,12 @@ def edge_label(edge: dict) -> str:
     return "; ".join(parts)
 
 
-def build_edges(rel_books: list) -> tuple:
-    """跨书聚合 N5 边 → graph edges。键=(s,t,kind,label)；n 求和、books 并集、locs ≤3。"""
+def build_edges(rel_books: list, scope=None) -> tuple:
+    """跨书聚合 N5 边 → graph edges。键=(s,t,kind,label)；n 求和、books 并集、locs ≤3。
+
+    W0-T3a：scope 口径下边 locs 按书名前缀归书（esc.loc_book），scope 外书的定位符裁剪
+    （防御性：rel 已按 scope 过滤时为 no-op）。
+    """
     agg = {}
     conf_total = Counter()
     for rb in rel_books:
@@ -185,6 +195,8 @@ def build_edges(rel_books: list) -> tuple:
                 if len(item["locs"]) >= LOCS_MAX:
                     break
                 loc = f"{book}·{ev_loc}"
+                if not esc.loc_in_scope(loc, scope):
+                    continue
                 if loc not in item["locs"]:
                     item["locs"].append(loc)
     edges = []
@@ -374,12 +386,16 @@ def render_notes(payload: dict, cmp: dict) -> str:
 
 
 # ---------------------------------------------------------------- 主流程
-def build_payload() -> tuple:
-    books = relations_books()
-    rel = load_relations(books)
-    reg = load_registry()
-    conc = load_concordance(books)
-    edges, conf_counts = build_edges(rel)
+def assemble_payload(rel: list, reg: dict, conc: dict, scope=None) -> tuple:
+    """rel/reg/conc → graph payload（W0-T3a：scope 过滤在此单点生效，供测试注入合成数据）。
+
+    scope 口径（方案 §1.2）：边 book ∈ scope（rel 按 scope 书过滤）；节点=scope 书边端点
+    （books/n 由 scope 书 concordance 口径决定）；边 locs 按书名前缀归书裁剪。
+    """
+    if scope is not None:
+        rel = [rb for rb in rel if esc.in_scope(rb["book"], scope)]
+    books = [rb["book"] for rb in rel]
+    edges, conf_counts = build_edges(rel, scope)
     nodes, conflicts = build_nodes(edges, rel, conc, reg)
     node_types = dict(Counter(n["type"] for n in nodes))
     edge_kinds = dict(Counter(e["kind"] for e in edges))
@@ -443,14 +459,36 @@ def build_payload() -> tuple:
         "nodes": nodes,
         "edges": edges,
     }
+    if scope is not None:
+        payload["meta"]["scope"] = scope["profile"]
+        payload["meta"]["notes"].append(
+            f"scope 口径（{scope['profile']}）：边/节点仅收 scope 内 {len(books)} 书"
+            f"（{'、'.join(books)}）；node.books/n 为 scope 内重算值；"
+            "边 locs 按「书名·章:行」前缀归书校验（esc.loc_book）。")
     return payload, {"books": books, "rel": rel, "reg": reg, "conc": conc}
+
+
+def build_payload(scope=None) -> tuple:
+    """relations/registry/concordance 装载 → assemble_payload（scope 接线见 assemble）。
+
+    W0-T3a：scope 口径下 concordance 只装 scope 书（snapshot.concordance_generated 随之收窄）。
+    """
+    books = relations_books()
+    rel = load_relations(books)
+    reg = load_registry()
+    conc_books = books if scope is None else [b for b in books if esc.in_scope(b, scope)]
+    conc = load_concordance(conc_books)
+    return assemble_payload(rel, reg, conc, scope=scope)
 
 
 def main() -> int:
     if "--apply" in sys.argv:
         print("[EX-4] 注意：--apply 经 export_site_common 备份后写 site/data；"
               "阶段 2 默认先 dry-run，由 Lead 统一收口 apply。")
-    payload, _ctx = build_payload()
+    # W0-T3a：--scope <profile> 裁剪口径（W0-T1 基础设施；不带 --scope = 全量口径，向后兼容）
+    profile = esc.scope_from_args()
+    scope = esc.load_scope(profile) if profile is not None else None
+    payload, _ctx = build_payload(scope=scope)
     cmp = compare_old(payload)
     notes = render_notes(payload, cmp)
     diff = esc.finish("graph.json", payload, exporter=EXPORTER, notes=notes)

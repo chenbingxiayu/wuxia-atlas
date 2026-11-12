@@ -2,7 +2,7 @@
   "schema": "wuxia-time-resolve-v1",
   "book": "还剑奇情录",
   "work_id": "huanjian",
-  "generated_at": "2026-11-06 08:44:18",
+  "generated_at": "2026-11-07 03:43:13",
   "tool": "time_resolver_wuxia v0.1 (2026-11-05, N4/D05)",
   "spec": {
     "skill": "skills/SKILL_时间体系_武侠版.md",
@@ -2295,8 +2295,8 @@
         "segment_anchor": "huanjian#pn-r3.18",
         "line_no": 36,
         "span_in_line": [
-          163,
-          171
+          166,
+          174
         ]
       },
       "time_raw": "〖%深夜|时点〗",
@@ -2334,8 +2334,8 @@
         "segment_anchor": "huanjian#pn-r3.23",
         "line_no": 46,
         "span_in_line": [
-          177,
-          185
+          180,
+          188
         ]
       },
       "time_raw": "〖%七岁|年龄〗",
@@ -2451,8 +2451,8 @@
         "segment_anchor": "huanjian#pn-r3.44",
         "line_no": 88,
         "span_in_line": [
-          296,
-          306
+          299,
+          309
         ]
       },
       "time_raw": "〖%半个时辰|时长〗",
@@ -4488,8 +4488,8 @@
         "segment_anchor": "huanjian#pn-r7.53",
         "line_no": 106,
         "span_in_line": [
-          119,
-          128
+          122,
+          131
         ]
       },
       "time_raw": "〖%十多年|时长〗",
@@ -4853,8 +4853,8 @@
         "segment_anchor": "huanjian#pn-r8.24",
         "line_no": 48,
         "span_in_line": [
-          201,
-          210
+          198,
+          207
         ]
       },
       "time_raw": "〖%十九年|时长〗",
@@ -6697,8 +6697,8 @@
         "segment_anchor": "huanjian#pn-r10.53",
         "line_no": 106,
         "span_in_line": [
-          93,
-          103
+          96,
+          106
         ]
       },
       "time_raw": "〖%元末之世|时点〗",
@@ -7537,8 +7537,8 @@
         "segment_anchor": "huanjian#pn-r12.7",
         "line_no": 14,
         "span_in_line": [
-          168,
-          176
+          171,
+          179
         ]
       },
       "time_raw": "〖%三月|时长〗",
@@ -7576,8 +7576,8 @@
         "segment_anchor": "huanjian#pn-r12.7",
         "line_no": 14,
         "span_in_line": [
-          177,
-          185
+          180,
+          188
         ]
       },
       "time_raw": "〖%三天|时长〗",
@@ -8581,8 +8581,8 @@
         "segment_anchor": "huanjian#pn-r12.54",
         "line_no": 108,
         "span_in_line": [
-          56,
-          64
+          59,
+          67
         ]
       },
       "time_raw": "〖%日落|时点〗",
@@ -8620,8 +8620,8 @@
         "segment_anchor": "huanjian#pn-r12.54",
         "line_no": 108,
         "span_in_line": [
-          69,
-          77
+          72,
+          80
         ]
       },
       "time_raw": "〖%午夜|时点〗",

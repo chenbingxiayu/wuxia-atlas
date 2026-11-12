@@ -1,8 +1,8 @@
 {
  "schema": "event-v1",
  "book": "萍踪侠影录",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 12:02:52",
+ "generated": "2026-11-09",
+ "generated_at": "2026-11-09 18:32:21",
  "tool": "event_extractor v0.1 (2026-11-05, EX-5/D03)",
  "spec": {
   "skill": "skills/SKILL_04a_事件识别.md",
@@ -61,10 +61,10 @@
   },
   "by_outcome": {
    "平": 10,
-   "未决": 237,
-   "未知": 1458,
+   "未决": 235,
+   "未知": 1461,
    "胜": 51,
-   "负": 43
+   "负": 42
   },
   "by_domain": {
    "■": 1607,
@@ -75,9 +75,9 @@
    "▣": 27
   },
   "by_confidence": {
-   "low": 3689,
+   "low": 3693,
    "medium": 45,
-   "high": 673
+   "high": 669
   },
   "by_narrative_mode": {
    "正常叙事": 4231,
@@ -90,7 +90,7 @@
    "推导": 2
   },
   "time_point_hit": 3934,
-  "relation_filled": 578,
+  "relation_filled": 573,
   "fence_skipped_tokens": 2,
   "in_quote": 564,
   "zero_types": [
@@ -98,13 +98,13 @@
    "T10"
   ],
   "by_gate": {
-   "excluded": 1113,
-   "review": 2619,
-   "ok": 673
+   "excluded": 1114,
+   "review": 2622,
+   "ok": 669
   },
   "gate_reasons": {
-   "R1 无参与方": 1099,
-   "R2 单方参与者（降级）": 2576,
+   "R1 无参与方": 1100,
+   "R2 单方参与者（降级）": 2579,
    "R4 对白内（视角/转述，事实待核）": 43,
    "R3 非事实叙述模式": 14
   },
@@ -136,18 +136,18 @@
   "verbs": 4405,
   "fence": 2,
   "in_quote": 564,
-  "no_participants": 1101,
-  "relation_filled": 578,
+  "no_participants": 1102,
+  "relation_filled": 573,
   "time_hit": 3934,
   "time_points": 809,
   "by_gate": {
-   "excluded": 1113,
-   "review": 2619,
-   "ok": 673
+   "excluded": 1114,
+   "review": 2622,
+   "ok": 669
   },
   "gate_reasons": {
-   "R1 无参与方": 1099,
-   "R2 单方参与者（降级）": 2576,
+   "R1 无参与方": 1100,
+   "R2 单方参与者（降级）": 2579,
    "R4 对白内（视角/转述，事实待核）": 43,
    "R3 非事实叙述模式": 14
   },
@@ -238683,23 +238683,18 @@
     }
    ],
    "subject": "瓦剌",
-   "object": "祈镇",
+   "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "瓦剌",
      "entity_type": "@"
-    },
-    {
-     "role": "受者",
-     "name": "祈镇",
-     "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -238726,10 +238721,8 @@
    "related_concepts": [
     "太师"
    ],
-   "related_relations": [
-    "N5:交手@020:001"
-   ],
-   "confidence": "high",
+   "related_relations": [],
+   "confidence": "low",
    "review_status": "候选",
    "evidence": [
     {
@@ -238740,11 +238733,11 @@
      "quote_published": false
     }
    ],
-   "description": "萍踪侠影录 020:001 比武较技（交手）：瓦剌 → 祈镇",
+   "description": "萍踪侠影录 020:001 比武较技（交手）：瓦剌 → —",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": true,
-   "gate": "ok",
-   "gate_reason": "",
+   "summary_ready": false,
+   "gate": "review",
+   "gate_reason": "R2 单方参与者（降级）",
    "seq": 2913
   },
   {
@@ -239343,15 +239336,10 @@
      "in_quote": false
     }
    ],
-   "subject": "张风府",
+   "subject": "",
    "object": "张风府",
    "role_mode": "passive",
    "participants": [
-    {
-     "role": "施者",
-     "name": "张风府",
-     "entity_type": "@"
-    },
     {
      "role": "受者",
      "name": "张风府",
@@ -239386,10 +239374,8 @@
    ],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [
-    "N5:交手@020:009"
-   ],
-   "confidence": "high",
+   "related_relations": [],
+   "confidence": "low",
    "review_status": "候选",
    "evidence": [
     {
@@ -239400,11 +239386,11 @@
      "quote_published": false
     }
    ],
-   "description": "萍踪侠影录 020:009 比武较技（交手）：张风府 → 张风府",
+   "description": "萍踪侠影录 020:009 比武较技（交手）：— → 张风府",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": true,
-   "gate": "ok",
-   "gate_reason": "",
+   "summary_ready": false,
+   "gate": "review",
+   "gate_reason": "R2 单方参与者（降级）",
    "seq": 2922
   },
   {
@@ -239424,23 +239410,18 @@
     }
    ],
    "subject": "瓦剌",
-   "object": "祈镇",
+   "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "瓦剌",
      "entity_type": "@"
-    },
-    {
-     "role": "受者",
-     "name": "祈镇",
-     "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -239464,10 +239445,8 @@
    "related_orgs": [],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [
-    "N5:交手@020:009"
-   ],
-   "confidence": "high",
+   "related_relations": [],
+   "confidence": "low",
    "review_status": "候选",
    "evidence": [
     {
@@ -239478,11 +239457,11 @@
      "quote_published": false
     }
    ],
-   "description": "萍踪侠影录 020:009 比武较技（交手）：瓦剌 → 祈镇",
+   "description": "萍踪侠影录 020:009 比武较技（交手）：瓦剌 → —",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": true,
-   "gate": "ok",
-   "gate_reason": "",
+   "summary_ready": false,
+   "gate": "review",
+   "gate_reason": "R2 单方参与者（降级）",
    "seq": 2923
   },
   {
@@ -239501,25 +239480,14 @@
      "in_quote": false
     }
    ],
-   "subject": "张风府",
-   "object": "祈镇",
+   "subject": "",
+   "object": "",
    "role_mode": "plain",
-   "participants": [
-    {
-     "role": "施者",
-     "name": "张风府",
-     "entity_type": "@"
-    },
-    {
-     "role": "受者",
-     "name": "祈镇",
-     "entity_type": "@"
-    }
-   ],
-   "outcome": "负",
-   "outcome_ref": "祈镇",
-   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
-   "outcome_weight": 1.0,
+   "participants": [],
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "无参与方",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "萍踪侠影录",
@@ -239544,11 +239512,9 @@
    ],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [
-    "N5:交手@020:009"
-   ],
-   "confidence": "high",
-   "review_status": "",
+   "related_relations": [],
+   "confidence": "low",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "020:009",
@@ -239558,11 +239524,11 @@
      "quote_published": false
     }
    ],
-   "description": "萍踪侠影录 020:009 比武较技（交手）：张风府 → 祈镇",
+   "description": "萍踪侠影录 020:009 比武较技（交手）：— → —",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": true,
-   "gate": "ok",
-   "gate_reason": "",
+   "summary_ready": false,
+   "gate": "excluded",
+   "gate_reason": "R1 无参与方",
    "seq": 2924
   },
   {
@@ -259212,7 +259178,7 @@
     }
    ],
    "subject": "路亮",
-   "object": "祈镇",
+   "object": "王振",
    "role_mode": "plain",
    "participants": [
     {
@@ -259222,7 +259188,7 @@
     },
     {
      "role": "受者",
-     "name": "祈镇",
+     "name": "王振",
      "entity_type": "@"
     }
    ],
@@ -259277,7 +259243,7 @@
      "quote_published": false
     }
    ],
-   "description": "萍踪侠影录 021:033 行踪迁移（行程迁移）：路亮 → 祈镇",
+   "description": "萍踪侠影录 021:033 行踪迁移（行程迁移）：路亮 → 王振",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -259352,7 +259318,9 @@
    "related_concepts": [
     "前几天"
    ],
-   "related_relations": [],
+   "related_relations": [
+    "N5:交手@021:033"
+   ],
    "confidence": "high",
    "review_status": "候选",
    "evidence": [
@@ -259388,7 +259356,7 @@
     }
    ],
    "subject": "王振",
-   "object": "祈镇",
+   "object": "王振",
    "role_mode": "plain",
    "participants": [
     {
@@ -259398,7 +259366,7 @@
     },
     {
      "role": "受者",
-     "name": "祈镇",
+     "name": "王振",
      "entity_type": "@"
     }
    ],
@@ -259453,7 +259421,7 @@
      "quote_published": false
     }
    ],
-   "description": "萍踪侠影录 021:033 行踪迁移（行程迁移）：王振 → 祈镇",
+   "description": "萍踪侠影录 021:033 行踪迁移（行程迁移）：王振 → 王振",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -259477,7 +259445,7 @@
     }
    ],
    "subject": "王振",
-   "object": "祈镇",
+   "object": "王振",
    "role_mode": "plain",
    "participants": [
     {
@@ -259487,7 +259455,7 @@
     },
     {
      "role": "受者",
-     "name": "祈镇",
+     "name": "王振",
      "entity_type": "@"
     }
    ],
@@ -259542,7 +259510,7 @@
      "quote_published": false
     }
    ],
-   "description": "萍踪侠影录 021:033 行踪迁移（行程迁移）：王振 → 祈镇",
+   "description": "萍踪侠影录 021:033 行踪迁移（行程迁移）：王振 → 王振",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -259566,7 +259534,7 @@
     }
    ],
    "subject": "云重",
-   "object": "祈镇",
+   "object": "王振",
    "role_mode": "plain",
    "participants": [
     {
@@ -259576,7 +259544,7 @@
     },
     {
      "role": "受者",
-     "name": "祈镇",
+     "name": "王振",
      "entity_type": "@"
     }
    ],
@@ -259631,7 +259599,7 @@
      "quote_published": false
     }
    ],
-   "description": "萍踪侠影录 021:033 生死救治（生死健康）：云重 → 祈镇",
+   "description": "萍踪侠影录 021:033 生死救治（生死健康）：云重 → 王振",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",

@@ -1,7 +1,7 @@
 {
  "book": "散花女侠",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 08:44:34",
+ "generated": "2026-11-07",
+ "generated_at": "2026-11-07 03:43:28",
  "script": "scripts/relation_validator.py",
  "script_version": "0.1",
  "spec_version": "0.3-draft",
@@ -15,15 +15,15 @@
   "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
  ],
  "snapshot": {
-  "exported_at": "2026-11-06 08:44:34",
+  "exported_at": "2026-11-07 03:43:28",
   "tagged_chapters": 36,
-  "concordance_generated": "2026-11-06T03:36:42+08:00",
-  "registry_entities": 738,
+  "concordance_generated": "2026-11-06T11:26:02+08:00",
+  "registry_entities": 2926,
   "corpus_chapters": 36,
   "paragraphs": 2353,
-  "verbs": 5062,
-  "verbs_in_quote": 522,
-  "entities": 26984
+  "verbs": 5059,
+  "verbs_in_quote": 521,
+  "entities": 27088
  },
  "predicate_table": {
   "version": "D06@0.3-draft",
@@ -87,8 +87,8 @@
   "note": "四类离线关系行内不设符号（01g 铁律）；本脚本只出放弃原因（治愈/转移→恩义候选、隶属终止→背叛候选等），离线表由人工裁定流程维护，N5 不写。"
  },
  "counts": {
-  "candidates": 447,
-  "edges": 278,
+  "candidates": 444,
+  "edges": 276,
   "dropped": 222,
   "derived_edges": 36,
   "tongmen_edges": 36,
@@ -97,35 +97,35 @@
    "交手": 113,
    "师承": 15,
    "结义": 5,
-   "到达": 62,
+   "到达": 61,
    "杀害": 9,
    "离开": 24,
-   "传授": 2,
+   "传授": 1,
    "同门": 36,
    "掌握": 1,
    "点穴": 3,
    "转移": 8
   },
   "by_confidence": {
-   "ok": 184,
-   "strong": 42,
+   "ok": 183,
+   "strong": 41,
    "weak": 52
   },
   "by_layer": {
-   "人": 183,
-   "实": 95
+   "人": 182,
+   "实": 94
   },
   "by_rule": {
    "X-COMBAT": 113,
    "语式-收徒": 3,
    "04f-L19": 1,
    "04f-L24": 6,
-   "X-ARRIVE": 50,
+   "X-ARRIVE": 49,
    "语式-师承": 11,
    "04f-L08": 9,
    "X-LEAVE": 17,
    "语式-结义": 4,
-   "04f-L02": 2,
+   "04f-L02": 1,
    "04f-L21": 6,
    "D06#45/B3": 36,
    "语式-拜师": 1,
@@ -2338,48 +2338,6 @@
    "subject": "凌云凤",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "玄瑛道人",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "026:48",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    },
-    {
-     "loc": "027:3",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 2,
-   "loc": "026:48",
-   "chapter": 26,
-   "para": 48,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "散花女侠"
-   ],
-   "locs": [
-    "026:48",
-    "027:3"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "散花女侠#R0044"
-  },
-  {
-   "subject": "凌云凤",
-   "subject_type": "@",
-   "predicate": "交手",
    "object": "霍天都",
    "object_type": "@",
    "confidence": "ok",
@@ -2416,7 +2374,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0045"
+   "id": "散花女侠#R0044"
   },
   {
    "subject": "周山民",
@@ -2458,7 +2416,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0046"
+   "id": "散花女侠#R0045"
   },
   {
    "subject": "周山民",
@@ -2500,7 +2458,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0047"
+   "id": "散花女侠#R0046"
   },
   {
    "subject": "娄桐荪",
@@ -2542,7 +2500,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0048"
+   "id": "散花女侠#R0047"
   },
   {
    "subject": "小虎子",
@@ -2584,7 +2542,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0049"
+   "id": "散花女侠#R0048"
   },
   {
    "subject": "屠龙尊者",
@@ -2626,7 +2584,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0050"
+   "id": "散花女侠#R0049"
   },
   {
    "subject": "屠龙尊者",
@@ -2668,7 +2626,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0051"
+   "id": "散花女侠#R0050"
   },
   {
    "subject": "毕愿穷",
@@ -2710,7 +2668,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0052"
+   "id": "散花女侠#R0051"
   },
   {
    "subject": "毕愿穷",
@@ -2752,7 +2710,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0053"
+   "id": "散花女侠#R0052"
   },
   {
    "subject": "江口",
@@ -2794,7 +2752,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0054"
+   "id": "散花女侠#R0053"
   },
   {
    "subject": "谷中豪",
@@ -2836,7 +2794,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0055"
+   "id": "散花女侠#R0054"
   },
   {
    "subject": "铁镜心",
@@ -2878,7 +2836,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0056"
+   "id": "散花女侠#R0055"
   },
   {
    "subject": "阳宗海",
@@ -2920,7 +2878,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0057"
+   "id": "散花女侠#R0056"
   },
   {
    "subject": "鸠盘婆",
@@ -2962,7 +2920,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0058"
+   "id": "散花女侠#R0057"
   },
   {
    "subject": "于承珠",
@@ -3004,7 +2962,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0059"
+   "id": "散花女侠#R0058"
   },
   {
    "subject": "于承珠",
@@ -3046,7 +3004,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0060"
+   "id": "散花女侠#R0059"
   },
   {
    "subject": "小虎子",
@@ -3088,7 +3046,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0061"
+   "id": "散花女侠#R0060"
   },
   {
    "subject": "毕擎天",
@@ -3130,7 +3088,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0062"
+   "id": "散花女侠#R0061"
   },
   {
    "subject": "张丹枫",
@@ -3172,7 +3130,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0063"
+   "id": "散花女侠#R0062"
   },
   {
    "subject": "樊英",
@@ -3214,7 +3172,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0064"
+   "id": "散花女侠#R0063"
   },
   {
    "subject": "八臂哪吒",
@@ -3256,7 +3214,7 @@
    ],
    "layer": "人",
    "direction": "组",
-   "id": "散花女侠#R0065"
+   "id": "散花女侠#R0064"
   },
   {
    "subject": "张丹枫",
@@ -3298,7 +3256,7 @@
    ],
    "layer": "人",
    "direction": "组",
-   "id": "散花女侠#R0066"
+   "id": "散花女侠#R0065"
   },
   {
    "subject": "张风府",
@@ -3340,7 +3298,7 @@
    ],
    "layer": "人",
    "direction": "组",
-   "id": "散花女侠#R0067"
+   "id": "散花女侠#R0066"
   },
   {
    "subject": "也先",
@@ -3376,7 +3334,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0068"
+   "id": "散花女侠#R0067"
   },
   {
    "subject": "于承珠",
@@ -3412,7 +3370,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0069"
+   "id": "散花女侠#R0068"
   },
   {
    "subject": "于承珠",
@@ -3448,7 +3406,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0070"
+   "id": "散花女侠#R0069"
   },
   {
    "subject": "于承珠",
@@ -3484,7 +3442,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0071"
+   "id": "散花女侠#R0070"
   },
   {
    "subject": "于承珠",
@@ -3520,7 +3478,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0072"
+   "id": "散花女侠#R0071"
   },
   {
    "subject": "于承珠",
@@ -3556,7 +3514,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0073"
+   "id": "散花女侠#R0072"
   },
   {
    "subject": "于承珠",
@@ -3592,7 +3550,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0074"
+   "id": "散花女侠#R0073"
   },
   {
    "subject": "云蕾",
@@ -3628,7 +3586,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0075"
+   "id": "散花女侠#R0074"
   },
   {
    "subject": "云蕾",
@@ -3664,7 +3622,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0076"
+   "id": "散花女侠#R0075"
   },
   {
    "subject": "云蕾",
@@ -3700,7 +3658,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0077"
+   "id": "散花女侠#R0076"
   },
   {
    "subject": "六阳真君",
@@ -3736,7 +3694,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0078"
+   "id": "散花女侠#R0077"
   },
   {
    "subject": "六阳真君",
@@ -3772,7 +3730,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "散花女侠#R0079"
+   "id": "散花女侠#R0078"
   },
   {
    "subject": "六阳真君",
@@ -3805,6 +3763,42 @@
    ],
    "locs": [
     "024:38"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "散花女侠#R0079"
+  },
+  {
+   "subject": "凌云凤",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "玄瑛道人",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "027:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "027:3",
+   "chapter": 27,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "散花女侠"
+   ],
+   "locs": [
+    "027:3"
    ],
    "layer": "人",
    "direction": "↔",
@@ -5395,44 +5389,6 @@
    "id": "散花女侠#R0124"
   },
   {
-   "subject": "毕擎天",
-   "subject_type": "@",
-   "predicate": "传授",
-   "object": "铁镜心",
-   "object_type": "@",
-   "confidence": "strong",
-   "evidence_type": "E2动作+共现",
-   "rule": "04f-L02",
-   "rule_row": 2,
-   "subtype": "",
-   "params": {
-    "武功": "解穴之法"
-   },
-   "notes": "传授≠师承（04f 移交语；D06#36）",
-   "evidence": [
-    {
-     "loc": "030:31",
-     "type": "E2动作+共现",
-     "rule": "04f-L02"
-    }
-   ],
-   "count": 1,
-   "loc": "030:31",
-   "chapter": 30,
-   "para": 31,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "散花女侠"
-   ],
-   "locs": [
-    "030:31"
-   ],
-   "layer": "人",
-   "direction": "→",
-   "id": "散花女侠#R0125"
-  },
-  {
    "subject": "霍天都",
    "subject_type": "@",
    "predicate": "传授",
@@ -5468,7 +5424,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0126"
+   "id": "散花女侠#R0125"
   },
   {
    "subject": "于承珠",
@@ -5504,7 +5460,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0127"
+   "id": "散花女侠#R0126"
   },
   {
    "subject": "于承珠",
@@ -5540,7 +5496,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0128"
+   "id": "散花女侠#R0127"
   },
   {
    "subject": "于承珠",
@@ -5576,7 +5532,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0129"
+   "id": "散花女侠#R0128"
   },
   {
    "subject": "于承珠",
@@ -5612,7 +5568,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0130"
+   "id": "散花女侠#R0129"
   },
   {
    "subject": "于承珠",
@@ -5648,7 +5604,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0131"
+   "id": "散花女侠#R0130"
   },
   {
    "subject": "于承珠",
@@ -5684,7 +5640,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0132"
+   "id": "散花女侠#R0131"
   },
   {
    "subject": "于承珠",
@@ -5720,7 +5676,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0133"
+   "id": "散花女侠#R0132"
   },
   {
    "subject": "于承珠",
@@ -5756,7 +5712,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0134"
+   "id": "散花女侠#R0133"
   },
   {
    "subject": "于承珠",
@@ -5792,7 +5748,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0135"
+   "id": "散花女侠#R0134"
   },
   {
    "subject": "于承珠",
@@ -5828,7 +5784,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0136"
+   "id": "散花女侠#R0135"
   },
   {
    "subject": "于承珠",
@@ -5864,7 +5820,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0137"
+   "id": "散花女侠#R0136"
   },
   {
    "subject": "于承珠",
@@ -5900,43 +5856,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0138"
-  },
-  {
-   "subject": "于谦",
-   "subject_type": "@",
-   "predicate": "到达",
-   "object": "太湖",
-   "object_type": "=",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-ARRIVE",
-   "rule_row": "X-ARRIVE",
-   "subtype": "",
-   "params": {},
-   "notes": "",
-   "evidence": [
-    {
-     "loc": "004:1",
-     "type": "E2动作+共现",
-     "rule": "X-ARRIVE"
-    }
-   ],
-   "count": 1,
-   "loc": "004:1",
-   "chapter": 4,
-   "para": 1,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "散花女侠"
-   ],
-   "locs": [
-    "004:1"
-   ],
-   "layer": "实",
-   "direction": "→",
-   "id": "散花女侠#R0139"
+   "id": "散花女侠#R0137"
   },
   {
    "subject": "云蕾",
@@ -5972,7 +5892,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0140"
+   "id": "散花女侠#R0138"
   },
   {
    "subject": "云重",
@@ -6008,7 +5928,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0141"
+   "id": "散花女侠#R0139"
   },
   {
    "subject": "叶成林",
@@ -6044,7 +5964,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0142"
+   "id": "散花女侠#R0140"
   },
   {
    "subject": "大漠神狼",
@@ -6080,7 +6000,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0143"
+   "id": "散花女侠#R0141"
   },
   {
    "subject": "娄桐荪",
@@ -6116,7 +6036,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0144"
+   "id": "散花女侠#R0142"
   },
   {
    "subject": "娄桐荪",
@@ -6152,7 +6072,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0145"
+   "id": "散花女侠#R0143"
   },
   {
    "subject": "娄桐荪",
@@ -6188,7 +6108,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0146"
+   "id": "散花女侠#R0144"
   },
   {
    "subject": "小虎子",
@@ -6224,7 +6144,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0147"
+   "id": "散花女侠#R0145"
   },
   {
    "subject": "小虎子",
@@ -6260,7 +6180,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0148"
+   "id": "散花女侠#R0146"
   },
   {
    "subject": "小虎子",
@@ -6296,7 +6216,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0149"
+   "id": "散花女侠#R0147"
   },
   {
    "subject": "小虎子",
@@ -6332,7 +6252,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0150"
+   "id": "散花女侠#R0148"
   },
   {
    "subject": "张丹枫",
@@ -6368,7 +6288,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0151"
+   "id": "散花女侠#R0149"
   },
   {
    "subject": "张丹枫",
@@ -6404,7 +6324,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0152"
+   "id": "散花女侠#R0150"
   },
   {
    "subject": "张丹枫",
@@ -6440,7 +6360,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0153"
+   "id": "散花女侠#R0151"
   },
   {
    "subject": "张丹枫",
@@ -6476,7 +6396,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0154"
+   "id": "散花女侠#R0152"
   },
   {
    "subject": "张丹枫",
@@ -6512,7 +6432,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0155"
+   "id": "散花女侠#R0153"
   },
   {
    "subject": "张黑",
@@ -6548,7 +6468,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0156"
+   "id": "散花女侠#R0154"
   },
   {
    "subject": "樊英",
@@ -6584,7 +6504,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0157"
+   "id": "散花女侠#R0155"
   },
   {
    "subject": "樊英",
@@ -6620,7 +6540,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0158"
+   "id": "散花女侠#R0156"
   },
   {
    "subject": "樊英",
@@ -6656,7 +6576,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0159"
+   "id": "散花女侠#R0157"
   },
   {
    "subject": "樊英",
@@ -6692,7 +6612,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0160"
+   "id": "散花女侠#R0158"
   },
   {
    "subject": "樊英",
@@ -6728,7 +6648,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0161"
+   "id": "散花女侠#R0159"
   },
   {
    "subject": "樊英",
@@ -6764,7 +6684,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0162"
+   "id": "散花女侠#R0160"
   },
   {
    "subject": "毕愿穷",
@@ -6800,7 +6720,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0163"
+   "id": "散花女侠#R0161"
   },
   {
    "subject": "毕擎天",
@@ -6836,7 +6756,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0164"
+   "id": "散花女侠#R0162"
   },
   {
    "subject": "沐燕",
@@ -6872,7 +6792,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0165"
+   "id": "散花女侠#R0163"
   },
   {
    "subject": "沐琮",
@@ -6908,7 +6828,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0166"
+   "id": "散花女侠#R0164"
   },
   {
    "subject": "沐璘",
@@ -6944,7 +6864,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0167"
+   "id": "散花女侠#R0165"
   },
   {
    "subject": "波斯公主",
@@ -6980,7 +6900,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0168"
+   "id": "散花女侠#R0166"
   },
   {
    "subject": "波斯公主",
@@ -7016,7 +6936,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0169"
+   "id": "散花女侠#R0167"
   },
   {
    "subject": "潮音和尚",
@@ -7052,7 +6972,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0170"
+   "id": "散花女侠#R0168"
   },
   {
    "subject": "潮音和尚",
@@ -7088,7 +7008,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0171"
+   "id": "散花女侠#R0169"
   },
   {
    "subject": "白衣少年",
@@ -7124,7 +7044,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0172"
+   "id": "散花女侠#R0170"
   },
   {
    "subject": "谢天华",
@@ -7160,7 +7080,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0173"
+   "id": "散花女侠#R0171"
   },
   {
    "subject": "达摩",
@@ -7196,7 +7116,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0174"
+   "id": "散花女侠#R0172"
   },
   {
    "subject": "铁镜心",
@@ -7232,7 +7152,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0175"
+   "id": "散花女侠#R0173"
   },
   {
    "subject": "铁镜心",
@@ -7268,7 +7188,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0176"
+   "id": "散花女侠#R0174"
   },
   {
    "subject": "铁镜心",
@@ -7304,7 +7224,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0177"
+   "id": "散花女侠#R0175"
   },
   {
    "subject": "铁镜心",
@@ -7340,7 +7260,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0178"
+   "id": "散花女侠#R0176"
   },
   {
    "subject": "阳宗海",
@@ -7376,7 +7296,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0179"
+   "id": "散花女侠#R0177"
   },
   {
    "subject": "阿萨玛",
@@ -7412,7 +7332,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0180"
+   "id": "散花女侠#R0178"
   },
   {
    "subject": "阿萨玛",
@@ -7448,7 +7368,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0181"
+   "id": "散花女侠#R0179"
   },
   {
    "subject": "韦庄",
@@ -7484,7 +7404,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0182"
+   "id": "散花女侠#R0180"
   },
   {
    "subject": "顾孟章",
@@ -7520,7 +7440,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0183"
+   "id": "散花女侠#R0181"
   },
   {
    "subject": "黑白摩诃",
@@ -7556,7 +7476,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0184"
+   "id": "散花女侠#R0182"
   },
   {
    "subject": "黑白摩诃",
@@ -7592,7 +7512,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0185"
+   "id": "散花女侠#R0183"
   },
   {
    "subject": "黑白摩诃",
@@ -7628,7 +7548,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0186"
+   "id": "散花女侠#R0184"
   },
   {
    "subject": "于承珠",
@@ -7678,13 +7598,113 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0187"
+   "id": "散花女侠#R0185"
   },
   {
    "subject": "于承珠",
    "subject_type": "@",
    "predicate": "同门",
    "object": "叶宗留",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "张丹枫"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:3",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "006:19",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "007:28",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:3",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "散花女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:3",
+    "006:19",
+    "007:28"
+   ],
+   "id": "散花女侠#R0186"
+  },
+  {
+   "subject": "于承珠",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "小虎子",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "张丹枫"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:3",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "006:19",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "007:28",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:3",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "散花女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:3",
+    "006:19",
+    "007:28"
+   ],
+   "id": "散花女侠#R0187"
+  },
+  {
+   "subject": "于承珠",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "成海山",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -7734,7 +7754,7 @@
    "subject": "于承珠",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "小虎子",
+   "object": "毕擎天",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -7784,7 +7804,7 @@
    "subject": "于承珠",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "成海山",
+   "object": "赤霞道人",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -7834,7 +7854,7 @@
    "subject": "于承珠",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "毕擎天",
+   "object": "阳总管",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -7884,106 +7904,6 @@
    "subject": "于承珠",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "赤霞道人",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "张丹枫"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "006:3",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "006:19",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "007:28",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "006:3",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "散花女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "006:3",
-    "006:19",
-    "007:28"
-   ],
-   "id": "散花女侠#R0192"
-  },
-  {
-   "subject": "于承珠",
-   "subject_type": "@",
-   "predicate": "同门",
-   "object": "阳总管",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "张丹枫"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "006:3",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "006:19",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "007:28",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "006:3",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "散花女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "006:3",
-    "006:19",
-    "007:28"
-   ],
-   "id": "散花女侠#R0193"
-  },
-  {
-   "subject": "于承珠",
-   "subject_type": "@",
-   "predicate": "同门",
    "object": "黑摩诃",
    "object_type": "@",
    "confidence": "weak",
@@ -8028,7 +7948,7 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0194"
+   "id": "散花女侠#R0192"
   },
   {
    "subject": "六阳真君",
@@ -8078,13 +7998,113 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0195"
+   "id": "散花女侠#R0193"
   },
   {
    "subject": "六阳真君",
    "subject_type": "@",
    "predicate": "同门",
    "object": "小虎子",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "张丹枫"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:3",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "006:19",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "007:28",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:3",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "散花女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:3",
+    "006:19",
+    "007:28"
+   ],
+   "id": "散花女侠#R0194"
+  },
+  {
+   "subject": "六阳真君",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "成海山",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "张丹枫"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:3",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "006:19",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "007:28",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:3",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "散花女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:3",
+    "006:19",
+    "007:28"
+   ],
+   "id": "散花女侠#R0195"
+  },
+  {
+   "subject": "六阳真君",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "毕擎天",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8134,7 +8154,7 @@
    "subject": "六阳真君",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "成海山",
+   "object": "赤霞道人",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8184,7 +8204,7 @@
    "subject": "六阳真君",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "毕擎天",
+   "object": "阳总管",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8234,7 +8254,7 @@
    "subject": "六阳真君",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "赤霞道人",
+   "object": "黑摩诃",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8281,10 +8301,10 @@
    "id": "散花女侠#R0199"
   },
   {
-   "subject": "六阳真君",
+   "subject": "叶宗留",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "阳总管",
+   "object": "小虎子",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8331,10 +8351,10 @@
    "id": "散花女侠#R0200"
   },
   {
-   "subject": "六阳真君",
+   "subject": "叶宗留",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "黑摩诃",
+   "object": "成海山",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8384,7 +8404,7 @@
    "subject": "叶宗留",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "小虎子",
+   "object": "毕擎天",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8434,7 +8454,7 @@
    "subject": "叶宗留",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "成海山",
+   "object": "赤霞道人",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8484,7 +8504,7 @@
    "subject": "叶宗留",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "毕擎天",
+   "object": "阳总管",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8534,106 +8554,6 @@
    "subject": "叶宗留",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "赤霞道人",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "张丹枫"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "006:3",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "006:19",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "007:28",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "006:3",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "散花女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "006:3",
-    "006:19",
-    "007:28"
-   ],
-   "id": "散花女侠#R0205"
-  },
-  {
-   "subject": "叶宗留",
-   "subject_type": "@",
-   "predicate": "同门",
-   "object": "阳总管",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "张丹枫"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "006:3",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "006:19",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "007:28",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "006:3",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "散花女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "006:3",
-    "006:19",
-    "007:28"
-   ],
-   "id": "散花女侠#R0206"
-  },
-  {
-   "subject": "叶宗留",
-   "subject_type": "@",
-   "predicate": "同门",
    "object": "黑摩诃",
    "object_type": "@",
    "confidence": "weak",
@@ -8678,7 +8598,7 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0207"
+   "id": "散花女侠#R0205"
   },
   {
    "subject": "小虎子",
@@ -8728,13 +8648,113 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0208"
+   "id": "散花女侠#R0206"
   },
   {
    "subject": "小虎子",
    "subject_type": "@",
    "predicate": "同门",
    "object": "毕擎天",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "张丹枫"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:3",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "006:19",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "007:28",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:3",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "散花女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:3",
+    "006:19",
+    "007:28"
+   ],
+   "id": "散花女侠#R0207"
+  },
+  {
+   "subject": "小虎子",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "赤霞道人",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "张丹枫"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:3",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "006:19",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "007:28",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:3",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "散花女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:3",
+    "006:19",
+    "007:28"
+   ],
+   "id": "散花女侠#R0208"
+  },
+  {
+   "subject": "小虎子",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "阳总管",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -8784,106 +8804,6 @@
    "subject": "小虎子",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "赤霞道人",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "张丹枫"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "006:3",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "006:19",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "007:28",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "006:3",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "散花女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "006:3",
-    "006:19",
-    "007:28"
-   ],
-   "id": "散花女侠#R0210"
-  },
-  {
-   "subject": "小虎子",
-   "subject_type": "@",
-   "predicate": "同门",
-   "object": "阳总管",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "张丹枫"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "006:3",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "006:19",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "007:28",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "006:3",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "散花女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "006:3",
-    "006:19",
-    "007:28"
-   ],
-   "id": "散花女侠#R0211"
-  },
-  {
-   "subject": "小虎子",
-   "subject_type": "@",
-   "predicate": "同门",
    "object": "黑摩诃",
    "object_type": "@",
    "confidence": "weak",
@@ -8928,7 +8848,7 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0212"
+   "id": "散花女侠#R0210"
   },
   {
    "subject": "成海山",
@@ -8978,7 +8898,7 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0213"
+   "id": "散花女侠#R0211"
   },
   {
    "subject": "成海山",
@@ -9028,7 +8948,7 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0214"
+   "id": "散花女侠#R0212"
   },
   {
    "subject": "成海山",
@@ -9078,13 +8998,113 @@
     "006:19",
     "007:28"
    ],
-   "id": "散花女侠#R0215"
+   "id": "散花女侠#R0213"
   },
   {
    "subject": "成海山",
    "subject_type": "@",
    "predicate": "同门",
    "object": "黑摩诃",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "张丹枫"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:3",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "006:19",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "007:28",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:3",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "散花女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:3",
+    "006:19",
+    "007:28"
+   ],
+   "id": "散花女侠#R0214"
+  },
+  {
+   "subject": "毕擎天",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "赤霞道人",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "张丹枫"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "006:3",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "006:19",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "007:28",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "006:3",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "散花女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "006:3",
+    "006:19",
+    "007:28"
+   ],
+   "id": "散花女侠#R0215"
+  },
+  {
+   "subject": "毕擎天",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "阳总管",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -9134,7 +9154,7 @@
    "subject": "毕擎天",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "赤霞道人",
+   "object": "黑摩诃",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -9181,7 +9201,7 @@
    "id": "散花女侠#R0217"
   },
   {
-   "subject": "毕擎天",
+   "subject": "赤霞道人",
    "subject_type": "@",
    "predicate": "同门",
    "object": "阳总管",
@@ -9231,7 +9251,7 @@
    "id": "散花女侠#R0218"
   },
   {
-   "subject": "毕擎天",
+   "subject": "赤霞道人",
    "subject_type": "@",
    "predicate": "同门",
    "object": "黑摩诃",
@@ -9281,10 +9301,10 @@
    "id": "散花女侠#R0219"
   },
   {
-   "subject": "赤霞道人",
+   "subject": "阳总管",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "阳总管",
+   "object": "黑摩诃",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -9331,106 +9351,6 @@
    "id": "散花女侠#R0220"
   },
   {
-   "subject": "赤霞道人",
-   "subject_type": "@",
-   "predicate": "同门",
-   "object": "黑摩诃",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "张丹枫"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "006:3",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "006:19",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "007:28",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "006:3",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "散花女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "006:3",
-    "006:19",
-    "007:28"
-   ],
-   "id": "散花女侠#R0221"
-  },
-  {
-   "subject": "阳总管",
-   "subject_type": "@",
-   "predicate": "同门",
-   "object": "黑摩诃",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "张丹枫"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "006:3",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "006:19",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "007:28",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "006:3",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "散花女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "006:3",
-    "006:19",
-    "007:28"
-   ],
-   "id": "散花女侠#R0222"
-  },
-  {
    "subject": "东方洛",
    "subject_type": "@",
    "predicate": "师承",
@@ -9464,7 +9384,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0223"
+   "id": "散花女侠#R0221"
   },
   {
    "subject": "于承珠",
@@ -9500,7 +9420,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0224"
+   "id": "散花女侠#R0222"
   },
   {
    "subject": "于承珠",
@@ -9536,7 +9456,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0225"
+   "id": "散花女侠#R0223"
   },
   {
    "subject": "六阳真君",
@@ -9572,7 +9492,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0226"
+   "id": "散花女侠#R0224"
   },
   {
    "subject": "叶宗留",
@@ -9608,7 +9528,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0227"
+   "id": "散花女侠#R0225"
   },
   {
    "subject": "张风府",
@@ -9644,7 +9564,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0228"
+   "id": "散花女侠#R0226"
   },
   {
    "subject": "成海山",
@@ -9680,7 +9600,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0229"
+   "id": "散花女侠#R0227"
   },
   {
    "subject": "赤霞道人",
@@ -9716,7 +9636,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0230"
+   "id": "散花女侠#R0228"
   },
   {
    "subject": "达摩",
@@ -9752,7 +9672,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0231"
+   "id": "散花女侠#R0229"
   },
   {
    "subject": "阳总管",
@@ -9788,7 +9708,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0232"
+   "id": "散花女侠#R0230"
   },
   {
    "subject": "阿萨玛",
@@ -9824,7 +9744,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0233"
+   "id": "散花女侠#R0231"
   },
   {
    "subject": "黑摩诃",
@@ -9860,7 +9780,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0234"
+   "id": "散花女侠#R0232"
   },
   {
    "subject": "霍天都",
@@ -9898,7 +9818,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0235"
+   "id": "散花女侠#R0233"
   },
   {
    "subject": "于承珠",
@@ -9934,7 +9854,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0236"
+   "id": "散花女侠#R0234"
   },
   {
    "subject": "于承珠",
@@ -9970,13 +9890,13 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0237"
+   "id": "散花女侠#R0235"
   },
   {
    "subject": "张丹枫",
    "subject_type": "@",
    "predicate": "杀害",
-   "object": "朱翊钧",
+   "object": "贯仲",
    "object_type": "@",
    "confidence": "strong",
    "evidence_type": "E2动作+共现",
@@ -10006,7 +9926,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0238"
+   "id": "散花女侠#R0236"
   },
   {
    "subject": "张风府",
@@ -10042,7 +9962,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0239"
+   "id": "散花女侠#R0237"
   },
   {
    "subject": "樊英",
@@ -10078,7 +9998,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0240"
+   "id": "散花女侠#R0238"
   },
   {
    "subject": "祈镇",
@@ -10114,7 +10034,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0241"
+   "id": "散花女侠#R0239"
   },
   {
    "subject": "韩展",
@@ -10150,7 +10070,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0242"
+   "id": "散花女侠#R0240"
   },
   {
    "subject": "韩振羽",
@@ -10186,7 +10106,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0243"
+   "id": "散花女侠#R0241"
   },
   {
    "subject": "于承珠",
@@ -10224,7 +10144,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0244"
+   "id": "散花女侠#R0242"
   },
   {
    "subject": "凌云凤",
@@ -10262,7 +10182,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0245"
+   "id": "散花女侠#R0243"
   },
   {
    "subject": "郝云台",
@@ -10300,7 +10220,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "散花女侠#R0246"
+   "id": "散花女侠#R0244"
   },
   {
    "subject": "于承珠",
@@ -10336,7 +10256,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0247"
+   "id": "散花女侠#R0245"
   },
   {
    "subject": "于承珠",
@@ -10372,7 +10292,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0248"
+   "id": "散花女侠#R0246"
   },
   {
    "subject": "于承珠",
@@ -10408,7 +10328,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0249"
+   "id": "散花女侠#R0247"
   },
   {
    "subject": "于承珠",
@@ -10444,7 +10364,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0250"
+   "id": "散花女侠#R0248"
   },
   {
    "subject": "于承珠",
@@ -10480,7 +10400,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0251"
+   "id": "散花女侠#R0249"
   },
   {
    "subject": "于承珠",
@@ -10516,7 +10436,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0252"
+   "id": "散花女侠#R0250"
   },
   {
    "subject": "于谦",
@@ -10552,7 +10472,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0253"
+   "id": "散花女侠#R0251"
   },
   {
    "subject": "凌云凤",
@@ -10588,7 +10508,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0254"
+   "id": "散花女侠#R0252"
   },
   {
    "subject": "叶宗留",
@@ -10624,7 +10544,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0255"
+   "id": "散花女侠#R0253"
   },
   {
    "subject": "小虎子",
@@ -10660,7 +10580,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0256"
+   "id": "散花女侠#R0254"
   },
   {
    "subject": "张丹枫",
@@ -10696,7 +10616,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0257"
+   "id": "散花女侠#R0255"
   },
   {
    "subject": "张丹枫",
@@ -10732,7 +10652,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0258"
+   "id": "散花女侠#R0256"
   },
   {
    "subject": "张风府",
@@ -10768,7 +10688,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0259"
+   "id": "散花女侠#R0257"
   },
   {
    "subject": "张黑",
@@ -10804,7 +10724,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0260"
+   "id": "散花女侠#R0258"
   },
   {
    "subject": "成海山",
@@ -10840,7 +10760,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0261"
+   "id": "散花女侠#R0259"
   },
   {
    "subject": "樊英",
@@ -10876,7 +10796,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0262"
+   "id": "散花女侠#R0260"
   },
   {
    "subject": "武振东",
@@ -10912,7 +10832,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0263"
+   "id": "散花女侠#R0261"
   },
   {
    "subject": "毕擎天",
@@ -10948,7 +10868,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0264"
+   "id": "散花女侠#R0262"
   },
   {
    "subject": "潮音和尚",
@@ -10984,7 +10904,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0265"
+   "id": "散花女侠#R0263"
   },
   {
    "subject": "白摩诃",
@@ -11020,7 +10940,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0266"
+   "id": "散花女侠#R0264"
   },
   {
    "subject": "铁镜心",
@@ -11056,7 +10976,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0267"
+   "id": "散花女侠#R0265"
   },
   {
    "subject": "铁镜心",
@@ -11092,7 +11012,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0268"
+   "id": "散花女侠#R0266"
   },
   {
    "subject": "黑白摩诃",
@@ -11128,7 +11048,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0269"
+   "id": "散花女侠#R0267"
   },
   {
    "subject": "张丹枫",
@@ -11164,7 +11084,7 @@
    ],
    "layer": "人",
    "direction": "组",
-   "id": "散花女侠#R0270"
+   "id": "散花女侠#R0268"
   },
   {
    "subject": "乌蒙夫",
@@ -11203,7 +11123,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0271"
+   "id": "散花女侠#R0269"
   },
   {
    "subject": "娄桐荪",
@@ -11242,7 +11162,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0272"
+   "id": "散花女侠#R0270"
   },
   {
    "subject": "王镇南",
@@ -11281,7 +11201,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0273"
+   "id": "散花女侠#R0271"
   },
   {
    "subject": "石惊涛",
@@ -11320,7 +11240,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0274"
+   "id": "散花女侠#R0272"
   },
   {
    "subject": "石惊涛",
@@ -11359,7 +11279,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0275"
+   "id": "散花女侠#R0273"
   },
   {
    "subject": "芥川龙木",
@@ -11398,7 +11318,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0276"
+   "id": "散花女侠#R0274"
   },
   {
    "subject": "阳宗海",
@@ -11437,7 +11357,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0277"
+   "id": "散花女侠#R0275"
   },
   {
    "subject": "阳宗海",
@@ -11476,7 +11396,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "散花女侠#R0278"
+   "id": "散花女侠#R0276"
   }
  ],
  "derived": {
@@ -11529,13 +11449,113 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0187"
+    "id": "散花女侠#R0185"
    },
    {
     "subject": "于承珠",
     "subject_type": "@",
     "predicate": "同门",
     "object": "叶宗留",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0186"
+   },
+   {
+    "subject": "于承珠",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "小虎子",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0187"
+   },
+   {
+    "subject": "于承珠",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "成海山",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -11585,7 +11605,7 @@
     "subject": "于承珠",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "小虎子",
+    "object": "毕擎天",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -11635,7 +11655,7 @@
     "subject": "于承珠",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "成海山",
+    "object": "赤霞道人",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -11685,7 +11705,7 @@
     "subject": "于承珠",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "毕擎天",
+    "object": "阳总管",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -11735,106 +11755,6 @@
     "subject": "于承珠",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "赤霞道人",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0192"
-   },
-   {
-    "subject": "于承珠",
-    "subject_type": "@",
-    "predicate": "同门",
-    "object": "阳总管",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0193"
-   },
-   {
-    "subject": "于承珠",
-    "subject_type": "@",
-    "predicate": "同门",
     "object": "黑摩诃",
     "object_type": "@",
     "confidence": "weak",
@@ -11879,7 +11799,7 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0194"
+    "id": "散花女侠#R0192"
    },
    {
     "subject": "六阳真君",
@@ -11929,13 +11849,113 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0195"
+    "id": "散花女侠#R0193"
    },
    {
     "subject": "六阳真君",
     "subject_type": "@",
     "predicate": "同门",
     "object": "小虎子",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0194"
+   },
+   {
+    "subject": "六阳真君",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "成海山",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0195"
+   },
+   {
+    "subject": "六阳真君",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "毕擎天",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -11985,7 +12005,7 @@
     "subject": "六阳真君",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "成海山",
+    "object": "赤霞道人",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -12035,7 +12055,7 @@
     "subject": "六阳真君",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "毕擎天",
+    "object": "阳总管",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -12085,106 +12105,6 @@
     "subject": "六阳真君",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "赤霞道人",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0199"
-   },
-   {
-    "subject": "六阳真君",
-    "subject_type": "@",
-    "predicate": "同门",
-    "object": "阳总管",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0200"
-   },
-   {
-    "subject": "六阳真君",
-    "subject_type": "@",
-    "predicate": "同门",
     "object": "黑摩诃",
     "object_type": "@",
     "confidence": "weak",
@@ -12229,7 +12149,7 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0201"
+    "id": "散花女侠#R0199"
    },
    {
     "subject": "叶宗留",
@@ -12279,13 +12199,113 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0202"
+    "id": "散花女侠#R0200"
    },
    {
     "subject": "叶宗留",
     "subject_type": "@",
     "predicate": "同门",
     "object": "成海山",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0201"
+   },
+   {
+    "subject": "叶宗留",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "毕擎天",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0202"
+   },
+   {
+    "subject": "叶宗留",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "赤霞道人",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -12335,7 +12355,7 @@
     "subject": "叶宗留",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "毕擎天",
+    "object": "阳总管",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -12385,106 +12405,6 @@
     "subject": "叶宗留",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "赤霞道人",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0205"
-   },
-   {
-    "subject": "叶宗留",
-    "subject_type": "@",
-    "predicate": "同门",
-    "object": "阳总管",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0206"
-   },
-   {
-    "subject": "叶宗留",
-    "subject_type": "@",
-    "predicate": "同门",
     "object": "黑摩诃",
     "object_type": "@",
     "confidence": "weak",
@@ -12529,7 +12449,7 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0207"
+    "id": "散花女侠#R0205"
    },
    {
     "subject": "小虎子",
@@ -12579,13 +12499,113 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0208"
+    "id": "散花女侠#R0206"
    },
    {
     "subject": "小虎子",
     "subject_type": "@",
     "predicate": "同门",
     "object": "毕擎天",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0207"
+   },
+   {
+    "subject": "小虎子",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "赤霞道人",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0208"
+   },
+   {
+    "subject": "小虎子",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "阳总管",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -12635,106 +12655,6 @@
     "subject": "小虎子",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "赤霞道人",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0210"
-   },
-   {
-    "subject": "小虎子",
-    "subject_type": "@",
-    "predicate": "同门",
-    "object": "阳总管",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0211"
-   },
-   {
-    "subject": "小虎子",
-    "subject_type": "@",
-    "predicate": "同门",
     "object": "黑摩诃",
     "object_type": "@",
     "confidence": "weak",
@@ -12779,7 +12699,7 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0212"
+    "id": "散花女侠#R0210"
    },
    {
     "subject": "成海山",
@@ -12829,7 +12749,7 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0213"
+    "id": "散花女侠#R0211"
    },
    {
     "subject": "成海山",
@@ -12879,7 +12799,7 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0214"
+    "id": "散花女侠#R0212"
    },
    {
     "subject": "成海山",
@@ -12929,13 +12849,113 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0215"
+    "id": "散花女侠#R0213"
    },
    {
     "subject": "成海山",
     "subject_type": "@",
     "predicate": "同门",
     "object": "黑摩诃",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0214"
+   },
+   {
+    "subject": "毕擎天",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "赤霞道人",
+    "object_type": "@",
+    "confidence": "weak",
+    "evidence_type": "E3推导",
+    "rule": "D06#45/B3",
+    "rule_row": "B3",
+    "subtype": "亲同门",
+    "params": {
+     "共同师父": "张丹枫"
+    },
+    "notes": "推导关系（derived），不直接登记；不传递（R18）",
+    "evidence": [
+     {
+      "loc": "006:3",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "006:19",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     },
+     {
+      "loc": "007:28",
+      "type": "E3推导",
+      "rule": "D06#45/B3"
+     }
+    ],
+    "count": 1,
+    "loc": "006:3",
+    "chapter": 0,
+    "para": 0,
+    "derived": true,
+    "veracity": "推导",
+    "books": [
+     "散花女侠"
+    ],
+    "layer": "人",
+    "direction": "↔",
+    "locs": [
+     "006:3",
+     "006:19",
+     "007:28"
+    ],
+    "id": "散花女侠#R0215"
+   },
+   {
+    "subject": "毕擎天",
+    "subject_type": "@",
+    "predicate": "同门",
+    "object": "阳总管",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -12985,7 +13005,7 @@
     "subject": "毕擎天",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "赤霞道人",
+    "object": "黑摩诃",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -13032,7 +13052,7 @@
     "id": "散花女侠#R0217"
    },
    {
-    "subject": "毕擎天",
+    "subject": "赤霞道人",
     "subject_type": "@",
     "predicate": "同门",
     "object": "阳总管",
@@ -13082,7 +13102,7 @@
     "id": "散花女侠#R0218"
    },
    {
-    "subject": "毕擎天",
+    "subject": "赤霞道人",
     "subject_type": "@",
     "predicate": "同门",
     "object": "黑摩诃",
@@ -13132,106 +13152,6 @@
     "id": "散花女侠#R0219"
    },
    {
-    "subject": "赤霞道人",
-    "subject_type": "@",
-    "predicate": "同门",
-    "object": "阳总管",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0220"
-   },
-   {
-    "subject": "赤霞道人",
-    "subject_type": "@",
-    "predicate": "同门",
-    "object": "黑摩诃",
-    "object_type": "@",
-    "confidence": "weak",
-    "evidence_type": "E3推导",
-    "rule": "D06#45/B3",
-    "rule_row": "B3",
-    "subtype": "亲同门",
-    "params": {
-     "共同师父": "张丹枫"
-    },
-    "notes": "推导关系（derived），不直接登记；不传递（R18）",
-    "evidence": [
-     {
-      "loc": "006:3",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "006:19",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     },
-     {
-      "loc": "007:28",
-      "type": "E3推导",
-      "rule": "D06#45/B3"
-     }
-    ],
-    "count": 1,
-    "loc": "006:3",
-    "chapter": 0,
-    "para": 0,
-    "derived": true,
-    "veracity": "推导",
-    "books": [
-     "散花女侠"
-    ],
-    "layer": "人",
-    "direction": "↔",
-    "locs": [
-     "006:3",
-     "006:19",
-     "007:28"
-    ],
-    "id": "散花女侠#R0221"
-   },
-   {
     "subject": "阳总管",
     "subject_type": "@",
     "predicate": "同门",
@@ -13279,7 +13199,7 @@
      "006:19",
      "007:28"
     ],
-    "id": "散花女侠#R0222"
+    "id": "散花女侠#R0220"
    }
   ],
   "tongmen_pairs": [
@@ -14765,8 +14685,8 @@
    "predicate": "传授",
    "triggers": "传授（具体武功名在句）",
    "strength": "强制",
-   "candidates": 2,
-   "emitted": 2,
+   "candidates": 1,
+   "emitted": 1,
    "dropped": 7,
    "extension": false,
    "note": ""
@@ -15062,8 +14982,8 @@
    "predicate": "到达",
    "triggers": "■ 行程动词（回到/走到/走进/赶到…）",
    "strength": "扩展",
-   "candidates": 53,
-   "emitted": 50,
+   "candidates": 52,
+   "emitted": 49,
    "dropped": 2,
    "extension": true,
    "note": ""
@@ -15084,7 +15004,7 @@
    "predicate": "交手",
    "triggers": "⊞ 攻击/防御动词（近邻双角色）",
    "strength": "扩展",
-   "candidates": 306,
+   "candidates": 305,
    "emitted": 113,
    "dropped": 8,
    "extension": true,

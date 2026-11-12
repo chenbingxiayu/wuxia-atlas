@@ -1,0 +1,103 @@
+---
+import Base from '../../layouts/Base.astro';
+import SpectrumTabs from '../../components/ui/SpectrumTabs.astro';
+import manualsJson from '@data/manuals.json';
+import { B } from '@lib/base';
+import LightSearch from '../../islands/LightSearch';
+
+/* D11 秘籍谱索引（名物页重构设计 §四/§七/§十一）：形态与神兵谱同构——
+   三谱 tab + lead（用户口径）+ 类目卡网格（LightSearch 客户端过滤）。
+   分组=秘籍类别（构建期后缀分组，exporter category 字段），组内序=证据频次降序。 */
+const ms = manualsJson.manuals;
+const t = manualsJson.meta.totals;
+const CATS = ['剑诀·剑谱', '经', '诀', '秘笈', '其他'];
+const catOf = (x) => (CATS.includes(x.category) ? x.category : '其他');
+const cross = ms.filter((x) => Object.keys(x.books).length > 1).length;
+
+const items = CATS.flatMap((c) =>
+  ms
+    .filter((x) => catOf(x) === c)
+    .sort((a, b) => b.ev_total - a.ev_total)
+    .map((x) => ({
+      c: x.name,
+      href: `${B}manuals/${encodeURIComponent(x.name)}/`,
+      g: catOf(x),
+      kind: catOf(x),
+      x: Object.keys(x.books).length > 1,
+      a: (x.aliases || []) as string[],
+      edges: [],
+      noneNote: (x.related_arts || []).length
+        ? `相关武功：${x.related_arts.join('、')}`
+        : `考订锚点 ${x.anchor.book}·${x.anchor.loc}`,
+      foot: [
+        Object.keys(x.books).length > 1 ? `见于 ${Object.keys(x.books).length} 书` : Object.keys(x.books)[0],
+        `证据 ${x.ev_total}`,
+      ],
+    })),
+);
+const groups = CATS.filter((c) => items.some((i) => i.g === c));
+const aliasN = items.filter((i) => i.a.length > 0).length;
+---
+
+<Base title="秘籍谱" description="梁羽生武侠宇宙秘籍谱：百毒真经、玄功要诀、拳经剑诀等考订秘籍的来历传承与见于书目，每处出场都挂原著定位符。">
+  <div class="manuals-root">
+    <p class="crumb">名物谱 / 秘籍</p>
+    <h1>秘籍谱</h1>
+    <SpectrumTabs current="manuals" />
+    <p class="lead">
+      库内考订的 <b>{t.manuals}</b> 件秘籍名物：什么来历、传到谁手、见于何书，每处出场都挂原著定位符。
+      通名（泛称的剑谱/拳经/真经等）不入谱；另有 {t.draft} 件存疑候选待裁（宁缺毋滥）。
+      可按秘籍名与别名（{aliasN} 件）筛选。
+    </p>
+    <p class="lead cats">
+      {CATS.filter((c) => items.some((i) => i.g === c)).map((c) => <a href={`#${c}`}>{c}<small>{items.filter((i) => i.g === c).length}</small></a>)}
+      <span class="fine">跨书流传 {cross} 件</span>
+    </p>
+
+    <LightSearch client:visible items={items} groups={groups} mode="cards" anchorIds={true}
+                 placeholder="输入秘籍名 / 别名筛选…" />
+
+    <section>
+      <h2>数据口径</h2>
+      <p class="lead">
+        秘籍 = 原著具名典籍／口诀（书、诀、谱、笈），频次为语料标注出现次数；出场定位符逐条可点回原著。
+        毒经（如 百毒真经）随谱收录；其毒性／解药对应关系见丹药谱。
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  /* D11：卡片网格由 LightSearch island 客户端过滤渲染 → 样式全局化并以 .manuals-root 限域（weapons/index 同法） */
+  .manuals-root .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .manuals-root h1 { letter-spacing: 2px; }
+  .manuals-root .lead { color: var(--ink-light); line-height: 1.9; }
+  .manuals-root .lead b { color: var(--seal); }
+  .manuals-root .cats a { margin-right: 12px; color: var(--azure); }
+  .manuals-root .cats a:hover { color: var(--seal); }
+  .manuals-root .cats small { color: var(--ink-faint); margin-left: 2px; }
+  .manuals-root .fine { color: var(--ink-faint); font-size: .8rem; margin-left: auto; }
+  .manuals-root section { margin-top: var(--space-5); }
+  .manuals-root h2 { border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  .manuals-root h2 small { font-weight: 400; font-size: .8rem; color: var(--ink-faint); margin-left: .6em; }
+  .manuals-root .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-top: 12px; }
+  .manuals-root .card { display: block; border: 1px solid var(--line-strong); border-radius: 4px; padding: 12px 14px;
+    background: rgba(255,255,255,.45); color: var(--ink); }
+  .manuals-root .card:hover { border-color: var(--seal); }
+  .manuals-root .head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .manuals-root .head b { font-size: 1.05rem; letter-spacing: 1px; }
+  .manuals-root .kind { margin-left: auto; font-size: .75rem; color: var(--ink-light); border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 .6em; }
+  .manuals-root .chain { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; font-size: .78rem; }
+  .manuals-root .none { color: var(--ink-faint); }
+  .manuals-root .foot { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--line); display: flex; gap: 12px; font-size: .75rem; color: var(--ink-faint); }
+  .manuals-root .lsearch-bar { display: flex; gap: var(--space-3); align-items: center; margin: var(--space-3) 0; }
+  .manuals-root .lsearch-bar input {
+    flex: 1; min-width: 220px; padding: .35em .8em;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font-family: var(--font-body); background: rgba(255,255,255,.6);
+  }
+  .manuals-root .lsearch-meta { font-size: .85rem; color: var(--ink-faint); white-space: nowrap; }
+  .manuals-root .lsearch-empty { color: var(--ink-faint); }
+  .manuals-root .card .hit-note { color: var(--seal); font-size: .75rem; margin-top: 6px; }
+  .manuals-root .card.ahit { border-color: var(--seal); background: rgba(190, 60, 40, 0.06); }
+</style>

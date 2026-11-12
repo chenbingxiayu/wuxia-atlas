@@ -1,8 +1,8 @@
 {
  "schema": "event-v1",
  "book": "白发魔女传",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 12:02:49",
+ "generated": "2026-11-09",
+ "generated_at": "2026-11-09 18:32:17",
  "tool": "event_extractor v0.1 (2026-11-05, EX-5/D03)",
  "spec": {
   "skill": "skills/SKILL_04a_事件识别.md",
@@ -62,11 +62,11 @@
    "T13": 1
   },
   "by_outcome": {
-   "平": 4,
-   "未决": 310,
-   "未知": 1549,
+   "平": 3,
+   "未决": 305,
+   "未知": 1561,
    "胜": 62,
-   "负": 46
+   "负": 40
   },
   "by_domain": {
    "■": 1915,
@@ -4096,7 +4096,7 @@
     {
      "verb": "打",
      "domain": "⊞",
-     "pos": 207,
+     "pos": 203,
      "in_quote": false
     }
    ],
@@ -4216,7 +4216,7 @@
     {
      "verb": "擒拿",
      "domain": "⊞",
-     "pos": 301,
+     "pos": 297,
      "in_quote": false
     }
    ],
@@ -4336,7 +4336,7 @@
     {
      "verb": "点穴",
      "domain": "⊞",
-     "pos": 312,
+     "pos": 308,
      "in_quote": false
     }
    ],
@@ -4456,7 +4456,7 @@
     {
      "verb": "撞",
      "domain": "⊞",
-     "pos": 402,
+     "pos": 398,
      "in_quote": false
     }
    ],
@@ -4576,7 +4576,7 @@
     {
      "verb": "化开",
      "domain": "⊞",
-     "pos": 418,
+     "pos": 414,
      "in_quote": false
     }
    ],
@@ -4696,7 +4696,7 @@
     {
      "verb": "托起",
      "domain": "⊞",
-     "pos": 445,
+     "pos": 441,
      "in_quote": false
     }
    ],
@@ -4816,7 +4816,7 @@
     {
      "verb": "劫",
      "domain": "⊞",
-     "pos": 687,
+     "pos": 683,
      "in_quote": true
     }
    ],
@@ -4936,7 +4936,7 @@
     {
      "verb": "退下",
      "domain": "■",
-     "pos": 882,
+     "pos": 878,
      "in_quote": false
     }
    ],
@@ -5735,7 +5735,7 @@
     {
      "verb": "解",
      "domain": "⊞",
-     "pos": 134,
+     "pos": 130,
      "in_quote": false
     }
    ],
@@ -5834,7 +5834,7 @@
     {
      "verb": "拆",
      "domain": "⊞",
-     "pos": 246,
+     "pos": 242,
      "in_quote": false
     }
    ],
@@ -6745,7 +6745,7 @@
     {
      "verb": "围",
      "domain": "■",
-     "pos": 557,
+     "pos": 553,
      "in_quote": false
     }
    ],
@@ -7189,7 +7189,7 @@
     {
      "verb": "抓",
      "domain": "⊞",
-     "pos": 458,
+     "pos": 449,
      "in_quote": false
     }
    ],
@@ -7307,7 +7307,7 @@
     {
      "verb": "扑上",
      "domain": "⊞",
-     "pos": 497,
+     "pos": 483,
      "in_quote": false
     }
    ],
@@ -7425,7 +7425,7 @@
     {
      "verb": "格开",
      "domain": "⊞",
-     "pos": 546,
+     "pos": 527,
      "in_quote": false
     }
    ],
@@ -7543,7 +7543,7 @@
     {
      "verb": "跳过",
      "domain": "■",
-     "pos": 610,
+     "pos": 591,
      "in_quote": false
     }
    ],
@@ -7661,7 +7661,7 @@
     {
      "verb": "劈下",
      "domain": "⊞",
-     "pos": 824,
+     "pos": 805,
      "in_quote": false
     }
    ],
@@ -7779,7 +7779,7 @@
     {
      "verb": "打灭",
      "domain": "⊟",
-     "pos": 873,
+     "pos": 854,
      "in_quote": false
     }
    ],
@@ -7897,7 +7897,7 @@
     {
      "verb": "到",
      "domain": "■",
-     "pos": 973,
+     "pos": 954,
      "in_quote": false
     }
    ],
@@ -8015,7 +8015,7 @@
     {
      "verb": "走进",
      "domain": "■",
-     "pos": 1002,
+     "pos": 983,
      "in_quote": false
     }
    ],
@@ -8222,7 +8222,7 @@
     {
      "verb": "抓",
      "domain": "⊞",
-     "pos": 371,
+     "pos": 362,
      "in_quote": false
     }
    ],
@@ -8317,7 +8317,7 @@
     {
      "verb": "受",
      "domain": "⊠",
-     "pos": 472,
+     "pos": 458,
      "in_quote": false
     }
    ],
@@ -8587,7 +8587,7 @@
     {
      "verb": "结果",
      "domain": "⊠",
-     "pos": 23,
+     "pos": 18,
      "in_quote": false
     }
    ],
@@ -8679,7 +8679,7 @@
     {
      "verb": "押运",
      "domain": "■",
-     "pos": 271,
+     "pos": 266,
      "in_quote": true
     }
    ],
@@ -11235,7 +11235,7 @@
     {
      "verb": "跳",
      "domain": "■",
-     "pos": 1156,
+     "pos": 1152,
      "in_quote": false
     }
    ],
@@ -11372,7 +11372,7 @@
     {
      "verb": "截断",
      "domain": "⊟",
-     "pos": 1239,
+     "pos": 1231,
      "in_quote": false
     }
    ],
@@ -11505,7 +11505,7 @@
     {
      "verb": "断",
      "domain": "⊟",
-     "pos": 1251,
+     "pos": 1243,
      "in_quote": false
     }
    ],
@@ -11642,7 +11642,7 @@
     {
      "verb": "断",
      "domain": "⊟",
-     "pos": 1273,
+     "pos": 1265,
      "in_quote": false
     }
    ],
@@ -11779,7 +11779,7 @@
     {
      "verb": "断",
      "domain": "⊟",
-     "pos": 1347,
+     "pos": 1339,
      "in_quote": true
     }
    ],
@@ -11916,7 +11916,7 @@
     {
      "verb": "滚",
      "domain": "■",
-     "pos": 1396,
+     "pos": 1388,
      "in_quote": true
     }
    ],
@@ -12138,7 +12138,7 @@
     {
      "verb": "掏",
      "domain": "⊟",
-     "pos": 272,
+     "pos": 268,
      "in_quote": false
     }
    ],
@@ -12229,7 +12229,7 @@
     {
      "verb": "接",
      "domain": "⊟",
-     "pos": 386,
+     "pos": 382,
      "in_quote": false
     }
    ],
@@ -12320,7 +12320,7 @@
     {
      "verb": "下山",
      "domain": "■",
-     "pos": 430,
+     "pos": 422,
      "in_quote": false
     }
    ],
@@ -17070,7 +17070,7 @@
     {
      "verb": "冲出",
      "domain": "■",
-     "pos": 89,
+     "pos": 85,
      "in_quote": false
     }
    ],
@@ -17121,7 +17121,7 @@
    ],
    "related_orgs": [],
    "related_places": [
-    "乾清宫"
+    "乾清官"
    ],
    "related_concepts": [
     "太子",
@@ -17160,7 +17160,7 @@
     {
      "verb": "进入",
      "domain": "■",
-     "pos": 143,
+     "pos": 139,
      "in_quote": false
     }
    ],
@@ -17211,7 +17211,7 @@
    ],
    "related_orgs": [],
    "related_places": [
-    "乾清宫"
+    "乾清官"
    ],
    "related_concepts": [
     "太子",
@@ -17250,7 +17250,7 @@
     {
      "verb": "抓",
      "domain": "⊞",
-     "pos": 186,
+     "pos": 182,
      "in_quote": false
     }
    ],
@@ -17301,7 +17301,7 @@
    ],
    "related_orgs": [],
    "related_places": [
-    "乾清宫"
+    "乾清官"
    ],
    "related_concepts": [
     "太子",
@@ -17340,7 +17340,7 @@
     {
      "verb": "闯入",
      "domain": "■",
-     "pos": 286,
+     "pos": 282,
      "in_quote": false
     }
    ],
@@ -17391,7 +17391,7 @@
    ],
    "related_orgs": [],
    "related_places": [
-    "乾清宫"
+    "乾清官"
    ],
    "related_concepts": [
     "太子",
@@ -75420,7 +75420,7 @@
     {
      "verb": "跑出",
      "domain": "■",
-     "pos": 286,
+     "pos": 278,
      "in_quote": false
     }
    ],
@@ -87999,7 +87999,7 @@
     {
      "verb": "请",
      "domain": "⊡",
-     "pos": 223,
+     "pos": 220,
      "in_quote": false
     }
    ],
@@ -88035,7 +88035,7 @@
    "completion_status": "完成",
    "related_skills": [],
    "related_objects": [
-    "拜帖"
+    "帖子"
    ],
    "related_orgs": [
     "武当山"
@@ -88323,13 +88323,13 @@
      "in_quote": true
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -88381,7 +88381,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:034 生死救治（生死健康）：黄叶 → —",
+   "description": "白发魔女传 007:034 生死救治（生死健康）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -88961,13 +88961,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "铁飞龙",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -89035,7 +89035,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:043 行踪迁移（行程迁移）：黄叶 → 铁飞龙",
+   "description": "白发魔女传 007:043 行踪迁移（行程迁移）：黄叶三哥 → 铁飞龙",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -90092,7 +90092,7 @@
     }
    ],
    "subject": "铁飞龙",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -90102,7 +90102,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -90155,7 +90155,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:045 比武较技（比武）：铁飞龙 → 黄叶道人",
+   "description": "白发魔女传 007:045 比武较技（比武）：铁飞龙 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -90179,7 +90179,7 @@
     }
    ],
    "subject": "王照希",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -90189,7 +90189,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -90242,7 +90242,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:045 行踪迁移（行程迁移）：王照希 → 黄叶道人",
+   "description": "白发魔女传 007:045 行踪迁移（行程迁移）：王照希 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -90422,13 +90422,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -90479,7 +90479,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:047 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 007:047 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -90502,13 +90502,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -90559,7 +90559,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:047 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 007:047 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -90738,24 +90738,24 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -90807,7 +90807,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:050 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 007:050 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -90830,24 +90830,24 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -90899,7 +90899,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:050 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 007:050 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -90922,13 +90922,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "铁飞龙",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -90989,7 +90989,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:050 比武较技（交手）：黄叶 → 铁飞龙",
+   "description": "白发魔女传 007:050 比武较技（交手）：黄叶三哥 → 铁飞龙",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -91013,7 +91013,7 @@
     }
    ],
    "subject": "铁飞龙",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -91023,7 +91023,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -91081,7 +91081,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:050 比武较技（交手）：铁飞龙 → 黄叶道人",
+   "description": "白发魔女传 007:050 比武较技（交手）：铁飞龙 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -91104,24 +91104,24 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -91173,7 +91173,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:050 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 007:050 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -91512,13 +91512,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -91568,7 +91568,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:051 生死杀伐（击杀）：黄叶 → —",
+   "description": "白发魔女传 007:051 生死杀伐（击杀）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -91591,13 +91591,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "铁飞龙",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -91661,7 +91661,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:052 比武较技（交手）：黄叶 → 铁飞龙",
+   "description": "白发魔女传 007:052 比武较技（交手）：黄叶三哥 → 铁飞龙",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -91685,7 +91685,7 @@
     }
    ],
    "subject": "武当五老",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -91695,7 +91695,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -91754,7 +91754,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:052 比武较技（交手）：武当五老 → 黄叶",
+   "description": "白发魔女传 007:052 比武较技（交手）：武当五老 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -92149,13 +92149,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "铁飞龙",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -92219,7 +92219,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:052 生死救治（生死健康）：黄叶 → 铁飞龙",
+   "description": "白发魔女传 007:052 生死救治（生死健康）：黄叶三哥 → 铁飞龙",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -92335,13 +92335,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "铁飞龙",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -92405,7 +92405,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:052 比武较技（交手）：黄叶 → 铁飞龙",
+   "description": "白发魔女传 007:052 比武较技（交手）：黄叶三哥 → 铁飞龙",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -92429,7 +92429,7 @@
     }
    ],
    "subject": "武当五老",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "passive",
    "participants": [
     {
@@ -92439,7 +92439,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -92498,7 +92498,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:052 比武较技（交手）：武当五老 → 黄叶",
+   "description": "白发魔女传 007:052 比武较技（交手）：武当五老 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -92610,25 +92610,25 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "平",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "平局词命中",
-   "outcome_weight": 0.7,
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "白发魔女传",
@@ -92666,7 +92666,7 @@
     "N5:交手@007:053"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "007:053",
@@ -92676,7 +92676,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:053 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 007:053 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -92788,13 +92788,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -92841,7 +92841,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:054 生死杀伐（杀伐）：黄叶 → —",
+   "description": "白发魔女传 007:054 生死杀伐（杀伐）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -94840,13 +94840,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "练霓裳",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -94898,7 +94898,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:063 结盟背盟（社会关系）：黄叶 → 练霓裳",
+   "description": "白发魔女传 007:063 结盟背盟（社会关系）：黄叶三哥 → 练霓裳",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -95074,7 +95074,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "ba",
    "participants": [
     {
@@ -95084,7 +95084,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -95131,7 +95131,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:063 行踪迁移（行程迁移）：卓一航 → 黄叶",
+   "description": "白发魔女传 007:063 行踪迁移（行程迁移）：卓一航 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -96790,13 +96790,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -96843,7 +96843,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:073 行踪迁移（行程迁移）：黄叶 → —",
+   "description": "白发魔女传 007:073 行踪迁移（行程迁移）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -97746,13 +97746,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -97802,7 +97802,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:076 行踪迁移（行程迁移）：黄叶 → —",
+   "description": "白发魔女传 007:076 行踪迁移（行程迁移）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -99215,13 +99215,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -99268,7 +99268,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 007:081 结盟背盟（社会关系）：黄叶 → —",
+   "description": "白发魔女传 007:081 结盟背盟（社会关系）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -101152,13 +101152,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "卓一航",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -101216,7 +101216,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:004 比武较技（交手）：黄叶 → 卓一航",
+   "description": "白发魔女传 008:004 比武较技（交手）：黄叶三哥 → 卓一航",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -101240,7 +101240,7 @@
     }
    ],
    "subject": "虞新城",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -101250,7 +101250,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -101305,7 +101305,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:004 行踪迁移（行程迁移）：虞新城 → 黄叶道人",
+   "description": "白发魔女传 008:004 行踪迁移（行程迁移）：虞新城 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -101329,7 +101329,7 @@
     }
    ],
    "subject": "练霓裳",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -101339,7 +101339,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -101394,7 +101394,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:004 比武较技（交手）：练霓裳 → 黄叶道人",
+   "description": "白发魔女传 008:004 比武较技（交手）：练霓裳 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -101418,7 +101418,7 @@
     }
    ],
    "subject": "武当派",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -101428,7 +101428,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -101481,7 +101481,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:004 夺宝争谱（夺取/转移）：武当派 → 黄叶道人",
+   "description": "白发魔女传 008:004 夺宝争谱（夺取/转移）：武当派 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -101505,7 +101505,7 @@
     }
    ],
    "subject": "耿绍南",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -101515,7 +101515,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -101570,7 +101570,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:004 行踪迁移（行程迁移）：耿绍南 → 黄叶道人",
+   "description": "白发魔女传 008:004 行踪迁移（行程迁移）：耿绍南 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -101594,7 +101594,7 @@
     }
    ],
    "subject": "练霓裳",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -101604,7 +101604,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -101659,7 +101659,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:004 比武较技（交手）：练霓裳 → 黄叶道人",
+   "description": "白发魔女传 008:004 比武较技（交手）：练霓裳 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -102633,13 +102633,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -102686,7 +102686,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:008 行踪迁移（行程迁移）：黄叶 → —",
+   "description": "白发魔女传 008:008 行踪迁移（行程迁移）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -103017,13 +103017,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -103074,7 +103074,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:009 结盟背盟（社会关系）：黄叶 → —",
+   "description": "白发魔女传 008:009 结盟背盟（社会关系）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -103257,13 +103257,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -103314,7 +103314,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:009 行踪迁移（行程迁移）：黄叶 → —",
+   "description": "白发魔女传 008:009 行踪迁移（行程迁移）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -104490,13 +104490,13 @@
      "in_quote": true
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "卓一航",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -104560,7 +104560,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:014 练功突破（练功）：黄叶 → 卓一航",
+   "description": "白发魔女传 008:014 练功突破（练功）：黄叶三哥 → 卓一航",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -104584,7 +104584,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "ba",
    "participants": [
     {
@@ -104594,7 +104594,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -104653,7 +104653,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:014 行踪迁移（行程迁移）：卓一航 → 黄叶",
+   "description": "白发魔女传 008:014 行踪迁移（行程迁移）：卓一航 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -105110,13 +105110,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -105166,7 +105166,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:015 朝廷剿抚（官府行动）：黄叶 → —",
+   "description": "白发魔女传 008:015 朝廷剿抚（官府行动）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -105693,13 +105693,13 @@
      "in_quote": true
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -105757,7 +105757,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:016 朝廷剿抚（官府行动）：黄叶 → —",
+   "description": "白发魔女传 008:016 朝廷剿抚（官府行动）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -105862,13 +105862,13 @@
      "in_quote": true
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -105921,7 +105921,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:017 结盟背盟（社会关系）：黄叶 → —",
+   "description": "白发魔女传 008:017 结盟背盟（社会关系）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -106191,7 +106191,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "ba",
    "participants": [
     {
@@ -106201,7 +106201,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -106254,7 +106254,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:018 行踪迁移（行程迁移）：卓一航 → 黄叶",
+   "description": "白发魔女传 008:018 行踪迁移（行程迁移）：卓一航 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -106278,12 +106278,12 @@
     }
    ],
    "subject": "",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "ba",
    "participants": [
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -106336,7 +106336,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 008:018 结盟背盟（社会关系）：— → 黄叶",
+   "description": "白发魔女传 008:018 结盟背盟（社会关系）：— → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -191424,7 +191424,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -191434,7 +191434,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -191482,7 +191482,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 013:001 比武较技（交手）：卓一航 → 白石道人",
+   "description": "白发魔女传 013:001 比武较技（交手）：卓一航 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -191668,7 +191668,7 @@
     }
    ],
    "subject": "白石",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -191678,7 +191678,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -191726,7 +191726,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 013:001 行踪迁移（行程迁移）：白石 → 白石道人",
+   "description": "白发魔女传 013:001 行踪迁移（行程迁移）：白石 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -191750,7 +191750,7 @@
     }
    ],
    "subject": "白石",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -191760,7 +191760,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -191808,7 +191808,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 013:001 行踪迁移（行程迁移）：白石 → 白石道人",
+   "description": "白发魔女传 013:001 行踪迁移（行程迁移）：白石 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -191832,7 +191832,7 @@
     }
    ],
    "subject": "武当派",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -191842,7 +191842,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -191888,7 +191888,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 013:001 行踪迁移（行程迁移）：武当派 → 白石道人",
+   "description": "白发魔女传 013:001 行踪迁移（行程迁移）：武当派 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -191912,7 +191912,7 @@
     }
    ],
    "subject": "柳西铭",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -191922,7 +191922,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -191970,7 +191970,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 013:001 行踪迁移（行程迁移）：柳西铭 → 白石道人",
+   "description": "白发魔女传 013:001 行踪迁移（行程迁移）：柳西铭 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -223175,7 +223175,7 @@
     }
    ],
    "subject": "练霓裳",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -223185,7 +223185,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -223236,7 +223236,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 014:009 比武较技（交手）：练霓裳 → 白石道人",
+   "description": "白发魔女传 014:009 比武较技（交手）：练霓裳 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -223260,7 +223260,7 @@
     }
    ],
    "subject": "龙达三",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -223270,7 +223270,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -223321,7 +223321,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 014:009 结盟背盟（社会关系）：龙达三 → 白石道人",
+   "description": "白发魔女传 014:009 结盟背盟（社会关系）：龙达三 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -223428,7 +223428,7 @@
     }
    ],
    "subject": "白石",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -223438,13 +223438,13 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -223489,7 +223489,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 014:009 比武较技（交手）：白石 → 白石道人",
+   "description": "白发魔女传 014:009 比武较技（交手）：白石 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -283167,7 +283167,7 @@
     }
    ],
    "subject": "白石",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -283177,7 +283177,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -283239,7 +283239,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 017:014 行踪迁移（行程迁移）：白石 → 黄叶道人",
+   "description": "白发魔女传 017:014 行踪迁移（行程迁移）：白石 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -283359,7 +283359,7 @@
     }
    ],
    "subject": "白石",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -283369,7 +283369,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -283431,7 +283431,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 017:014 结盟背盟（社会关系）：白石 → 黄叶道人",
+   "description": "白发魔女传 017:014 结盟背盟（社会关系）：白石 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -283454,18 +283454,18 @@
      "in_quote": true
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -283527,7 +283527,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 017:014 拜师传艺（传授/授艺）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 017:014 拜师传艺（传授/授艺）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -283550,18 +283550,18 @@
      "in_quote": true
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -283623,7 +283623,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 017:014 练功突破（练功）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 017:014 练功突破（练功）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -283647,7 +283647,7 @@
     }
    ],
    "subject": "何绮霞",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -283657,7 +283657,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -283719,7 +283719,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 017:014 结盟背盟（社会关系）：何绮霞 → 黄叶道人",
+   "description": "白发魔女传 017:014 结盟背盟（社会关系）：何绮霞 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -283895,7 +283895,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -283905,7 +283905,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -283963,7 +283963,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 017:017 夺宝争谱（夺取/转移）：卓一航 → 白石道人",
+   "description": "白发魔女传 017:017 夺宝争谱（夺取/转移）：卓一航 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -283987,7 +283987,7 @@
     }
    ],
    "subject": "白石",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -283997,7 +283997,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -284055,7 +284055,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 017:017 情爱婚约（婚约/成亲）：白石 → 白石道人",
+   "description": "白发魔女传 017:017 情爱婚约（婚约/成亲）：白石 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -292793,7 +292793,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -292803,7 +292803,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -292870,7 +292870,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 018:044 比武较技（交手）：卓一航 → 白石道人",
+   "description": "白发魔女传 018:044 比武较技（交手）：卓一航 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -292894,7 +292894,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -292904,7 +292904,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -292971,7 +292971,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 018:044 比武较技（交手）：慕容冲 → 白石道人",
+   "description": "白发魔女传 018:044 比武较技（交手）：慕容冲 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -292995,7 +292995,7 @@
     }
    ],
    "subject": "岳鸣珂",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -293005,7 +293005,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -293072,7 +293072,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 018:044 行踪迁移（行程迁移）：岳鸣珂 → 白石道人",
+   "description": "白发魔女传 018:044 行踪迁移（行程迁移）：岳鸣珂 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -293096,7 +293096,7 @@
     }
    ],
    "subject": "金千岩",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -293106,7 +293106,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -293173,7 +293173,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 018:044 比武较技（交手）：金千岩 → 白石道人",
+   "description": "白发魔女传 018:044 比武较技（交手）：金千岩 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -293197,7 +293197,7 @@
     }
    ],
    "subject": "金千岩",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -293207,7 +293207,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -293274,7 +293274,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 018:044 比武较技（交手）：金千岩 → 白石道人",
+   "description": "白发魔女传 018:044 比武较技（交手）：金千岩 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -330306,13 +330306,13 @@
      "in_quote": false
     }
    ],
-   "subject": "白石道人",
+   "subject": "白石",
    "object": "紫阳道长",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     },
     {
@@ -330374,7 +330374,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 020:075 比武较技（交手）：白石道人 → 紫阳道长",
+   "description": "白发魔女传 020:075 比武较技（交手）：白石 → 紫阳道长",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -330486,13 +330486,13 @@
      "in_quote": false
     }
    ],
-   "subject": "白石道人",
+   "subject": "白石",
    "object": "武当派",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     },
     {
@@ -330552,7 +330552,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 020:075 比武较技（交手）：白石道人 → 武当派",
+   "description": "白发魔女传 020:075 比武较技（交手）：白石 → 武当派",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -330575,13 +330575,13 @@
      "in_quote": false
     }
    ],
-   "subject": "白石道人",
+   "subject": "白石",
    "object": "紫阳道长",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     },
     {
@@ -330643,7 +330643,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 020:075 比武较技（交手）：白石道人 → 紫阳道长",
+   "description": "白发魔女传 020:075 比武较技（交手）：白石 → 紫阳道长",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -393121,13 +393121,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -393189,7 +393189,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:001 行踪迁移（行程迁移）：黄叶 → —",
+   "description": "白发魔女传 026:001 行踪迁移（行程迁移）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -393212,13 +393212,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "紫阳道长",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -393285,7 +393285,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:001 行踪迁移（行程迁移）：黄叶 → 紫阳道长",
+   "description": "白发魔女传 026:001 行踪迁移（行程迁移）：黄叶三哥 → 紫阳道长",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -394243,13 +394243,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "练霓裳",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -394313,7 +394313,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:016 比武较技（交手）：黄叶 → 练霓裳",
+   "description": "白发魔女传 026:016 比武较技（交手）：黄叶三哥 → 练霓裳",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -394522,13 +394522,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -394584,7 +394584,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:017 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 026:017 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -394953,7 +394953,7 @@
     }
    ],
    "subject": "白石",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -394963,7 +394963,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -395021,7 +395021,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:019 比武较技（交手）：白石 → 黄叶",
+   "description": "白发魔女传 026:019 比武较技（交手）：白石 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -395044,13 +395044,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -395108,7 +395108,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:019 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 026:019 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -395303,13 +395303,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -395365,7 +395365,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:020 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 026:020 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -398281,13 +398281,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "练霓裳",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -398347,7 +398347,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:049 比武较技（交手）：黄叶 → 练霓裳",
+   "description": "白发魔女传 026:049 比武较技（交手）：黄叶三哥 → 练霓裳",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -398370,13 +398370,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "练霓裳",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -398436,7 +398436,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:049 比武较技（交手）：黄叶 → 练霓裳",
+   "description": "白发魔女传 026:049 比武较技（交手）：黄叶三哥 → 练霓裳",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -400367,13 +400367,13 @@
      "in_quote": false
     }
    ],
-   "subject": "白石道人",
+   "subject": "白石",
    "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     },
     {
@@ -400382,9 +400382,9 @@
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -400442,7 +400442,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:060 比武较技（交手）：白石道人 → 白石",
+   "description": "白发魔女传 026:060 比武较技（交手）：白石 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -400661,13 +400661,13 @@
      "in_quote": false
     }
    ],
-   "subject": "白石道人",
+   "subject": "白石",
    "object": "练霓裳",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     },
     {
@@ -400736,7 +400736,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:060 比武较技（交手）：白石道人 → 练霓裳",
+   "description": "白发魔女传 026:060 比武较技（交手）：白石 → 练霓裳",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -400857,18 +400857,18 @@
      "in_quote": false
     }
    ],
-   "subject": "白石道人",
-   "object": "黄叶",
+   "subject": "白石",
+   "object": "黄叶三哥",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -400932,7 +400932,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:060 比武较技（交手）：白石道人 → 黄叶",
+   "description": "白发魔女传 026:060 比武较技（交手）：白石 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -402778,7 +402778,7 @@
     }
    ],
    "subject": "练霓裳",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -402788,7 +402788,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -402841,7 +402841,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:068 生死救治（伤情）：练霓裳 → 黄叶",
+   "description": "白发魔女传 026:068 生死救治（伤情）：练霓裳 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -402946,13 +402946,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -403005,7 +403005,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:068 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 026:068 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -403029,12 +403029,12 @@
     }
    ],
    "subject": "",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "ba",
    "participants": [
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -403087,7 +403087,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:068 比武较技（交手）：— → 黄叶",
+   "description": "白发魔女传 026:068 比武较技（交手）：— → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -403111,12 +403111,12 @@
     }
    ],
    "subject": "",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "passive",
    "participants": [
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -403169,7 +403169,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:068 夺宝争谱（物件）：— → 黄叶",
+   "description": "白发魔女传 026:068 夺宝争谱（物件）：— → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -403192,13 +403192,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -403251,7 +403251,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:068 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 026:068 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -403685,7 +403685,7 @@
     }
    ],
    "subject": "练霓裳",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -403695,7 +403695,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -403748,7 +403748,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:070 夺宝争谱（夺取/转移）：练霓裳 → 黄叶",
+   "description": "白发魔女传 026:070 夺宝争谱（夺取/转移）：练霓裳 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -403861,7 +403861,7 @@
     }
    ],
    "subject": "练霓裳",
-   "object": "白石道人",
+   "object": "白石",
    "role_mode": "plain",
    "participants": [
     {
@@ -403871,7 +403871,7 @@
     },
     {
      "role": "受者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     }
    ],
@@ -403926,7 +403926,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:070 生死杀伐（杀伐）：练霓裳 → 白石道人",
+   "description": "白发魔女传 026:070 生死杀伐（杀伐）：练霓裳 → 白石",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -404527,13 +404527,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -404586,7 +404586,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:074 生死救治（生死健康）：黄叶 → —",
+   "description": "白发魔女传 026:074 生死救治（生死健康）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -404610,12 +404610,12 @@
     }
    ],
    "subject": "",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "passive",
    "participants": [
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -404668,7 +404668,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:074 行踪迁移（行程迁移）：— → 黄叶",
+   "description": "白发魔女传 026:074 行踪迁移（行程迁移）：— → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -404923,7 +404923,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "ba",
    "participants": [
     {
@@ -404933,7 +404933,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -404990,7 +404990,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:076 夺宝争谱（夺取/转移）：卓一航 → 黄叶",
+   "description": "白发魔女传 026:076 夺宝争谱（夺取/转移）：卓一航 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -405823,13 +405823,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -405878,7 +405878,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:095 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 026:095 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -405901,13 +405901,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -405956,7 +405956,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:095 比武较技（交手）：黄叶 → —",
+   "description": "白发魔女传 026:095 比武较技（交手）：黄叶三哥 → —",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -406058,12 +406058,12 @@
     }
    ],
    "subject": "",
-   "object": "黄叶",
+   "object": "黄叶三哥",
    "role_mode": "passive",
    "participants": [
     {
      "role": "受者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -406112,7 +406112,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:095 比武较技（交手）：— → 黄叶",
+   "description": "白发魔女传 026:095 比武较技（交手）：— → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": false,
    "gate": "review",
@@ -406213,18 +406213,18 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -406285,7 +406285,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 行踪迁移（行程迁移）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 026:096 行踪迁移（行程迁移）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -406309,7 +406309,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -406319,12 +406319,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -406380,7 +406380,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -406403,25 +406403,25 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "负",
-   "outcome_ref": "黄叶道人",
-   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
-   "outcome_weight": 0.4,
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -406465,7 +406465,7 @@
     "N5:交手@026:096"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "026:096",
@@ -406475,7 +406475,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -406499,7 +406499,7 @@
     }
    ],
    "subject": "红云道人",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -406509,7 +406509,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -406570,7 +406570,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：红云道人 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：红云道人 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -406689,7 +406689,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -406699,7 +406699,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -406760,7 +406760,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 行踪迁移（行程迁移）：卓一航 → 黄叶道人",
+   "description": "白发魔女传 026:096 行踪迁移（行程迁移）：卓一航 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -406784,7 +406784,7 @@
     }
    ],
    "subject": "红云道人",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -406794,7 +406794,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -406855,7 +406855,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：红云道人 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：红云道人 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -406879,7 +406879,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -406889,12 +406889,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -406950,7 +406950,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -406974,7 +406974,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -406984,12 +406984,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -407045,7 +407045,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407069,7 +407069,7 @@
     }
    ],
    "subject": "红云道人",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -407079,7 +407079,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -407140,7 +407140,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：红云道人 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：红云道人 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407163,25 +407163,25 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "负",
-   "outcome_ref": "黄叶道人",
-   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
-   "outcome_weight": 0.4,
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -407225,7 +407225,7 @@
     "N5:交手@026:096"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "026:096",
@@ -407235,7 +407235,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407259,7 +407259,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -407269,12 +407269,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -407330,7 +407330,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407354,7 +407354,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -407364,12 +407364,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -407425,7 +407425,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407544,7 +407544,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -407554,12 +407554,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -407615,7 +407615,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407639,7 +407639,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -407649,12 +407649,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -407710,7 +407710,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407734,7 +407734,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -407744,12 +407744,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -407805,7 +407805,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407829,7 +407829,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -407839,7 +407839,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -407900,7 +407900,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 行踪迁移（行程迁移）：卓一航 → 黄叶道人",
+   "description": "白发魔女传 026:096 行踪迁移（行程迁移）：卓一航 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -407923,25 +407923,25 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "负",
-   "outcome_ref": "黄叶道人",
-   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
-   "outcome_weight": 0.4,
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -407985,7 +407985,7 @@
     "N5:交手@026:096"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "026:096",
@@ -407995,7 +407995,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -408019,7 +408019,7 @@
     }
    ],
    "subject": "红云道人",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -408029,7 +408029,7 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
@@ -408090,7 +408090,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：红云道人 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：红云道人 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -408114,7 +408114,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -408124,12 +408124,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -408185,7 +408185,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -408208,25 +408208,25 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "负",
-   "outcome_ref": "黄叶道人",
-   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
-   "outcome_weight": 0.4,
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -408270,7 +408270,7 @@
     "N5:交手@026:096"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "026:096",
@@ -408280,7 +408280,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -408303,25 +408303,25 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
-   "object": "黄叶道人",
+   "subject": "黄叶三哥",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
-   "outcome": "负",
-   "outcome_ref": "黄叶道人",
-   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
-   "outcome_weight": 0.4,
+   "outcome": "未知",
+   "outcome_ref": "",
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -408365,7 +408365,7 @@
     "N5:交手@026:096"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "026:096",
@@ -408375,7 +408375,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：黄叶 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：黄叶三哥 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -408398,13 +408398,13 @@
      "in_quote": false
     }
    ],
-   "subject": "黄叶",
+   "subject": "黄叶三哥",
    "object": "红云道人",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "黄叶",
+     "name": "黄叶三哥",
      "entity_type": "@"
     },
     {
@@ -408413,10 +408413,10 @@
      "entity_type": "@"
     }
    ],
-   "outcome": "负",
-   "outcome_ref": "红云道人",
-   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
-   "outcome_weight": 0.4,
+   "outcome": "未决",
+   "outcome_ref": "",
+   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_weight": null,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -408460,7 +408460,7 @@
     "N5:交手@026:096"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "026:096",
@@ -408470,7 +408470,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：黄叶 → 红云道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：黄叶三哥 → 红云道人",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -408684,7 +408684,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -408694,12 +408694,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -408755,7 +408755,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 比武较技（交手）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -408779,7 +408779,7 @@
     }
    ],
    "subject": "慕容冲",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "role_mode": "plain",
    "participants": [
     {
@@ -408789,12 +408789,12 @@
     },
     {
      "role": "受者",
-     "name": "黄叶道人",
+     "name": "黄叶三哥",
      "entity_type": "@"
     }
    ],
    "outcome": "负",
-   "outcome_ref": "黄叶道人",
+   "outcome_ref": "黄叶三哥",
    "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
    "outcome_weight": 0.4,
    "manner": "放水",
@@ -408850,7 +408850,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 026:096 生死杀伐（杀伐）：慕容冲 → 黄叶道人",
+   "description": "白发魔女传 026:096 生死杀伐（杀伐）：慕容冲 → 黄叶三哥",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -456812,7 +456812,7 @@
     }
    ],
    "subject": "巴龙",
-   "object": "哈玛雅",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -456822,7 +456822,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -456873,7 +456873,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 030:030 比武较技（交手）：巴龙 → 哈玛雅",
+   "description": "白发魔女传 030:030 比武较技（交手）：巴龙 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -456897,7 +456897,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "哈玛雅",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -456907,7 +456907,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -456958,7 +456958,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：卓一航 → 哈玛雅",
+   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：卓一航 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -456982,7 +456982,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "哈玛雅",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -456992,7 +456992,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -457043,7 +457043,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：卓一航 → 哈玛雅",
+   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：卓一航 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -457114,7 +457114,9 @@
    "related_orgs": [],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [],
+   "related_relations": [
+    "N5:交手@030:030"
+   ],
    "confidence": "high",
    "review_status": "候选",
    "evidence": [
@@ -457150,7 +457152,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "哈玛雅",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -457160,13 +457162,13 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
-   "outcome": "未决",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "双方在场但无胜负词证据",
+   "outcome_basis": "仅单方参与者",
    "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
@@ -457211,7 +457213,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 030:030 比武较技（交手）：飞红巾 → 哈玛雅",
+   "description": "白发魔女传 030:030 比武较技（交手）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -457235,7 +457237,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "哈玛雅",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -457245,7 +457247,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -457296,7 +457298,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 030:030 比武较技（交手）：卓一航 → 哈玛雅",
+   "description": "白发魔女传 030:030 比武较技（交手）：卓一航 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -457320,7 +457322,7 @@
     }
    ],
    "subject": "卓一航",
-   "object": "哈玛雅",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -457330,7 +457332,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -457381,7 +457383,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：卓一航 → 哈玛雅",
+   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：卓一航 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -457405,7 +457407,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "哈玛雅",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -457415,7 +457417,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -457466,7 +457468,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：飞红巾 → 哈玛雅",
+   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -457490,7 +457492,7 @@
     }
    ],
    "subject": "飞红巾",
-   "object": "哈玛雅",
+   "object": "飞红巾",
    "role_mode": "plain",
    "participants": [
     {
@@ -457500,7 +457502,7 @@
     },
     {
      "role": "受者",
-     "name": "哈玛雅",
+     "name": "飞红巾",
      "entity_type": "@"
     }
    ],
@@ -457551,7 +457553,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：飞红巾 → 哈玛雅",
+   "description": "白发魔女传 030:030 行踪迁移（行程迁移）：飞红巾 → 飞红巾",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -481946,13 +481948,13 @@
      "in_quote": false
     }
    ],
-   "subject": "白石道人",
+   "subject": "白石",
    "object": "霍元仲",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "白石道人",
+     "name": "白石",
      "entity_type": "@"
     },
     {
@@ -482009,7 +482011,7 @@
      "quote_published": false
     }
    ],
-   "description": "白发魔女传 032:059 行踪迁移（行程迁移）：白石道人 → 霍元仲",
+   "description": "白发魔女传 032:059 行踪迁移（行程迁移）：白石 → 霍元仲",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",

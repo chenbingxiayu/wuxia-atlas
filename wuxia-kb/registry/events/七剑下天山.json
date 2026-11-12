@@ -1,8 +1,8 @@
 {
  "schema": "event-v1",
  "book": "七剑下天山",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 12:02:36",
+ "generated": "2026-11-09",
+ "generated_at": "2026-11-09 18:31:53",
  "tool": "event_extractor v0.1 (2026-11-05, EX-5/D03)",
  "spec": {
   "skill": "skills/SKILL_04a_事件识别.md",
@@ -61,9 +61,9 @@
    "T13": 1
   },
   "by_outcome": {
-   "平": 22,
+   "平": 17,
    "未决": 473,
-   "未知": 2359,
+   "未知": 2364,
    "胜": 107,
    "负": 69
   },
@@ -17382,7 +17382,7 @@
     }
    ],
    "subject": "通明",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -17392,14 +17392,14 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
-   "outcome": "平",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "平局词命中",
-   "outcome_weight": 0.7,
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "七剑下天山",
@@ -17434,7 +17434,7 @@
     "N5:交手@001:045"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "001:045",
@@ -17444,7 +17444,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明和尚",
+   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -17468,7 +17468,7 @@
     }
    ],
    "subject": "通明",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -17478,14 +17478,14 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
-   "outcome": "平",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "平局词命中",
-   "outcome_weight": 0.7,
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "七剑下天山",
@@ -17520,7 +17520,7 @@
     "N5:交手@001:045"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "001:045",
@@ -17530,7 +17530,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明和尚",
+   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -17554,7 +17554,7 @@
     }
    ],
    "subject": "通明",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -17564,14 +17564,14 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
-   "outcome": "平",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "平局词命中",
-   "outcome_weight": 0.7,
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "七剑下天山",
@@ -17606,7 +17606,7 @@
     "N5:交手@001:045"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "001:045",
@@ -17616,7 +17616,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明和尚",
+   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -17724,7 +17724,7 @@
     }
    ],
    "subject": "多铎",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -17734,7 +17734,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -17786,7 +17786,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:045 比武较技（交手）：多铎 → 通明和尚",
+   "description": "七剑下天山 001:045 比武较技（交手）：多铎 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -17896,7 +17896,7 @@
     }
    ],
    "subject": "通明",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -17906,14 +17906,14 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
-   "outcome": "平",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "平局词命中",
-   "outcome_weight": 0.7,
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "七剑下天山",
@@ -17948,7 +17948,7 @@
     "N5:交手@001:045"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "001:045",
@@ -17958,7 +17958,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明和尚",
+   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -17982,7 +17982,7 @@
     }
    ],
    "subject": "通明",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -17992,14 +17992,14 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
-   "outcome": "平",
+   "outcome": "未知",
    "outcome_ref": "",
-   "outcome_basis": "平局词命中",
-   "outcome_weight": 0.7,
+   "outcome_basis": "仅单方参与者",
+   "outcome_weight": null,
    "manner": "",
    "condition_tags": [],
    "book": "七剑下天山",
@@ -18034,7 +18034,7 @@
     "N5:交手@001:045"
    ],
    "confidence": "high",
-   "review_status": "",
+   "review_status": "候选",
    "evidence": [
     {
      "loc": "001:045",
@@ -18044,7 +18044,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明和尚",
+   "description": "七剑下天山 001:045 比武较技（交手）：通明 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -22915,7 +22915,7 @@
     }
    ],
    "subject": "楚昭南",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "role_mode": "plain",
    "participants": [
     {
@@ -22925,7 +22925,7 @@
     },
     {
      "role": "受者",
-     "name": "岳鸣珂",
+     "name": "晦明禅师",
      "entity_type": "@"
     }
    ],
@@ -22980,7 +22980,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:061 行踪迁移（行程迁移）：楚昭南 → 岳鸣珂",
+   "description": "七剑下天山 001:061 行踪迁移（行程迁移）：楚昭南 → 晦明禅师",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -23004,7 +23004,7 @@
     }
    ],
    "subject": "吴三桂",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "role_mode": "plain",
    "participants": [
     {
@@ -23014,7 +23014,7 @@
     },
     {
      "role": "受者",
-     "name": "岳鸣珂",
+     "name": "晦明禅师",
      "entity_type": "@"
     }
    ],
@@ -23069,7 +23069,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:061 结盟背盟（社会关系）：吴三桂 → 岳鸣珂",
+   "description": "七剑下天山 001:061 结盟背盟（社会关系）：吴三桂 → 晦明禅师",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -23093,7 +23093,7 @@
     }
    ],
    "subject": "杨云骢",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "role_mode": "plain",
    "participants": [
     {
@@ -23103,7 +23103,7 @@
     },
     {
      "role": "受者",
-     "name": "岳鸣珂",
+     "name": "晦明禅师",
      "entity_type": "@"
     }
    ],
@@ -23158,7 +23158,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:061 生死救治（死亡）：杨云骢 → 岳鸣珂",
+   "description": "七剑下天山 001:061 生死救治（死亡）：杨云骢 → 晦明禅师",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "review",
@@ -28362,7 +28362,7 @@
     }
    ],
    "subject": "冒浣莲",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -28372,7 +28372,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -28423,7 +28423,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:101 行踪迁移（行程迁移）：冒浣莲 → 通明和尚",
+   "description": "七剑下天山 001:101 行踪迁移（行程迁移）：冒浣莲 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -28447,7 +28447,7 @@
     }
    ],
    "subject": "冒浣莲",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -28457,7 +28457,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -28508,7 +28508,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:101 行踪迁移（行程迁移）：冒浣莲 → 通明和尚",
+   "description": "七剑下天山 001:101 行踪迁移（行程迁移）：冒浣莲 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -28532,7 +28532,7 @@
     }
    ],
    "subject": "冒浣莲",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -28542,7 +28542,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -28593,7 +28593,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:101 行踪迁移（行程迁移）：冒浣莲 → 通明和尚",
+   "description": "七剑下天山 001:101 行踪迁移（行程迁移）：冒浣莲 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -28617,7 +28617,7 @@
     }
    ],
    "subject": "冒浣莲",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "ba",
    "participants": [
     {
@@ -28627,7 +28627,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -28678,7 +28678,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 001:101 比武较技（交手）：冒浣莲 → 通明和尚",
+   "description": "七剑下天山 001:101 比武较技（交手）：冒浣莲 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -194960,13 +194960,13 @@
      "in_quote": false
     }
    ],
-   "subject": "岳鸣珂",
+   "subject": "晦明禅师",
    "object": "韩荆",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "岳鸣珂",
+     "name": "晦明禅师",
      "entity_type": "@"
     },
     {
@@ -195035,7 +195035,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 012:012 比武较技（交手）：岳鸣珂 → 韩荆",
+   "description": "七剑下天山 012:012 比武较技（交手）：晦明禅师 → 韩荆",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -259711,7 +259711,7 @@
     }
    ],
    "subject": "桂仲明",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -259721,7 +259721,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -259773,7 +259773,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 016:043 比武较技（交手）：桂仲明 → 通明和尚",
+   "description": "七剑下天山 016:043 比武较技（交手）：桂仲明 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -259883,7 +259883,7 @@
     }
    ],
    "subject": "张华昭",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -259893,7 +259893,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -259945,7 +259945,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 016:043 行踪迁移（行程迁移）：张华昭 → 通明和尚",
+   "description": "七剑下天山 016:043 行踪迁移（行程迁移）：张华昭 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -259969,7 +259969,7 @@
     }
    ],
    "subject": "张华昭",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -259979,7 +259979,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -260031,7 +260031,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 016:043 行踪迁移（行程迁移）：张华昭 → 通明和尚",
+   "description": "七剑下天山 016:043 行踪迁移（行程迁移）：张华昭 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -260055,7 +260055,7 @@
     }
    ],
    "subject": "张华昭",
-   "object": "通明和尚",
+   "object": "通明",
    "role_mode": "plain",
    "participants": [
     {
@@ -260065,7 +260065,7 @@
     },
     {
      "role": "受者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     }
    ],
@@ -260117,7 +260117,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 016:043 行踪迁移（行程迁移）：张华昭 → 通明和尚",
+   "description": "七剑下天山 016:043 行踪迁移（行程迁移）：张华昭 → 通明",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -322241,13 +322241,13 @@
      "in_quote": false
     }
    ],
-   "subject": "通明和尚",
+   "subject": "通明",
    "object": "楚昭南",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     },
     {
@@ -322307,7 +322307,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 019:074 比武较技（交手）：通明和尚 → 楚昭南",
+   "description": "七剑下天山 019:074 比武较技（交手）：通明 → 楚昭南",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -322595,13 +322595,13 @@
      "in_quote": false
     }
    ],
-   "subject": "通明和尚",
+   "subject": "通明",
    "object": "齐真君",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "通明和尚",
+     "name": "通明",
      "entity_type": "@"
     },
     {
@@ -322661,7 +322661,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 019:074 夺宝争谱（夺取/转移）：通明和尚 → 齐真君",
+   "description": "七剑下天山 019:074 夺宝争谱（夺取/转移）：通明 → 齐真君",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -404941,13 +404941,13 @@
      "in_quote": false
     }
    ],
-   "subject": "张天雄",
+   "subject": "天雄禅师",
    "object": "齐真君",
    "role_mode": "passive",
    "participants": [
     {
      "role": "施者",
-     "name": "张天雄",
+     "name": "天雄禅师",
      "entity_type": "@"
     },
     {
@@ -405005,7 +405005,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 025:019 生死救治（生死健康）：张天雄 → 齐真君",
+   "description": "七剑下天山 025:019 生死救治（生死健康）：天雄禅师 → 齐真君",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -405028,13 +405028,13 @@
      "in_quote": false
     }
    ],
-   "subject": "张天雄",
+   "subject": "天雄禅师",
    "object": "辛龙子",
    "role_mode": "ba",
    "participants": [
     {
      "role": "施者",
-     "name": "张天雄",
+     "name": "天雄禅师",
      "entity_type": "@"
     },
     {
@@ -405044,7 +405044,7 @@
     }
    ],
    "outcome": "胜",
-   "outcome_ref": "张天雄",
+   "outcome_ref": "天雄禅师",
    "outcome_basis": "触发词胜负投影（动作含明确结果义，weight 0.8）",
    "outcome_weight": 0.8,
    "manner": "",
@@ -405092,7 +405092,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 025:019 比武较技（交手）：张天雄 → 辛龙子",
+   "description": "七剑下天山 025:019 比武较技（交手）：天雄禅师 → 辛龙子",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -416270,13 +416270,13 @@
      "in_quote": false
     }
    ],
-   "subject": "张天蒙",
+   "subject": "天蒙",
    "object": "石天成",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "张天蒙",
+     "name": "天蒙",
      "entity_type": "@"
     },
     {
@@ -416333,7 +416333,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 025:052 生死杀伐（杀伐）：张天蒙 → 石天成",
+   "description": "七剑下天山 025:052 生死杀伐（杀伐）：天蒙 → 石天成",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -416356,13 +416356,13 @@
      "in_quote": false
     }
    ],
-   "subject": "张天蒙",
+   "subject": "天蒙",
    "object": "石天成",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "张天蒙",
+     "name": "天蒙",
      "entity_type": "@"
     },
     {
@@ -416419,7 +416419,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 025:052 比武较技（交手）：张天蒙 → 石天成",
+   "description": "七剑下天山 025:052 比武较技（交手）：天蒙 → 石天成",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -416442,13 +416442,13 @@
      "in_quote": false
     }
    ],
-   "subject": "张天蒙",
+   "subject": "天蒙",
    "object": "石天成",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "张天蒙",
+     "name": "天蒙",
      "entity_type": "@"
     },
     {
@@ -416505,7 +416505,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 025:052 比武较技（交手）：张天蒙 → 石天成",
+   "description": "七剑下天山 025:052 比武较技（交手）：天蒙 → 石天成",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -416528,13 +416528,13 @@
      "in_quote": false
     }
    ],
-   "subject": "张天蒙",
+   "subject": "天蒙",
    "object": "石天成",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "张天蒙",
+     "name": "天蒙",
      "entity_type": "@"
     },
     {
@@ -416544,7 +416544,7 @@
     }
    ],
    "outcome": "胜",
-   "outcome_ref": "张天蒙",
+   "outcome_ref": "天蒙",
    "outcome_basis": "触发词胜负投影（动作含明确结果义，weight 0.8）",
    "outcome_weight": 0.8,
    "manner": "",
@@ -416591,7 +416591,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 025:052 生死杀伐（杀伐）：张天蒙 → 石天成",
+   "description": "七剑下天山 025:052 生死杀伐（杀伐）：天蒙 → 石天成",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -416614,13 +416614,13 @@
      "in_quote": false
     }
    ],
-   "subject": "张天蒙",
+   "subject": "天蒙",
    "object": "石天成",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
-     "name": "张天蒙",
+     "name": "天蒙",
      "entity_type": "@"
     },
     {
@@ -416677,7 +416677,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 025:052 生死杀伐（杀伐）：张天蒙 → 石天成",
+   "description": "七剑下天山 025:052 生死杀伐（杀伐）：天蒙 → 石天成",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -503140,7 +503140,7 @@
     }
    ],
    "subject": "桑乾",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "role_mode": "plain",
    "participants": [
     {
@@ -503150,7 +503150,7 @@
     },
     {
      "role": "受者",
-     "name": "岳鸣珂",
+     "name": "晦明禅师",
      "entity_type": "@"
     }
    ],
@@ -503205,7 +503205,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 030:026 比武较技（交手）：桑乾 → 岳鸣珂",
+   "description": "七剑下天山 030:026 比武较技（交手）：桑乾 → 晦明禅师",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",
@@ -503229,7 +503229,7 @@
     }
    ],
    "subject": "桑弧",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "role_mode": "plain",
    "participants": [
     {
@@ -503239,7 +503239,7 @@
     },
     {
      "role": "受者",
-     "name": "岳鸣珂",
+     "name": "晦明禅师",
      "entity_type": "@"
     }
    ],
@@ -503294,7 +503294,7 @@
      "quote_published": false
     }
    ],
-   "description": "七剑下天山 030:026 比武较技（交手）：桑弧 → 岳鸣珂",
+   "description": "七剑下天山 030:026 比武较技（交手）：桑弧 → 晦明禅师",
    "spec_version": "D03@0.3-draft / 04a",
    "summary_ready": true,
    "gate": "ok",

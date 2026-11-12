@@ -14,6 +14,7 @@ const nav = [
   { href: B + 'characters', label: '人物' },
   { href: B + 'arts', label: '武功' },
   { href: B + 'weapons', label: '名物' },
+  { href: B + 'sects', label: '门派' },
   { href: B + 'atlas', label: '地图' },
   { href: B + 'ratings', label: '武评' },
   { href: B + 'games', label: '游戏' },
@@ -21,6 +22,12 @@ const nav = [
   { href: B + 'about', label: '关于' },
 ];
 const year = new Date().getFullYear();
+const pathname = Astro.url.pathname.replace(/\/+$/, '') || '/';
+// 当前页高亮：/books/白发魔女传/ 命中「作品」；根路径特殊处理
+const isActive = (href: string) => {
+  const h = href.replace(/\/+$/, '') || '/';
+  return h === '/' ? pathname === '/' : pathname === h || pathname.startsWith(h + '/');
+};
 ---
 
 <!doctype html>
@@ -30,14 +37,19 @@ const year = new Date().getFullYear();
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title} · 江湖图志</title>
+    <link rel="icon" type="image/svg+xml" href={`${B}favicon.svg`} />
     <link rel="llms" href={`${B}llms.txt`} />
     <script src={`${B}atlas-api.js`} is:inline></script>
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href={`${B}`}>江湖图志</a>
-      <nav>
-        {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+      <nav aria-label="主导航">
+        {nav.map((n) => (
+          <a href={n.href} class={isActive(n.href) ? 'on' : undefined} aria-current={isActive(n.href) ? 'page' : undefined}>
+            {n.label}
+          </a>
+        ))}
       </nav>
     </header>
     <main>
@@ -69,6 +81,8 @@ const year = new Date().getFullYear();
   }
   nav { display: flex; gap: var(--space-4); }
   nav a { color: var(--ink-light); }
+  nav a.on,
+  nav a[aria-current="page"] { color: var(--seal); font-weight: 700; }
   main {
     max-width: 960px;
     margin: 0 auto;
@@ -81,4 +95,37 @@ const year = new Date().getFullYear();
     font-size: .88rem;
   }
   .fine { font-size: .8rem; }
+
+  /* 移动端：品牌独立一行 + 导航横向滚动条（11 项不折叠成竖排、不撑破页面） */
+  @media (max-width: 768px) {
+    .site-header {
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 16px;
+      padding: var(--space-3) var(--space-4);
+    }
+    .brand { flex: 0 0 auto; white-space: nowrap; }
+    nav {
+      flex: 1 0 100%;
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      padding: 2px var(--space-4) 8px;
+      margin: 0 calc(-1 * var(--space-4));
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    nav::-webkit-scrollbar { display: none; }
+    nav a {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      font-size: .95rem;
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 2px;
+    }
+    main { padding-left: var(--space-3); padding-right: var(--space-3); }
+    .site-footer { padding-left: var(--space-4); padding-right: var(--space-4); }
+  }
 </style>

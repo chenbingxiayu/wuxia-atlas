@@ -6,6 +6,8 @@
   2. 契约快照：把 site/data 现有 JSON 的类型+字段签名落盘，供各导出器比对
   3. 收尾：默认 dry-run 写 staging；--apply 才写 site/data（先自动备份）
   4. 差异报告：字段缺失/新增/类型不符/数量对比 → logs/export/reports/<name>.md
+  5. 书目范围（scope）：--scope <profile> 按 config/site_scope.json 裁剪书目（天山演示版
+     总体方案 §一，2026-11-08）；不带 --scope 保持全量口径（向后兼容）
 
 约定（docs/51 §五/§七）：
   - 导出器只读新管线产物（tagged/registry/concordance/wordlists）与旧 kb/ 只读资产；
@@ -139,6 +141,140 @@ def is_apply() -> bool:
     return "--apply" in sys.argv
 
 
+# ---------------------------------------------------------------- 书目范围（scope）
+# W0-T1（天山演示版总体方案 §一，2026-11-08）：站点数据可按 profile 裁剪到天山 7 书，
+# 不做物理删除、不碰 wuxia-kb 原始数据；不带 --scope = 全量口径（完全向后兼容）。
+# profile 定义在 config/site_scope.json（多 profile 预留结构，暂不设 default 字段）。
+SITE_SCOPE_CONFIG = config.ROOT / "config" / "site_scope.json"
+
+
+class ScopeError(ValueError):
+    """scope 相关错误（配置文件缺失/损坏、profile 不存在、--scope 缺值等），消息中文。"""
+
+
+def load_scope(profile: str) -> dict:
+    """读 config/site_scope.json 加载书目范围 profile。
+
+    返回 {"profile": 名字, "books": [书名…]（保持配置顺序）, "desc": 描述（如有）}。
+    文件缺失 / JSON 损坏 / profile 不存在 / books 非法 → ScopeError（消息含 scope 与 profile 名）。
+    """
+    if not SITE_SCOPE_CONFIG.exists():
+        raise ScopeError(f"scope 配置文件不存在：{SITE_SCOPE_CONFIG}（profile={profile!r}）")
+    try:
+        with open(SITE_SCOPE_CONFIG, encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, OSError) as e:
+        raise ScopeError(f"scope 配置文件损坏或不可读：{SITE_SCOPE_CONFIG}（{e}）") from e
+    profiles = data.get("profiles") if isinstance(data, dict) else None
+    if not isinstance(profiles, dict):
+        raise ScopeError(f"scope 配置文件缺少 profiles 字典：{SITE_SCOPE_CONFIG}")
+    if profile not in profiles:
+        known = "、".join(sorted(profiles)) or "（空）"
+        raise ScopeError(f"scope profile 不存在：{profile!r}（site_scope.json 现有：{known}）")
+    entry = profiles[profile]
+    books = entry.get("books") if isinstance(entry, dict) else None
+    if not isinstance(books, list) or not books or not all(isinstance(b, str) and b for b in books):
+        raise ScopeError(f"scope profile {profile!r} 的 books 非法：须为非空书名列表（site_scope.json）")
+    scope = {"profile": profile, "books": list(books)}
+    if isinstance(entry.get("desc"), str) and entry["desc"]:
+        scope["desc"] = entry["desc"]
+    return scope
+
+
+def in_scope(book, scope) -> bool:
+    """book 是否在书目范围内：scope 为 None（全量口径）时恒 True；否则 book ∈ scope["books"]。"""
+    if scope is None:
+        return True
+    return book in scope.get("books", [])
+
+
+def scope_meta(scope):
+    """scope 元信息（供各导出器写进 meta，前端 ScopeNote 消费）。
+
+    scope 为 None（全量口径）→ 返回 None（meta 不加字段，保持旧形态）；
+    裁剪口径 → {"scope": profile 名, "books": [书名…]}。
+    """
+    if scope is None:
+        return None
+    return {"scope": scope.get("profile"), "books": list(scope.get("books", []))}
+
+
+def scope_from_args(argv=None):
+    """从命令行参数解析 --scope：支持 `--scope <name>` 与 `--scope=<name>` 两种写法。
+
+    返回 profile 名（字符串，由调用方再交给 load_scope）；未传该参数返回 None（全量口径）。
+    `--scope all` 同全量口径 → 返回 None（方案 §1.1）。--scope 后缺取值 → ScopeError。
+    """
+    args = list(sys.argv) if argv is None else list(argv)
+    for i, a in enumerate(args):
+        if a == "--scope":
+            if i + 1 >= len(args) or args[i + 1].startswith("--"):
+                raise ScopeError("--scope 缺少取值（用法：--scope <profile 名> 或 --scope all）")
+            val = args[i + 1]
+        elif a.startswith("--scope="):
+            val = a[len("--scope="):]
+            if not val:
+                raise ScopeError("--scope= 缺少取值（用法：--scope <profile 名> 或 --scope all）")
+        else:
+            continue
+        return None if val == "all" else val
+    return None
+
+
+# ---------------------------------------------------------------- 定位符拆解（scope 辅助）
+# W0-T3a（天山演示版总体方案 §1.2，2026-11-08）：EX-1/4/5/7 产出的定位符统一为
+# 「书名·章:行」（分隔符 ·，U+00B7）；节点/边/条目按书名前缀归书是 scope 判定的通用口径。
+LOC_SEP = "·"
+
+
+def loc_book(loc):
+    """「书名·章:行」定位符 → 书名前缀；无分隔符/空值 → None（无法归书）。
+
+    例：loc_book("白发魔女传·003:12") == "白发魔女传"；loc_book("003:12") is None。
+    """
+    if not isinstance(loc, str):
+        return None
+    head, sep, _rest = loc.partition(LOC_SEP)
+    if not sep:
+        return None
+    head = head.strip()
+    return head or None
+
+
+def loc_in_scope(loc, scope) -> bool:
+    """定位符是否属 scope 书目：全量口径恒 True；scope 口径下无书名前缀（不可归书）→ False。"""
+    if scope is None:
+        return True
+    book = loc_book(loc)
+    return book is not None and book in scope.get("books", [])
+
+
+def known_book_names() -> set:
+    """全库已知书名（config 章回版书目；探测失败回退空集合，不影响全量口径）。"""
+    try:
+        return set(config.book_names())
+    except Exception:            # 书目发现失败时退化为"无已知书"，diff 行为回到全量口径
+        return set()
+
+
+def scope_books_of(payload) -> list | None:
+    """payload 的 scope 书目（读 meta.scope → load_scope）；无/加载失败 → None（全量口径）。
+
+    供契约 diff 做 scope 感知：meta.scope 存在时，旧契约中以 scope 外书名为键的条目
+    属预期裁剪（记录 scope_dropped_keys，不计 hard_gap）。
+    """
+    if not isinstance(payload, dict):
+        return None
+    profile = (payload.get("meta") or {}).get("scope")
+    if not profile:
+        return None
+    try:
+        books = load_scope(profile).get("books") or []
+    except ScopeError:
+        return None
+    return books or None
+
+
 # ---------------------------------------------------------------- 契约签名
 def _type_of(v):
     if v is None:
@@ -258,8 +394,14 @@ def _types_compatible(expected: set, actual: set) -> bool:
     return False
 
 
-def diff_against_contract(name: str, payload, contract: dict | None = None) -> dict:
-    """新 payload vs 旧站契约签名：缺失字段/新增字段/类型不符/数量。"""
+def diff_against_contract(name: str, payload, contract: dict | None = None,
+                          scope_books=None) -> dict:
+    """新 payload vs 旧站契约签名：缺失字段/新增字段/类型不符/数量。
+
+    scope_books（W0-T3a）：scope 口径下，旧契约中以 scope 外书名为键的条目属预期裁剪——
+    记入 scope_dropped_keys（信息项），不计 missing_keys/hard_gap；None（全量口径）行为与
+    旧版完全一致（方案 R6）。
+    """
     contract = contract or load_json(contract_path(name))
     sig = contract["schema"]
 
@@ -271,6 +413,7 @@ def diff_against_contract(name: str, payload, contract: dict | None = None) -> d
         "extra_keys": [],         # 新产出有、旧契约无（允许）
         "type_mismatch": [],      # 字段类型不符（硬伤）
         "item_missing_keys": [],  # 数组元素缺旧契约字段
+        "scope_dropped_keys": [],  # scope 口径预期裁剪的旧契约书键（W0-T3a，信息项）
     }
 
     def walk(old_sig, new_val, path: str):
@@ -280,6 +423,13 @@ def diff_against_contract(name: str, payload, contract: dict | None = None) -> d
                 return
             old_keys = old_sig.get("keys", {})
             new_keys = set(new_val.keys())
+            if scope_books is not None:
+                known = known_book_names()
+                dropped = [k for k in sorted(old_keys)
+                           if k in known and k not in scope_books and k not in new_keys]
+                if dropped:
+                    result["scope_dropped_keys"].extend(f"{path}.{k}" if path else k for k in dropped)
+                    old_keys = {k: v for k, v in old_keys.items() if k not in dropped}
             for k in sorted(set(old_keys) - new_keys):
                 result["missing_keys"].append(f"{path}.{k}" if path else k)
             for k in sorted(new_keys - set(old_keys)):
@@ -343,12 +493,20 @@ def field_gaps(payload) -> list:
     return []
 
 
+def diff_staging(name: str, payload) -> dict:
+    """契约比对（scope 感知）：payload meta.scope 存在时按 scope 书目忽略预期裁剪的旧契约书键。
+
+    全量口径（meta 无 scope）与 diff_against_contract 旧行为完全一致（方案 R6）。
+    """
+    return diff_against_contract(name, payload, scope_books=scope_books_of(payload))
+
+
 def finish(name: str, payload, exporter: str = "", notes: str = "") -> dict:
     """导出器统一收尾：diff + staging 写盘 + 报告；--apply 才写 site/data（先备份）。
 
     返回 diff dict（供导出器 / 集成脚本汇总）。
     """
-    diff = diff_against_contract(name, payload)
+    diff = diff_staging(name, payload)
     STAGING.mkdir(parents=True, exist_ok=True)
     REPORT_DIR = REPORTS_DIR
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
@@ -409,6 +567,12 @@ def _render_report(name, exporter, diff, payload, staged, applied, notes) -> str
     if diff["extra_keys"]:
         lines.append(f"### 新增字段（允许，{len(diff['extra_keys'])} 项，前 30）")
         lines += [f"- `{k}`" for k in diff["extra_keys"][:30]]
+        lines.append("")
+    if diff.get("scope_dropped_keys"):
+        lines.append(f"### scope 口径预期裁剪的旧契约书键（{len(diff['scope_dropped_keys'])} 项，不计 hard_gap）")
+        lines += [f"- `{k}`" for k in diff["scope_dropped_keys"][:40]]
+        if len(diff["scope_dropped_keys"]) > 40:
+            lines.append(f"- … 另 {len(diff['scope_dropped_keys']) - 40} 项")
         lines.append("")
     if gaps:
         lines.append("### field_gaps（新数据暂缺、按 docs/51 §五 显式声明）")

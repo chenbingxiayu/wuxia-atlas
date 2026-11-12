@@ -3,116 +3,317 @@ import Base from '../layouts/Base.astro';
 import Metro from '../components/Metro.astro';
 import books from '@data/books.json';
 import universe from '@data/universe.json';
-import characters from '@data/characters.json';
+import dossiers from '@data/dossiers.json';
+import arts from '@data/arts.json';
+import weapons from '@data/weapons.json';
+import matches from '@data/matches.json';
+import ratings from '@data/ratings.json';
 import chapters from '@data/chapters.json';
+import daily from '@data/games/daily.json';
+import tempCurve from '@data/stories/temperature-curve.json';  // D6: story-v2 迁移后文件名=story_id（URL slug）
+import graph from '@data/graph.json';
 import { B } from '@lib/base';
+import { chapterHref } from '@lib/links';
 
+/* ---- 构建期统计（纪律：禁硬编码） ---- */
 const works = books.books;
 const litN = works.filter((w) => w.kb_status === '已点亮').length;
-const totalChapters = books.meta.totals.chapters;
-const intertextN = works.reduce((s, w) => s + w.intertext_in + w.intertext_out, 0);
-const litBookChapters = Object.values(chapters)
-  .filter((b: any) => b.lit)
-  .reduce((s: number, b: any) => s + b.chapters.length, 0);
+const personN = dossiers.meta.totals.dossiers_built ?? dossiers.dossiers?.length ?? 0;
+const artN = arts.meta.totals.arts;
+const weaponN = (weapons.weapons || []).length;
+const matchN = matches.meta.totals.matches;
+const puzzleN = (daily.puzzles || []).length;
 const litBooks = Object.entries(chapters as Record<string, any>)
   .filter(([k, v]) => k !== 'meta' && v?.lit)
   .map(([k]) => k);
-const personN = characters.meta.totals.by_type?.['@'] ?? 0;
 
-const stats = [
-  { n: String(books.meta.totals.books), label: '部作品' },
-  { n: `${litN} / 34`, label: '深度解析' },
-  { n: characters.meta.totals.merged_entities.toLocaleString(), label: '人物档案' },
-  { n: totalChapters.toLocaleString(), label: '回目' },
-  { n: String(intertextN), label: '互文边' },
-];
-
-const sections = [
-  { href: B + 'universe', title: '宇宙地铁图', desc: '系列为线路，人物为站点，跨书人物是换乘站。天山线已亮，其余幽灵线随管线生长。', live: true },
-  { href: B + 'books', title: '作品库', desc: `${books.meta.totals.books} 部书页：回目、节奏指纹、互文引用。未点亮的书也有完整档案。`, live: true },
-  { href: B + 'search', title: '搜索', desc: '全站检索：JSON 索引 + 可选 Pagefind 全文（人物支持展示名/规范名双匹配）。', live: true },
-  { href: B + 'characters', title: '人物谱', desc: `全部 ${personN} 位人物档案：别名、师承、武功、战绩、出场曲线——每条可展开定位符。`, live: true },
-  { href: B + 'arts', title: '武功谱', desc: '品类、门派归属、修习者、传承证据链。', live: true },
-  { href: B + 'ratings', title: '武评', desc: '用原著交手记录排出江湖座次，每条分数可"出示原文"。', live: true },
-  { href: B + 'stories', title: '数据说书', desc: '用图谱证明武侠命题：卓练温度曲线、梁氏悲剧公式、食物链。', live: false, m: 'M5' },
-  { href: B + 'qa', title: '江湖问答 · AB 路径', desc: '谁杀了金独异？卓一航怎么认识凌未风？答案带定位符。', live: false, m: 'M5' },
-  { href: B + 'games', title: '侠客游戏', desc: '武林二十问答、每日一谜、排位竞猜——题库零幻觉，争议可对质。', live: false, m: 'M5' },
-  { href: B + 'atlas', title: '行踪地图', desc: '侠客轨迹生长动画与叙事空间河流图。', live: false, m: 'M6' },
-  { href: B + 'about', title: '关于 · 开放数据', desc: '方法论、标注规范、图谱下载（CC BY-NC-SA）。', live: true },
-];
 const metroLines = universe.lines.map((ln) => ({
   ...ln,
   members: [...ln.members].sort((a, b) => a.order - b.order),
 }));
+
+/* ---- 精选：武评五强（RD≤150 门槛；不足则降级） ---- */
+const top5 = (ratings.players || [])
+  .filter((p: any) => (p.matches_n || 0) >= 1 && (p.rd || 999) <= 150)
+  .sort((a: any, b: any) => b.rating - a.rating)
+  .slice(0, 5);
+
+/* ---- 精选：QA 关系示例（构建期 BFS，禁硬编码——定位符随 graph.json 同步，spec 011-T4） ---- */
+const dspName = (() => {
+  const m = new Map<string, string>();
+  for (const d of dossiers.dossiers || []) {
+    if (!m.has(d.canonical)) m.set(d.canonical, d.display_name || d.display || d.canonical);
+  }
+  return (n: string) => m.get(n) || n;
+})();
+const qaSteps = (() => {
+  const SRC = '卓一航', DST = '凌未风';
+  const adj = new Map<string, { to: string; kind: string; loc: string }[]>();
+  for (const e of graph.edges) {
+    const loc = (e.locs && e.locs[0]) || '';
+    if (!adj.has(e.s)) adj.set(e.s, []);
+    if (!adj.has(e.t)) adj.set(e.t, []);
+    adj.get(e.s)!.push({ to: e.t, kind: e.kind, loc });
+    adj.get(e.t)!.push({ to: e.s, kind: e.kind, loc });
+  }
+  const prev = new Map<string, { from: string; kind: string; loc: string } | null>([[SRC, null]]);
+  const q: string[] = [SRC];
+  while (q.length) {
+    const cur = q.shift()!;
+    if (cur === DST) break;
+    for (const { to, kind, loc } of adj.get(cur) || []) {
+      if (!prev.has(to)) { prev.set(to, { from: cur, kind, loc }); q.push(to); }
+    }
+  }
+  if (!prev.has(DST)) return null;
+  const names: string[] = [DST];
+  const hops: { kind: string; loc: string }[] = [];
+  let cur = DST;
+  while (cur !== SRC) {
+    const p = prev.get(cur)!;
+    names.push(p.from);
+    hops.push({ kind: p.kind, loc: p.loc }); // hops[i] = 通向 names[i] 的边
+    cur = p.from;
+  }
+  names.reverse();
+  hops.reverse(); // names=[SRC,…,DST]，hops[i]=进入 names[i] 的边
+  const steps: { name: string; kind?: string; loc?: string; href?: string | null }[] = names.map((n, i) => {
+    if (i === 0) return { name: dspName(n) };
+    const h = hops[i - 1];
+    const bi = h.loc.indexOf('·');
+    const book = bi > 0 ? h.loc.slice(0, bi) : '';
+    const rest = bi > 0 ? h.loc.slice(bi + 1) : h.loc;
+    return { name: dspName(n), kind: h.kind, loc: h.loc, href: book ? chapterHref(book, rest) : null };
+  });
+  return steps.length >= 2 ? steps : null;
+})();
+
+/* ---- 精选：温度曲线缩略（构建期 polyline） ---- */
+const rows = (tempCurve as any).per_chapter || [];
+const totalNeg = rows.reduce((s: number, r: any) => s + (r.neg || 0), 0);
+const maxCo = Math.max(...rows.map((r: any) => r.co_events), 1);
+const maxNeg = Math.max(...rows.map((r: any) => r.neg), 1);
+const TW = 380, TH = 90;
+const px = (c: number) => 8 + ((c - 1) / Math.max(rows.length, 1)) * (TW - 16);
+const pyCo = (v: number) => TH - 12 - (v / maxCo) * (TH - 24);
+const pyNeg = (v: number) => TH - 12 - (v / maxNeg) * (TH - 24);
+const coPath = rows.map((r: any, i: number) => `${i ? 'L' : 'M'}${px(r.c).toFixed(1)} ${pyCo(r.co_events).toFixed(1)}`).join('');
+const negPath = rows.map((r: any, i: number) => `${i ? 'L' : 'M'}${px(r.c).toFixed(1)} ${pyNeg(r.neg).toFixed(1)}`).join('');
+
+const primaryCards = [
+  { href: `${B}characters`, title: '人物谱', desc: '查任何一位侠客：师承、武功、战绩、出场曲线——每一条都挂原著定位。' },
+  { href: `${B}arts`, title: '武功谱', desc: '一门武功谁创、谁传、谁练？名门绝学的归属与传承，证据链齐全。' },
+  { href: `${B}weapons`, title: '神兵谱', desc: '游龙剑换过几任主人？神兵利器的来历与历代流转，一站看全。' },
+  { href: `${B}ratings`, title: '武评', desc: '谁更能打？用原著交手排出的江湖座次，每一场都能翻回原文对质。' },
+  { href: `${B}games`, title: '游戏', desc: '每日一谜、武林二十问答——答案全部出自原著图谱，不靠瞎编。' },
+  { href: `${B}stories`, title: '专栏', desc: '用数据读梁羽生：卓练温度曲线、成长曲线，结论可复算。' },
+];
 ---
 
-<Base title="首页">
+<Base title="江湖图志 · 梁羽生武侠宇宙">
   <section class="hero">
-    <h1>梁羽生武侠宇宙 · 江湖图志</h1>
+    <h1>江湖图志</h1>
     <p class="tagline">
-      一座<b>生长中的宇宙图集</b>：把 1,700 万字的梁羽生武侠世界，变成一座可探索、可考据、可复算的知识图谱。
-      每个结论都可溯源到 <span class="loc">书·回:行</span> 定位符。
+      用 1,700 万字原著，回答关于梁羽生宇宙的任何问题——<b>谁更能打？师承何处？神兵归谁？</b>
     </p>
+    <p class="sub">每个结论都带「书·回：行」定位符，随时翻回原著那一行对质。</p>
+    <form class="searchbar" action={`${B}search`} method="get">
+      <input type="text" name="q" placeholder="搜索任何人物、武功、神兵…" aria-label="站内搜索" />
+      <button type="submit">搜索</button>
+    </form>
+    <div class="ctas">
+      <a class="cta" href={`${B}characters`}>查人物</a>
+      <a class="cta" href={`${B}atlas`}>看行踪</a>
+      <a class="cta" href={`${B}games/daily`}>每日一谜</a>
+    </div>
     <ul class="stats">
-      {stats.map((s) => (
-        <li><b>{s.n}</b><span>{s.label}</span></li>
-      ))}
+      <li><b>{books.meta.totals.books}</b><span>部作品</span></li>
+      <li><b>{litN}</b><span>部深度解析</span></li>
+      <li><b>{personN.toLocaleString()}</b><span>位人物档案</span></li>
+      <li><b>{artN}</b><span>门武功</span></li>
+      <li><b>{weaponN}</b><span>件神兵</span></li>
+      <li><b>{matchN}</b><span>场交手</span></li>
     </ul>
-    <p class="note">
-      深度解析 {litBooks.length} 部（{litBookChapters} 回回目页可浏览）：
-      {litBooks.map((b) => <span class="badge badge-lit">{b}</span>)}
-      ——管线每打通一部书，图集自动生长一部。
-    </p>
   </section>
 
-  <section class="card metrobox">
-    <h2 class="mh">宇宙地铁图 <a class="more" href={`${B}universe/`}>全图与换乘站 →</a></h2>
+  <section class="today">
+    <h2>今日江湖</h2>
+    <div class="today-grid">
+      <a class="card" href={`${B}games/daily`}>
+        <div class="thead"><b>每日一谜</b><span class="tno" id="daily-no">…</span></div>
+        <p class="tdesc">全网同题、三次机会、逐级解锁提示——谜底全部带定位符，争议可对质。</p>
+        <p class="tmeta">连胜战绩本地保存 · emoji 分享</p>
+      </a>
+      <div class="card" id="today-history">
+        <div class="thead"><b>小说中的今天</b><span class="tno" id="th-key">…</span></div>
+        <div id="th-body"><p class="tdesc">…</p></div>
+        <p class="tmeta">月日按原著书写（多为农历）· 空态即诚实</p>
+      </div>
+      <a class="card" href={`${B}qa/?t=versus&x=练霓裳&y=卓一航`}>
+        <div class="thead"><b>考据速查</b><span class="tno">零幻觉</span></div>
+        <p class="tdesc">谁杀了金独异？练霓裳去过哪里？——答案只来自考订图谱，档案未载就答未载。</p>
+        <p class="tmeta">确定性求解 · 深链可甩</p>
+      </a>
+    </div>
+    <script define:vars={{ B }}>
+      const td = new Date();
+      const key = `${String(td.getMonth() + 1).padStart(2, '0')}-${String(td.getDate()).padStart(2, '0')}`;
+      fetch(`${B}data/annals-daily.json`).then((r) => r.json()).then(({ index }) => {
+        const hits = index[key] || [];
+        document.getElementById('th-key').textContent = key;
+        const body = document.getElementById('th-body');
+        if (!hits.length) {
+          body.innerHTML = '<p class="tdesc">这一天，江湖风平浪静。</p>';
+          return;
+        }
+        // 用 DOM 构建（textContent 转义实际文本、锚点 href 用属性赋值）：
+        // 不在内联 JS 里拼锚点标签字符串，避免被静态链接扫描误判为死链；一并消除 innerHTML 注入面（docs/74 P3）。
+        const rows = hits.map((e) => {
+          const row = document.createElement('div');
+          row.className = 'th-ev';
+          const mark = document.createElement('span');
+          if (e.type === '史实') {
+            mark.style.color = '#8e44ad';
+            mark.textContent = '■ 史实';
+          } else {
+            mark.style.color = '#a63a2b';
+            mark.textContent = '● 剧情';
+          }
+          const name = document.createElement('b');
+          name.textContent = e.name;
+          row.append(mark, ' ', name, ` — ${e.line} `);
+          if (e.loc && e.book) {
+            const a = document.createElement('a');
+            a.href = `${B}books/${encodeURIComponent(e.book)}/${e.loc.slice(0, 3)}/`;
+            a.textContent = '回目 →';
+            row.append(a);
+          }
+          return row;
+        });
+        body.replaceChildren(...rows);
+      });
+    </script>
+    <script define:vars={{ puzzleN }}>
+      const d = new Date();
+      const day = `${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}`;
+      let h = 5381;
+      for (let i = 0; i < day.length; i++) h = ((h << 5) + h + day.charCodeAt(i)) >>> 0;
+      const el = document.getElementById('daily-no');
+      if (el) el.textContent = `第 ${h % puzzleN + 1} 题`;
+    </script>
+  </section>
+
+  <section class="metrobox card">
+    <h2 class="mh">宇宙一图流 <a class="more" href={`${B}universe/`}>全图与换乘站 →</a></h2>
+    <p class="mlab">系列是线路，作品是站点。绿站=深度解析，金站=建设中，虚线=存目。点击进入书页。</p>
     <Metro lines={metroLines} compact />
   </section>
 
-  <section class="grid">
-    {sections.map((s) => (
-      <a class="card entry" href={s.href}>
-        <h2>
-          {s.title}
-          {s.live ? <span class="badge badge-lit">已发布</span> : <span class="badge badge-todo">筹备中</span>}
-        </h2>
-        <p>{s.desc}</p>
+  <section>
+    <h2>看几张图，感受一下</h2>
+    <div class="show-grid">
+      <a class="card" href={`${B}stories/temperature-curve`}>
+        <b>一夜白头：卓练温度曲线</b>
+        <svg viewBox={`0 0 ${TW} ${TH}`} style="width:100%;height:auto;display:block;margin-top:8px" aria-hidden="true">
+          <path d={coPath} fill="none" stroke="#34546e" stroke-width="1.6"/>
+          <path d={negPath} fill="none" stroke="#a63a2b" stroke-width="1.8"/>
+        </svg>
+        <p class="tdesc">{tempCurve.a} × {tempCurve.b}：{((tempCurve as any).shared_chapters || []).length} 回同框、{totalNeg} 起冲突交锋——冲突密度就是关系强度。</p>
       </a>
-    ))}
+      <a class="card" href={`${B}ratings`}>
+        <b>江湖座次 · 五强</b>
+        <div class="top5">
+          {top5.map((p: any, i: number) => (
+            <div class="t5row"><span class="rk">{i + 1}</span><b>{p.name}</b><span class="mono">{p.rating}</span><span class="lab">{p.tier}</span></div>
+          ))}
+          {top5.length === 0 && <p class="tdesc">武评引擎 v2 校订中——座次即将重排。</p>}
+        </div>
+        <p class="tdesc" style="margin-top:8px">每一场都能翻回原文对质。</p>
+      </a>
+      {qaSteps && (
+        <div class="card">
+          <b>问：{qaSteps[0].name}和{qaSteps[qaSteps.length - 1].name}怎么认识？</b>
+          <div class="lab" style="margin-top:10px;line-height:2.1">
+            {qaSteps.map((s, i) => (
+              <span>
+                {i > 0 && <br />}
+                {i > 0 && <span>↓ </span>}
+                {i > 0 && (s.href
+                  ? <a class="chip" href={s.href}>{s.kind} · {s.loc}</a>
+                  : <span class="chip">{s.kind}{s.loc ? ` · ${s.loc}` : ''}</span>)}
+                {i > 0 && <br />}
+                {i === qaSteps.length - 1 ? <b>{s.name}</b> : s.name}
+                {i === qaSteps.length - 1 && <span> —— {qaSteps.length - 1} 跳，每跳挂证</span>}
+              </span>
+            ))}
+          </div>
+          <p class="tdesc" style="margin-top:8px">
+            <a href={`${B}universe/network/?a=${encodeURIComponent(qaSteps[0].name)}&b=${encodeURIComponent(qaSteps[qaSteps.length - 1].name)}`}>关系网络 →</a>
+            · <a href={`${B}qa/`}>图谱问答 →</a>
+          </p>
+        </div>
+      )}
+    </div>
   </section>
+
+  <section>
+    <h2>主入口</h2>
+    <div class="grid">
+      {primaryCards.map((c) => (
+        <a class="card" href={c.href}><b>{c.title}</b><p class="tdesc">{c.desc}</p></a>
+      ))}
+    </div>
+    <p class="secondary">
+      <a href={`${B}books`}>作品库</a> · <a href={`${B}sects`}>门派志（建设中）</a> · <a href={`${B}universe/network`}>AB 路径</a> · <a href={`${B}audit`}>穿帮雷达</a> · <a href={`${B}about`}>关于</a>
+    </p>
+  </section>
+
+  <footer class="range">
+    <p class="lab">作品档案覆盖 {books.meta.totals.books} 部；人物、武功、地图、武评的深度数据目前覆盖{litBooks.join('、')}，其余作品随管线推进逐部开放。</p>
+    <p class="lab">CC BY-NC-SA · 梁羽生作品版权保护期内 · 引用规范见「关于 · 版权」页</p>
+  </footer>
 </Base>
 
 <style>
   .hero { text-align: center; padding: var(--space-5) 0 var(--space-4); }
-  .hero h1 {
-    font-size: 2.2rem;
-    color: var(--ink);
-    letter-spacing: .08em;
-    margin: 0 0 var(--space-3);
-  }
-  .tagline { max-width: var(--measure); margin: 0 auto var(--space-4); color: var(--ink-light); }
+  .hero h1 { font-size: 2.6rem; letter-spacing: .18em; margin: 0 0 var(--space-3); font-family: var(--font-title); }
+  .tagline { max-width: 46em; margin: 0 auto var(--space-2); color: var(--ink-light); font-size: 1.05rem; }
   .tagline b { color: var(--seal); }
-  .stats {
-    display: flex; justify-content: center; gap: var(--space-5);
-    list-style: none; padding: 0; margin: var(--space-4) 0;
-    flex-wrap: wrap;
-  }
+  .sub { color: var(--ink-faint); margin: 0 0 var(--space-4); }
+  .searchbar { display: flex; gap: 10px; justify-content: center; margin-bottom: var(--space-3); }
+  .searchbar input { width: min(440px, 80%); padding: 10px 16px; border: 2px solid var(--ink); border-radius: 4px; font-family: inherit; font-size: 15px; background: #fbf8ef; }
+  .searchbar button { border: 2px solid var(--seal); background: var(--seal); color: #fbf8ef; border-radius: 4px; padding: 0 26px; font-family: inherit; cursor: pointer; }
+  .ctas { display: flex; gap: 12px; justify-content: center; margin-bottom: var(--space-4); }
+  .cta { border: 1px solid var(--line-strong); border-radius: 999px; padding: 6px 20px; color: var(--azure); font-size: .92rem; }
+  .cta:hover { border-color: var(--seal); color: var(--seal); }
+  .stats { display: flex; justify-content: center; gap: var(--space-5); list-style: none; padding: 0; margin: 0; flex-wrap: wrap; }
   .stats li { display: flex; flex-direction: column; }
-  .stats b { font-size: 1.6rem; font-family: var(--font-title); color: var(--azure); }
-  .stats span { font-size: .85rem; color: var(--ink-faint); }
-  .note { color: var(--ink-faint); font-size: .9rem; }
-  .metrobox { margin: var(--space-4) 0 var(--space-5); }
+  .stats b { font-size: 1.5rem; font-family: var(--font-title); color: var(--azure); }
+  .stats span { font-size: .82rem; color: var(--ink-faint); }
+  h2 { font-family: var(--font-title); font-weight: 900; font-size: 1.2rem; letter-spacing: .1em; border-bottom: 1px solid var(--line); padding-bottom: .3em; margin: var(--space-5) 0 var(--space-3); }
+  section { margin-top: var(--space-5); }
+  section:first-of-type { margin-top: 0; }
+  .today-grid, .show-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-3); }
+  .card { border: 1px solid var(--line-strong); border-radius: 4px; padding: 14px 18px; background: rgba(255,255,255,.5); color: var(--ink); display: block; }
+  .card:hover { border-color: var(--seal); }
+  .thead { display: flex; justify-content: space-between; align-items: baseline; }
+  .thead b { font-family: var(--font-title); font-size: 1.02rem; }
+  .tno { color: var(--seal); font-weight: 700; font-size: .9rem; }
+  .tdesc { font-size: .9rem; color: var(--ink-light); margin: 6px 0 0; }
+  .tmeta { font-size: .78rem; color: var(--ink-faint); margin: 6px 0 0; }
+  .metrobox { margin-top: var(--space-5); }
   .mh { margin: 0 0 var(--space-2); font-size: 1.05rem; }
   .more { float: right; font-size: .85rem; font-weight: 400; }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: var(--space-3);
-  }
-  .entry { color: inherit; transition: transform .15s ease, border-color .15s ease; }
-  .entry:hover { transform: translateY(-2px); border-color: var(--seal); }
-  .entry h2 { font-size: 1.05rem; margin: 0 0 var(--space-2); }
-  .entry .badge { margin-left: .4em; }
-  .entry p { margin: 0; font-size: .9rem; color: var(--ink-light); }
+  .mlab { font-size: .85rem; color: var(--ink-faint); margin: 0 0 var(--space-2); }
+  .top5 { margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+  .t5row { display: flex; gap: 10px; align-items: baseline; font-size: .95rem; }
+  .t5row .rk { color: var(--seal); font-weight: 700; font-family: var(--font-title); }
+  .t5row .mono { font-family: var(--font-mono); font-size: .85em; color: var(--azure); }
+  .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 8px; font-size: .78rem; color: var(--seal); margin: 1px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-3); }
+  .grid .card b { font-family: var(--font-title); font-size: 1.02rem; }
+  .secondary { margin-top: var(--space-4); color: var(--ink-faint); font-size: .92rem; }
+  .secondary a { color: var(--azure); margin-right: .2em; }
+  .range { border-top: 1px solid var(--line); margin-top: var(--space-5); padding-top: var(--space-3); }
+  .lab { font-size: .8rem; color: var(--ink-faint); line-height: 1.9; margin: 0 0 .4em; }
 </style>

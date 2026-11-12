@@ -1,7 +1,7 @@
 {
  "book": "还剑奇情录",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 08:44:37",
+ "generated": "2026-11-07",
+ "generated_at": "2026-11-07 03:43:36",
  "script": "scripts/relation_validator.py",
  "script_version": "0.1",
  "spec_version": "0.3-draft",
@@ -15,15 +15,15 @@
   "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
  ],
  "snapshot": {
-  "exported_at": "2026-11-06 08:44:37",
+  "exported_at": "2026-11-07 03:43:36",
   "tagged_chapters": 14,
-  "concordance_generated": "2026-11-06T03:30:48+08:00",
-  "registry_entities": 738,
+  "concordance_generated": "2026-11-06T11:26:01+08:00",
+  "registry_entities": 2926,
   "corpus_chapters": 14,
   "paragraphs": 996,
-  "verbs": 1116,
-  "verbs_in_quote": 282,
-  "entities": 6501
+  "verbs": 1115,
+  "verbs_in_quote": 281,
+  "entities": 6548
  },
  "predicate_table": {
   "version": "D06@0.3-draft",

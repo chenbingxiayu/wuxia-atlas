@@ -2,8 +2,9 @@
 import Base from '../../layouts/Base.astro';
 import universe from '@data/universe.json';
 import booksJson from '@data/books.json';
+import annalsJson from '@data/annals.json';
 import { B } from '@lib/base';
-import { bookTarget } from '@lib/links';
+import { bookTarget, chapterHref, personTarget } from '@lib/links';
 
 /* 双轨：上轨 = 故事年代（chronology_spine）；下轨标注出版年（真实时间）。书→线颜色。 */
 const lineColor: Record<string, string> = {};
@@ -32,52 +33,271 @@ const spine = universe.chronology_spine.map((sp) => ({
 const covered = new Set(spine.flatMap((s) => s.books.map((b) => b.clean)));
 const rest = booksJson.books.filter((w) => !covered.has(w.book));
 const lit = (name: string) => bookMeta[name]?.kb === '已点亮' || bookMeta[name]?.kb === 'lit';
+
+/* ============ 事件年谱（annals-v1）：单轴混排 · 双型标记 · 朝代分段 · 纪年四档 ============ */
+const ann = annalsJson as any;
+const events: any[] = ann?.events ?? [];
+
+// 朝代归段：扫描 date.y + date.basis 关键词（§5.1 四段制：唐/宋/元明/清，其余归元明）。
+// 注：万历/崇祯是明中年号，归「元明」段——设计稿清单误列于清组，此处按史实修正。
+const DYN: Array<{ seg: string; color: string; keys: string[] }> = [
+  { seg: '唐', color: '#8e44ad', keys: ['天宝', '至德', '广德', '代宗', '贞元'] },
+  { seg: '宋', color: '#27ae60', keys: ['南宋', '北宋', '孝宗', '嘉定', '开禧'] },
+  { seg: '元明', color: '#2980b9', keys: ['万历', '崇祯'] },
+  { seg: '清', color: '#a63a2b', keys: ['顺治', '康熙', '雍正', '乾隆', '嘉庆', '道光'] },
+];
+const dynastyOf = (e: any) => {
+  const text = `${e?.date?.y ?? ''} ${e?.date?.basis ?? ''}`;
+  return DYN.find((d) => d.keys.some((k) => text.includes(k)))?.seg ?? '元明';
+};
+
+// 纪年四档（§九）：明文纪年＞推定纪年＞年代段＞年代不详；数据另含「史实」档，原样直标。
+const GRADE_LABEL: Record<string, string> = { 明文: '明文纪年', 推定: '推定纪年', 段: '年代段', 不详: '年代不详' };
+const GRADE_CLS: Record<string, string> = { 明文: 'g-ming', 推定: 'g-tui', 段: 'g-duan', 不详: 'g-bu', 史实: 'g-shi' };
+const gradeLabel = (g: unknown) => GRADE_LABEL[g as string] ?? (typeof g === 'string' && g ? g : '年代不详');
+const gradeCls = (g: unknown) => GRADE_CLS[g as string] ?? 'g-bu';
+
+// 排序：date.y 为中文字符串年号（如「雍正十三年」），能解析成数字年则用之；
+// 否则以定位符回号兜底（诚实呈现：纪年文本原样上屏，先后序仅作段内参考，尾注已说明推定性质）。
+const yearOf = (e: any): number | null => (/^\d{3,4}$/.test(String(e?.date?.y ?? '')) ? parseInt(String(e.date.y), 10) : null);
+const chOf = (e: any): number => { const m = String(e?.loc ?? '').match(/\d+/); return m ? parseInt(m[0], 10) : 0; };
+const byTime = (a: any, b: any) => ((yearOf(a) ?? chOf(a)) - (yearOf(b) ?? chOf(b))) || (chOf(a) - chOf(b));
+
+// 事件条目装饰（构建期一次）：定位符、档标、人物链接、对照注（内部事件 id → 事件名）。
+const byId = new Map<string, any>(events.map((e: any) => [e.id, e]));
+const ID_RE = /E-\d+-[A-Za-z0-9-]+/g;
+const refsOf = (r: any) => String(r?.conflict_hist ?? '').match(ID_RE) ?? [];
+const noteOf = (e: any) => String(e?.conflict_hist ?? '').replace(ID_RE, (id: string) => byId.get(id)?.name ?? id);
+
+const rows: any[] = events.map((e: any) => {
+  const seg = dynastyOf(e);
+  const hist = e?.type === '史实';
+  const chm = String(e?.loc ?? '').match(/\d+/);
+  const chno = chm ? parseInt(chm[0], 10) : null;
+  return {
+    ...e,
+    seg,
+    mark: hist ? '■' : '●',
+    markTitle: hist ? '史实锚（真实历史事件）' : '剧情锚（原著关键情节）',
+    color: hist
+      ? (DYN.find((d) => d.seg === seg)?.color ?? 'var(--ink-light)')
+      : (lineColor[e?.book] || 'var(--ink-light)'),
+    dateLabel: [
+      e?.date?.y ?? '',
+      e?.date?.m != null && e?.date?.d != null ? `${e.date.m}月${e.date.d}日` : e?.date?.m != null ? `${e.date.m}月` : '',
+    ].filter(Boolean).join(' '),
+    grade: gradeLabel(e?.date?.grade),
+    gcls: gradeCls(e?.date?.grade),
+    basis: e?.date?.basis ?? null,
+    basisLabel: e?.date?.grade === '推定' ? '推算依据' : '纪年依据',
+    chno,
+    href: chapterHref(e?.book, e?.loc),
+    locLabel: `${e?.book ?? ''}${chno != null ? `·第${chno}回` : ''}`,
+    peopleNames: (e?.people ?? []).filter((x: any) => typeof x === 'string'),
+    people: (e?.people ?? []).map((p: any) => {
+      const t = personTarget(p);
+      return { name: p, href: t ? `${B}characters/${encodeURIComponent(t)}/` : null };
+    }),
+    note: noteOf(e),
+  };
+});
+
+// 朝代分段（默认全收起）：四段固定序，段内按纪年/回号排序；空段诚实呈现。
+const segments = DYN.map((d) => ({
+  seg: d.seg,
+  color: d.color,
+  evs: rows.filter((r) => r.seg === d.seg).sort(byTime),
+}));
+
+// 纪年冲突对照配对（自动，不作断言）：剧情锚 × 史实锚，
+// 依 ①conflict_hist 互指的事件 id、②共享关联人物（如「雍正」）配对；无配对则小节不渲染。
+const plots = rows.filter((r) => r.type !== '史实');
+const hists = rows.filter((r) => r.type === '史实');
+const used = new Set<string>();
+const pairs = plots.flatMap((p) => {
+  if (used.has(p.id)) return [];
+  const kw = new Set<string>(p.peopleNames);
+  const h =
+    hists.find((x) => !used.has(x.id) && refsOf(p).includes(x.id)) ||
+    hists.find((x) => !used.has(x.id) && refsOf(x).includes(p.id)) ||
+    hists.find((x) => !used.has(x.id) && (x.peopleNames as string[]).some((q) => kw.has(q)));
+  if (!h) return [];
+  used.add(p.id);
+  used.add(h.id);
+  return [{ p, h, shared: [...kw].filter((q) => (h.peopleNames as string[]).includes(q)) }];
+});
 ---
 
 <Base title="宇宙编年史">
   <p class="crumb"><a href="../">宇宙</a> / 编年史</p>
   <h1>宇宙编年史</h1>
-  <p class="lead">
-    双轨对照：<b>上轨是故事年代</b>（唐·武周 → 清·乾隆，来自系列谱系考订），<b>书脊上标真实出版年</b>（1954–1983）。
-    每本书按所属系列线着色；深度解析的书有图谱（亮标）。排序置信：strong ＞ ok ＞ todo，逐线证据见谱系考订表。
-  </p>
 
-  <div class="spine">
-    {spine.map((row) => (
-      <div class="row">
-        <div class="era">{row.era}</div>
-        <div class="books">
-          {row.books.map((b) => (
-            b.missing
-              ? <span class="chip missing" title="缺佚或年代待考">{b.clean}*</span>
-              : bookTarget(b.clean)
-                ? <a class="chip" style={`border-color:${b.color};color:${b.color}`} href={`${B}books/${b.clean}/`} title={`${b.line} · 出版 ${b.year ?? '?'}${lit(b.clean) ? ' · 深度解析' : ''}`}>
-                    {b.clean}<small>{b.year ?? ''}{lit(b.clean) ? ' ●' : ''}</small>
-                  </a>
-                : <span class="chip missing" title="未点亮/缺佚">{b.clean}<small>{b.year ?? ''}</small></span>
-          ))}
+  <nav class="viewswitch" id="view-switch" aria-label="编年史视图切换">
+    <a data-view="dual" class="on" href="?v=dual" aria-current="page">书级双轨</a>
+    <span class="dim">·</span>
+    <a data-view="annals" href="?v=annals">事件年谱</a>
+  </nav>
+
+  <section id="view-dual">
+    <p class="lead">
+      双轨对照：<b>上轨是故事年代</b>（唐·武周 → 清·乾隆，来自系列谱系考订），<b>书脊上标真实出版年</b>（1954–1983）。
+      每本书按所属系列线着色；深度解析的书有图谱（亮标）。逐线排序置信分级（强 / 中 / 待考），证据见谱系考订表。
+    </p>
+
+    <div class="spine">
+      {spine.map((row) => (
+        <div class="row">
+          <div class="era">{row.era}</div>
+          <div class="books">
+            {row.books.map((b, i) => (
+              <>
+                {i > 0 && <span class="rel" aria-hidden="true">→</span>}
+                {b.missing
+                  ? <span class="chip missing" title="缺佚或年代待考">{b.clean}*</span>
+                  : bookTarget(b.clean)
+                    ? <a class="chip" style={`border-color:${b.color};color:${b.color}`} href={`${B}books/${b.clean}/`} title={`${b.line} · 出版 ${b.year ?? '?'}${lit(b.clean) ? ' · 深度解析' : ''}`}>
+                        {b.clean}<small>{b.year ?? ''}{lit(b.clean) ? ' ●' : ''}</small>
+                      </a>
+                    : <span class="chip missing" title="未点亮/缺佚">{b.clean}<small>{b.year ?? ''}</small></span>}
+              </>
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
+      {rest.length > 0 && (
+        <div class="row">
+          <div class="era">待考时代</div>
+          <div class="books">
+            {rest.map((w) => (
+              bookTarget(w.book)
+                ? <a class="chip" style="border-style:dashed" href={`${B}books/${w.book}/`}>{w.book}<small>{w.year ?? ''}</small></a>
+                : <span class="chip missing">{w.book}<small>{w.year ?? ''}</small></span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+
+    <p class="fine">
+      图例：<span style="color:#c0392b">● 天山</span> · <span style="color:#8a6607">● 明代</span> ·
+      <span style="color:#31536c">● 大唐</span> · <span style="color:#4f6e4a">● 宋代</span> ·
+      晚清/独立见 chip · <b>●</b> = 深度解析· * = 存目/待考。
+      <br />→ = 作者接力边（「请续看拙作」式明示承接）。
+    </p>
+  </section>
+
+  <section id="view-annals" style="display:none">
+    <h2>事件年谱</h2>
+    <div class="annhead">
+      <p class="fine">
+        图例：■ 史实锚（真实历史事件） · ● 剧情锚（原著关键情节）
+        <span class="dim">（■ 颜色随朝代分段，● 颜色随书线）</span>
+      </p>
+      <p class="fine">
+        纪年档标：<span class="badge g-ming">明文纪年</span> · <span class="badge g-tui">推定纪年</span> ·
+        <span class="badge g-duan">年代段</span> · <span class="badge g-bu">年代不详</span>
+        <span class="dim">（史实档直标「史实」）</span>
+      </p>
+      {ann?.meta?.note && <p class="fine dim">{ann.meta.note}</p>}
+      <p class="fine">按朝代分段 · 默认收起，点开展开</p>
+    </div>
+
+    {segments.map((s) => (
+      <details class="seg">
+        <summary>
+          <span class="sq" style={`color:${s.color}`}>■</span>{s.seg}
+          <span class="cnt">{s.evs.length} 条</span>
+        </summary>
+        <div class="segbody">
+          {s.evs.length === 0
+            ? <p class="empty">本段暂无条目——随考订与标注扩展持续生长。</p>
+            : s.evs.map((e) => (
+                <div class="ev">
+                  <div class="evhead">
+                    <span class="mk" style={`color:${e.color}`} title={e.markTitle}>{e.mark}</span>
+                    <span class="type">{e.type}</span>
+                    <b>{e.name}</b>
+                    <span class="date">{e.dateLabel}</span>
+                    <span class={`badge ${e.gcls}`}>{e.grade}</span>
+                    {e.href
+                      ? <a class="loc" href={e.href}>{e.locLabel}</a>
+                      : <span class="loc dim">{e.locLabel}</span>}
+                  </div>
+                  {e.people.length > 0 && (
+                    <p class="evpeople">
+                      关联：{e.people.map((pp: any, i: number) => (
+                        <>
+                          {i > 0 && '、'}
+                          {pp.href ? <a href={pp.href}>{pp.name}</a> : <span>{pp.name}</span>}
+                        </>
+                      ))}
+                    </p>
+                  )}
+                  <p class="evline">{e.line}</p>
+                  {e.basis && <p class="evbasis">{e.basisLabel}：{e.basis}</p>}
+                  {used.has(e.id) && <p class="evcf">纪年另有对照——见下方「原著纪年 × 史实对照」。</p>}
+                </div>
+              ))}
+        </div>
+      </details>
     ))}
-    {rest.length > 0 && (
-      <div class="row">
-        <div class="era">待考时代</div>
-        <div class="books">
-          {rest.map((w) => (
-            bookTarget(w.book)
-              ? <a class="chip" style="border-style:dashed" href={`${B}books/${w.book}/`}>{w.book}<small>{w.year ?? ''}</small></a>
-              : <span class="chip missing">{w.book}<small>{w.year ?? ''}</small></span>
-          ))}
-        </div>
+
+    {pairs.length > 0 && (
+      <div class="conflict">
+        <h3>原著纪年 × 史实对照 <span class="dim">（对照陈列，不作穿帮断言）</span></h3>
+        {pairs.map(({ p, h, shared }: any) => (
+          <>
+            <div class="pair">
+              <div class="pside">
+                <p><span style={`color:${p.color}`}>{p.mark}</span> <span class="type">{p.type}</span> <b>{p.name}</b></p>
+                <p><span class="date">{p.dateLabel}</span> <span class={`badge ${p.gcls}`}>{p.grade}</span></p>
+                <p>{p.href ? <a class="loc" href={p.href}>{p.locLabel}</a> : <span class="loc dim">{p.locLabel}</span>}</p>
+                {p.note && <p class="pnote">{p.note}</p>}
+              </div>
+              <div class="pside">
+                <p><span style={`color:${h.color}`}>{h.mark}</span> <span class="type">{h.type}</span> <b>{h.name}</b></p>
+                <p><span class="date">{h.dateLabel}</span> <span class={`badge ${h.gcls}`}>{h.grade}</span></p>
+                <p>{h.href ? <a class="loc" href={h.href}>{h.locLabel}</a> : <span class="loc dim">{h.locLabel}</span>}</p>
+                {h.note && <p class="pnote">{h.note}</p>}
+              </div>
+            </div>
+            {shared.length > 0 && <p class="fine pshared">对照依据：共同关涉 {shared.join('、')}。</p>}
+          </>
+        ))}
       </div>
     )}
-  </div>
 
-  <p class="fine">
-    图例：<span style="color:#c0392b">● 天山</span> · <span style="color:#8a6607">● 明代</span> ·
-    <span style="color:#31536c">● 大唐</span> · <span style="color:#4f6e4a">● 宋代</span> ·
-    晚清/独立见 chip · <b>●</b> = 深度解析· * = 存目/待考。
-  </p>
+    <p class="fine">年谱随考订与标注扩展持续生长；推定纪年均附推算依据，可翻回原文对质。</p>
+  </section>
+
+  <script is:inline define:vars={{ annalsView: 'annals' }}>
+    (function () {
+      var dual = document.getElementById('view-dual');
+      var ann = document.getElementById('view-annals');
+      if (!dual || !ann) return;
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('#view-switch a'));
+      function apply(showAnnals) {
+        dual.style.display = showAnnals ? 'none' : '';
+        ann.style.display = showAnnals ? '' : 'none';
+        tabs.forEach(function (a) {
+          var on = (a.getAttribute('data-view') === 'annals') === showAnnals;
+          a.classList.toggle('on', on);
+          if (on) { a.setAttribute('aria-current', 'page'); } else { a.removeAttribute('aria-current'); }
+        });
+      }
+      apply(new URLSearchParams(location.search).get('v') === annalsView);
+      tabs.forEach(function (a) {
+        a.addEventListener('click', function (ev) {
+          ev.preventDefault();
+          var showAnnals = a.getAttribute('data-view') === 'annals';
+          apply(showAnnals);
+          var u = new URL(location.href);
+          if (showAnnals) { u.searchParams.set('v', annalsView); } else { u.searchParams.delete('v'); }
+          history.replaceState(null, '', u);
+        });
+      });
+    })();
+  </script>
 </Base>
 <style>
   .crumb { font-size: .85rem; color: var(--ink-faint); }
@@ -88,10 +308,59 @@ const lit = (name: string) => bookMeta[name]?.kb === '已点亮' || bookMeta[nam
   .row { display: flex; gap: 14px; padding: 10px 0 10px 18px; border-bottom: 1px dashed var(--line); align-items: baseline; }
   .era { min-width: 9.5em; font-weight: 700; color: var(--azure); white-space: nowrap; }
   .books { display: flex; flex-wrap: wrap; gap: 6px; }
+  .rel { color: var(--ink-faint); align-self: center; }
   .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
     padding: .1em .7em; font-size: .85rem; background: rgba(255,255,255,.5); }
   .chip small { color: var(--ink-faint); margin-left: .35em; font-family: var(--font-mono); font-size: .78em; }
   .chip.missing { color: var(--ink-faint); border-style: dashed; }
   a.chip:hover { filter: brightness(.85); }
   .fine { color: var(--ink-faint); font-size: .82rem; margin-top: 14px; }
+
+  /* —— 双视图切换 —— */
+  .viewswitch { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; margin-top: 14px;
+    border-bottom: 2px solid var(--line); }
+  .viewswitch a { padding: 4px 2px 6px; margin-bottom: -2px; border-bottom: 2px solid transparent; color: var(--ink-light); }
+  .viewswitch a.on { color: var(--azure); border-color: var(--azure); font-weight: 700; }
+  .dim { color: var(--ink-faint); }
+
+  /* —— 事件年谱 —— */
+  .annhead .fine { margin-top: 6px; }
+  .annhead .fine:first-child { margin-top: 14px; }
+  .badge { display: inline-block; font-size: .72rem; line-height: 1.6; padding: 0 .5em;
+    border: 1px solid var(--line-strong); border-radius: 999px; color: var(--ink-light); white-space: nowrap; vertical-align: .12em; }
+  .g-ming { color: var(--azure); border-color: var(--azure); }
+  .g-tui { border-style: dashed; }
+  .g-duan { border-style: dotted; }
+  .g-bu { color: var(--ink-faint); border-color: var(--line); }
+  .g-shi { background: var(--line-strong); border-color: var(--line-strong); color: #fff; }
+  .seg { margin-top: 10px; border: 1px solid var(--line); border-radius: 8px; background: rgba(255,255,255,.5); }
+  .seg summary { cursor: pointer; padding: 8px 12px; font-weight: 700; }
+  .seg summary .sq { margin-right: .4em; }
+  .seg summary .cnt { margin-left: .6em; font-weight: 400; color: var(--ink-faint); font-size: .82rem; font-family: var(--font-mono); }
+  .segbody { padding: 2px 14px 10px; }
+  .empty { margin: 4px 0 6px; color: var(--ink-faint); font-size: .85rem; }
+  .ev { padding: 9px 0; border-bottom: 1px dashed var(--line); }
+  .ev:last-child { border-bottom: 0; padding-bottom: 2px; }
+  .evhead { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+  .type { flex: none; font-size: .72rem; border: 1px solid var(--line-strong); border-radius: 4px;
+    padding: 0 .3em; color: var(--ink-light); }
+  .date { font-family: var(--font-mono); font-size: .85rem; color: var(--ink-light); }
+  .loc { font-size: .85rem; }
+  .evpeople { margin: 3px 0 0; font-size: .82rem; color: var(--ink-light); }
+  .evpeople a { color: var(--azure); }
+  .evline { margin: 3px 0 0; }
+  .evbasis, .evcf { margin: 3px 0 0; font-size: .8rem; color: var(--ink-faint); }
+
+  /* —— 纪年冲突对照 —— */
+  .conflict { margin-top: 22px; }
+  .conflict h3 { margin-bottom: 2px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .pside { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: rgba(255,255,255,.5); }
+  .pside p { margin: 0 0 4px; }
+  .pnote { color: var(--ink-light); font-size: .85rem; margin: 0 !important; }
+  .pshared { margin-top: 6px; }
+
+  @media (max-width: 640px) {
+    .pair { grid-template-columns: 1fr; }
+  }
 </style>

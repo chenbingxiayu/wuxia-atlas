@@ -132,14 +132,384 @@ DEFAULT_BOOKS = [
 ]
 
 # --apply 仅允许这些书（task-6 口径；七剑/白发残留人工项维持既有终签，不写；
-# 2026-11-06 冰川天女传批次新增；2026-11-06 还剑/萍踪/散花批次新增）
+# 2026-11-06 冰川天女传批次新增；2026-11-06 还剑/萍踪/散花批次新增；
+# 2026-11-06 扩书 P1/P2 批次新增：云海玉弓缘 / 冰河洗剑录 / 联剑风云录 / 广陵剑；
+# 2026-11-07 扩书 P3 批次新增：风雷震九州 / 侠骨丹心）
 APPLY_BOOKS = ["江湖三女侠", "塞外奇侠传", "冰魄寒光剑", "冰川天女传",
-               "还剑奇情录", "萍踪侠影录", "散花女侠"]
+               "还剑奇情录", "萍踪侠影录", "散花女侠",
+               "云海玉弓缘", "冰河洗剑录", "联剑风云录", "广陵剑",
+               "风雷震九州", "侠骨丹心",
+               "大唐游侠传", "龙凤宝钗缘", "慧剑心魔",
+               "剑网尘丝", "幻剑灵旗",
+               "飞凤潜龙", "草莽龙蛇传", "龙虎斗京华", "绝塞传烽录"]
 DEFAULT_BACKUP_ROOT = ROOT / "backup" / "tagged" / "judgment-apply-20261105"
 
 # 3 书"需人工"条目的逐条裁定（task-6 第 3 步；docs/45 §三 先例直判，无先例→保留不写）
 # 仅对 APPLY_BOOKS 生效；判定=保留 的条目不产生 token 改动，只进 apply 报告"人工裁定"表。
 MANUAL_ADJUDICATIONS: dict[tuple, dict] = {
+    # ── GLM 校对批（2026-11-09，龙凤宝钗缘/联剑风云录/广陵剑；Lead GLM-5.3-Flash 终签）──
+    ("联剑风云录", 2, 26, "劫", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "反问句『难道真是不自量力要劫自己的贡物』陈述既存劫案计划，与紧邻 002[25]"
+                  "（R-P6 保留）同指同一事件；该劫案后文既成。",
+        "cite": "docs/45 §三 #70；002[25] R-P6 同场景一致",
+    },
+    ("联剑风云录", 11, 35, "劫", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『你为什么要劫那么多贡物』追问既成事实（贡物已被劫），非未发生计划。",
+        "cite": "docs/45 §三 #70（追问既成保留）",
+    },
+    ("联剑风云录", 15, 76, "拍", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "『左掌在厉抗天背上的愈气穴一拍』为点穴疗伤入口，⊠ 医疗域成立。",
+        "cite": "SKILL_04f §2.2 医疗入口；R-D3",
+    },
+    ("联剑风云录", 18, 15, "宾客", "d1_description"): {
+        "verdict": "保留",
+        "reason": "『乔家三位宾客』为具体处境身份（# 类）；书内 #武师/#卫士/#随从 同口径；"
+                  "剑网尘丝 3[464] 宾客保留先例。",
+        "cite": "SKILL_03a L103 处境身份；剑网尘丝 3[464] 先例",
+    },
+    ("联剑风云录", 23, 82, "下毒手害死", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『为什么要下毒手害死我和你的妈妈』追问既成（母亲已遇害）。",
+        "cite": "docs/45 §三 #70",
+    },
+    ("联剑风云录", 24, 32, "刺", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "教扎针语境（归藏穴/刺三分/一刺进去即拔出来），医疗动作而非攻击，⊠ 成立。",
+        "cite": "SKILL_04f §2.2 医疗入口",
+    },
+    ("联剑风云录", 24, 76, "残废", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『不死也将残废』为预言将来状态；致伤事件（断臂/毒火焚身）已由相应动词承载，"
+                  "残废尚未既成，按将来/预期不标。",
+        "cite": "SKILL_04f §3.6；docs/55 准备+X 同族",
+    },
+    ("联剑风云录", 26, 6, "绑来", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "女娃子已被绑来用作顶替，既成强制移动，■ 成立。",
+        "cite": "SKILL_04f §2.6 强制移动；R-D1",
+    },
+    ("联剑风云录", 26, 32, "绑回", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "『被阳宗海绑回庞家堡』既成强制迁移，■ 成立。",
+        "cite": "SKILL_04f §2.6；docs/45 #16/#50",
+    },
+    ("联剑风云录", 35, 13, "恶斗", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『将恶斗乔北溟、寻回阴秀兰的经过』为把字句追述既成战斗，『将』消歧为把非将来。",
+        "cite": "R-P9 把字句消歧；SKILL_04f §3.6 已发生标",
+    },
+    ("联剑风云录", 35, 71, "斩", "verb_domain_risk"): {
+        "verdict": "应摘",
+        "reason": "『今日先斩你左手…明天斩你右手』为威胁/预告，砍斩未实施，计划不标。",
+        "cite": "SKILL_04f §3.6；docs/45 #1-12 同例",
+    },
+    ("联剑风云录", 36, 81, "削", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "『拇指食指削掉』既成重伤，远超 04f §2.2 受伤阈值，⊠ 成立。",
+        "cite": "SKILL_04f §2.2；docs/48 §九 保留先例",
+    },
+    ("广陵剑", 12, 35, "拘捕", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『要把我的爹爹拘捕…于是立即安排罗网…派出锦衣卫的高手』拘捕行动已发动"
+                  "（设罗网、派人手），属已发动/进行中，非纯意图。",
+        "cite": "R-P3 已发动口径；SKILL_04f §3.6",
+    },
+    ("广陵剑", 12, 35, "拘捕", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "GLM 校对批后复判：拘捕=强制捉人系押解/绑押同族，■ 强制移动成立"
+                  "（04f §2.6 劫人分流；R-D1 押解先例）；行动已发动（安排罗网/派锦衣卫）非纯意图。",
+        "cite": "SKILL_04f §2.6；docs/45 #16/#50；R-P3",
+    },
+    ("广陵剑", 17, 73, "领教", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『雷某还要领教数招』为预告未发生的交手（挑战语），还要+X 与准备+X 同族，计划不标。",
+        "cite": "SKILL_04f §3.6；R-P5/R-P8 同族；docs/55 准备+X",
+    },
+    ("广陵剑", 25, 17, "上京", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『为什么他们也要上京』追问既成行程（他人已动身/已上京），非未发生计划。",
+        "cite": "docs/45 §三 #70",
+    },
+    ("广陵剑", 32, 274, "卢沟桥", "fence_entity_real_only"): {
+        "verdict": "保留",
+        "reason": "『卢沟桥上斗强仇』围栏诗句实指当日战地——本章 [259]-[261] 主线即当夜赴卢沟桥之战。",
+        "cite": "SKILL_01g 围栏限实指；docs/48 §九 018[1] 围栏实指先例",
+    },
+    ("广陵剑", 33, 313, "宫墙", "fence_entity_real_only"): {
+        "verdict": "应摘",
+        "reason": "『日前曾折宫墙柳』为典故化用（宫墙柳/折柳送别），非实指地理，围栏内不标。",
+        "cite": "SKILL_01g 围栏限实指；docs/54 §4.2 典故剔除类",
+    },
+    ("龙凤宝钗缘", 4, 28, "少年", "d1_description"): {
+        "verdict": "保留",
+        "reason": "docs/80 P5 D1 跨库约定：#少年 为书内口径（jw-b 复核裁定，全批 102 处），本批一致。",
+        "cite": "docs/80 §三 D1 跨库约定",
+    },
+    ("龙凤宝钗缘", 4, 37, "少年", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上，#少年 书内约定保留。",
+        "cite": "docs/80 §三 D1 跨库约定",
+    },
+    ("龙凤宝钗缘", 4, 45, "少年", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上，#少年 书内约定保留。",
+        "cite": "docs/80 §三 D1 跨库约定",
+    },
+    ("龙凤宝钗缘", 4, 46, "少年", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上，#少年 书内约定保留。",
+        "cite": "docs/80 §三 D1 跨库约定",
+    },
+    ("龙凤宝钗缘", 5, 58, "盗", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『将盗自田承嗣床头的金盒交与薛嵩』为把字句，金盒已盗得既成；『将』消歧为把非将来。",
+        "cite": "R-P9 把字句消歧；docs/45 §三 #70",
+    },
+    ("龙凤宝钗缘", 20, 17, "少年", "d1_description"): {
+        "verdict": "保留",
+        "reason": "docs/80 #少年 书内约定保留。",
+        "cite": "docs/80 §三 D1 跨库约定",
+    },
+    ("龙凤宝钗缘", 20, 19, "少年", "d1_description"): {
+        "verdict": "保留",
+        "reason": "docs/80 #少年 书内约定保留。",
+        "cite": "docs/80 §三 D1 跨库约定",
+    },
+    ("龙凤宝钗缘", 20, 53, "少女", "d1_description"): {
+        "verdict": "保留",
+        "reason": "docs/80 #少女 书内约定保留（全批 27 处）。",
+        "cite": "docs/80 §三 D1 跨库约定",
+    },
+    ("龙凤宝钗缘", 23, 52, "抛头露面", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『怎的还要抛头露面，举行比武招亲』反问预设既成（比武招亲为既成事件、公开露面已发生），"
+                  "与 R-P2 反复行为同族。",
+        "cite": "R-P2 惯常/反复；docs/45 §三 #70",
+    },
+    ("龙凤宝钗缘", 49, 86, "胡服少年", "d1_description"): {
+        "verdict": "保留",
+        "reason": "书内锚定代称（胡服少年指称具体人物），与 #少年/#少女 书内约定同族一致。",
+        "cite": "docs/80 §三 D1 跨库约定（同族扩展）",
+    },
+    ("龙凤宝钗缘", 50, 172, "大孩子", "d1_description"): {
+        "verdict": "保留",
+        "reason": "书内锚定代称（『那大孩子』指称具体孩童人物），与 #少年/#少女 口径一致。",
+        "cite": "docs/80 §三 D1 跨库约定（同族扩展）",
+    },
+    # ── P4 批次（2026-11-07，剑网尘丝/幻剑灵旗；jw-e 建议 + Lead 复核）──
+    ("剑网尘丝", 3, 464, "宾客", "d1_description"): {
+        "verdict": "保留",
+        "reason": "「宾客」为处境身份（# 类），跨库 tagged 已有 10 处 #宾客 口径；"
+                  "比武观战者属具体场景身份，非纯描述性代称，保留。",
+        "cite": "SKILL_03a L103 #身份（处境身份）；跨库 tagged #宾客 10 处",
+    },
+    ("剑网尘丝", 4, 83, "偷进", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "疑问句『他又为什么要偷进雪君新房』追问的是既成潜入行为（[82] 已被点穴者），"
+                  "属已发生语境追问动机，非未发生计划。",
+        "cite": "docs/45 §三 #70（追问既成事实保留）；SKILL_04f §3.6",
+    },
+    ("剑网尘丝", 10, 15, "捉拿", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『我是为何要捉拿那个妖妇』为行动目的/计划表述，后文『坏了道长大事』"
+                  "证实捉拿未实施；按计划/意图不标。",
+        "cite": "SKILL_04f §3.6；docs/55 准备+X；docs/45 #1-12 同例",
+    },
+    ("剑网尘丝", 17, 28, "客人", "d1_description"): {
+        "verdict": "保留",
+        "reason": "『客人』为处境身份（# 类，客栈投宿者），跨库 tagged 43 处/8 书既有约定；"
+                  "非纯描述性代称，保留。",
+        "cite": "SKILL_03a L103；跨库 tagged #客人 43 处",
+    },
+    ("剑网尘丝", 17, 55, "客人", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上，客栈『这帮客人』为具体处境身份。",
+        "cite": "SKILL_03a L103；跨库 tagged #客人",
+    },
+    ("剑网尘丝", 17, 86, "客人", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同段两处『客人』均为投宿客人身份（掌柜对白），保留。",
+        "cite": "SKILL_03a L103；跨库 tagged #客人",
+    },
+    ("剑网尘丝", 17, 87, "客人", "d1_description"): {
+        "verdict": "保留",
+        "reason": "『单身客人』为客栈投宿者身份，保留。",
+        "cite": "SKILL_03a L103；跨库 tagged #客人",
+    },
+    ("剑网尘丝", 2, 482, "运往", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『还有一批药材要运往……』为押运途中/计划中的连续动作语境（同段已写车队在途），"
+                  "按已发生/进行中保留（jw-e 复核建议，中置信）。",
+        "cite": "SKILL_04f §3.6；jw-e P4 裁定建议 §四",
+    },
+    ("剑网尘丝", 3, 285, "离开", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『三年前那个晚上离开』用于交代既成时间与事实定位，非未发生计划。",
+        "cite": "SKILL_04f §3.6；jw-e P4 裁定建议 §四",
+    },
+    ("剑网尘丝", 6, 283, "阻止", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『只恨本领不济，未能阻止……反而给你点了穴道』为已发动而未遂动作，"
+                  "未遂可标（可加注），非纯计划。",
+        "cite": "SKILL_03a L131（已施行未遂可标）；jw-e P4 裁定建议 §四",
+    },
+    ("剑网尘丝", 8, 376, "刺杀", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "转述既成战况中的既发未遂行为（『仍要刺杀徐大侠，他这才忍无可忍』），"
+                  "属已发生语境。",
+        "cite": "SKILL_03a L131；jw-e P4 裁定建议 §四",
+    },
+    ("剑网尘丝", 9, 445, "上京", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "行程进行中表述（已上路/拟赴京），非纯未发生计划。",
+        "cite": "SKILL_04f §3.6；jw-e P4 裁定建议 §四",
+    },
+    ("幻剑灵旗", 6, 338, "拦阻", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『定要拦阻』用于当场进行中的对峙（楚劲松『要留你今晚』），属正在进行动作。",
+        "cite": "SKILL_04f §3.6；jw-e P4 裁定建议 §四",
+    },
+    ("幻剑灵旗", 6, 602, "飞上半空", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『无不飞上半空』为双重否定全称肯定（全都飞起），动作已发生。",
+        "cite": "SKILL_04f §3.6；jw-e P4 裁定建议 §四",
+    },
+    ("幻剑灵旗", 10, 257, "护送", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『护送』为在途护卫动作（同段『走得当然不快』证在途），非计划。",
+        "cite": "SKILL_04f §3.6；jw-e P4 裁定建议 §四",
+    },
+    ("幻剑灵旗", 11, 402, "假扮", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『你为什么要假扮上官姑娘』追问既成冒充事实（赵青眉长期冒充），"
+                  "属已发生行为反问，保留。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6",
+    },
+    # ── P6 批次（2026-11-09，龙虎斗京华/草莽龙蛇传/飞凤潜龙/绝塞传烽录；Lead 复核）──
+    ("龙虎斗京华", 1, 113, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("龙虎斗京华", 1, 118, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("龙虎斗京华", 2, 32, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("龙虎斗京华", 2, 40, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("龙虎斗京华", 2, 108, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("龙虎斗京华", 2, 108, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("龙虎斗京华", 2, 110, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("龙虎斗京华", 3, 17, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("龙虎斗京华", 3, 95, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("龙虎斗京华", 6, 58, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("龙虎斗京华", 6, 67, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("龙虎斗京华", 3, 40, "踢", "verb_domain_risk"): {"verdict": "保留", "reason": "脚尖踢在膝盖骨上，已发生的击打动作 ⊠（受伤结果）。", "cite": "SKILL_04f §2.2"},
+    ("龙虎斗京华", 4, 44, "扯", "plan_negation_verb"): {"verdict": "保留", "reason": "『为什么要扯他的脚示警』追问既成事实（已扯）。", "cite": "docs/45 #70"},
+    ("草莽龙蛇传", 2, 10, "老者", "d1_description"): {"verdict": "应摘", "reason": "描述性代称『老者』D1 不标（无跨库约定）。", "cite": "SKILL_03a D1"},
+    ("草莽龙蛇传", 2, 41, "那人", "d1_description"): {"verdict": "应摘", "reason": "指代性代称『那人』D1 不标。", "cite": "SKILL_03a D1"},
+    ("草莽龙蛇传", 2, 62, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("草莽龙蛇传", 3, 26, "老者", "d1_description"): {"verdict": "应摘", "reason": "描述性代称『老者』D1 不标。", "cite": "SKILL_03a D1"},
+    ("草莽龙蛇传", 3, 26, "兄弟", "d1_description"): {"verdict": "应摘", "reason": "『兄弟』为老者对丁晓的称呼语（D1 纯称谓）。", "cite": "SKILL_03a D1"},
+    ("草莽龙蛇传", 3, 41, "老者", "d1_description"): {"verdict": "应摘", "reason": "描述性代称『老者』。", "cite": "SKILL_03a D1"},
+    ("草莽龙蛇传", 3, 53, "老者", "d1_description"): {"verdict": "应摘", "reason": "描述性代称『老者』（本回揭名为焦忠耀）。", "cite": "SKILL_03a D1"},
+    ("草莽龙蛇传", 3, 58, "中年汉子", "d1_description"): {"verdict": "应摘", "reason": "描述性代称『中年汉子』D1 不标。", "cite": "SKILL_03a D1"},
+    ("草莽龙蛇传", 3, 89, "粗豪少年", "d1_description"): {"verdict": "应摘", "reason": "描述性代称『粗豪少年』D1 不标。", "cite": "SKILL_03a D1"},
+    ("草莽龙蛇传", 6, 28, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("草莽龙蛇传", 6, 82, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("草莽龙蛇传", 6, 89, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("草莽龙蛇传", 6, 90, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("草莽龙蛇传", 6, 123, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("草莽龙蛇传", 7, 5, "假装", "plan_negation_verb"): {"verdict": "保留", "reason": "『为什么要假装不懂武艺』追问既成事实（装作不懂已发生）。", "cite": "docs/45 #70"},
+    ("草莽龙蛇传", 8, 87, "包庇", "plan_negation_verb"): {"verdict": "保留", "reason": "『你要包庇胡虏的奴才』为已发生/持续中的社会行为（⊡ 社会域）。", "cite": "SKILL_04f §2.3"},
+    ("草莽龙蛇传", 10, 21, "挡我者死", "verb_domain_risk"): {"verdict": "应摘", "reason": "战斗口号『挡我者死』非具体动作事件。", "cite": "SKILL_04f §2.0"},
+    ("草莽龙蛇传", 10, 161, "生死未卜", "verb_domain_risk"): {"verdict": "应摘", "reason": "状态成语『生死未卜』非动作。", "cite": "SKILL_04f §2.0"},
+    ("草莽龙蛇传", 10, 167, "预扣", "plan_negation_verb"): {"verdict": "保留", "reason": "『将预扣在手心中的金钱镖打出』为已发生动作。", "cite": "docs/45 #70"},
+    ("草莽龙蛇传", 11, 42, "掌式一收", "plan_negation_verb"): {"verdict": "保留", "reason": "『倏地将掌式一收』已发生的动作变化。", "cite": "docs/45 #70"},
+    ("草莽龙蛇传", 12, 109, "起来", "plan_negation_verb"): {"verdict": "应摘", "reason": "『夹颈抽将起来』的『起来』为趋向补语，不独立成动词。", "cite": "SKILL_04f §2.0；docs/45"},
+    ("飞凤潜龙", 2, 105, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("飞凤潜龙", 3, 146, "少女", "d1_description"): {"verdict": "保留", "reason": "#少女 跨库约定。", "cite": "跨库 tagged #少女"},
+    ("绝塞传烽录", 1, 371, "阵亡", "verb_domain_risk"): {"verdict": "改域", "target_domain": "⊠", "reason": "阵亡=战死，生命健康结果 ⊠。", "cite": "SKILL_04f §2.2"},
+    ("绝塞传烽录", 1, 569, "阴狠毒辣", "verb_domain_risk"): {"verdict": "应摘", "reason": "评价性形容词，非动作事件。", "cite": "SKILL_04f §2.0"},
+    ("绝塞传烽录", 1, 571, "死心塌地", "verb_domain_risk"): {"verdict": "应摘", "reason": "成语副词性修饰，非动作。", "cite": "SKILL_04f §2.0"},
+    ("绝塞传烽录", 1, 575, "毒辣", "verb_domain_risk"): {"verdict": "应摘", "reason": "评价性形容词『毒辣心肠』。", "cite": "SKILL_04f §2.0"},
+    ("绝塞传烽录", 1, 587, "滥杀", "verb_domain_risk"): {"verdict": "应摘", "reason": "『不至于滥杀你的家人』否定/推测，未发生。", "cite": "SKILL_04f §3.6"},
+    ("绝塞传烽录", 1, 778, "杀我灭口", "verb_domain_risk"): {"verdict": "应摘", "reason": "『你是要杀我灭口』为指控意图，未发生。", "cite": "SKILL_04f §3.6"},
+    ("绝塞传烽录", 1, 238, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("绝塞传烽录", 1, 279, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("绝塞传烽录", 1, 594, "儿子", "kinship_na"): {"verdict": "应摘", "reason": "纯亲属称谓『儿子』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 1, 685, "客人", "d1_description"): {"verdict": "保留", "reason": "#客人 跨库约定。", "cite": "跨库 tagged #客人"},
+    ("绝塞传烽录", 1, 741, "儿子", "kinship_na"): {"verdict": "应摘", "reason": "纯亲属称谓『儿子』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 2, 80, "运功御毒", "verb_domain_risk"): {"verdict": "改域", "target_domain": "▣", "reason": "运功御毒为内功技法运用，技法域 ▣。", "cite": "SKILL_04f §2.4"},
+    ("绝塞传烽录", 2, 95, "毒发", "verb_domain_risk"): {"verdict": "保留", "reason": "『果然是毒发了』已发生的状态变化。", "cite": "docs/45 #70"},
+    ("绝塞传烽录", 2, 252, "爹爹", "kinship_na"): {"verdict": "应摘", "reason": "纯亲属称谓『爹爹』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 2, 421, "同门", "d1_description"): {"verdict": "应摘", "reason": "关系通称『同门』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 3, 308, "杀人", "verb_domain_risk"): {"verdict": "应摘", "reason": "『我只会杀人』为能力泛说，非具体事件。", "cite": "SKILL_04f §2.0"},
+    ("绝塞传烽录", 3, 301, "父亲", "kinship_na"): {"verdict": "应摘", "reason": "纯亲属称谓『父亲』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 4, 66, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("绝塞传烽录", 4, 68, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("绝塞传烽录", 4, 75, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("绝塞传烽录", 4, 352, "儿子", "kinship_na"): {"verdict": "应摘", "reason": "纯亲属称谓『儿子』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 9, 238, "同门", "d1_description"): {"verdict": "应摘", "reason": "关系通称『同门』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 9, 559, "同门", "d1_description"): {"verdict": "应摘", "reason": "关系通称『同门』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 10, 11, "同门", "d1_description"): {"verdict": "应摘", "reason": "关系通称『同门』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 10, 138, "同门", "d1_description"): {"verdict": "应摘", "reason": "关系通称『同门』D1 不标。", "cite": "SKILL_03a D1"},
+    ("绝塞传烽录", 11, 102, "避开", "plan_negation_verb"): {"verdict": "保留", "reason": "『为何他要避开』追问既成/进行中的动作。", "cite": "docs/45 #70"},
+    ("绝塞传烽录", 12, 149, "撤退", "plan_negation_verb"): {"verdict": "保留", "reason": "『为何你要撤退』已有的军事动作。", "cite": "docs/45 #70"},
+    # ── P5 批次（2026-11-09，龙凤宝钗缘/慧剑心魔；Lead 复核）──
+    ("龙凤宝钗缘", 4, 28, "少年", "d1_description"): {"verdict": "保留", "reason": "处境身份 #少年（跨库 tagged 102 处既有约定），非纯描述性代称。", "cite": "跨库 tagged #少年；SKILL_03a L103"},
+    ("龙凤宝钗缘", 4, 37, "少年", "d1_description"): {"verdict": "保留", "reason": "同上（#少年 跨库约定）。", "cite": "跨库 tagged #少年"},
+    ("龙凤宝钗缘", 4, 45, "少年", "d1_description"): {"verdict": "保留", "reason": "同上（#少年 跨库约定）。", "cite": "跨库 tagged #少年"},
+    ("龙凤宝钗缘", 4, 46, "少年", "d1_description"): {"verdict": "保留", "reason": "同上（#少年 跨库约定）。", "cite": "跨库 tagged #少年"},
+    ("龙凤宝钗缘", 5, 58, "盗", "plan_negation_verb"): {"verdict": "保留", "reason": "『将盗自田承嗣床头的金盒』= 盗自（过去已发生偷盗的定语），非将然计划。", "cite": "SKILL_04f §3.6；docs/45 #70"},
+    ("龙凤宝钗缘", 20, 17, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("龙凤宝钗缘", 20, 19, "少年", "d1_description"): {"verdict": "保留", "reason": "#少年 跨库约定。", "cite": "跨库 tagged #少年"},
+    ("龙凤宝钗缘", 20, 53, "少女", "d1_description"): {"verdict": "保留", "reason": "#少女 跨库 tagged 27 处既有约定。", "cite": "跨库 tagged #少女"},
+    ("龙凤宝钗缘", 23, 52, "抛头露面", "plan_negation_verb"): {"verdict": "保留", "reason": "『怎的还要抛头露面，举行比武招亲』指既已安排/进行中的招亲，非纯计划。", "cite": "SKILL_04f §3.6"},
+    ("龙凤宝钗缘", 32, 11, "杀了", "plan_negation_verb"): {"verdict": "应摘", "reason": "『我若说要杀了她』= 假设/意愿，未发生。", "cite": "SKILL_04f §3.6；docs/45 #1-12"},
+    ("龙凤宝钗缘", 33, 64, "下毒", "verb_domain_risk"): {"verdict": "应摘", "reason": "『决不敢在饭菜中下毒』否定语境，动作未发生。", "cite": "SKILL_04f §3.6"},
+    ("龙凤宝钗缘", 33, 82, "滥杀", "verb_domain_risk"): {"verdict": "应摘", "reason": "『不要滥杀』为命令/劝阻内容，命令内容不标。", "cite": "SKILL_03a L131 命令不标"},
+    ("龙凤宝钗缘", 38, 79, "死", "verb_domain_risk"): {"verdict": "应摘", "reason": "『竟要死在段克邪手上』为假设/未发生。", "cite": "SKILL_04f §3.6"},
+    ("龙凤宝钗缘", 40, 27, "误杀", "verb_domain_risk"): {"verdict": "改域", "target_domain": "⊠", "reason": "既成误杀（混战中已发生），生命健康域 ⊠。", "cite": "SKILL_04f §2.2"},
+    ("龙凤宝钗缘", 43, 12, "动手", "plan_negation_verb"): {"verdict": "应摘", "reason": "『怎么，要动手么？』挑衅/疑问，动作未发生。", "cite": "SKILL_04f §3.6"},
+    ("龙凤宝钗缘", 45, 14, "废去", "plan_negation_verb"): {"verdict": "应摘", "reason": "『举掌又要废去段克邪的武功』为威胁/计划，未发生。", "cite": "SKILL_04f §3.6"},
+    ("龙凤宝钗缘", 45, 62, "避开", "plan_negation_verb"): {"verdict": "应摘", "reason": "『假如避开混战』假设语境。", "cite": "SKILL_04f §3.6"},
+    ("龙凤宝钗缘", 46, 30, "中剑", "plan_negation_verb"): {"verdict": "应摘", "reason": "『势将中剑』将然/未发生。", "cite": "SKILL_04f §3.6"},
+    ("龙凤宝钗缘", 49, 86, "胡服少年", "d1_description"): {"verdict": "保留", "reason": "#胡服少年 为处境身份型称名（跨库 4 处），保留。", "cite": "跨库 tagged #胡服少年"},
+    ("龙凤宝钗缘", 50, 172, "大孩子", "d1_description"): {"verdict": "保留", "reason": "#大孩子 为处境身份型称名（跨库 6 处），保留。", "cite": "跨库 tagged #大孩子"},
+    ("慧剑心魔", 3, 58, "摔", "plan_negation_verb"): {"verdict": "保留", "reason": "『你为什么要摔我一跤』追问既成事实。", "cite": "docs/45 #70"},
+    ("慧剑心魔", 4, 38, "练好", "plan_negation_verb"): {"verdict": "应摘", "reason": "『我还要练好武功』纯计划/意愿。", "cite": "SKILL_04f §3.6"},
+    ("慧剑心魔", 4, 40, "搬到", "plan_negation_verb"): {"verdict": "保留", "reason": "『为什么要搬到这荒凉山谷』追问既成事实（已搬来）。", "cite": "docs/45 #70"},
+    ("慧剑心魔", 6, 141, "客人", "d1_description"): {"verdict": "保留", "reason": "#客人 跨库 70 处既有约定。", "cite": "跨库 tagged #客人"},
+    ("慧剑心魔", 14, 65, "斗", "plan_negation_verb"): {"verdict": "应摘", "reason": "『还要斗到五十招开外才能胜』为将然/能力估计，未发生。", "cite": "SKILL_04f §3.6"},
+    ("慧剑心魔", 17, 8, "一倍", "time_boundary"): {"verdict": "改域", "target_domain": "$", "reason": "『年龄比铁凝长一倍』为数量比较，改域 $。", "cite": "SKILL_03a L108"},
+    ("慧剑心魔", 17, 44, "一倍", "time_boundary"): {"verdict": "改域", "target_domain": "$", "reason": "数量比较改域 $。", "cite": "SKILL_03a L108"},
+    ("慧剑心魔", 17, 109, "瞬息之机", "time_boundary"): {"verdict": "应摘", "reason": "『所争不过瞬息之机』纯模糊时长/习语，不标。", "cite": "03a L108 纯模糊不标"},
+    ("慧剑心魔", 17, 127, "当今之世", "time_boundary"): {"verdict": "保留", "reason": "『当今之世』相对时点宽口径，保留。", "cite": "SKILL_03a L108；docs/48 §九"},
+    ("慧剑心魔", 18, 59, "刚刚", "time_boundary"): {"verdict": "保留", "reason": "『辛芷姑刚刚说了几句话』相对时点。", "cite": "SKILL_03a L108"},
+    ("慧剑心魔", 18, 131, "电光石火之间", "time_boundary"): {"verdict": "应摘", "reason": "习语化时间修辞（电光石火），按 R-T4 应摘。", "cite": "01g 修辞；docs/45 #77"},
+    ("慧剑心魔", 19, 50, "一些", "time_boundary"): {"verdict": "改域", "target_domain": "$", "reason": "『气平了一些』为程度/数量，改域 $。", "cite": "SKILL_03a L108"},
+    ("慧剑心魔", 19, 80, "波及", "plan_negation_verb"): {"verdict": "应摘", "reason": "『恐将波及』推测/未发生。", "cite": "SKILL_04f §3.6"},
+    ("慧剑心魔", 19, 103, "黑道", "time_boundary"): {"verdict": "改域", "target_domain": "^", "reason": "『黑道』为江湖概念，非时间，改域 ^。", "cite": "SKILL_03a L109"},
+    ("慧剑心魔", 20, 84, "黑道", "time_boundary"): {"verdict": "改域", "target_domain": "^", "reason": "『在黑道崛起』概念域，改域 ^。", "cite": "SKILL_03a L109"},
+    ("慧剑心魔", 20, 117, "逆流", "time_boundary"): {"verdict": "应摘", "reason": "『在逆流中驾驶船』为水流，非时间。", "cite": "SKILL_03a L109"},
+    ("慧剑心魔", 20, 119, "逆流", "time_boundary"): {"verdict": "应摘", "reason": "『逆流而上』非时间。", "cite": "SKILL_03a L109"},
+    ("慧剑心魔", 28, 82, "应付", "verb_domain_risk"): {"verdict": "应摘", "reason": "『如何应付』为泛化应对，非六域具体动作。", "cite": "SKILL_04f §2.0"},
+    ("慧剑心魔", 30, 33, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库 46 处既有约定。", "cite": "跨库 tagged #汉子"},
+    ("慧剑心魔", 32, 5, "路劫", "plan_negation_verb"): {"verdict": "保留", "reason": "『将路劫褚葆龄的事情说出』为已发生的路劫事件（名词化），保留。", "cite": "SKILL_04f §3.6；docs/45 #70"},
+    ("慧剑心魔", 39, 69, "过了一会", "time_boundary"): {"verdict": "应摘", "reason": "纯模糊时长（一会），不标。", "cite": "03a L108；R-T3"},
+    ("慧剑心魔", 39, 78, "这刹那间", "time_boundary"): {"verdict": "应摘", "reason": "纯模糊时长/习语（一刹那间），不标。", "cite": "03a L108；R-T3"},
+    ("慧剑心魔", 39, 79, "当今之世", "time_boundary"): {"verdict": "保留", "reason": "相对时点宽口径。", "cite": "SKILL_03a L108"},
+    ("慧剑心魔", 40, 10, "当世", "time_boundary"): {"verdict": "保留", "reason": "『当世第一高手』当代相对时点，保留。", "cite": "SKILL_03a L108"},
+    ("慧剑心魔", 40, 47, "此际", "time_boundary"): {"verdict": "保留", "reason": "此际=此刻，时点。", "cite": "SKILL_03a L108"},
+    ("慧剑心魔", 40, 55, "当世", "time_boundary"): {"verdict": "保留", "reason": "当代相对时点。", "cite": "SKILL_03a L108"},
+    ("慧剑心魔", 41, 24, "厮杀", "verb_domain_risk"): {"verdict": "改域", "target_domain": "⊞", "reason": "厮杀=战斗交锋，改域 ⊞。", "cite": "SKILL_04f §2.1"},
+    ("慧剑心魔", 41, 56, "厮杀", "verb_domain_risk"): {"verdict": "改域", "target_domain": "⊞", "reason": "厮杀=战斗交锋，改域 ⊞。", "cite": "SKILL_04f §2.1"},
+    ("慧剑心魔", 41, 101, "出迎", "plan_negation_verb"): {"verdict": "应摘", "reason": "礼仪动作（出迎），非六域事件；应摘。", "cite": "SKILL_04f §2.3 礼仪不标"},
+    ("慧剑心魔", 43, 9, "解毒", "verb_domain_risk"): {"verdict": "应摘", "reason": "『解毒之药』为定语/名词性，非动作事件。", "cite": "SKILL_03a 触发词边界"},
+    ("慧剑心魔", 43, 60, "客人", "d1_description"): {"verdict": "保留", "reason": "#客人 跨库约定。", "cite": "跨库 tagged #客人"},
+    ("慧剑心魔", 43, 105, "客人", "d1_description"): {"verdict": "保留", "reason": "#客人 跨库约定。", "cite": "跨库 tagged #客人"},
+    ("慧剑心魔", 43, 117, "汉子", "d1_description"): {"verdict": "保留", "reason": "#汉子 跨库约定。", "cite": "跨库 tagged #汉子"},
+    ("慧剑心魔", 44, 54, "杀散", "verb_domain_risk"): {"verdict": "改域", "target_domain": "⊠", "reason": "杀散官军=击杀驱散结果，生命健康 ⊠。", "cite": "SKILL_04f §2.2"},
+    ("慧剑心魔", 44, 81, "少年好汉", "d1_description"): {"verdict": "应摘", "reason": "描述性代称（少年好汉），D1 不标。", "cite": "SKILL_03a D1"},
+    ("慧剑心魔", 47, 123, "叔叔", "kinship_na"): {"verdict": "应摘", "reason": "纯亲属称谓，D1 不标。", "cite": "SKILL_03a D1"},
+    ("慧剑心魔", 48, 93, "王公女儿", "kinship_na"): {"verdict": "应摘", "reason": "身份描述（王公女儿），D1 不标。", "cite": "SKILL_03a D1"},
     ("江湖三女侠", 19, 44, "杀", "plan_negation_verb"): {
         "verdict": "保留",
         "reason": "「要杀」为意愿表述，但同段后文捕快已『身首异处』（既成事实）；"
@@ -256,6 +626,258 @@ MANUAL_ADJUDICATIONS: dict[tuple, dict] = {
         "verdict": "应摘",
         "reason": "『以及她准备【传授】铁镜心的解穴之法』为准备+X 计划（交换条件的提出，传授未实施）→ 应摘。",
         "cite": "docs/55 准备+X 计划摘先例；SKILL_04f §3.6",
+    },
+    # ---- 2026-11-07 云海玉弓缘/冰河洗剑录复核批人工终签（docs/76 §三；云海 6 + 冰河 6）----
+    ("云海玉弓缘", 27, 94, "冰宫", "fence_entity_real_only"): {
+        "verdict": "保留",
+        "reason": "回末对『神魔果是神通广，又见【冰宫】作战场』为实指——本章即冰宫之战"
+                  "（pn92『攀上了念青唐古拉山的主峰，冰宫已经在望』，pn93『冰宫修整得比前更美』），"
+                  "非成语虚指；按 docs/48 §九 023[80] 回末对内实指保留先例。",
+        "cite": "docs/48 §九 023[80]；SKILL_01g 围栏限实指",
+    },
+    ("云海玉弓缘", 35, 77, "爬起身来", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『听那悉悉索索的声音，似乎是他们正在【爬起身来】…他们为什么要【爬起身来】？』"
+                  "疑问句追问正在发生动作（声息佐证进行中）；按 docs/45 §三 #70 疑问句既成/进行中"
+                  "保留先例 + SKILL_04f §3.6 正在发生→标。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6",
+    },
+    ("云海玉弓缘", 38, 24, "夺", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『问问她为什么要【夺】咱们的镇山宝剑』——镇山宝剑已被夺走（本回失剑既成），"
+                  "疑问句追问既成事实原因；docs/45 §三 #70 先例。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6",
+    },
+    ("云海玉弓缘", 39, 31, "杀", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "pn30 厉胜男已承认『这四个人我是不得不杀』，pn31『你为何要【杀】他们』为"
+                  "疑问句追问既成事实原因；docs/45 §三 #70 先例。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6",
+    },
+    ("云海玉弓缘", 41, 15, "害死", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "pn14 金世遗承认『那三个人都是我杀的』，pn15『你为什么要【害死】他们三人』为"
+                  "疑问句追问既成事实；docs/69 萍踪 015[20] 害死同例（#70）。",
+        "cite": "docs/69 §三 萍踪 015[20]；docs/45 §三 #70",
+    },
+    ("云海玉弓缘", 50, 67, "害", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『厉胜男下手【害】我，我反而欢喜得很…她为什么要【害】我』——加害已发生"
+                  "（谷之华中毒垂危），疑问句追问既成事实动机；docs/45 §三 #70 先例。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6",
+    },
+    ("冰河洗剑录", 7, 22, "死", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『我也不知老爷为何要【死】』——老爷已死（本回命案既成），疑问句追问死因；"
+                  "docs/45 §三 #70 疑问句既成事实保留先例。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6",
+    },
+    ("冰河洗剑录", 32, 124, "躲避", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『既要【躲避】宝剑的攻击，自然不能全力对付』为打斗进行中的实况描写（解说战局）；"
+                  "按 docs/45 §三 #9 打斗进行中保留先例 + SKILL_04f §3.6 正在发生→标。",
+        "cite": "docs/45 §三 #9；SKILL_04f §3.6",
+    },
+    ("冰河洗剑录", 34, 48, "哄骗", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『这位丘爷爷对我非常好，却又为何要【哄骗】我呢』——欺骗已发生（当年被告知"
+                  "亲娘已死的假话，pn47），疑问句追问既成事实；docs/45 §三 #70 先例。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6",
+    },
+    ("冰河洗剑录", 35, 46, "杀", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『皇额娘也要【杀】我？』为意图归因（与 pn43『听到了国王也要杀叶冲霄的秘密』"
+                  "同构，杀机未实施、尚属密谋）；v1.8 计划/意图/命令内容不标 → 应摘。"
+                  "同回 pn43『国王也要杀』未标动词，本条摘除后两处口径一致。",
+        "cite": "SKILL_04f §3.6；docs/55 准备+X/意图摘先例",
+    },
+    ("冰河洗剑录", 40, 4, "刺", "verb_domain_risk"): {
+        "verdict": "改域",
+        "target_domain": "⊞",
+        "reason": "『景月上人被剑尖【刺】了一下，仗着年功深厚，并未受伤』——明示未受伤，"
+                  "未达 04f §2.2 伤情阈值，攻击动作归 ⊞（域码 ⊠→⊞，显示串不变）。",
+        "cite": "SKILL_04f §2.2 阈值规则；docs/76 §三",
+    },
+    ("冰河洗剑录", 46, 22, "劫", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『那盖温当年既然是一国之王，为何要【劫】我们镇远镖局的镖』——『当年』劫镖"
+                  "既成（全书主线起因），疑问句追问既成事实动机；docs/45 §三 #70 先例。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6",
+    },
+    # ---- 2026-11-07 扩书 P3 批次人工终签（docs/77；风雷 15 + 侠骨 7）----
+    # 风雷震九州
+    ("风雷震九州", 2, 64, "江湖汉子", "d1_description"): {
+        "verdict": "应摘",
+        "reason": "『看来像是个【江湖汉子】』为 D1 描述性代称（无姓名/身份专名），"
+                  "SKILL_03a D1『不标：描述性代称』→ 应摘。",
+        "cite": "SKILL_03a v1.10 D1；docs/48-S2 §5.3 R1；docs/77",
+    },
+    ("风雷震九州", 6, 71, "戳", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "『臂上的伤乃是鹿老大的鹿角叉【戳】的』——伤已既成（同段『受伤不轻』），"
+                  "⊠ 死亡/致伤结果域正确；docs/45 §三 #70 既成→标。",
+        "cite": "docs/45 §三 #70；SKILL_04f §2.2；docs/77",
+    },
+    ("风雷震九州", 7, 8, "刺", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "『我臂上的伤，也是他鹿角叉【刺】的』——伤已既成，⊠ 域正确；"
+                  "与前条 006[71]『戳』同构。",
+        "cite": "docs/45 §三 #70；SKILL_04f §2.2；docs/77",
+    },
+    ("风雷震九州", 7, 9, "杀", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『怎么，你还是要【杀】她？』——江晓芙仍活、杀机未实施（下段『料理了她』亦未遂），"
+                  "纯意图/计划语境不标，非 #70 既成追问。",
+        "cite": "SKILL_04f §3.6；docs/45 #1-12；docs/77",
+    },
+    ("风雷震九州", 7, 17, "防备", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『手忙脚乱，既要【防备】敌人偷袭，又不知妻子受伤如何』——打斗进行中的"
+                  "必要动作链，正在发生→标（同类 docs/45 §三 #9 闪避/抵挡先例）。",
+        "cite": "docs/45 §三 #9；SKILL_04f §3.6；docs/77",
+    },
+    ("风雷震九州", 8, 73, "关东", "fence_entity_real_only"): {
+        "verdict": "保留",
+        "reason": "回末对『四座皆惊真胆色，关东大盗会群豪』——『关东』为真实地域实指"
+                  "（关东大盗即关东绿林），围栏内实体限实指 → 保留。",
+        "cite": "SKILL_01g 围栏限实指；docs/48 §九 023[80]；docs/77",
+    },
+    ("风雷震九州", 10, 72, "残废", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『倘被点中，羊吞虎这条臂膀势将【残废】』——『倘…将』假设未发生 → 不标。",
+        "cite": "SKILL_04f §3.6；docs/77",
+    },
+    ("风雷震九州", 17, 24, "躲避", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『你为何要【躲避】我？』——追问意图，躲避未发生（怪客一路跟随，二人尚未"
+                  "分开），非既成事实追问 → 应摘。",
+        "cite": "SKILL_04f §3.6；docs/45 #1-12；docs/77",
+    },
+    ("风雷震九州", 24, 80, "劫", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『至于他当初为什么要【劫】这支镖』——『当初』劫镖既成、且全书主线起因"
+                  "（同段『已经赔偿了镖局的损失』），疑问句追问既成事实；docs/45 §三 #70。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6；docs/77",
+    },
+    ("风雷震九州", 29, 27, "抓", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "『大踏步上前，使出大擒拿手法，便来【抓】杨钲的琵琶骨』——打斗进行中的"
+                  "攻击动作，⊞ 战斗域正确（04f §2.0）。",
+        "cite": "SKILL_04f §2.0；docs/45 §三 #9；docs/77",
+    },
+    ("风雷震九州", 32, 62, "接", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『将【接】在手中的神芒也射出去』——『接在手中』为已发生状态（把字句+的），"
+                  "非计划；R-P6 定语从句保留。",
+        "cite": "SKILL_04f §3.6；docs/77",
+    },
+    ("风雷震九州", 52, 19, "擒", "verb_domain_risk"): {
+        "verdict": "应摘",
+        "reason": "『用意不过是引开她的目光，以便可以用擒拿法【擒】她』——分析对方意图、"
+                  "擒拿未发生，属计划/意图内容 → 应摘。",
+        "cite": "SKILL_04f §3.6；docs/77",
+    },
+    ("风雷震九州", 52, 37, "到", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『你怎么会以为我是要【到】小金川去找叶慕华？』——澄清意图，未发生 → 应摘。",
+        "cite": "SKILL_04f §3.6；docs/45 #1-12；docs/77",
+    },
+    ("风雷震九州", 52, 44, "到", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『怎么会想到要【到】小金川来找我的叶表哥？』——追问打算，未发生 → 应摘。",
+        "cite": "SKILL_04f §3.6；docs/45 #1-12；docs/77",
+    },
+    ("风雷震九州", 53, 52, "砍", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "『宇文雄身体的伤是给冷铁樵【砍】的』——伤已既成（同段伤口复裂），"
+                  "⊠ 致伤结果域正确。",
+        "cite": "docs/45 §三 #70；SKILL_04f §2.2；docs/77",
+    },
+    # 2026-11-07 C18 补标后新增 judgment：『青衣汉子』为书内既有身份令牌约定
+    # （C18 前已有 〖#青衣汉子〗×12；指安平/安大叔的伪装身份），按 # 身份保留。
+    ("风雷震九州", 11, 31, "青衣汉子", "d1_description"): {
+        "verdict": "保留",
+        "reason": "『青衣汉子』为书内既有身份令牌约定（C18 前已标 〖#青衣汉子〗×12，"
+                  "指安平/安大叔伪装身份）；# 身份类描述性指称按书内约定保留。",
+        "cite": "docs/54 §5 书内约定；SKILL_01g # 身份类；docs/77 §八",
+    },
+    ("风雷震九州", 11, 53, "青衣汉子", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上：书内既有 〖#青衣汉子〗 身份令牌约定（安平伪装身份）→ 保留。",
+        "cite": "docs/54 §5 书内约定；docs/77 §八",
+    },
+    ("风雷震九州", 12, 120, "青衣汉子", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上：书内既有 〖#青衣汉子〗 身份令牌约定（安平伪装身份）→ 保留。",
+        "cite": "docs/54 §5 书内约定；docs/77 §八",
+    },
+    ("风雷震九州", 20, 20, "青衣汉子", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上：书内既有 〖#青衣汉子〗 身份令牌约定（安平伪装身份）→ 保留。",
+        "cite": "docs/54 §5 书内约定；docs/77 §八",
+    },
+    ("风雷震九州", 30, 102, "青衣汉子", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上：书内既有 〖#青衣汉子〗 身份令牌约定（安平伪装身份）→ 保留。",
+        "cite": "docs/54 §5 书内约定；docs/77 §八",
+    },
+    ("风雷震九州", 31, 22, "青衣汉子", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上：书内既有 〖#青衣汉子〗 身份令牌约定（安平伪装身份）→ 保留。",
+        "cite": "docs/54 §5 书内约定；docs/77 §八",
+    },
+    ("风雷震九州", 31, 35, "青衣汉子", "d1_description"): {
+        "verdict": "保留",
+        "reason": "同上：书内既有 〖#青衣汉子〗 身份令牌约定（安平伪装身份）→ 保留。",
+        "cite": "docs/54 §5 书内约定；docs/77 §八",
+    },
+    # 侠骨丹心
+    ("侠骨丹心", 2, 63, "杀", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『你为什么要【杀】他？』——被指对象秦元浩仍活（pn62『炕上分明又躺着一个秦元浩』），"
+                  "且 pn64『我哪是真要杀他』明言未杀，纯意图/吓唬 → 应摘。",
+        "cite": "SKILL_04f §3.6；docs/77",
+    },
+    ("侠骨丹心", 3, 58, "害", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『难道他们当真是要【害】我不成？』——猜测/假想语气，害未发生 → 应摘。",
+        "cite": "SKILL_04f §3.6；docs/77",
+    },
+    ("侠骨丹心", 10, 69, "跌入", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『软鞭倘若不能立即解开……这蒙面人也将【跌入】金逐流的怀中』——『倘若…也将』"
+                  "假设后果，未发生 → 应摘。",
+        "cite": "SKILL_04f §3.6；docs/77",
+    },
+    ("侠骨丹心", 26, 110, "喝", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『你又为何要【喝】这杯毒酒？』——pn109 已明『曾喝了她一杯毒酒』，喝已既成，"
+                  "疑问句追问既成事实动机 → 保留（docs/45 §三 #70）。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6；docs/77",
+    },
+    ("侠骨丹心", 29, 75, "救", "plan_negation_verb"): {
+        "verdict": "保留",
+        "reason": "『我杀了这个舟子，才能告诉你为什么要【救】那小子』——救人为既成事实"
+                  "（为保密而杀舟子，杀人已发生），追问动机 → 保留（docs/45 §三 #70）。",
+        "cite": "docs/45 §三 #70；SKILL_04f §3.6；docs/77",
+    },
+    ("侠骨丹心", 43, 25, "割掉", "plan_negation_verb"): {
+        "verdict": "应摘",
+        "reason": "『剑锋削运差了半寸，否则连他的手指也将【割掉】』——『否则…也将』反事实，"
+                  "未发生 → 应摘。",
+        "cite": "SKILL_04f §3.6；docs/77",
+    },
+    ("侠骨丹心", 36, 98, "绊翻", "verb_domain_risk"): {
+        "verdict": "保留",
+        "reason": "『有两个被【绊翻】的客人，却恰巧向他倒下』——『被绊翻的』为已发生结果"
+                  "（被字句+的作定语），⊞ 战斗动作域正确 → 保留。",
+        "cite": "SKILL_04f §2.0/§2.2；docs/77",
+    },
+    ("侠骨丹心", 50, 136, "关东", "fence_entity_real_only"): {
+        "verdict": "保留",
+        "reason": "回末对『说起渊源都一路，关东豪杰久知名』——『关东』为真实地域实指，"
+                  "围栏内实体限实指 → 保留。",
+        "cite": "SKILL_01g 围栏限实指；docs/48 §九 023[80]；docs/77",
     },
 }
 
@@ -757,6 +1379,12 @@ def classify_plan_negation(item: dict, ctx: ItemCtx) -> Verdict:
                  "『想/要+动作+的+人物』定语从句，token 指已发生的动作/既获对象 → 保留",
                  evidence=ctx.context)
     # ── cue 语义缺省
+    # R-P5 准备/打算/预备/计划+X：计划未实施（docs/55 准备+X 先例；04f §3.6）
+    # 2026-11-07 P3 批次新增（风雷/侠骨 8 条同型 judgment 的规则化收口）
+    if cue in ("准备", "打算", "预备", "计划"):
+        return V("应摘", "R-P5",
+                 f"『{cue}』+动词=计划未实施：未发生，不标（docs/55 准备+X 先例；04f §3.6）",
+                 evidence=ctx.context)
     if cue in ("待", "若", "若是", "倘若", "如果", "否则", "意图"):
         return V("应摘", "R-P5",
                  f"『{cue}』计划/条件/意图语境：未发生，不标（04f §3.6）", evidence=ctx.context)
@@ -808,7 +1436,11 @@ def classify_time(item: dict, ctx: ItemCtx) -> Verdict:
     if disp in TIME_IDIOM:
         return V("应摘", "R-T4",
                  f"习语化时间修辞『{disp}』：属修辞层，非严格时点（01g；docs/45 #77 泛指先例）", evidence=ev)
-    if TIME_COUNT_UNIT_RE.search(disp) or (meta != "年龄" and re.search(r"(招|次|里|尺|丈|步|回合)$", disp)):
+    # 2026-11-07 P4 修复：`次` 仅在数词后视为计数（30次/两三次）；"这次/那次/此次/
+    # 上一次/这一次/那一次" 为相对时点（03a L109），不得改域 $。
+    _count_suffix = re.search(r"(招|里|尺|丈|步|回合)$", disp) or re.search(
+        r"[0-9一二三四五六七八九十百千万两几数半]\s*次$", disp)
+    if TIME_COUNT_UNIT_RE.search(disp) or (meta != "年龄" and _count_suffix):
         return V("改域", "R-T5",
                  f"时间位误挂战斗/里程计数『{disp}』→ 改域 $（数量）",
                  target="$", evidence=ev)
@@ -1180,7 +1812,7 @@ def process_book(book: str, acceptance: Path | None = None,
 # ────────────────────────────── --apply 落盘（task-6） ──────────────────────────────
 #
 # 安全约束（task-6）：
-#   * 仅允许 APPLY_BOOKS 三书（江湖/塞外/冰魄）；七剑、白发人工项维持既有终签，不写；
+#   * 仅允许 APPLY_BOOKS 白名单书落盘；七剑、白发人工项维持既有终签，不写；
 #   * 先备份 backup/tagged/judgment-apply-20261105/<书>/<NNN>.tagged.md（已存在不覆盖）；
 #   * 按 (chapter,pn,display[,occurrence]) 三重定位 token；同段多条按 raw_start 逆序应用；
 #   * 应摘 → 令牌替换为 display（剥标不改正文）；改域 → 只换域码字符；
@@ -1230,6 +1862,16 @@ def build_apply_plan(result: dict, book: str) -> tuple[list[dict], list[dict], l
             "token_raw_start": entry.get("token_raw_start"),
             "token_raw_end": entry.get("token_raw_end"),
         }
+        # 2026-11-07 P4：人工裁定可覆盖规则判定的应摘/改域（verdict=保留 → 不改语料）
+        _adj_override = MANUAL_ADJUDICATIONS.get(key) or MANUAL_ADJUDICATIONS.get(
+            (book, entry["chapter"], entry["pn"], entry["display"], "*"))
+        if _adj_override is not None and _adj_override.get("verdict") == "保留" and v in FIXABLE:
+            manual_decisions.append({
+                "location": entry["location"], "type": entry["type"],
+                "display": entry["display"], "rule_id": entry["rule_id"],
+                "auto_reason": entry["reason"], "verdict": "保留", "decided": True,
+                "reason": _adj_override["reason"], "cite": _adj_override["cite"]})
+            continue
         if v in FIXABLE:
             plans.append(dict(base, source="rule", action=v,
                               reason=entry["reason"], target_domain=entry["target_domain"]))
@@ -1253,9 +1895,10 @@ def build_apply_plan(result: dict, book: str) -> tuple[list[dict], list[dict], l
                     "reason": adj["reason"], "cite": adj["cite"]})
         manual_decisions.append(rec)
         if adj["verdict"] in FIXABLE:
+            # v1.3（docs/76）：人工裁定可携带 target_domain（改域必需；应摘忽略）。
             plans.append(dict(base, source="manual", action=adj["verdict"],
                               reason=f"{adj['reason']}（人工裁定依据：{adj['cite']}）",
-                              target_domain=None))
+                              target_domain=adj.get("target_domain")))
     return plans, manual_decisions, skipped
 
 
@@ -1426,6 +2069,13 @@ def apply_book(book: str, result: dict, backup_root: Path | None = None,
                     if t.raw_start == p["token_raw_start"] and t.raw == p["token_raw"]:
                         tok = t
                         break
+                if tok is None:
+                    # 2026-11-09 定位器兜底：raw_start 失配时按 token 原文匹配（同段内唯一/首个可用）
+                    _used = {id(x[2]) for x in located if x[1] is para}
+                    for t in para.tokens:
+                        if t.raw == p["token_raw"] and id(t) not in _used:
+                            tok = t
+                            break
             if para is not None and tok is not None:
                 located.append((p, para, tok))
             else:
@@ -1476,6 +2126,11 @@ def apply_book(book: str, result: dict, backup_root: Path | None = None,
             if not target:
                 raise RuntimeError(f"{book}: {p['location']} 改域缺 target_domain → 中止")
             new = old[0] + target + old[2:]      # 只换域码字符，保留显示串/管道
+            # 2026-11-06 修复（docs/73 §五）：改域目标不是 @/% 时必须拆掉原管道元数据
+            # （03a §二：只有 @ 人物与 % 时间可挂管道，其余实体不挂；例 R-T5 %→$ 保留
+            #  |时点/|时长 会触发 accept hard=pipe_on_nonperson）
+            if target not in ("%", "@") and "|" in new:
+                new = new.split("|", 1)[0] + "〗"
         else:
             raise RuntimeError(f"{book}: 未知处置动作 {p['action']!r}")
         if _plain_token(new) != _plain_token(old):
@@ -1507,13 +2162,17 @@ def apply_book(book: str, result: dict, backup_root: Path | None = None,
         lines = text.split(eol)
         old_lines = list(lines)
         # 逆序应用：行号倒序 + 行内 raw_start 倒序（span 不相互漂移）
+        # 2026-11-09：同一行多条编辑按 raw_start 逆序；若 offset 失配，按 old 原文在行内搜索兜底，
+        # 仍找不到则跳过该条（记录警告），不再整书中止。
         for e in sorted(by_file[ch], key=lambda x: (x["line_no"], -x["raw_start"])):
             line = lines[e["line_no"]]
             got = line[e["raw_start"]:e["raw_end"]]
             if got != e["old"]:
-                raise RuntimeError(
-                    f"{book}: token 定位失败（{e['file']} 行{e['line_no'] + 1}）"
-                    f"预期 {e['old']!r} 实得 {got!r} → 中止，未写任何文件")
+                _idx = line.find(e["old"])
+                if _idx < 0:
+                    print(f"[WARN] {book}: 跳过无法定位 token（行{e['line_no'] + 1} 预期 {e['old']!r}）")
+                    continue
+                e["raw_start"], e["raw_end"] = _idx, _idx + len(e["old"])
             lines[e["line_no"]] = line[:e["raw_start"]] + e["new"] + line[e["raw_end"]:]
         new_text = eol.join(lines)
         if new_text == old_text:
@@ -2131,7 +2790,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     g = p.add_mutually_exclusive_group(required=False)
     g.add_argument("--book", metavar="书名", help="单书（如 江湖三女侠）")
-    g.add_argument("--all", action="store_true", help="5 部待终签书全部处理 + 总表（--apply 时仅 3 书落盘）")
+    g.add_argument("--all", action="store_true", help="全部待终签书处理 + 总表（--apply 时仅 APPLY_BOOKS 白名单落盘）")
     g.add_argument("--apply-report", action="store_true",
                    help="仅按 logs/qa/judgment_apply_log_<书>.json + checks 重生成 apply 报告")
     p.add_argument("--acceptance", metavar="PATH", type=Path,
@@ -2181,7 +2840,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     books = DEFAULT_BOOKS if args.all else [args.book]
 
-    # ---- 模式 B：--apply 落盘（仅 3 书；acceptance 未变则走幂等复核，不重新分类） ----
+    # ---- 模式 B：--apply 落盘（仅 APPLY_BOOKS 白名单书；acceptance 未变则走幂等复核，不重新分类） ----
     if args.apply:
         applied, skipped_books, failed = [], [], []
         for book in books:

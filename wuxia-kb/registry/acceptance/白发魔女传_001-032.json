@@ -36,7 +36,7 @@
   32
  ],
  "chapter_label": "001-032",
- "generated_at": "2026-11-06T11:57:10",
+ "generated_at": "2026-11-06T23:56:22",
  "method": "SKILL_03a §三·阶段5（高风险全查 + 10% 确定性抽样）",
  "rule_version": "SKILL_03a v1.8",
  "sample_ratio_requested": 0.1,
@@ -58,7 +58,7 @@
  "fix_probe": {
   "command": "C:\\Python313\\python.exe C:\\Users\\YANG Ruosong\\Documents\\workspace\\Wuxiaxiaoshuo\\wuxia-kb\\scripts\\fix_annotation_mechanical.py --book 白发魔女传 --chapters 1-32 --dry-run",
   "exit": 0,
-  "summary": "合计：管道归一 18 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
+  "summary": "合计：管道归一 0 段，令牌摘除 0，闭括号修复 0，标点外置 0；问题 0（dry-run 未落盘）",
   "log": "logs\\acceptance\\fix_dry_run.log"
  },
  "chapters_data": {
@@ -70,190 +70,7 @@
    "entity_tokens": 1634,
    "verb_tokens": 130,
    "rhetoric_tokens": 5,
-   "hard_errors": [
-    {
-     "pn": 15,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 27,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 35,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 36,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 36,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 37,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 37,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 37,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 37,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 41,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆龙门|龙门帮",
-     "snippet": "◆龙门|龙门帮",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 41,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◎ 不允许挂管道：◎方家兄弟|方氏兄弟",
-     "snippet": "◎方家兄弟|方氏兄弟",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 43,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆龙门|龙门帮",
-     "snippet": "◆龙门|龙门帮",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 43,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◎ 不允许挂管道：◎方家兄弟|方氏兄弟",
-     "snippet": "◎方家兄弟|方氏兄弟",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 43,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◎ 不允许挂管道：◎方家兄弟|方氏兄弟",
-     "snippet": "◎方家兄弟|方氏兄弟",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 43,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◎ 不允许挂管道：◎方家兄弟|方氏兄弟",
-     "snippet": "◎方家兄弟|方氏兄弟",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 45,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆龙门|龙门帮",
-     "snippet": "◆龙门|龙门帮",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 45,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◎ 不允许挂管道：◎方家兄弟|方氏兄弟",
-     "snippet": "◎方家兄弟|方氏兄弟",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 45,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◎ 不允许挂管道：◎方家兄弟|方氏兄弟",
-     "snippet": "◎方家兄弟|方氏兄弟",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 46,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆龙门|龙门帮",
-     "snippet": "◆龙门|龙门帮",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 48,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◎ 不允许挂管道：◎方家兄弟|方氏兄弟",
-     "snippet": "◎方家兄弟|方氏兄弟",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 49,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◎ 不允许挂管道：◎方家兄弟|方氏兄弟",
-     "snippet": "◎方家兄弟|方氏兄弟",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 66,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 68,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 68,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 69,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 69,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 ◆ 不允许挂管道：◆武当|武当派",
-     "snippet": "◆武当|武当派",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    }
-   ],
+   "hard_errors": [],
    "warnings": [],
    "pipe_unsourced": [],
    "judgment_items": [
@@ -414,8 +231,8 @@
    ],
    "sample_size": 7,
    "sample_ratio_actual": 0.0959,
-   "sample_hard_violations": 7,
-   "status": "needs_fix",
+   "sample_hard_violations": 0,
+   "status": "accepted",
    "coverage_swaps": [],
    "entity_dist": {
     "#": 282,
@@ -446,9 +263,7 @@
     "⟦⊡": 2,
     "⟦■": 2,
     "〖%": 57,
-    "〖@": 169,
-    "〖◆": 18,
-    "〖◎": 8
+    "〖@": 169
    },
    "pipe_sources": {
     "mapping_frozen": 7,
@@ -463,15 +278,7 @@
    "entity_tokens": 633,
    "verb_tokens": 62,
    "rhetoric_tokens": 0,
-   "hard_errors": [
-    {
-     "pn": 40,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 = 不允许挂管道：=乾清官|乾清宫",
-     "snippet": "=乾清官|乾清宫",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    }
-   ],
+   "hard_errors": [],
    "warnings": [],
    "pipe_unsourced": [],
    "judgment_items": [
@@ -502,7 +309,7 @@
    "sample_size": 4,
    "sample_ratio_actual": 0.0889,
    "sample_hard_violations": 0,
-   "status": "needs_fix",
+   "status": "accepted",
    "coverage_swaps": [],
    "entity_dist": {
     "#": 38,
@@ -532,7 +339,6 @@
     "⟦⊠": 6,
     "⟦⊡": 4,
     "〖%": 33,
-    "〖=": 1,
     "〖@": 37
    },
    "pipe_sources": {
@@ -785,21 +591,13 @@
   },
   "006": {
    "chapter": 6,
-   "structural": "fail",
+   "structural": "pass",
    "paragraphs": 45,
    "chars": 10910,
    "entity_tokens": 738,
    "verb_tokens": 197,
    "rhetoric_tokens": 8,
-   "hard_errors": [
-    {
-     "pn": 33,
-     "type": "pipe_format",
-     "detail": "修辞令牌不应含管道",
-     "snippet": "@穆九娘〗又喝道：“怎么〘※敬酒不吃你要吃罚酒|敬酒不吃吃罚酒〙，我叫你",
-     "suggestion": "按 SKILL_03a 阶段 3：闭合符归一/摘除非法令牌后重跑全部结构检查"
-    }
-   ],
+   "hard_errors": [],
    "warnings": [],
    "pipe_unsourced": [],
    "judgment_items": [],
@@ -813,7 +611,7 @@
    "sample_size": 4,
    "sample_ratio_actual": 0.0889,
    "sample_hard_violations": 0,
-   "status": "needs_fix",
+   "status": "accepted",
    "coverage_swaps": [],
    "entity_dist": {
     "#": 23,
@@ -857,15 +655,7 @@
    "entity_tokens": 1081,
    "verb_tokens": 239,
    "rhetoric_tokens": 4,
-   "hard_errors": [
-    {
-     "pn": 32,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 { 不允许挂管道：{帖子|拜帖",
-     "snippet": "{帖子|拜帖",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    }
-   ],
+   "hard_errors": [],
    "warnings": [
     {
      "pn": 74,
@@ -963,7 +753,7 @@
    "sample_size": 8,
    "sample_ratio_actual": 0.0941,
    "sample_hard_violations": 0,
-   "status": "needs_fix",
+   "status": "accepted",
    "coverage_swaps": [],
    "entity_dist": {
     "#": 82,
@@ -996,8 +786,7 @@
     "⟦■": 16,
     "⟦▣": 2,
     "〖%": 25,
-    "〖@": 129,
-    "〖{": 1
+    "〖@": 129
    },
    "pipe_sources": {
     "registry+mapping_frozen": 129
@@ -1155,22 +944,7 @@
    "entity_tokens": 1210,
    "verb_tokens": 142,
    "rhetoric_tokens": 0,
-   "hard_errors": [
-    {
-     "pn": 42,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 • 不允许挂管道：•游龙|游龙剑",
-     "snippet": "•游龙|游龙剑",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    },
-    {
-     "pn": 42,
-     "type": "pipe_on_nonperson",
-     "detail": "实体类型 • 不允许挂管道：•断玉|断玉剑",
-     "snippet": "•断玉|断玉剑",
-     "suggestion": "v1.8 仅 @/%/动词可挂管道"
-    }
-   ],
+   "hard_errors": [],
    "warnings": [
     {
      "pn": 36,
@@ -1282,7 +1056,7 @@
    "sample_size": 8,
    "sample_ratio_actual": 0.0964,
    "sample_hard_violations": 0,
-   "status": "needs_fix",
+   "status": "accepted",
    "coverage_swaps": [],
    "entity_dist": {
     "#": 120,
@@ -1315,8 +1089,7 @@
     "⟦■": 1,
     "⟦▣": 1,
     "〖%": 28,
-    "〖@": 77,
-    "〖•": 2
+    "〖@": 77
    },
    "pipe_sources": {
     "mapping_frozen": 10,
@@ -4041,13 +3814,18 @@
  },
  "summary": {
   "chapters_total": 32,
-  "accepted": 27,
-  "needs_fix": 5,
+  "accepted": 32,
+  "needs_fix": 0,
   "accepted_chapters": [
+   1,
+   2,
    3,
    4,
    5,
+   6,
+   7,
    8,
+   9,
    10,
    11,
    12,
@@ -4072,14 +3850,8 @@
    31,
    32
   ],
-  "needs_fix_chapters": [
-   1,
-   2,
-   6,
-   7,
-   9
-  ],
-  "hard_errors": 31,
+  "needs_fix_chapters": [],
+  "hard_errors": 0,
   "warnings": 24,
   "pipe_unsourced": 1,
   "judgment_items": 199,
@@ -4094,8 +3866,8 @@
  "risk_stats": [
   {
    "category": "① 管道",
-   "hits": 6976,
-   "hard": 31,
+   "hits": 6946,
+   "hard": 0,
    "judgment": 0,
    "note": "@ 管道 4,634 条，无来源 1 条，登记表映射冲突 14 条（warning）"
   },
@@ -4154,7 +3926,7 @@
   "exit_code": 0,
   "report": "logs\\acceptance\\qa_structure_A_B_001-032.md",
   "strip_mismatch": 0,
-  "pipe_issues": 44,
+  "pipe_issues": 14,
   "title_tokens": 0,
   "fence_tokens": 0,
   "tao_tokens": 0,

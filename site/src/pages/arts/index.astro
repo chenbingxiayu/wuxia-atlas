@@ -2,51 +2,152 @@
 import Base from '../../layouts/Base.astro';
 import artsJson from '@data/arts.json';
 import { B } from '@lib/base';
+import LightSearch from '../../islands/LightSearch';
 
-const byCat = new Map();
+// W2-A1 构建期静态索引：canonical + aliases + children 招式名（搜索域）；空查询=全部。
+// 例：搜「大漠流沙」（天山剑法招式/别名）→ 命中 天山剑法 chip 并标注匹配词。
+const items = artsJson.arts.map((a) => ({
+  c: a.canonical,
+  href: `${B}arts/${encodeURIComponent(a.canonical)}/`,
+  g: a.category || '其他',
+  n: a.ev_total,
+  x: !!a.cross_book,
+  a: (a.aliases || []) as string[],
+  m: ((a.children || []) as { name: string }[]).map((ch) => ch.name),
+}));
+const byCat = new Map<string, number>();
+for (const a of artsJson.arts) byCat.set(a.category, (byCat.get(a.category) || 0) + 1);
+const groups = [...byCat.entries()].sort((x, y) => y[1] - x[1]).map(([c]) => c);
+const aliasN = items.filter((i) => i.a.length > 0).length;
+const movesN = items.filter((i) => i.m.length > 0).length;
+
+// —— D3 门派轴（武功页重构设计 §四「轴切换：按品类 | 按门派」）——
+// 归属规则（构建期单选，"最强证据"）：每门武功取其 relations 中 st='◆'（门派行，
+// 谓词 拥有/独门/传授/镇山）证据 ev 合计最高的一派——设计 §四口径"按证据数排序"；
+// 并列时取名序（Unicode 码点升序，确定性）。每 art 只入一组，绝不重复出现。
+// 无任何 ◆ 关系的武功诚实入「门派归属待考」组（设计 §九 文案表"未归属组"）。
+// 组序 = 各派 ◆ 关系证据总数（跨书 ev 合计）降序，并列取名序；待考组固定殿后
+// （设计 §四式样"天山派（N）· 武当派（N）· … · 未归属（N）"，组名 N 由 LightSearch 渲染）。
+const SECT_PENDING = '门派归属待考';
+const artSectEv = new Map<string, Map<string, number>>();  // art → sect → ◆ 行 ev 合计
+const sectEvAll = new Map<string, number>();               // sect → 全部 ◆ 行 ev 合计（组排序键）
 for (const a of artsJson.arts) {
-  if (!byCat.has(a.category)) byCat.set(a.category, []);
-  byCat.get(a.category).push(a);
+  const m = new Map<string, number>();
+  for (const b of Object.values(a.relations || {})) {
+    for (const r of (b.relations || []) as Array<{ s: string; st?: string; ev?: number }>) {
+      if (r.st !== '◆') continue;
+      const ev = r.ev || 1;
+      m.set(r.s, (m.get(r.s) || 0) + ev);
+      sectEvAll.set(r.s, (sectEvAll.get(r.s) || 0) + ev);
+    }
+  }
+  artSectEv.set(a.canonical, m);
 }
-const cats = [...byCat.entries()].sort((x, y) => y[1].length - x[1].length);
+const nameAsc = (x: string, y: string) => (x < y ? -1 : x > y ? 1 : 0);
+const sectOfArt = new Map<string, string>();
+for (const a of artsJson.arts) {
+  const m = artSectEv.get(a.canonical)!;
+  sectOfArt.set(
+    a.canonical,
+    m.size === 0
+      ? SECT_PENDING
+      : [...m.entries()].sort((x, y) => y[1] - x[1] || nameAsc(x[0], y[0]))[0][0],
+  );
+}
+const sectAxisGroups = [...sectEvAll.entries()]
+  .sort((x, y) => y[1] - x[1] || nameAsc(x[0], y[0]))
+  .map(([s]) => s);
+if (artsJson.arts.some((a) => (sectOfArt.get(a.canonical) || SECT_PENDING) === SECT_PENDING)) {
+  sectAxisGroups.push(SECT_PENDING);
+}
+// 门派轴 items：chip 字段与品类轴同一份（复用现有 chip 样式），仅分组域 g=归属门派；
+// 组内频次（ev_total）降序——LightSearch 保序分组，数组序即组内序（ev_total 并列保持数据序）。
+const itemsSect = items
+  .slice()
+  .sort((x, y) => (y.n ?? 0) - (x.n ?? 0))
+  .map((e) => ({ ...e, g: sectOfArt.get(e.c)! }));
+const SECT_NOTE =
+  `每门武功归入其门派关系证据最强的一派（并列取名序，据最强证据）；` +
+  `无门派关系者入「${SECT_PENDING}」。`;
 ---
 
 <Base title="武功谱" description="梁羽生武侠宇宙武功谱：品类、门派归属、修习者、传承——全部带定位符。">
-  <h1>武功谱</h1>
-  <p class="lead">
-    深度解析书目中考订收录的 <b>{artsJson.meta.totals.arts}</b> 门武功
-    （跨书 {artsJson.meta.totals.cross_book} 门），按品类分组。
-    品类由名称后缀规则自动判定；证据计数=关系条目证据数。
-  </p>
+  <div class="arts-root">
+    <h1>武功谱</h1>
+    <p class="lead">
+      库内考订的 <b>{artsJson.meta.totals.arts}</b> 门武功：谁创、谁传、属于哪派、有哪些招，每一条都挂原著定位。
+      可按武功名、别名（{aliasN} 门）与招式名（{movesN} 门）筛选。
+    </p>
 
-  {cats.map(([cat, arts]) => (
-    <section>
-      <h2>{cat} <span class="dim">（{arts.length}）</span></h2>
-      <p class="chips">
-        {arts.map((a) => (
-          <a class={`chip ${a.cross_book ? 'cross' : ''}`} href={`${B}arts/${encodeURIComponent(a.canonical)}/`}>
-            {a.canonical}<small>·{a.ev_total}</small>
-          </a>
-        ))}
-      </p>
-    </section>
-  ))}
-  <p class="fine">全书目 ☆ 实体中另有未进入关系考订者，随新书面作自动并入。</p>
+    {/* —— D3 轴切换（武功页重构设计 §四）：构建期双分组 + radio 纯 CSS 切换（无 JS；
+          先例 books/index.astro）。radio 输入视觉隐藏但保留键盘可达。默认按品类=现视图。—— */}
+    <input type="radio" name="arts-axis" id="ax-cat" class="vw-radio" checked />
+    <input type="radio" name="arts-axis" id="ax-sect" class="vw-radio" />
+    <div class="view-bar" role="group" aria-label="浏览轴切换">
+      <label for="ax-cat" class="vw-label">按品类</label>
+      <label for="ax-sect" class="vw-label">按门派</label>
+    </div>
+
+    <div class="lsearch-wrap">
+      <LightSearch client:visible items={items} groups={groups} mode="chips"
+                   axis2={{ items: itemsSect, groups: sectAxisGroups, note: SECT_NOTE }}
+                   placeholder="输入武功名 / 别名 / 招式名筛选…" />
+    </div>
+
+    <p class="fine">全书武功均已建页；考订随标注扩展生长，逐步覆盖。</p>
+  </div>
 </Base>
 
-<style>
-  .lead { color: var(--ink-light); }
-  .chips { line-height: 2.3; }
-  .chip {
+<style is:global>
+  /* W2-A1：chips/分组改由 LightSearch island 客户端过滤渲染 → 样式全局化并以 .arts-root 限域 */
+  .arts-root .lead { color: var(--ink-light); }
+  .arts-root .chips { line-height: 2.3; }
+  .arts-root .chip {
     display: inline-block; border: 1px solid var(--line-strong);
     border-radius: 999px; padding: .06em .7em; margin: .15em .2em;
     font-size: .88rem; background: rgba(255,255,255,.5); color: var(--ink);
   }
-  .chip.cross { border-color: var(--seal); }
-  .chip small { color: var(--ink-faint); font-family: var(--font-mono); }
-  a.chip:hover { border-color: var(--seal); color: var(--seal); }
-  .dim { color: var(--ink-faint); font-weight: 400; }
-  .fine { font-size: .8rem; color: var(--ink-faint); }
-  section { margin-top: var(--space-4); }
-  h2 { margin-bottom: var(--space-1); }
+  .arts-root .chip.cross { border-color: var(--seal); }
+  .arts-root .chip small { color: var(--ink-faint); font-family: var(--font-mono); }
+  .arts-root a.chip:hover { border-color: var(--seal); color: var(--seal); }
+  .arts-root .dim { color: var(--ink-faint); font-weight: 400; }
+  .arts-root .fine { font-size: .8rem; color: var(--ink-faint); }
+  .arts-root section { margin-top: var(--space-4); }
+  .arts-root h2 { margin-bottom: var(--space-1); }
+  /* W2-A1 轻量搜索条 + 别名/招式命中标注（方案 §5.3 EntitySearch 轻量模式） */
+  .arts-root .lsearch-bar { display: flex; gap: var(--space-3); align-items: center; margin: var(--space-3) 0; }
+  .arts-root .lsearch-bar input {
+    flex: 1; min-width: 220px; padding: .35em .8em;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font-family: var(--font-body); background: rgba(255,255,255,.6);
+  }
+  .arts-root .lsearch-meta { font-size: .85rem; color: var(--ink-faint); white-space: nowrap; }
+  .arts-root .lsearch-empty { color: var(--ink-faint); }
+  .arts-root .chip .hit-note, .arts-root .card .hit-note { color: var(--seal); font-size: .72em; margin-left: .35em; }
+  .arts-root .chip.ahit { border-color: var(--seal); background: rgba(190, 60, 40, 0.07); }
+
+  /* —— D3 轴切换（武功页重构设计 §四）：零 JS radio+CSS，样式同 books 页先例 —— */
+  .arts-root .vw-radio {
+    position: absolute; width: 1px; height: 1px;
+    opacity: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .arts-root .view-bar { display: flex; gap: var(--space-2); margin: var(--space-3) 0 0; }
+  .arts-root .vw-label {
+    display: inline-block; cursor: pointer; user-select: none;
+    border: 1.5px solid var(--line-strong); border-radius: 999px;
+    padding: .1em .95em; font-size: .88rem; color: var(--ink-light);
+    background: rgba(255, 255, 255, .5);
+  }
+  .arts-root .vw-label:hover { border-color: var(--seal); color: var(--seal); }
+  #ax-cat:checked ~ .view-bar label[for="ax-cat"],
+  #ax-sect:checked ~ .view-bar label[for="ax-sect"] {
+    background: var(--seal); border-color: var(--seal); color: var(--paper); font-weight: 700;
+  }
+  #ax-cat:focus-visible ~ .view-bar label[for="ax-cat"],
+  #ax-sect:focus-visible ~ .view-bar label[for="ax-sect"] { outline: 2px solid var(--azure); outline-offset: 2px; }
+  /* 双轴容器显隐（容器在 LightSearch island 内，SSR 即有全量两轴内容 → 无 JS 也可切换）：
+     默认按品类=藏门派轴；切按门派=藏品类轴。类名 main/alt 互不包含，选择器各中其一。 */
+  #ax-sect:checked ~ .lsearch-wrap .lsearch-axis-main,
+  #ax-cat:checked ~ .lsearch-wrap .lsearch-axis-alt { display: none; }
+  .arts-root .lsearch-axis-note { font-size: .8rem; color: var(--ink-faint); margin: 0 0 var(--space-2); }
 </style>

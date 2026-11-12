@@ -1,104 +1,123 @@
 ---
 import Base from '../../layouts/Base.astro';
+import SpectrumTabs from '../../components/ui/SpectrumTabs.astro';
 import weaponsJson from '@data/weapons.json';
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
+import { tierClass, tierLabel } from '@lib/tiers';
+import LightSearch from '../../islands/LightSearch';
 
 const w = weaponsJson.weapons;
 const t = weaponsJson.meta.totals;
 const CATS = ['剑', '刀', '暗器', '奇门', '护甲', '宝物'];
 const catOf = (x) => (CATS.includes(x.kind) ? x.kind : '宝物');
-const byCat = new Map(CATS.map((c) => [c, []]));
-for (const x of w) byCat.get(catOf(x)).push(x);
-for (const [c] of byCat) byCat.get(c).sort((a, b) => b.count - a.count);
 const cross = w.filter((x) => Object.keys(x.books).length > 1).length;
 const strongEdges = t.chain_strong;
+
+// W2-A1 构建期静态索引：canonical + aliases（搜索域）；组序=CATS、组内序=出场频次降序（与原版一致）；
+// 卡片字段（品阶/流转边/脚注）与原 SSR 卡片逐字段同形，由 LightSearch island 过滤渲染。
+// D5 rev17：卡片预览边同步排除 suspect 毁边（与名物页主线同口径，毁噪声不进预览）。
+const items = CATS.flatMap((c) =>
+  w
+    .filter((x) => catOf(x) === c)
+    .sort((a, b) => b.count - a.count)
+    .map((x) => {
+      const strong = (x.chain || []).filter((e) => e.conf === 'strong' && !e.suspect).slice(0, 4);
+      return {
+        c: x.canonical,
+        href: `${B}weapons/${encodeURIComponent(x.canonical)}/`,
+        g: catOf(x),
+        x: Object.keys(x.books).length > 1,
+        a: (x.aliases || []) as string[],
+        grade: x.grade,
+        gradeBasis: x.grade_basis,
+        kind: x.kind,
+        edges: strong.map((e) => ({ v: e.verb, p: e.persons.map((p) => dsp(p)) })),
+        noneNote: strong.length === 0 ? `共现证据 ${x.ev_total} 处` : undefined,
+        foot: [
+          Object.keys(x.books).length > 1 ? `跨书 ${Object.keys(x.books).length}` : Object.keys(x.books)[0],
+          `证据 ${x.ev_total}`,
+          tierLabel(x.conf),
+        ],
+        conf: tierClass(x.conf),
+      };
+    }),
+);
+const groups = CATS.filter((c) => items.some((i) => i.g === c));
+const aliasN = items.filter((i) => i.a.length > 0).length;
 ---
 
 <Base title="神兵谱" description="梁羽生武侠宇宙名物谱：神兵品阶、历代持有人流转链，每次易手都挂原著定位符。">
-  <p class="crumb">名物谱 / 神兵（M7 · 工具 C 接数）</p>
-  <h1>神兵谱</h1>
-  <p class="lead">
-    `•` 兵器/宝物实体 <b>{t.entities}</b>（四书实测）→ 专名性归层后入谱名物 <b>{t.名物}</b>
-    （凡物 {t.凡物} · 药材 {t.药材} 归丹药谱原料层）· 明文流转边 <b>{strongEdges}</b>（赠/夺/还/传/借/毁/失 句式直证）。
-    品阶徽章：<span class="badge solid">明文</span> = 语料直证"神兵/宝剑/利器"；
-    <span class="badge dashed">推断</span> = 待人工考订（品阶不设推断，宁缺毋滥）。
-  </p>
-  <p class="lead cats">
-    {CATS.map((c) => <a href={`#${c}`}>{c}<small>{byCat.get(c).length}</small></a>)}
-    <span class="fine">跨书流转 {cross} 件 · 考订 TSV：kb/校订/神兵表-考订.tsv</span>
-  </p>
-
-  {CATS.map((c) => (
-    byCat.get(c).length > 0 && (
-      <section>
-        <h2 id={c}>{c}<small>{byCat.get(c).length} 件</small></h2>
-        <div class="grid">
-          {byCat.get(c).map((x) => (
-            <a class="card" href={`${B}weapons/${encodeURIComponent(x.canonical)}/`}>
-              <div class="head">
-                <b>{x.canonical}</b>
-                {x.grade && <span class={x.grade_basis === '明文' ? 'badge solid' : 'badge dashed'}>{x.grade}</span>}
-                <span class="kind">{x.kind}</span>
-              </div>
-              <div class="chain">
-                {x.chain.filter((e) => e.conf === 'strong').slice(0, 4).map((e) => (
-                  <span class="edge"><i>{e.verb}</i>{e.persons.map((p) => dsp(p)).join('+')}</span>
-                ))}
-                {x.chain.filter((e) => e.conf === 'strong').length === 0 && <span class="none">共现证据 {x.ev_total} 处</span>}
-              </div>
-              <div class="foot">
-                <span>{Object.keys(x.books).length > 1 ? `跨书 ${Object.keys(x.books).length}` : Object.keys(x.books)[0]}</span>
-                <span>证据 {x.ev_total}</span>
-                <span class={x.conf}>{x.conf}</span>
-              </div>
-            </a>
-          ))}
-        </div>
-      </section>
-    )
-  ))}
-
-  <section>
-    <h2>数据口径</h2>
+  <div class="weapons-root">
+    <p class="crumb">名物谱 / 神兵</p>
+    <h1>神兵谱</h1>
+    {/* D11（名物页重构设计 §一决策 12/§四）：三谱切换 tab——导航不加项，谱切换在名物板块页内 */}
+    <SpectrumTabs current="weapons" />
     <p class="lead">
-      底表 <code>kb/神兵表.json</code>（考订工具 C，v3 架构：稳定键 = 名物规范名）·
-      归层三判：专名性（主）/ 明文品阶（副）/ 药材词表（转层）·
-      流转边 = 明文句式（赠/夺/还/传/借/毁/失）＞ 同回 ▲/◈ 事件侧证（ok）＞ 共现（weak 不入链）。
-      本页仅展示 strong / ok 档；扩展表（秘籍谱 `[`×`☆` 配对、丹药谱毒↔解药、权柄谱职衔）随工具 C 逐张开。
+      库内考订的 <b>{t.名物}</b> 件名物：什么来历、经过谁手、最后归宿，每次易手都挂原著定位。
+      品阶徽章：<span class="badge solid">明文</span> = 语料直证"神兵/宝剑/利器"；
+      <span class="badge dashed">推断</span> = 待人工考订（品阶不设推断，宁缺毋滥）。
+      可按名物名与别名（{aliasN} 件）筛选。
     </p>
-  </section>
+    <p class="lead cats">
+      {CATS.map((c) => <a href={`#${c}`}>{c}<small>{items.filter((i) => i.g === c).length}</small></a>)}
+      <span class="fine">跨书流转 {cross} 件</span>
+    </p>
+
+    <LightSearch client:visible items={items} groups={groups} mode="cards" anchorIds={true}
+                 placeholder="输入名物名 / 别名筛选…" />
+
+    <section>
+      <h2>数据口径</h2>
+      <p class="lead">
+        流转 = 原著明文易手句式（赠/夺/还/传/借/毁/失）；出场 = 原著提及。两者严格区分。
+      </p>
+    </section>
+  </div>
 </Base>
 
-<style>
-  .crumb { font-size: .85rem; color: var(--ink-faint); }
-  h1 { letter-spacing: 2px; }
-  .lead { color: var(--ink-light); line-height: 1.9; }
-  .lead b { color: var(--seal); }
-  .lead code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .3em; font-family: var(--font-mono); font-size: .85em; }
-  .badge { display: inline-block; border: 1.5px solid var(--seal); background: var(--seal); color: #fbf8ef;
+<style is:global>
+  /* W2-A1：卡片网格改由 LightSearch island 客户端过滤渲染 → 样式全局化并以 .weapons-root 限域 */
+  .weapons-root .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .weapons-root h1 { letter-spacing: 2px; }
+  .weapons-root .lead { color: var(--ink-light); line-height: 1.9; }
+  .weapons-root .lead b { color: var(--seal); }
+  .weapons-root .lead code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .3em; font-family: var(--font-mono); font-size: .85em; }
+  .weapons-root .badge { display: inline-block; border: 1.5px solid var(--seal); background: var(--seal); color: #fbf8ef;
     border-radius: 3px; padding: 0 .45em; font-size: .72rem; transform: rotate(-1.5deg); }
-  .badge.dashed { background: transparent; border-style: dashed; color: #8a6607; }
-  .cats a { margin-right: 12px; color: var(--azure); }
-  .cats a:hover { color: var(--seal); }
-  .cats small { color: var(--ink-faint); margin-left: 2px; }
-  .fine { color: var(--ink-faint); font-size: .8rem; margin-left: auto; }
-  section { margin-top: var(--space-5); }
-  h2 { border-bottom: 1px solid var(--line); padding-bottom: .2em; }
-  h2 small { font-weight: 400; font-size: .8rem; color: var(--ink-faint); margin-left: .6em; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-top: 12px; }
-  .card { display: block; border: 1px solid var(--line-strong); border-radius: 4px; padding: 12px 14px;
+  .weapons-root .badge.dashed { background: transparent; border-style: dashed; color: #8a6607; }
+  .weapons-root .cats a { margin-right: 12px; color: var(--azure); }
+  .weapons-root .cats a:hover { color: var(--seal); }
+  .weapons-root .cats small { color: var(--ink-faint); margin-left: 2px; }
+  .weapons-root .fine { color: var(--ink-faint); font-size: .8rem; margin-left: auto; }
+  .weapons-root section { margin-top: var(--space-5); }
+  .weapons-root h2 { border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  .weapons-root h2 small { font-weight: 400; font-size: .8rem; color: var(--ink-faint); margin-left: .6em; }
+  .weapons-root .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-top: 12px; }
+  .weapons-root .card { display: block; border: 1px solid var(--line-strong); border-radius: 4px; padding: 12px 14px;
     background: rgba(255,255,255,.45); color: var(--ink); }
-  .card:hover { border-color: var(--seal); }
-  .head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-  .head b { font-size: 1.05rem; letter-spacing: 1px; }
-  .kind { margin-left: auto; font-size: .75rem; color: var(--ink-light); border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 .6em; }
-  .chain { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; font-size: .78rem; }
-  .edge { border: 1px solid var(--line); border-radius: 3px; padding: 0 .4em; color: var(--ink-light); }
-  .edge i { font-style: normal; color: var(--seal); margin-right: .3em; }
-  .none { color: var(--ink-faint); }
-  .foot { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--line); display: flex; gap: 12px; font-size: .75rem; color: var(--ink-faint); }
-  .foot .strong { color: var(--seal); }
-  .foot .ok { color: #8a6607; }
-  .foot .weak { color: var(--ink-faint); }
+  .weapons-root .card:hover { border-color: var(--seal); }
+  .weapons-root .head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .weapons-root .head b { font-size: 1.05rem; letter-spacing: 1px; }
+  .weapons-root .kind { margin-left: auto; font-size: .75rem; color: var(--ink-light); border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 .6em; }
+  .weapons-root .chain { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; font-size: .78rem; }
+  .weapons-root .edge { border: 1px solid var(--line); border-radius: 3px; padding: 0 .4em; color: var(--ink-light); }
+  .weapons-root .edge i { font-style: normal; color: var(--seal); margin-right: .3em; }
+  .weapons-root .none { color: var(--ink-faint); }
+  .weapons-root .foot { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--line); display: flex; gap: 12px; font-size: .75rem; color: var(--ink-faint); }
+  /* 档位配色类名经 lib/tiers.ts tierClass 映射（t-hi=强证 · t-mid=确证 · t-lo=线索），raw 值不入 class 属性 */
+  .weapons-root .foot .t-hi { color: var(--seal); }
+  .weapons-root .foot .t-mid { color: #8a6607; }
+  .weapons-root .foot .t-lo { color: var(--ink-faint); }
+  /* W2-A1 轻量搜索条 + 别名命中标注（方案 §5.3 EntitySearch 轻量模式） */
+  .weapons-root .lsearch-bar { display: flex; gap: var(--space-3); align-items: center; margin: var(--space-3) 0; }
+  .weapons-root .lsearch-bar input {
+    flex: 1; min-width: 220px; padding: .35em .8em;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font-family: var(--font-body); background: rgba(255,255,255,.6);
+  }
+  .weapons-root .lsearch-meta { font-size: .85rem; color: var(--ink-faint); white-space: nowrap; }
+  .weapons-root .lsearch-empty { color: var(--ink-faint); }
+  .weapons-root .card .hit-note { color: var(--seal); font-size: .75rem; margin-top: 6px; }
+  .weapons-root .card.ahit { border-color: var(--seal); background: rgba(190, 60, 40, 0.06); }
 </style>

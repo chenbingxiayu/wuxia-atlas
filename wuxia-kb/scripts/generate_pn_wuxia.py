@@ -59,6 +59,12 @@ def read_chapter(raw):
             ti = i
             break
     if ti is None:
+        # 楔子：回目行为首行「楔子　…」（no=0 场景，七剑/萍踪/龙虎/武当一剑同式）
+        for i, ln in enumerate(lines):
+            if ln.strip().startswith("楔子"):
+                ti = i
+                break
+    if ti is None:
         raise ValueError("回目行未找到（行首'第N回'）")
     title_raw = lines[ti].rstrip()
     blocks = dv._split_blocks(lines[ti + 1:])

@@ -11,6 +11,7 @@
 
 用法：python scripts/build_site_data.py
 """
+import csv
 import json
 import sys
 from collections import defaultdict
@@ -60,12 +61,18 @@ def build_books() -> dict:
 
     books = []
     for w in wmeta['works']:
-        books.append({**{k: w[k] for k in
-                         ('no', 'book', 'year', 'year_conf', 'era', 'era_conf', 'series',
-                          'series_conf', 'leads', 'leads_conf', 'chapters', 'chars',
-                          'kb_status', 'intertext_out', 'intertext_in')},
-                      'out_refs': pack(out_edges, w['book']),
-                      'in_refs': pack(in_edges, w['book'])})
+        b = {**{k: w[k] for k in
+                ('no', 'book', 'year', 'year_conf', 'era', 'era_conf', 'series',
+                 'series_conf', 'leads', 'leads_conf', 'chapters', 'chars',
+                 'kb_status', 'intertext_out', 'intertext_in')},
+             'out_refs': pack(out_edges, w['book']),
+             'in_refs': pack(in_edges, w['book'])}
+        # 宇宙页重构 C：简介消费链——build_work_metadata 仅对 approved 行写入 hook/summary，
+        # 此处条件透传（缺省不加字段，schema 只增不改）
+        for k in ('hook', 'summary'):
+            if w.get(k):
+                b[k] = w[k]
+        books.append(b)
     return {
         'meta': {'generated': today(), 'schema': 'site-books-v1',
                  'totals': wmeta['meta']['totals']},
@@ -74,15 +81,87 @@ def build_books() -> dict:
     }
 
 
+def load_reading_guides() -> list:
+    """宇宙页重构 D（宇宙 §4.2）：kb/校订/线路导读.tsv（列 line/start/peak/skip/note/status）
+    → 仅 status=approved 行；TSV 不存在返回空表（0 approved → 不注入任何 reading_guide）。"""
+    p = KB / '校订' / '线路导读.tsv'
+    if not p.exists():
+        return []
+    rows = []
+    with open(p, encoding='utf-8-sig', newline='') as f:
+        for r in csv.DictReader(f, delimiter='\t'):
+            if (r.get('status') or '').strip() != 'approved':
+                continue
+            g = {k: (r.get(k) or '').strip() for k in ('line', 'start', 'peak', 'skip', 'note')}
+            if any(g[k] for k in ('start', 'peak', 'skip', 'note')):
+                rows.append(g)
+    return rows
+
+
 def build_universe() -> dict:
     with open(KB / '系列谱系考订表.json', encoding='utf-8') as f:
         tree = json.load(f)
+    # spec 011 T21（宇宙 §4.3）：种子规范名映射——对照 dossiers（规范名 + 别名表），
+    # 复合名「展示名（规范名）」先试全名再试括号内名；失败者不加 canonical（页面降级纯文本）
+    seeds = tree['interchange_seeds']
+    canon_set: set = set()
+    alias_to_canon: dict = {}
+    try:
+        with open(OUT / 'dossiers.json', encoding='utf-8') as f:
+            ds = json.load(f)
+        for d in ds.get('dossiers', []):
+            c = d.get('canonical')
+            if c:
+                canon_set.add(c)
+            for al in d.get('aliases', []):
+                nm = al.get('alias') if isinstance(al, dict) else al
+                if nm and nm not in alias_to_canon:
+                    alias_to_canon[nm] = c
+    except FileNotFoundError:
+        pass
+    unresolved = []
+    for s in seeds:
+        name = s.get('name', '')
+        cand = [name]
+        if '（' in name:
+            cand.append(name.split('（')[-1].rstrip('）'))
+        resolved = None
+        for c in cand:
+            if c in canon_set:
+                resolved = c
+                break
+            if c in alias_to_canon and alias_to_canon[c]:
+                resolved = alias_to_canon[c]
+                break
+        if resolved:
+            s['canonical'] = resolved
+        else:
+            unresolved.append(name)
+    if unresolved:
+        print('-> 种子 canonical 映射失败（降级纯文本）:', '、'.join(unresolved))
+    # 宇宙页重构 D（宇宙 §4.2）：线路导读——仅 approved 行按 line 名包含式匹配注入
+    # reading_guide（切片层注入，012 tasks 已备注口径）；无 approved → 不注入，页面整块隐藏
+    n_guide = 0
+    for g in load_reading_guides():
+        hit = None
+        for ln in tree['lines']:
+            tsv_line, tree_line = g['line'], ln.get('line', '')
+            if tsv_line and tree_line and (tsv_line in tree_line or tree_line in tsv_line):
+                hit = ln
+                print(f"-> 线路导读匹配: 「{tsv_line}」 ↔ 「{tree_line}」")
+                break
+        if hit is None:
+            print(f"-> 线路导读未匹配线名: 「{g['line']}」（跳过）")
+            continue
+        hit['reading_guide'] = {k: g[k] for k in ('start', 'peak', 'skip', 'note')}
+        n_guide += 1
+    print(f"导读接入 {n_guide} 线（approved）")
     return {
         'meta': {'generated': today(), 'schema': 'site-universe-v1',
                  'source': 'kb/系列谱系考订表.json'},
         'lines': tree['lines'],
         'chronology_spine': tree['chronology_spine'],
-        'interchange_seeds': tree['interchange_seeds'],
+        'interchange_seeds': seeds,
         'open_questions': tree['open_questions'],
     }
 
@@ -140,16 +219,37 @@ def build_entity_index() -> dict:
     """轻量实体索引（@/☆/◆），供实体联想岛（EntityExplorer）与各索引页使用。"""
     with open(OUT / 'characters.json', encoding='utf-8') as f:
         chars = json.load(f)
-    items = [
-        {'t': e['type'], 'c': e['canonical'], 'n': e['total'],
-         'b': {b: v['count'] for b, v in e['books'].items()}, 'x': e['cross_book']}
-        for e in chars['entities'] if e['type'] in ('@', '☆', '◆')
-    ]
+    # spec 011 T21（需求 B6）：dossiers 别名词频并入轻索引（a 字段）——搜索可命中别名
+    alias_of: dict = {}
+    try:
+        with open(OUT / 'dossiers.json', encoding='utf-8') as f:
+            ds = json.load(f)
+        for d in ds.get('dossiers', []):
+            m: dict = {}
+            for al in d.get('aliases', []):
+                name = al.get('alias') if isinstance(al, dict) else al
+                cnt = al.get('count', 0) if isinstance(al, dict) else 0
+                if name and name != d.get('canonical'):
+                    m[name] = m.get(name, 0) + cnt
+            if m and d.get('canonical'):
+                alias_of[d['canonical']] = m
+    except FileNotFoundError:
+        print('-> dossiers.json 不存在，entity-index 本轮不含别名（a 字段）')
+    items = []
+    for e in chars['entities']:
+        if e['type'] not in ('@', '☆', '◆'):
+            continue
+        it = {'t': e['type'], 'c': e['canonical'], 'n': e['total'],
+              'b': {b: v['count'] for b, v in e['books'].items()}, 'x': e['cross_book']}
+        if e['canonical'] in alias_of:
+            it['a'] = alias_of[e['canonical']]
+        items.append(it)
     items.sort(key=lambda x: -x['n'])
+    n_alias = sum(1 for i in items if 'a' in i)
     return {
-        'meta': {'generated': today(), 'schema': 'entity-index-v1',
-                 'note': '轻索引：t=类型 c=规范名 n=总频次 b=逐书频次 x=跨书',
-                 'totals': {'entities': len(items),
+        'meta': {'generated': today(), 'schema': 'entity-index-v2',
+                 'note': '轻索引：t=类型 c=规范名 n=总频次 b=逐书频次 x=跨书 a=别名词频（dossiers 并入，spec 011 T21）',
+                 'totals': {'entities': len(items), 'with_aliases': n_alias,
                             'by_type': {t: sum(1 for i in items if i['t'] == t)
                                         for t in ('@', '☆', '◆')}}},
         'entities': items,

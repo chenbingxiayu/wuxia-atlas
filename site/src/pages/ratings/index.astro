@@ -1,17 +1,63 @@
 ---
 import Base from '../../layouts/Base.astro';
 import RatingExplorer from '../../islands/RatingExplorer';
+import ratings from '@data/ratings.json';
+import matchesJson from '@data/matches.json';
+import { chapterHref } from '@lib/links';
 import { B } from '@lib/base';
+const topPlayer = (ratings.players || [])
+  .filter((p: any) => (p.matches_n || 0) >= 3 && (p.rd || 999) <= 150)
+  .sort((a: any, b: any) => b.rating - a.rating)[0] || null;
+
+// 对局号 → 对局（book/loc 取证用），构建期从 matches.json 派生
+const boutById = new Map<string, any>();
+for (const m of (matchesJson as any).matches || []) boutById.set(m.id, m);
+
+// 榜首代表作：取 top_evidence 前 2 条（可调），逐条经对局号解析出 book/loc，
+// 再由 chapterHref（构建期查章页存在性）生成回目链接；无章页 → null，降级为纯文本
+const topEvidence = ((topPlayer?.top_evidence as string[] | undefined) || [])
+  .slice(0, 2) // 前 2 条（可调）；top_evidence 缺失/为空数组时不渲染证据行
+  .map((id: string) => {
+    const bout = boutById.get(id);
+    if (!bout) return null;
+    let book = bout.book as string | undefined;
+    let loc = bout.loc as string | undefined;
+    if (typeof loc === 'string' && loc.includes('·')) {
+      const i = loc.indexOf('·'); // 兼容全格式定位符 "书名·034:107"
+      book = loc.slice(0, i);
+      loc = loc.slice(i + 1);
+    }
+    if (!book || !loc) return null;
+    return { href: chapterHref(book, loc), label: `${book}·${loc}` };
+  })
+  .filter((x): x is { href: string | null; label: string } => x !== null);
 ---
 <Base title="武评 · 江湖座次">
   <p class="crumb">武评 · 总榜</p>
   <h1>武评 · 江湖座次</h1>
   <p class="lead">
-    基于原著交手记录的 Glicko-2 战力榜——<b>每条分数都可以点开原文对质</b>。
-    对局来自事件表场景切分 + 胜负词表明文裁决（词表 v0.1）；区间（RD）宽者即"数据不足"，诚实呈现长尾。
+    基于原著交手记录的全历史等级分（WHR）——<b>每条分数都可以点开原文对质</b>。
+    对局经四层清洗裁决（单挑照录/明文配对/整战折算/无明文不打分）；区间宽者入待考区，诚实呈现长尾。
     <a href={`${B}ratings/method/`}>口径与参数</a> · <a href={`${B}ratings/conflicts/`}>明文冲突页</a> ·
     免责：娱乐性指数，不含作者口述、改编作品与读者共识；不做"谁天下第一"式断言。
   </p>
+  {topPlayer && (
+    <section class="topcard">
+      <span class="topmark">榜首</span>
+      <b class="tpname">{topPlayer.name}</b>
+      <span class="mono tpr">{topPlayer.rating}±{topPlayer.rd}</span>
+      <span class="badge ttier">{topPlayer.tier}</span>
+      <span class="lab twdl">{topPlayer['w/d/l'].join(' 胜 / ')} 平 / 负 —— 每一场都可对质（证据链见下方总榜）</span>
+      {topEvidence.length > 0 && (
+        <span class="lab tpev">
+          绝顶代表作：
+          {topEvidence.map((ev) =>
+            ev.href ? <a class="mono evlink" href={ev.href}>{ev.label} →</a> : <span class="mono">{ev.label}</span>
+          )}
+        </span>
+      )}
+    </section>
+  )}
   <RatingExplorer client:visible />
 </Base>
 <style>
@@ -19,4 +65,15 @@ import { B } from '@lib/base';
   h1 { letter-spacing: 2px; }
   .lead { color: var(--ink-light); max-width: 900px; line-height: 1.9; }
   .lead a { color: var(--azure); }
+  .topcard { background: #fbf8ef; border: 1px solid #b8860b; border-left: 4px solid #b8860b; border-radius: 4px;
+    padding: 14px 20px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: var(--space-4); }
+  .topmark { font-family: 'Ma Shan Zheng', 'KaiTi', cursive; font-size: 30px; color: #b8860b; }
+  .tpname { font-size: 18px; font-family: var(--font-title); }
+  .tpr { font-family: ui-monospace, monospace; font-size: 16px; color: #a23527; }
+  .ttier { border: 1.5px solid #b8860b; color: #b8860b; transform: rotate(-1.5deg); border-radius: 3px; padding: 0 8px; font-size: 12px; }
+  .twdl { font-size: .85rem; }
+  .tpev { flex-basis: 100%; font-size: .85rem; }
+  .tpev .mono { margin-left: 10px; font-size: 12px; }
+  .tpev .evlink { color: var(--azure); }
+  .tpev .evlink:hover { color: var(--ink, #a23527); }
 </style>

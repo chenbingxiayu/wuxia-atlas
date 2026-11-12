@@ -3,23 +3,34 @@ import Base from '../../layouts/Base.astro';
 import ratings from '@data/ratings.json';
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
-const conflicts = ratings.conflicts;
+import { personTarget } from '@lib/links';
+const conflicts = ratings.conflicts || [];
+// W0-T5 存目守卫（方案 §2.3）：胜/败方若为存目人物（无档案页）→ 纯文本防 404。
+const rows = conflicts.map((c) => ({
+  ...c,
+  wTarget: personTarget(c.data.winner),
+  lTarget: personTarget(c.data.loser),
+}));
 ---
 <Base title="武评 · 明文冲突">
   <p class="crumb"><a href={`${B}ratings/`}>武评总榜</a> / 明文冲突</p>
   <h1>明文 × 数据</h1>
   <div class="note">
     <b>冲突 ≠ 穿帮。</b>可能是剧情保护（主角光环）、旁白夸张、或数据抽取遗漏——
-    每一行都可以点开原文对质。数据结论来自 Glicko-2 合成榜展示分（收缩后）。
+    每一行都可以点开原文对质。数据结论来自全历史等级分（WHR）——只基于清洗后的明文对局。
   </div>
   {conflicts.length === 0 && <p class="lead">当前版本无达到阈值的明文×数据倒置（阈值：败方展示分高出胜方 ≥120，且对局为高置信非平局）。</p>}
   <div class="list">
-    {conflicts.map((c) => (
+    {rows.map((c) => (
       <div class="card">
         <div class="claim">「{c.claim}」<span class="mono loc">{c.claim_loc}</span></div>
-        <div class="data">数据结论：<a href={`${B}characters/${encodeURIComponent(c.data.winner)}/`}>{dsp(c.data.winner)}</a>（低分方）
-          胜 <a href={`${B}characters/${encodeURIComponent(c.data.loser)}/`}>{dsp(c.data.loser)}</a>
-          —— 倒置分差 <b>{c.data.delta}</b>（{c.data.match}）</div>
+        <div class="data">数据结论：{c.wTarget
+          ? <a href={`${B}characters/${encodeURIComponent(c.wTarget)}/`}>{dsp(c.data.winner)}</a>
+          : <span title="存目 · 暂无档案页">{dsp(c.data.winner)}</span>}（低分方）
+          胜 {c.lTarget
+          ? <a href={`${B}characters/${encodeURIComponent(c.lTarget)}/`}>{dsp(c.data.loser)}</a>
+          : <span title="存目 · 暂无档案页">{dsp(c.data.loser)}</span>}
+          —— 倒置分差 <b>{c.data.delta}</b></div>
         <div class="note2">{c.note} · <a href={`${B}ratings/versus/?a=${encodeURIComponent(c.data.winner)}&b=${encodeURIComponent(c.data.loser)}`}>对局详情 →</a></div>
       </div>
     ))}

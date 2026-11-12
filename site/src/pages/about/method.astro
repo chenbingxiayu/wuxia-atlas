@@ -1,6 +1,13 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { B } from '@lib/base';
+import ratingsJson from '@data/ratings.json';
+
+/* 武评引擎名随 live ratings.json meta.engine 走（P0-3 同批：不再硬编码引擎名）。 */
+const ENGINE_LABELS: Record<string, string> = { whr: 'WHR', glicko2: 'Glicko-2' };
+const engineLabel =
+  ENGINE_LABELS[String((ratingsJson as any).meta?.engine ?? '')] ??
+  String((ratingsJson as any).meta?.engine ?? '');
 ---
 
 <Base title="方法论" description="标注→实体→事件→关系 管线、九步法溯源与评分口径。">
@@ -12,7 +19,7 @@ import { B } from '@lib/base';
     <p>
       校勘拆分（章回版）→ 逐回标注（12 类实体 + 5 类动词，"标注不改正文"，lint 强制与原文逐字一致）
       → 实体登记（别名归并）→ 事件抽取与 LLM 逐条校订（correct/fix/drop 全留痕）
-      → 关系考订 → 跨书谱系 → 站点数据切片。
+      → 关系梳理（考订随标注扩展生长）→ 跨书谱系 → 站点数据切片。
       每一步产物都在知识库仓库中，可复核、可回滚、可重跑。
     </p>
   </section>
@@ -29,8 +36,8 @@ import { B } from '@lib/base';
   <section>
     <h2>三、谱系与宇宙层</h2>
     <p>
-      跨书顺序不由印象决定：作者"（全书完，请续看《X》）"式接力边为最强证据（strong），
-      "（事详拙著《X》）"回指与编年互证次之（ok），存疑处一律标注 todo。
+      跨书顺序不由印象决定：作者"（全书完，请续看《X》）"式接力边为最强证据（强证），
+      "（事详拙著《X》）"回指与编年互证次之（确证），存疑处一律标注 todo。
       转移到站点上的每个换乘站、每条线路都有证据定位符。
     </p>
   </section>
@@ -38,7 +45,7 @@ import { B } from '@lib/base';
   <section>
     <h2>四、武评口径</h2>
     <p>
-      Glicko-2 引擎（参数公开），对局取自交战/杀伐/擒控事件的场景级聚合；胜负词表+状态修正系数（中毒/偷袭/放水）
+      {engineLabel} 引擎（参数公开），对局取自交战/杀伐/擒控事件的场景级聚合；胜负词表+状态修正系数（中毒/偷袭/放水）
       降低剧情噪声；长尾角色向先验收缩；旁白明文做先验与 holdout 校准，冲突页并列展示"数据 vs 原文"。
       全部口径与版本号在 <a href={`${B}ratings/method`}>武评方法论页</a> 公开。
     </p>

@@ -1,0 +1,17 @@
+---
+import Base from '../../layouts/Base.astro';
+import GameCollection from '../../islands/GameCollection';
+import { B } from '@lib/base';
+import weaponsJson from '@data/weapons.json';
+const weaponN = (weaponsJson.weapons || weaponsJson.artifacts || []).length;
+---
+
+<Base title="神兵图鉴 · 江湖游乐场">
+  <p class="crumb"><a href={`${B}games/`}>江湖游乐场</a> / 神兵图鉴</p>
+  <h1>神兵图鉴</h1>
+  <p class="lead">
+    四书名物 {weaponN} 件——收集你的江湖见闻。点击卡片查看详情并收集；
+    随插画计划逐卡点亮，集齐有完成提示。每件名物的来历与流转都在名物谱。
+  </p>
+  <GameCollection client:visible />
+</Base>

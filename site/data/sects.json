@@ -1,17 +1,19 @@
 {
  "meta": {
-  "generated": "2026-11-06",
+  "generated": "2026-11-12",
   "schema": "sects-v1",
   "books": [
    "七剑下天山",
    "塞外奇侠传",
    "江湖三女侠",
    "白发魔女传",
-   "冰魄寒光剑"
+   "冰魄寒光剑",
+   "散花女侠",
+   "联剑风云录"
   ],
   "totals": {
-   "sects": 59,
-   "cross_book": 18
+   "sects": 70,
+   "cross_book": 26
   },
   "note": "成员册来自人物档案的门派线索（derived，strong/ok 级）；恩怨对头待 M4 与侠谱评分一同上线（EX-6 桥接：旧站 18 派全量保留 + 新表候选，见 field_gaps）",
   "source": "新 registry/词表 + 旧考订表只读（桥接层 EX-6）",
@@ -21,10 +23,31 @@
    "tenures/lineage_gaps/lineage_todo：仅门派世系表 7 派有考订值，其余门派为空数组；旧站记录已保留旧值。",
    "ev_total：旧口径=事件参与数（事件表冻结）；本次更新为 concordance/tagged 标注出现次数口径（D03 事件层未上线）。",
    "books：更新为 5 书（含冰魄寒光剑）；旧站 4 书。",
-   "新增新表候选 40 派：铁扇帮、五龙帮、天地会、白教、武威镖局、龙门帮、西藏红教、形意派、红教、灵山派、西藏天龙派、长安镖局、青阳帮、大地会、密宗、崐卢剑派、海阳帮、形意门、洪门、眉山寨、鹰爪门、黄教、丐帮、剑派、唐门、喇嘛教、噶拳派、崆峒派、振威镖局、振远镖局…；政权/军队/官署/族属类组织按旧站口径排除。"
+   "新增新表候选 51 派：丐帮、白教、崆峒派、青城派、七阴教、灵山派、氓山派、大内、形意门、红教、黄教、铁扇帮、镇远镖局、五龙帮、天地会、密宗、形意派、海阳帮、金刀寨、僵尸门、禅宗、武威镖局、鹰爪门、赤城派、龙门帮、西藏红教、点苍派、青阳帮、泰山帮、长安镖局…；政权/军队/官署/族属类组织按旧站口径排除。",
+   "scope 口径（tianshan-demo）：books 裁到 scope（books ∩ scope，scope 内无出现的门派不入表）、arts_by_pred 按 book ∈ scope 过滤（空组剔除）；members/tenures/ev_total 无逐书归属或属人工考订值，保持全量口径原值（成员/频次裁剪待后续批次）。",
+   "type/seat：kb/校订/门派驻地考订.tsv 校定行 12 派（type + seat{name,status,basis}），入表 11 派；其余 59 派人工考订未覆盖（无 type/seat 字段，非 null）；考订在案而库内无 ◆/& 出现记录不入表：明月峡。"
+  ],
+  "scope": "tianshan-demo",
+  "notes": [
+   "W2-B6 势力类型/驻地：kb/校订/门派驻地考订.tsv 校定行 12 派，type/seat 注入 11 派；考订在案而管线未收、由 TSV 入册 1 派（大内，books/ev_total 取 concordance ◆/& 口径，source=new）；未入表门派无 type/seat 字段（前端按字段存在性做势力分区/存目分组）。库内无出现记录不入表 1 派（明月峡）。"
   ]
  },
  "sects": [
+  {
+   "canonical": "丐帮",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "cross_book": true,
+   "ev_total": 845,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
   {
    "canonical": "武当派",
    "books": [
@@ -32,10 +55,12 @@
     "塞外奇侠传",
     "江湖三女侠",
     "白发魔女传",
-    "冰魄寒光剑"
+    "冰魄寒光剑",
+    "散花女侠",
+    "联剑风云录"
    ],
    "cross_book": true,
-   "ev_total": 270,
+   "ev_total": 648,
    "arts_by_pred": {
     "拥有": [
      {
@@ -389,463 +414,13 @@
      "kind": "明文在位"
     }
    ],
-   "source": "legacy"
-  },
-  {
-   "canonical": "少林",
-   "books": [
-    "七剑下天山",
-    "江湖三女侠",
-    "白发魔女传",
-    "冰魄寒光剑"
-   ],
-   "cross_book": true,
-   "ev_total": 83,
-   "arts_by_pred": {
-    "传授": [
-     {
-      "art": "罗汉拳",
-      "pred": "传授",
-      "level": "功法",
-      "locs": [
-       "020:101",
-       "048:43"
-      ],
-      "ev": 2,
-      "note": "048:41 明文「武功曾得少林三老真传」（雍正）",
-      "book": "江湖三女侠"
-     }
-    ]
-   },
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "legacy"
-  },
-  {
-   "canonical": "无极派",
-   "books": [
-    "七剑下天山",
-    "江湖三女侠"
-   ],
-   "cross_book": true,
-   "ev_total": 70,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "无极剑法",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "000:67",
-       "000:75",
-       "001:109",
-       "001:115"
-      ],
-      "ev": 25,
-      "note": "003:71 明文\"这位便是无极派老前辈傅青主\"；001:127 傅青主无极剑凌空下击",
-      "book": "七剑下天山"
-     }
-    ]
-   },
-   "members": [
-    {
-     "name": "傅青主",
-     "tier": "ok",
-     "via": [
-      "无极剑法"
-     ]
-    },
-    {
-     "name": "刘郁芳",
-     "tier": "ok",
-     "via": [
-      "无极剑法"
-     ]
-    }
-   ],
-   "tenures": [
-    {
-     "leader": "刘郁芳",
-     "conf": "ok",
-     "period": {
-      "from": "七剑下天山·001:105",
-      "to": "≥最后出现"
-     },
-     "evidence": [
-      {
-       "book": "七剑下天山",
-       "loc": "001:105",
-       "kind": "事件"
-      }
-     ],
-     "members": [
-      {
-       "name": "傅青主",
-       "role": "成员",
-       "tier": "ok"
-      },
-      {
-       "name": "刘郁芳",
-       "role": "掌门",
-       "tier": "ok"
-      }
-     ],
-     "successor": null
-    }
-   ],
-   "lineage_gaps": [
-    {
-     "before": "刘郁芳",
-     "note": "首条继任证据（七剑下天山·001:105）证明此前有在位掌门，未解析出姓名"
-    }
-   ],
-   "lineage_todo": [
-    {
-     "sect": "无极派",
-     "name": "钟万堂的好友",
-     "book": "江湖三女侠",
-     "loc": "38:33",
-     "kind": "明文在位"
-    },
-    {
-     "sect": "无极派",
-     "name": "又委托我来迁葬一",
-     "book": "江湖三女侠",
-     "loc": "43:197",
-     "kind": "明文在位"
-    },
-    {
-     "sect": "无极派",
-     "name": "的位置么",
-     "book": "江湖三女侠",
-     "loc": "46:9",
-     "kind": "明文在位"
-    }
-   ],
-   "source": "legacy"
-  },
-  {
-   "canonical": "少林寺",
-   "books": [
-    "江湖三女侠"
-   ],
-   "cross_book": false,
-   "ev_total": 50,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "伏虎棍法",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "009:65"
-      ],
-      "ev": 1,
-      "note": "009:65「少林派上乘的正宗伏虎棍法」",
-      "book": "江湖三女侠"
-     },
-     {
-      "art": "铁指禅",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "011:3"
-      ],
-      "ev": 1,
-      "note": "011:3「这是少林派的绝技，名为铁指禅」",
-      "book": "江湖三女侠"
-     }
-    ],
-    "镇山": [
-     {
-      "art": "罗汉伏虎拳",
-      "pred": "镇山",
-      "level": "功法",
-      "locs": [
-       "010:97"
-      ],
-      "ev": 1,
-      "note": "010:97 明文「少林寺的镇山拳法——罗汉伏虎拳」",
-      "book": "江湖三女侠"
-     }
-    ]
-   },
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "legacy"
-  },
-  {
-   "canonical": "铁扇帮",
-   "books": [
-    "七剑下天山",
-    "江湖三女侠"
-   ],
-   "cross_book": true,
-   "ev_total": 38,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "五龙帮",
-   "books": [
-    "七剑下天山"
-   ],
-   "cross_book": false,
-   "ev_total": 34,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "天龙派",
-   "books": [
-    "七剑下天山",
-    "塞外奇侠传",
-    "江湖三女侠",
-    "白发魔女传"
-   ],
-   "cross_book": true,
-   "ev_total": 34,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "天龙掌法",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "005:83",
-       "020:69",
-       "025:29",
-       "025:33"
-      ],
-      "ev": 4,
-      "note": "020:69 \"扎布伦寺的大喇嘛精于西藏的天龙掌法\"；024:17 明文天龙派（开山祖师天龙禅师）",
-      "book": "七剑下天山"
-     },
-     {
-      "art": "天龙剑法",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "025:89"
-      ],
-      "ev": 1,
-      "note": "025:89 天龙派六喇嘛布阵（025:75、025:149 明文\"天龙派\"）",
-      "book": "七剑下天山"
-     },
-     {
-      "art": "天龙剑阵",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "025:105",
-       "025:133",
-       "025:89"
-      ],
-      "ev": 3,
-      "note": "025:89 \"布下了天龙剑阵\"；025:133 天龙剑阵阵势；025:75 天龙派喇嘛",
-      "book": "七剑下天山"
-     },
-     {
-      "art": "天龙十八掌",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "025:35"
-      ],
-      "ev": 1,
-      "note": "025:35 明文\"共十八路，每路包括九个变化，总共一百六十二手\"；天雄禅师施用",
-      "book": "七剑下天山"
-     },
-     {
-      "art": "天龙剑阵",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "025:15",
-       "026:5"
-      ],
-      "ev": 2,
-      "note": "025:15 明文天龙派剑阵，十八高手结阵",
-      "book": "塞外奇侠传"
-     },
-     {
-      "art": "天龙剑法",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "030:67",
-       "030:81"
-      ],
-      "ev": 2,
-      "note": "天德上人，十八路一百六十二手（030:67）",
-      "book": "白发魔女传"
-     }
-    ]
-   },
-   "members": [
-    {
-     "name": "巴拉",
-     "tier": "ok",
-     "via": [
-      "天龙掌法"
-     ]
-    }
-   ],
-   "tenures": [
-    {
-     "leader": null,
-     "conf": "weak",
-     "period": {
-      "from": "—",
-      "to": "—"
-     },
-     "evidence": [],
-     "members": [
-      {
-       "name": "巴拉",
-       "role": "待归组",
-       "tier": "ok"
-      }
-     ],
-     "successor": null
-    }
-   ],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "legacy"
-  },
-  {
-   "canonical": "天地会",
-   "books": [
-    "七剑下天山"
-   ],
-   "cross_book": false,
-   "ev_total": 30,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "少林派",
-   "books": [
-    "七剑下天山",
-    "江湖三女侠",
-    "白发魔女传",
-    "冰魄寒光剑"
-   ],
-   "cross_book": true,
-   "ev_total": 21,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "少林罗汉拳",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "007:57"
-      ],
-      "ev": 1,
-      "note": "007:57 保柱所打\"少林罗汉拳\"（形⊂少林）",
-      "book": "七剑下天山"
-     },
-     {
-      "art": "少林神拳",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "009:107"
-      ],
-      "ev": 1,
-      "note": "尊胜禅师（009:107）",
-      "book": "白发魔女传"
-     },
-     {
-      "art": "绵掌",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "001:147",
-       "009:63",
-       "009:67",
-       "012:35"
-      ],
-      "ev": 4,
-      "note": "小沙弥闯关所用（009:63）",
-      "book": "白发魔女传"
-     },
-     {
-      "art": "伏魔铲法",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "009:97"
-      ],
-      "ev": 1,
-      "note": "\"武林绝学\"（009:97）",
-      "book": "白发魔女传"
-     }
-    ]
-   },
-   "members": [
-    {
-     "name": "桂天澜",
-     "tier": "ok",
-     "via": [
-      "绵掌"
-     ]
-    }
-   ],
-   "tenures": [
-    {
-     "leader": null,
-     "conf": "weak",
-     "period": {
-      "from": "—",
-      "to": "—"
-     },
-     "evidence": [],
-     "members": [
-      {
-       "name": "桂天澜",
-       "role": "待归组",
-       "tier": "ok"
-      }
-     ],
-     "successor": null
-    }
-   ],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "legacy"
-  },
-  {
-   "canonical": "白教",
-   "books": [
-    "冰魄寒光剑"
-   ],
-   "cross_book": false,
-   "ev_total": 12,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
+   "source": "legacy",
+   "type": "名门正派",
+   "seat": {
+    "name": "武当山",
+    "status": "实锚",
+    "basis": "明文：紫阳道长墓地遥见山上道观（白发 026:53 〖=武当山〗标记）"
+   }
   },
   {
    "canonical": "天山派",
@@ -854,10 +429,12 @@
     "塞外奇侠传",
     "江湖三女侠",
     "白发魔女传",
-    "冰魄寒光剑"
+    "冰魄寒光剑",
+    "散花女侠",
+    "联剑风云录"
    ],
    "cross_book": true,
-   "ev_total": 10,
+   "ev_total": 578,
    "arts_by_pred": {
     "拥有": [
      {
@@ -1026,7 +603,995 @@
    ],
    "lineage_gaps": [],
    "lineage_todo": [],
+   "source": "legacy",
+   "type": "名门正派",
+   "seat": {
+    "name": "天山",
+    "status": "实锚",
+    "basis": "明文：晦明禅师隐居天山北峰（白发 032/七剑 000）"
+   }
+  },
+  {
+   "canonical": "华山派",
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "ev_total": 223,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "金雕展翅",
+      "pred": "拥有",
+      "level": "招式",
+      "locs": [
+       "004:53"
+      ],
+      "ev": 1,
+      "note": "（004:53）",
+      "book": "白发魔女传"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy",
+   "type": "名门正派",
+   "seat": {
+    "name": "华山",
+    "status": "实锚",
+    "basis": "明文：华山派（003 回华山落雁峰明文）"
+   }
+  },
+  {
+   "canonical": "少林寺",
+   "books": [
+    "江湖三女侠",
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "cross_book": true,
+   "ev_total": 219,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "伏虎棍法",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "009:65"
+      ],
+      "ev": 1,
+      "note": "009:65「少林派上乘的正宗伏虎棍法」",
+      "book": "江湖三女侠"
+     },
+     {
+      "art": "铁指禅",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "011:3"
+      ],
+      "ev": 1,
+      "note": "011:3「这是少林派的绝技，名为铁指禅」",
+      "book": "江湖三女侠"
+     }
+    ],
+    "镇山": [
+     {
+      "art": "罗汉伏虎拳",
+      "pred": "镇山",
+      "level": "功法",
+      "locs": [
+       "010:97"
+      ],
+      "ev": 1,
+      "note": "010:97 明文「少林寺的镇山拳法——罗汉伏虎拳」",
+      "book": "江湖三女侠"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
    "source": "legacy"
+  },
+  {
+   "canonical": "少林",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传",
+    "冰魄寒光剑",
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "cross_book": true,
+   "ev_total": 170,
+   "arts_by_pred": {
+    "传授": [
+     {
+      "art": "罗汉拳",
+      "pred": "传授",
+      "level": "功法",
+      "locs": [
+       "020:101",
+       "048:43"
+      ],
+      "ev": 2,
+      "note": "048:41 明文「武功曾得少林三老真传」（雍正）",
+      "book": "江湖三女侠"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy"
+  },
+  {
+   "canonical": "白教",
+   "books": [
+    "冰魄寒光剑",
+    "联剑风云录"
+   ],
+   "cross_book": true,
+   "ev_total": 112,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "少林派",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传",
+    "冰魄寒光剑",
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "cross_book": true,
+   "ev_total": 101,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "少林罗汉拳",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "007:57"
+      ],
+      "ev": 1,
+      "note": "007:57 保柱所打\"少林罗汉拳\"（形⊂少林）",
+      "book": "七剑下天山"
+     },
+     {
+      "art": "少林神拳",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "009:107"
+      ],
+      "ev": 1,
+      "note": "尊胜禅师（009:107）",
+      "book": "白发魔女传"
+     },
+     {
+      "art": "绵掌",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "001:147",
+       "009:63",
+       "009:67",
+       "012:35"
+      ],
+      "ev": 4,
+      "note": "小沙弥闯关所用（009:63）",
+      "book": "白发魔女传"
+     },
+     {
+      "art": "伏魔铲法",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "009:97"
+      ],
+      "ev": 1,
+      "note": "\"武林绝学\"（009:97）",
+      "book": "白发魔女传"
+     }
+    ]
+   },
+   "members": [
+    {
+     "name": "桂天澜",
+     "tier": "ok",
+     "via": [
+      "绵掌"
+     ]
+    }
+   ],
+   "tenures": [
+    {
+     "leader": null,
+     "conf": "weak",
+     "period": {
+      "from": "—",
+      "to": "—"
+     },
+     "evidence": [],
+     "members": [
+      {
+       "name": "桂天澜",
+       "role": "待归组",
+       "tier": "ok"
+      }
+     ],
+     "successor": null
+    }
+   ],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy",
+   "type": "名门正派",
+   "seat": {
+    "name": "嵩山",
+    "status": "实锚",
+    "basis": "明文：少林寺在嵩山（多回）"
+   }
+  },
+  {
+   "canonical": "崆峒派",
+   "books": [
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 98,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "青城派",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "cross_book": true,
+   "ev_total": 97,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "七阴教",
+   "books": [
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 84,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "灵山派",
+   "books": [
+    "江湖三女侠"
+   ],
+   "cross_book": false,
+   "ev_total": 80,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "无极派",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "cross_book": true,
+   "ev_total": 75,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "无极剑法",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "000:67",
+       "000:75",
+       "001:109",
+       "001:115"
+      ],
+      "ev": 25,
+      "note": "003:71 明文\"这位便是无极派老前辈傅青主\"；001:127 傅青主无极剑凌空下击",
+      "book": "七剑下天山"
+     }
+    ]
+   },
+   "members": [
+    {
+     "name": "傅青主",
+     "tier": "ok",
+     "via": [
+      "无极剑法"
+     ]
+    },
+    {
+     "name": "刘郁芳",
+     "tier": "ok",
+     "via": [
+      "无极剑法"
+     ]
+    }
+   ],
+   "tenures": [
+    {
+     "leader": "刘郁芳",
+     "conf": "ok",
+     "period": {
+      "from": "七剑下天山·001:105",
+      "to": "≥最后出现"
+     },
+     "evidence": [
+      {
+       "book": "七剑下天山",
+       "loc": "001:105",
+       "kind": "事件"
+      }
+     ],
+     "members": [
+      {
+       "name": "傅青主",
+       "role": "成员",
+       "tier": "ok"
+      },
+      {
+       "name": "刘郁芳",
+       "role": "掌门",
+       "tier": "ok"
+      }
+     ],
+     "successor": null
+    }
+   ],
+   "lineage_gaps": [
+    {
+     "before": "刘郁芳",
+     "note": "首条继任证据（七剑下天山·001:105）证明此前有在位掌门，未解析出姓名"
+    }
+   ],
+   "lineage_todo": [
+    {
+     "sect": "无极派",
+     "name": "钟万堂的好友",
+     "book": "江湖三女侠",
+     "loc": "38:33",
+     "kind": "明文在位"
+    },
+    {
+     "sect": "无极派",
+     "name": "又委托我来迁葬一",
+     "book": "江湖三女侠",
+     "loc": "43:197",
+     "kind": "明文在位"
+    },
+    {
+     "sect": "无极派",
+     "name": "的位置么",
+     "book": "江湖三女侠",
+     "loc": "46:9",
+     "kind": "明文在位"
+    }
+   ],
+   "source": "legacy"
+  },
+  {
+   "canonical": "氓山派",
+   "books": [
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 59,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "大内",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传",
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "cross_book": true,
+   "ev_total": 50,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new",
+   "type": "朝廷势力",
+   "seat": {
+    "name": "北京",
+    "status": "实锚",
+    "basis": "明文：大内卫士驻紫禁城（三女侠主场）"
+   }
+  },
+  {
+   "canonical": "形意门",
+   "books": [
+    "江湖三女侠"
+   ],
+   "cross_book": false,
+   "ev_total": 49,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "峨嵋派",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "ev_total": 47,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "峨眉剑法",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "016:37",
+       "017:29"
+      ],
+      "ev": 2,
+      "note": "龙啸云\"炉火纯青\"（016:37）",
+      "book": "白发魔女传"
+     }
+    ],
+    "镇山": [
+     {
+      "art": "降龙伏虎拳",
+      "pred": "镇山",
+      "level": "功法",
+      "locs": [
+       "024:29"
+      ],
+      "ev": 1,
+      "note": "\"峨眉镇山之宝\"（024:29）",
+      "book": "白发魔女传"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy",
+   "type": "名门正派",
+   "seat": {
+    "name": "峨眉山",
+    "status": "实锚",
+    "basis": "明文：峨嵋派驻地峨眉山"
+   }
+  },
+  {
+   "canonical": "红教",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "冰魄寒光剑"
+   ],
+   "cross_book": true,
+   "ev_total": 43,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "飞龙掌",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "24:23",
+       "8:125",
+       "14:111",
+       "24:23"
+      ],
+      "ev": 9,
+      "note": "招式表：擒拿手 属 飞龙掌（conf=ok）",
+      "book": "七剑下天山"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "黄教",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "cross_book": false,
+   "ev_total": 40,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "铁扇帮",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "cross_book": true,
+   "ev_total": 38,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "天龙派",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "ev_total": 37,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "天龙掌法",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "005:83",
+       "020:69",
+       "025:29",
+       "025:33"
+      ],
+      "ev": 4,
+      "note": "020:69 \"扎布伦寺的大喇嘛精于西藏的天龙掌法\"；024:17 明文天龙派（开山祖师天龙禅师）",
+      "book": "七剑下天山"
+     },
+     {
+      "art": "天龙剑法",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "025:89"
+      ],
+      "ev": 1,
+      "note": "025:89 天龙派六喇嘛布阵（025:75、025:149 明文\"天龙派\"）",
+      "book": "七剑下天山"
+     },
+     {
+      "art": "天龙剑阵",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "025:105",
+       "025:133",
+       "025:89"
+      ],
+      "ev": 3,
+      "note": "025:89 \"布下了天龙剑阵\"；025:133 天龙剑阵阵势；025:75 天龙派喇嘛",
+      "book": "七剑下天山"
+     },
+     {
+      "art": "天龙十八掌",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "025:35"
+      ],
+      "ev": 1,
+      "note": "025:35 明文\"共十八路，每路包括九个变化，总共一百六十二手\"；天雄禅师施用",
+      "book": "七剑下天山"
+     },
+     {
+      "art": "天龙剑阵",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "025:15",
+       "026:5"
+      ],
+      "ev": 2,
+      "note": "025:15 明文天龙派剑阵，十八高手结阵",
+      "book": "塞外奇侠传"
+     },
+     {
+      "art": "天龙剑法",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "030:67",
+       "030:81"
+      ],
+      "ev": 2,
+      "note": "天德上人，十八路一百六十二手（030:67）",
+      "book": "白发魔女传"
+     }
+    ]
+   },
+   "members": [
+    {
+     "name": "巴拉",
+     "tier": "ok",
+     "via": [
+      "天龙掌法"
+     ]
+    }
+   ],
+   "tenures": [
+    {
+     "leader": null,
+     "conf": "weak",
+     "period": {
+      "from": "—",
+      "to": "—"
+     },
+     "evidence": [],
+     "members": [
+      {
+       "name": "巴拉",
+       "role": "待归组",
+       "tier": "ok"
+      }
+     ],
+     "successor": null
+    }
+   ],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy"
+  },
+  {
+   "canonical": "镇远镖局",
+   "books": [
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 37,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "五龙帮",
+   "books": [
+    "七剑下天山"
+   ],
+   "cross_book": false,
+   "ev_total": 34,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new",
+   "type": "绿林帮会",
+   "seat": {
+    "name": "总舵待考",
+    "status": "待考",
+    "basis": "明文见 004/009 回"
+   }
+  },
+  {
+   "canonical": "天地会",
+   "books": [
+    "七剑下天山"
+   ],
+   "cross_book": false,
+   "ev_total": 31,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "密宗",
+   "books": [
+    "白发魔女传",
+    "冰魄寒光剑"
+   ],
+   "cross_book": true,
+   "ev_total": 27,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "形意派",
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "ev_total": 25,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "如封似闭",
+      "pred": "拥有",
+      "level": "招式",
+      "locs": [
+       "8:67"
+      ],
+      "ev": 1,
+      "note": "招式表：如封似闭（conf=weak）",
+      "book": "白发魔女传"
+     },
+     {
+      "art": "雁落平沙",
+      "pred": "拥有",
+      "level": "招式",
+      "locs": [
+       "19:17"
+      ],
+      "ev": 1,
+      "note": "招式表：雁落平沙（conf=weak）",
+      "book": "江湖三女侠"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "海阳帮",
+   "books": [
+    "江湖三女侠",
+    "联剑风云录"
+   ],
+   "cross_book": true,
+   "ev_total": 24,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "金刀寨",
+   "books": [
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 23,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "嵩阳派",
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "ev_total": 18,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "嵩阳披风剑",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "004:13"
+      ],
+      "ev": 1,
+      "note": "赵挺（004:13）",
+      "book": "白发魔女传"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy"
+  },
+  {
+   "canonical": "昆仑派",
+   "books": [
+    "白发魔女传",
+    "散花女侠"
+   ],
+   "cross_book": true,
+   "ev_total": 17,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "龙形十八式",
+      "pred": "拥有",
+      "level": "招式",
+      "locs": [
+       "008:73",
+       "008:77"
+      ],
+      "ev": 2,
+      "note": "含\"金龙探爪\"（008:73）",
+      "book": "白发魔女传"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy",
+   "type": "名门正派",
+   "seat": {
+    "name": "昆仑山",
+    "status": "实锚",
+    "basis": "明文：昆仑派驻地昆仑山"
+   }
+  },
+  {
+   "canonical": "太极派",
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "cross_book": true,
+   "ev_total": 16,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "太极十三势",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "006:5"
+      ],
+      "ev": 1,
+      "note": "鼻祖张三丰所创（006:5）",
+      "book": "白发魔女传"
+     },
+     {
+      "art": "太极拳",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "017:87"
+      ],
+      "ev": 1,
+      "note": "（017:87，弱证）",
+      "book": "白发魔女传"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy"
+  },
+  {
+   "canonical": "终南派",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "cross_book": true,
+   "ev_total": 15,
+   "arts_by_pred": {
+    "拥有": [
+     {
+      "art": "游身掌法",
+      "pred": "拥有",
+      "level": "功法",
+      "locs": [
+       "003:61"
+      ],
+      "ev": 1,
+      "note": "003:59 明文\"展开终南派游身掌法\"",
+      "book": "七剑下天山"
+     }
+    ]
+   },
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "legacy",
+   "type": "名门正派",
+   "seat": {
+    "name": "终南山",
+    "status": "实锚",
+    "basis": "明文：终南派驻地终南山"
+   }
+  },
+  {
+   "canonical": "僵尸门",
+   "books": [
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 11,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "禅宗",
+   "books": [
+    "江湖三女侠"
+   ],
+   "cross_book": false,
+   "ev_total": 11,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
   },
   {
    "canonical": "武威镖局",
@@ -1085,62 +1650,33 @@
    "source": "legacy"
   },
   {
-   "canonical": "终南派",
+   "canonical": "鹰爪门",
    "books": [
-    "七剑下天山",
-    "江湖三女侠"
+    "冰魄寒光剑",
+    "散花女侠"
    ],
    "cross_book": true,
    "ev_total": 9,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "游身掌法",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "003:61"
-      ],
-      "ev": 1,
-      "note": "003:59 明文\"展开终南派游身掌法\"",
-      "book": "七剑下天山"
-     }
-    ]
-   },
+   "arts_by_pred": {},
    "members": [],
    "tenures": [],
    "lineage_gaps": [],
    "lineage_todo": [],
-   "source": "legacy"
+   "source": "new"
   },
   {
-   "canonical": "嵩阳派",
+   "canonical": "赤城派",
    "books": [
-    "江湖三女侠",
-    "白发魔女传"
+    "散花女侠"
    ],
-   "cross_book": true,
+   "cross_book": false,
    "ev_total": 8,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "嵩阳披风剑",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "004:13"
-      ],
-      "ev": 1,
-      "note": "赵挺（004:13）",
-      "book": "白发魔女传"
-     }
-    ]
-   },
+   "arts_by_pred": {},
    "members": [],
    "tenures": [],
    "lineage_gaps": [],
    "lineage_todo": [],
-   "source": "legacy"
+   "source": "new"
   },
   {
    "canonical": "长白山派",
@@ -1218,7 +1754,13 @@
      "kind": "明文在位"
     }
    ],
-   "source": "legacy"
+   "source": "legacy",
+   "type": "名门正派",
+   "seat": {
+    "name": "长白山",
+    "status": "实锚",
+    "basis": "明文：长白山派（胡氏兄弟）"
+   }
   },
   {
    "canonical": "龙门帮",
@@ -1235,53 +1777,51 @@
    "source": "new"
   },
   {
-   "canonical": "峨嵋派",
+   "canonical": "西藏红教",
    "books": [
-    "七剑下天山",
-    "江湖三女侠",
-    "白发魔女传"
+    "江湖三女侠"
    ],
-   "cross_book": true,
-   "ev_total": 5,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "峨眉剑法",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "016:37",
-       "017:29"
-      ],
-      "ev": 2,
-      "note": "龙啸云\"炉火纯青\"（016:37）",
-      "book": "白发魔女传"
-     }
-    ],
-    "镇山": [
-     {
-      "art": "降龙伏虎拳",
-      "pred": "镇山",
-      "level": "功法",
-      "locs": [
-       "024:29"
-      ],
-      "ev": 1,
-      "note": "\"峨眉镇山之宝\"（024:29）",
-      "book": "白发魔女传"
-     }
-    ]
-   },
+   "cross_book": false,
+   "ev_total": 7,
+   "arts_by_pred": {},
    "members": [],
    "tenures": [],
    "lineage_gaps": [],
    "lineage_todo": [],
-   "source": "legacy"
+   "source": "new"
   },
   {
-   "canonical": "西藏红教",
+   "canonical": "点苍派",
    "books": [
-    "江湖三女侠"
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 6,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "青阳帮",
+   "books": [
+    "七剑下天山"
+   ],
+   "cross_book": false,
+   "ev_total": 6,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "泰山帮",
+   "books": [
+    "联剑风云录"
    ],
    "cross_book": false,
    "ev_total": 5,
@@ -1293,35 +1833,24 @@
    "source": "new"
   },
   {
-   "canonical": "太极派",
+   "canonical": "雪山派",
    "books": [
     "江湖三女侠",
     "白发魔女传"
    ],
    "cross_book": true,
-   "ev_total": 4,
+   "ev_total": 5,
    "arts_by_pred": {
     "拥有": [
      {
-      "art": "太极十三势",
+      "art": "明驼千里",
       "pred": "拥有",
-      "level": "功法",
+      "level": "招式",
       "locs": [
-       "006:5"
+       "004:53"
       ],
       "ev": 1,
-      "note": "鼻祖张三丰所创（006:5）",
-      "book": "白发魔女传"
-     },
-     {
-      "art": "太极拳",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "017:87"
-      ],
-      "ev": 1,
-      "note": "（017:87，弱证）",
+      "note": "（004:53）",
       "book": "白发魔女传"
      }
     ]
@@ -1333,39 +1862,13 @@
    "source": "legacy"
   },
   {
-   "canonical": "形意派",
+   "canonical": "长安镖局",
    "books": [
-    "江湖三女侠",
     "白发魔女传"
    ],
-   "cross_book": true,
+   "cross_book": false,
    "ev_total": 4,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "如封似闭",
-      "pred": "拥有",
-      "level": "招式",
-      "locs": [
-       "8:67"
-      ],
-      "ev": 1,
-      "note": "招式表：如封似闭（conf=weak）",
-      "book": "白发魔女传"
-     },
-     {
-      "art": "雁落平沙",
-      "pred": "拥有",
-      "level": "招式",
-      "locs": [
-       "19:17"
-      ],
-      "ev": 1,
-      "note": "招式表：雁落平沙（conf=weak）",
-      "book": "江湖三女侠"
-     }
-    ]
-   },
+   "arts_by_pred": {},
    "members": [],
    "tenures": [],
    "lineage_gaps": [],
@@ -1373,32 +1876,13 @@
    "source": "new"
   },
   {
-   "canonical": "红教",
+   "canonical": "山寨",
    "books": [
-    "七剑下天山",
-    "江湖三女侠",
-    "冰魄寒光剑"
+    "联剑风云录"
    ],
-   "cross_book": true,
-   "ev_total": 4,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "飞龙掌",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "24:23",
-       "8:125",
-       "14:111",
-       "24:23"
-      ],
-      "ev": 9,
-      "note": "招式表：擒拿手 属 飞龙掌（conf=ok）",
-      "book": "七剑下天山"
-     }
-    ]
-   },
+   "cross_book": false,
+   "ev_total": 3,
+   "arts_by_pred": {},
    "members": [],
    "tenures": [],
    "lineage_gaps": [],
@@ -1406,9 +1890,9 @@
    "source": "new"
   },
   {
-   "canonical": "灵山派",
+   "canonical": "振威镖局",
    "books": [
-    "江湖三女侠"
+    "散花女侠"
    ],
    "cross_book": false,
    "ev_total": 3,
@@ -1435,34 +1919,6 @@
    "source": "new"
   },
   {
-   "canonical": "长安镖局",
-   "books": [
-    "白发魔女传"
-   ],
-   "cross_book": false,
-   "ev_total": 3,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "青阳帮",
-   "books": [
-    "七剑下天山"
-   ],
-   "cross_book": false,
-   "ev_total": 3,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
    "canonical": "大地会",
    "books": [
     "七剑下天山"
@@ -1477,12 +1933,11 @@
    "source": "new"
   },
   {
-   "canonical": "密宗",
+   "canonical": "天龙门",
    "books": [
-    "白发魔女传",
-    "冰魄寒光剑"
+    "塞外奇侠传"
    ],
-   "cross_book": true,
+   "cross_book": false,
    "ev_total": 2,
    "arts_by_pred": {},
    "members": [],
@@ -1506,38 +1961,9 @@
    "source": "new"
   },
   {
-   "canonical": "昆仑派",
+   "canonical": "巡抚衙门",
    "books": [
-    "白发魔女传"
-   ],
-   "cross_book": false,
-   "ev_total": 2,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "龙形十八式",
-      "pred": "拥有",
-      "level": "招式",
-      "locs": [
-       "008:73",
-       "008:77"
-      ],
-      "ev": 2,
-      "note": "含\"金龙探爪\"（008:73）",
-      "book": "白发魔女传"
-     }
-    ]
-   },
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "legacy"
-  },
-  {
-   "canonical": "海阳帮",
-   "books": [
-    "江湖三女侠"
+    "联剑风云录"
    ],
    "cross_book": false,
    "ev_total": 2,
@@ -1549,54 +1975,97 @@
    "source": "new"
   },
   {
-   "canonical": "雪山派",
+   "canonical": "徐淮帮",
    "books": [
-    "江湖三女侠",
-    "白发魔女传"
+    "联剑风云录"
    ],
-   "cross_book": true,
+   "cross_book": false,
    "ev_total": 2,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "明驼千里",
-      "pred": "拥有",
-      "level": "招式",
-      "locs": [
-       "004:53"
-      ],
-      "ev": 1,
-      "note": "（004:53）",
-      "book": "白发魔女传"
-     }
-    ]
-   },
+   "arts_by_pred": {},
    "members": [],
    "tenures": [],
    "lineage_gaps": [],
    "lineage_todo": [],
-   "source": "legacy"
+   "source": "new"
   },
   {
-   "canonical": "华山派",
+   "canonical": "贵州巡抚衙门",
    "books": [
-    "七剑下天山",
-    "白发魔女传"
+    "联剑风云录"
    ],
-   "cross_book": true,
+   "cross_book": false,
+   "ev_total": 2,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "韩家镖局",
+   "books": [
+    "散花女侠"
+   ],
+   "cross_book": false,
+   "ev_total": 2,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "剑派",
+   "books": [
+    "散花女侠"
+   ],
+   "cross_book": false,
+   "ev_total": 1,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "振远镖局",
+   "books": [
+    "散花女侠"
+   ],
+   "cross_book": false,
+   "ev_total": 1,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "武当北支",
+   "books": [
+    "七剑下天山"
+   ],
+   "cross_book": false,
    "ev_total": 1,
    "arts_by_pred": {
     "拥有": [
      {
-      "art": "金雕展翅",
+      "art": "达摩一百零八式",
       "pred": "拥有",
-      "level": "招式",
+      "level": "功法",
       "locs": [
-       "004:53"
+       "005:91",
+       "020:67",
+       "020:69",
+       "020:71"
       ],
-      "ev": 1,
-      "note": "（004:53）",
-      "book": "白发魔女传"
+      "ev": 17,
+      "note": "020:69 明文\"达摩一百零八式，在武当北支传下来的只有五式\"；030:147 桂仲明为武当北支开山祖师",
+      "book": "七剑下天山"
      }
     ]
    },
@@ -1607,9 +2076,23 @@
    "source": "legacy"
   },
   {
-   "canonical": "形意门",
+   "canonical": "水寨",
    "books": [
-    "江湖三女侠"
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 1,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "江南镇海帮",
+   "books": [
+    "联剑风云录"
    ],
    "cross_book": false,
    "ev_total": 1,
@@ -1635,6 +2118,34 @@
    "source": "new"
   },
   {
+   "canonical": "灵弋帮",
+   "books": [
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 1,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
+   "canonical": "玄机门",
+   "books": [
+    "联剑风云录"
+   ],
+   "cross_book": false,
+   "ev_total": 1,
+   "arts_by_pred": {},
+   "members": [],
+   "tenures": [],
+   "lineage_gaps": [],
+   "lineage_todo": [],
+   "source": "new"
+  },
+  {
    "canonical": "眉山寨",
    "books": [
     "七剑下天山"
@@ -1649,9 +2160,9 @@
    "source": "new"
   },
   {
-   "canonical": "鹰爪门",
+   "canonical": "辰州僵尸门",
    "books": [
-    "冰魄寒光剑"
+    "联剑风云录"
    ],
    "cross_book": false,
    "ev_total": 1,
@@ -1663,9 +2174,9 @@
    "source": "new"
   },
   {
-   "canonical": "黄教",
+   "canonical": "镇海帮",
    "books": [
-    "冰魄寒光剑"
+    "联剑风云录"
    ],
    "cross_book": false,
    "ev_total": 1,
@@ -1677,22 +2188,12 @@
    "source": "new"
   },
   {
-   "canonical": "丐帮",
-   "books": [],
+   "canonical": "飞龙镖局",
+   "books": [
+    "散花女侠"
+   ],
    "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "剑派",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
+   "ev_total": 1,
    "arts_by_pred": {},
    "members": [],
    "tenures": [],
@@ -1729,43 +2230,13 @@
    "tenures": [],
    "lineage_gaps": [],
    "lineage_todo": [],
-   "source": "legacy"
-  },
-  {
-   "canonical": "唐门",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "喇嘛教",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "噶拳派",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
+   "source": "legacy",
+   "type": "世家",
+   "seat": {
+    "name": "四川成都",
+    "status": "推理",
+    "basis": "明文：四川唐家（毒暗器世家）——驻地成都为推理"
+   }
   },
   {
    "canonical": "岳家",
@@ -1794,193 +2265,6 @@
    "lineage_gaps": [],
    "lineage_todo": [],
    "source": "legacy"
-  },
-  {
-   "canonical": "崆峒派",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "振威镖局",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "振远镖局",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "武当北支",
-   "books": [
-    "七剑下天山"
-   ],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {
-    "拥有": [
-     {
-      "art": "达摩一百零八式",
-      "pred": "拥有",
-      "level": "功法",
-      "locs": [
-       "005:91",
-       "020:67",
-       "020:69",
-       "020:71"
-      ],
-      "ev": 17,
-      "note": "020:69 明文\"达摩一百零八式，在武当北支传下来的只有五式\"；030:147 桂仲明为武当北支开山祖师",
-      "book": "七剑下天山"
-     }
-    ]
-   },
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "legacy"
-  },
-  {
-   "canonical": "海龙帮",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "点苍派",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "白喇嘛教",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "祅教",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "赤城派",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "青城派",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "韩家镖局",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "风砂堡",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "飞龙帮",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
-  },
-  {
-   "canonical": "飞龙镖局",
-   "books": [],
-   "cross_book": false,
-   "ev_total": 0,
-   "arts_by_pred": {},
-   "members": [],
-   "tenures": [],
-   "lineage_gaps": [],
-   "lineage_todo": [],
-   "source": "new"
   }
  ]
 }

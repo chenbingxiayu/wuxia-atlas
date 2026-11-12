@@ -2,17 +2,39 @@
 import Base from '../../layouts/Base.astro';
 import { B } from '@lib/base';
 import MapTrail from '../../islands/MapTrail';
+import sectsJson from '@data/sects.json';
+
+/* W3-T5 图层/搜索支撑数据（构建期提取，island props 传入——免运行时拉 7 书切片）：
+   placeIndex = 全书目 atlas 切片中带坐标的地名（F6 搜索索引，条目标注书名；无坐标地名
+   本就不落图，不进索引）；sectPages = 有门派页的 canonical 集（驻地标记点击守卫，
+   无页门派不虚挂 404 链接）。 */
+interface PlaceHit { n: string; b: string; la: number; ln: number; p?: string }
+const sliceMods = import.meta.glob('../../../data/atlas/*.json', { eager: true }) as Record<string, any>;
+const placeIndex: PlaceHit[] = [];
+for (const [path, mod] of Object.entries(sliceMods)) {
+  if (path.endsWith('state.json')) continue;
+  const s = mod.default || mod;
+  if (!s?.title || !s?.places) continue;
+  for (const [name, p] of Object.entries(s.places as Record<string, any>)) {
+    if (p?.lat == null) continue;
+    placeIndex.push({ n: name, b: s.title, la: p.lat, ln: p.lng, p: p.precision });
+  }
+}
+placeIndex.sort((x, y) => x.n.localeCompare(y.n, 'zh-Hans-CN') || x.b.localeCompare(y.b, 'zh'));
+const sectPages: string[] = (sectsJson as any).sects.map((s: any) => s.canonical);
 ---
 <Base title="时空 · 行踪地图">
-  <p class="crumb"><a href={`${B}`}>首页</a> / 时空 · 行踪地图（M6 · jiangshan 形态）</p>
+  <p class="crumb"><a href={`${B}`}>首页</a> / 时空 · 行踪地图</p>
   <h1>侠客行踪地图</h1>
   <p class="lead">
-    拖动回目滑块观史：轨迹逐回生长（已至实底 / 未至空环 / 当前脉冲）、编年播放同步本回事件流；
+    拖动回目滑块观史：轨迹逐回生长（已至实底 / 未至空环 / 当前脉冲），编年播放同步本回事件流。
+    <b>连线表示「同回出现」，不表示行进路线</b>——侠客的考订级行程见各人物档案的剧情地图。
+    可叠加图层：门派驻地（点击进门派页）与剧情锚点（点击看剧情卡）；地名搜索支持全书目定位（命中标注书名）。
     点击任意地点出<b>地名谱系卡</b>（真实经纬度 + 沿革 + 在场人物，可跳回目页）。
-    底图为真实省界（DataV GeoAtlas），坐标来自 OpenStreetMap 检索 + 人工核验（WGS-84）；
+    底图为真实省界（DataV GeoAtlas），坐标来自 OpenStreetMap 检索与考订（WGS-84），置信分级见地名卡、逐点核验进行中；
     虚构地名按考订锚点偏移安放、不发布经纬度。支持 <code>?book=&amp;chap=&amp;person=&amp;place=&amp;lens=</code> 深链。
   </p>
-  <MapTrail client:load />
+  <MapTrail client:load sectPages={sectPages} placeIndex={placeIndex} />
   <noscript><p class="lead">行踪地图需要启用 JavaScript（交互岛按需加载；全部数据为静态 JSON）。</p></noscript>
 </Base>
 
@@ -58,8 +80,32 @@ import MapTrail from '../../islands/MapTrail';
   .mt-legend { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 12px; color: #5f584b; padding: 6px 6px 2px; }
   .mt-legend .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
   .mt-legend .dot.hollow { background: #f4eee0; border: 2px solid #a23527; }
-  .mt-evgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 4px 18px; }
-  .mt-ev { display: flex; gap: 8px; align-items: baseline; font-size: 13.5px; padding: 4px 2px; border-bottom: 1px solid #e6ddc8; }
+  /* W3-T5 图例口径明示：连线语义（设计 §八） */
+  .mt-semic { color: #a23527; font-weight: 700; border-bottom: 1px dashed #b5a687; }
+  /* W3-T5 地名搜索（F6）：下拉命中列表，条目标注书名+置信档 */
+  .mt-search { position: relative; }
+  .mt-search-input { font-family: inherit; border: 1px solid #b5a687; background: #fffdf6; color: #31536c;
+    border-radius: 999px; padding: 3px 12px; font-size: 13px; width: 220px; }
+  .mt-search-input:focus { outline: none; border-color: #a23527; }
+  .mt-search-list { position: absolute; top: calc(100% + 4px); right: 0; z-index: 30; width: 260px;
+    max-height: 260px; overflow: auto; margin: 0; padding: 4px; list-style: none;
+    background: #fbf8ef; border: 1.5px solid #262420; border-radius: 4px;
+    box-shadow: 3px 4px 0 rgba(38, 36, 32, .12); }
+  .mt-search-list button { display: flex; justify-content: space-between; align-items: baseline; gap: 8px;
+    width: 100%; border: none; background: none; font-family: inherit; font-size: 13px; color: #31536c;
+    padding: 5px 8px; cursor: pointer; text-align: left; }
+  .mt-search-list button:hover { background: #f0e9d8; color: #a23527; }
+  .mt-search-list button b { white-space: nowrap; }
+  /* W3-T5 剧情锚点卡（点击锚点弹出） */
+  .mt-plotcard { position: absolute; bottom: 40px; right: 24px; width: 330px; background: #fbf8ef;
+    border: 1.5px solid #262420; border-radius: 4px; padding: 12px 14px; max-height: 300px; overflow: auto;
+    box-shadow: 3px 4px 0 rgba(38, 36, 32, .12); font-size: 12.5px; display: flex; flex-direction: column; gap: 4px; }
+  .mt-plotline { font-size: 13px; color: #31536c; }
+  /* W3-T5 搜索/选中定位环（「居中该点」的高亮示意，脉冲） */
+  .mt-focus { animation: mt-focus-pulse 1.6s ease-in-out infinite; }
+  @keyframes mt-focus-pulse { 0%, 100% { opacity: .95; } 50% { opacity: .3; } }
+  .mt-evgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: 4px 18px; }
+  .mt-ev { display: flex; gap: 8px; align-items: baseline; font-size: 13.5px; padding: 4px 2px; border-bottom: 1px solid #e6ddc8; min-width: 0; overflow-wrap: anywhere; }
   .mt-verb { color: #a23527; border-bottom: 1px solid #b5a687; min-width: 1.6em; text-align: center; font-weight: 600; }
   .mt-who { font-weight: 700; }
   .mt-loc { margin-left: auto; color: #8a8172; font-size: 11px; white-space: nowrap; }
@@ -71,5 +117,7 @@ import MapTrail from '../../islands/MapTrail';
   @media (max-width: 720px) {
     .mt-state { position: static; max-width: none; margin-top: 8px; }
     .mt-trace { position: static; width: auto; margin-top: 8px; }
+    .mt-plotcard { position: static; width: auto; margin-top: 8px; }
+    .mt-search-input { width: 150px; }
   }
 </style>

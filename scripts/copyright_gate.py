@@ -12,9 +12,14 @@
      可用 `--no-provenance-whitelist` 复现旧口径（审计/回归用）。
   3) 只扫描文本类扩展名（.html/.css/.js/.svg/.txt/.xml/.json/.webmanifest）。
   3b) 内部链接必须带 base 前缀（项目子路径部署，href="/x" 会 404）；第二参数为 base 段。
+  4) ruleL1（W2-D4-C，天山演示版总体方案 §5.5「L1 参数进 copyright_gate 参数化规则」）：
+     武功评语（arts.json comments → dist /arts/<武功>/ 评语卡）属 L1 短引文，发布口径 =
+     单条 ≤16 字、每页 ≤2 条、逐条带「—— 原著 · <书名>」署名式样。按 dist HTML 的
+     quote-line 评语块定位（引文「…」+ quote-src 署名 span）；超限/缺署名即违规，闸门 FAIL。
 
 实现：语料行前 12 字建索引 → dist 文本滑窗查命中 → 命中后全文复核；
-     rule2 对 JSON 做路径感知扫描（provenance 豁免），非 JSON 按原文扫描。
+     rule2 对 JSON 做路径感知扫描（provenance 豁免），非 JSON 按原文扫描；
+     ruleL1 只扫 .html 评语块（scan_l1_html，独立可单测）。
 
 脚本位置：`Wuxiaxiaoshuo/scripts/copyright_gate.py`（仓库根 scripts/，非 wuxia-kb/scripts/）。
 用法（二选一，第二参数必须是 base 段 `wuxia-atlas`）：
@@ -28,7 +33,10 @@ import sys
 import tempfile
 from pathlib import Path
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
+# Windows 控制台（cp936）下强制 UTF-8 输出；stdout 已是 UTF-8（-X utf8 / pytest capture）不重包——
+# 重包会顶替 pytest 的全局捕获（import 即触发 ValueError: I/O operation on closed file）。
+if sys.stdout.encoding and sys.stdout.encoding.lower().replace("-", "") != "utf8":
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 ROOT = Path(__file__).resolve().parents[1]
 ZH = ROOT / "章回版"
 TEXT_EXT = {".html", ".css", ".js", ".svg", ".txt", ".xml", ".json", ".webmanifest"}
@@ -45,6 +53,13 @@ PROVENANCE_KEYS = {
     "generated_by", "notes", "note", "field_gaps", "copyright", "policy", "schema",
     "build", "build_order", "snapshot", "tool", "skill", "spec",
 }
+
+# ---- ruleL1（W2-D4-C）：武功评语发布参数（§5.5 数据契约：L1 参数 ≤16 字 × ≤2 条）
+L1_MAX_LEN = 16           # 单条评语字数上限（「」引文内文字，不含括号/markup）
+L1_MAX_PER_PAGE = 2       # 每页评语条数上限
+L1_QUOTE_BLOCK_RE = re.compile(r'<p class="quote-line"[^>]*>(.*?)</p>', re.S)
+L1_QUOTE_TEXT_RE = re.compile(r'「([^」]+)」')
+L1_SIG_RE = re.compile(r'—— 原著 ·\s*\S')   # 「—— 原著 · <书名>」署名式样（· 后须有书名）
 
 
 def corpus_lines(corpus_root: Path | None = None):
@@ -90,6 +105,34 @@ def split_json_strings(obj):
     return exempt, content
 
 
+def scan_l1_html(html: str, rel: str) -> list:
+    """单页 HTML 的 ruleL1 检测（纯函数，可单测）→ [(kind, detail, ctx)]。
+
+    定位：quote-line 评语块（引文「…」+ quote-src 署名 span——dist /arts/<武功>/ 评语卡 markup）。
+    违规：单条 >16 字（ruleL1 超长）；每页 >2 条（ruleL1 超量）；块内缺「—— 原著 · <书名>」
+    署名式样（ruleL1 缺署名）；块内无「」引文（格式异常）。
+    """
+    violations: list = []
+    n_quotes = 0
+    for m in L1_QUOTE_BLOCK_RE.finditer(html):
+        n_quotes += 1
+        inner = m.group(1)
+        plain = re.sub(r"<[^>]+>", "", inner)
+        ctx = f"（{rel} 第 {n_quotes} 条）"
+        q = L1_QUOTE_TEXT_RE.search(inner)
+        if q is None:
+            violations.append(("ruleL1", "评语块缺「」引文（格式异常）", ctx))
+            continue
+        quote = q.group(1)
+        if len(quote) > L1_MAX_LEN:
+            violations.append(("ruleL1", f"评语超 {L1_MAX_LEN} 字（{len(quote)} 字）：「{quote[:20]}」", ctx))
+        if not L1_SIG_RE.search(plain):
+            violations.append(("ruleL1", "评语缺署名式样「—— 原著 · 书名」", ctx))
+    if n_quotes > L1_MAX_PER_PAGE:
+        violations.append(("ruleL1", f"评语 {n_quotes} 条超每页 {L1_MAX_PER_PAGE} 条上限", f"（{rel}）"))
+    return violations
+
+
 def scan(dist: Path, base_seg: str = "", provenance_whitelist: bool = True,
          corpus_root: Path | None = None) -> dict:
     """执行三道规则；返回结构化结果（供 CLI 与 --selftest 复用）。"""
@@ -97,6 +140,7 @@ def scan(dist: Path, base_seg: str = "", provenance_whitelist: bool = True,
     full_parts, content2_parts, names = [], [], []
     exempt_counts = {tok: 0 for tok in CORPUS_TOKENS}
     json_files = json_parsed = 0
+    l1_per_file: list = []   # ruleL1：[(rel, [(kind, detail, ctx)…])]——violations 定义在循环后，先收集
     for fp in sorted(dist.rglob("*")):
         if not fp.is_file() or fp.suffix.lower() not in TEXT_EXT:
             continue
@@ -106,6 +150,10 @@ def scan(dist: Path, base_seg: str = "", provenance_whitelist: bool = True,
             continue
         names.append(str(fp.relative_to(dist)))
         full_parts.append(raw)
+        if fp.suffix.lower() == ".html":
+            l1_v = scan_l1_html(raw, names[-1])
+            if l1_v:
+                l1_per_file.append((names[-1], l1_v))
         if fp.suffix.lower() == ".json":
             json_files += 1
             try:
@@ -127,6 +175,7 @@ def scan(dist: Path, base_seg: str = "", provenance_whitelist: bool = True,
     violations = []
     hits_whitelisted = 0
     rule1_hits = 0
+    ruleL1_hits = 0
     for i in range(len(text) - K + 1):
         window = text[i:i + K]
         line = index.get(window)
@@ -161,6 +210,13 @@ def scan(dist: Path, base_seg: str = "", provenance_whitelist: bool = True,
         if len(violations) < 10:
             violations.append(("rule3", f'内部链接缺 base 前缀: href="/{m.group(1)}"', "（dist HTML）"))
 
+    # 规则 L1（W2-D4-C）：武功评语 ≤16 字 × 每页 ≤2 条 + 「—— 原著 · 」署名式样（只扫 .html）
+    for _rel, l1_v in l1_per_file:
+        ruleL1_hits += len(l1_v)
+        for kind, detail, ctx in l1_v:
+            if len(violations) < 10:
+                violations.append((kind, detail, ctx))
+
     return {
         "dist": str(dist),
         "base_seg": base_seg,
@@ -176,6 +232,7 @@ def scan(dist: Path, base_seg: str = "", provenance_whitelist: bool = True,
         "rule2_hits": rule2_hits,
         "provenance_exempt": exempt_counts,
         "rule3_hits": rule3_hits,
+        "ruleL1_hits": ruleL1_hits,
         "violations": violations,
         "ok": not violations,
     }
@@ -193,14 +250,15 @@ def print_result(res: dict) -> None:
     else:
         print("provenance 白名单：已禁用（--no-provenance-whitelist，旧口径）")
     print(f"规则 1 语料整行泄漏：{res['rule1_corpus_leaks']}（回目白名单命中 {res['rule1_whitelisted_hits']}）；"
-          f"规则 2 路径引用：{res['rule2_hits']}；规则 3 链接缺 base：{res['rule3_hits']}")
+          f"规则 2 路径引用：{res['rule2_hits']}；规则 3 链接缺 base：{res['rule3_hits']}；"
+          f"规则 L1 武功评语（≤{L1_MAX_LEN} 字×每页≤{L1_MAX_PER_PAGE} 条+署名）：{res['ruleL1_hits']}")
     if res["violations"]:
         print(f"\n✗ 版权闸门未通过：{len(res['violations'])} 类/处违规（最多显示 10 条）")
         for kind, v, ctx in res["violations"]:
             print(f"  - [{kind}] {v} {ctx}")
         return
     print(f"✓ 版权闸门通过：规则 1 语料整行泄漏 0（回目白名单 {res['rule1_whitelisted_hits']} 处）、"
-          f"规则 2/3 PASS")
+          f"规则 2/3/L1 PASS")
 
 
 def selftest() -> int:
@@ -253,6 +311,27 @@ def selftest() -> int:
                                       encoding="utf-8")
         rc = scan(clean, "wuxia-atlas", provenance_whitelist=True, corpus_root=td / "章回版")
         check("clean dist: 闸门 PASS", rc["ok"] is True and not rc["violations"], str(rc["violations"]))
+        # 4) ruleL1（W2-D4-C）：合规评语页 0 违规；超长 + 缺署名 → FAIL
+        l1_ok = td / "l1ok"
+        l1_ok.mkdir()
+        (l1_ok / "arts.html").write_text(
+            '<section><div class="card quotes"><p class="quote-line">「天下独步的剑法」'
+            '<span class="quote-src">—— 原著 · 七剑下天山 '
+            '<a href="/wuxia-atlas/books/x/000/">000:125</a></span></p></div></section>',
+            encoding="utf-8")
+        r_l1 = scan(l1_ok, "wuxia-atlas", provenance_whitelist=True, corpus_root=td / "章回版")
+        check("L1: 合规评语页 ruleL1=0 且整体 PASS", r_l1["ruleL1_hits"] == 0 and r_l1["ok"] is True,
+              f"ruleL1={r_l1['ruleL1_hits']}")
+        l1_bad = td / "l1bad"
+        l1_bad.mkdir()
+        (l1_bad / "arts.html").write_text(
+            '<section><div class="card quotes"><p class="quote-line">'
+            '「一二三四五六七八九十甲乙丙丁戊己庚」'
+            '<span class="quote-src">出处不详</span></p></div></section>',
+            encoding="utf-8")
+        r_l1b = scan(l1_bad, "wuxia-atlas", provenance_whitelist=True, corpus_root=td / "章回版")
+        check("L1: 17 字 + 缺署名 → 2 违规 FAIL", r_l1b["ruleL1_hits"] == 2 and r_l1b["ok"] is False,
+              f"ruleL1={r_l1b['ruleL1_hits']}")
     print(f"[copyright_gate selftest] {'PASS' if ok else 'FAIL'}")
     return 0 if ok else 1
 

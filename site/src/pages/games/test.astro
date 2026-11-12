@@ -1,0 +1,15 @@
+---
+import Base from '../../layouts/Base.astro';
+import GameTest from '../../islands/GameTest';
+import { B } from '@lib/base';
+---
+
+<Base title="测测你是梁书里的谁 · 江湖游乐场">
+  <p class="crumb"><a href={`${B}games/`}>江湖游乐场</a> / 性格测试</p>
+  <h1>测测你是梁书里的谁</h1>
+  <p class="lead">
+    十道性格题，不考知识——你的答案只用来匹配气质最接近的江湖人。
+    结果卡上的门派、武功、战绩全部来自人物档案，可点进档案对质。
+  </p>
+  <GameTest client:visible />
+</Base>

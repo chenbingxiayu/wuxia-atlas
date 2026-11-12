@@ -1,7 +1,7 @@
 {
  "book": "白发魔女传",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 08:44:36",
+ "generated": "2026-11-07",
+ "generated_at": "2026-11-07 03:43:32",
  "script": "scripts/relation_validator.py",
  "script_version": "0.1",
  "spec_version": "0.3-draft",
@@ -15,10 +15,10 @@
   "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
  ],
  "snapshot": {
-  "exported_at": "2026-11-06 08:44:36",
+  "exported_at": "2026-11-07 03:43:32",
   "tagged_chapters": 32,
   "concordance_generated": "2026-11-05T22:00:09+08:00",
-  "registry_entities": 738,
+  "registry_entities": 2926,
   "corpus_chapters": 32,
   "paragraphs": 2196,
   "verbs": 5700,
@@ -503,7 +503,7 @@
    "id": "白发魔女传#R0004"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "交手",
    "object": "练霓裳",
@@ -962,7 +962,7 @@
    "subject": "公孙大娘",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "白石道人",
+   "object": "白石",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -1250,7 +1250,7 @@
    "subject": "练霓裳",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -1424,7 +1424,7 @@
    "subject": "岳鸣珂",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "白石道人",
+   "object": "白石",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -1508,7 +1508,7 @@
    "subject": "慕容冲",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -1673,10 +1673,10 @@
    "id": "白发魔女传#R0028"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -1886,7 +1886,7 @@
    "subject": "红云道人",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -2180,7 +2180,7 @@
    "subject": "李申时",
    "subject_type": "@",
    "predicate": "师承",
-   "object": "白石道人",
+   "object": "白石",
    "object_type": "@",
    "confidence": "strong",
    "evidence_type": "E1明文",
@@ -2498,42 +2498,6 @@
    "subject": "卓一航",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "哈玛雅",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "030:30",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 1,
-   "loc": "030:30",
-   "chapter": 30,
-   "para": 30,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "白发魔女传"
-   ],
-   "locs": [
-    "030:30"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "白发魔女传#R0049"
-  },
-  {
-   "subject": "卓一航",
-   "subject_type": "@",
-   "predicate": "交手",
    "object": "天德上人",
    "object_type": "@",
    "confidence": "ok",
@@ -2564,7 +2528,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0050"
+   "id": "白发魔女传#R0049"
   },
   {
    "subject": "卓一航",
@@ -2600,7 +2564,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0051"
+   "id": "白发魔女传#R0050"
   },
   {
    "subject": "卓一航",
@@ -2636,7 +2600,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0052"
+   "id": "白发魔女传#R0051"
   },
   {
    "subject": "卓一航",
@@ -2672,7 +2636,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0053"
+   "id": "白发魔女传#R0052"
   },
   {
    "subject": "卓一航",
@@ -2708,7 +2672,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0054"
+   "id": "白发魔女传#R0053"
   },
   {
    "subject": "卓一航",
@@ -2744,7 +2708,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0055"
+   "id": "白发魔女传#R0054"
   },
   {
    "subject": "卓一航",
@@ -2780,7 +2744,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0056"
+   "id": "白发魔女传#R0055"
   },
   {
    "subject": "卓一航",
@@ -2816,7 +2780,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0057"
+   "id": "白发魔女传#R0056"
   },
   {
    "subject": "卓一航",
@@ -2852,13 +2816,49 @@
    ],
    "layer": "人",
    "direction": "↔",
+   "id": "白发魔女传#R0057"
+  },
+  {
+   "subject": "卓一航",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "飞红巾",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "030:30",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "030:30",
+   "chapter": 30,
+   "para": 30,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "030:30"
+   ],
+   "layer": "人",
+   "direction": "↔",
    "id": "白发魔女传#R0058"
   },
   {
    "subject": "卓一航",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -2927,42 +2927,6 @@
    "id": "白发魔女传#R0060"
   },
   {
-   "subject": "哈玛雅",
-   "subject_type": "@",
-   "predicate": "交手",
-   "object": "天德上人",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "030:30",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 1,
-   "loc": "030:30",
-   "chapter": 30,
-   "para": 30,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "白发魔女传"
-   ],
-   "locs": [
-    "030:30"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "白发魔女传#R0061"
-  },
-  {
    "subject": "唐努",
    "subject_type": "@",
    "predicate": "交手",
@@ -2996,7 +2960,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "白发魔女传#R0062"
+   "id": "白发魔女传#R0061"
   },
   {
    "subject": "天元",
@@ -3029,6 +2993,42 @@
    ],
    "locs": [
     "009:43"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "白发魔女传#R0062"
+  },
+  {
+   "subject": "天德上人",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "飞红巾",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "030:30",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "030:30",
+   "chapter": 30,
+   "para": 30,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "白发魔女传"
+   ],
+   "locs": [
+    "030:30"
    ],
    "layer": "人",
    "direction": "↔",
@@ -3863,7 +3863,7 @@
    "id": "白发魔女传#R0086"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "交手",
    "object": "紫阳道长",
@@ -3899,7 +3899,7 @@
    "id": "白发魔女传#R0087"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "交手",
    "object": "红云道人",
@@ -3935,7 +3935,7 @@
    "id": "白发魔女传#R0088"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "交手",
    "object": "霍元仲",
@@ -4334,7 +4334,7 @@
    "subject": "铁飞龙",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -5487,7 +5487,7 @@
    "id": "白发魔女传#R0131"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "到达",
    "object": "内室",
@@ -5523,7 +5523,7 @@
    "id": "白发魔女传#R0132"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "到达",
    "object": "河南",
@@ -5559,7 +5559,7 @@
    "id": "白发魔女传#R0133"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "到达",
    "object": "西北角",
@@ -6135,7 +6135,7 @@
    "id": "白发魔女传#R0149"
   },
   {
-   "subject": "黄叶道人",
+   "subject": "黄叶三哥",
    "subject_type": "@",
    "predicate": "到达",
    "object": "清风山",
@@ -6326,7 +6326,7 @@
    "subject": "王照希",
    "subject_type": "@",
    "predicate": "婚约",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E1明文",
@@ -6542,7 +6542,7 @@
    "subject": "李申时",
    "subject_type": "@",
    "predicate": "师承",
-   "object": "黄叶道人",
+   "object": "黄叶三哥",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E1明文",
@@ -6647,7 +6647,7 @@
    "id": "白发魔女传#R0163"
   },
   {
-   "subject": "黄叶道人",
+   "subject": "黄叶三哥",
    "subject_type": "@",
    "predicate": "师承",
    "object": "何萼华",
@@ -6758,7 +6758,7 @@
    "subject": "红云道人",
    "subject_type": "@",
    "predicate": "杀害",
-   "object": "白石道人",
+   "object": "白石",
    "object_type": "@",
    "confidence": "strong",
    "evidence_type": "E2动作+共现",
@@ -6832,7 +6832,7 @@
    "subject": "卓一航",
    "subject_type": "@",
    "predicate": "点穴",
-   "object": "白石道人",
+   "object": "白石",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -7669,7 +7669,7 @@
    "id": "白发魔女传#R0191"
   },
   {
-   "subject": "白石道人",
+   "subject": "白石",
    "subject_type": "@",
    "predicate": "离开",
    "object": "河南",
@@ -8106,7 +8106,7 @@
    "subject": "卓一航",
    "subject_type": "@",
    "predicate": "解救",
-   "object": "白石道人",
+   "object": "白石",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -8623,7 +8623,7 @@
     "relative_to": "何萼华",
     "chain": [
      "李申时",
-     "黄叶道人",
+     "黄叶三哥",
      "何萼华"
     ],
     "rule": "B1",
@@ -8714,7 +8714,7 @@
      },
      {
       "person": "李申时",
-      "master": "黄叶道人",
+      "master": "黄叶三哥",
       "generation": 1,
       "status": "active",
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
@@ -8734,7 +8734,7 @@
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },
      {
-      "person": "白石道人",
+      "person": "白石",
       "master": "",
       "generation": 0,
       "status": "active",
@@ -8762,7 +8762,7 @@
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },
      {
-      "person": "黄叶道人",
+      "person": "黄叶三哥",
       "master": "何萼华",
       "generation": 1,
       "status": "active",
@@ -8774,7 +8774,7 @@
      "孟灿",
      "岳鸣珂",
      "应修阳",
-     "白石道人",
+     "白石",
      "紫阳道长",
      "达摩租师"
     ],
@@ -9638,7 +9638,7 @@
    {
     "check": "互斥",
     "rule": "D06 §4.2",
-    "detail": "李申时 存在 2 位师父 ['白石道人', '黄叶道人']，active 唯一性须 N4 时间轴复核"
+    "detail": "李申时 存在 2 位师父 ['白石', '黄叶三哥']，active 唯一性须 N4 时间轴复核"
    },
    {
     "check": "互斥",

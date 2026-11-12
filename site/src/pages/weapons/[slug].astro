@@ -1,21 +1,35 @@
 ---
 import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/ui/StatusBadge.astro';
+import EmptyState from '../../components/ui/EmptyState.astro';
 import weaponsJson from '@data/weapons.json';
 import { B } from '@lib/base';
-import { dsp } from '@lib/display';
-import { personTarget } from '@lib/links';
+import { dsp, dspText } from '@lib/display';
+import { personTarget, chapterHref } from '@lib/links';
+import { tierLabel } from '@lib/tiers';
 
 export function getStaticPaths() {
   return weaponsJson.weapons.map((x) => ({ params: { slug: x.canonical }, props: { x } }));
 }
 const { x } = Astro.props;
 const books = Object.keys(x.books);
+/* D5 rev17（名物页重构设计 §六）：chain 已按宇宙编年重排 + 去重（×n）+ 毁噪声证伪。
+   主线 = 未折叠 strong 边（铸边编年首段保留在主线）；suspect 毁边折叠进「疑似误伤」区。 */
 const strongEdges = x.chain.filter((e) => e.conf === 'strong');
+const suspectEdges = strongEdges.filter((e) => e.suspect);
 const forgeEdges = strongEdges.filter((e) => e.verb === '铸');
-const mainEdges = strongEdges.filter((e) => e.verb !== '铸');
+const mainEdges = strongEdges.filter((e) => !e.suspect);
 const sideEv = x.chain.filter((e) => e.conf !== 'strong');
 const VERB: Record<string, string> = { 夺: '夺', 赠: '赠', 还: '还', 传: '传', 借: '借', 毁: '毁', 失: '失', 铸: '铸', 交战侧证: '证' };
+/* D17b（名物流转方向化落地）：dir.who 恒两人（施者/受者，kb/校订/名物流转方向.tsv 校定层）
+   时按「from → kind → to」式样渲染（名物页重构设计 §5.6 主线方向化样式）；铸（who=主语）
+   维持「X 铸 →」、借维持「借（暂借）」现状。 */
+const PAIR_KINDS = new Set(['夺', '赠', '传', '还']);
 const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
+/* 薄名物（名物页重构设计 §5.2：无铸记录且无 strong 流转链）→ 头部后加条目说明条 */
+const isThin = !hasForge && strongEdges.length === 0;
+/* 状态徽章（总体方案 §3.3：h1「考订进行中」改 StatusBadge）：auto=考订中，reviewed=深度解析 */
+const badgeStatus = x.status === 'reviewed' ? '深度解析' : '考订中';
 ---
 
 <Base title={x.canonical} description={`${x.canonical}（${x.kind}）：品阶、铸造来历、历代持有人流转链与证据定位符。`}>
@@ -26,12 +40,14 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
     )}
     <span class="kind">{x.kind}</span>
     {books.length > 1 && <span class="cross">跨书</span>}
-    <span class="rev">神兵表 rev{weaponsJson.meta.rev} · {x.status === 'reviewed' ? '已考订' : 'auto（考订中）'}</span>
+    <StatusBadge status={badgeStatus} />
   </h1>
   <p class="meta">
     流转 <b>{mainEdges.length}</b> 段 · 证据 {x.ev_total} 处 · 见于
     {books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}
   </p>
+
+  {isThin && <EmptyState variant="记载简略" />}
 
   {hasForge && (
     <div class="card forge">
@@ -44,6 +60,7 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
               ? <a class="chip" href={`${B}characters/${encodeURIComponent(tg)}/`}>{dsp(m.name)}</a>
               : <span class="chip">{dsp(m.name)}</span>;
           })}
+          <span class="forge-dir mono">铸 →</span>
         </>}
         {forgeEdges.map((e) => (
           <span class="mono loc">{e.book}·{e.loc}</span>
@@ -52,34 +69,92 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
     </div>
   )}
 
-  <h2 class="sec">历代流转 <span class="dim2">每次易手挂定位符；「借」= 暂借，不计入持有人</span></h2>
-  {mainEdges.length > 0 ? (
-    <div class="card tlwrap">
-      <div class="tl">
-        {mainEdges.map((e) => (
-          <div class="trow">
-            <div class="tedge">
-              <span class="tverb" style={e.verb === '借' ? 'color:#8a8172;border-color:#8a8172' : ''}>{VERB[e.verb] ?? e.verb}{e.verb === '借' ? '（暂借）' : ''}</span>
-              <span class="tholder">{e.persons.map((p) => {
+  {(mainEdges.length > 0 || suspectEdges.length > 0) && (
+    <>
+      <h2 class="sec">历代流转 <span class="dim2">编年排序 · 每次易手挂定位符；「借」= 暂借，不计入持有人</span></h2>
+      <div class="card tlwrap">
+        {mainEdges.length > 0 && (
+          <div class="tl">
+            {mainEdges.map((e) => {
+              const who = e.dir?.who || [];
+              const rest = who.length ? e.persons.filter((p: string) => !who.includes(p)) : e.persons;
+              const pair = !!e.dir && who.length === 2 && PAIR_KINDS.has(e.dir.kind);
+              const link = (p: string) => {
                 const tg = personTarget(p);
                 return tg
                   ? <a href={`${B}characters/${encodeURIComponent(tg)}/`}>{dsp(p)}</a>
                   : <span>{dsp(p)}</span>;
-              })}</span>
-              <span class="tconf">{e.conf}</span>
-              <span class="tloc mono">{e.book}·{e.loc}</span>
-            </div>
+              };
+              return (
+                <div class="trow">
+                  <div class="tedge">
+                    {pair ? (
+                      <>
+                        <span class="tholder">{link(who[0])}</span>
+                        <span class="tarrow">→</span>
+                        <span class="tverb">{e.dir.kind}</span>
+                        <span class="tarrow">→</span>
+                        <span class="tholder">{link(who[1])}</span>
+                        {rest.length > 0 && <span class="tholder trest">{rest.map((p: string) => link(p))}</span>}
+                      </>
+                    ) : e.dir ? (
+                      <>
+                        <span class="tholder">{who.map((p: string) => link(p))}</span>
+                        <span class="tverb" style={e.dir.kind === '借' ? 'color:#8a8172;border-color:#8a8172' : ''}>
+                          {e.dir.kind === '铸' ? '铸 →' : '借（暂借）'}
+                        </span>
+                        {rest.length > 0 && <span class="tholder trest">{rest.map((p: string) => link(p))}</span>}
+                      </>
+                    ) : (
+                      <>
+                        <span class="tverb" style={e.verb === '借' ? 'color:#8a8172;border-color:#8a8172' : ''}>{VERB[e.verb] ?? e.verb}{e.verb === '借' ? '（暂借）' : ''}</span>
+                        <span class="tholder">{e.persons.map((p: string) => link(p))}</span>
+                      </>
+                    )}
+                    {e.n > 1 && <span class="tn" title={`完全重复边合并 ×${e.n}`}>×{e.n}</span>}
+                    {e.subject_low && <span class="tlow" title="毁句主语非该物高频持有人，存疑待裁定">存疑 · 主语非高频持有人</span>}
+                    <span class="tconf">{tierLabel(e.conf)}</span>
+                    <span class="tloc mono">{e.book}·{e.loc}</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
+        )}
+        {suspectEdges.length > 0 && (
+          <details class="suspect-fold">
+            <summary>疑似误伤 {suspectEdges.length} 条（「毁」字句但该物此后仍在传世）<span class="dim2">展开细看</span></summary>
+            <ul class="suspect-list">
+              {suspectEdges.map((e) => (
+                <li>
+                  <span class="tverb sverbdim">{VERB[e.verb] ?? e.verb}</span>
+                  <span class="spersons">{e.persons.map((p: string) => dsp(p)).join('、')}</span>
+                  <span class="loc mono">{e.book}·{e.loc}</span>
+                </li>
+              ))}
+            </ul>
+            <p class="fine">以上「毁」字句的编年序位置之后，原著仍有此物的持有/出场记载——是否误伤待人工裁定，故不进主线。</p>
+          </details>
+        )}
+        {mainEdges.length > 0 && <p class="fine" style="margin:8px 12px 4px">边序 = 故事编年（宇宙书序·回号）；×n = 完全重复边合并；跨书段断点显式标注（gaps）。</p>}
+      </div>
+    </>
+  )}
+
+  {x.end_state && Object.keys(x.end_state).length > 0 && (
+    <>
+      <h2 class="sec">最终归宿 <span class="dim2">毁 / 失明文或末回持有记载</span></h2>
+      <div class="card endstate">
+        {x.end_state.note && <p class="end-note">{dspText(x.end_state.note)}</p>}
+        {Object.entries(x.end_state).filter(([k]) => k !== 'note').map(([k, v]) => (
+          <p class="end-extra"><span class="dim">{k}</span>：{String(v)}</p>
         ))}
       </div>
-      <p class="fine" style="margin:8px 12px 4px">跨书段断点显式标注（gaps）；终态 = 毁/失明文或末书终章持有人。</p>
-    </div>
-  ) : (
-    <div class="card" style="padding:14px 22px;margin-top:14px"><p class="fine" style="margin:0">暂无明文流转句式——仅共现证据，链上断点待人工考订（不脑补）。</p></div>
+    </>
   )}
 
   {sideEv.length > 0 && (
-    <h2 class="sec">交战 / 事件侧证 <span class="dim2">同回 ▲◈ 事件（ok 档）</span></h2>
+    <h2 class="sec">交战 / 事件侧证 <span class="dim2">同回 ▲◈ 事件（确证档）</span></h2>
   )}
   {sideEv.length > 0 && (
     <div class="card" style="padding:10px 24px">
@@ -96,12 +171,20 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
     <span class="dim">持有人：</span>
     {(x.holders || []).map((h) => {
       const tg = personTarget(h.name);
+      {/* D10：holders 考订补录（kb/校订/神兵表-补录.tsv 校定行）——n=0 不伪造频次，
+          以「考订补录」注替代 ×n，悬停显依据定位（名物页重构设计 §相关人物）。 */}
+      const tag = h.sup
+        ? <small class="sup-tag" title={`考订补录 · ${h.sup.book}·${h.sup.loc}`}>考订补录</small>
+        : <small>×{h.n}</small>;
       return tg
-        ? <a class="chip" href={`${B}characters/${encodeURIComponent(tg)}/`}>{dsp(h.name)}<small>×{h.n}</small></a>
-        : <span class="chip">{dsp(h.name)}<small>×{h.n}</small></span>;
+        ? <a class="chip" href={`${B}characters/${encodeURIComponent(tg)}/`}>{dsp(h.name)}{tag}</a>
+        : <span class="chip">{dsp(h.name)}{tag}</span>;
     })}
     {(x.holders || []).length === 0 && <span class="dim">—</span>}
   </p>
+  {(x.holders || []).some((h) => h.sup) && (
+    <p class="meta dim">「考订补录」= kb/校订/神兵表-补录.tsv 人工校定行（持有人明文另挂定位，频次不计）。</p>
+  )}
   {(x.borrowers || []).length > 0 && (
     <p class="chipsrow">
       <span class="dim">借用 / 暂持：</span>
@@ -113,23 +196,28 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
   <h2 class="sec">证据与考订注记</h2>
   <div class="card" style="padding:8px 24px">
     <ul class="ev">
-      {x.evidence.slice(0, 12).map((e) => (
-        <li><span class="pred">{e.kind}</span><span class="loc mono">{e.book}·{e.loc}</span></li>
-      ))}
-      {x.ev_total > 12 && <li class="dim">…共 {x.ev_total} 处（全量见 kb/神兵表.json）</li>}
+      {x.evidence.slice(0, 12).map((e) => {
+        const href = chapterHref(e.book, e.loc);
+        return (
+          <li>
+            <span class="pred">{e.kind}</span>
+            {href
+              ? <a class="loc mono" href={href}>{e.book}·{e.loc}</a>
+              : <span class="loc mono">{e.book}·{e.loc}</span>}
+          </li>
+        );
+      })}
+      {x.ev_total > 12 && (
+        <li class="dim"><span>…共 {x.ev_total} 处，完整考订表随开放数据提供（见<a href={`${B}about/data/`}>「关于 · 数据」</a>页）</span></li>
+      )}
     </ul>
   </div>
-  <p class="meta">
-    数据契约：考订工具 C · 稳定键 = 名物规范名 · 人工裁定 <code>kb/校订/神兵表-考订.tsv</code> ·
-    品阶{x.grade_basis === '明文' ? '为语料明文' : '尚未取得明文，留待考订（页面不做推断）'} · 本页仅 L0 图谱层。
-  </p>
 </Base>
 
 <style>
   .crumb { font-size: .85rem; color: var(--ink-faint); }
   .crumb a { color: var(--azure); }
   h1 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-  .rev { font-size: .72rem; color: var(--ink-faint); font-weight: 400; }
   .g { display: inline-block; border: 1.5px solid #a23527; background: #a23527; color: #fbf8ef;
     border-radius: 3px; padding: 0 8px; font-size: 12.5px; transform: rotate(-1.5deg); white-space: nowrap; }
   .kind { display: inline-block; border: 1.5px solid #31536c; color: #31536c; border-radius: 3px;
@@ -167,6 +255,8 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
     padding: 2px 12px; font-size: 13.5px; background: #fbf8ef; margin: 3px; }
   .chip.dashed { border-style: dashed; color: #8a8172; }
   .chip small { color: #8a8172; margin-left: 4px; font-family: ui-monospace, monospace; }
+  /* D10：holders 考订补录注（n=0 不伪造频次；悬停 title 显依据定位） */
+  .chip .sup-tag { color: #a2782a; margin-left: 4px; }
   a.chip:hover { border-color: #a23527; color: #a23527; }
   .ev { list-style: none; padding: 0; margin: 0; font-size: 14px; }
   .ev li { padding: 6px 2px; border-bottom: 1px solid #e6ddc8; display: flex; gap: 10px; align-items: baseline; }
@@ -174,5 +264,29 @@ const hasForge = (x.makers || []).length > 0 || forgeEdges.length > 0;
   .who { font-weight: 700; }
   .loc { color: #8a8172; font-size: 12px; }
   .dim { color: #8a8172; }
+  .endstate { border-left: 4px solid #31536c; padding: 12px 24px; }
+  .end-note { margin: 0; font-size: 15px; }
+  .end-extra { margin: 6px 0 0; font-size: 13.5px; color: var(--ink-light); }
+  .ev a.loc { text-decoration: underline; text-underline-offset: 3px; }
+  .ev a.loc:hover { color: #a23527; }
   section { margin-top: 30px; }
+  /* —— D5 rev17：方向化 / 去重 ×n / 主语存疑 / 疑似误伤折叠 —— */
+  .forge-dir { color: #b8860b; font-size: 13px; margin-left: 2px; }
+  /* —— D17b：夺/赠/传/还双元素方向边「from → kind → to」（§5.6 主线方向化样式） —— */
+  .tarrow { color: #b5a687; font-size: 14px; flex: none; }
+  .tn { display: inline-block; border: 1px dashed #a23527; color: #a23527; border-radius: 3px;
+    padding: 0 6px; font-size: 11.5px; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; }
+  .tlow { display: inline-block; color: #8a6d3b; font-size: 11.5px; border-bottom: 1px dotted #8a6d3b; }
+  .trest { color: var(--ink-light); font-weight: 400; }
+  .suspect-fold { margin: 10px 12px 8px; border: 1px dashed #b5a687; border-radius: 4px;
+    background: rgba(138, 109, 59, .05); }
+  .suspect-fold summary { cursor: pointer; padding: 8px 14px; font-size: 14px; font-weight: 700;
+    color: #8a6d3b; list-style: revert; }
+  .suspect-fold summary .dim2 { font-weight: 400; margin-left: 6px; }
+  .suspect-list { list-style: none; padding: 2px 16px 6px; margin: 0; font-size: 13.5px; }
+  .suspect-list li { display: flex; gap: 10px; align-items: baseline; padding: 5px 0;
+    border-top: 1px solid #e6ddc8; }
+  .sverbdim { color: #8a6d3b; border-color: #8a6d3b; flex: none; }
+  .spersons { color: var(--ink-light); }
+  .suspect-fold .fine { margin: 0 16px 10px; color: #8a8172; font-size: 12.5px; }
 </style>

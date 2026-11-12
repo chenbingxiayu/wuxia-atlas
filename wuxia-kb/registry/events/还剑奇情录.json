@@ -1,8 +1,8 @@
 {
  "schema": "event-v1",
  "book": "还剑奇情录",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 12:02:53",
+ "generated": "2026-11-09",
+ "generated_at": "2026-11-09 18:32:21",
  "tool": "event_extractor v0.1 (2026-11-05, EX-5/D03)",
  "spec": {
   "skill": "skills/SKILL_04a_事件识别.md",

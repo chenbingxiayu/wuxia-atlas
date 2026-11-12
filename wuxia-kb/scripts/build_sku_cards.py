@@ -61,9 +61,20 @@ OUT_LOGS = ROOT / "logs" / "sku"
 TOOL = "build_sku_cards v0.1 (2026-11-05, N10/D12)"
 DATA_VERSION = "2026-11-05.01"
 RULE_VERSION = "sku-card@0.3-draft+rel-verbs@v1+event-fields@v1+wordlists@0.3-draft"
-BOOKS = ["江湖三女侠", "七剑下天山", "塞外奇侠传", "冰魄寒光剑", "白发魔女传"]
+BOOKS = ["江湖三女侠", "七剑下天山", "塞外奇侠传", "冰魄寒光剑", "白发魔女传",
+         "冰川天女传", "还剑奇情录", "萍踪侠影录", "散花女侠", "云海玉弓缘",
+         "冰河洗剑录", "联剑风云录", "广陵剑", "风雷震九州", "侠骨丹心",
+         "剑网尘丝", "幻剑灵旗", "大唐游侠传", "龙凤宝钗缘", "慧剑心魔",
+         "飞凤潜龙", "草莽龙蛇传", "龙虎斗京华", "绝塞传烽录"]
 BOOK_IDS = {"江湖三女侠": "jianghu", "七剑下天山": "qijian", "塞外奇侠传": "saiwai",
-            "冰魄寒光剑": "bingpo", "白发魔女传": "bainv"}
+            "冰魄寒光剑": "bingpo", "白发魔女传": "bainv", "冰川天女传": "bingchuan",
+            "还剑奇情录": "huanjian", "萍踪侠影录": "pingzong", "散花女侠": "sanhua",
+            "云海玉弓缘": "yunhai", "冰河洗剑录": "binghe", "联剑风云录": "lianjian",
+            "广陵剑": "guangling", "风雷震九州": "fenglei", "侠骨丹心": "xiagu",
+            "剑网尘丝": "jianwang", "幻剑灵旗": "huanjianqi",
+            "大唐游侠传": "datang", "龙凤宝钗缘": "longfeng", "慧剑心魔": "huijian",
+            "飞凤潜龙": "feifeng", "草莽龙蛇传": "caomang", "龙虎斗京华": "longhu",
+            "绝塞传烽录": "juesai"}
 CARD_TYPES = ["person", "faction", "art", "artifact", "manual"]
 TYPE_LABEL = {"person": "人物卡", "faction": "门派卡", "art": "武功卡",
               "artifact": "兵器卡", "manual": "秘籍卡"}
@@ -242,7 +253,10 @@ class EntitiesHub:
         for e in self.items:
             for surface in [e.get("canonical", "")] + list(e.get("aliases") or []) + \
                     list(e.get("contextual") or []):
-                if surface:
+                # 2026-11-06 兼容 registry 的章节级语境注记（contextual 的 dict{display,book,chapters}）
+                if isinstance(surface, dict):
+                    surface = surface.get("display") or surface.get("surface") or ""
+                if isinstance(surface, str) and surface:
                     self.surface_to_id.setdefault(surface, e["id"])
         self.display_canon_map: dict[str, str] = {}
         dc = REG / "display_canonical.json"
@@ -270,13 +284,24 @@ class EntitiesHub:
         e = self.by_id.get(entity_id) or {}
         return e.get("status") or "unknown"
 
+    @staticmethod
+    def _surface(x) -> str:
+        """registry 条目 surface：str 原样；dict（章节级语境注记）取 display。"""
+        if isinstance(x, dict):
+            return (x.get("display") or x.get("surface") or "").strip()
+        return (x or "").strip() if isinstance(x, str) else ""
+
     def aliases_of(self, entity_id: str) -> list[dict]:
         e = self.by_id.get(entity_id) or {}
         out = []
         for a in e.get("aliases") or []:
-            out.append({"surface": a, "type": "别名"})
+            s = self._surface(a)
+            if s:
+                out.append({"surface": s, "type": "别名"})
         for a in e.get("contextual") or []:
-            out.append({"surface": a, "type": "语境称谓"})
+            s = self._surface(a)
+            if s:
+                out.append({"surface": s, "type": "语境称谓"})
         return out
 
 
@@ -604,7 +629,10 @@ def build_name_mask() -> None:
             for k in ("canonical", "series_display"):
                 if e.get(k):
                     names.add(e[k])
-            names |= set(e.get("aliases") or []) | set(e.get("contextual") or [])
+            for x in (e.get("aliases") or []) + (e.get("contextual") or []):
+                s = (x.get("display") or "") if isinstance(x, dict) else (x or "")
+                if s:
+                    names.add(s)
         names |= set(ENTITIES.display_canon_map.keys())
     if CONC:
         for t in ("☆", "{", "•"):
@@ -2019,7 +2047,8 @@ def run_selftest() -> int:
     chk("ngram 不误命", not (set_ngrams("天地玄黄宇宙洪荒日月盈昃") & set_ngrams("完全不同的一段文字内容测试")))
     chk("brief 长度门", brief_text(["x" * 250]) == "" or 200 <= len(brief_text(["x" * 250])) <= 500)
     chk("brief 空", brief_text([]) == "")
-    chk("book id 映射", set(BOOK_IDS.values()) == {"jianghu", "qijian", "saiwai", "bingpo", "bainv"})
+    chk("book id 映射", len(BOOKS) == 24 and set(BOOKS) == set(BOOK_IDS)
+        and len(set(BOOK_IDS.values())) == 24)
     chk("卡类型中文名", TYPE_LABEL["artifact"] == "兵器卡")
     chk("活动卡类型 = 五类", set(BUILDERS) == set(CARD_TYPES))
     meta = meta_block("person", "测试卡", "E0001", "e0001", "命题", {"entities": ["E0001"]},

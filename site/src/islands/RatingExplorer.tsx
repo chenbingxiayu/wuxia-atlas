@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import {
   buildDisplayLookup,
   dsp,
+  isMainPerson,
   type DisplayLookup,
 } from '../lib/display-shared';
 
@@ -11,11 +12,10 @@ import {
  * 榜头横幅：v0 未过人工抽检（规格 §六 异常规则已触发，见方法论页）。
  */
 type Player = { name: string; rating: number; rd: number; tier: string; matches_n: number; 'w/d/l': number[]; per_book: Record<string, number>; top_evidence: string[] };
-type Match = { id: string; a: string; b: string; outcome: string; weight: number; confidence: string; modifiers: string[]; kind: string; book: string; loc: string };
+type Match = { id: string; a: string; b: string; outcome: string; weight: number; confidence: string; modifiers: string[]; kind: string; book: string; loc: string; layer?: string; s?: number };
 
 const B = (import.meta.env.BASE_URL || '/').endsWith('/')
   ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
-const BOOKS = ['白发魔女传', '塞外奇侠传', '七剑下天山', '江湖三女侠'];
 const TIERS = ['绝顶', '超一流', '一流', '二流', '三流'];
 const TIER_COLOR: Record<string, string> = { 绝顶: '#b8860b', 超一流: '#a23527', 一流: '#31536c', 二流: '#5f584b', 三流: '#9a9280' };
 
@@ -25,6 +25,7 @@ export default function RatingExplorer() {
   const [sectOf, setSectOf] = useState<Record<string, string>>({});
   const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
   const [domain, setDomain] = useState<string>('合成榜');
+  const [mode, setMode] = useState<'总榜' | '单挑榜'>('总榜');
   const [tier, setTier] = useState<string>('全部');
   const [sect, setSect] = useState<string>('全部');
   const [q, setQ] = useState('');
@@ -49,6 +50,13 @@ export default function RatingExplorer() {
     });
   }, []);
 
+  // 榜域书单从 ratings.json 的 per_book 键动态派生（island 运行时 fetch，构建期不可行；
+  // 禁硬编码书单）。去重排序；空 per_book（无数据）时不渲染榜域切换器（诚实空态）。
+  const books = useMemo(
+    () => Array.from(new Set(players.flatMap((p) => Object.keys(p.per_book || {})))).sort(),
+    [players],
+  );
+
   const view = useMemo(() => {
     let rows = players.map((p) => {
       const book = domain === '合成榜' ? null : domain;
@@ -64,6 +72,26 @@ export default function RatingExplorer() {
   }, [players, domain, tier, sect, q, sectOf, lookup]);
 
   const sects = useMemo(() => Object.values(sectOf).filter(Boolean).sort(), [sectOf]);
+  // spec 008：主榜门槛（n≥3 且 rd≤150）与待考区分流
+  const bench = useMemo(() => players.filter((p) => p.matches_n < 3 || p.rd > 150), [players]);
+  const mainList = useMemo(() => view.filter((p) => p.matches_n >= 3 && p.rd <= 150), [view]);
+  // 单挑榜：layer=L1 对局聚合
+  const singles = useMemo(() => {
+    const agg: Record<string, { name: string; w: number; d: number; l: number }> = {};
+    for (const m of matches) {
+      if (m.layer !== 'L1') continue;
+      const A = (agg[m.a] ||= { name: m.a, w: 0, d: 0, l: 0 });
+      const B = (agg[m.b] ||= { name: m.b, w: 0, d: 0, l: 0 });
+      if (m.outcome === 'win') { A.w++; B.l++; }
+      else if (m.outcome === 'loss') { B.w++; A.l++; }
+      else { A.d++; B.d++; }
+    }
+    const rdOf = (n: string) => players.find((p) => p.name === n)?.rd ?? 0;
+    const ratingOf = (n: string) => players.find((p) => p.name === n)?.rating ?? 1500;
+    return Object.values(agg)
+      .map((x) => ({ ...x, rd: rdOf(x.name), rating: ratingOf(x.name) }))
+      .sort((a, b) => (b.w - b.l) - (a.w - a.l) || b.w - a.w);
+  }, [matches, players]);
   const matchesOf = (name: string) =>
     matches.filter((m) => m.a === name || m.b === name)
       .sort((a, b) => b.weight - a.weight).slice(0, 5);
@@ -73,16 +101,24 @@ export default function RatingExplorer() {
   return (
     <div className="re">
       <div className="re-banner">
-        ⚠ v0 预览：抽取规则未过人工抽检（100 场精度≥90% 方可发布），分档仅供演示；
-        规格验收的异常规则已触发（如玉罗刹白发榜未进前五）——回查进行中，见 <a href={`${B}ratings/method/`}>方法论页</a>。
+        引擎 v2 · 全历史等级分（WHR）——追溯重评、榜单稳定；分档为绝对锚定校准（吕四娘/了因/哈玛雅）。
+        抽检 100 场待办（精度≥90% 方可发布）——清洗日志与新旧引擎差异见 <a href={`${B}ratings/method/`}>方法论页</a>。
       </div>
       <div className="re-ctrl">
         <div className="re-row">
-          <span className="lab">榜域</span>
-          {['合成榜', ...BOOKS].map((d) => (
-            <button key={d} className={'chip' + (domain === d ? ' on' : '')} onClick={() => setDomain(d)}>{d}</button>
+          <span className="lab">榜单</span>
+          {['总榜', '单挑榜'].map((d) => (
+            <button key={d} className={'chip' + (mode === d ? ' on' : '')} onClick={() => setMode(d as '总榜' | '单挑榜')}>{d}</button>
           ))}
         </div>
+        {books.length > 0 && (
+          <div className="re-row">
+            <span className="lab">榜域</span>
+            {['合成榜', ...books].map((d) => (
+              <button key={d} className={'chip' + (domain === d ? ' on' : '')} onClick={() => setDomain(d)}>{d}</button>
+            ))}
+          </div>
+        )}
         <div className="re-row">
           <span className="lab">分档</span>
           {['全部', ...TIERS].map((t) => (
@@ -100,14 +136,41 @@ export default function RatingExplorer() {
         </div>
       </div>
 
+      {mode === '单挑榜' ? (
+        <div className="re-scroll">
+        <table className="re-table">
+          <thead><tr><th>#</th><th>人物</th><th>评分</th><th>单挑胜/平/负</th><th></th></tr></thead>
+          <tbody>
+            {singles.map((p, i) => (
+              <tr key={p.name}>
+                <td className="mono rk">{i + 1}</td>
+                {/* W0-T5 存目守卫：拳手含存目人物/组织（无档案页）→ 纯文本防 404 */}
+                <td>{isMainPerson(lookup, p.name)
+                  ? <a className="nm" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(lookup.display, p.name)}</a>
+                  : <span className="nm">{dsp(lookup.display, p.name)}</span>}</td>
+                <td className="mono">{p.rating}</td>
+                <td className="mono dim">{p.w}/{p.d}/{p.l}</td>
+                <td><a className="exp" href={`${B}universe/network/?a=${encodeURIComponent(p.name)}`}>关联 →</a></td>
+              </tr>
+            ))}
+            {singles.length === 0 && <tr><td colSpan={5} className="dim">暂无单挑（明文一对一）对局。</td></tr>}
+          </tbody>
+        </table>
+        </div>
+      ) : (
+      <>
+      <div className="re-scroll">
       <table className="re-table">
         <thead><tr><th>#</th><th>人物</th><th>评分±区间</th><th>档位</th><th>门派线索</th><th>对局</th><th>战绩</th><th></th></tr></thead>
         <tbody>
-          {view.map((p, i) => (
+          {mainList.map((p, i) => (
             <>
               <tr key={p.name}>
                 <td className="mono rk">{i + 1}</td>
-                <td><a className="nm" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(lookup.display, p.name)}</a></td>
+                {/* W0-T5 存目守卫：拳手含存目人物/组织（无档案页）→ 纯文本防 404 */}
+                <td>{isMainPerson(lookup, p.name)
+                  ? <a className="nm" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(lookup.display, p.name)}</a>
+                  : <span className="nm">{dsp(lookup.display, p.name)}</span>}</td>
                 <td className="mono">{p.viewRating}±{p.rd}{p.rd > 150 && <span className="few" title="区间宽=对局少">数据不足</span>}</td>
                 <td><span className="tier" style={{ color: TIER_COLOR[p.tier], borderColor: TIER_COLOR[p.tier] }}>{p.tier}</span></td>
                 <td className="dim">{sectOf[p.name] || '—'}</td>
@@ -139,6 +202,23 @@ export default function RatingExplorer() {
           ))}
         </tbody>
       </table>
+      </div>
+      <details className="re-bench">
+        <summary>待考区 · 对局不足或区间过宽，暂不排名（{bench.length} 人 · 展开查个人数据）</summary>
+        <div className="bench-body">
+          {bench.map((p) => (
+            <span className="chip" key={p.name}>
+              {/* W0-T5 存目守卫：存目人物/组织纯文本（无档案页） */}
+              {isMainPerson(lookup, p.name)
+                ? <a href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(lookup.display, p.name)}</a>
+                : <span>{dsp(lookup.display, p.name)}</span>}
+              <small> {p.rating}±{p.rd} · {p.matches_n} 场</small>
+            </span>
+          ))}
+        </div>
+      </details>
+      </>
+      )}
       <style>{`
         .re { display: flex; flex-direction: column; gap: 14px; }
         .re-banner { background: #f6e8d9; border: 1px solid #a23527; border-radius: 4px; padding: 10px 16px; font-size: 13px; color: #7e281d; line-height: 1.8; }
@@ -152,6 +232,8 @@ export default function RatingExplorer() {
         .re-sel { font-family: inherit; padding: 4px 10px; border: 1px solid #b5a687; border-radius: 4px; background: #fbf8ef; font-size: 13.5px; }
         .fine { margin-left: auto; font-size: 11.5px; color: #8a8172; }
         .re-table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: #fbf8ef; border: 1px solid #d8cdb4; }
+        .re-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .re-scroll .re-table { min-width: 620px; }
         .re-table th { text-align: left; color: #5f584b; font-size: 12px; padding: 8px 10px; border-bottom: 2px solid #b5a687; }
         .re-table td { padding: 6px 10px; border-bottom: 1px solid #e6ddc8; }
         .rk { color: #8a8172; } .nm { color: #31536c; font-weight: 700; } .nm:hover { color: #a23527; }
@@ -166,6 +248,11 @@ export default function RatingExplorer() {
         .evrow .w { color: #4f6e4a; } .evrow .l { color: #a23527; }
         .evrow .mono { margin-left: 8px; font-size: 12px; color: #8a8172; }
         .re-loading { padding: 50px; text-align: center; color: #5f584b; }
+        .re-bench { margin-top: 10px; background: #f5efe4; border: 1px dashed #b5a687; border-radius: 4px; padding: 8px 14px; font-size: 13px; color: #5f584b; }
+        .re-bench summary { cursor: pointer; color: #8a6607; }
+        .bench-body { margin-top: 8px; line-height: 2.2; }
+        .bench-body .chip { display: inline-block; margin: 2px 6px 2px 0; }
+        .bench-body a { color: #31536c; }
       `}</style>
     </div>
   );

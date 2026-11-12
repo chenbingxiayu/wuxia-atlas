@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# ⚠ X1 裁决 2026-11-07：本脚本（旧 R1 四书版）已退役。现行 audit.json=skill 工具 lint_consistency v0.1（N8/D11，registry/consistency）。
 """穿帮雷达 v0（build_audit.py）——规则引擎，构建期输出报告。
 
 规则 R1 死亡一致性：事件层 verb∈{杀,诛,毙} 且宾语=X 视为死亡事件；此后 X 再以

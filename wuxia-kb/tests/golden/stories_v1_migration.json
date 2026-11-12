@@ -1,0 +1,761 @@
+{
+ "_note": "D6 v1 迁移零失真 golden（2026-11-11 自 site/data/stories/*.json story-v1 冻结；红线：v2 per_chapter 与关键里程碑必须与本文件逐字段一致）",
+ "temp-curve": {
+  "book": "白发魔女传",
+  "a": "卓一航",
+  "b": "练霓裳",
+  "shared_chapters": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   12,
+   13,
+   14,
+   15,
+   16,
+   17,
+   18,
+   19,
+   20,
+   21,
+   23,
+   24,
+   25,
+   26,
+   27,
+   28,
+   29,
+   30,
+   31,
+   32
+  ],
+  "per_chapter": [
+   {
+    "c": 1,
+    "co_events": 10,
+    "pos": 0,
+    "neg": 2,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 2,
+    "co_events": 9,
+    "pos": 0,
+    "neg": 1,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 3,
+    "co_events": 3,
+    "pos": 0,
+    "neg": 2,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": [
+     {
+      "l": "003:81",
+      "v": "捉",
+      "a": "练霓裳",
+      "b": "卓一航"
+     }
+    ]
+   },
+   {
+    "c": 4,
+    "co_events": 38,
+    "pos": 0,
+    "neg": 13,
+    "allies": 3,
+    "kw_pos": 0,
+    "kw_neg": 2,
+    "key": [
+     {
+      "l": "004:29",
+      "v": "冲",
+      "a": "练霓裳",
+      "b": "卓一航"
+     },
+     {
+      "l": "004:29",
+      "v": "射",
+      "a": "练霓裳",
+      "b": "卓一航"
+     },
+     {
+      "l": "004:31",
+      "v": "刺",
+      "a": "练霓裳",
+      "b": "卓一航"
+     }
+    ]
+   },
+   {
+    "c": 5,
+    "co_events": 49,
+    "pos": 0,
+    "neg": 4,
+    "allies": 2,
+    "kw_pos": 0,
+    "kw_neg": 3,
+    "key": []
+   },
+   {
+    "c": 6,
+    "co_events": 59,
+    "pos": 0,
+    "neg": 12,
+    "allies": 1,
+    "kw_pos": 0,
+    "kw_neg": 2,
+    "key": []
+   },
+   {
+    "c": 7,
+    "co_events": 21,
+    "pos": 0,
+    "neg": 5,
+    "allies": 0,
+    "kw_pos": 1,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 8,
+    "co_events": 15,
+    "pos": 0,
+    "neg": 3,
+    "allies": 0,
+    "kw_pos": 1,
+    "kw_neg": 0,
+    "key": [
+     {
+      "l": "008:11",
+      "v": "刺",
+      "a": "卓一航",
+      "b": "练霓裳"
+     }
+    ]
+   },
+   {
+    "c": 9,
+    "co_events": 0,
+    "pos": 0,
+    "neg": 0,
+    "allies": 0,
+    "kw_pos": 2,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 10,
+    "co_events": 0,
+    "pos": 0,
+    "neg": 0,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 3,
+    "key": []
+   },
+   {
+    "c": 11,
+    "co_events": 0,
+    "pos": 0,
+    "neg": 0,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 12,
+    "co_events": 16,
+    "pos": 0,
+    "neg": 6,
+    "allies": 0,
+    "kw_pos": 1,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 13,
+    "co_events": 42,
+    "pos": 0,
+    "neg": 13,
+    "allies": 1,
+    "kw_pos": 2,
+    "kw_neg": 3,
+    "key": []
+   },
+   {
+    "c": 14,
+    "co_events": 11,
+    "pos": 0,
+    "neg": 2,
+    "allies": 1,
+    "kw_pos": 0,
+    "kw_neg": 2,
+    "key": []
+   },
+   {
+    "c": 15,
+    "co_events": 48,
+    "pos": 0,
+    "neg": 3,
+    "allies": 0,
+    "kw_pos": 1,
+    "kw_neg": 1,
+    "key": []
+   },
+   {
+    "c": 16,
+    "co_events": 31,
+    "pos": 0,
+    "neg": 5,
+    "allies": 0,
+    "kw_pos": 1,
+    "kw_neg": 2,
+    "key": []
+   },
+   {
+    "c": 17,
+    "co_events": 8,
+    "pos": 0,
+    "neg": 2,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 18,
+    "co_events": 7,
+    "pos": 0,
+    "neg": 3,
+    "allies": 1,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": [
+     {
+      "l": "018:95",
+      "v": "扣",
+      "a": "练霓裳",
+      "b": "卓一航"
+     }
+    ]
+   },
+   {
+    "c": 19,
+    "co_events": 4,
+    "pos": 0,
+    "neg": 1,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 20,
+    "co_events": 12,
+    "pos": 0,
+    "neg": 10,
+    "allies": 0,
+    "kw_pos": 1,
+    "kw_neg": 2,
+    "key": []
+   },
+   {
+    "c": 21,
+    "co_events": 10,
+    "pos": 0,
+    "neg": 6,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 22,
+    "co_events": 0,
+    "pos": 0,
+    "neg": 0,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 23,
+    "co_events": 5,
+    "pos": 0,
+    "neg": 2,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 24,
+    "co_events": 1,
+    "pos": 0,
+    "neg": 0,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 2,
+    "key": []
+   },
+   {
+    "c": 25,
+    "co_events": 7,
+    "pos": 0,
+    "neg": 2,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 26,
+    "co_events": 21,
+    "pos": 0,
+    "neg": 10,
+    "allies": 1,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 27,
+    "co_events": 6,
+    "pos": 0,
+    "neg": 2,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": []
+   },
+   {
+    "c": 28,
+    "co_events": 15,
+    "pos": 0,
+    "neg": 3,
+    "allies": 1,
+    "kw_pos": 0,
+    "kw_neg": 2,
+    "key": []
+   },
+   {
+    "c": 29,
+    "co_events": 17,
+    "pos": 0,
+    "neg": 7,
+    "allies": 0,
+    "kw_pos": 1,
+    "kw_neg": 2,
+    "key": []
+   },
+   {
+    "c": 30,
+    "co_events": 4,
+    "pos": 0,
+    "neg": 1,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 1,
+    "key": []
+   },
+   {
+    "c": 31,
+    "co_events": 11,
+    "pos": 0,
+    "neg": 4,
+    "allies": 0,
+    "kw_pos": 0,
+    "kw_neg": 0,
+    "key": [
+     {
+      "l": "031:203",
+      "v": "刺",
+      "a": "练霓裳",
+      "b": "卓一航"
+     }
+    ]
+   },
+   {
+    "c": 32,
+    "co_events": 26,
+    "pos": 0,
+    "neg": 7,
+    "allies": 1,
+    "kw_pos": 0,
+    "kw_neg": 1,
+    "key": []
+   }
+  ],
+  "markers_c_label": [
+   [
+    1,
+    "劫镖初会"
+   ],
+   [
+    3,
+    "黄龙洞缴械"
+   ],
+   [
+    8,
+    "白刃相见"
+   ],
+   [
+    18,
+    "明月峡扣卓"
+   ],
+   [
+    26,
+    "一夜白头"
+   ],
+   [
+    31,
+    "塞外一刺"
+   ]
+  ]
+ },
+ "growth-curve": {
+  "book": "白发魔女传",
+  "person": "卓一航",
+  "per_chapter": [
+   {
+    "c": 1,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 2,
+    "active": 7,
+    "passive": 2,
+    "kills": 1,
+    "opponents": [
+     "王照希",
+     "常洵",
+     "郑贵妃兄弟"
+    ],
+    "opp_weight": 215
+   },
+   {
+    "c": 3,
+    "active": 0,
+    "passive": 1,
+    "kills": 0,
+    "opponents": [
+     "练霓裳"
+    ],
+    "opp_weight": 2846
+   },
+   {
+    "c": 4,
+    "active": 5,
+    "passive": 5,
+    "kills": 1,
+    "opponents": [
+     "练霓裳",
+     "应修阳",
+     "满洲",
+     "玉面妖狐凌霄"
+    ],
+    "opp_weight": 758
+   },
+   {
+    "c": 5,
+    "active": 13,
+    "passive": 13,
+    "kills": 0,
+    "opponents": [
+     "云燕平",
+     "金千岩",
+     "秦指挥",
+     "王兵备"
+    ],
+    "opp_weight": 64
+   },
+   {
+    "c": 6,
+    "active": 5,
+    "passive": 8,
+    "kills": 0,
+    "opponents": [
+     "金千岩",
+     "云燕平",
+     "铁飞龙",
+     "穆九娘"
+    ],
+    "opp_weight": 334
+   },
+   {
+    "c": 7,
+    "active": 0,
+    "passive": 1,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 8,
+    "active": 1,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [
+     "练霓裳"
+    ],
+    "opp_weight": 2846
+   },
+   {
+    "c": 9,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 10,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 11,
+    "active": 4,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [
+     "诏书",
+     "岳鸣珂"
+    ],
+    "opp_weight": 1244
+   },
+   {
+    "c": 12,
+    "active": 0,
+    "passive": 3,
+    "kills": 0,
+    "opponents": [
+     "岳鸣珂"
+    ],
+    "opp_weight": 1244
+   },
+   {
+    "c": 13,
+    "active": 4,
+    "passive": 5,
+    "kills": 2,
+    "opponents": [
+     "岳鸣珂",
+     "东厂"
+    ],
+    "opp_weight": 1244
+   },
+   {
+    "c": 14,
+    "active": 5,
+    "passive": 3,
+    "kills": 0,
+    "opponents": [
+     "公孙大娘"
+    ],
+    "opp_weight": 395
+   },
+   {
+    "c": 15,
+    "active": 0,
+    "passive": 1,
+    "kills": 0,
+    "opponents": [
+     "铁飞龙"
+    ],
+    "opp_weight": 992
+   },
+   {
+    "c": 16,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 17,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 18,
+    "active": 1,
+    "passive": 1,
+    "kills": 0,
+    "opponents": [
+     "金独异",
+     "练霓裳"
+    ],
+    "opp_weight": 1551
+   },
+   {
+    "c": 19,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 20,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 21,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 22,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 23,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 24,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 25,
+    "active": 0,
+    "passive": 0,
+    "kills": 0,
+    "opponents": [],
+    "opp_weight": 0
+   },
+   {
+    "c": 26,
+    "active": 1,
+    "passive": 3,
+    "kills": 0,
+    "opponents": [
+     "黄叶道人",
+     "红云道人"
+    ],
+    "opp_weight": 183
+   },
+   {
+    "c": 27,
+    "active": 3,
+    "passive": 3,
+    "kills": 0,
+    "opponents": [
+     "神一元",
+     "连城虎"
+    ],
+    "opp_weight": 74
+   },
+   {
+    "c": 28,
+    "active": 1,
+    "passive": 2,
+    "kills": 0,
+    "opponents": [
+     "霍元仲",
+     "昌钦大喇嘛"
+    ],
+    "opp_weight": 70
+   },
+   {
+    "c": 29,
+    "active": 13,
+    "passive": 4,
+    "kills": 2,
+    "opponents": [
+     "哈川",
+     "雷蒙法师",
+     "石浩",
+     "科图"
+    ],
+    "opp_weight": 42
+   },
+   {
+    "c": 30,
+    "active": 2,
+    "passive": 1,
+    "kills": 0,
+    "opponents": [
+     "天德上人",
+     "神大元、神一元"
+    ],
+    "opp_weight": 67
+   },
+   {
+    "c": 31,
+    "active": 4,
+    "passive": 6,
+    "kills": 0,
+    "opponents": [
+     "练霓裳"
+    ],
+    "opp_weight": 2846
+   },
+   {
+    "c": 32,
+    "active": 4,
+    "passive": 9,
+    "kills": 0,
+    "opponents": [
+     "成章五",
+     "天龙上人"
+    ],
+    "opp_weight": 58
+   }
+  ],
+  "milestones": {
+   "first_dominant_chapter": 11,
+   "first_kill_chapter": 2
+  }
+ }
+}

@@ -2,13 +2,18 @@
 import Base from '../../layouts/Base.astro';
 import EntityExplorer from '../../islands/EntityExplorer';
 import entityIndex from '@data/entity-index.json';
+
+// W0-T5 主档口径（方案 §二）：主档 page=true 建页；存目 page=false 灰 chip（可搜、无页）
+const persons = (entityIndex.entities as any[]).filter((e) => e.t === '@');
+const mainN = persons.filter((e) => e.page !== false).length;
+const tocN = persons.length - mainN;
 ---
 
-<Base title="人物谱" description="梁羽生武侠宇宙人物谱：全部人物档案，跨书人物即换乘站。">
+<Base title="人物谱" description="梁羽生武侠宇宙人物谱：主档人物档案全带定位符，存目人物可搜索对质。">
   <h1>人物谱</h1>
   <p class="lead">
-    全部 <b>{entityIndex.meta.totals.by_type['@']}</b> 位人物均有档案页
-    （关键剧情/师承传人/武功神兵/战绩评分，全带定位符）。
+    主档 <b>{mainN}</b> 位有档案页（关键剧情/师承传人/武功神兵/战绩评分，全带定位符）；
+    存目 {tocN} 位以灰 chip 列出（悬停看出场次数，暂不建页）。
     字号越大出场越多；带「换乘」标记的是跨书人物。
     新书深度解析后此处自动生长。
   </p>
@@ -44,4 +49,13 @@ import entityIndex from '@data/entity-index.json';
   }
   .explorer a.chip:hover { border-color: var(--seal); color: var(--seal); }
   .explorer .chip.cross { border-color: var(--seal); }
+  /* W2-A1 别名命中：经别名（白发魔女/玉罗刹/晦明禅师…）命中的 chip 描边强调 + 别名小字 */
+  .explorer .chip.ahit { border-color: var(--seal); background: rgba(190, 60, 40, 0.07); }
+  .explorer .chip .ahit-note { color: var(--seal); margin-left: .35em; }
+  /* W0-T5 存目灰 chip：不可点、虚线灰边、弱化文字（tooltip 承担出场数对质） */
+  .explorer .chip.toc {
+    border-style: dashed; color: var(--ink-faint);
+    background: transparent; cursor: default;
+  }
+  .explorer .chip.toc em { color: var(--ink-faint); }
 </style>

@@ -25,6 +25,12 @@
 CLI：
   python scripts/export_site_audit.py            # dry-run（默认）
   python scripts/export_site_audit.py --apply    # 写 site/data（common 先备份；本阶段默认不用）
+  python scripts/export_site_audit.py --scope tianshan-demo   # 天山 7 书裁剪口径（W0-T3a）
+
+W0-T3a（天山演示版总体方案 §1.2，2026-11-08）scope 口径：
+  - consistency docs 按 book ∈ scope 过滤（build_payload 单点生效）：r1（C4 映射）/
+    violations/rule_coverage/exemptions/by_* 的 books 维度随之收窄；
+  - 全量口径（不带 --scope）行为与现状完全一致（方案 R6）。
 """
 from __future__ import annotations
 
@@ -175,7 +181,14 @@ def build_rule_coverage(docs: list[dict]) -> list[dict]:
     return [merged[k] for k in sorted(merged)]
 
 
-def build_payload(docs: list[dict]) -> dict:
+def build_payload(docs: list[dict], scope=None) -> dict:
+    """N8 consistency docs → audit.json payload。
+
+    W0-T3a（方案 §1.2）：scope 口径下 docs 先按 book ∈ scope 过滤——violations/r1（C4 映射）/
+    rule_coverage/exemptions/by_* 的 books 维度随之收窄；全量口径（scope=None）不变。
+    """
+    if scope is not None:
+        docs = [d for d in docs if esc.in_scope(d.get("book"), scope)]
     books = [d.get("book") for d in docs]
     violations = []
     exemptions = []
@@ -328,6 +341,12 @@ def build_payload(docs: list[dict]) -> dict:
                     for k, v in sorted(by_rule.items())},
         "by_book": by_book,
     }
+    if scope is not None:
+        payload["meta"]["scope"] = scope["profile"]
+        payload["meta"]["field_gaps"].append(
+            f"scope 口径（{scope['profile']}）：consistency docs 按 book ∈ scope 过滤——"
+            "violations/r1（C4 映射）/rule_coverage/exemptions/by_* 的 books 维度随之收窄；"
+            f"本批收 {len(docs)} 书（{'、'.join(books)}）。")
     return payload
 
 
@@ -425,11 +444,17 @@ def render_notes(payload: dict) -> str:
 def main() -> int:
     if "--apply" in sys.argv:
         print("[EX-8] 注意：--apply 经 export_site_common 备份后写 site/data；阶段 3 默认先 dry-run。")
+    # W0-T3a：--scope <profile> 裁剪口径（W0-T1 基础设施；不带 --scope = 全量口径，向后兼容）
+    profile = esc.scope_from_args()
+    scope = esc.load_scope(profile) if profile is not None else None
     docs = load_consistency()
+    if scope is not None:
+        docs = [d for d in docs if esc.in_scope(d.get("book"), scope)]
     if not docs:
-        print(f"[EX-8] 未发现 N8 consistency 产出：{CONSISTENCY_DIR}")
+        print(f"[EX-8] 未发现 N8 consistency 产出"
+              f"{'（scope 口径下无书目）' if scope is not None else ''}：{CONSISTENCY_DIR}")
         return 2
-    payload = build_payload(docs)
+    payload = build_payload(docs, scope=scope)
     notes = render_notes(payload)
     diff = esc.finish("audit.json", payload, exporter=EXPORTER, notes=notes)
     print(f"[EX-8] 书 {len(docs)} 本 · violations {len(payload['violations'])} · "

@@ -1,0 +1,103 @@
+---
+import Base from '../../layouts/Base.astro';
+import SpectrumTabs from '../../components/ui/SpectrumTabs.astro';
+import elixirsJson from '@data/elixirs.json';
+import { B } from '@lib/base';
+import LightSearch from '../../islands/LightSearch';
+
+/* D11 丹药谱索引（名物页重构设计 §四/§七/§十一）：形态与神兵谱同构。
+   分组=丹药 / 药材 / 毒药（底表 kind 列，人工裁定；毒药=F3 第二批毒物实体入谱）；
+   组内序=证据频次降序。药材从神兵谱原料层转正入谱（设计 §七）；
+   毒↔解药配对 D16 落地（毒物条「可被解」双向互链）。 */
+const es = elixirsJson.elixirs;
+const t = elixirsJson.meta.totals;
+const KINDS = ['丹药', '药材', '毒药'];
+const cross = es.filter((x) => Object.keys(x.books).length > 1).length;
+
+const items = KINDS.flatMap((k) =>
+  es
+    .filter((x) => x.kind === k)
+    .sort((a, b) => b.ev_total - a.ev_total)
+    .map((x) => ({
+      c: x.name,
+      href: `${B}elixirs/${encodeURIComponent(x.name)}/`,
+      g: x.kind,
+      kind: x.kind,
+      x: Object.keys(x.books).length > 1,
+      a: (x.aliases || []) as string[],
+      edges: [],
+      noneNote: `考订锚点 ${x.anchor.book}·${x.anchor.loc}`,
+      foot: [
+        Object.keys(x.books).length > 1 ? `见于 ${Object.keys(x.books).length} 书` : Object.keys(x.books)[0],
+        `证据 ${x.ev_total}`,
+      ],
+    })),
+);
+const groups = KINDS.filter((k) => items.some((i) => i.g === k));
+const aliasN = items.filter((i) => i.a.length > 0).length;
+---
+
+<Base title="丹药谱" description="梁羽生武侠宇宙丹药谱：碧灵丹、小还丹、易容丹等考订丹药与雪莲、优昙仙花等药材，出处频次与逐处出场定位符。">
+  <div class="elixirs-root">
+    <p class="crumb">名物谱 / 丹药</p>
+    <h1>丹药谱</h1>
+    <SpectrumTabs current="elixirs" />
+    <p class="lead">
+      库内考订的 <b>{t.丹药 + t.药材 + t.毒药}</b> 件丹药名物：丹药 <b>{t.丹药}</b> 件、
+      药材 <b>{t.药材}</b> 件、毒药 <b>{t.毒药}</b> 件，
+      什么疗效、见于何书，每处出场都挂原著定位符。毒↔解药配对为明文考订（毒物条「可被解」互链解药页）；
+      通名（泛称的解药/金创药等）不入谱。
+      可按丹药名与别名（{aliasN} 件）筛选。
+    </p>
+    <p class="lead cats">
+      {KINDS.filter((k) => items.some((i) => i.g === k)).map((k) => <a href={`#${k}`}>{k}<small>{items.filter((i) => i.g === k).length}</small></a>)}
+      <span class="fine">跨书出现 {cross} 件</span>
+    </p>
+
+    <LightSearch client:visible items={items} groups={groups} mode="cards" anchorIds={true}
+                 placeholder="输入丹药名 / 别名筛选…" />
+
+    <section>
+      <h2>数据口径</h2>
+      <p class="lead">
+        丹药 = 原著具名成药／毒散（丹、散、丸）；药材 = 炼药原料名物（花草、矿物、动物药材）。
+        频次为语料标注出现次数；少数仅数见的药材按原文扫描计数并在详情页注明。
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  /* D11：卡片网格由 LightSearch island 客户端过滤渲染 → 样式全局化并以 .elixirs-root 限域（weapons/index 同法） */
+  .elixirs-root .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .elixirs-root h1 { letter-spacing: 2px; }
+  .elixirs-root .lead { color: var(--ink-light); line-height: 1.9; }
+  .elixirs-root .lead b { color: var(--seal); }
+  .elixirs-root .cats a { margin-right: 12px; color: var(--azure); }
+  .elixirs-root .cats a:hover { color: var(--seal); }
+  .elixirs-root .cats small { color: var(--ink-faint); margin-left: 2px; }
+  .elixirs-root .fine { color: var(--ink-faint); font-size: .8rem; margin-left: auto; }
+  .elixirs-root section { margin-top: var(--space-5); }
+  .elixirs-root h2 { border-bottom: 1px solid var(--line); padding-bottom: .2em; }
+  .elixirs-root h2 small { font-weight: 400; font-size: .8rem; color: var(--ink-faint); margin-left: .6em; }
+  .elixirs-root .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; margin-top: 12px; }
+  .elixirs-root .card { display: block; border: 1px solid var(--line-strong); border-radius: 4px; padding: 12px 14px;
+    background: rgba(255,255,255,.45); color: var(--ink); }
+  .elixirs-root .card:hover { border-color: var(--seal); }
+  .elixirs-root .head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .elixirs-root .head b { font-size: 1.05rem; letter-spacing: 1px; }
+  .elixirs-root .kind { margin-left: auto; font-size: .75rem; color: var(--ink-light); border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 .6em; }
+  .elixirs-root .chain { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; font-size: .78rem; }
+  .elixirs-root .none { color: var(--ink-faint); }
+  .elixirs-root .foot { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--line); display: flex; gap: 12px; font-size: .75rem; color: var(--ink-faint); }
+  .elixirs-root .lsearch-bar { display: flex; gap: var(--space-3); align-items: center; margin: var(--space-3) 0; }
+  .elixirs-root .lsearch-bar input {
+    flex: 1; min-width: 220px; padding: .35em .8em;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    font-family: var(--font-body); background: rgba(255,255,255,.6);
+  }
+  .elixirs-root .lsearch-meta { font-size: .85rem; color: var(--ink-faint); white-space: nowrap; }
+  .elixirs-root .lsearch-empty { color: var(--ink-faint); }
+  .elixirs-root .card .hit-note { color: var(--seal); font-size: .75rem; margin-top: 6px; }
+  .elixirs-root .card.ahit { border-color: var(--seal); background: rgba(190, 60, 40, 0.06); }
+</style>

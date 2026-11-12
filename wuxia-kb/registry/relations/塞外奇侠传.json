@@ -1,7 +1,7 @@
 {
  "book": "塞外奇侠传",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 08:44:33",
+ "generated": "2026-11-07",
+ "generated_at": "2026-11-07 03:43:23",
  "script": "scripts/relation_validator.py",
  "script_version": "0.1",
  "spec_version": "0.3-draft",
@@ -15,10 +15,10 @@
   "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
  ],
  "snapshot": {
-  "exported_at": "2026-11-06 08:44:33",
+  "exported_at": "2026-11-07 03:43:24",
   "tagged_chapters": 28,
   "concordance_generated": "2026-11-06T00:28:03+08:00",
-  "registry_entities": 738,
+  "registry_entities": 2926,
   "corpus_chapters": 28,
   "paragraphs": 558,
   "verbs": 1283,
@@ -88,13 +88,13 @@
  },
  "counts": {
   "candidates": 101,
-  "edges": 49,
+  "edges": 50,
   "dropped": 82,
   "derived_edges": 1,
   "tongmen_edges": 1,
   "lineage_labels": 1,
   "by_predicate": {
-   "交手": 25,
+   "交手": 26,
    "到达": 8,
    "任职": 1,
    "同门": 1,
@@ -107,16 +107,16 @@
    "转移": 3
   },
   "by_confidence": {
-   "ok": 38,
+   "ok": 39,
    "strong": 8,
    "weak": 3
   },
   "by_layer": {
-   "人": 32,
+   "人": 33,
    "实": 17
   },
   "by_rule": {
-   "X-COMBAT": 25,
+   "X-COMBAT": 26,
    "X-ARRIVE": 7,
    "04f-L17": 1,
    "04f-L21": 1,
@@ -324,10 +324,10 @@
    "id": "塞外奇侠传#R0003"
   },
   {
-   "subject": "哈玛雅",
+   "subject": "杨云骢",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "杨云骢",
+   "object": "飞红巾",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -378,54 +378,6 @@
    "id": "塞外奇侠传#R0004"
   },
   {
-   "subject": "哈玛雅",
-   "subject_type": "@",
-   "predicate": "交手",
-   "object": "楚昭南",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "005:17",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    },
-    {
-     "loc": "005:21",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    },
-    {
-     "loc": "020:4",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 3,
-   "loc": "005:17",
-   "chapter": 5,
-   "para": 17,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "塞外奇侠传"
-   ],
-   "locs": [
-    "005:17",
-    "005:21",
-    "020:4"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "塞外奇侠传#R0005"
-  },
-  {
    "subject": "伊士达",
    "subject_type": "@",
    "predicate": "交手",
@@ -465,49 +417,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "塞外奇侠传#R0006"
-  },
-  {
-   "subject": "哈合图",
-   "subject_type": "@",
-   "predicate": "交手",
-   "object": "哈玛雅",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "020:3",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    },
-    {
-     "loc": "020:3",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 2,
-   "loc": "020:3",
-   "chapter": 20,
-   "para": 3,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "塞外奇侠传"
-   ],
-   "locs": [
-    "020:3",
-    "020:3"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "塞外奇侠传#R0007"
+   "id": "塞外奇侠传#R0005"
   },
   {
    "subject": "哈合图",
@@ -549,7 +459,49 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "塞外奇侠传#R0008"
+   "id": "塞外奇侠传#R0006"
+  },
+  {
+   "subject": "哈合图",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "飞红巾",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "020:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "020:3",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "020:3",
+   "chapter": 20,
+   "para": 3,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "020:3",
+    "020:3"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0007"
   },
   {
    "subject": "哈玛雅",
@@ -591,7 +543,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "塞外奇侠传#R0009"
+   "id": "塞外奇侠传#R0008"
   },
   {
    "subject": "杨云骢",
@@ -633,7 +585,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "塞外奇侠传#R0010"
+   "id": "塞外奇侠传#R0009"
   },
   {
    "subject": "杨云骢",
@@ -675,7 +627,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "塞外奇侠传#R0011"
+   "id": "塞外奇侠传#R0010"
   },
   {
    "subject": "杨云骢",
@@ -714,6 +666,48 @@
    "locs": [
     "018:1",
     "018:1"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0011"
+  },
+  {
+   "subject": "楚昭南",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "飞红巾",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "005:17",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    },
+    {
+     "loc": "005:21",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 2,
+   "loc": "005:17",
+   "chapter": 5,
+   "para": 17,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "005:17",
+    "005:21"
    ],
    "layer": "人",
    "direction": "↔",
@@ -921,7 +915,43 @@
    "subject": "哈玛雅",
    "subject_type": "@",
    "predicate": "交手",
-   "object": "德卡",
+   "object": "楚昭南",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "020:4",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "020:4",
+   "chapter": 20,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "020:4"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0018"
+  },
+  {
+   "subject": "德卡",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "飞红巾",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E2动作+共现",
@@ -948,42 +978,6 @@
    ],
    "locs": [
     "009:22"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "id": "塞外奇侠传#R0018"
-  },
-  {
-   "subject": "哈玛雅",
-   "subject_type": "@",
-   "predicate": "交手",
-   "object": "王大须子",
-   "object_type": "@",
-   "confidence": "ok",
-   "evidence_type": "E2动作+共现",
-   "rule": "X-COMBAT",
-   "rule_row": "X-COMBAT",
-   "subtype": "",
-   "params": {},
-   "notes": "一次交手不自动敌对（01g 铁律）",
-   "evidence": [
-    {
-     "loc": "024:4",
-     "type": "E2动作+共现",
-     "rule": "X-COMBAT"
-    }
-   ],
-   "count": 1,
-   "loc": "024:4",
-   "chapter": 24,
-   "para": 4,
-   "derived": false,
-   "veracity": "叙述",
-   "books": [
-    "塞外奇侠传"
-   ],
-   "locs": [
-    "024:4"
    ],
    "layer": "人",
    "direction": "↔",
@@ -1242,6 +1236,42 @@
    "id": "塞外奇侠传#R0026"
   },
   {
+   "subject": "王大须子",
+   "subject_type": "@",
+   "predicate": "交手",
+   "object": "飞红巾",
+   "object_type": "@",
+   "confidence": "ok",
+   "evidence_type": "E2动作+共现",
+   "rule": "X-COMBAT",
+   "rule_row": "X-COMBAT",
+   "subtype": "",
+   "params": {},
+   "notes": "一次交手不自动敌对（01g 铁律）",
+   "evidence": [
+    {
+     "loc": "024:4",
+     "type": "E2动作+共现",
+     "rule": "X-COMBAT"
+    }
+   ],
+   "count": 1,
+   "loc": "024:4",
+   "chapter": 24,
+   "para": 4,
+   "derived": false,
+   "veracity": "叙述",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "locs": [
+    "024:4"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "id": "塞外奇侠传#R0027"
+  },
+  {
    "subject": "红云道人",
    "subject_type": "@",
    "predicate": "交手",
@@ -1275,7 +1305,7 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "塞外奇侠传#R0027"
+   "id": "塞外奇侠传#R0028"
   },
   {
    "subject": "多铎",
@@ -1313,7 +1343,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0028"
+   "id": "塞外奇侠传#R0029"
   },
   {
    "subject": "多铎",
@@ -1349,7 +1379,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0029"
+   "id": "塞外奇侠传#R0030"
   },
   {
    "subject": "杨云骢",
@@ -1385,7 +1415,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0030"
+   "id": "塞外奇侠传#R0031"
   },
   {
    "subject": "楚昭南",
@@ -1421,7 +1451,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0031"
+   "id": "塞外奇侠传#R0032"
   },
   {
    "subject": "楚昭南",
@@ -1457,7 +1487,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0032"
+   "id": "塞外奇侠传#R0033"
   },
   {
    "subject": "纳兰明慧",
@@ -1493,7 +1523,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0033"
+   "id": "塞外奇侠传#R0034"
   },
   {
    "subject": "罗铁臂",
@@ -1529,7 +1559,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0034"
+   "id": "塞外奇侠传#R0035"
   },
   {
    "subject": "伊士达",
@@ -1543,7 +1573,7 @@
    "rule_row": "B3",
    "subtype": "亲同门",
    "params": {
-    "共同师父": "岳鸣珂"
+    "共同师父": "晦明禅师"
    },
    "notes": "推导关系（derived），不直接登记；不传递（R18）",
    "evidence": [
@@ -1573,7 +1603,7 @@
     "006:20",
     "027:8"
    ],
-   "id": "塞外奇侠传#R0035"
+   "id": "塞外奇侠传#R0036"
   },
   {
    "subject": "纳兰明慧",
@@ -1609,13 +1639,13 @@
    ],
    "layer": "人",
    "direction": "↔",
-   "id": "塞外奇侠传#R0036"
+   "id": "塞外奇侠传#R0037"
   },
   {
    "subject": "伊士达",
    "subject_type": "@",
    "predicate": "师承",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "object_type": "@",
    "confidence": "ok",
    "evidence_type": "E1明文",
@@ -1645,13 +1675,13 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "塞外奇侠传#R0037"
+   "id": "塞外奇侠传#R0038"
   },
   {
    "subject": "哈玛雅",
    "subject_type": "@",
    "predicate": "师承",
-   "object": "岳鸣珂",
+   "object": "晦明禅师",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E1明文",
@@ -1681,7 +1711,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "塞外奇侠传#R0038"
+   "id": "塞外奇侠传#R0039"
   },
   {
    "subject": "杨云骢",
@@ -1719,7 +1749,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "塞外奇侠传#R0039"
+   "id": "塞外奇侠传#R0040"
   },
   {
    "subject": "杨云骢",
@@ -1755,7 +1785,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "塞外奇侠传#R0040"
+   "id": "塞外奇侠传#R0041"
   },
   {
    "subject": "杨云骢",
@@ -1793,7 +1823,7 @@
    ],
    "layer": "人",
    "direction": "→",
-   "id": "塞外奇侠传#R0041"
+   "id": "塞外奇侠传#R0042"
   },
   {
    "subject": "哈玛雅",
@@ -1829,7 +1859,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0042"
+   "id": "塞外奇侠传#R0043"
   },
   {
    "subject": "哈玛雅",
@@ -1865,7 +1895,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0043"
+   "id": "塞外奇侠传#R0044"
   },
   {
    "subject": "孟禄",
@@ -1901,7 +1931,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0044"
+   "id": "塞外奇侠传#R0045"
   },
   {
    "subject": "杨云骢",
@@ -1937,7 +1967,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0045"
+   "id": "塞外奇侠传#R0046"
   },
   {
    "subject": "楚昭南",
@@ -1973,7 +2003,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0046"
+   "id": "塞外奇侠传#R0047"
   },
   {
    "subject": "杨云骢",
@@ -2012,7 +2042,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0047"
+   "id": "塞外奇侠传#R0048"
   },
   {
    "subject": "杨云骢",
@@ -2051,7 +2081,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0048"
+   "id": "塞外奇侠传#R0049"
   },
   {
    "subject": "楚昭南",
@@ -2090,7 +2120,7 @@
    ],
    "layer": "实",
    "direction": "→",
-   "id": "塞外奇侠传#R0049"
+   "id": "塞外奇侠传#R0050"
   }
  ],
  "derived": {
@@ -2107,7 +2137,7 @@
     "rule_row": "B3",
     "subtype": "亲同门",
     "params": {
-     "共同师父": "岳鸣珂"
+     "共同师父": "晦明禅师"
     },
     "notes": "推导关系（derived），不直接登记；不传递（R18）",
     "evidence": [
@@ -2137,14 +2167,14 @@
      "006:20",
      "027:8"
     ],
-    "id": "塞外奇侠传#R0035"
+    "id": "塞外奇侠传#R0036"
    }
   ],
   "tongmen_pairs": [
    {
     "a": "伊士达",
     "b": "哈玛雅",
-    "master": "岳鸣珂",
+    "master": "晦明禅师",
     "rule": "B3",
     "confidence": "weak"
    }
@@ -2165,20 +2195,20 @@
     "nodes": [
      {
       "person": "伊士达",
-      "master": "岳鸣珂",
+      "master": "晦明禅师",
       "generation": 1,
       "status": "active",
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },
      {
       "person": "哈玛雅",
-      "master": "岳鸣珂",
+      "master": "晦明禅师",
       "generation": 1,
       "status": "active",
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },
      {
-      "person": "岳鸣珂",
+      "person": "晦明禅师",
       "master": "",
       "generation": 0,
       "status": "active",
@@ -2186,7 +2216,7 @@
      }
     ],
     "roots": [
-     "岳鸣珂"
+     "晦明禅师"
     ],
     "edge_count": 2
    },
@@ -2647,7 +2677,7 @@
     "rule_row": 11,
     "predicate": "转移",
     "loc": "027:7",
-    "note": "张天蒙 转移 伊士达"
+    "note": "天蒙禅师 转移 伊士达"
    },
    {
     "reason": "强制档实体缺失（04f#21/#22 行程动词须人物+地点）",
@@ -3204,7 +3234,7 @@
    "triggers": "⊞ 攻击/防御动词（近邻双角色）",
    "strength": "扩展",
    "candidates": 77,
-   "emitted": 25,
+   "emitted": 26,
    "dropped": 3,
    "extension": true,
    "note": ""

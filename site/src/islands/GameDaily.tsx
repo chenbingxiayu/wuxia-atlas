@@ -5,6 +5,7 @@ import {
   fetchDisplayLookup,
   type DisplayLookup,
 } from '../lib/display-shared';
+import { recordResult } from '../lib/game-stats';
 
 /**
  * G7 每日一谜：日期哈希全网同题（零后端），3 次机会 + 三级提示，emoji 战绩本地分享。
@@ -16,6 +17,12 @@ type Puzzle = { id: string; type: string; q: string; answer: string; hints: stri
 const B = (import.meta.env.BASE_URL || '/').endsWith('/')
   ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 const LS = 'wuxia-daily';
+
+// 与 src/lib/links.ts chapterHref 同式互指（island 内不 import 全量数据版 helper）
+const chapHref = (base: string, book: string, loc: string) => {
+  const m = loc.match(/\d+/);
+  return m ? `${base}books/${encodeURIComponent(book)}/${m[0].padStart(3, '0')}/` : null;
+};
 
 function todayKey() {
   const d = new Date();
@@ -81,8 +88,10 @@ export default function GameDaily() {
     const nextTries = [...tries, ok ? 'win' : 'miss'];
     setTries(nextTries);
     setInput('');
-    if (ok) { setState('win'); persist(nextTries, 'win'); return; }
-    if (nextTries.length >= 3) { setState('lose'); persist(nextTries, 'lose'); }
+    // E1 战绩中心：仅结算（win/lose 落定）时记一局——state==='play' 门卫保证每局只写一次；
+    // 旧 wuxia-daily 每日存档不迁移，战绩自战绩中心上线起算
+    if (ok) { setState('win'); persist(nextTries, 'win'); recordResult('daily', true, day); return; }
+    if (nextTries.length >= 3) { setState('lose'); persist(nextTries, 'lose'); recordResult('daily', false, day); }
   }
 
   const share = () => {
@@ -90,6 +99,14 @@ export default function GameDaily() {
     const text = `江湖每日一谜 ${day.slice(0, 4)}/${day.slice(4, 6)}/${day.slice(6, 8)} ${marks || '⬜'}\n${puzzle ? dspText(lookup.display, puzzle.q) : ''}`;
     navigator.clipboard?.writeText(text).then(() => setCopied(true)).catch(() => setCopied(false));
   };
+
+  // W1-T1：useMemo 必须先于任何条件返回——hooks 调用数在「出题中」态与就绪态之间保持恒定，否则 React #310
+  // loc 形如「书名·章:行」（daily.json 均带书名前缀、无独立 book 字段）——split('·') 取书名与章，解析失败降级纯文本
+  const locHref = useMemo(() => {
+    if (!puzzle) return null;
+    const [book, chap] = puzzle.loc.split('·');
+    return book && chap ? chapHref(B, book, chap) : null;
+  }, [puzzle]);
 
   if (!puzzle) return <div className="gd-loading">出题中…</div>;
   const hintsShown = Math.min(tries.length, puzzle.hints.length);
@@ -116,7 +133,9 @@ export default function GameDaily() {
         ) : (
           <div className={'answer ' + (state === 'win' ? 'ok' : 'no')}>
             {state === 'win' ? `恭喜！答案就是「${dsp(lookup.display, puzzle.answer)}」。` : `今日谜底：「${dsp(lookup.display, puzzle.answer)}」。`}
-            <span className="gd-loc">{puzzle.loc}</span>
+            {locHref
+              ? <a className="gd-loc mono" href={locHref}>{puzzle.loc} →</a>
+              : <span className="gd-loc">{puzzle.loc}</span>}
             <p className="gd-explain">{dspText(lookup.display, puzzle.explain)}</p>
           </div>
         )}
@@ -140,7 +159,7 @@ export default function GameDaily() {
       <style>{`
         .gd { display: flex; flex-direction: column; gap: 14px; }
         .riddle { max-width: 720px; margin: 0 auto; width: 100%; background: #fbf8ef; border: 2px solid #262420;
-          border-radius: 6px; padding: 26px 32px; box-shadow: 6px 7px 0 rgba(38,36,32,.12); }
+          border-radius: 6px; padding: 26px 32px; box-shadow: 6px 7px 0 rgba(38,36,32,.12); box-sizing: border-box; }
         .rh { display: flex; justify-content: space-between; gap: 12px; align-items: baseline;
           border-bottom: 1px solid #d8cdb4; padding-bottom: 12px; }
         .gd-q { font-size: 18px; line-height: 1.8; }
@@ -148,7 +167,7 @@ export default function GameDaily() {
         .hint { display: flex; gap: 12px; align-items: baseline; padding: 8px 0; border-bottom: 1px dashed #e6ddc8; font-size: 14.5px; }
         .hn { color: #8a8172; font-family: ui-monospace, monospace; font-size: 12px; white-space: nowrap; }
         .gd-row { display: flex; gap: 10px; margin-top: 16px; }
-        .gd-in { flex: 1; padding: 10px 16px; border: 2px solid #262420; border-radius: 4px; font-family: inherit; font-size: 15px; background: #fbf8ef; }
+        .gd-in { flex: 1; min-width: 0; padding: 10px 16px; border: 2px solid #262420; border-radius: 4px; font-family: inherit; font-size: 15px; background: #fbf8ef; }
         .gd-btn { font-family: inherit; border: 2px solid #a23527; background: #a23527; color: #fbf8ef;
           border-radius: 4px; padding: 0 24px; font-size: 15px; cursor: pointer; }
         .gd-btn:hover { background: #7e281d; }

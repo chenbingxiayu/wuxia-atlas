@@ -64,13 +64,103 @@ TITLE_RE = re.compile(
     r"公公|国王|活佛|太子|天子|相公|老爷|宗主|某|们|儿|老|少)$")
 # 器物/技艺名形（防止"游龙剑→楚昭南""金刚手（武功）→董岳"这类错误搬运）
 OBJECT_RE = re.compile(r"(剑|刀|鞭|棍|拳|掌|手|神芒|剑法|刀法|掌法|神功|心法|秘籍|丹|丸|散|膏|药)$")
-# 已知跨书管道噪声（人工复核排除：2026-11-06 云海/冰河 逐条上下文核验）
+# 已知跨书管道噪声（人工复核排除：2026-11-06 云海/冰河 + 联剑/广陵 逐条上下文核验）
 TRANSFER_DENY = {
     "天山神芒",   # 暗器名，被误记为凌未风别名
     "游龙剑",     # 兵器名（楚昭南佩剑）
     "自发魔女",   # "白发魔女"讹字形
     "华妹",       # 云海·之华妹妹 → 谷之华，非何绿华
     "霞妹",       # 冰河·霞妹 → 邹绛霞（江南之妻），非孟秋霞
+    # P2（联剑/广陵，2026-11-06 上下文核验）
+    "火神弹",     # 联剑·"火神弹朱大雄" → 朱大雄绰号，非郝宝椿
+    "张兄弟",     # 联剑·毕擎天对不同张姓人物的当面称呼（张丹枫/张玉虎歧义）
+    "曹太监",     # 联剑·于谦故事中的太监，考订未定（曹吉祥？）非曹安
+    "王妃",       # 广陵·"做段剑平的王妃"为身份/职位，非纳兰明慧
+    "八妹",       # 广陵·排行称呼（云瑚等），非吕四娘
+    "周伯伯",     # 联剑/广陵·当面尊称，所指待考（周青/周山民歧义）
+    "总舵主",     # 联剑·江湖职衔泛称，不作人物别名
+    # P3（风雷/侠骨，2026-11-06 上下文核验）
+    "三娘",       # 侠骨·实为"董十三娘"子串，非巫三娘子
+    "叶朋友",     # 侠骨·对叶慕华的当面称呼，非叶冲霄
+    "官伯伯",     # 侠骨·原文为"上官伯伯"子串，非官宗耀
+}
+
+# 每书 deny（P3 风雷/侠骨，2026-11-07 逐条上下文核验；证据见
+# logs/qa/_expand_books/p3_corpus_struct_audit.md §B1）：
+#   registry 全局别名 / 无 book 键 contextual / gold 跨书搬运三路都可能把
+#   跨书同形、子串、词义误配带入本书，且已实锤写进已标章节的 @ 管道。
+#   清洗后本书映射只保留正文中确有别名关系的条目，宁缺勿错。
+BOOK_DENY = {
+    "风雷震九州": {
+        # 跨书同形 / 子串 / 词义误配（18 条）
+        "叶兄弟", "叶英雄", "姓岳的", "冰川天女", "小石子", "少寨主", "张伯伯",
+        "楚统领", "王伯伯", "程伯伯", "黑煞神", "杨老爷子", "太师", "广元",
+        "玲珑", "英杰", "西门", "秀妹",
+        # 冗余短别名 / 子串风险（S3）
+        "仲和", "季和", "胜男", "伯和", "冲霄", "廷壁", "闯王",
+        # gold 跨书搬运：本书无该 canonical（2026-11-07 二次核验）
+        "张伯", "钟秀", "大力神", "玉罗刹",
+    },
+    "侠骨丹心": {
+        "小石子", "小孟", "燕妹", "玲珑", "英杰", "黄叶",
+        "仲和", "伯和", "胜男", "廷壁", "冲霄",
+    },
+    # P4（剑网尘丝/幻剑灵旗，2026-11-07 逐条上下文核验；证据见
+    # logs/qa/_expand_books/p4_mapping_audit.md）：
+    #   跨书同形（楚少爷→楚青云/王大叔→王老头）、子串（伯和⊂卫伯伯和/冲霄⊂黄鹄冲霄/
+    #   虹妹⊂天虹妹子）、词义误配（玲珑=七窍玲珑/围棋残局、西门=城西门/西门霸）、
+    #   泛称（世伯）、本书无该 canonical（昆仑剑客实为孟仲强/小石子=石子/韩寨主→韩霸待考）。
+    "剑网尘丝": {
+        "楚少爷", "王大叔", "伯和", "冲霄", "虹妹", "玲珑", "西门",
+        "世伯", "昆仑剑客", "小石子", "韩寨主", "玉妹", "雪妹",
+    },
+    "幻剑灵旗": {
+        "上官山主", "蒙面少女", "宫香主", "世伯", "西门", "玲珑", "玉妹", "雪妹",
+    },
+    # P5（龙凤宝钗缘/慧剑心魔，2026-11-07 逐条上下文核验）：两书为唐/安史系列（承大唐游侠传），
+    # 旧探针映射全部来自其他朝代书的 gold 转运（陈石星/周志侠/年羹尧/铁珊瑚/吕四娘/西门牧野 等），
+    # 本书无该 canonical → 一律 deny；换书映射只留人工核验正向表（本批暂空）。
+    "龙凤宝钗缘": {
+        "小石子", "少寨主", "年将军", "林兄弟", "石香主", "路兄弟", "铁寨主", "铁都尉",
+        "黑煞神", "小王", "玲珑", "英杰", "莹妹", "西门",
+        # 关系/称谓型 gold 噪声（2026-11-07 二次核验：跨书 gold 转运自 剑网/幻剑 tagged）
+        "令叔", "令媛", "妹妹", "师侄", "爷爷", "英妹", "贤侄", "武林怪杰", "楚老弟",
+    },
+    "慧剑心魔": {
+        "铁扇书生", "少寨主", "日月轮", "林兄弟", "沙帮主", "英妹子", "铁寨主", "世伯",
+        "太师", "玲珑", "英杰", "莹妹", "虹妹", "西门", "陛下",
+        "令叔", "令媛", "妹妹", "师侄", "爷爷", "英妹", "贤侄", "武林怪杰", "楚老弟",
+    },
+    # P6（飞凤潜龙/草莽龙蛇传/龙虎斗京华/绝塞传烽录，2026-11-09）：初建快照全部为跨书 gold
+    # 噪声（郭子仪/穆娟娟/厉南星/杜百英/齐漱玉/宇文雷/江海天… 均非本作角色），一律 deny；
+    # 本批无人工核验正向映射，@ 管道只凭回内证据。
+    "飞凤潜龙": {"令公", "妹妹", "小王"},
+    "草莽龙蛇传": {
+        "姓姜的少年", "杜舵主", "林兄弟", "陈兄弟", "三弟", "孔明", "孙女", "小段",
+        "师侄", "朝廷", "爷爷", "英杰", "贤侄", "青云",
+    },
+    "龙虎斗京华": {
+        "六合枪", "叫化子", "三弟", "令叔", "伯和", "冲霄", "妹妹", "孙女", "师侄",
+        "英杰", "贤侄", "闯王",
+    },
+    "绝塞传烽录": {
+        "冰川天女", "宇文山主", "康熙皇帝", "江湖浪子", "韩总镖头", "叫化子", "小石子",
+        "武将军", "韩大爷", "世伯", "令媛", "伯和", "先师", "妖女", "妹妹", "姓展",
+        "孙女", "小段", "小王", "师侄", "师嫂", "曼娜", "朝廷", "江家", "爷爷",
+        "玲珑", "舍弟", "英扬", "西门", "贤侄",
+    },
+}
+
+# 每书追加正向映射（人工核验过的本书文内证据；2026-11-07 剑网/幻剑）：
+#   楚少爷=扬州楚劲松之子楚天舒（剑网[001] 姜雪君问"扬州楚劲松…是你何人"/"正是家父"）；
+#   天虹妹子=楚天虹（"楚天虹七窍玲珑"）；玉妹=齐漱玉（卫天元呼"玉妹"，楚天舒点明所指）；
+#   雪妹=姜雪君（卫天元呼"雪妹"，姜雪君应声）。
+BOOK_EXTRA = {
+    # 注：楚少爷 在剑网同时指 楚天舒（常规）与 楚劲松（追述语境），全局映射会引起
+    # 管道冲突 → 不入 BOOK_EXTRA，由回内共现证据判定（2026-11-07 P4 复核决定）。
+    "剑网尘丝": [["天虹妹子", "楚天虹"],
+                 ["玉妹", "齐漱玉"], ["雪妹", "姜雪君"]],
+    "幻剑灵旗": [["玉妹", "齐漱玉"], ["雪妹", "姜雪君"]],
 }
 
 
@@ -78,9 +168,11 @@ def cjk_len(s: str) -> int:
     return len(re.findall(r"[\u4e00-\u9fff]", s))
 
 
-def bad_display(disp: str, canon: str, canon_set: set) -> bool:
-    """映射显示串通用噪声过滤（registry/gold 两路共用）。"""
+def bad_display(disp: str, canon: str, canon_set: set, book: str | None = None) -> bool:
+    """映射显示串通用噪声过滤（registry/gold 两路共用；book 非空时叠加 per-book deny）。"""
     if not disp or cjk_len(disp) < 2 or disp == canon:
+        return True
+    if book and disp in BOOK_DENY.get(book, ()):
         return True
     if BAD_ALIAS_RE.search(disp) or disp in GENERIC or disp in TRANSFER_DENY:
         return True
@@ -117,12 +209,12 @@ def load_registry(book: str):
         if not canon or e.get("status") == "pending":
             continue
         stat["entities"] += 1
-        # A1 全局别名（过滤上下文标题/器物形）
+        # A1 全局别名（过滤上下文标题/器物形；叠加本书 deny）
         for a in e.get("aliases") or []:
             if isinstance(a, dict):
                 continue
             a = (a or "").strip()
-            if bad_display(a, canon, canon_set):
+            if bad_display(a, canon, canon_set, book=book):
                 continue
             disp2canon[a][canon] += 1
             stat["alias_pairs"] += 1
@@ -134,10 +226,15 @@ def load_registry(book: str):
             bk = a.get("book")
             if not disp:
                 continue
-            if bk and bk != book:
+            if not bk:
+                # 无 book 键的旧式注记不参与任何书（2026-11-07 P3 修复：
+                # 岳鸣珂"姓岳的"等从旧书无键注记泄漏进风雷，造成错误 @ 管道）
+                stat["ctx_skipped_no_book"] += 1
+                continue
+            if bk != book:
                 stat["ctx_skipped_other_book"] += 1
                 continue
-            if bad_display(disp, canon, canon_set):
+            if bad_display(disp, canon, canon_set, book=book):
                 continue
             disp2canon[disp][canon] += 1
             stat["ctx_pairs"] += 1
@@ -170,7 +267,7 @@ def load_gold_transfer(book: str, canon_set: set):
     for (disp, canon), n in cnt.items():
         if n < 2 or canon not in canon_set:
             continue
-        if bad_display(disp, canon, canon_set):
+        if bad_display(disp, canon, canon_set, book=book):
             continue
         if disp in canon and cjk_len(disp) < 3:   # 短称（四娘/凤池）交给模型按最小完整单位判断
             continue
@@ -227,10 +324,20 @@ def main() -> int:
         if disp not in merged:
             merged[disp] = ("gold", canon, n)
     used = {d: v for d, v in merged.items() if any(d in texts.get(ch, "") for ch in texts)}
+    # 人工核验的正向映射（BOOK_EXTRA）：只补显示串在本书正文确有出现、且不覆盖已有条目的项
+    n_curated = 0
+    for disp, canon in BOOK_EXTRA.get(book, []):
+        if disp in used:
+            continue
+        if not any(disp in texts.get(ch, "") for ch in texts):
+            continue
+        used[disp] = ("curated", canon, 0)
+        n_curated += 1
     for r in review:
         r["appears"] = bool(any(r["display"] in texts.get(ch, "") for ch in texts))
     print(f"[registry] @实体 {reg_stat.get('entities', 0)}；候选 {len(reg_pairs)} 条；"
-          f"冲突跳过 {len(conflicts)}；跨书注记跳过 {reg_stat.get('ctx_skipped_other_book', 0)}")
+          f"冲突跳过 {len(conflicts)}；跨书注记跳过 {reg_stat.get('ctx_skipped_other_book', 0)}；"
+          f"无 book 注记跳过 {reg_stat.get('ctx_skipped_no_book', 0)}；本书 deny {len(BOOK_DENY.get(book, ()))} 条")
     print(f"[gold] 可搬运候选 {len(gold_pairs)} 条（复核表 review.tsv，含冲突/未命中）")
     print(f"[merge] 合并候选 {len(merged)} 条；本书正文命中 {len(used)} 条")
 
@@ -295,24 +402,27 @@ def main() -> int:
                      f"{first_seen.get(d, '')}\t{r['appears']}\t{applied}\t{r['status']}")
     io.open(out_dir / "review.tsv", "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
     n_reg = sum(1 for d in acc if merged.get(d, ("",))[0] == "registry")
-    n_gold = len(acc) - n_reg
+    n_gold = sum(1 for d in acc if merged.get(d, ("",))[0] == "gold")
+    n_cur = len(acc) - n_reg - n_gold
     summary = [
         f"# 映射快照（{book}）", "",
         f"- 来源：`registry/entities.json`（A：@实体别名/本书语境注记）"
-        f" + 已过审 `tagged/` 的 @管道（B：仅跨书共享规范名，严格过滤）",
+        f" + 已过审 `tagged/` 的 @管道（B：仅跨书共享规范名，严格过滤）"
+        f" + 人工核验正向映射（C：BOOK_EXTRA，本书文内证据）",
         f"- 回数：{total}；`ch_NNN.json` = 第 N 回快照（仅含首次出现在 <N 回的映射）；"
         f"`mapping.json` = 末回合并映射",
-        f"- 末回映射 **{len(final)}** 条（A registry {n_reg} / B gold {n_gold}）；"
+        f"- 末回映射 **{len(final)}** 条（A registry {n_reg} / B gold {n_gold} / C curated {n_cur}）；"
         f"本书正文命中 {len(used)} / 合并候选 {len(merged)}",
         f"- registry：@实体 {reg_stat.get('entities', 0)}；候选 {len(reg_pairs)}；"
-        f"同显示串冲突跳过 {len(conflicts)}；跨书语境注记跳过 {reg_stat.get('ctx_skipped_other_book', 0)}",
+        f"同显示串冲突跳过 {len(conflicts)}；跨书语境注记跳过 {reg_stat.get('ctx_skipped_other_book', 0)}；"
+        f"无 book 注记跳过 {reg_stat.get('ctx_skipped_no_book', 0)}；本书 deny {len(BOOK_DENY.get(book, ()))}",
         f"- gold 搬运：候选 {len(gold_pairs)}；复核明细 `review.tsv`（含冲突跳过/未命中）",
         "", "| 回 | 快照条数 | 本回首次出现 |", "|---|---:|---:|",
     ]
     summary += [f"| {ch:03d} | {n} | {per_ch_new.get(ch, 0)} |" for ch, n in sizes]
     io.open(out_dir / "summary.md", "w", encoding="utf-8", newline="\n").write(
         "\n".join(summary) + "\n")
-    print(f"[ok] {book}: {total} 回快照 + mapping.json（{len(final)} 条：registry {n_reg} / gold {n_gold}）→ {out_dir}")
+    print(f"[ok] {book}: {total} 回快照 + mapping.json（{len(final)} 条：registry {n_reg} / gold {n_gold} / curated {n_cur}）→ {out_dir}")
     return 0
 
 

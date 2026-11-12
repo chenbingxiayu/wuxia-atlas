@@ -103,7 +103,7 @@ def main() -> None:
             'generated': today(), 'schema': 'sects-v1',
             'books': books,
             'totals': {'sects': len(items), 'cross_book': sum(1 for i in items if i['cross_book'])},
-            'note': '成员册来自人物档案的门派线索（derived，strong/ok 级）；恩怨对头待 M4 与侠谱评分一同上线',
+            'note': '成员册来自人物档案的门派线索（置信分级）；恩怨对头随标注扩展上线',
         },
         'sects': items,
     }

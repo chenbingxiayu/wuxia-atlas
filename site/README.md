@@ -70,12 +70,39 @@ python scripts/copyright_gate.py site/dist   # 版权闸门（本地部署前必
 
 ### 构建顺序（必须按序）
 
-```bash
-# 1) 数据层（wuxia-kb 导出层；dry-run 先看契约报告，--apply 才写 site/data，写前备份）
-cd wuxia-kb && python -X utf8 scripts/export_site_all.py            # 或 --apply（需 hard_gap=0）
+> 2026-11-06 Review 后口径：base 不再是「改配置」，而是构建参数。
+> `npm run build`（= `build:gh`，base `/wuxia-atlas`）用于 GitHub Pages；`npm run build:preview`（base `/`）用于根路径预览（ZCode Sites）。
+> 构建开始会**清空并重建** `public/data` 镜像，不会再把已删除的历史备份带进产物。
+> 产物页数随数据口径：全量口径 2,397；天山 7 书 scope 口径实测 1,093（2026-11-10 build:preview）。
+>
+> **W2-C1 管线顺序（方案 §5.5 唯一顺序，不可颠倒）**：`export_site_all → clean_matches →
+> ratings_whr → ratings_calibration → audit_r1 → 切片（plots/relations/annals/wordcloud/qa_index/games/stories）→
+> astro build → build_search_index → pagefind → copyright_gate`。EX-5 的 matches-v1/glicko2
+> 产物为 **legacy 中间层**，正式 live 由工具 E（clean_matches → matches-v2 / ratings_whr →
+> whr）覆盖——EX 层先跑、工具 E 后跑，否则页面宣称 WHR 而数据是 glicko2（P0-2 根因）。
+> ratings_calibration（W2-D4-B·E3）必须紧跟 ratings_whr：E2 重跑会以骨架覆盖 meta.calibration。
 
-# 2) 前端构建（构建时自动 mirror site/data → public/data → dist/data）
-cd site && npm ci && npm run build                                  # → site/dist（约 1452 页，~40-50s）
+```bash
+# 1) 数据层（按 §5.5 顺序逐条跑：wuxia-kb 导出层 → 工具 E → 切片）
+cd wuxia-kb && python -X utf8 scripts/export_site_all.py            # 或 --apply（需 hard_gap=0）
+cd .. && python -X utf8 scripts/clean_matches.py                    # 工具 E·E1 → matches-v2 + ratings-cleanlog
+python -X utf8 scripts/ratings_whr.py                               # 工具 E·E2 → ratings.json engine=whr
+python -X utf8 scripts/ratings_calibration.py                       # 工具 E·E3 校准回填（W2-D4-B；E2 覆盖后必须重回填）
+python -X utf8 scripts/audit_r1.py                                  # 死亡一致性 → audit-r1.json（games killer 上游）
+python -X utf8 scripts/build_plots.py                               # 以下切片 ×7
+python -X utf8 scripts/build_relations.py && python -X utf8 scripts/build_annals.py
+python -X utf8 scripts/build_wordcloud.py && python -X utf8 scripts/build_qa_index.py
+python -X utf8 scripts/build_games_data.py && python -X utf8 scripts/build_stories.py
+
+# 1') 一键等价（推荐）：dry-run 打印命令列表；--apply 真跑并自动备份受影响 site/data 文件
+#     （matches.json / ratings.json / ratings-cleanlog.json / audit-r1.json → site/data/backup/c1_<时间戳>/），
+#     任一步 exit≠0 即中止；--scope 口径向每步透传（--scope all / 不传 = 全量口径）
+python -X utf8 scripts/run_pipeline.py --scope tianshan-demo --apply
+
+# 2) 前端构建（选一条）
+cd site && npm ci
+npm run build:gh        # → site/dist，base=/wuxia-atlas（正式）
+npm run build:preview   # → site/dist，base=/（根路径预览）
 
 # 3) 搜索索引（必须在 build 之后；读 dist、写 site/data/search-index.json，并同步 dist/data + public/data）
 cd wuxia-kb && python -X utf8 scripts/build_search_index.py
@@ -83,8 +110,13 @@ cd wuxia-kb && python -X utf8 scripts/build_search_index.py
 # 4) （可选）Pagefind 全文索引：无 package.json 依赖；离线不可用不阻塞（搜索页自动回退 JSON）
 cd site && npx --yes pagefind@1.6.0 --site dist
 
-# 5) 部署前验收
-python -X utf8 ../scripts/copyright_gate.py dist wuxia-atlas   # 第二参数为 base 段（注意）
+# 4.5) pagefind 之后重跑一次索引（点亮 /search「全文检索」区块：meta.pagefind.available=true）
+#      不重跑则 JSON 主搜索照常工作，仅全文区块隐藏
+cd wuxia-kb && python -X utf8 scripts/build_search_index.py
+
+# 5) 部署前验收（base 段与构建 profile 一致）
+python -X utf8 ../scripts/copyright_gate.py dist wuxia-atlas   # GH Pages 产物
+# 根路径预览产物跑闸门会因 rule3 base 不符失败，属预期（预览不是发布口径）
 # 链接 404 / 页面抽检：见 wuxia-kb/logs/qa/site_acceptance_report.md
 ```
 
@@ -98,7 +130,7 @@ python -X utf8 ../scripts/copyright_gate.py dist wuxia-atlas   # 第二参数为
 ### 回滚
 
 - **前端/搜索**：保留上一版 `dist/`（建议 `dist.bak.YYYYMMDD_HHMM`）→ 回滚时整目录替换（搜索索引随 dist 一起回滚）。
-- **数据**：`site/data/` 由 wuxia-kb 导出层重生成；回滚 = 用上一版 staging/备份重新 `--apply`（导出脚本自带契约报告与备份）。
+- **数据**：`site/data/` 由 wuxia-kb 导出层重生成；回滚 = 用上一版 staging/备份重新 `--apply`（导出脚本自带契约报告与备份）。W2-C1 起 `matches.json`/`ratings.json`/`ratings-cleanlog.json`/`audit-r1.json` 由工具 E（clean_matches/ratings_whr/audit_r1，经 `scripts/run_pipeline.py`）覆盖写——回滚这四个文件用 `site/data/backup/c1_<时间戳>/` 快照，或重跑 run_pipeline（含自动备份）。
 - **仅索引**：恢复 `site/data/search-index.json` 旧版后重跑 `npm run build`（或直接覆盖 dist/data 与 public/data 同名文件做热修）。
 - **不提交** `node_modules/`、`dist/`（见 `.gitignore`）；部署产物仅 `dist/`。
 

@@ -2,9 +2,11 @@
 import Base from '../../layouts/Base.astro';
 import sectsJson from '@data/sects.json';
 import matchesJson from '@data/matches.json';
+import sectSeatsJson from '@data/sect_seats.json';
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
-import { artTarget, personTarget, sectTarget } from '@lib/links';
+import { artTarget, chapterHref, personTarget, sectTarget } from '@lib/links';
+import { scrubTierNote, tierLabel } from '@lib/tiers';
 
 export function getStaticPaths() {
   return sectsJson.sects.map((s) => ({ params: { slug: s.canonical }, props: { s } }));
@@ -16,7 +18,8 @@ const prevS = all[(idx - 1 + all.length) % all.length];
 const nextS = all[(idx + 1) % all.length];
 
 const PRED_ORDER = ['镇山', '拥有', '独门', '传授', '修习'];
-const preds = Object.keys(s.arts_by_pred).sort((x, y) => {
+/* 镇山单列「镇山绝学」区块（置于武功册之前），原谓词分组不再重复显示 */
+const preds = Object.keys(s.arts_by_pred).filter((p) => p !== '镇山').sort((x, y) => {
   const ix = PRED_ORDER.indexOf(x), iy = PRED_ORDER.indexOf(y);
   return (ix < 0 ? 9 : ix) - (iy < 0 ? 9 : iy);
 });
@@ -26,6 +29,14 @@ const splitArts = (list) => {
   const moves = list.filter((a) => a.level === '招式');
   return { gongfa, moves };
 };
+const zsGongfa = (s.arts_by_pred['镇山'] || [])
+  .filter((a2) => a2.level !== '招式')
+  .map((a2) => ({
+    ...a2,
+    target: artTarget(a2.art),
+    chaps: (a2.locs || []).map((lc) => ({ loc: lc, href: chapterHref(a2.book, lc) })),
+  }));
+const zsMoves = (s.arts_by_pred['镇山'] || []).filter((a2) => a2.level === '招式');
 
 /* 人物 → 门派（用于恩怨对头的组织级聚合） */
 const personSect = new Map();
@@ -37,7 +48,7 @@ for (const m of matchesJson.matches) {
   if (memberNames.has(m.a)) { self = m.a; other = m.b; }
   else if (memberNames.has(m.b)) { self = m.b; other = m.a; }
   if (!other) continue;
-  const osect = personSect.get(other) || '散人/无归属';
+  const osect = personSect.get(other) || '无门派散人';
   if (osect === s.canonical) continue;
   const f = foes.get(osect) || { n: 0, names: new Map() };
   f.n += 1;
@@ -60,6 +71,16 @@ const tenureRows = (s.tenures || []).map((t2) => ({
   }),
 }));
 const restMemberRows = restMembers.map((m) => ({ ...m, target: personTarget(m.name) }));
+/* 门派驻地小卡：seat 数据的 sect 字段带/不带"派"等尾缀——去尾缀后互含匹配（短核≥2 字防误配），未命中不渲染 */
+const stripTail = (n) => String(n || '').replace(/[派帮门寺教]$/, '');
+const seatHit = (w: any) => {
+  const a = stripTail(w.sect), b = stripTail(s.canonical);
+  if (!a || !b) return false;
+  const short = a.length <= b.length ? a : b;
+  return short.length >= 2 && (a.includes(b) || b.includes(a));
+};
+const seatRow = (sectSeatsJson.seats || []).find(seatHit) || null;
+const pendingRow = (sectSeatsJson.pending || []).find(seatHit) || null;
 const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(osect) }));
 ---
 
@@ -72,16 +93,59 @@ const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(o
   </nav>
   <h1>{s.canonical}
     {s.cross_book && <span class="badge badge-cross">跨书</span>}
+  </h1>
+  <p class="meta">
     <span class="nav2">
       <a href={`${B}sects/${encodeURIComponent(prevS.canonical)}/`}>← 上一派</a>
       <a href={`${B}sects/${encodeURIComponent(nextS.canonical)}/`}>下一派 →</a>
     </span>
-  </h1>
+  </p>
+  <p class="meta">事件参与 <b>{s.ev_total}</b> · 见于 {s.books.map((b: string) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}</p>
   <p class="meta">事件参与 <b>{s.ev_total}</b> · 见于 {s.books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}</p>
+
+  {(seatRow || pendingRow) && (
+    <section>
+      <h2>驻地</h2>
+      <div class="card" style="padding:12px 22px">
+        {seatRow ? (
+          <p class="seatline">
+            <b>{seatRow.seat}</b>
+            <span class="dim">{seatRow.status === '推理' ? '◌ 推理' : '● 实锚'}</span>
+            <span class="fine">{seatRow.basis}</span>
+          </p>
+        ) : (
+          <p class="seatline">
+            <span class="dim">坐标考订中</span>
+            {pendingRow.note && <span class="fine">{pendingRow.note}</span>}
+          </p>
+        )}
+      </div>
+    </section>
+  )}
+
+  {zsGongfa.length > 0 && (
+    <section>
+      <h2>镇山绝学 <span class="dim">（本派以此功为镇派武功 · 关系表明文）</span></h2>
+      <ul class="zs">
+        {zsGongfa.map((z) => (
+          <li>
+            {z.target
+              ? <a class="chip" href={`${B}arts/${encodeURIComponent(z.target)}/`}>{z.art}</a>
+              : <span class="chip">{z.art}</span>}
+            <span class="loc">{z.book}·{z.chaps.map((c, i) => (
+              <>{i > 0 && '，'}{c.href ? <a href={c.href}>{c.loc}</a> : <span>{c.loc}</span>}</>
+            ))}</span>
+            {z.note && <span class="fine"> {scrubTierNote(z.note)}</span>}
+          </li>
+        ))}
+      </ul>
+      {zsMoves.length > 0 && <p class="dim moves-note">另有招式级 {zsMoves.length} 个（{zsMoves.map((m) => m.art).join('、')}）——归各武功页招式名表。</p>}
+    </section>
+  )}
 
   {preds.length > 0 && (
     <section>
-      <h2>武功册 <span class="dim">（只列功法级；招式见各武功页「招式名表」——工具 A 招式表分级）</span></h2>
+      <h2>武功册 <span class="dim">（只列功法级；招式见各武功页「招式名表」——招式名表分级）</span></h2>
       {preds.map((pred) => {
         const { gongfa, moves } = splitArts(s.arts_by_pred[pred]);
         if (!gongfa.length) return null;
@@ -107,7 +171,7 @@ const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(o
 
   {(s.tenures || []).length > 0 ? (
     <section>
-      <h2>掌门世系与成员册 <span class="dim">（工具 B 门派世系表 · 每代掌门列门下成员）</span></h2>
+      <h2>掌门世系与成员册 <span class="dim">（世系考订 门派世系表 · 每代掌门列门下成员）</span></h2>
       <div class="tenures">
         {tenureRows.map((t) => (
           <div class="tenure">
@@ -116,7 +180,7 @@ const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(o
                 ? <a href={`${B}characters/${encodeURIComponent(t.leaderTarget)}/`}>{dsp(t.leader)}</a>
                 : <span>{dsp(t.leader)}</span>}</b>
               <span class="mono dim">{t.period?.from || ''}{t.period?.to ? ` → ${t.period.to}` : ''}</span>
-              {t.conf && <span class="badge">{t.conf}</span>}
+              {t.conf && <span class="badge">{tierLabel(t.conf)}</span>}
               {t.successor && <span class="dim">继任：{dsp(t.successor)}</span>}
             </div>
             {(t.members || []).length > 0 ? (
@@ -129,7 +193,7 @@ const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(o
                 ))}
               </p>
             ) : (
-              <p class="dim">门下成员待考订归组（世系表 members 空）。</p>
+              <p class="dim">门下成员待考订归组（成员归组考订中）。</p>
             )}
             <ul class="notes">
               {(t.evidence || []).map((e) => (
@@ -144,13 +208,15 @@ const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(o
           {s.lineage_gaps.map((g) => <li class="dim">缺口：{g.before || ''} {g.note}</li>)}
         </ul>
       )}
-      {(s.lineage_todo || []).length > 0 && <p class="dim">待考：{s.lineage_todo.join('；')}</p>}
+      {(s.lineage_todo || []).length > 0 && (
+        <p class="dim">待考：{(s.lineage_todo || []).map((t: any) => typeof t === 'string' ? t : `${t.name || ''}（${t.book || ''}·${t.loc || ''}·${t.kind || ''}）`).join('；')}</p>
+      )}
     </section>
   ) : null}
 
   {restMembers.length > 0 && (
     <section>
-      <h2>其余成员 <span class="dim">（derived：强证/确证级门派线索，未入世系分组）</span></h2>
+      <h2>其余成员 <span class="dim">（旁证：强证/确证级门派线索，未入世系分组）</span></h2>
       <p class="chips">
         {restMemberRows.map((m) => (
           m.target ? (
@@ -167,7 +233,7 @@ const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(o
 
   {foeRows.length > 0 && (
     <section>
-      <h2>恩怨对头 <span class="dim">（matches 事件 · 本派成员交手对象的门派聚合）</span></h2>
+      <h2>恩怨对头 <span class="dim">（对局事件 · 本派成员交手对象的门派聚合）</span></h2>
       <p class="chips">
         {foeRowRows.map(({ osect, f, target }) => (
           target
@@ -203,6 +269,12 @@ const foeRowRows = foeRows.map(([osect, f]) => ({ osect, f, target: sectTarget(o
   .notes { font-size: .85rem; padding-left: 1.2em; }
   .notes li { margin: .3em 0; }
   .loc { color: var(--ink-faint); font-family: var(--font-mono); font-size: .85em; }
+  .loc a { color: var(--azure); }
+  .fine { color: var(--ink-faint); font-size: .8rem; }
+  .zs { list-style: none; padding: 0; font-size: .9rem; }
+  .zs li { margin: .35em 0; }
+  .zs li .chip { margin-right: .5em; }
+  .seatline { margin: 0; display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }
   .mono { font-family: var(--font-mono); }
   .moves-note { font-size: .8rem; margin: .2em 0 .6em; }
   .tenures { border-left: 2px solid var(--line-strong); margin-top: 10px; }

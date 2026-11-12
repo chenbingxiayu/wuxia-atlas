@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {
   buildDisplayLookup,
   dsp,
+  isMainPerson,
   toCanonical,
   type DisplayLookup,
 } from '../lib/display-shared';
@@ -67,7 +68,10 @@ export default function VersusTool() {
           <div className="vt-head">
             {[pa, pb].map((p, i) => (
               <div className="vt-side" key={p.name}>
-                <a className="vt-name" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(lookup.display, p.name)}</a>
+                {/* W0-T5 存目守卫：拳手名单含存目人物/组织（无档案页）→ 渲染纯文本防 404 */}
+                {isMainPerson(lookup, p.name)
+                  ? <a className="vt-name" href={`${B}characters/${encodeURIComponent(p.name)}/`}>{dsp(lookup.display, p.name)}</a>
+                  : <span className="vt-name">{dsp(lookup.display, p.name)}<small className="dim">（存目）</small></span>}
                 <div className="vt-rating mono">{p.rating}±{p.rd}</div>
                 <div className="dim">{p.tier} · {p.matches_n} 场</div>
                 {i === 0 && expected != null && <div className="vt-exp">预期胜率 <b>{Math.round(expected * 100)}%</b></div>}
@@ -102,7 +106,7 @@ export default function VersusTool() {
       <style>{`
         .vt { display: flex; flex-direction: column; gap: 16px; }
         .vt-sel { display: flex; gap: 12px; align-items: center; }
-        .vt-sel select { font-family: inherit; font-size: 15px; padding: 8px 12px; border: 2px solid #262420; border-radius: 4px; background: #fbf8ef; flex: 1; }
+        .vt-sel select { font-family: inherit; font-size: 15px; padding: 8px 12px; border: 2px solid #262420; border-radius: 4px; background: #fbf8ef; flex: 1; min-width: 0; }
         .vs { font-family: 'Ma Shan Zheng', serif; font-size: 22px; color: #a23527; }
         .vt-head { display: flex; gap: 20px; align-items: stretch; background: #fbf8ef; border: 1px solid #d8cdb4; border-radius: 4px; padding: 18px 24px; }
         .vt-side { flex: 1; }

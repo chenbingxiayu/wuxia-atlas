@@ -2,10 +2,15 @@
 import Base from '../../layouts/Base.astro';
 import dossiersJson from '@data/dossiers.json';
 import ratingsJson from '@data/ratings.json';
+import weaponsJson from '@data/weapons.json';
+import charPlotsJson from '@data/char_plots.json';
+import charRelationsJson from '@data/char_relations.json';
+import chinaGeo from '@data/china-simplified.json';
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
-import { artTarget, bookTarget, personTarget, sectTarget } from '@lib/links';
+import { artTarget, bookTarget, chapterHref, personTarget, sectTarget, weaponTarget } from '@lib/links';
 import { isGroupLabel, filterOutGroups } from '@lib/groups';
+import { TIER_LABEL, tierClass } from '@lib/tiers';
 
 export function getStaticPaths() {
   return dossiersJson.dossiers.map((d) => ({ params: { slug: d.canonical }, props: { d } }));
@@ -28,32 +33,60 @@ const aliasShown: { alias: string; count: number }[] = [];
 }
 
 // 链接目标解析（task-49）：display/别名/无页实体 → canonical 或纯文本；URL 一律 canonical。
-const booksLit = d.books.filter((b) => bookTarget(b));
+// 行经书 chips（T13/A8）：已点亮书 → 书页链接；未点亮书 → 纯文本 chip（不静默丢弃）
+const bookChips = d.books.map((b) => ({ book: b, target: bookTarget(b) }));
 const sectAff = d.sect_affinity
   .filter((sa) => sa.tier !== 'weak')
   .map((s) => ({ ...s, target: sectTarget(s.sect) }));
-const masters = d.lineage.masters.map((m) => ({ ...m, target: personTarget(m.person) }));
-const disciples = d.lineage.disciples.map((m) => ({ ...m, target: personTarget(m.person) }));
+// 定位符（"书·CCC:LLL" 合串）→ 回目页 URL；无章页返回 null（纯文本降级）
+const locHrefOf = (s: unknown): string | null => {
+  const str = typeof s === 'string' ? s : '';
+  const i = str.indexOf('·');
+  return i > 0 ? chapterHref(str.slice(0, i), str.slice(i + 1)) : null;
+};
+const masters = d.lineage.masters.map((m) => ({ ...m, target: personTarget(m.person), href: locHrefOf(m.locs?.[0]) }));
+const disciples = d.lineage.disciples.map((m) => ({ ...m, target: personTarget(m.person), href: locHrefOf(m.locs?.[0]) }));
 const artRows = d.arts.map((a) => ({ ...a, target: artTarget(a.art) }));
 const opponents = filterOutGroups(d.combat.top_opponents, (o) => o.person)
   .map((o) => ({ ...o, target: personTarget(o.person) }));
 
-const TIER_LABEL = { strong: '强证', ok: '确证', weak: '线索' };
 const CONF = { high: '●●', medium: '●○', low: '○○' };
 const maxBar = Math.max(
   ...Object.values(d.chapter_curves).flatMap((c) => Object.values(c)), 1,
 );
+// spec 002 T4：神兵持物（weapons holders 反查）与关键剧情（锚点轨切片）
+const heldWeapons = (weaponsJson as any).weapons
+  .filter((w: any) => weaponTarget(w.canonical) && (w.holders || []).some((h: any) => h.name === d.canonical))
+  .map((w: any) => ({ canonical: w.canonical, kind: w.kind, grade: w.grade, target: weaponTarget(w.canonical) }));
+const plots = (charPlotsJson as any).characters?.[d.canonical]?.plots || [];
+// PlotMap（spec 004 T3）：构建期 SVG——底图简化省界 + 锚点（实锚●/推理◌）+ 编年虚线
+const china = (chinaGeo as any);
+const pj = china.proj;
+const proj = (lng: number, lat: number): [number, number] =>
+  [pj.ox + (lng - pj.L0) * pj.KX * pj.scale, pj.oy + (pj.T - lat) * pj.scale];
+const mapPts = plots.filter((p: any) => p.place?.coords);
+// 人物关系（spec 003 T5）：情缘/亲缘/仇敌/恩义分组；师承沿用 lineage 不入
+const relGroups = ((charRelationsJson as any).relations || [])
+  .filter((r: any) => r.a === d.canonical || r.b === d.canonical)
+  .map((r: any) => {
+    const other = r.a === d.canonical ? r.b : r.a;
+    return { type: r.type, tier: r.tier, book: r.book, loc: r.loc, other, otherTarget: personTarget(other) };
+  });
 ---
 
 <Base title={disp} description={`${disp}：别名、师承传人、武功、战绩、出场曲线——梁羽生武侠宇宙人物档案。`}>
   <p class="crumb"><a href={`${B}characters/`}>人物谱</a> / {disp}</p>
   <h1>
     {disp}
-    {d.cross_book && <span class="badge badge-cross">跨书换乘</span>}
+    {d.cross_book && <span class="badge badge-cross" title="行经多部作品">跨书人物</span>}
   </h1>
   <p class="meta">
     出场 <b>{d.appearance_total.toLocaleString()}</b> 次 ·
-    行经 {booksLit.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}
+    行经 {bookChips.map(({ book, target }) => (
+      target
+        ? <a class="bookchip" href={`${B}books/${target}/`}>{book}</a>
+        : <span class="bookchip" title="该书暂无专页">{book}</span>
+    ))}
   </p>
 
   {aliasShown.length > 0 && (
@@ -67,18 +100,86 @@ const maxBar = Math.max(
     <p class="dim">摘要文案走"LLM 以本档案为上下文草拟 → 人工校定"流程后填入；本页其余各卡均为图谱自动事实。</p>
   </section>
 
+  {plots.length > 0 && (
+    <section>
+      <h2>关键剧情 <span class="dim">（考订锚点 · 按故事先后）</span></h2>
+      <ol class="plots">
+        {plots.map((p: any, i: number) => (
+          <li>
+            <b style={`color:${p.tag_colors?.[0] || '#8c8477'}`}>{i + 1}</b>
+            <b class="pname">{p.name}</b>
+            {p.line && <span class="dim"> — {p.line}</span>}
+            {chapterHref(p.book, p.loc) && <a class="loc loc-link" href={chapterHref(p.book, p.loc)}>{p.book}·{p.loc} →</a>}
+          </li>
+        ))}
+      </ol>
+      <p class="fine">锚点来自剧情考订轨；地名与纪年补齐后接入剧情地图。</p>
+    </section>
+  )}
+
+  {mapPts.length >= 2 && (
+    <section>
+      <h2>关键剧情地图 <span class="dim">（点=锚点 · 颜色示类型 · 编号示先后 · 虚线=故事先后，不表示行进路线）</span></h2>
+      <div class="mapcard">
+        <svg viewBox={`0 0 ${china.W} ${china.H}`} style="width:100%;height:auto;display:block" role="img" aria-label={`${disp} 关键剧情地图`}>
+          <path d={china.d} fill="#f1e9d7" stroke="#c9bda2" stroke-width="1.2"/>
+          {mapPts.map((p: any, i: number) => {
+            const [x, y] = proj(p.place.coords[0], p.place.coords[1]);
+            const c = p.tag_colors?.[0] || '#8c8477';
+            const reasoned = p.place.status === '推理';
+            const prev = i > 0 ? mapPts[i - 1].place.coords : null;
+            const [px, py] = prev ? proj(prev[0], prev[1]) : [0, 0];
+            return (
+              <g>
+                {prev && <line x1={px} y1={py} x2={x} y2={y} stroke="#8c8477" stroke-width="1.3" stroke-dasharray="4 4" opacity=".6"/>}
+                <circle cx={x} cy={y} r={reasoned ? 9 : 8}
+                  fill={reasoned ? 'none' : c} stroke={c} stroke-width="2"
+                  stroke-dasharray={reasoned ? '3 3' : undefined}>
+                  <title>{`${i + 1} ${p.name} · ${p.place.status}${p.place.name ? ' · ' + p.place.name : ''}`}</title>
+                </circle>
+                <text x={x} y={y - 14} font-size="12" text-anchor="middle" font-weight="700" fill={c}>{i + 1}</text>
+              </g>
+            );
+          })}
+        </svg>
+        <div class="lab" style="padding:6px 10px">
+          图例：<b>● 实锚</b>（原文明文）· <b>◌ 推理偏移</b>（依附近实锚，依据见剧情列表）· 待考锚点仅入列表不上图 ·
+          底图 DataV 省界简化投影
+        </div>
+      </div>
+    </section>
+  )}
+
+  {relGroups.length > 0 && (
+    <section>
+      <h2>人物关系 <span class="dim">（情缘 / 亲缘 / 仇敌 / 恩义 · 每条挂定位）</span></h2>
+      <p class="chips">
+        {relGroups.map((r) => (
+          r.otherTarget ? (
+            <a class="chip" href={`${B}characters/${encodeURIComponent(r.otherTarget)}/`}>
+              {r.type} · {r.otherTarget}
+              <small>{r.tier === 'strong' ? '强证' : '考订'} · {r.book}·{r.loc}</small>
+            </a>
+          ) : (
+            <span class="chip">{r.type} · {r.other}<small>{r.book}·{r.loc}</small></span>
+          )
+        ))}
+      </p>
+    </section>
+  )}
+
   {sectAff.length > 0 && (
     <section>
       <h2>门派线索 <span class="dim">（仅强证/确证级 · 推测级已排除——反用某派武功不构成归属）</span></h2>
       <p class="chips">
         {sectAff.map((s) => (
           s.target ? (
-            <a class={`chip t-${s.tier}`} href={`${B}sects/${encodeURIComponent(s.target)}/`}>
+            <a class:list={['chip', tierClass(s.tier)]} href={`${B}sects/${encodeURIComponent(s.target)}/`}>
               {s.sect}
               <small>{TIER_LABEL[s.tier]}{s.tier === 'strong' ? '·镇山' : ''}</small>
             </a>
           ) : (
-            <span class={`chip t-${s.tier}`}>
+            <span class:list={['chip', tierClass(s.tier)]}>
               {s.sect}
               <small>{TIER_LABEL[s.tier]}{s.tier === 'strong' ? '·镇山' : ''}</small>
             </span>
@@ -152,6 +253,23 @@ const maxBar = Math.max(
     </section>
   )}
 
+  {heldWeapons.length > 0 && (
+    <section>
+      <h2>神兵持物 <span class="dim">（曾持有或借用的名物）</span></h2>
+      <p class="chips">
+        {heldWeapons.map((w) => (
+          w.target ? (
+            <a class="chip" href={`${B}weapons/${encodeURIComponent(w.target)}/`}>
+              {w.canonical}<small>{w.kind}{w.grade ? ` · ${w.grade}` : ''}</small>
+            </a>
+          ) : (
+            <span class="chip">{w.canonical}<small>{w.kind}</small></span>
+          )
+        ))}
+      </p>
+    </section>
+  )}
+
   <section>
     <h2>战绩 <span class="dim">（杀伤 / 被杀 / 擒获 / 被擒 · 群目已滤）</span></h2>
     <div class="combat">
@@ -163,11 +281,17 @@ const maxBar = Math.max(
           <div>
             <h3 class="sub">{LABEL[k]}（{rows.reduce((s, x) => s + x.records.length, 0)}）</h3>
             <p class="chips">
-              {rows.map((x) => (
-                <span class="chip">
-                  {dsp(x.person)}<small>×{x.records.length} · {x.records[0].book}·{x.records[0].loc}</small>
-                </span>
-              ))}
+              {rows.map((x) => {
+                const href = chapterHref(x.records[0].book, x.records[0].loc);
+                return (
+                  <span class="chip">
+                    {dsp(x.person)}<small>×{x.records.length} · </small>
+                    {href
+                      ? <a class="loc loc-link" href={href}>{x.records[0].book}·{x.records[0].loc}</a>
+                      : <small class="loc">{x.records[0].book}·{x.records[0].loc}</small>}
+                  </span>
+                );
+              })}
             </p>
           </div>
         );
@@ -200,11 +324,12 @@ const maxBar = Math.max(
           <svg viewBox={`0 0 ${W} 44`} class="bars">
             {entries.map(([chn, n], i) => {
               const h = Math.max(2, Math.round((n / maxBar) * 30));
-              return (
+              const bar = (
                 <rect x={8 + i * 12} y={34 - h} width="9" height={h} fill="var(--azure)">
-                  <title>{`第 ${chn} 回 · ${n} 次`}</title>
+                  <title>{`第 ${chn} 回 · ${n} 次${chapterHref(book, chn) ? ' · 点击进入回目页' : ''}`}</title>
                 </rect>
               );
+              return chapterHref(book, chn) ? <a href={chapterHref(book, chn)}>{bar}</a> : bar;
             })}
           </svg>
         </div>
@@ -222,7 +347,9 @@ const maxBar = Math.max(
             <span class="verb">{e.verb}</span>
             <span class="who">{dsp(e.object)}</span>
             <span class="conf">{CONF[e.confidence] ?? ''}</span>
-            <span class="loc">{e.book}·{e.loc}</span>
+            {chapterHref(e.book, e.loc)
+              ? <a class="loc loc-link" href={chapterHref(e.book, e.loc)}>{e.book}·{e.loc} →</a>
+              : <span class="loc">{e.book}·{e.loc}</span>}
           </li>
         ))}
       </ul>
@@ -241,6 +368,25 @@ const maxBar = Math.max(
         生涯对局 {player.matches_n} 场（{player['w/d/l'][0]} 胜 {player['w/d/l'][1]} 平 {player['w/d/l'][2]} 负）
         {player.rd > 150 && <span class="few">数据不足（区间宽）</span>}
       </p>
+      {player.curve && player.curve.length >= 2 && (() => {
+        const pts = player.curve;
+        const CW = 520, CH = 70, padX = 8, padY = 16;
+        const rMin = Math.min(...pts.map((c: any) => c.r)), rMax = Math.max(...pts.map((c: any) => c.r));
+        const range = Math.max(rMax - rMin, 1);
+        const x = (i: number) => padX + (i / (pts.length - 1)) * (CW - 2 * padX);
+        const y = (r: number) => CH - padY - ((r - rMin) / range) * (CH - 2 * padY);
+        const line = pts.map((c: any, i: number) => `${i ? 'L' : 'M'}${x(i).toFixed(1)} ${y(c.r).toFixed(1)}`).join('');
+        const peakIdx = pts.reduce((mi: number, c: any, i: number) => c.r > pts[mi].r ? i : mi, 0);
+        return (
+          <svg class="rc-curve" viewBox={`0 0 ${CW} ${CH}`} style="width:100%;max-width:460px;height:auto;display:block;margin:4px 0" role="img" aria-label="武评巅峰曲线">
+            <path d={line} fill="none" stroke="var(--azure)" stroke-width="1.8"/>
+            <circle cx={x(peakIdx)} cy={y(pts[peakIdx].r)} r="4.5" fill="var(--gold)"/>
+            <text x={x(peakIdx) + 8} y={y(pts[peakIdx].r) - 6} font-size="10" fill="#8a6607">巅峰 {pts[peakIdx].r}</text>
+            <text x={padX} y={CH - 2} font-size="9" fill="#8c8477" font-family="monospace">{pts[0].t}</text>
+            <text x={CW - padX} y={CH - 2} font-size="9" fill="#8c8477" text-anchor="end" font-family="monospace">{pts[pts.length - 1].t}</text>
+          </svg>
+        );
+      })()}
       <p class="dim links">
         <a href={`${B}ratings/`}>武评总榜 →</a>
         {rivalName && <a href={`${B}ratings/versus/?a=${encodeURIComponent(d.canonical)}&b=${encodeURIComponent(rivalName)}`}>对主要对手 →</a>}
@@ -282,9 +428,10 @@ const maxBar = Math.max(
   .dim { color: var(--ink-faint); font-weight: 400; }
   .fine { font-size: .8rem; color: var(--ink-faint); }
   .sub { font-size: .92rem; color: var(--ink-light); margin: .4em 0 .1em; }
-  .t-strong { border-color: var(--jade); }
-  .t-ok { border-color: var(--azure); }
-  .t-weak { color: var(--ink-faint); }
+  /* 门派线索档位配色（lib/tiers.ts TIER_CLASS：t-hi=强证 · t-mid=确证 · t-lo=线索） */
+  .t-hi { border-color: var(--jade); }
+  .t-mid { border-color: var(--azure); }
+  .t-lo { color: var(--ink-faint); }
   .combat { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--space-5); }
   @media (max-width: 640px) { .combat { grid-template-columns: 1fr; } }
   .curve { margin: var(--space-2) 0; }
@@ -296,6 +443,13 @@ const maxBar = Math.max(
           border-bottom: 1px solid var(--line-strong); margin: 0 .5em; }
   .conf { color: var(--ghost); font-size: .7em; margin-left: .6em; letter-spacing: -1px; }
   .stream .loc { color: var(--ink-faint); font-size: .8rem; margin-left: .8em; }
+  .loc-link { font-family: var(--font-mono); font-size: .78rem; color: var(--azure); margin-left: .5em; }
+  a.loc-link:hover { color: var(--seal); }
+  .plots { list-style: none; padding: 0; font-size: .95rem; line-height: 2.2; }
+  .plots li b:first-child { margin-right: .5em; }
+  .plots .pname { margin-right: .4em; }
+  .mapcard { border: 1px solid var(--line-strong); border-radius: 4px; background: #f8f3e6; padding: 8px; }
+  .mapcard .lab { padding: 6px 10px; }
   .note p { margin: .3em 0 0; }
   section { margin-top: var(--space-5); }
   h2 { margin-bottom: var(--space-2); }

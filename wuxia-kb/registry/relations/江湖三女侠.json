@@ -1,7 +1,7 @@
 {
  "book": "江湖三女侠",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 08:44:35",
+ "generated": "2026-11-07",
+ "generated_at": "2026-11-07 03:43:30",
  "script": "scripts/relation_validator.py",
  "script_version": "0.1",
  "spec_version": "0.3-draft",
@@ -15,10 +15,10 @@
   "skills/SKILL_04f_动词标注.md §四 联动总表 27 行"
  ],
  "snapshot": {
-  "exported_at": "2026-11-06 08:44:35",
+  "exported_at": "2026-11-07 03:43:30",
   "tagged_chapters": 48,
   "concordance_generated": "2026-11-06T00:28:02+08:00",
-  "registry_entities": 738,
+  "registry_entities": 2926,
   "corpus_chapters": 48,
   "paragraphs": 3245,
   "verbs": 8681,
@@ -11451,7 +11451,51 @@
    "subject": "冯琳",
    "subject_type": "@",
    "predicate": "同门",
-   "object": "岳鸣珂",
+   "object": "年羹尧",
+   "object_type": "@",
+   "confidence": "weak",
+   "evidence_type": "E3推导",
+   "rule": "D06#45/B3",
+   "rule_row": "B3",
+   "subtype": "亲同门",
+   "params": {
+    "共同师父": "钟万堂"
+   },
+   "notes": "推导关系（derived），不直接登记；不传递（R18）",
+   "evidence": [
+    {
+     "loc": "021:12",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    },
+    {
+     "loc": "038:62",
+     "type": "E3推导",
+     "rule": "D06#45/B3"
+    }
+   ],
+   "count": 1,
+   "loc": "021:12",
+   "chapter": 0,
+   "para": 0,
+   "derived": true,
+   "veracity": "推导",
+   "books": [
+    "江湖三女侠"
+   ],
+   "layer": "人",
+   "direction": "↔",
+   "locs": [
+    "021:12",
+    "038:62"
+   ],
+   "id": "江湖三女侠#R0279"
+  },
+  {
+   "subject": "冯琳",
+   "subject_type": "@",
+   "predicate": "同门",
+   "object": "晦明禅师",
    "object_type": "@",
    "confidence": "weak",
    "evidence_type": "E3推导",
@@ -11494,50 +11538,6 @@
     "009:23",
     "011:50",
     "018:39"
-   ],
-   "id": "江湖三女侠#R0279"
-  },
-  {
-   "subject": "冯琳",
-   "subject_type": "@",
-   "predicate": "同门",
-   "object": "年羹尧",
-   "object_type": "@",
-   "confidence": "weak",
-   "evidence_type": "E3推导",
-   "rule": "D06#45/B3",
-   "rule_row": "B3",
-   "subtype": "亲同门",
-   "params": {
-    "共同师父": "钟万堂"
-   },
-   "notes": "推导关系（derived），不直接登记；不传递（R18）",
-   "evidence": [
-    {
-     "loc": "021:12",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    },
-    {
-     "loc": "038:62",
-     "type": "E3推导",
-     "rule": "D06#45/B3"
-    }
-   ],
-   "count": 1,
-   "loc": "021:12",
-   "chapter": 0,
-   "para": 0,
-   "derived": true,
-   "veracity": "推导",
-   "books": [
-    "江湖三女侠"
-   ],
-   "layer": "人",
-   "direction": "↔",
-   "locs": [
-    "021:12",
-    "038:62"
    ],
    "id": "江湖三女侠#R0280"
   },
@@ -11692,7 +11692,7 @@
    "id": "江湖三女侠#R0283"
   },
   {
-   "subject": "岳鸣珂",
+   "subject": "晦明禅师",
    "subject_type": "@",
    "predicate": "同门",
    "object": "曹仁父",
@@ -11742,7 +11742,7 @@
    "id": "江湖三女侠#R0284"
   },
   {
-   "subject": "岳鸣珂",
+   "subject": "晦明禅师",
    "subject_type": "@",
    "predicate": "同门",
    "object": "李治",
@@ -11792,7 +11792,7 @@
    "id": "江湖三女侠#R0285"
   },
   {
-   "subject": "岳鸣珂",
+   "subject": "晦明禅师",
    "subject_type": "@",
    "predicate": "同门",
    "object": "额音和布",
@@ -12460,7 +12460,7 @@
    "id": "江湖三女侠#R0302"
   },
   {
-   "subject": "岳鸣珂",
+   "subject": "晦明禅师",
    "subject_type": "@",
    "predicate": "师承",
    "object": "易兰珠",
@@ -15152,7 +15152,7 @@
     "subject": "冯琳",
     "subject_type": "@",
     "predicate": "同门",
-    "object": "岳鸣珂",
+    "object": "晦明禅师",
     "object_type": "@",
     "confidence": "weak",
     "evidence_type": "E3推导",
@@ -15196,7 +15196,7 @@
      "011:50",
      "018:39"
     ],
-    "id": "江湖三女侠#R0279"
+    "id": "江湖三女侠#R0280"
    },
    {
     "subject": "冯琳",
@@ -15349,7 +15349,7 @@
     "id": "江湖三女侠#R0283"
    },
    {
-    "subject": "岳鸣珂",
+    "subject": "晦明禅师",
     "subject_type": "@",
     "predicate": "同门",
     "object": "曹仁父",
@@ -15399,7 +15399,7 @@
     "id": "江湖三女侠#R0284"
    },
    {
-    "subject": "岳鸣珂",
+    "subject": "晦明禅师",
     "subject_type": "@",
     "predicate": "同门",
     "object": "李治",
@@ -15449,7 +15449,7 @@
     "id": "江湖三女侠#R0285"
    },
    {
-    "subject": "岳鸣珂",
+    "subject": "晦明禅师",
     "subject_type": "@",
     "predicate": "同门",
     "object": "额音和布",
@@ -15690,13 +15690,13 @@
      "021:12",
      "038:62"
     ],
-    "id": "江湖三女侠#R0280"
+    "id": "江湖三女侠#R0279"
    }
   ],
   "tongmen_pairs": [
    {
     "a": "冯琳",
-    "b": "岳鸣珂",
+    "b": "晦明禅师",
     "master": "易兰珠",
     "rule": "B3",
     "confidence": "weak"
@@ -15723,21 +15723,21 @@
     "confidence": "weak"
    },
    {
-    "a": "岳鸣珂",
+    "a": "晦明禅师",
     "b": "曹仁父",
     "master": "易兰珠",
     "rule": "B3",
     "confidence": "weak"
    },
    {
-    "a": "岳鸣珂",
+    "a": "晦明禅师",
     "b": "李治",
     "master": "易兰珠",
     "rule": "B3",
     "confidence": "weak"
    },
    {
-    "a": "岳鸣珂",
+    "a": "晦明禅师",
     "b": "额音和布",
     "master": "易兰珠",
     "rule": "B3",
@@ -15811,7 +15811,7 @@
     "kind": "辈分",
     "person": "唐金峰",
     "value": "师叔伯（性别未判）",
-    "relative_to": "岳鸣珂",
+    "relative_to": "晦明禅师",
     "rule": "B2",
     "confidence": "weak"
    },
@@ -15835,14 +15835,14 @@
     "kind": "长幼",
     "person": "曹仁父",
     "value": "师兄/姐（按拜师定位符时序）",
-    "relative_to": "岳鸣珂",
+    "relative_to": "晦明禅师",
     "rule": "B5",
     "confidence": "weak",
     "basis": "拜师定位符时序，性别未判"
    },
    {
     "kind": "长幼",
-    "person": "岳鸣珂",
+    "person": "晦明禅师",
     "value": "师兄/姐（按拜师定位符时序）",
     "relative_to": "李治",
     "rule": "B5",
@@ -15937,13 +15937,6 @@
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },
      {
-      "person": "岳鸣珂",
-      "master": "易兰珠",
-      "generation": 1,
-      "status": "active",
-      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
-     },
-     {
       "person": "年羹尧",
       "master": "钟万堂",
       "generation": 1,
@@ -15954,6 +15947,13 @@
       "person": "易兰珠",
       "master": "",
       "generation": 0,
+      "status": "active",
+      "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
+     },
+     {
+      "person": "晦明禅师",
+      "master": "易兰珠",
+      "generation": 1,
       "status": "active",
       "note": "师承树为 derived 视图（D06 §5.1/§5.2）"
      },

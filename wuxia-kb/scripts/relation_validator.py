@@ -2106,7 +2106,7 @@ def render_report(payload: dict) -> str:
 
 
 def render_summary(payloads: list) -> str:
-    lines = ["# N5 关系核验 · 5 书汇总（relation_validator.py）", "",
+    lines = [f"# N5 关系核验 · {len(payloads)} 书汇总（relation_validator.py）", "",
              f"- 生成：{today()} · 规范：{PREDICATE_TABLE_VERSION} · schema：{SCHEMA}",
              f"- 书：{[p['book'] for p in payloads]}", "",
              "| 书 | 回 | 候选 | 落库 | 派生 | 放弃 | strong | ok | weak | 主要谓词 |",

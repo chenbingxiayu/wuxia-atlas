@@ -1,30 +1,115 @@
 ---
 import Base from '../../layouts/Base.astro';
 import audit from '@data/audit.json';
+import r1 from '@data/audit-r1.json';
+const violations = (audit.violations || []);
+const coverage = (audit.rule_coverage || []);
+const exemptions = (audit.exemptions || []);
+const vWarn = violations.filter((v: any) => v.severity === 'warning');
+const vInfo = violations.filter((v: any) => v.severity !== 'warning');
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
 import { bookTarget, chapterNo } from '@lib/links';
-const amb = audit.r1_ambiguous;
-const passes = audit.r1_passes;
+// 死亡一致性走宽松核验服务（spec 002 T1）——严格断言版在 audit.json C4（§穿帮报告）
+const amb = r1.ambiguous || [];
+const passes = r1.passes || [];
+// 总览统计：全部构建期计算，null 不渲染
+const byBook = (audit.by_book || {}) as Record<string, any>;
+const bookCount = Object.keys(byBook).length;
+const SEV_LABEL: Record<string, string> = { warning: '重要提示', info: '参考信息' };
+const SEV_ICON: Record<string, string> = { warning: '⚠', info: 'ℹ' };
+const sevChips = Object.entries((audit.by_severity || {}) as Record<string, number>)
+  .filter(([, n]) => typeof n === 'number')
+  .map(([k, n]) => ({ key: k, label: SEV_LABEL[k] || k, icon: SEV_ICON[k] || '', n }));
+const areaChips = Object.entries((audit.by_area || {}) as Record<string, number>)
+  .filter(([k, n]) => k !== '检查项' && typeof n === 'number')
+  .map(([k, n]) => ({ label: k, n }));
 ---
 <Base title="穿帮雷达">
   <p class="crumb">穿帮雷达（规则引擎构建期输出）</p>
   <h1>穿帮雷达</h1>
   <p class="lead">
-    规则 R1「死亡一致性」：事件层"杀"事件的对象，此后是否仍以非引述身份出场。
-    输出为<b>两可清单</b>——"杀"可能非致死（未遂/重伤），也可能是真穿帮；不做断言，每条都可点开定位符对质。
-    R2 武功习得时序（待工具 A 招式考订）、R3 毒理一致性（待丹药谱）挂账中。
+    全站事实层的质检报告：{coverage.length} 条规则扫过五部深度书目——称谓、年龄、纪年、武功数值、江湖惯例，每条命中都可点开原文对质；每条豁免都公开理由。冲突≠穿帮，我们只陈列证据。
+    其中「死亡一致性」：事件层"杀"事件的对象，此后是否仍以非引述身份出场。输出为<b>两可清单</b>——"杀"可能非致死（未遂/重伤），也可能是真穿帮。
   </p>
 
   <div class="stats">
-    <span><b>{audit.totals.death_events}</b> 起"杀"事件</span>
-    <span><b>{audit.totals.checked}</b> 名死者检查</span>
-    <span class="amb"><b>{audit.totals.ambiguous}</b> 两可</span>
-    <span class="pass"><b>{audit.totals.passes}</b> 验证通过</span>
+    <span><b>{coverage.length}</b> 条规则</span>
+    <span><b>{violations.length}</b> 条命中</span>
+    <span class="grp">
+      {sevChips.map((s) => (
+        <span class={`chip sev-${s.key}`}>{s.icon} {s.label} <b>{s.n}</b></span>
+      ))}
+    </span>
+    <span><b>{bookCount}</b> 部书</span>
+    <span class="grp">
+      {areaChips.map((a) => (
+        <span class="chip">{a.label} <b>{a.n}</b></span>
+      ))}
+    </span>
   </div>
 
   <section>
-    <h2>两可清单 <small>死后仍以非引述身份出场（按活跃度排序）</small></h2>
+    <h2>穿帮报告墙 <small>规则引擎构建期输出 · warning 在前 info 在后 · 每条可对质</small></h2>
+    <div class="cards">
+      {[...vWarn, ...vInfo].map((v: any) => (
+        <div class="card">
+          <div class="head">
+            <b>{dsp(v.subject) || v.vid}</b>
+            <span class="badge" style={`border-color:${v.severity === 'warning' ? '#a63a2b' : '#8c8477'};color:${v.severity === 'warning' ? '#a63a2b' : '#8c8477'}`}>{v.severity}</span>
+            <span class="rulebadge">{v.rule_id} {v.rule_title}</span>
+          </div>
+          <p class="rat">{v.rationale}</p>
+          <div class="meta2">
+            {(() => {
+              const ch = chapterNo(v.book, v.locator);
+              return ch
+                ? <a class="mono" href={`${B}books/${encodeURIComponent(bookTarget(v.book) || v.book)}/${ch}/`}>{v.book}·{v.locator} →</a>
+                : <span class="mono">{v.book}·{v.locator}</span>;
+            })()}
+            {v.object && <span class="dim"> · 对象 {dsp(v.object)}</span>}
+            <span class="dim"> · {v.spec_cite}</span>
+            {v.rule_id === 'T4' && (
+              <a href={`${B}universe/timeline/?v=annals`}> · 原著纪年 × 史实对照 →</a>
+            )}
+          </div>
+        </div>
+      ))}
+      {violations.length === 0 && <p class="dim">本批无命中。</p>}
+    </div>
+  </section>
+
+  <section>
+    <h2>规则覆盖墙 <small>查了什么、没查什么，全部公开</small></h2>
+    <div class="covgrid">
+      {coverage.map((r: any) => (
+        <div class="cov">
+          <div class="cov-h"><b class="mono">{r.rule_id}</b> {r.title}
+            <span class="dim">（{r.kind === 'semi' ? '半自动' : r.kind}）</span></div>
+          <div class="cov-b">
+            命中 {r.hits} · {r.books.length} 书 ·
+            {Object.entries(r.status_by_book || {}).map(([b, st]) => (
+              <span class="chip">{b}<small>{st as string}</small></span>
+            ))}
+            {r.notes && <span class="dim"> · {r.notes}</span>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>豁免清单 <span class="lab">叙述模式豁免：作者按语、回忆等不算穿帮 · 理由公开</span></h2>
+    <ul class="exlist">
+      {exemptions.map((x: any) => (
+        <li><span class="mono">{x.book}·{x.locator}</span> 规则 {x.rule_id} —— {x.reason}{x.subject ? `（${x.subject}）` : ''}</li>
+      ))}
+      {exemptions.length === 0 && <li class="dim">本批无豁免。</li>}
+    </ul>
+  </section>
+
+  <section>
+    <h2>死亡一致性 <small>宽松核验服务 · 供谜题与问答消费</small></h2>
     <div class="cards">
       {amb.map((v) => (
         <div class="card">
@@ -57,6 +142,10 @@ const passes = audit.r1_passes;
       ))}
       {passes.length === 0 && <p class="dim">暂无（本批死者多无后续提及）</p>}
     </div>
+    <p class="fine">
+      口径：宽松核验（事件表 verb∈杀/诛/毙，首死为准；群目与组合实体已滤）——与严格断言版 C4 并行双轨。
+      同源三消费：<a href={`${B}games/`}>谜题过滤</a>（仅出「通过」死者）· <a href={`${B}qa/`}>问答存疑标注</a> · 武评归属辅助。
+    </p>
   </section>
 </Base>
 <style>
@@ -65,8 +154,23 @@ const passes = audit.r1_passes;
   .lead { color: var(--ink-light); max-width: 880px; line-height: 1.9; }
   .stats { display: flex; gap: 26px; flex-wrap: wrap; margin: 14px 0 4px; font-size: .95rem; }
   .stats b { font-size: 1.3rem; }
-  .stats .amb b { color: #a23527; }
-  .stats .pass b { color: #4f6e4a; }
+  .stats .grp { display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .stats .chip { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; font-size: .82rem; white-space: nowrap; }
+  .stats .chip b { font-size: .95rem; }
+  .stats .chip.sev-warning { border-color: #a63a2b; color: #a63a2b; }
+  .stats .chip.sev-info { border-color: #8c8477; color: #8c8477; }
+  .rulebadge { display: inline-block; border: 1px solid #b9ab90; border-radius: 3px; padding: 0 6px; font-size: 11px; color: #31536c; }
+  .rat { margin: 6px 0 0; font-size: .86rem; color: var(--ink-light); line-height: 1.9; }
+  .meta2 { margin-top: 6px; font-size: .78rem; color: var(--ink-faint); }
+  .meta2 .mono { margin-right: .6em; }
+  .covgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .cov { border: 1px solid var(--line); border-radius: 4px; padding: 10px 14px; background: #fbf8ef; }
+  .cov-h { font-size: .92rem; }
+  .cov-h b { font-family: var(--font-mono); margin-right: 6px; color: #a63a2b; }
+  .cov-b { margin-top: 4px; font-size: .8rem; color: var(--ink-faint); line-height: 1.9; }
+  .cov-b .chip { display: inline-block; border: 1px solid var(--line); border-radius: 999px; padding: 0 8px; margin: 1px 3px 1px 0; font-size: .72rem; }
+  .cov-b .chip small { color: #b9b1a2; margin-left: 3px; }
+  .exlist { list-style: none; padding: 0; font-size: .88rem; line-height: 2.1; }
   section { margin-top: var(--space-5); }
   h2 { font-size: 1.05rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
   h2 small { font-weight: 400; font-size: .78rem; color: var(--ink-faint); margin-left: .6em; }

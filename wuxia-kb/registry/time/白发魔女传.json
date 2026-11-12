@@ -2,7 +2,7 @@
   "schema": "wuxia-time-resolve-v1",
   "book": "白发魔女传",
   "work_id": "bainv",
-  "generated_at": "2026-11-06 08:44:17",
+  "generated_at": "2026-11-07 03:43:12",
   "tool": "time_resolver_wuxia v0.1 (2026-11-05, N4/D05)",
   "spec": {
     "skill": "skills/SKILL_时间体系_武侠版.md",
@@ -54,11 +54,9 @@
       32
     ],
     "struct_parity": {
-      "ok": 2262,
-      "bad": [
-        "006[33]"
-      ],
-      "bad_count": 1
+      "ok": 2263,
+      "bad": [],
+      "bad_count": 0
     },
     "warnings": []
   },
@@ -847,8 +845,8 @@
         "segment_anchor": "bainv#pn-r1.27",
         "line_no": 60,
         "span_in_line": [
-          606,
-          614
+          602,
+          610
         ]
       },
       "time_raw": "〖%今晚|时点〗",
@@ -1008,8 +1006,8 @@
         "segment_anchor": "bainv#pn-r1.43",
         "line_no": 92,
         "span_in_line": [
-          380,
-          389
+          371,
+          380
         ]
       },
       "time_raw": "〖%几十年|时长〗",
@@ -1047,8 +1045,8 @@
         "segment_anchor": "bainv#pn-r1.43",
         "line_no": 92,
         "span_in_line": [
-          713,
-          721
+          694,
+          702
         ]
       },
       "time_raw": "〖%五更|时点〗",
@@ -1086,8 +1084,8 @@
         "segment_anchor": "bainv#pn-r1.43",
         "line_no": 92,
         "span_in_line": [
-          740,
-          748
+          721,
+          729
         ]
       },
       "time_raw": "〖%五更|时点〗",
@@ -1245,8 +1243,8 @@
         "segment_anchor": "bainv#pn-r1.49",
         "line_no": 104,
         "span_in_line": [
-          119,
-          128
+          114,
+          123
         ]
       },
       "time_raw": "〖%几十年|时长〗",
@@ -1284,8 +1282,8 @@
         "segment_anchor": "bainv#pn-r1.49",
         "line_no": 104,
         "span_in_line": [
-          210,
-          218
+          205,
+          213
         ]
       },
       "time_raw": "〖%多年|时长〗",
@@ -1323,8 +1321,8 @@
         "segment_anchor": "bainv#pn-r1.49",
         "line_no": 104,
         "span_in_line": [
-          640,
-          648
+          635,
+          643
         ]
       },
       "time_raw": "〖%多年|时长〗",
@@ -2411,8 +2409,8 @@
         "segment_anchor": "bainv#pn-r1.68",
         "line_no": 142,
         "span_in_line": [
-          1336,
-          1344
+          1328,
+          1336
         ]
       },
       "time_raw": "〖%昨晚|时点〗",
@@ -2453,8 +2451,8 @@
         "segment_anchor": "bainv#pn-r1.68",
         "line_no": 142,
         "span_in_line": [
-          1368,
-          1376
+          1360,
+          1368
         ]
       },
       "time_raw": "〖%今日|时点〗",
@@ -10150,8 +10148,8 @@
         "segment_anchor": "bainv#pn-r7.32",
         "line_no": 64,
         "span_in_line": [
-          208,
-          216
+          205,
+          213
         ]
       },
       "time_raw": "〖%今日|时点〗",

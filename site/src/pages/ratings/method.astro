@@ -2,60 +2,110 @@
 import Base from '../../layouts/Base.astro';
 import ratings from '@data/ratings.json';
 import matches from '@data/matches.json';
+import cleanlog from '@data/ratings-cleanlog.json';
 import { B } from '@lib/base';
 const P = ratings.meta.params;
 const T = ratings.meta.tiers;
+const anchors = ratings.meta.tier_anchors || { names: [] };
+const cal = ratings.meta.calibration || {};
 const totals = matches.meta.totals;
+const esrc: Record<string, string> | undefined = matches.meta.event_source;
+const LOG: any = cleanlog;
+const WORDLIST: Record<string, string[]> = {
+  强胜: ['大败', '击败', '战败', '打败', '击倒', '击毙', '刺死', '擒下', '活捉', '毙于', '斩于', '死于', '杀退', '败走', '倒地', '栽倒'],
+  常规胜: ['占得上风', '大占上风', '占尽上风', '迫退', '逼退', '震退', '荡开', '迫得后退', '逼得后退', '伤在'],
+  险胜: ['险胜', '堪堪取胜', '略胜一筹', '侥幸获胜', '略占上风', '不敌', '甘拜下风', '技逊一筹'],
+  下风: ['下风', '难以招架', '渐落下风', '只有招架', '招架不住', '招架之功', '败象渐露', '遮拦不住', '再难支撑'],
+  平: ['不分胜负', '平分秋色', '难分高下', '势均力敌', '旗鼓相当', '打个平手', '战个平手', '战成平手', '相持不下', '两败俱伤', '平手', '不分高下'],
+};
+const MODIFIERS: Record<string, number> = { 中毒: 0.3, 状态不佳: 0.5, 偷袭: 0.5, 诈败: 0.5, 放水: 0.5, 切磋: 0.3 };
 ---
 
-<Base title="评分方法论">
+<Base title="武评方法论">
   <p class="crumb"><a href={`${B}ratings/`}>武评总榜</a> / 方法论</p>
-  <h1>评分方法论</h1>
-  <p class="lead">数据源与口径、胜负词表全表、引擎参数、收缩公式、分档阈值、校准状态、更新日志——全部公开。</p>
+  <h1>武评方法论</h1>
+  <p class="lead">清洗管线、四层裁决、软分数表、词表全表、引擎参数、分档锚定、新旧引擎差异、校准状态——全部公开，欢迎复算。</p>
 
   <section>
-    <h2>数据源与口径</h2>
-    <p>事件表叙事层（人工校订）中 verb_code ∈ ◈/◉/▲ 且主宾齐备的事件；排除 dropped（{totals.excluded_narrative} 起）与 in_quote 假设句。
-      对局单位 = 场景（同回、行距 ≤15 行聚合；场景切分 {matches.meta.scene_splitter_version}）；景内多对手对各裁一场（围攻景 v0 整场一场）。
-      仅"胜负词表命中"的对局入榜——覆盖率如实声明：{totals.matches} 场明文裁决 / {totals.fighters} 名参战者。</p>
+    <h2>一 · 数据源与清洗管线</h2>
+    <p>
+      候选事件 = 事件表叙事层 verb_code ∈ ◈/◉/▲ 且主宾齐备（排除 dropped {LOG.dropped?.dropped_events ?? 0} 起 · 引述 {LOG.dropped?.in_quote ?? 0} 起）。
+      交手双方先经<b>别名归并</b>（同人物合并——自对 {LOG.dropped?.self_pair ?? 0} 对丢弃）；
+      组织实体（门派/军队等）<b>转记</b>门派恩怨（{LOG.transferred?.org ?? 0} 条，不入个人评分）。
+    </p>
+    <p>
+      事件源<b>两源并存</b>：旧事件表书走 kb 事件表原路径（未动，逐场可复算）；
+      {(Object.entries(esrc ?? {}).filter(([, s]) => s === 'registry-events').map(([b]) => b).join('、') || '—')}
+      = registry/events 新事件层（event-v1，D12 同源适配：T01→◈ / T02→◉，
+      gate=excluded 丢弃 · R4 对白内丢弃 · 单侧不入 · 参与方须人物，事件层 outcome 裁决作
+      「事件方向outcome」通道）——全量口径不消费新源（演示口径限定）。
+    </p>
+    <p>
+      场景按<b>在场感知</b>切分：相邻事件与上一事件对有人员交集且行距 ≤40 行（评分管线规格值）才续景，否则切开——
+      避免群战粘连。本批最大景 {LOG.scenes?.max_persons ?? '—'} 人。
+    </p>
   </section>
 
   <section>
-    <h2>胜负词表 {matches.meta.wordlist_version}（方向按主方视角）</h2>
+    <h2>二 · 四层裁决</h2>
+    <ul>
+      <li><b>L1 单挑</b>（恰两人景）：直接保留两人交手结果，全信任；</li>
+      <li><b>L2 明文配对</b>（多人景）：胜负能明确归位到一对者——事件方向动词（杀/擒=主方胜）优先，词表近名兜底降级为低信任；</li>
+      <li><b>整战折算</b>：「以一敌众」式整体裁决 ×0.4 折算（抽取随人工批次补入）；</li>
+      <li><b>无明文不打分</b>：{LOG.dropped?.no_verdict ?? 0} 对因无胜负证据被诚实丢弃。</li>
+    </ul>
+    <p>产出：保留 {LOG.kept?.L1 ?? 0}（L1）+ {LOG.kept?.L2 ?? 0}（L2）= <b>{(LOG.kept?.L1 ?? 0) + (LOG.kept?.L2 ?? 0)} 场</b>；
+      转记 {LOG.transferred?.org ?? 0}；低信任降级 {LOG.downgraded?.attribution_fallback ?? 0}。</p>
+  </section>
+
+  <section>
+    <h2>三 · 软分数（评分唯一输入）</h2>
+    <p>s 为 a 侧得分（范围 [0,1]——a 胜 s=强度×修正×层折扣；a 败 s=1−该值；平=0.5×修正）；
+      outcome 为其离散化（s≥0.75 win / s≤0.35 loss / else draw，展示用）：</p>
+    <ul>
+      <li>强度：<b>强胜 1.0</b>（大败/斩于/杀退…）· <b>常规胜 0.85</b>（占得上风/迫退…）· <b>险胜 0.7</b>（略占上风…）· <b>下风兜底 0.6</b> · <b>平 0.5</b>；</li>
+      <li>修正：中毒 ×0.3 · 带伤 ×0.5 · 偷袭 ×0.5 · 诈败→平 · 放水 ×0.5 · 切磋 ×0.3；</li>
+      <li>层折扣：整战折算 ×0.4。</li>
+    </ul>
+    <p>词表命中统计：{Object.entries(LOG.wordlist_hit || {}).sort((a: any, b: any) => b[1] - a[1]).slice(0, 8).map(([w, n]) => `${w}×${n}`).join(' · ')}。</p>
     <ul class="wl">
-      <li><b>强胜 w1.0</b>：大败 击败 战败 打败 击倒 击毙 刺死 擒下 活捉 一招夺下 毙于 斩于 死于 杀退 败走 倒地 栽倒</li>
-      <li><b>常规胜 w0.8</b>：占得上风 迫退 逼退 震退 荡开 迫得后退 逼得后退 伤在</li>
-      <li><b>险胜 w0.6</b>：险胜 堪堪取胜 略胜一筹 侥幸获胜 略占上风</li>
-      <li><b>平 w0.7</b>：不分胜负 平分秋色 难分高下 势均力敌 旗鼓相当 打个平手 战个平手 战成平手 相持不下 两败俱伤</li>
-      <li><b>下风信号（判向）</b>：连连后退 只有招架 招架不住 招架之功 败象渐露 遮拦不住 再难支撑</li>
-      <li><b>modifier</b>：中毒×0.3 · 状态不佳×0.5 · 偷袭×0.5 · 诈败→平×0.5 · 放水×0.5 · 切磋×0.3 · 围攻（景内人数&gt;2，v0 整场一场）</li>
+      {Object.entries(WORDLIST).map(([cls, words]) => (
+        <li><b>{cls}</b>：{words.join('、')}</li>
+      ))}
+      <li><b>平词（限 L1）</b>：多人景的平词属噪声通道，不入评分。</li>
     </ul>
   </section>
 
   <section>
-    <h2>引擎与参数（Glicko-2）</h2>
-    <p>r0={P.r0} · rd0={P.rd0} · σ={P.vol} · τ={P.tau} · 长尾收缩 P={P.shrink_P}。
-      每场一个评分周期，按宇宙编年（白发→塞外→七剑→三女侠）+ 回序更新；
-      跨书人物按管线规范名归并（换乘站同实体）。
-      展示分 = (W·r + P·1500)/(W+5)——长尾（度=1 龙套）收缩至先验附近，区间（RD）宽者标"数据不足"。</p>
+    <h2>四 · 引擎：全历史等级分（WHR）</h2>
+    <p>
+      采用 Coulom（2008）<i>Whole-History Rating</i>：每人物评分轨迹按<b>时间随机游走先验</b>联结（σ={P?.sigma_day ?? '—'} / 日），
+      用整段交手历史联合 MAP 估计——<b>追溯重评</b>：新增对局不会洗牌历史名次；不确定度由后验曲率给出。
+      软分数直接作为 BT 期望得分观测（连续 s ∈ (0,1]）。引擎参考 Coulom 论文与开源实现自实现（零依赖）。
+    </p>
   </section>
 
   <section>
-    <h2>分档阈值（合成榜展示分分位，随数据版本重算）</h2>
-    <p>绝顶 ≥{T['绝顶']} · 超一流 ≥{T['超一流']} · 一流 ≥{T['一流']} · 二流 ≥{T['二流']} · 三流 &lt;{T['二流']}
-      <span class="warn">（当前版本分差被 Glicko-2 保守更新压缩，分位区间很窄——分档仅供演示，见页头横幅）</span></p>
+    <h2>五 · 分档（绝对锚定）</h2>
+    <p>锚定人物：{anchors.names?.join('、') ?? '—'}（原著公认绝顶）。绝顶线 = 锚定终值 −20 分，逐档 −60：</p>
+    <p>绝顶 ≥{T?.绝顶 ?? '—'} · 超一流 ≥{T?.超一流 ?? '—'} · 一流 ≥{T?.一流 ?? '—'} · 二流 ≥{T?.二流 ?? '—'} · 其余三流。</p>
+    <p>入榜门槛：对局 ≥3 场且不确定度 ≤150；不足者入<b>待考区</b>（可查数据，不占名次）。
+      旧引擎（Glicko-2）末次快照见 <code>data/backup/ratings-glicko2-20261107.json</code>——注意它基于事件层全量投影（1,052 场、含组织对局、无软分数），与现行评分（仅清洗后 {totals.matches} 场）<b>不可直接对照名次</b>。</p>
   </section>
 
   <section>
-    <h2>校准与验收状态（诚实栏）</h2>
+    <h2>六 · 校准与验收（诚实栏）</h2>
     <ul>
-      <li>人工抽检 100 场（精度≥90%/召回≥80% 方可发布）：<b>未完成</b>——总榜页挂 v0 预览横幅；</li>
-      <li>规格 §六 异常规则<b>已触发</b>：玉罗刹白发榜未进前五——抽取规则回查中（方向：败词归属的就近人名歧义、场景文本跨对手污染）；</li>
-      <li>holdout 明文复现率：未做（明文库抽取属 M4-M5）；</li>
-      <li>更新日志：{ratings.meta.generated} 词表 {matches.meta.wordlist_version} × 场景切分 {matches.meta.scene_splitter_version} × 数据版本见页脚——三轴任一变更重算并记日志。</li>
+      <li>人工抽检 100 场（精度 ≥90% 方可发布）：<b>{cal?.sampled ? `已抽 ${cal.sampled} 场` : '抽检表已生成，人工标注进行中'}</b>——
+        抽检表 <code>kb/校订/武评抽检.tsv</code>；</li>
+      <li>清洗日志：保留 L1 {LOG.kept?.L1 ?? 0} / L2 {LOG.kept?.L2 ?? 0} · 丢弃 {LOG.dropped?.no_verdict ?? 0}（无明文）等 · 转记 {LOG.transferred?.org ?? 0}；</li>
+      <li>评分输入：清洗后 {(LOG.kept?.L1 ?? 0) + (LOG.kept?.L2 ?? 0)} 场（词表见第三节全表 · presence 切分 ≤40 行）；
+        对质浏览切片：matches {matches.meta.schema ?? 'v1'}（{matches.meta.scene_splitter} · {matches.meta.wordlist}）；
+        引擎：{ratings.meta.engine}（{ratings.meta.generated}）——三轴任一变更即重算并记日志。</li>
     </ul>
   </section>
 </Base>
+
 <style>
   .crumb { font-size: .85rem; color: var(--ink-faint); }
   .crumb a { color: var(--azure); }
@@ -64,6 +114,7 @@ const totals = matches.meta.totals;
   section { margin-top: var(--space-5); max-width: 880px; }
   h2 { font-size: 1.05rem; border-bottom: 1px solid var(--line); padding-bottom: .2em; }
   p, li { line-height: 2; color: var(--ink); font-size: .95rem; }
+  code { background: rgba(0,0,0,.05); border-radius: 3px; padding: 0 .3em; font-family: var(--font-mono); font-size: .85em; }
+  .wl { list-style: none; padding: 0; }
   .wl li { border-bottom: 1px dashed var(--line); }
-  .warn { color: #8a6607; font-size: .85rem; }
 </style>

@@ -70,6 +70,7 @@ DEFAULT_BOOKS = sorted(
 
 # 作品 ID（工程口径；SKILL §2.1 示例 bainv-T017。正式 registry 主键后续与考订表对齐）
 # 2026-11-06 补齐 4 部新书（docs/69）；缺书 hash 兜底 ID 跨运行不稳定（PYTHONHASHSEED）
+# 2026-11-07 扩书 P1/P2/P3 批次补齐：云海/冰河/联剑/广陵/风雷/侠骨
 BOOK_IDS = {
     "江湖三女侠": "jianghu",
     "七剑下天山": "qijian",
@@ -80,6 +81,21 @@ BOOK_IDS = {
     "萍踪侠影录": "pingzong",
     "还剑奇情录": "huanjian",
     "散花女侠": "sanhua",
+    "云海玉弓缘": "yunhai",
+    "冰河洗剑录": "binghe",
+    "联剑风云录": "lianjian",
+    "广陵剑": "guangling",
+    "风雷震九州": "fenglei",
+    "侠骨丹心": "xiagu",
+    "剑网尘丝": "jianwang",
+    "幻剑灵旗": "huanjianqi",
+    "大唐游侠传": "datang",
+    "龙凤宝钗缘": "longfeng",
+        "慧剑心魔": "huijian",
+    "飞凤潜龙": "feifeng",
+    "草莽龙蛇传": "caomang",
+    "龙虎斗京华": "longhu",
+    "绝塞传烽录": "juesai",
 }
 
 # ────────────────────────── 朝代/年号换算表（§2.5 朝代锚；M1 直录法） ──────────────────────────
@@ -1630,13 +1646,13 @@ def render_book_md(result: dict) -> str:
 def render_summary_md(results: list[dict]) -> str:
     lines = []
     add = lines.append
-    add("# N4 时间轴解析 · 5 书汇总（time_resolver_wuxia）")
+    add(f"# N4 时间轴解析 · {len(results)} 书汇总（time_resolver_wuxia）")
     add("")
     add(f"- 生成时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}；工具：{TOOL_VERSION}")
     add("- 规范：`skills/SKILL_时间体系_武侠版.md`（§二–§八）；只读 tagged/struct，写 "
         "`registry/time/` + `logs/time/`")
     add("")
-    add("## 一、5 书总览")
+    add(f"## 一、{len(results)} 书总览")
     add("")
     add("| 书 | 时间令牌 | 解析率 | 时点定位率 | 主轨 | 对白隔离 | 分叉 | 未解析 | E1 | E2 | "
         "朝代锚 | 高/中/低 |")
@@ -1869,7 +1885,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     g = p.add_mutually_exclusive_group(required=True)
     g.add_argument("--book", metavar="书名", help="单书（如 江湖三女侠）")
-    g.add_argument("--all", action="store_true", help="5 书全部 + 汇总")
+    g.add_argument("--all", action="store_true", help="全部已标注书 + 汇总")
     g.add_argument("--selftest", action="store_true", help="单元断言（解析/分类/单调性）")
     p.add_argument("--chapter", metavar="SPEC", default=None, help="回范围，如 1-5 或 12 或 1,3,5")
     p.add_argument("--report", metavar="PATH", type=Path, default=None,

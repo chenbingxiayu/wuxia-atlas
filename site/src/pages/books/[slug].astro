@@ -1,11 +1,21 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Sparkbars from '../../components/Sparkbars.astro';
+import StatusBadge from '../../components/ui/StatusBadge.astro';
 import books from '@data/books.json';
 import characters from '@data/characters.json';
 import chaptersAll from '@data/chapters.json';
+import universe from '@data/universe.json';
+import artsJson from '@data/arts.json';
+import weaponsJson from '@data/weapons.json';
+import matchesJson from '@data/matches.json';
+import ratingsJson from '@data/ratings.json';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { resolve } from 'node:path';
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
+import { personTarget, bookTarget } from '@lib/links';
 
 export function getStaticPaths() {
   return books.books.map((w) => ({ params: { slug: w.book }, props: { w } }));
@@ -15,21 +25,105 @@ const ch = chaptersAll[w.book];
 const lit = ch?.lit === true;
 const line = 'thin';
 
+/* 状态 → StatusBadge 用户词（三态口径，与列表页一致） */
+const statusWord = (s: string) => (s === '已点亮' ? '深度解析' : s === '标注中' ? '建设中' : '存目');
+
 // 本书 Top 人物（全部类型中取 @，按频次）
+// W0-T5 存目守卫（方案 §2.3 书页人物区）：主档 → 档案页链接；存目 → 纯文本灰 chip
+//（title 承担"存目 · 出场 N 次"对质信息），一律经 @lib/links personTarget。
 const topChars = characters.entities
   .filter((e) => e.type === '@' && e.books[w.book])
   .sort((a, b) => b.books[w.book].count - a.books[w.book].count)
-  .slice(0, 12);
+  .slice(0, 12)
+  .map((e) => ({ ...e, target: personTarget(e.canonical) }));
 
 const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
+
+// W2-B8 简介区块（作品页重构设计 §四②/§六/§七）：hook/summary 由 EX-1 从
+// kb/校订/作品简介.tsv（status=校定 行）并入 books.json，站点纯消费。
+// 缺校定行的书（30 部全量口径回切时）按设计落占位话术——构建期拼装，不硬编码也不空着。
+const introParts = [
+  w.series && `${w.series}之作`,
+  w.era && `背景为${w.era}`,
+  w.leads.length > 0 && `主角${w.leads.map((l) => dsp(l)).join('、')}`,
+].filter(Boolean);
+const introHook = w.hook || (introParts.length > 0 ? `${introParts.join(' · ')}。` : '');
+const introSummary = w.summary || '';
+
+/* ---------- 系列导航条（作品页重构设计 §四③/§七；W3-T1 §2）----------
+   prev/next 构建期 join universe.json lines 成员序；第一部只有「下启」、末部只有「上承」。
+   相邻书不在 books.json（全量回切后指向未建页书名）→ 降级为纯文本《书名》，不产 404 链接。 */
+const seriesLine = (universe.lines as any[]).find((ln) =>
+  (ln.members as any[]).some((m) => m.book === w.book));
+const seriesMembers = seriesLine
+  ? [...seriesLine.members].sort((a, b) => a.order - b.order)
+  : [];
+const seriesIdx = seriesMembers.findIndex((m) => m.book === w.book);
+const seriesPrev = seriesIdx > 0 ? seriesMembers[seriesIdx - 1].book : null;
+const seriesNext = seriesIdx >= 0 && seriesIdx < seriesMembers.length - 1
+  ? seriesMembers[seriesIdx + 1].book
+  : null;
+
+/* ---------- 本书江湖聚合区（作品页重构设计 §四⑥/§七；W3-T1 §3）----------
+   按 book 字段从 arts/weapons/matches/ratings/atlas 五处现有数据聚合，零新数据。
+   卡渲染规则（设计 §四⑥）：无对应数据的卡不渲染（演示 7 书武功/神兵/地图全有，
+   交手/武评仅 matches/ratings 覆盖的 4 书出现）。
+   武评前五口径：ratings players[].per_book[本书] 存在者按本书分排序取前 5
+   （top_evidence 只能选"涉本书对局"的人物，per_book 是直接的本书分，可实现且可复算）。 */
+const inArts = ((artsJson as any).arts as any[]).filter((a) => (a.books as string[])?.includes(w.book)).length;
+const inWeapons = ((weaponsJson as any).weapons as any[]).filter((x) => w.book in (x.books as Record<string, number>)).length;
+const inMatches = ((matchesJson as any).matches as any[]).filter((m) => m.book === w.book).length;
+const ratedTop = ((ratingsJson as any).players as any[])
+  .filter((p) => (p.per_book as Record<string, number>)?.[w.book] != null)
+  .sort((a, b) => b.per_book[w.book] - a.per_book[w.book])
+  .slice(0, 5)
+  .map((p) => ({ name: dsp(p.name), rating: p.per_book[w.book] as number }));
+/* atlas 切片（atlas/<书>.json）只取地名/回目计数做卡片副行：构建期 Node 读盘
+   （npm run 构建入口 cwd=site/；import.meta.url 锚点为 dev/备选），双锚点 try/catch
+   兜底——读不到只省略副行，不影响卡片与链接。 */
+const atlasMeta = (() => {
+  const anchors = [
+    resolve(process.cwd(), 'data', 'atlas', `${w.book}.json`),
+    fileURLToPath(new URL(`../../../data/atlas/${w.book}.json`, import.meta.url)),
+  ];
+  for (const p of anchors) {
+    try {
+      const slice = JSON.parse(readFileSync(p, 'utf-8')) as {
+        places?: unknown[] | Record<string, unknown>;
+        bychap?: Record<string, unknown>;
+      };
+      return {
+        places: slice.places
+          ? (Array.isArray(slice.places) ? slice.places : Object.keys(slice.places)).length
+          : 0,
+        chapters: slice.bychap ? Object.keys(slice.bychap).length : 0,
+      };
+    } catch { /* 下一个锚点 */ }
+  }
+  return null;
+})();
+type JhCard = { n: number; unit: string; label: string; href: string; sub: string; wide?: boolean };
+/* 数字卡三张：计数为 0（本书无该域数据）→ 不渲染（设计 §四⑥）；
+   武评前五：有 per_book 人才渲染；行踪地图：7 书切片全有，恒渲染。 */
+const jhCards: JhCard[] = (
+  [
+    inArts > 0 ? { n: inArts, unit: '门', label: '本书武功', href: `${B}arts/`, sub: '' } : null,
+    inWeapons > 0 ? { n: inWeapons, unit: '件', label: '本书神兵', href: `${B}weapons/`, sub: '' } : null,
+    inMatches > 0 ? { n: inMatches, unit: '场', label: '本书交手', href: `${B}ratings/`, sub: '' } : null,
+    ratedTop.length > 0
+      ? { n: 0, unit: '', label: '本书武评前五', href: `${B}ratings/`, wide: true,
+          sub: ratedTop.map((p) => `${p.name} ${p.rating}`).join(' · ') }
+      : null,
+    { n: 0, unit: '', label: '本书行踪地图', href: `${B}atlas/?book=${encodeURIComponent(w.book)}`, wide: true,
+      sub: atlasMeta ? `${atlasMeta.places} 处地名 · ${atlasMeta.chapters} 回轨迹` : '' },
+  ] as (JhCard | null)[]
+).filter((c): c is JhCard => c !== null);
 ---
 
 <Base title={w.book} description={`${w.book}：${w.leads.map((l) => dsp(l)).join('、')}。${w.era}。回数 ${w.chapters}，初刊 ${w.year} 年。`}>
   <p class="crumb"><a href={`${B}books/`}>作品库</a> / {w.book}</p>
   <h1>{w.book}
-    {w.kb_status === '已点亮' && <span class="badge badge-lit">已点亮</span>}
-    {w.kb_status === '标注中' && <span class="badge" style="color:var(--gold)">标注中</span>}
-    {w.kb_status === '待建' && <span class="badge badge-todo">待点亮</span>}
+    <StatusBadge status={statusWord(w.kb_status)} />
   </h1>
 
   <p class="meta">
@@ -40,14 +134,38 @@ const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
     <p class="meta">主角：{w.leads.map((l) => <span class="chip">{dsp(l)}</span>)}</p>
   )}
 
+  {/* 系列导航条（W3-T1 §2）：上承/下启由 universe 成员序构建期得出 */}
+  {seriesLine && (
+    <nav class="series-nav" aria-label={`${seriesLine.line}导航`}>
+      <span class="sn-line">
+        <span class="sn-dot" style={`background:${seriesLine.color}`} aria-hidden="true" />
+        {seriesLine.line} 第 {seriesIdx + 1}/{seriesMembers.length} 部
+      </span>
+      {seriesPrev && (bookTarget(seriesPrev) ? (
+        <a class="sn-link" href={`${B}books/${encodeURIComponent(seriesPrev)}/`}>← 上承《{seriesPrev}》</a>
+      ) : <span class="sn-link dimtxt">← 上承《{seriesPrev}》</span>)}
+      {seriesPrev && seriesNext && <span class="sn-sep" aria-hidden="true">｜</span>}
+      {seriesNext && (bookTarget(seriesNext) ? (
+        <a class="sn-link" href={`${B}books/${encodeURIComponent(seriesNext)}/`}>下启《{seriesNext}》→</a>
+      ) : <span class="sn-link dimtxt">下启《{seriesNext}》→</span>)}
+    </nav>
+  )}
+
   <section class="stats card">
     <span><b>{w.chapters}</b> 回</span>
     <span><b>{w.chars.toLocaleString()}</b> 字</span>
-    {lit && <span><b>{ch.kb.entities.toLocaleString()}</b> 实体</span>}
-    {lit && <span><b>{ch.kb.events_narrative.toLocaleString()}</b> 叙事事件</span>}
-    {lit && <span><b>{ch.kb.relations}</b> 武功关系</span>}
+    {lit && <span><b>{ch.kb.entities.toLocaleString()}</b> 人物</span>}
+    {lit && <span><b>{ch.kb.events_narrative.toLocaleString()}</b> 事件</span>}
+    {lit && <span><b>{ch.kb.relations}</b> 武功传承</span>}
     <span>互文 <b>{w.intertext_out}</b> 出 / <b>{w.intertext_in}</b> 入</span>
   </section>
+
+  {introHook && (
+    <section class="intro">
+      <p class="hook">{introHook}</p>
+      {introSummary && <p class="summary">{introSummary}</p>}
+    </section>
+  )}
 
   {lit && ch.chapters[0]?.verbs && (
     <section>
@@ -61,11 +179,30 @@ const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
       <h2>本书高频人物</h2>
       <p class="chips">
         {topChars.map((c) => (
-          <span class="chip">{dsp(c.display || c.canonical)}<small>×{c.books[w.book].count}</small>
-            {c.cross_book && <em class="badge badge-cross" style="font-size:.68em">跨书</em>}
-          </span>
+          c.target
+            ? <a class="chip link" href={`${B}characters/${encodeURIComponent(c.target)}/`}>{dsp(c.display || c.canonical)}<small>×{c.books[w.book].count}</small>
+                {c.cross_book && <em class="badge badge-cross" style="font-size:.68em">跨书</em>}
+              </a>
+            : <span class="chip toc" title={`存目 · 出场 ${c.books[w.book].count} 次`}>{dsp(c.display || c.canonical)}<small>×{c.books[w.book].count}</small>
+                {c.cross_book && <em class="badge badge-cross" style="font-size:.68em">跨书</em>}
+              </span>
         ))}
       </p>
+    </section>
+  )}
+
+  {lit && jhCards.length > 0 && (
+    <section class="jh">
+      <h2>本书江湖</h2>
+      <div class="jh-grid">
+        {jhCards.map((c) => (
+          <a class={`jh-card${c.wide ? ' wide' : ''}`} href={c.href}>
+            {c.n > 0 && <b class="jh-num">{c.n}<small>{c.unit}</small></b>}
+            <span class="jh-label">{c.label}</span>
+            {c.sub && <span class="jh-sub">{c.sub}</span>}
+          </a>
+        ))}
+      </div>
     </section>
   )}
 
@@ -121,7 +258,7 @@ const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
   </section>
 
   {!lit && (
-    <p class="note">本书知识库尚未点亮：管线（标注→登记→事件→关系）完成后，本页将自动追加实体/事件/关系统计与回目页。</p>
+    <p class="note">深度数据随标注推进逐部开放。</p>
   )}
 </Base>
 
@@ -134,9 +271,64 @@ const KIND_LABEL = { authorial: '作者明示', quoted: '书名引用' };
     font-size: .88rem; background: rgba(255,255,255,.5);
   }
   .chip small { color: var(--ink-faint); margin-left: .3em; }
+  a.chip.link { border-color: var(--azure); color: var(--azure); }
+  a.chip.link:hover { border-color: var(--seal); color: var(--seal); }
+  /* W0-T5 存目灰 chip：不可点、虚线灰边、弱化文字（与人物总览 toc chip 同式） */
+  .chip.toc { border-style: dashed; color: var(--ink-faint); background: transparent; }
   .stats { display: flex; gap: var(--space-4); flex-wrap: wrap; margin: var(--space-4) 0; }
   .stats b { font-family: var(--font-title); color: var(--azure); font-size: 1.05rem; }
+  /* W2-B8 简介区块：hook 大字一句 + 无剧透梗概段落（占位话术同区渲染） */
+  .intro { margin: var(--space-4) 0; }
+  .hook {
+    font-family: var(--font-title);
+    font-size: 1.3rem;
+    line-height: 1.55;
+    color: var(--ink);
+    border-left: 3px solid var(--azure);
+    padding-left: var(--space-3);
+    margin: 0 0 var(--space-2);
+  }
+  .summary { color: var(--ink-light); max-width: 46em; line-height: 1.95; margin: 0; }
   .sub { font-size: .95rem; color: var(--ink-light); }
+  /* —— 系列导航条（W3-T1 §2，作品页重构设计 §四③/§七）—— */
+  .series-nav {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: .35em .7em;
+    border-left: 3px solid var(--line-strong);
+    padding: .1em 0 .1em var(--space-3);
+    margin: var(--space-3) 0;
+    font-size: .95rem;
+  }
+  .sn-line { color: var(--ink-light); display: inline-flex; align-items: center; gap: .45em; }
+  .sn-dot { display: inline-block; width: 14px; height: 4px; border-radius: 2px; }
+  .sn-link { color: var(--azure); }
+  .sn-link:hover { color: var(--seal); }
+  .sn-sep { color: var(--ghost); }
+  .dimtxt { color: var(--ink-faint); }
+  /* —— 本书江湖聚合区（W3-T1 §3，作品页重构设计 §四⑥/§七）—— */
+  .jh-grid { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-2); }
+  .jh-card {
+    box-sizing: border-box; /* 站点无全局 border-box 重置：内边距须计入 8.5rem 基准，375px 才能成 2 列 */
+    flex: 1 1 8.5rem; min-width: 8.5rem;
+    display: flex; flex-direction: column; gap: .1em;
+    background: rgba(255, 255, 255, .55);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: var(--space-2) var(--space-3);
+    color: var(--ink);
+  }
+  .jh-card:hover { border-color: var(--seal); }
+  .jh-card:hover .jh-label { color: var(--seal); }
+  .jh-card.wide { flex: 2 1 13rem; }
+  .jh-num {
+    font-family: var(--font-title); font-size: 1.5rem; line-height: 1.25;
+    color: var(--azure);
+  }
+  .jh-num small { font-size: .82rem; color: var(--ink-light); margin-left: .2em; font-weight: 400; }
+  .jh-label { font-size: .88rem; color: var(--ink-light); }
+  .jh-sub {
+    font-size: .8rem; color: var(--ink-faint); line-height: 1.7;
+    overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  }
   .refs { padding-left: 1.2em; font-size: .9rem; }
   .refs li { margin: .3em 0; }
   .chapters { columns: 2 auto; padding-left: 1.4em; font-size: .9rem; }

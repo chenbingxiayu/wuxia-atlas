@@ -38,6 +38,7 @@ import sys
 from datetime import datetime
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import quote
 from urllib.parse import unquote
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
@@ -66,11 +67,16 @@ class PageParser(HTMLParser):
         self._tag: str | None = None
         self._skip = 0
         self._p_seen = False
+        self._badge_tag: str | None = None  # class 含 badge 的元素（视觉徽标）文本不进标题/h1/摘要
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
         if tag in ("script", "style", "noscript"):
             self._skip += 1
+            return
+        if self._cur is not None and self._badge_tag is None and \
+                "badge" in (a.get("class") or "").split():
+            self._badge_tag = tag
             return
         if tag == "title":
             self._tag, self._cur = "title", self.title
@@ -85,6 +91,9 @@ class PageParser(HTMLParser):
         if tag in ("script", "style", "noscript"):
             self._skip = max(0, self._skip - 1)
             return
+        if self._badge_tag is not None and tag == self._badge_tag:
+            self._badge_tag = None
+            return
         if tag == "title" and self._tag == "title":
             self._tag = self._cur = None
         elif tag == "h1" and self._tag == "h1":
@@ -95,7 +104,7 @@ class PageParser(HTMLParser):
             self._tag = self._cur = None
 
     def handle_data(self, data):
-        if self._skip or self._cur is None:
+        if self._skip or self._cur is None or self._badge_tag is not None:
             return
         self._cur.append(data)
 
@@ -269,6 +278,31 @@ def main() -> int:
             entries.append(rec)
         else:
             skipped += 1
+    # gazetteer 地名入索引（type=places，链接到时空地图深链；名称已入索引的不重复收录）
+    gaz_file = SITE / "data" / "gazetteer.json"
+    if gaz_file.exists():
+        try:
+            gaz = json.loads(gaz_file.read_text(encoding="utf-8"))
+            known_names = {e["display"] for e in entries} | {e.get("canonical", "") for e in entries}
+            for pl in gaz.get("places") or []:
+                name = (pl.get("name") or "").strip()
+                if not name or name in known_names:
+                    continue
+                known_names.add(name)
+                books = pl.get("books") or {}
+                summary = "；".join(f"{b}·第{c[0]}回起" for b, c in sorted(books.items())[:3] if c)
+                if pl.get("real"):
+                    kind = pl.get("kind") or "地名"
+                    summary = f"实锚地名（{kind}）" + (f"：{summary}" if summary else "")
+                else:
+                    summary = f"虚构/推理地名" + (f"：{summary}" if summary else "")
+                entries.append({
+                    "url": f"atlas/?place={quote(name)}",
+                    "title": name, "display": name, "canonical": name,
+                    "type": "places", "summary": _truncate(summary or name),
+                })
+        except (OSError, ValueError, KeyError) as e:
+            print(f"[search-index] WARN gazetteer 地名入索引失败：{e}", file=sys.stderr)
     # URL 去重（保第一条）并按 type/url 排序
     seen = set()
     uniq = []

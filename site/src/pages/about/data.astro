@@ -4,22 +4,77 @@ import books from '@data/books.json';
 import characters from '@data/characters.json';
 import chapters from '@data/chapters.json';
 import dossiers from '@data/dossiers.json';
+import arts from '@data/arts.json';
+import weapons from '@data/weapons.json';
+import sects from '@data/sects.json';
+import matches from '@data/matches.json';
+import ratings from '@data/ratings.json';
+import daily from '@data/games/daily.json';
+import twenty from '@data/games/twenty.json';
+import annals from '@data/annals.json';
+import charPlots from '@data/char_plots.json';
+import charRelations from '@data/char_relations.json';
+import qaIndex from '@data/qa-index.json';
+import wordcloud from '@data/char_wordcloud.json';
+import auditR1 from '@data/audit-r1.json';
+import audit from '@data/audit.json';
+import manuals from '@data/manuals.json';
+import elixirs from '@data/elixirs.json';
 
 const litBooks = Object.entries(chapters as Record<string, any>)
   .filter(([k, v]) => k !== 'meta' && v?.lit)
   .map(([k]) => k);
 
 const files = [
-  { f: 'books.json', s: `${books.meta.totals.books} 部作品元数据＋互文出入边（site-books-v1）` },
-  { f: 'universe.json', s: '六线谱系＋编年主线＋换乘站（site-universe-v1）' },
-  { f: 'characters.json', s: `${characters.meta.totals.merged_entities.toLocaleString()} 实体档案，${characters.meta.totals.cross_book.toLocaleString()} 跨书（site-characters-v1）` },
-  { f: 'dossiers.json', s: `${dossiers.dossiers.length} 人物档案 SKU（site-dossiers-v1）` },
-  { f: 'chapters.json', s: `${books.meta.totals.books} 部回目＋${litBooks.length} 部逐章事件流/动词密度（chapters-v1）` },
+  { f: 'books.json', s: `${books.meta.totals.books} 部作品元数据＋互文出入边` },
+  { f: 'universe.json', s: '系列谱系＋编年主线＋换乘站种子' },
+  { f: 'characters.json', s: `${(characters.meta.totals.merged_entities ?? characters.meta.totals.entities_indexed ?? dossiers.dossiers.length).toLocaleString()} 实体索引，${(characters.meta.totals.cross_book ?? 0).toLocaleString()} 跨书` },
+  { f: 'dossiers.json', s: `${(dossiers.dossiers || []).length} 人物档案（别名/师承/武功/战绩/出场曲线）` },
+  { f: 'chapters.json', s: `${litBooks.length} 部深度解析逐章事件流` },
+  { f: 'arts.json', s: `${arts.meta.totals.arts} 门武功（门派归属/传承/招式名表）` },
+  { f: 'weapons.json', s: `${(weapons.weapons || []).length} 件名物（来历/流转链/持有人/终态）` },
+  { f: 'manuals.json', s: `${manuals.meta.totals.manuals} 件考订秘籍（来历/传承/见于书目 · 逐处出场定位符）` },
+  { f: 'elixirs.json', s: `${elixirs.meta.totals['丹药'] + elixirs.meta.totals['药材']} 件丹药药材（丹药 ${elixirs.meta.totals['丹药']} · 药材 ${elixirs.meta.totals['药材']}）· 毒解配对 ${elixirs.meta.totals['毒解配对']} 组` },
+  { f: 'sects.json', s: `${sects.meta.totals.sects} 门派/组织（武功册/成员册/世系）` },
+  { f: 'matches.json', s: `${(matches.matches || []).length} 场明文裁决对局（四层清洗 · 软分数）` },
+  { f: 'ratings.json', s: `${(ratings.players || []).length} 人全历史等级分（WHR · 含巅峰曲线）` },
+  { f: 'ratings-cleanlog.json', s: '清洗三通道日志（保留/丢弃/转记）' },
+  { f: 'games/daily.json', s: `${(daily.puzzles || []).length} 道每日谜题（全部带定位符）` },
+  { f: 'games/twenty.json', s: `${(twenty.chars || []).length} 人物属性向量（二十问答题库）` },
+  { f: 'char_plots.json', s: `${Object.keys(charPlots.characters || {}).length} 人关键剧情锚点` },
+  { f: 'char_relations.json', s: `${(charRelations.relations || []).length} 条人物关系（情缘/亲缘/仇敌/恩义）` },
+  { f: 'annals.json', s: `${(annals.events || []).length} 条年谱事件（史实锚/剧情锚 · 纪年对照）` },
+  { f: 'qa-index.json', s: `${qaIndex.meta?.persons ?? '—'} 人预索引（问答/行踪查表）` },
+  { f: 'char_wordcloud.json', s: `${(wordcloud.items || []).length} 词主角词频（清洗后）` },
+  { f: 'audit.json', s: `规则引擎穿帮报告（${(audit.violations || []).length} 条命中 · ${(audit.rule_coverage || []).length} 条规则）` },
+  { f: 'audit-r1.json', s: `${((auditR1.passes || []).length + (auditR1.ambiguous || []).length)} 名死者死亡一致性核验（宽松版）` },
 ];
 const repo = 'https://github.com/chenbingxiayu/wuxia-atlas';
+// 人工考订通道（kb/校订/ 本地底表，E2b 补录）：逐行人工校定（status=校定）才入站。
+// 底表含定位符与引文，按版权纪律不入库、不随站发布——只列通道事实，不挂下载链接。
+// 清单 = kb/校订/ 实际存在的通道底表（备份/草案/工作文件不列）。
+const curation: Array<{ f: string; s: string; out: string }> = [
+  { f: '别名归并.tsv', s: '跨书同人异名归并（同一人的多个名字定规范名）', out: 'dossiers.json · 人物谱' },
+  { f: '作品简介.tsv', s: '书目一句话钩子与简介', out: 'books.json · 作品库' },
+  { f: '人物关系考订.tsv', s: '人物关系逐条核订（情缘/亲缘/仇敌/恩义）', out: 'char_relations.json' },
+  { f: '剧情锚点考订.tsv', s: '关键剧情锚点（何人何时何地、一句话梗概）', out: 'char_plots.json' },
+  { f: '书内状态.tsv', s: '人物在每部书内的出场/退场状态', out: 'char_plots.json' },
+  { f: '史实锚年谱.tsv', s: '史实锚×剧情锚年谱事件（纪年对照）', out: 'annals.json · 宇宙页年谱' },
+  { f: '线路导读.tsv', s: '系列阅读线路（入门/巅峰/可跳）', out: 'universe.json · 线路导读' },
+  { f: '门派驻地考订.tsv', s: '门派驻地/据点（总舵分舵在哪）', out: 'sects.json · 门派志' },
+  { f: '武功传承补链.tsv', s: '武功传承链补链（谁传给谁、哪部书）', out: 'arts.json · 武功谱' },
+  { f: '武功评语.tsv', s: '武功评语卡（L1 短引文·随页署名口径）', out: 'arts.json · 武功页' },
+  { f: '神兵表-补录.tsv', s: '名物底表补录（别名/持有人/流转定位符）', out: 'weapons.json · 神兵谱' },
+  { f: '秘籍谱.tsv', s: '秘籍底表（品名/别名/见于书目/定位符）', out: 'manuals.json · 秘籍谱' },
+  { f: '丹药谱.tsv', s: '丹药/药材底表（出处/别名/定位符）', out: 'elixirs.json · 丹药谱' },
+  { f: '毒解配对.tsv', s: '毒↔解药配对（可解/可被解/负证据）', out: 'elixirs.json · 丹药谱' },
+  { f: '词云清洗.tsv', s: '主角词云逐词裁定（保留/归并/丢弃）', out: 'char_wordcloud.json' },
+  { f: '武评抽检.tsv', s: '武评 100 场人工抽检（等级分校准）', out: 'ratings.json · 武评' },
+  { f: 'gazetteer-seeds.tsv', s: '地名坐标种子（人工核验起点）', out: 'gazetteer.json · 地理' },
+];
 ---
 
-<Base title="开放数据" description="L0 图谱层数据下载：books/universe/characters/dossiers/chapters。">
+<Base title="开放数据" description="L0 图谱层数据下载：人物/武功/名物/门派/对局/年谱。">
   <h1>开放数据</h1>
   <p class="lead">
     本站全部页面由下列构建期数据生成——<b>站点是数据的纯函数</b>。数据为 L0 图谱层（无原文摘录），以
@@ -38,6 +93,26 @@ const repo = 'https://github.com/chenbingxiayu/wuxia-atlas';
     </tbody>
   </table>
 
+  <h2>人工考订通道（本地）</h2>
+  <p class="lead">
+    数据里的「考订」结论（锚点/归并/配对/评语）都出自下列人工校定底表——逐行核订、
+    status=校定 才入站，存疑行一律不入（宁缺毋滥）。这批底表在仓库 <code>kb/校订/</code>，
+    属<b>人工考订通道（本地）</b>：含定位符与引文，按版权纪律不入库、不随站发布；
+    上表 JSON 即它们对外的开放产物。
+  </p>
+  <table>
+    <thead><tr><th>底表</th><th>考订内容</th><th>站点产物</th></tr></thead>
+    <tbody>
+      {curation.map((x) => (
+        <tr>
+          <td class="mono">{x.f}</td>
+          <td>{x.s}</td>
+          <td>{x.out}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+
   <h2>使用</h2>
   <ul>
     <li>直接下载：点击上表文件 → GitHub 页面右上角下载按钮（或 <code>raw.githubusercontent.com</code> 直链）；</li>
@@ -45,7 +120,7 @@ const repo = 'https://github.com/chenbingxiayu/wuxia-atlas';
     <li>schema 文档：<a href={`${repo}/blob/main/site/README.md`}>site/README.md</a>（各 schema 字段级说明与重建命令）。</li>
   </ul>
 
-  <p class="fine">更新节奏：kb 管线每点亮一部书 / 修复数据后重跑，版本日期见各文件 <code>meta.generated</code>。</p>
+  <p class="fine">更新节奏：kb 管线每深度解析一部书 / 修复数据后重跑，版本日期见各文件 <code>meta.generated</code>。</p>
 </Base>
 
 <style>
@@ -53,6 +128,7 @@ const repo = 'https://github.com/chenbingxiayu/wuxia-atlas';
   table { border-collapse: collapse; width: 100%; font-size: .92rem; }
   th, td { text-align: left; padding: .5em .7em; border-bottom: 1px solid var(--line); }
   th { color: var(--ink-faint); }
+  .mono { font-family: var(--font-mono); font-size: .82em; }
   .fine { color: var(--ink-faint); font-size: .85rem; }
   h2 { margin-top: var(--space-5); }
 </style>

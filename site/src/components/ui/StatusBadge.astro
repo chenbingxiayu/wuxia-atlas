@@ -1,0 +1,45 @@
+---
+/**
+ * L1 原子 · 状态徽章（天山演示版总体方案 §5.1）。
+ *
+ * 四态映射（只用 tokens.css 现有变量，勿造新色）：
+ *   深度解析 → 竹青实底（--jade：深度考订完成的终态页）
+ *   建设中   → 泥金虚线（--gold：页面建设中）
+ *   考订中   → 泥金虚线（--gold：切片为自动抽取、待人工考订；收 weapons h1「考订进行中」190 处）
+ *   存目     → 幽灵虚线（--ghost 边 + 极淡墨字：存目条目）
+ *
+ * 样式与详情页 h1 现有徽章（weapons .g/.kind/.cross、tokens .badge）同族：
+ * 1.5px 边 + 3px 圆角 + 轻微旋转，避免两套视觉。
+ * 纯构建期 Astro 组件，无 JS。
+ */
+interface Props {
+  /** 状态名：深度解析 | 建设中 | 考订中 | 存目；未知值按幽灵虚线中性态渲染 */
+  status: string;
+}
+const { status } = Astro.props;
+const TONE: Record<string, string> = {
+  深度解析: 'sb-solid',
+  建设中: 'sb-gold',
+  考订中: 'sb-gold',
+  存目: 'sb-ghost',
+};
+const tone = TONE[status] ?? 'sb-ghost';
+---
+
+<span class={`status-badge ${tone}`}>{status}</span>
+
+<style>
+  .status-badge {
+    display: inline-block;
+    border: 1.5px solid currentColor;
+    border-radius: 3px;
+    padding: 1px 9px;
+    font-size: 13px;
+    line-height: 1.6;
+    white-space: nowrap;
+    transform: rotate(-1.2deg);
+  }
+  .sb-solid { background: var(--jade); border-color: var(--jade); color: var(--paper); }
+  .sb-gold  { color: var(--gold); border-style: dashed; }
+  .sb-ghost { color: var(--ink-faint); border-style: dashed; border-color: var(--ghost); }
+</style>

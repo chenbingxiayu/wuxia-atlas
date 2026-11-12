@@ -1,0 +1,173 @@
+---
+import Base from '../../layouts/Base.astro';
+import elixirsJson from '@data/elixirs.json';
+import { B } from '@lib/base';
+import { chapterHref } from '@lib/links';
+
+export function getStaticPaths() {
+  return elixirsJson.elixirs.map((x) => ({ params: { slug: x.name }, props: { x } }));
+}
+const { x } = Astro.props;
+const books = Object.keys(x.books);
+const locs = x.locs || [];
+const aliases = x.aliases || [];
+/* 频次口径（数据层双口径分列）：ev_total=标注出现次数（卡片/头部频次）；
+   locs=原文扫描定位符（同段多次提及合一）——只列定位，不作频次主张。
+   毒性／解药（D16 毒解配对考订）：antidote_to=可解毒名（毒名未入谱实体，纯文本呈现）；
+   antidoted_by=谱内毒物被解清单（解药必为谱内丹药，互链）；negative_notes=负证据注记。 */
+const evFine = x.ev_basis === 'concordance' ? '语料标注出现次数' : '原文扫描计数（原著仅数见）';
+const isPoisonish = /毒药|剧毒|毒散|淬/.test(x.note || '');
+const antidoteTo = (x.antidote_to || []) as { poison: string; note: string; locs: { book: string; loc: string }[] }[];
+const antidotedBy = (x.antidoted_by || []) as { antidote: string; note: string; locs: { book: string; loc: string }[] }[];
+const negNotes = (x.negative_notes || []) as { desc: string; locs: { book: string; loc: string }[] }[];
+const hasPair = antidoteTo.length > 0 || antidotedBy.length > 0 || negNotes.length > 0;
+---
+
+<Base title={x.name} description={`${x.name}（${x.kind}）：见于 ${books.join('、')} 的考订丹药名物，疗效出处与逐处出场定位符。`}>
+  <p class="crumb"><a href={`${B}elixirs/`}>丹药谱</a> / {x.name}</p>
+  <h1 style="font-size:36px;margin:6px 0 8px;letter-spacing:3px">{x.name}
+    <span class="kind">{x.kind}</span>
+    {isPoisonish && <span class="poison">毒</span>}
+    {books.length > 1 && <span class="cross">跨书</span>}
+  </h1>
+  <p class="meta">
+    证据 <b>{x.ev_total}</b> 处<span class="dim">（{evFine}）</span> · 见于
+    {books.map((b) => <a class="bookchip" href={`${B}books/${b}/`}>{b}</a>)}
+  </p>
+  {aliases.length > 0 && (
+    <p class="meta">别名/变体：{aliases.map((a) => <span class="chip">{a}</span>)}</p>
+  )}
+
+  {hasPair && (
+    <>
+      <h2 class="sec">毒性 / 解药 <span class="dim2">毒 ↔ 解药 明文配对考订</span></h2>
+      <div class="card poison-card">
+        {antidotedBy.length > 0 && (
+          <p class="p-line">毒性：中此毒者可解——
+            {antidotedBy.map((g) => (
+              <span class="pair">
+                <a class="antidote-link" href={`${B}elixirs/${encodeURIComponent(g.antidote)}/`}>{g.antidote}</a>
+                <span class="loc mono">
+                  {g.locs.map((l, i) => (
+                    <>{i > 0 && '、'}{chapterHref(l.book, l.loc)
+                      ? <a class="loc mono" href={chapterHref(l.book, l.loc)}>{l.book}·{l.loc}</a>
+                      : <span class="loc mono">{l.book}·{l.loc}</span>}
+                    </>
+                  ))}
+                </span>
+              </span>
+            ))}
+          </p>
+        )}
+        {antidoteTo.length > 0 && (
+          <p class="p-line">可解：{antidoteTo.length} 毒</p>
+        )}
+        {antidoteTo.length > 0 && (
+          <ul class="pair-list">
+            {antidoteTo.map((g) => (
+              <li>
+                <b>{g.poison}</b>
+                <span class="loc mono">
+                  {g.locs.map((l, i) => (
+                    <>{i > 0 && '、'}{chapterHref(l.book, l.loc)
+                      ? <a class="loc mono" href={chapterHref(l.book, l.loc)}>{l.book}·{l.loc}</a>
+                      : <span class="loc mono">{l.book}·{l.loc}</span>}
+                    </>
+                  ))}
+                </span>
+                <span class="dim">——{g.note}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {negNotes.length > 0 && (
+          <p class="p-line neg-line">负证据：
+            {negNotes.map((n) => (
+              <span class="pair">
+                {n.desc}——
+                <span class="loc mono">
+                  {n.locs.map((l, i) => (
+                    <>{i > 0 && '、'}{chapterHref(l.book, l.loc)
+                      ? <a class="loc mono" href={chapterHref(l.book, l.loc)}>{l.book}·{l.loc}</a>
+                      : <span class="loc mono">{l.book}·{l.loc}</span>}
+                    </>
+                  ))}
+                </span>
+              </span>
+            ))}
+          </p>
+        )}
+      </div>
+    </>
+  )}
+
+  <h2 class="sec">出场定位符 <span class="dim2">书 · 回：段 · 逐条可点回原著</span></h2>
+  <div class="card" style="padding:8px 24px">
+    <ul class="ev">
+      {locs.slice(0, 12).map((l) => {
+        const href = chapterHref(l.book, l.loc);
+        return (
+          <li>
+            {href
+              ? <a class="loc mono" href={href}>{l.book}·{l.loc}</a>
+              : <span class="loc mono">{l.book}·{l.loc}</span>}
+          </li>
+        );
+      })}
+      {locs.length > 12 && (
+        <li class="dim"><span>…共 {locs.length} 处出场，完整定位符表随开放数据提供（见<a href={`${B}about/data/`}>「关于 · 数据」</a>页）</span></li>
+      )}
+      {locs.length === 0 && <li class="dim"><span>暂无出场定位符（考订锚点见下）</span></li>}
+    </ul>
+  </div>
+
+  <h2 class="sec">考订注记 <span class="dim2">明文依据 · 不脑补</span></h2>
+  <div class="card notecard">
+    <p class="note">{x.note}</p>
+    <p class="fine">考订锚点：{x.anchor.book}·{x.anchor.loc}（明文）。</p>
+    {x.kind === '丹药' && !hasPair && (
+      <p class="fine">毒↔解药：无明文配对考订（通名毒与无名解药不入，宁缺毋滥）。</p>
+    )}
+  </div>
+</Base>
+
+<style>
+  .crumb { font-size: .85rem; color: var(--ink-faint); }
+  .crumb a { color: var(--azure); }
+  h1 { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .kind { display: inline-block; border: 1.5px solid #2e7a5f; color: #2e7a5f; border-radius: 3px;
+    padding: 1px 9px; font-size: 13px; transform: rotate(1.5deg); }
+  .poison { display: inline-block; border: 1.5px solid #5d1f1f; background: #5d1f1f; color: #fbf8ef;
+    border-radius: 3px; padding: 0 8px; font-size: 12.5px; transform: rotate(-1.5deg); }
+  .cross { display: inline-block; border: 1.5px solid #a23527; color: #a23527; border-radius: 3px;
+    padding: 1px 9px; font-size: 13px; transform: rotate(-1deg); }
+  .meta { color: var(--ink-light); }
+  .meta b { color: #a23527; }
+  .dim { color: #8a8172; }
+  .bookchip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: .02em .6em; margin: 0 .2em; font-size: .85rem; }
+  .sec { display: flex; align-items: center; gap: 10px; font-size: 20px; font-weight: 900; margin: 36px 0 14px; }
+  .sec:after { content: ''; flex: 1; height: 1px; background: #b5a687; }
+  .dim2 { color: var(--ink-faint); font-weight: 400; font-size: 14px; }
+  .poison-card { border-left: 4px solid #5d1f1f; padding: 12px 24px; }
+  .p-line { margin: 0; font-size: 15px; }
+  .p-line + .p-line { margin-top: 6px; }
+  .neg-line { color: #5d1f1f; }
+  .pair { margin-right: 14px; }
+  .antidote-link { text-decoration: underline; text-underline-offset: 3px; }
+  .pair-list { list-style: none; padding: 0; margin: 8px 0 0; font-size: 14px; }
+  .pair-list li { padding: 5px 0; border-bottom: 1px dashed #e6ddc8; }
+  .pair-list li:last-child { border-bottom: 0; }
+  .pair-list .dim { color: #8a8172; font-size: 13px; }
+  .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+    padding: 2px 12px; font-size: 13.5px; background: #fbf8ef; margin: 3px; }
+  .ev { list-style: none; padding: 0; margin: 0; font-size: 14px; }
+  .ev li { padding: 6px 2px; border-bottom: 1px solid #e6ddc8; display: flex; gap: 10px; align-items: baseline; }
+  .loc { color: #8a8172; font-size: 12px; }
+  .mono { font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; }
+  .ev a.loc { text-decoration: underline; text-underline-offset: 3px; }
+  .ev a.loc:hover { color: #a23527; }
+  .notecard { border-left: 4px solid #2e7a5f; padding: 12px 24px; }
+  .note { margin: 0; font-size: 15px; line-height: 1.9; }
+  .fine { margin: 6px 0 0; font-size: 13px; color: #8a8172; }
+</style>

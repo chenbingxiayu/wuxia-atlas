@@ -1,0 +1,183 @@
+---
+// W8 演示页预览列表（task-88）——独立页面，刻意不套 Base 布局：
+// 需要 <meta name="robots" content="noindex"> 且不进主导航；不发布正文，只展示索引元数据。
+import '../../styles/tokens.css';
+import contentIndex from '@data/content-index.json';
+import { B } from '@lib/base';
+
+const items = contentIndex.items as any[];
+const meta = contentIndex.meta as any;
+const totals = meta.totals;
+const typeLabels = meta.type_labels as Record<string, string>;
+const ORDER = ['person', 'faction', 'art', 'artifact', 'manual'];
+const groups: Record<string, any[]> = {};
+for (const it of items) (groups[it.type] ||= []).push(it);
+const counts = totals.by_type as Record<string, number>;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="pagefind" content="exclude" />
+    <title>内容预览（demo） · 江湖图志</title>
+    <meta
+      name="description"
+      content="W8 演示页预览列表：1,526 页五段式草稿（全部 demo），仅供内部预览，不发布正文，不进搜索索引。"
+    />
+  </head>
+  <body data-pagefind-ignore="all">
+    <header class="preview-header">
+      <a class="brand" href={B}>江湖图志</a>
+      <span class="badge-demo">演示预览 · demo · 未发布</span>
+    </header>
+
+    <main class="preview-main">
+      <h1>内容预览 <span class="badge-demo">demo</span></h1>
+      <p class="lead">
+        本页列出 W8 生成的 <b>{totals.pages}</b> 页五段式档案草稿（人物 {counts.person} ·
+        门派 {counts.faction} · 武功 {counts.art} · 兵器 {counts.artifact} · 秘籍 {counts.manual}）。
+        全部页面 <code>demo: true</code>：<b>仅供内部预览，不发布正文</b>；正文保留在
+        <code>content/</code>，详情页暂未接入。本页已加 <code>noindex</code>，不入主导航与搜索索引。
+      </p>
+      <p class="warn">
+        ⚠️ 演示数据，不可作为发布内容。引文为底本精确子串（≤60 字，W7 核验），但页面质量档仍为
+        draft / in-review；发布需经 R4/K3 决策。
+      </p>
+
+      <div class="controls">
+        <div class="tabs" role="group" aria-label="按类型过滤">
+          <button class="tab on" data-filter="all">全部 <small>{totals.pages}</small></button>
+          {
+            ORDER.map((t) => (
+              <button class="tab" data-filter={t}>
+                {typeLabels[t] || t} <small>{counts[t] || 0}</small>
+              </button>
+            ))
+          }
+        </div>
+        <input id="q" type="search" placeholder="按标题 / 别名 / 书目过滤…" autocomplete="off" />
+      </div>
+
+      {
+        ORDER.map((t) => (
+          <section class="group" data-group={t}>
+            <h2>
+              {typeLabels[t] || t} <small>{counts[t] || 0} 页</small>
+            </h2>
+            <ul class="items">
+              {(groups[t] || []).map((it) => (
+                <li
+                  class="item"
+                  data-type={it.type}
+                  data-search={`${it.title} ${it.canonical} ${(it.books || []).join(' ')}`.toLowerCase()}
+                >
+                  <span class="title">{it.title}</span>
+                  {it.canonical && it.canonical !== it.title && <span class="aka">（{it.canonical}）</span>}
+                  <span class="chips">
+                    <span class="chip conf">证据 {it.confidence || '—'}</span>
+                    <span class="chip">引文 {it.quotes_n}</span>
+                    <span class="chip">证据项 {it.evidence_n}</span>
+                    <span class="chip demo">demo</span>
+                    {(it.books || []).map((b: string) => <span class="chip book">{b}</span>)}
+                  </span>
+                  <code class="path">{it.path}</code>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+
+      <p class="foot">
+        数据源：<code>content/**/*.md</code> frontmatter → <a href={`${B}data/content-index.json`}>content-index.json</a>
+        （{meta.totals.pages} 条 / 引文 {meta.totals.quotes_total} 条 / 证据项 {meta.totals.evidence_total} 项）。
+        详情页暂未接入：如需正文，请直接查阅上列 <code>content/</code> 路径。
+      </p>
+    </main>
+
+    <script is:inline>
+      (function () {
+        var q = document.getElementById('q');
+        var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+        var items = Array.prototype.slice.call(document.querySelectorAll('.item'));
+        var groups = Array.prototype.slice.call(document.querySelectorAll('.group'));
+        var filter = 'all';
+        function apply() {
+          var s = (q && q.value ? q.value : '').trim().toLowerCase();
+          items.forEach(function (el) {
+            var okType = filter === 'all' || el.getAttribute('data-type') === filter;
+            var okText = !s || (el.getAttribute('data-search') || '').indexOf(s) >= 0;
+            el.hidden = !(okType && okText);
+          });
+          groups.forEach(function (g) {
+            var any = Array.prototype.some.call(
+              g.querySelectorAll('.item'),
+              function (el) { return !el.hidden; }
+            );
+            g.hidden = !any;
+          });
+        }
+        tabs.forEach(function (t) {
+          t.addEventListener('click', function () {
+            filter = t.getAttribute('data-filter');
+            tabs.forEach(function (x) { x.classList.toggle('on', x === t); });
+            apply();
+          });
+        });
+        if (q) q.addEventListener('input', apply);
+      })();
+    </script>
+
+    <style>
+      .preview-header {
+        display: flex; align-items: baseline; justify-content: space-between;
+        padding: var(--space-3) var(--space-5); border-bottom: 2px solid var(--line-strong);
+      }
+      .preview-header .brand { font-family: var(--font-title); font-size: 1.35rem; font-weight: 700; color: var(--seal); }
+      .badge-demo {
+        display: inline-block; border: 1px solid var(--seal); color: var(--seal);
+        border-radius: 999px; padding: 0 .6em; font-size: .78rem; font-weight: 700;
+        margin-left: .4em; vertical-align: middle;
+      }
+      .preview-main { max-width: 1040px; margin: 0 auto; padding: var(--space-5) var(--space-4) var(--space-6); }
+      .lead { color: var(--ink-light); line-height: 1.8; }
+      .warn {
+        border-left: 4px solid var(--seal); background: rgba(255, 240, 235, .55);
+        padding: var(--space-2) var(--space-3); color: var(--ink); font-size: .92rem;
+      }
+      .controls { display: flex; gap: var(--space-3); align-items: center; flex-wrap: wrap; margin: var(--space-4) 0; }
+      .tabs { display: flex; gap: var(--space-1); flex-wrap: wrap; }
+      .tab {
+        border: 1px solid var(--line-strong); background: rgba(255, 255, 255, .5);
+        padding: .3em .8em; border-radius: 999px; cursor: pointer;
+        font-family: var(--font-body); font-size: .9rem; color: var(--ink-light);
+      }
+      .tab.on { border-color: var(--seal); color: var(--seal); font-weight: 700; }
+      .tab small { color: var(--ink-faint); margin-left: .2em; }
+      #q {
+        flex: 1; min-width: 220px; padding: .4em .8em;
+        border: 1px solid var(--line-strong); border-radius: var(--radius);
+        font-family: var(--font-body); background: rgba(255, 255, 255, .6);
+      }
+      .group h2 { font-family: var(--font-title); font-size: 1.1rem; border-bottom: 1px solid var(--line); padding-bottom: .3em; }
+      .group h2 small { color: var(--ink-faint); font-weight: 400; font-size: .8rem; margin-left: .4em; }
+      .items { list-style: none; padding: 0; margin: 0; }
+      .item { padding: .45em 0; border-bottom: 1px dashed var(--line); font-size: .92rem; }
+      .item .title { font-weight: 700; }
+      .item .aka { color: var(--ink-faint); font-size: .85rem; }
+      .item .chips { margin-left: .5em; }
+      .chip {
+        display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px;
+        padding: 0 .55em; margin: 0 .15em; font-size: .72rem; color: var(--ink-light);
+        background: rgba(255, 255, 255, .5);
+      }
+      .chip.demo { border-color: var(--seal); color: var(--seal); }
+      .chip.book { border-style: dotted; }
+      .path { display: block; color: var(--ink-faint); font-size: .74rem; margin-top: .1em; }
+      .foot { margin-top: var(--space-5); color: var(--ink-faint); font-size: .82rem; line-height: 1.8; }
+    </style>
+  </body>
+</html>

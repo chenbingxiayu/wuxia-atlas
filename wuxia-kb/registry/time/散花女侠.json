@@ -2,7 +2,7 @@
   "schema": "wuxia-time-resolve-v1",
   "book": "散花女侠",
   "work_id": "sanhua",
-  "generated_at": "2026-11-06 08:44:17",
+  "generated_at": "2026-11-07 03:43:11",
   "tool": "time_resolver_wuxia v0.1 (2026-11-05, N4/D05)",
   "spec": {
     "skill": "skills/SKILL_时间体系_武侠版.md",
@@ -1127,8 +1127,8 @@
         "segment_anchor": "sanhua#pn-r1.64",
         "line_no": 134,
         "span_in_line": [
-          138,
-          146
+          137,
+          145
         ]
       },
       "time_raw": "〖%八年|时长〗",
@@ -4291,8 +4291,8 @@
         "segment_anchor": "sanhua#pn-r5.47",
         "line_no": 94,
         "span_in_line": [
-          46,
-          54
+          49,
+          57
         ]
       },
       "time_raw": "〖%一月|时长〗",
@@ -5767,8 +5767,8 @@
         "segment_anchor": "sanhua#pn-r8.26",
         "line_no": 52,
         "span_in_line": [
-          413,
-          421
+          410,
+          418
         ]
       },
       "time_raw": "〖%两年|时长〗",
@@ -6849,8 +6849,8 @@
         "segment_anchor": "sanhua#pn-r10.38",
         "line_no": 76,
         "span_in_line": [
-          77,
-          85
+          86,
+          94
         ]
       },
       "time_raw": "〖%三年|时长〗",
@@ -7993,8 +7993,8 @@
         "segment_anchor": "sanhua#pn-r11.65",
         "line_no": 130,
         "span_in_line": [
-          114,
-          122
+          117,
+          125
         ]
       },
       "time_raw": "〖%午时|时点〗",
@@ -11289,8 +11289,8 @@
         "segment_anchor": "sanhua#pn-r16.17",
         "line_no": 34,
         "span_in_line": [
-          159,
-          167
+          156,
+          164
         ]
       },
       "time_raw": "〖%昨晚|时点〗",
@@ -11412,8 +11412,8 @@
         "segment_anchor": "sanhua#pn-r16.32",
         "line_no": 64,
         "span_in_line": [
-          213,
-          221
+          216,
+          224
         ]
       },
       "time_raw": "〖%一日|时长〗",
@@ -11453,8 +11453,8 @@
         "segment_anchor": "sanhua#pn-r16.32",
         "line_no": 64,
         "span_in_line": [
-          225,
-          233
+          228,
+          236
         ]
       },
       "time_raw": "〖%两日|时长〗",
@@ -11494,8 +11494,8 @@
         "segment_anchor": "sanhua#pn-r16.32",
         "line_no": 64,
         "span_in_line": [
-          237,
-          245
+          240,
+          248
         ]
       },
       "time_raw": "〖%三日|时长〗",
@@ -15231,8 +15231,8 @@
         "segment_anchor": "sanhua#pn-r20.12",
         "line_no": 24,
         "span_in_line": [
-          125,
-          135
+          122,
+          132
         ]
       },
       "time_raw": "〖%日影西斜|时点〗",
@@ -15273,8 +15273,8 @@
         "segment_anchor": "sanhua#pn-r20.12",
         "line_no": 24,
         "span_in_line": [
-          136,
-          146
+          133,
+          143
         ]
       },
       "time_raw": "〖%晚霞隐现|时点〗",
@@ -19264,8 +19264,8 @@
         "segment_anchor": "sanhua#pn-r24.58",
         "line_no": 116,
         "span_in_line": [
-          126,
-          136
+          120,
+          130
         ]
       },
       "time_raw": "〖%八十大寿|时点〗",
@@ -19305,8 +19305,8 @@
         "segment_anchor": "sanhua#pn-r24.58",
         "line_no": 116,
         "span_in_line": [
-          190,
-          200
+          184,
+          194
         ]
       },
       "time_raw": "〖%八十高龄|年龄〗",
@@ -19346,8 +19346,8 @@
         "segment_anchor": "sanhua#pn-r24.62",
         "line_no": 124,
         "span_in_line": [
-          133,
-          141
+          127,
+          135
         ]
       },
       "time_raw": "〖%昨晚|时点〗",
@@ -22857,8 +22857,8 @@
         "segment_anchor": "sanhua#pn-r31.3",
         "line_no": 6,
         "span_in_line": [
-          413,
-          423
+          416,
+          426
         ]
       },
       "time_raw": "〖%前两个月|时点〗",
@@ -23736,8 +23736,8 @@
         "segment_anchor": "sanhua#pn-r32.26",
         "line_no": 52,
         "span_in_line": [
-          461,
-          469
+          460,
+          468
         ]
       },
       "time_raw": "〖%三天|时长〗",
@@ -24258,8 +24258,8 @@
         "segment_anchor": "sanhua#pn-r32.69",
         "line_no": 138,
         "span_in_line": [
-          473,
-          481
+          476,
+          484
         ]
       },
       "time_raw": "〖%三年|时长〗",
@@ -24462,8 +24462,8 @@
         "segment_anchor": "sanhua#pn-r32.89",
         "line_no": 178,
         "span_in_line": [
-          570,
-          580
+          573,
+          583
         ]
       },
       "time_raw": "〖%三日之内|时长〗",
@@ -24540,8 +24540,8 @@
         "segment_anchor": "sanhua#pn-r32.92",
         "line_no": 184,
         "span_in_line": [
-          17,
-          27
+          20,
+          30
         ]
       },
       "time_raw": "〖%半个时辰|时长〗",
@@ -24579,8 +24579,8 @@
         "segment_anchor": "sanhua#pn-r32.92",
         "line_no": 184,
         "span_in_line": [
-          115,
-          123
+          118,
+          126
         ]
       },
       "time_raw": "〖%黄昏|时点〗",
@@ -24858,8 +24858,8 @@
         "segment_anchor": "sanhua#pn-r33.34",
         "line_no": 68,
         "span_in_line": [
-          184,
-          192
+          187,
+          195
         ]
       },
       "time_raw": "〖%十年|时长〗",
@@ -24936,8 +24936,8 @@
         "segment_anchor": "sanhua#pn-r33.38",
         "line_no": 76,
         "span_in_line": [
-          76,
-          84
+          79,
+          87
         ]
       },
       "time_raw": "〖%十年|时长〗",
@@ -25254,8 +25254,8 @@
         "segment_anchor": "sanhua#pn-r34.6",
         "line_no": 12,
         "span_in_line": [
-          219,
-          229
+          222,
+          232
         ]
       },
       "time_raw": "〖%天色已晚|时点〗",
@@ -26458,8 +26458,8 @@
         "segment_anchor": "sanhua#pn-r36.5",
         "line_no": 10,
         "span_in_line": [
-          90,
-          98
+          93,
+          101
         ]
       },
       "time_raw": "〖%十年|时长〗",

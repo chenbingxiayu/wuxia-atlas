@@ -1,15 +1,64 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { B } from '@lib/base';
-const version = '2026-10-31';
+import { SCOPE_NOTE } from '@lib/scope';
+import booksJson from '@data/books.json';
+import dossiersJson from '@data/dossiers.json';
+import artsJson from '@data/arts.json';
+import weaponsJson from '@data/weapons.json';
+import matchesJson from '@data/matches.json';
+import universeJson from '@data/universe.json';
+
+/* —— 全部统计与版本日期构建期实算（P0-3），不硬编码：回切全量口径后自动跟随。 —— */
+const books = ((booksJson as any).books || []) as Array<Record<string, any>>;
+const nBooks = books.length || ((booksJson as any).meta?.totals?.books ?? 0);
+
+/* 深度解析 = kb_status 已点亮的书目（与 universe/intertext 页同一口径）。 */
+const litBooks = books.filter((w) => w.kb_status === '已点亮' || w.kb_status === 'lit');
+const litNames = litBooks.map((w) => w.book);
+
+const nDossiers = ((dossiersJson as any).dossiers || []).length;
+const nArts = (artsJson as any).meta?.totals?.arts ?? ((artsJson as any).arts || []).length;
+const nWeapons = ((weaponsJson as any).weapons || []).length;
+const nMatches = (matchesJson as any).meta?.totals?.matches ?? ((matchesJson as any).matches || []).length;
+const nFighters = (matchesJson as any).meta?.totals?.fighters ?? ((matchesJson as any).fighters || []).length;
+
+const nLines = ((universeJson as any).lines || []).length;
+const nSeeds = ((universeJson as any).interchange_seeds || []).length;
+
+/* 作者明示互文：口径与 universe/intertext 页一致——out_refs kind=authorial，双端均为站内已点亮书目。 */
+const litSet = new Set(litNames);
+const intertextPairs = new Map<string, number>();
+for (const w of books) {
+  for (const r of w.out_refs || []) {
+    if (r?.kind === 'authorial' && litSet.has(w.book) && litSet.has(r.book)) {
+      intertextPairs.set(`${w.book}→${r.book}`, r.count || 0);
+    }
+  }
+}
+const nIntertextPairs = intertextPairs.size;
+const nIntertextLocs = [...intertextPairs.values()].reduce((a, b) => a + b, 0);
+
+/* 数据版本 = 本页引用切片 meta.generated 的最大值（dossiers 带时刻，取日期部 YYYY-MM-DD）。 */
+const generatedDates = [booksJson, dossiersJson, artsJson, weaponsJson, matchesJson, universeJson]
+  .map((d) => String((d as any)?.meta?.generated ?? ''))
+  .filter((s) => /^\d{4}-\d{2}-\d{2}/.test(s))
+  .map((s) => s.slice(0, 10))
+  .sort();
+const version = generatedDates.length ? generatedDates[generatedDates.length - 1] : '';
+const versionTitle = version
+  ? SCOPE_NOTE
+    ? `当前数据版本（${version} · 演示口径：${SCOPE_NOTE}）`
+    : `当前数据版本（${version}）`
+  : '当前数据版本';
 ---
 
 <Base title="关于" description="江湖图志：方法论、版权边界与开放数据。">
   <h1>关于 · 江湖图志</h1>
   <p class="lead">
-    「江湖图志」是一座<b>生长中的武侠宇宙图集</b>：以梁羽生 34 部作品的机器可读知识库（kb）为唯一事实源，
+    「江湖图志」是一座<b>生长中的武侠宇宙图集</b>：以梁羽生 {nBooks} 部作品的机器可读知识库为唯一事实源，
     用"标注→实体→事件→关系"管线产出图谱，再由图谱生成站点的每一个页面。
-    <b>站点是 kb 的纯函数</b>——管线每点亮一部书，图集自动生长一部。
+    <b>站点是数据的纯函数</b>——管线每深度解析一部书，图集自动生长一部。
   </p>
 
   <section>
@@ -23,11 +72,12 @@ const version = '2026-10-31';
   </section>
 
   <section>
-    <h2>当前数据版本（{version}）</h2>
+    <h2>{versionTitle}</h2>
     <ul>
-      <li>深度解析（9 部）：白发魔女传 / 塞外奇侠传 / 七剑下天山 / 江湖三女侠 / 冰魄寒光剑 / 冰川天女传 / 萍踪侠影录 / 还剑奇情录 / 散花女侠；</li>
-      <li>图谱：1,719 位人物 / 1,342 门武功 / 224 门派组织（241 跨书）· 558 场明文对局 · 137 门武功入谱；</li>
-      <li>宇宙层：六线谱系（7 条作者亲证接力边）· 98 处作者明示互文 · 22 个换乘站。</li>
+      <li>深度解析（{litNames.length} 部）：{litNames.join(' / ')}；</li>
+      <li>图谱：{nDossiers} 位人物档案 / {nArts} 门武功 / {nWeapons} 件名物；</li>
+      <li>武评：{nMatches} 场明文对局（{nFighters} 名参战者）；</li>
+      <li>宇宙层：{nLines} 条系列线路 · 作者明示互文 {nIntertextPairs} 对（{nIntertextLocs} 处）· {nSeeds} 个换乘站。</li>
     </ul>
   </section>
 

@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   dsp,
   dspText,
   fetchDisplayLookup,
   type DisplayLookup,
 } from '../lib/display-shared';
+import { recordResult } from '../lib/game-stats';
 
 /**
  * G1 武林二十问答：Akinator 式是非题，系统想一个人物，玩家 ≤20 问猜出。
@@ -28,6 +29,8 @@ export default function GameTwenty() {
   const [guess, setGuess] = useState<Char | null>(null);
   const [done, setDone] = useState(false);
   const [lookup, setLookup] = useState<DisplayLookup>({ display: {}, canonicalOf: {} });
+  // E1 战绩中心：本局是否已结算入档（ref 同步守卫——防「猜对了」连点 / effect 重复触发重复计局）
+  const settledRef = useRef(false);
 
   useEffect(() => {
     Promise.all([
@@ -54,14 +57,43 @@ export default function GameTwenty() {
     return best;
   }, [qs, asked, pool]);
 
+  // E1：out 判定提前到加载早退之前——原式 `qno >= 20 || pool.length === 0` 在题库未载时
+  // 会因 pool=[] 恒真而误判认输，加 chars.length 守卫（渲染本就只在 chars.length>0 时到达，语义不变）。
+  // 另补「问题用尽」（asked ≥ 题库，题库现仅 10 问，问满 20 永不可达）：原实现会停在
+  // 「问题用尽」死按钮态——按设计口径「用尽问题即一局」，与问满 20 同属系统认输结算点。
+  const out = chars.length > 0
+    && (qno >= 20 || pool.length === 0 || (qs.length > 0 && asked.length >= qs.length));
+
+  // E1 战绩中心结算：系统认输（问满 20 或候选耗尽且无待定猜测）= 一局负；每局只记一次
+  useEffect(() => {
+    if (out && !guess && !done && !settledRef.current) {
+      settledRef.current = true;
+      recordResult('twenty', false);
+    }
+  }, [out, guess, done]);
+
+  /** 猜对结算 = 一局胜（同步 ref 守卫，连点不重复计局） */
+  function settleWin() {
+    if (settledRef.current) return;
+    settledRef.current = true;
+    setDone(true);
+    recordResult('twenty', true);
+  }
+
   function answer(ans: 'yes' | 'no' | 'unsure') {
     if (!nextQ) return;
     const text = nextQ.text;
     setLog((l) => [...l, { text, ans }]);
     setAsked((a) => [...a, nextQ.id]);
-    if (ans !== 'unsure') setPool((p) => p.filter((c) => (ans === 'yes') === !!c.a[nextQ.key]));
+    if (ans !== 'unsure') {
+      const np = pool.filter((c) => (ans === 'yes') === !!c.a[nextQ.key]);
+      setPool(np);
+      // 设计口径：候选 ≤1 → 出猜测（模块注释「候选 ≤1 或问满 20 → 出猜测」）
+      setGuess(np.length === 1 ? np[0] : null);
+    } else {
+      setGuess(null);
+    }
     setQno((n) => n + 1);
-    setGuess(null);
   }
 
   function makeGuess() {
@@ -77,11 +109,10 @@ export default function GameTwenty() {
 
   function restart() {
     setPool(chars); setAsked([]); setQno(0); setLog([]); setGuess(null); setDone(false);
+    settledRef.current = false; // E1：新一局重新允许结算
   }
 
   if (!chars.length) return <div className="g20-loading">题库加载中…</div>;
-
-  const out = qno >= 20 || pool.length === 0;
 
   return (
     <div className="g20">
@@ -97,7 +128,7 @@ export default function GameTwenty() {
         ))}
       </div>
 
-      {done || out ? (
+      {done || out || guess ? (
         <div className="g20-result">
           {pool.length === 1 && <p className="g20-only">候选只剩一人——</p>}
           <p className="g20-guess">{guess ? dsp(lookup.display, guess.name) : '我认输，江湖高人到底是谁？'}</p>
@@ -106,13 +137,13 @@ export default function GameTwenty() {
               {guess.sect && <p className="dim">{guess.sect} · {guess.books.join('、')}</p>}
               <a className="g20-link" href={`${B}characters/${encodeURIComponent(guess.href || guess.name)}/`}>看 TA 的档案 →</a>
               <div className="g20-btns">
-                <button className="yes" onClick={() => { setDone(true); }}>猜对了</button>
+                <button className="yes" onClick={settleWin}>猜对了</button>
                 <button className="no" onClick={wrongGuess}>猜错了，继续</button>
               </div>
             </>
           )}
-          {done && <p className="dim">共用了 {qno} 问。战绩保存在本地（G7 每日一谜可分享战绩）。</p>}
-          {(out && !pool.length) || (guess && done) ? (
+          {done && <p className="dim">共用了 {qno} 问。战绩已计入<a href={`${B}games/`}>战绩中心</a>（仅存本机，不上传）。</p>}
+          {out || (guess && done) ? (
             <button className="g20-restart big" onClick={restart}>再来一局</button>
           ) : null}
         </div>

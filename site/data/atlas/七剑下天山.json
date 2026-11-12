@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generated": "2026-11-06",
+  "generated": "2026-11-12",
   "schema": "atlas-slice-v1",
   "book": "七剑下天山",
   "copyright": "L0 图谱层：仅定位符与结构化事实，不含摘录",
@@ -11,8 +11,10 @@
    "era/era_conf 来自 kb/作品元数据表（只读）；kb_status=待建/标注中的书其年代置信见 era_conf。",
    "persons：registry/concordance @ 实体（新口径，n=出现次数、chaps=出现回号）；旧站人物键保留兜底（契约不丢键）。",
    "places：registry/gazetteer N7 坐标层（loc_mode=coord）；unlocatable 31 条不入图（见 gazetteer.json field_gaps）。",
-   "bychap：tagged 实体令牌逐回生成（p=@人物、l=其余实体规范名）；旧站章节键保留兜底。"
-  ]
+   "bychap：tagged 实体令牌逐回生成（p=@人物、l=其余实体规范名）；旧站章节键保留兜底。",
+   "scope 口径（tianshan-demo）：本切片属 scope 书目（atlas 仅产 scope 书）；切片内容按本书圈定，无需再裁。"
+  ],
+  "scope": "tianshan-demo"
  },
  "title": "七剑下天山",
  "era": "清·康熙",

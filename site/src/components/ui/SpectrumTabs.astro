@@ -1,0 +1,31 @@
+---
+/**
+ * SpectrumTabs · 名物板块三谱切换 tab（名物页重构设计 §一决策 12/§四/§十一，D11 2026-11-12）。
+ * 决策 12：导航不加项——谱切换只在名物板块页内（神兵谱 /weapons · 秘籍谱 /manuals · 丹药谱 /elixirs）；
+ * 决策 13：路由已预留。文案照设计 §十一「神兵谱 · 秘籍谱 · 丹药谱」。
+ */
+import { B } from '@lib/base';
+
+const { current = '' } = Astro.props;    // 'weapons' | 'manuals' | 'elixirs'
+const TABS = [
+  { key: 'weapons', label: '神兵谱', href: `${B}weapons/` },
+  { key: 'manuals', label: '秘籍谱', href: `${B}manuals/` },
+  { key: 'elixirs', label: '丹药谱', href: `${B}elixirs/` },
+];
+---
+<nav class="spec-tabs" aria-label="名物三谱切换">
+  {TABS.map((t) => (
+    <a href={t.href} class={current === t.key ? 'on' : ''} aria-current={current === t.key ? 'page' : undefined}>{t.label}</a>
+  ))}
+  <span class="dim">三谱切换</span>
+</nav>
+<style>
+  .spec-tabs { display: flex; align-items: baseline; gap: 14px; margin: 10px 0 4px;
+    border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+  .spec-tabs a { font-size: 15px; letter-spacing: 1px; color: var(--ink-light);
+    border: 1px solid var(--line-strong); border-radius: 999px; padding: 2px 14px; }
+  .spec-tabs a:hover { color: var(--seal); border-color: var(--seal); }
+  .spec-tabs a.on { color: #fbf8ef; background: var(--seal); border-color: var(--seal);
+    transform: rotate(-1.5deg); font-weight: 700; }
+  .spec-tabs .dim { margin-left: auto; font-size: .78rem; color: var(--ink-faint); }
+</style>

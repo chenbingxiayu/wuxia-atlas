@@ -1,8 +1,8 @@
 {
  "schema": "event-v1",
  "book": "散花女侠",
- "generated": "2026-11-06",
- "generated_at": "2026-11-06 12:02:41",
+ "generated": "2026-11-09",
+ "generated_at": "2026-11-09 18:32:15",
  "tool": "event_extractor v0.1 (2026-11-05, EX-5/D03)",
  "spec": {
   "skill": "skills/SKILL_04a_事件识别.md",
@@ -62,8 +62,8 @@
   "by_outcome": {
    "平": 13,
    "未决": 312,
-   "未知": 1702,
-   "胜": 68,
+   "未知": 1699,
+   "胜": 71,
    "负": 51
   },
   "by_domain": {
@@ -75,8 +75,8 @@
    "▣": 32
   },
   "by_confidence": {
-   "low": 4089,
-   "high": 918,
+   "low": 4084,
+   "high": 923,
    "medium": 54
   },
   "by_narrative_mode": {
@@ -90,7 +90,7 @@
    "推导": 2
   },
   "time_point_hit": 4652,
-  "relation_filled": 736,
+  "relation_filled": 741,
   "fence_skipped_tokens": 2,
   "in_quote": 521,
   "zero_types": [
@@ -99,12 +99,12 @@
   ],
   "by_gate": {
    "excluded": 1211,
-   "review": 2930,
-   "ok": 918
+   "review": 2925,
+   "ok": 923
   },
   "gate_reasons": {
    "R1 无参与方": 1192,
-   "R2 单方参与者（降级）": 2877,
+   "R2 单方参与者（降级）": 2872,
    "R3 非事实叙述模式": 19,
    "R4 对白内（视角/转述，事实待核）": 53
   },
@@ -137,17 +137,17 @@
   "fence": 2,
   "in_quote": 521,
   "no_participants": 1194,
-  "relation_filled": 736,
+  "relation_filled": 741,
   "time_hit": 4652,
   "time_points": 678,
   "by_gate": {
    "excluded": 1211,
-   "review": 2930,
-   "ok": 918
+   "review": 2925,
+   "ok": 923
   },
   "gate_reasons": {
    "R1 无参与方": 1192,
-   "R2 单方参与者（降级）": 2877,
+   "R2 单方参与者（降级）": 2872,
    "R3 非事实叙述模式": 19,
    "R4 对白内（视角/转述，事实待核）": 53
   },
@@ -301354,19 +301354,24 @@
     }
    ],
    "subject": "白孟川",
-   "object": "",
+   "object": "玄瑛道人",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "白孟川",
      "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "玄瑛道人",
+     "entity_type": "@"
     }
    ],
-   "outcome": "未知",
-   "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
-   "outcome_weight": null,
+   "outcome": "胜",
+   "outcome_ref": "白孟川",
+   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
+   "outcome_weight": 0.4,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -301392,9 +301397,11 @@
    "related_orgs": [],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [],
-   "confidence": "low",
-   "review_status": "候选",
+   "related_relations": [
+    "N5:交手@027:003"
+   ],
+   "confidence": "high",
+   "review_status": "",
    "evidence": [
     {
      "loc": "027:003",
@@ -301404,11 +301411,11 @@
      "quote_published": false
     }
    ],
-   "description": "散花女侠 027:003 比武较技（交手）：白孟川 → —",
+   "description": "散花女侠 027:003 比武较技（交手）：白孟川 → 玄瑛道人",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 3640
   },
   {
@@ -301427,10 +301434,15 @@
      "in_quote": false
     }
    ],
-   "subject": "",
+   "subject": "凌云凤",
    "object": "玄瑛道人",
    "role_mode": "passive",
    "participants": [
+    {
+     "role": "施者",
+     "name": "凌云凤",
+     "entity_type": "@"
+    },
     {
      "role": "受者",
      "name": "玄瑛道人",
@@ -301466,8 +301478,10 @@
    "related_orgs": [],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@027:003"
+   ],
+   "confidence": "high",
    "review_status": "",
    "evidence": [
     {
@@ -301478,11 +301492,11 @@
      "quote_published": false
     }
    ],
-   "description": "散花女侠 027:003 夺宝争谱（夺取/转移）：— → 玄瑛道人",
+   "description": "散花女侠 027:003 夺宝争谱（夺取/转移）：凌云凤 → 玄瑛道人",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 3641
   },
   {
@@ -301502,12 +301516,17 @@
     }
    ],
    "subject": "凌云凤",
-   "object": "",
+   "object": "玄瑛道人",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "凌云凤",
+     "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "玄瑛道人",
      "entity_type": "@"
     }
    ],
@@ -301540,8 +301559,10 @@
    "related_orgs": [],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [],
-   "confidence": "low",
+   "related_relations": [
+    "N5:交手@027:003"
+   ],
+   "confidence": "high",
    "review_status": "",
    "evidence": [
     {
@@ -301552,11 +301573,11 @@
      "quote_published": false
     }
    ],
-   "description": "散花女侠 027:003 行踪迁移（行程迁移）：凌云凤 → —",
+   "description": "散花女侠 027:003 行踪迁移（行程迁移）：凌云凤 → 玄瑛道人",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 3642
   },
   {
@@ -301619,7 +301640,9 @@
    "related_orgs": [],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [],
+   "related_relations": [
+    "N5:交手@027:003"
+   ],
    "confidence": "high",
    "review_status": "",
    "evidence": [
@@ -301655,19 +301678,24 @@
     }
    ],
    "subject": "白孟川",
-   "object": "",
+   "object": "玄瑛道人",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "白孟川",
      "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "玄瑛道人",
+     "entity_type": "@"
     }
    ],
-   "outcome": "未知",
-   "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
-   "outcome_weight": null,
+   "outcome": "胜",
+   "outcome_ref": "白孟川",
+   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
+   "outcome_weight": 0.4,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -301693,9 +301721,11 @@
    "related_orgs": [],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [],
-   "confidence": "low",
-   "review_status": "候选",
+   "related_relations": [
+    "N5:交手@027:003"
+   ],
+   "confidence": "high",
+   "review_status": "",
    "evidence": [
     {
      "loc": "027:003",
@@ -301705,11 +301735,11 @@
      "quote_published": false
     }
    ],
-   "description": "散花女侠 027:003 比武较技（交手）：白孟川 → —",
+   "description": "散花女侠 027:003 比武较技（交手）：白孟川 → 玄瑛道人",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 3644
   },
   {
@@ -301729,19 +301759,24 @@
     }
    ],
    "subject": "白孟川",
-   "object": "",
+   "object": "玄瑛道人",
    "role_mode": "plain",
    "participants": [
     {
      "role": "施者",
      "name": "白孟川",
      "entity_type": "@"
+    },
+    {
+     "role": "受者",
+     "name": "玄瑛道人",
+     "entity_type": "@"
     }
    ],
-   "outcome": "未知",
-   "outcome_ref": "",
-   "outcome_basis": "仅单方参与者",
-   "outcome_weight": null,
+   "outcome": "胜",
+   "outcome_ref": "白孟川",
+   "outcome_basis": "胜败词表命中（旧 v0.1 移植）",
+   "outcome_weight": 0.4,
    "manner": "放水",
    "condition_tags": [
     "放水"
@@ -301767,9 +301802,11 @@
    "related_orgs": [],
    "related_places": [],
    "related_concepts": [],
-   "related_relations": [],
-   "confidence": "low",
-   "review_status": "候选",
+   "related_relations": [
+    "N5:交手@027:003"
+   ],
+   "confidence": "high",
+   "review_status": "",
    "evidence": [
     {
      "loc": "027:003",
@@ -301779,11 +301816,11 @@
      "quote_published": false
     }
    ],
-   "description": "散花女侠 027:003 比武较技（交手）：白孟川 → —",
+   "description": "散花女侠 027:003 比武较技（交手）：白孟川 → 玄瑛道人",
    "spec_version": "D03@0.3-draft / 04a",
-   "summary_ready": false,
-   "gate": "review",
-   "gate_reason": "R2 单方参与者（降级）",
+   "summary_ready": true,
+   "gate": "ok",
+   "gate_reason": "",
    "seq": 3645
   },
   {

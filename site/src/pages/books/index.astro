@@ -1,62 +1,244 @@
 ---
 import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/ui/StatusBadge.astro';
 import books from '@data/books.json';
+import universe from '@data/universe.json';
 import { B } from '@lib/base';
 import { dsp } from '@lib/display';
 
+/* ---------- 数据视图（表格）用：全部作品按书目序 ---------- */
 const works = [...books.books].sort((a, b) => a.no - b.no);
-const byStatus = (s: string) => works.filter((w) => w.kb_status === s).length;
-const lit = byStatus('已点亮');
-const tagging = byStatus('标注中');
+const byBook = new Map<string, any>(works.map((w) => [w.book, w]));
+
+/* 状态 → StatusBadge 用户词（三态口径：深度解析/建设中/存目；数据 kb_status 为源） */
+const statusWord = (s: string) => (s === '已点亮' ? '深度解析' : s === '标注中' ? '建设中' : '存目');
+const litN = works.filter((w) => w.kb_status === '已点亮').length;
+
+/* ---------- 系列书架：按 universe.json lines 分组（构建期 join，成员序=系列序） ---------- */
+const lines = (universe.lines as any[]).map((ln) => ({
+  ...ln,
+  members: [...ln.members].sort((a, b) => a.order - b.order),
+}));
+
+/* ---------- 头部统计行（构建期实算，用户口径） ---------- */
+const totals = books.meta.totals as { books: number; chapters: number; chars: number };
+const wanChars = Math.round(totals.chars / 1e4);
+const restN = totals.books - litN;
+
+/* 钩子占位话术（作品页重构设计 §三/§七：构建期拼装，不硬编码也不空着） */
+const hookOf = (w: any) => {
+  if (w.hook) return w.hook;
+  const parts = [
+    w.series && `${w.series}之作`,
+    w.era && `背景为${w.era}`,
+    w.leads.length > 0 && `主角${w.leads.map((l: string) => dsp(l)).join('、')}`,
+  ].filter(Boolean);
+  return parts.length > 0 ? parts.join(' · ') + '。' : '';
+};
+
+/* ---------- 推荐区「从这四部开始」：精选 4 部大卡（W3-T1）。
+   取舍（报告口径）：演示 7 部全部深度解析、无 featured flag，故选择逻辑构建期写死为
+   精选书目清单（编辑判断：系列主线 + 演示灵魂四书），但书名一律回数据解析——
+   按名取 books.json 条目，缺书自动跳过、不足 4 部按系列序回填，不做散点字符串比较。 */
+const FEATURED = ['白发魔女传', '七剑下天山', '江湖三女侠', '联剑风云录'];
+const featured = FEATURED.map((n) => byBook.get(n)).filter(Boolean);
+for (const ln of lines) {
+  for (const m of ln.members) {
+    if (featured.length >= 4) break;
+    const w = byBook.get(m.book);
+    if (w && !featured.includes(w)) featured.push(w);
+  }
+}
 ---
 
-<Base title="作品库" description="梁羽生 34 部作品总目：初刊年、背景年代、系列归属、主角、互文引用计数——未点亮的书也有完整档案。">
+<Base title="作品库" description={`梁羽生作品书架：${totals.books} 部作品 · ${totals.chapters} 回 · 约 ${wanChars} 万字，${litN} 部已深度解析，每部含初刊年、背景年代、主角与一句话钩子。`}>
   <h1>作品库</h1>
   <p class="lead">
-    共 {books.meta.totals.books} 部 / {books.meta.totals.chapters} 回 / {books.meta.totals.chars.toLocaleString()} 字（非空白实测）。
-    深度解析 <b>{lit}</b> 部、建设中 <b>{tagging}</b> 部；互文出/入边为作者明示与书名引用（authorial+quoted）。
+    共 <b>{totals.books}</b> 部 · <b>{totals.chapters}</b> 回 · 约 <b>{wanChars}</b> 万字。
+    {litN} 部已深度解析{restN > 0 ? <>，其余 {restN} 部作品档案已就绪</> : null}。
   </p>
 
-  <table class="booktable">
-    <thead>
-      <tr><th>序</th><th>书名</th><th>初刊年</th><th>背景年代</th><th>系列</th><th>主角</th><th>回数</th><th>互文出/入</th><th>状态</th></tr>
-    </thead>
-    <tbody>
-      {works.map((w) => (
-        <tr>
-          <td class="dim">{w.no}</td>
-          <td><a href={`${B}books/${w.book}/`} class="title">{w.book}</a></td>
-          <td>{w.year}{w.year_conf === 'approx' ? '*' : ''}</td>
-          <td class="dim">{w.era}</td>
-          <td class="dim">{w.series}</td>
-          <td class="dim">{w.leads.map((l) => dsp(l)).join('、') || '—'}</td>
-          <td>{w.chapters}</td>
-          <td class="dim">{w.intertext_out}/{w.intertext_in}</td>
-          <td>
-            {w.kb_status === '已点亮' && <span class="badge badge-lit">已点亮</span>}
-            {w.kb_status === '标注中' && <span class="badge" style="color:var(--gold)">标注中</span>}
-            {w.kb_status === '待建' && <span class="badge badge-todo">待点亮</span>}
-          </td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
-  <p class="fine">* 初刊年为通行年表值待复核；完整字段与待考清单见 <a href="https://github.com/chenbingxiayu/wuxia-atlas/blob/main/site/data/books.json">books.json</a>。</p>
+  {/* —— 视图切换：构建期双区块 + radio 纯 CSS 切换（无 JS；W3-T1 §1④）—— */}
+  <input type="radio" name="books-view" id="vw-shelf" class="vw-radio" checked />
+  <input type="radio" name="books-view" id="vw-table" class="vw-radio" />
+  <div class="view-bar" role="group" aria-label="浏览方式">
+    <label for="vw-shelf" class="vw-label">书架</label>
+    <label for="vw-table" class="vw-label">数据视图（表格）</label>
+  </div>
 
-  <h2>缺佚作品（3 部）</h2>
-  <ul>
-    {books.missing_works.map((m) => (
-      <li><b>{m.book}</b> —— {m.note}（<span class="dim">背景年代：{m.era}）</span></li>
-    ))}
-  </ul>
+  {/* —— 默认视图①：推荐区 + 系列书架 —— */}
+  <div class="view-shelf">
+    <section>
+      <h2>从这四部开始</h2>
+      <div class="feature-grid">
+        {featured.map((w) => (
+          <a class="feature-card" href={`${B}books/${encodeURIComponent(w.book)}/`}>
+            <span class="fc-strip" aria-hidden="true" />
+            <p class="fc-top">
+              <b class="fc-title">{w.book}</b>
+              <StatusBadge status={statusWord(w.kb_status)} />
+            </p>
+            <p class="fc-hook">{hookOf(w)}</p>
+            <p class="fc-meta">
+              主角 {w.leads.map((l: string) => dsp(l)).join('、') || '—'} · {w.year} 年初刊 · {w.chapters} 回
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <h2>全部作品 · 按系列</h2>
+      {lines.map((ln) => (
+        <div class="shelf-group">
+          <h3 class="shelf-line">
+            <span class="line-dot" style={`background:${ln.color}`} aria-hidden="true" />
+            {ln.line}
+            <small class="dim">（{ln.members.length} 部）</small>
+          </h3>
+          <div class="shelf-grid">
+            {ln.members.map((m: any) => {
+              const w = byBook.get(m.book);
+              if (!w) return null;
+              return (
+                <a class="shelf-card" href={`${B}books/${encodeURIComponent(w.book)}/`}>
+                  <p class="sc-top">
+                    <b class="sc-title">{w.book}</b>
+                    <StatusBadge status={statusWord(w.kb_status)} />
+                  </p>
+                  <p class="sc-meta">
+                    {w.year}{w.year_conf === 'approx' ? '*' : ''} 年刊 · {w.era}
+                  </p>
+                  <p class="sc-leads">主角 {w.leads.map((l: string) => dsp(l)).join('、') || '—'}</p>
+                  <p class="sc-hook">{hookOf(w)}</p>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </section>
+  </div>
+
+  {/* —— 第二视图：9 列数据表格（研究者用，整体保留）—— */}
+  <div class="view-table">
+    <div class="table-scroll">
+      <table class="booktable">
+        <thead>
+          <tr><th>序</th><th>书名</th><th>初刊年</th><th>背景年代</th><th>系列</th><th>主角</th><th>回数</th><th>互文出/入</th><th>状态</th></tr>
+        </thead>
+        <tbody>
+          {works.map((w) => (
+            <tr>
+              <td class="dim">{w.no}</td>
+              <td><a href={`${B}books/${w.book}/`} class="title">{w.book}</a></td>
+              <td>{w.year}{w.year_conf === 'approx' ? '*' : ''}</td>
+              <td class="dim">{w.era}</td>
+              <td class="dim">{w.series}</td>
+              <td class="dim">{w.leads.map((l) => dsp(l)).join('、') || '—'}</td>
+              <td>{w.chapters}</td>
+              <td class="dim">{w.intertext_out}/{w.intertext_in}</td>
+              <td><StatusBadge status={statusWord(w.kb_status)} /></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="fine">* 初刊年为通行年表值待复核；完整字段与待考清单见 <a href="https://github.com/chenbingxiayu/wuxia-atlas/blob/main/site/data/books.json">books.json</a>。</p>
+  </div>
+
+  {/* —— 缺佚作品折叠清单（演示 scope 为空数组 → 整块不渲染）—— */}
+  {(books.missing_works as any[]).length > 0 && (
+    <details class="missing">
+      <summary>缺佚作品（{(books.missing_works as any[]).length} 部）</summary>
+      <ul>
+        {books.missing_works.map((m) => (
+          <li><b>{m.book}</b> —— {m.note.replace(/authorial\/quoted/g, '作者明示/对白引用')}（<span class="dim">背景年代：{m.era}）</span></li>
+        ))}
+      </ul>
+    </details>
+  )}
 </Base>
 
 <style>
   .lead { color: var(--ink-light); }
+  .lead b { color: var(--ink); }
+  .dim { color: var(--ink-faint); }
+  .fine { font-size: .8rem; color: var(--ink-faint); }
+
+  /* —— 视图切换（纯 CSS radio；输入框视觉隐藏但保留键盘可达）—— */
+  .vw-radio {
+    position: absolute; width: 1px; height: 1px;
+    opacity: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+  }
+  .view-bar { display: flex; gap: var(--space-2); margin: var(--space-3) 0 var(--space-4); }
+  .vw-label {
+    display: inline-block; cursor: pointer; user-select: none;
+    border: 1.5px solid var(--line-strong); border-radius: 999px;
+    padding: .1em .95em; font-size: .88rem; color: var(--ink-light);
+    background: rgba(255, 255, 255, .5);
+  }
+  .vw-label:hover { border-color: var(--seal); color: var(--seal); }
+  #vw-shelf:checked ~ .view-bar label[for="vw-shelf"],
+  #vw-table:checked ~ .view-bar label[for="vw-table"] {
+    background: var(--seal); border-color: var(--seal); color: var(--paper); font-weight: 700;
+  }
+  #vw-shelf:focus-visible ~ .view-bar label[for="vw-shelf"],
+  #vw-table:focus-visible ~ .view-bar label[for="vw-table"] { outline: 2px solid var(--azure); outline-offset: 2px; }
+  #vw-table:checked ~ .view-shelf,
+  #vw-shelf:checked ~ .view-table { display: none; }
+
+  /* —— 推荐区大卡 —— */
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: var(--space-3); }
+  .feature-card {
+    display: block; position: relative; overflow: hidden;
+    background: rgba(255, 255, 255, .55);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: var(--space-3) var(--space-3) var(--space-3) calc(var(--space-3) + 4px);
+    color: var(--ink);
+  }
+  .feature-card:hover { border-color: var(--seal); }
+  .feature-card:hover .fc-title { color: var(--seal); }
+  .fc-strip { position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--seal); }
+  .fc-top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); margin: 0 0 var(--space-1); }
+  .fc-title { font-family: var(--font-title); font-size: 1.12rem; color: var(--ink); }
+  .fc-hook { margin: 0 0 var(--space-2); font-size: .92rem; line-height: 1.75; color: var(--ink-light); }
+  .fc-meta { margin: 0; font-size: .82rem; color: var(--ink-faint); }
+
+  /* —— 系列书架 —— */
+  h2 { margin: var(--space-5) 0 var(--space-3); }
+  .shelf-group { margin-bottom: var(--space-4); }
+  .shelf-line {
+    display: flex; align-items: center; gap: .5em;
+    margin: 0 0 var(--space-2); font-size: 1.02rem; color: var(--ink);
+  }
+  .line-dot { display: inline-block; width: 18px; height: 5px; border-radius: 3px; }
+  .shelf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: var(--space-2) var(--space-3); }
+  .shelf-card {
+    display: block; background: rgba(255, 255, 255, .55);
+    border: 1px solid var(--line); border-radius: var(--radius);
+    box-shadow: var(--shadow); padding: var(--space-2) var(--space-3);
+    color: var(--ink);
+  }
+  .shelf-card:hover { border-color: var(--seal); }
+  .shelf-card:hover .sc-title { color: var(--seal); }
+  .sc-top { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-2); margin: 0; }
+  .sc-title { font-family: var(--font-title); font-size: 1.02rem; color: var(--ink); }
+  .sc-meta, .sc-leads { margin: .15em 0 0; font-size: .8rem; color: var(--ink-faint); }
+  .sc-hook { margin: .3em 0 0; font-size: .86rem; line-height: 1.7; color: var(--ink-light); }
+
+  /* —— 数据视图（表格，原 9 列整体保留）—— */
   .booktable { width: 100%; border-collapse: collapse; font-size: .88rem; }
   .booktable th, .booktable td { text-align: left; padding: .38rem .5rem; border-bottom: 1px solid var(--line); }
   .booktable th { color: var(--ink-faint); font-weight: 600; position: sticky; top: 0; background: var(--paper); }
   .title { font-weight: 700; }
-  .dim { color: var(--ink-light); }
-  .fine { font-size: .8rem; color: var(--ink-faint); }
+
+  /* —— 缺佚折叠清单 —— */
+  .missing { margin: var(--space-4) 0; font-size: .9rem; color: var(--ink-light); }
+  .missing summary { cursor: pointer; color: var(--ink-light); }
+  .missing ul { padding-left: 1.4em; }
+
+  @media (max-width: 480px) {
+    .feature-grid, .shelf-grid { grid-template-columns: 1fr; }
+  }
 </style>

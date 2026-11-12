@@ -4,10 +4,16 @@
 按顺序运行 7 个导出器（默认 dry-run），汇总每个 data 文件的契约硬缺口与记录数，
 写总报告 `logs/export/reports/_integration.md`；任一导出器失败或 hard_gap>0 则 exit 1。
 
+W0-T3a（天山演示版总体方案 §1.2，2026-11-08）：--scope <profile> 解析后向每个子导出器
+子进程透传（export_site_common.scope_from_args / load_scope）；`--scope all` 与不传参数
+同为全量口径（不透传，现状不变，方案 R6）。scope 口径下契约复核对旧契约中的 scope 外
+书键按"预期裁剪"处理（esc.diff_staging，不计 hard_gap）。
+
 用法：
   python scripts/export_site_all.py              # dry-run（只写 staging/reports）
   python scripts/export_site_all.py --apply      # 应用（先自动备份 site/data，谨慎）
   python scripts/export_site_all.py --check-only # 只对现有 staging 做契约复核
+  python scripts/export_site_all.py --scope tianshan-demo   # 天山 7 书裁剪口径（透传子导出器）
 """
 from __future__ import annotations
 
@@ -25,15 +31,27 @@ EXPORTERS = [
     ("EX-4 graph", "export_site_graph.py", ["graph.json"]),
     ("EX-5 matches/ratings", "export_site_matches_ratings.py", ["matches.json", "ratings.json"]),
     ("EX-6 sects/weapons/arts", "export_site_sects_weapons_arts.py", ["sects.json", "weapons.json", "arts.json"]),
-    # EX-7 另含 atlas/<书>.json（嵌套路径由导出器自行落 staging，集成器只校验顶层两件）
-    ("EX-7 gazetteer/universe", "export_site_gazetteer_universe.py", ["gazetteer.json", "universe.json"]),
+    # EX-7 另含 atlas/<书>.json（嵌套切片由导出器自行落 staging）；W0-T4 起 atlas/state.json
+    # 亦由 EX-7 接管产出（原 build_atlas_slices.py 已废弃标注），集成器一并校验
+    ("EX-7 gazetteer/universe", "export_site_gazetteer_universe.py",
+     ["gazetteer.json", "universe.json", "atlas/state.json"]),
     ("EX-8 audit", "export_site_audit.py", ["audit.json"]),
 ]
 
 EXPORTED_FILES = [name for _, _, names in EXPORTERS for name in names]
 
 
-def run_exporters(apply: bool) -> dict:
+def exporter_cmd(script_path: Path, apply: bool, scope=None) -> list:
+    """子导出器命令行（W0-T3a：scope 口径向子进程透传 --scope <profile>；全量口径不透传）。"""
+    cmd = [sys.executable, str(script_path)]
+    if apply:
+        cmd.append("--apply")
+    if scope is not None:
+        cmd += ["--scope", scope["profile"]]
+    return cmd
+
+
+def run_exporters(apply: bool, scope=None) -> dict:
     results = {}
     for label, script, names in EXPORTERS:
         script_path = config.DIR_SCRIPTS / script
@@ -41,9 +59,7 @@ def run_exporters(apply: bool) -> dict:
             results[label] = {"exit": 127, "names": names, "stderr": "脚本不存在"}
             print(f"[all] ✗ {label}: 脚本不存在 {script_path}")
             continue
-        cmd = [sys.executable, str(script_path)]
-        if apply:
-            cmd.append("--apply")
+        cmd = exporter_cmd(script_path, apply, scope)
         print(f"[all] → {label}: {' '.join(cmd)}")
         proc = subprocess.run(cmd, cwd=str(config.ROOT), capture_output=True, text=True,
                               encoding="utf-8", errors="replace")
@@ -63,7 +79,8 @@ def check_staging() -> list[dict]:
         row = {"name": name, "exists": p.exists()}
         if p.exists():
             payload = esc.load_json(p)
-            diff = esc.diff_against_contract(name, payload)
+            # W0-T3a：scope 感知复核（payload meta.scope 存在时 scope 外书键=预期裁剪）
+            diff = esc.diff_staging(name, payload)
             row.update({
                 "hard_gap": diff["hard_gap_count"],
                 "old_records": diff["old_record_count"],
@@ -79,13 +96,14 @@ def check_staging() -> list[dict]:
     return rows
 
 
-def render(rows: list[dict], exporter_results: dict, apply: bool) -> str:
+def render(rows: list[dict], exporter_results: dict, apply: bool, scope=None) -> str:
     lines = [
         "# EX 导出层集成报告（阶段 1）",
         "",
         f"- 生成：{esc.now_iso()}",
         f"- 模式：{'APPLY（已写 site/data，执行前已备份）' if apply else 'dry-run（staging only）'}",
         f"- 导出器：{[label for label, _, _ in EXPORTERS]}",
+        f"- 书目范围：{'全量口径（无 --scope）' if scope is None else f'scope={scope["profile"]}（{len(scope["books"])} 书）'}",
         "",
         "## 导出器执行",
         "",
@@ -136,9 +154,12 @@ def render(rows: list[dict], exporter_results: dict, apply: bool) -> str:
 def main():
     apply = "--apply" in sys.argv
     check_only = "--check-only" in sys.argv
-    exporter_results = {} if check_only else run_exporters(apply)
+    # W0-T3a：--scope 解析（--scope all / 不传 = 全量口径，None）
+    profile = esc.scope_from_args()
+    scope = esc.load_scope(profile) if profile is not None else None
+    exporter_results = {} if check_only else run_exporters(apply, scope)
     rows = check_staging()
-    report = render(rows, exporter_results, apply)
+    report = render(rows, exporter_results, apply, scope=scope)
     out = esc.REPORTS_DIR / "_integration.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(report, encoding="utf-8")

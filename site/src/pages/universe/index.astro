@@ -2,9 +2,12 @@
 import Base from '../../layouts/Base.astro';
 import Metro from '../../components/Metro.astro';
 import universe from '@data/universe.json';
+import booksJson from '@data/books.json';
+import wordcloudJson from '@data/char_wordcloud.json';
+import charPlotsJson from '@data/char_plots.json';
 import { B } from '@lib/base';
 import { dsp, dspText } from '@lib/display';
-import { bookTarget } from '@lib/links';
+import { bookTarget, personTarget } from '@lib/links';
 
 /** 数据内嵌文案过展示层；并去掉「飞红巾（飞红巾）」式重复括注（B-1/B-2 展示纪律）。 */
 const noteText = (note: string) =>
@@ -22,75 +25,256 @@ const lines = universe.lines.map((ln) => ({
   ...ln,
   members: [...ln.members].sort((a, b) => a.order - b.order),
 }));
+
+/* 悬案墙：关涉书 = 书目清单在悬案文本中命中的书名（构建期匹配，命中才出 chip，未命中不出）。 */
+const bookNames = booksJson.books.map((w) => w.book);
+const openQuestions = universe.open_questions.map((q: string) => ({
+  text: q,
+  books: bookNames.filter((b) => q.includes(b)),
+}));
+
+/* ---- 门户数字（纪律 1：一律构建期计算，不硬编码） ---- */
+const CN_NUM = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九', '十'];
+const nLines = lines.length;
+const lineCountCn = nLines <= 10 ? CN_NUM[nLines] : String(nLines);
+const nBooks = booksJson.books.length;
+const nSeedsLinked = universe.interchange_seeds.filter((s: any) => s.canonical).length;
+
+/* ---- 线路导读（宇宙 §4.2）：数据源 universe.json lines[].reading_guide（构建期仅注入
+   kb/校订/线路导读.tsv 的 approved 行）；全部线无数据 → 整块不渲染，槽位空 → 该槽不渲染。 ---- */
+const guideRows = lines
+  .map((ln: any) =>
+    ln.reading_guide
+      ? {
+          line: ln.line as string,
+          slots: (
+            [
+              ['入坑起点', ln.reading_guide.start],
+              ['巅峰之作', ln.reading_guide.peak],
+              ['可跳过', ln.reading_guide.skip],
+            ] as [string, string][]
+          )
+            .filter(([, v]) => v)
+            .map(([label, value]) => ({ label, value })),
+          note: (ln.reading_guide.note || '') as string,
+        }
+      : null,
+  )
+  .filter((g): g is NonNullable<typeof g> => g !== null && (g.slots.length > 0 || g.note !== ''));
+
+/* ---- 主角词云（宇宙 §4.6）：门控 = char_wordcloud.json meta.cleaned === true（未清洗 → 不渲染）。
+   Top 60 按频次降序；词条 href 构建期查 dossiers（canonical+别名，经 @lib/links personTarget）
+   命中 → 档案页，否则 → 搜索页。 ---- */
+const wcAll: { w: string; n: number; books: number }[] = (wordcloudJson as any).items ?? [];
+const wcCleaned = (wordcloudJson as any).meta?.cleaned === true;
+const wcWords = (wcCleaned ? [...wcAll].sort((a, b) => b.n - a.n).slice(0, 60) : []).map((it) => {
+  const canon = personTarget(it.w);
+  return {
+    ...it,
+    href: canon
+      ? `${B}characters/${encodeURIComponent(canon)}/`
+      : `${B}search/?q=${encodeURIComponent(it.w)}`,
+  };
+});
+/* 流式排版（构建期算好坐标）：字号 ∝ sqrt(n)（11–30px），逐词排入行，超出行宽即换行。 */
+const WC_W = 660;
+const WC_PAD = 4;
+const WC_GAP = 12;
+const FS_MIN = 11;
+const FS_MAX = 30;
+const wcSqrts = wcWords.map((t) => Math.sqrt(t.n));
+const wcSqMin = Math.min(...wcSqrts);
+const wcSqMax = Math.max(...wcSqrts);
+const wcFs = (n: number) =>
+  wcSqMax === wcSqMin
+    ? (FS_MIN + FS_MAX) / 2
+    : FS_MIN + ((Math.sqrt(n) - wcSqMin) / (wcSqMax - wcSqMin)) * (FS_MAX - FS_MIN);
+type WcWord = { w: string; n: number; books: number; href: string; fs: number; x: number; y: number };
+const wcRows: WcWord[][] = [];
+let wcRow: WcWord[] = [];
+let wcX = WC_PAD;
+let wcLineH = 0;
+let wcTop = WC_PAD;
+for (const t of wcWords) {
+  const fs = wcFs(t.n);
+  const wpx = t.w.length * fs + fs * 0.4;
+  if (wcRow.length > 0 && wcX + wpx > WC_W - WC_PAD) {
+    wcRows.push(wcRow);
+    wcTop += wcLineH * 1.5;
+    wcRow = [];
+    wcX = WC_PAD;
+    wcLineH = 0;
+  }
+  wcRow.push({ ...t, fs, x: wcX, y: wcTop + fs });
+  wcX += wpx + WC_GAP;
+  wcLineH = Math.max(wcLineH, fs);
+}
+if (wcRow.length > 0) wcRows.push(wcRow);
+const wcFlat = wcRows.flat();
+const WC_H = Math.ceil(wcTop + wcLineH * 1.5 + WC_PAD * 2);
+
+/* ---- 跨书生命弧（宇宙 §4.4）：char_plots.json characters[canonical].book_states 存在才渲染；
+   book 去系列后缀、state 原样；无数据不渲染（现状：字段未建 → 全部隐藏）。 ---- */
+const charPlots = (charPlotsJson as any).characters ?? {};
+const stripSeries = (b: string) => dspText(b).replace(/（[^（）]*系列[^（）]*）$/, '');
+const arcOf = (canonical?: string) => {
+  if (!canonical) return null;
+  const bs = (charPlots as any)[canonical]?.book_states;
+  if (!Array.isArray(bs) || bs.length === 0) return null;
+  return bs.map((s: any) => ({
+    book: stripSeries(String(s.book ?? '')),
+    state: String(s.state ?? ''),
+  }));
+};
 ---
 
-<Base title="宇宙" description="梁羽生武侠宇宙：六条系列线路、换乘站种子与编年主线——地铁图 v0。">
+<Base title="宇宙" description="梁羽生武侠宇宙：系列线路地铁图、跨书换乘人物与悬案墙——编年史、AB 路径、互文图谱入口。">
   <h1>宇宙</h1>
   <p class="lead">
-    系列为线路、书目为站点、跨书人物为换乘站。排序依据：作者「请续看」接力边优先，辅以互文回指与编年。
-    完整证据链见<a href="https://github.com/chenbingxiayu/wuxia-atlas/blob/main/kb/系列谱系考订表.md">系列谱系考订表</a>。
-    三件套：<a href={`${B}universe/timeline/`}>编年史（双轨可视化）</a> ·
-    <a href={`${B}universe/network/`}>关系网络图 + AB 路径</a> ·
-    <a href={`${B}universe/intertext/`}>互文图谱</a>。
+    {lineCountCn}条系列线路、{nBooks} 部作品、{nSeedsLinked} 位跨书换乘人物。哪条线怎么读、按什么顺序读、人物怎么串起来——这张宇宙地图一次说清，每个结论都带原著定位。
   </p>
 
   <div class="card">
     <Metro lines={lines} />
+    {guideRows.length > 0 && (
+      <div class="guided">
+        <h3>线路导读</h3>
+        {guideRows.map((g) => (
+          <p class="gline">
+            <b>{g.line}</b>
+            {g.slots.map((s) => (
+              <>
+                <span class="dim"> ｜ {s.label}：</span>
+                {bookTarget(s.value)
+                  ? <a href={`${B}books/${bookTarget(s.value)}/`}>{s.value}</a>
+                  : <span>{s.value}</span>}
+              </>
+            ))}
+            {g.note && <span class="fine"> ｜ {g.note}</span>}
+          </p>
+        ))}
+      </div>
+    )}
   </div>
 
-  <section>
-    <h2>换乘站种子 <span class="dim">（互文实证的跨书人物，{universe.interchange_seeds.length} 人）</span></h2>
-    <ul class="seeds">
-      {universe.interchange_seeds.map((s) => (
-        <li>
-          <b>{seedName(s.name)}</b>
-          <span class="dim">行经：</span>
-          {s.books.map((b, i) => (
-            <>{i > 0 && ' · '}
-              {bookTarget(b) ? <a href={`${B}books/${b}/`}>{b}</a> : <span class="dim">{b}</span>}
-            </>
-          ))}
-          <span class="fine">（{noteText(s.note)}）</span>
-        </li>
-      ))}
-    </ul>
-  </section>
+  <div class="trio">
+    <a class="tcard" href={`${B}universe/timeline/`}>
+      <b>编年史</b>
+      <span>故事年代与出版年份双轨对照：先有故事还是先有书，一眼分清。</span>
+    </a>
+    <a class="tcard" href={`${B}universe/network/`}>
+      <b>AB 路径</b>
+      <span>任意两位侠客的最短关联，每一步都能翻回原文对质。</span>
+    </a>
+    <a class="tcard" href={`${B}universe/intertext/`}>
+      <b>互文图谱</b>
+      <span>「事见拙著《X》」——梁羽生亲笔写下的跨书接口，任何百科都没有。</span>
+    </a>
+  </div>
+
+  {wcFlat.length > 0 && (
+    <section class="card wcloud">
+      <h2>谁才是梁书第一主角？</h2>
+      <svg viewBox={`0 0 ${WC_W} ${WC_H}`} role="img" aria-label="全语料人名词云（Top 60，字号∝频次）">
+        {wcFlat.map((t) => (
+          <a href={t.href}>
+            <title>{`${t.w} · ${t.n} 次 · ${t.books} 部`}</title>
+            <text x={t.x} y={t.y} font-size={t.fs}>{t.w}</text>
+          </a>
+        ))}
+      </svg>
+      <p class="fine">按名目出现次数统计（含对白提及），覆盖全部 {nBooks} 部；别名与绰号未归并——玉罗刹与练霓裳分列，绰号比本名更响也是江湖的一部分。点击词目可搜索。</p>
+    </section>
+  )}
 
   <section>
-    <h2>宇宙编年主线 <span class="dim">（故事时间轴，跨线排布）</span></h2>
-    <table>
-      <thead><tr><th>故事年代</th><th>作品（→ = 接力边/承前）</th></tr></thead>
-      <tbody>
-        {universe.chronology_spine.map((sp) => (
-          <tr>
-            <td class="era">{sp.era}</td>
-            <td>
-              {sp.books.map((b, i) => (
-                <>
-                  {i > 0 && <span class="dim"> → </span>}
-                  {b.endsWith('*') || !bookTarget(b)
-                    ? <span class="dim">{b.replace(/\*$/, '')}{b.endsWith('*') ? '*' : ''}</span>
-                    : <a href={`${B}books/${b}/`}>{b}</a>}
+    <h2>换乘站 · 跨书人物 <span class="dim">（{universe.interchange_seeds.length} 人）</span></h2>
+    <div class="seedcards">
+      {universe.interchange_seeds.map((s: any) => {
+        const arc = arcOf(s.canonical);
+        return (
+          <div class="scard">
+            <p class="sname">
+              {s.canonical
+                ? <a href={`${B}characters/${encodeURIComponent(s.canonical)}/`}>{seedName(s.name)}</a>
+                : <span>{seedName(s.name)}</span>}
+            </p>
+            {arc && (
+              <p class="sarc">
+                {arc.map((seg, i) => (
+                  <>{i > 0 && <span class="dim"> → </span>}{seg.book}·{seg.state}</>
+                ))}
+              </p>
+            )}
+            <p class="sbooks">
+              <span class="dim">行经：</span>
+              {s.books.map((b: string, i: number) => (
+                <>{i > 0 && ' · '}
+                  {bookTarget(b) ? <a href={`${B}books/${b}/`}>{b}</a> : <span class="dim">{b}</span>}
                 </>
               ))}
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-    <p class="fine">* = 缺佚或年代待考；逐线排序置信（strong/ok/todo）见谱系考订表。</p>
+            </p>
+            <p class="snote fine">{noteText(s.note)}</p>
+          </div>
+        );
+      })}
+    </div>
   </section>
+
+  {openQuestions.length > 0 && (
+    <section>
+      <h2>尚无定论的事</h2>
+      <ul class="openq">
+        {openQuestions.map((q) => (
+          <li>
+            <span>{q.text}</span>
+            {q.books.length > 0 && (
+              <span class="chips">
+                <span class="dim">关涉：</span>
+                {q.books.map((b) => (
+                  <a class="chip" href={`${B}books/${b}/`}>{b}</a>
+                ))}
+              </span>
+            )}
+          </li>
+        ))}
+      </ul>
+      <p class="fine">这些先后与关系问题，证据已收集、结论待考——考订表持续更新（共 {universe.open_questions.length} 件）。</p>
+    </section>
+  )}
 </Base>
 
 <style>
   .lead { color: var(--ink-light); }
-  .seeds { list-style: none; padding: 0; font-size: .92rem; }
-  .seeds li { margin: .45em 0; }
+  /* 三件套入口卡（宇宙 §四②） */
+  .trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--space-3); margin: var(--space-4) 0; }
+  .tcard { display: flex; flex-direction: column; gap: .35em; border: 1px solid var(--line-strong); border-radius: 8px; padding: .8em 1em; }
+  .tcard b { color: var(--azure); }
+  .tcard span { color: var(--ink-light); font-size: .88rem; }
+  .tcard:hover { border-color: var(--seal); }
+  .tcard:hover b { color: var(--seal); }
+  /* 线路导读（宇宙 §4.2，地铁图卡内下方） */
+  .guided { border-top: 1px solid var(--line); margin-top: var(--space-3); padding-top: var(--space-3); }
+  .guided h3 { margin: 0 0 .4em; font-size: 1rem; }
+  .gline { margin: .35em 0; font-size: .92rem; line-height: 1.8; }
+  /* 主角词云（宇宙 §4.6） */
+  .wcloud svg { width: 100%; height: auto; display: block; }
+  .wcloud text { fill: var(--ink); }
+  .wcloud a { fill: var(--ink); }
+  .wcloud a:hover text { fill: var(--seal); }
+  /* 换乘站种子卡（宇宙 §4.3） */
+  .seedcards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-3); }
+  .scard { border: 1px solid var(--line); border-radius: 8px; padding: .7em .9em; font-size: .92rem; }
+  .scard .sname { margin: 0 0 .3em; font-size: 1rem; }
+  .sarc { margin: .2em 0; font-size: .88rem; color: var(--azure); }
+  .sbooks { margin: .2em 0; }
+  .snote { margin: .3em 0 0; }
+  .openq { list-style: none; padding: 0; font-size: .92rem; }
+  .openq li { margin: .5em 0; line-height: 1.9; }
+  .chips { margin-left: .35em; }
+  .chip { display: inline-block; border: 1px solid var(--line-strong); border-radius: 999px; padding: 0 .55em; margin-left: .3em; font-size: .8rem; color: var(--azure); }
+  .chip:hover { color: var(--seal); border-color: var(--seal); }
   .fine { color: var(--ink-faint); font-size: .82rem; }
-  .era { white-space: nowrap; color: var(--azure); font-weight: 700; }
-  table { border-collapse: collapse; width: 100%; font-size: .9rem; }
-  th, td { text-align: left; padding: .45em .6em; border-bottom: 1px solid var(--line); }
-  th { color: var(--ink-faint); }
   .dim { color: var(--ink-faint); }
   h2 { margin-top: var(--space-5); }
 </style>

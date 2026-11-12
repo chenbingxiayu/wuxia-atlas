@@ -139,6 +139,10 @@ def chapter_path(name: str, no: int) -> Path:
         m = CHAPTER_FILE_RE.match(p.name)
         if m and cn_num_to_int(m.group(2)) == no:
             return p
+    # 楔子（000 前缀，如 七剑/萍踪/龙虎/武当一剑）：回号 0 映射到 000 文件
+    if no == 0:
+        for p in sorted(d.glob("000*.txt")):
+            return p
     raise FileNotFoundError(f"{name} 第 {no} 回底本未找到（{d}）")
 
 
