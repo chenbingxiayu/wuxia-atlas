@@ -1,0 +1,450 @@
+{
+ "meta": {
+  "generated": "2026-11-13",
+  "schema": "story-v2",
+  "script": "scripts/build_stories.py",
+  "copyright": "L0：计数+定位符；摘录仅本地使用，不入切片",
+  "scope": "tianshan-demo",
+  "books": [
+   "散花女侠",
+   "联剑风云录",
+   "白发魔女传",
+   "塞外奇侠传",
+   "七剑下天山",
+   "冰魄寒光剑",
+   "江湖三女侠"
+  ]
+ },
+ "story_id": "chu-zhaonan",
+ "template": "growth",
+ "title": "堕落曲线：楚昭南主客下滑",
+ "tag": "成长",
+ "book": "七剑下天山",
+ "order": 4,
+ "subject": "楚昭南",
+ "person": "楚昭南",
+ "per_chapter": [
+  {
+   "c": 0,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 1,
+   "active": 4,
+   "passive": 2,
+   "kills": 0,
+   "opponents": [
+    "傅青主",
+    "刘郁芳"
+   ],
+   "opp_weight": 594
+  },
+  {
+   "c": 2,
+   "active": 2,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "傅青主"
+   ],
+   "opp_weight": 748
+  },
+  {
+   "c": 3,
+   "active": 1,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 4,
+   "active": 12,
+   "passive": 6,
+   "kills": 0,
+   "opponents": [
+    "凌未风",
+    "韩志邦"
+   ],
+   "opp_weight": 1248
+  },
+  {
+   "c": 5,
+   "active": 0,
+   "passive": 2,
+   "kills": 0,
+   "opponents": [
+    "凌未风"
+   ],
+   "opp_weight": 2074
+  },
+  {
+   "c": 6,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 7,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 8,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 9,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 10,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 11,
+   "active": 1,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [
+    "申天虎"
+   ],
+   "opp_weight": 5
+  },
+  {
+   "c": 12,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 13,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 14,
+   "active": 14,
+   "passive": 6,
+   "kills": 0,
+   "opponents": [
+    "桂仲明",
+    "易兰珠",
+    "杨云骢"
+   ],
+   "opp_weight": 918
+  },
+  {
+   "c": 15,
+   "active": 11,
+   "passive": 9,
+   "kills": 0,
+   "opponents": [
+    "孟武威",
+    "张华昭",
+    "桂仲明",
+    "易兰珠"
+   ],
+   "opp_weight": 494
+  },
+  {
+   "c": 16,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 17,
+   "active": 2,
+   "passive": 2,
+   "kills": 0,
+   "opponents": [
+    "凌未风",
+    "成天挺"
+   ],
+   "opp_weight": 1120
+  },
+  {
+   "c": 18,
+   "active": 7,
+   "passive": 2,
+   "kills": 0,
+   "opponents": [
+    "凌未风",
+    "哈玛雅",
+    "清宫"
+   ],
+   "opp_weight": 1523
+  },
+  {
+   "c": 19,
+   "active": 10,
+   "passive": 9,
+   "kills": 0,
+   "opponents": [
+    "凌未风",
+    "韩志邦",
+    "哈玛雅",
+    "齐真君"
+   ],
+   "opp_weight": 744
+  },
+  {
+   "c": 20,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 21,
+   "active": 1,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "哈玛雅",
+    "易兰珠"
+   ],
+   "opp_weight": 941
+  },
+  {
+   "c": 22,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 23,
+   "active": 10,
+   "passive": 4,
+   "kills": 0,
+   "opponents": [
+    "辛龙子",
+    "韩荆",
+    "张华昭",
+    "刘郁芳"
+   ],
+   "opp_weight": 665
+  },
+  {
+   "c": 24,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 25,
+   "active": 10,
+   "passive": 10,
+   "kills": 0,
+   "opponents": [
+    "凌未风",
+    "刘郁芳",
+    "呼克济"
+   ],
+   "opp_weight": 852
+  },
+  {
+   "c": 26,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  },
+  {
+   "c": 27,
+   "active": 1,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [
+    "凌未风"
+   ],
+   "opp_weight": 2074
+  },
+  {
+   "c": 28,
+   "active": 4,
+   "passive": 6,
+   "kills": 0,
+   "opponents": [
+    "凌未风",
+    "易兰珠",
+    "武琼瑶",
+    "桂仲明"
+   ],
+   "opp_weight": 994
+  },
+  {
+   "c": 29,
+   "active": 12,
+   "passive": 13,
+   "kills": 0,
+   "opponents": [
+    "易兰珠",
+    "韩志邦",
+    "李思永",
+    "桂仲明"
+   ],
+   "opp_weight": 522
+  },
+  {
+   "c": 30,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0
+  }
+ ],
+ "milestones": {
+  "first_dominant_chapter": 14,
+  "first_kill_chapter": null,
+  "known_end": "029 回 · 终局对手：易兰珠、韩志邦、李思永、桂仲明"
+ },
+ "markers": [
+  {
+   "c": 1,
+   "label": "石梁助清",
+   "loc": "001:129"
+  },
+  {
+   "c": 4,
+   "label": "五台夺宝",
+   "loc": "004:093"
+  },
+  {
+   "c": 4,
+   "label": "粘字诀受制",
+   "loc": "004:145"
+  },
+  {
+   "c": 25,
+   "label": "冰崖擒凌",
+   "loc": "025:165"
+  },
+  {
+   "c": 28,
+   "label": "迷宫守囚",
+   "loc": "028:069"
+  },
+  {
+   "c": 29,
+   "label": "暗道伏诛",
+   "loc": "029:079"
+  }
+ ],
+ "editorial": {
+  "thesis": "楚昭南的主客曲线逐段下滑：前半程主动率 65%，收官段跌到 46%，第 29 回死于被动承受——同一条食物链，师弟向上走，他向下走。",
+  "reads": [
+   {
+    "q": "主动率下滑是断崖吗？",
+    "a": "不是——他始终是一流高手：25 回与对手 10 比 10 打平。下滑的是姿态：从前期 65% 的主动出手，到收官段 46% 的被动承受。堕落是选择，不是失能。"
+   },
+   {
+    "q": "他最后输给谁？",
+    "a": "029 回 · 终局对手：易兰珠、韩志邦、李思永、桂仲明——事件层给出 14 起对手事件；锚点 029:079 暗道伏诛，死讯由对手平静道出。"
+   },
+   {
+    "q": "和师弟凌未风对照是什么形状？",
+    "a": "同一条食物链的两种走法：凌未风 19/25 两回单回主动 24 起、被囚归零再出狱掌门；楚昭南的曲线只向下——同门双曲线，一个向上一个向下。"
+   }
+  ],
+  "evidence": [
+   {
+    "loc": "001:129",
+    "text": "石梁助清：一剑斩断锦云兜救下多铎，叛迹初露"
+   },
+   {
+    "loc": "004:145",
+    "text": "粘字诀受制：师弟一剑搭住剑脊，游龙难脱"
+   },
+   {
+    "loc": "025:165",
+    "text": "冰崖擒凌：封穴捆缚凌未风，献俘清廷以博功名"
+   },
+   {
+    "loc": "028:069",
+    "text": "迷宫守囚：布达拉宫里得意于宿敌终成掌中囚"
+   },
+   {
+    "loc": "029:079",
+    "text": "暗道伏诛：败于易兰珠剑下，堕落曲线到头"
+   }
+  ],
+  "method_note": "口径：qa-events 七剑下天山事件切片（0–30 回全回目域），◈◉▲ 对抗事件按 subject/object 逐回计数；主动率 = 主/(主+客)，分段实算（前半 0–14 回 / 收官 28–29 回）；不做胜负 NLP 判定。markers 自剧情锚点表（楚昭南·七剑锚点，第二批补录）取数。 复跑：python scripts/build_stories.py --scope tianshan-demo --apply · 图表为构建期 SVG，可整体复现。",
+  "teaser": "同一条食物链，师弟向上走，他向下走——主动率从前半程 65% 跌到收官段 46%，第 29 回伏诛于被动。"
+ },
+ "chart": {
+  "kind": "growth",
+  "series": [
+   {
+    "key": "active",
+    "label": "主动（楚昭南为动作发出者）",
+    "color": "#31536c",
+    "width": 2.2
+   },
+   {
+    "key": "passive",
+    "label": "被动（承受者）",
+    "color": "#8a8172",
+    "width": 1.8
+   },
+   {
+    "key": "opp_weight",
+    "label": "对手分量（√出场量，虚线）",
+    "color": "#8a8172",
+    "dashed": true,
+    "scale": "sqrt",
+    "width": 1.2
+   }
+  ],
+  "dots": {
+   "key": "kills",
+   "label": "杀伤",
+   "color": "#a23527"
+  },
+  "annotations": [
+   {
+    "c": 14,
+    "color": "#b8860b",
+    "label": "主客翻转（第 14 回）",
+    "anchor": "start"
+   }
+  ],
+  "title": "楚昭南逐回主动/被动交战曲线"
+ }
+}

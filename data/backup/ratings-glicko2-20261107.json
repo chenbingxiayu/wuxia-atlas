@@ -1,0 +1,11552 @@
+{
+ "meta": {
+  "generated": "2026-11-07",
+  "engine": "glicko2",
+  "params": {
+   "r0": 1500.0,
+   "rd0": 350.0,
+   "vol": 0.06,
+   "tau": 0.5,
+   "shrink_P": 5
+  },
+  "wordlist_version": "event-v1/胜负词v0.1(移植)",
+  "calibration": {
+   "holdout_n": 0,
+   "direction_recall": null,
+   "note": "v0 未做 holdout 抽检；方向来自事件层 outcome 投影，人工抽检 100 场待办（与旧站口径一致）"
+  },
+  "tiers": {
+   "绝顶": 1580,
+   "超一流": 1556,
+   "一流": 1521,
+   "二流": 1479
+  },
+  "totals": {
+   "players": 614,
+   "matches": 1052
+  },
+  "source": "D03 事件层 registry/events（EX-5 event_extractor）+ tagged 场景胜负词证据",
+  "notes": [
+   "宇宙编年顺序：['白发魔女传', '塞外奇侠传', '七剑下天山', '江湖三女侠', '冰魄寒光剑']（旧 4 书顺序 + 冰魄寒光剑追加；N4 未给跨书编年，按旧口径延展）",
+   "rating/rd 为展示分/评分偏差（Glicko-2 + 长尾收缩）；per_book 每书独立 1500 起评",
+   "conflicts 阈值与旧站一致：高置信非平局且败方展示分高出 ≥120"
+  ],
+  "field_gaps": [
+   "旧站 tiers 由旧 matches 分布决定；新 matches 为 D03 T01/T02 子集，分档阈值随之变化（方法口径不变，数值不可直接对比）",
+   "旧站 players=206/conflicts=4（2026-11-02）；新数量见 totals，均为候选级数据",
+   "prior_applied 恒空（无先验分修订流程）；direction_recall 未做 holdout"
+  ]
+ },
+ "players": [
+  {
+   "name": "鹿克犀",
+   "rating": 1712,
+   "rd": 153,
+   "tier": "绝顶",
+   "matches_n": 7,
+   "w/d/l": [
+    7,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M955",
+    "M959",
+    "M960"
+   ]
+  },
+  {
+   "name": "桂冰娥",
+   "rating": 1700,
+   "rd": 110,
+   "tier": "绝顶",
+   "matches_n": 12,
+   "w/d/l": [
+    10,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M143",
+    "M177",
+    "M306"
+   ]
+  },
+  {
+   "name": "于承珠",
+   "rating": 1666,
+   "rd": 88,
+   "tier": "绝顶",
+   "matches_n": 18,
+   "w/d/l": [
+    10,
+    4,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M498",
+    "M503",
+    "M506"
+   ]
+  },
+  {
+   "name": "哈玛雅",
+   "rating": 1663,
+   "rd": 136,
+   "tier": "绝顶",
+   "matches_n": 7,
+   "w/d/l": [
+    6,
+    0,
+    1
+   ],
+   "per_book": {
+    "塞外奇侠传": 1625,
+    "七剑下天山": 1789
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M048",
+    "M050",
+    "M053"
+   ]
+  },
+  {
+   "name": "吕四娘",
+   "rating": 1646,
+   "rd": 88,
+   "tier": "绝顶",
+   "matches_n": 19,
+   "w/d/l": [
+    13,
+    1,
+    5
+   ],
+   "per_book": {
+    "江湖三女侠": 1625
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M125",
+    "M208",
+    "M586"
+   ]
+  },
+  {
+   "name": "云蕾",
+   "rating": 1642,
+   "rd": 84,
+   "tier": "绝顶",
+   "matches_n": 22,
+   "w/d/l": [
+    12,
+    4,
+    6
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M458",
+    "M460",
+    "M461"
+   ]
+  },
+  {
+   "name": "霍天都",
+   "rating": 1642,
+   "rd": 99,
+   "tier": "绝顶",
+   "matches_n": 15,
+   "w/d/l": [
+    10,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M563",
+    "M564",
+    "M779"
+   ]
+  },
+  {
+   "name": "御林军",
+   "rating": 1637,
+   "rd": 172,
+   "tier": "绝顶",
+   "matches_n": 4,
+   "w/d/l": [
+    4,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1654,
+    "江湖三女侠": 1713,
+    "冰魄寒光剑": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M060",
+    "M418",
+    "M603"
+   ]
+  },
+  {
+   "name": "冯琳",
+   "rating": 1626,
+   "rd": 84,
+   "tier": "绝顶",
+   "matches_n": 27,
+   "w/d/l": [
+    19,
+    3,
+    5
+   ],
+   "per_book": {
+    "江湖三女侠": 1681
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M199",
+    "M200",
+    "M619"
+   ]
+  },
+  {
+   "name": "乔北溟",
+   "rating": 1621,
+   "rd": 104,
+   "tier": "绝顶",
+   "matches_n": 12,
+   "w/d/l": [
+    8,
+    1,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M180",
+    "M451",
+    "M810"
+   ]
+  },
+  {
+   "name": "红云道人",
+   "rating": 1612,
+   "rd": 131,
+   "tier": "绝顶",
+   "matches_n": 7,
+   "w/d/l": [
+    4,
+    2,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1757,
+    "塞外奇侠传": 1532
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M441",
+    "M442",
+    "M752"
+   ]
+  },
+  {
+   "name": "慕容冲",
+   "rating": 1610,
+   "rd": 123,
+   "tier": "绝顶",
+   "matches_n": 9,
+   "w/d/l": [
+    7,
+    0,
+    2
+   ],
+   "per_book": {
+    "白发魔女传": 1672
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M731",
+    "M736",
+    "M738"
+   ]
+  },
+  {
+   "name": "灭法大师",
+   "rating": 1610,
+   "rd": 142,
+   "tier": "绝顶",
+   "matches_n": 6,
+   "w/d/l": [
+    3,
+    3,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M137",
+    "M145",
+    "M149"
+   ]
+  },
+  {
+   "name": "丐帮",
+   "rating": 1610,
+   "rd": 180,
+   "tier": "绝顶",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M213",
+    "M792",
+    "M1039"
+   ]
+  },
+  {
+   "name": "成天挺",
+   "rating": 1607,
+   "rd": 141,
+   "tier": "绝顶",
+   "matches_n": 6,
+   "w/d/l": [
+    4,
+    0,
+    2
+   ],
+   "per_book": {
+    "七剑下天山": 1684
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M047",
+    "M050",
+    "M055"
+   ]
+  },
+  {
+   "name": "文廷璧",
+   "rating": 1606,
+   "rd": 158,
+   "tier": "绝顶",
+   "matches_n": 5,
+   "w/d/l": [
+    4,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M367",
+    "M391",
+    "M406"
+   ]
+  },
+  {
+   "name": "陈天宇",
+   "rating": 1604,
+   "rd": 119,
+   "tier": "绝顶",
+   "matches_n": 10,
+   "w/d/l": [
+    6,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M099",
+    "M100",
+    "M136"
+   ]
+  },
+  {
+   "name": "阳赤符",
+   "rating": 1593,
+   "rd": 165,
+   "tier": "绝顶",
+   "matches_n": 4,
+   "w/d/l": [
+    3,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M170",
+    "M203",
+    "M204"
+   ]
+  },
+  {
+   "name": "厉南星",
+   "rating": 1590,
+   "rd": 117,
+   "tier": "绝顶",
+   "matches_n": 11,
+   "w/d/l": [
+    8,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M252",
+    "M253",
+    "M256"
+   ]
+  },
+  {
+   "name": "乔少少",
+   "rating": 1590,
+   "rd": 134,
+   "tier": "绝顶",
+   "matches_n": 7,
+   "w/d/l": [
+    5,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M805",
+    "M808",
+    "M814"
+   ]
+  },
+  {
+   "name": "本无大师",
+   "rating": 1589,
+   "rd": 194,
+   "tier": "绝顶",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1728
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M625",
+    "M626",
+    "M657"
+   ]
+  },
+  {
+   "name": "幽萍",
+   "rating": 1589,
+   "rd": 122,
+   "tier": "绝顶",
+   "matches_n": 10,
+   "w/d/l": [
+    7,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M098",
+    "M136",
+    "M137"
+   ]
+  },
+  {
+   "name": "楚天遥",
+   "rating": 1588,
+   "rd": 189,
+   "tier": "绝顶",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M827",
+    "M828",
+    "M864"
+   ]
+  },
+  {
+   "name": "李二豹",
+   "rating": 1585,
+   "rd": 186,
+   "tier": "绝顶",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1727
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M025",
+    "M026",
+    "M028"
+   ]
+  },
+  {
+   "name": "华云碧",
+   "rating": 1584,
+   "rd": 186,
+   "tier": "绝顶",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M365",
+    "M390",
+    "M408"
+   ]
+  },
+  {
+   "name": "阳超谷",
+   "rating": 1583,
+   "rd": 182,
+   "tier": "绝顶",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M947",
+    "M948",
+    "M950"
+   ]
+  },
+  {
+   "name": "哈布陀",
+   "rating": 1581,
+   "rd": 134,
+   "tier": "绝顶",
+   "matches_n": 7,
+   "w/d/l": [
+    4,
+    2,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1630
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M592",
+    "M610",
+    "M670"
+   ]
+  },
+  {
+   "name": "张天蒙",
+   "rating": 1581,
+   "rd": 208,
+   "tier": "绝顶",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1784
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M015",
+    "M086"
+   ]
+  },
+  {
+   "name": "澹台灭明",
+   "rating": 1580,
+   "rd": 169,
+   "tier": "绝顶",
+   "matches_n": 4,
+   "w/d/l": [
+    3,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M877",
+    "M879",
+    "M881"
+   ]
+  },
+  {
+   "name": "邹锡九",
+   "rating": 1580,
+   "rd": 191,
+   "tier": "超一流",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1657
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M104",
+    "M580",
+    "M582"
+   ]
+  },
+  {
+   "name": "练霓裳",
+   "rating": 1580,
+   "rd": 78,
+   "tier": "超一流",
+   "matches_n": 26,
+   "w/d/l": [
+    10,
+    8,
+    8
+   ],
+   "per_book": {
+    "白发魔女传": 1476,
+    "塞外奇侠传": 1536,
+    "七剑下天山": 1659
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M078",
+    "M079",
+    "M085"
+   ]
+  },
+  {
+   "name": "承珠",
+   "rating": 1580,
+   "rd": 116,
+   "tier": "超一流",
+   "matches_n": 10,
+   "w/d/l": [
+    6,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M799",
+    "M810",
+    "M814"
+   ]
+  },
+  {
+   "name": "龚平野",
+   "rating": 1579,
+   "rd": 205,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M265",
+    "M278"
+   ]
+  },
+  {
+   "name": "弥罗法师",
+   "rating": 1579,
+   "rd": 196,
+   "tier": "超一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M473",
+    "M474",
+    "M483"
+   ]
+  },
+  {
+   "name": "桂仲明",
+   "rating": 1578,
+   "rd": 150,
+   "tier": "超一流",
+   "matches_n": 5,
+   "w/d/l": [
+    3,
+    1,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1656
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M030",
+    "M040",
+    "M045"
+   ]
+  },
+  {
+   "name": "刘郁芳",
+   "rating": 1577,
+   "rd": 163,
+   "tier": "超一流",
+   "matches_n": 4,
+   "w/d/l": [
+    3,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1666
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M003",
+    "M019",
+    "M083"
+   ]
+  },
+  {
+   "name": "天叶散人",
+   "rating": 1577,
+   "rd": 174,
+   "tier": "超一流",
+   "matches_n": 4,
+   "w/d/l": [
+    3,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1634
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M585",
+    "M595",
+    "M623"
+   ]
+  },
+  {
+   "name": "褚霸",
+   "rating": 1574,
+   "rd": 205,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M784",
+    "M785"
+   ]
+  },
+  {
+   "name": "白泰官",
+   "rating": 1574,
+   "rd": 192,
+   "tier": "超一流",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1690
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M594",
+    "M650",
+    "M706"
+   ]
+  },
+  {
+   "name": "盘天罗",
+   "rating": 1572,
+   "rd": 173,
+   "tier": "超一流",
+   "matches_n": 4,
+   "w/d/l": [
+    3,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M522",
+    "M533",
+    "M778"
+   ]
+  },
+  {
+   "name": "吴绛仙",
+   "rating": 1572,
+   "rd": 207,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M118",
+    "M119"
+   ]
+  },
+  {
+   "name": "石鸿博",
+   "rating": 1571,
+   "rd": 156,
+   "tier": "超一流",
+   "matches_n": 5,
+   "w/d/l": [
+    3,
+    2,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M556",
+    "M557",
+    "M558"
+   ]
+  },
+  {
+   "name": "萨天刺",
+   "rating": 1570,
+   "rd": 141,
+   "tier": "超一流",
+   "matches_n": 6,
+   "w/d/l": [
+    3,
+    1,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1626
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M571",
+    "M572",
+    "M576"
+   ]
+  },
+  {
+   "name": "李沁梅",
+   "rating": 1569,
+   "rd": 202,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M172",
+    "M199"
+   ]
+  },
+  {
+   "name": "蒙水平",
+   "rating": 1568,
+   "rd": 217,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1032",
+    "M1033"
+   ]
+  },
+  {
+   "name": "武当派",
+   "rating": 1568,
+   "rd": 144,
+   "tier": "超一流",
+   "matches_n": 6,
+   "w/d/l": [
+    3,
+    3,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1598,
+    "塞外奇侠传": 1535,
+    "七剑下天山": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M062",
+    "M327",
+    "M440"
+   ]
+  },
+  {
+   "name": "郑雄图",
+   "rating": 1565,
+   "rd": 198,
+   "tier": "超一流",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M227",
+    "M228",
+    "M237"
+   ]
+  },
+  {
+   "name": "毒龙尊者",
+   "rating": 1565,
+   "rd": 115,
+   "tier": "超一流",
+   "matches_n": 9,
+   "w/d/l": [
+    4,
+    2,
+    3
+   ],
+   "per_book": {
+    "江湖三女侠": 1555
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M217",
+    "M676",
+    "M677"
+   ]
+  },
+  {
+   "name": "朱家兄弟",
+   "rating": 1564,
+   "rd": 201,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1021",
+    "M1029"
+   ]
+  },
+  {
+   "name": "纳兰明慧",
+   "rating": 1564,
+   "rd": 201,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {
+    "塞外奇侠传": 1724
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M445",
+    "M446"
+   ]
+  },
+  {
+   "name": "彭巨嵘",
+   "rating": 1562,
+   "rd": 213,
+   "tier": "超一流",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M232",
+    "M233",
+    "M249"
+   ]
+  },
+  {
+   "name": "彭洪",
+   "rating": 1561,
+   "rd": 176,
+   "tier": "超一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M951",
+    "M969",
+    "M972"
+   ]
+  },
+  {
+   "name": "毕道凡",
+   "rating": 1560,
+   "rd": 221,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M899",
+    "M902"
+   ]
+  },
+  {
+   "name": "邹绛霞",
+   "rating": 1560,
+   "rd": 199,
+   "tier": "超一流",
+   "matches_n": 3,
+   "w/d/l": [
+    3,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M105",
+    "M107",
+    "M345"
+   ]
+  },
+  {
+   "name": "管神龙",
+   "rating": 1559,
+   "rd": 223,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M846",
+    "M873"
+   ]
+  },
+  {
+   "name": "桂华生",
+   "rating": 1559,
+   "rd": 126,
+   "tier": "超一流",
+   "matches_n": 7,
+   "w/d/l": [
+    4,
+    1,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1620,
+    "冰魄寒光剑": 1573
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M416",
+    "M417",
+    "M420"
+   ]
+  },
+  {
+   "name": "鱼壳",
+   "rating": 1558,
+   "rd": 212,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1692
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M589",
+    "M682"
+   ]
+  },
+  {
+   "name": "刘完达",
+   "rating": 1558,
+   "rd": 214,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M834",
+    "M835"
+   ]
+  },
+  {
+   "name": "冷铁樵",
+   "rating": 1557,
+   "rd": 204,
+   "tier": "超一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M954",
+    "M1044"
+   ]
+  },
+  {
+   "name": "霍元仲",
+   "rating": 1556,
+   "rd": 198,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1649
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M770",
+    "M774",
+    "M776"
+   ]
+  },
+  {
+   "name": "李大典",
+   "rating": 1556,
+   "rd": 232,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M976",
+    "M1011"
+   ]
+  },
+  {
+   "name": "铁珊瑚",
+   "rating": 1556,
+   "rd": 183,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    2,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1648
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M728",
+    "M729",
+    "M743"
+   ]
+  },
+  {
+   "name": "谷之华",
+   "rating": 1555,
+   "rd": 128,
+   "tier": "一流",
+   "matches_n": 8,
+   "w/d/l": [
+    5,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M122",
+    "M132",
+    "M134"
+   ]
+  },
+  {
+   "name": "应修阳",
+   "rating": 1555,
+   "rd": 235,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1691
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M719",
+    "M720"
+   ]
+  },
+  {
+   "name": "崔宏",
+   "rating": 1555,
+   "rd": 205,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M102",
+    "M103"
+   ]
+  },
+  {
+   "name": "卜云鹏",
+   "rating": 1555,
+   "rd": 205,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M798",
+    "M800"
+   ]
+  },
+  {
+   "name": "傅青主",
+   "rating": 1554,
+   "rd": 165,
+   "tier": "一流",
+   "matches_n": 5,
+   "w/d/l": [
+    4,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1624
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M003",
+    "M006",
+    "M007"
+   ]
+  },
+  {
+   "name": "韩璇",
+   "rating": 1553,
+   "rd": 205,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M394",
+    "M397"
+   ]
+  },
+  {
+   "name": "呼延旭",
+   "rating": 1552,
+   "rd": 212,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M182",
+    "M209"
+   ]
+  },
+  {
+   "name": "罗金峰",
+   "rating": 1552,
+   "rd": 178,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    2,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M943",
+    "M944",
+    "M945"
+   ]
+  },
+  {
+   "name": "鸠盘婆",
+   "rating": 1552,
+   "rd": 178,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M537",
+    "M539",
+    "M542"
+   ]
+  },
+  {
+   "name": "公孙大娘",
+   "rating": 1551,
+   "rd": 181,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    2,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1637
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M733",
+    "M734",
+    "M739"
+   ]
+  },
+  {
+   "name": "阴秀兰",
+   "rating": 1550,
+   "rd": 175,
+   "tier": "一流",
+   "matches_n": 4,
+   "w/d/l": [
+    3,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M793",
+    "M813",
+    "M841"
+   ]
+  },
+  {
+   "name": "祈圣因",
+   "rating": 1550,
+   "rd": 91,
+   "tier": "一流",
+   "matches_n": 17,
+   "w/d/l": [
+    10,
+    1,
+    6
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M238",
+    "M241",
+    "M294"
+   ]
+  },
+  {
+   "name": "董太清",
+   "rating": 1550,
+   "rd": 211,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M344",
+    "M574"
+   ]
+  },
+  {
+   "name": "邝练霞",
+   "rating": 1549,
+   "rd": 213,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1670
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M568",
+    "M638"
+   ]
+  },
+  {
+   "name": "提摩达多",
+   "rating": 1548,
+   "rd": 158,
+   "tier": "一流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    1,
+    1
+   ],
+   "per_book": {
+    "冰魄寒光剑": 1464
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M350",
+    "M417",
+    "M419"
+   ]
+  },
+  {
+   "name": "公孙燕",
+   "rating": 1548,
+   "rd": 141,
+   "tier": "一流",
+   "matches_n": 9,
+   "w/d/l": [
+    7,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M261",
+    "M266",
+    "M268"
+   ]
+  },
+  {
+   "name": "钟灵",
+   "rating": 1548,
+   "rd": 206,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M981",
+    "M1036"
+   ]
+  },
+  {
+   "name": "谢云真",
+   "rating": 1547,
+   "rd": 179,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M113",
+    "M119",
+    "M358"
+   ]
+  },
+  {
+   "name": "厉胜男",
+   "rating": 1547,
+   "rd": 106,
+   "tier": "一流",
+   "matches_n": 12,
+   "w/d/l": [
+    6,
+    2,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M135",
+    "M141",
+    "M152"
+   ]
+  },
+  {
+   "name": "林逸士",
+   "rating": 1546,
+   "rd": 169,
+   "tier": "一流",
+   "matches_n": 4,
+   "w/d/l": [
+    3,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M470",
+    "M471",
+    "M472"
+   ]
+  },
+  {
+   "name": "路明",
+   "rating": 1545,
+   "rd": 184,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M909",
+    "M910",
+    "M925"
+   ]
+  },
+  {
+   "name": "符君集",
+   "rating": 1545,
+   "rd": 209,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M822",
+    "M826"
+   ]
+  },
+  {
+   "name": "年羹尧",
+   "rating": 1545,
+   "rd": 172,
+   "tier": "一流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    0,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1595
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M643",
+    "M646",
+    "M657"
+   ]
+  },
+  {
+   "name": "褚蒙",
+   "rating": 1544,
+   "rd": 210,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M962",
+    "M963"
+   ]
+  },
+  {
+   "name": "石大娘",
+   "rating": 1543,
+   "rd": 214,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1652
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M063",
+    "M067"
+   ]
+  },
+  {
+   "name": "屈九疑",
+   "rating": 1543,
+   "rd": 180,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M782",
+    "M783",
+    "M796"
+   ]
+  },
+  {
+   "name": "牟宗涛",
+   "rating": 1541,
+   "rd": 217,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M290",
+    "M295"
+   ]
+  },
+  {
+   "name": "青蓑道人",
+   "rating": 1541,
+   "rd": 180,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    2,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1592,
+    "塞外奇侠传": 1541
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M439",
+    "M442",
+    "M755"
+   ]
+  },
+  {
+   "name": "察鲁图",
+   "rating": 1539,
+   "rd": 221,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M918",
+    "M919"
+   ]
+  },
+  {
+   "name": "藏灵上人",
+   "rating": 1539,
+   "rd": 209,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {
+    "冰魄寒光剑": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M109",
+    "M416"
+   ]
+  },
+  {
+   "name": "谢天华",
+   "rating": 1539,
+   "rd": 157,
+   "tier": "一流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    1,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M534",
+    "M877",
+    "M878"
+   ]
+  },
+  {
+   "name": "百毒神君",
+   "rating": 1539,
+   "rd": 218,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M832",
+    "M836"
+   ]
+  },
+  {
+   "name": "泰吉提",
+   "rating": 1539,
+   "rd": 183,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M349",
+    "M351",
+    "M352"
+   ]
+  },
+  {
+   "name": "纳兰容若",
+   "rating": 1538,
+   "rd": 277,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1722
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M087"
+   ]
+  },
+  {
+   "name": "黄石道人",
+   "rating": 1537,
+   "rd": 184,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M319",
+    "M326",
+    "M329"
+   ]
+  },
+  {
+   "name": "赵灵君",
+   "rating": 1537,
+   "rd": 177,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M098",
+    "M099",
+    "M298"
+   ]
+  },
+  {
+   "name": "金独异",
+   "rating": 1537,
+   "rd": 155,
+   "tier": "一流",
+   "matches_n": 5,
+   "w/d/l": [
+    3,
+    0,
+    2
+   ],
+   "per_book": {
+    "白发魔女传": 1574
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M732",
+    "M740",
+    "M741"
+   ]
+  },
+  {
+   "name": "沙涛",
+   "rating": 1537,
+   "rd": 217,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M883",
+    "M930"
+   ]
+  },
+  {
+   "name": "陆展鹏",
+   "rating": 1537,
+   "rd": 220,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M914",
+    "M917"
+   ]
+  },
+  {
+   "name": "巴拉",
+   "rating": 1537,
+   "rd": 273,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "塞外奇侠传": 1719
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M430"
+   ]
+  },
+  {
+   "name": "陈光照",
+   "rating": 1536,
+   "rd": 220,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M248",
+    "M254"
+   ]
+  },
+  {
+   "name": "乌蒙夫",
+   "rating": 1536,
+   "rd": 161,
+   "tier": "一流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    2,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M516",
+    "M535",
+    "M541"
+   ]
+  },
+  {
+   "name": "杨芃",
+   "rating": 1536,
+   "rd": 111,
+   "tier": "一流",
+   "matches_n": 12,
+   "w/d/l": [
+    7,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M963",
+    "M981",
+    "M983"
+   ]
+  },
+  {
+   "name": "岳霆",
+   "rating": 1535,
+   "rd": 204,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M974",
+    "M975",
+    "M977"
+   ]
+  },
+  {
+   "name": "天龙上人",
+   "rating": 1534,
+   "rd": 180,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1591
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M772",
+    "M776",
+    "M777"
+   ]
+  },
+  {
+   "name": "祝家澍",
+   "rating": 1534,
+   "rd": 265,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1693
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M608"
+   ]
+  },
+  {
+   "name": "德鲁奇",
+   "rating": 1533,
+   "rd": 223,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M335",
+    "M342"
+   ]
+  },
+  {
+   "name": "胤禛",
+   "rating": 1533,
+   "rd": 113,
+   "tier": "一流",
+   "matches_n": 11,
+   "w/d/l": [
+    6,
+    2,
+    3
+   ],
+   "per_book": {
+    "江湖三女侠": 1510
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M332",
+    "M647",
+    "M664"
+   ]
+  },
+  {
+   "name": "印宏",
+   "rating": 1533,
+   "rd": 265,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1685
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M624"
+   ]
+  },
+  {
+   "name": "秦元浩",
+   "rating": 1533,
+   "rd": 189,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M219",
+    "M221",
+    "M223"
+   ]
+  },
+  {
+   "name": "宁广德",
+   "rating": 1533,
+   "rd": 174,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    2,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M464",
+    "M465",
+    "M466"
+   ]
+  },
+  {
+   "name": "方今明",
+   "rating": 1532,
+   "rd": 262,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M351"
+   ]
+  },
+  {
+   "name": "少林寺",
+   "rating": 1532,
+   "rd": 261,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1688
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M705"
+   ]
+  },
+  {
+   "name": "萨天都",
+   "rating": 1532,
+   "rd": 145,
+   "tier": "一流",
+   "matches_n": 5,
+   "w/d/l": [
+    3,
+    0,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1542
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M573",
+    "M575",
+    "M587"
+   ]
+  },
+  {
+   "name": "张黑",
+   "rating": 1531,
+   "rd": 260,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M503"
+   ]
+  },
+  {
+   "name": "姬尤",
+   "rating": 1530,
+   "rd": 258,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M863"
+   ]
+  },
+  {
+   "name": "娄桐荪",
+   "rating": 1530,
+   "rd": 133,
+   "tier": "一流",
+   "matches_n": 7,
+   "w/d/l": [
+    4,
+    1,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M496",
+    "M499",
+    "M515"
+   ]
+  },
+  {
+   "name": "伊加玉龙",
+   "rating": 1530,
+   "rd": 257,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M402"
+   ]
+  },
+  {
+   "name": "伊士达",
+   "rating": 1530,
+   "rd": 257,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "塞外奇侠传": 1679
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M433"
+   ]
+  },
+  {
+   "name": "胡宏",
+   "rating": 1530,
+   "rd": 256,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M551"
+   ]
+  },
+  {
+   "name": "张天池",
+   "rating": 1529,
+   "rd": 256,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1674
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M695"
+   ]
+  },
+  {
+   "name": "清军",
+   "rating": 1529,
+   "rd": 185,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {
+    "塞外奇侠传": 1613
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M449",
+    "M1038",
+    "M1039"
+   ]
+  },
+  {
+   "name": "叶屠户",
+   "rating": 1529,
+   "rd": 255,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1052"
+   ]
+  },
+  {
+   "name": "尚复初",
+   "rating": 1529,
+   "rd": 255,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1668
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M614"
+   ]
+  },
+  {
+   "name": "战三山",
+   "rating": 1529,
+   "rd": 233,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M500",
+    "M501"
+   ]
+  },
+  {
+   "name": "云浩",
+   "rating": 1529,
+   "rd": 201,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M450",
+    "M452"
+   ]
+  },
+  {
+   "name": "段剑平",
+   "rating": 1529,
+   "rd": 201,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M465",
+    "M484"
+   ]
+  },
+  {
+   "name": "飞红巾",
+   "rating": 1529,
+   "rd": 178,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {
+    "塞外奇侠传": 1576
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M429",
+    "M446",
+    "M447"
+   ]
+  },
+  {
+   "name": "长白山派",
+   "rating": 1528,
+   "rd": 254,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1670
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M005"
+   ]
+  },
+  {
+   "name": "郝浩",
+   "rating": 1528,
+   "rd": 254,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M195"
+   ]
+  },
+  {
+   "name": "顾孟章",
+   "rating": 1528,
+   "rd": 254,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M555"
+   ]
+  },
+  {
+   "name": "朗月禅师",
+   "rating": 1528,
+   "rd": 254,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1670
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M575"
+   ]
+  },
+  {
+   "name": "萨福鼎",
+   "rating": 1527,
+   "rd": 195,
+   "tier": "一流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M240",
+    "M244",
+    "M245"
+   ]
+  },
+  {
+   "name": "竺清华",
+   "rating": 1527,
+   "rd": 122,
+   "tier": "一流",
+   "matches_n": 9,
+   "w/d/l": [
+    5,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M990",
+    "M991",
+    "M995"
+   ]
+  },
+  {
+   "name": "祈镇",
+   "rating": 1526,
+   "rd": 238,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    2,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M493",
+    "M526"
+   ]
+  },
+  {
+   "name": "白雄",
+   "rating": 1526,
+   "rd": 251,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1035"
+   ]
+  },
+  {
+   "name": "毕擎天",
+   "rating": 1526,
+   "rd": 250,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M790"
+   ]
+  },
+  {
+   "name": "朱老大",
+   "rating": 1526,
+   "rd": 250,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1028"
+   ]
+  },
+  {
+   "name": "天雄禅师",
+   "rating": 1526,
+   "rd": 250,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1655
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M082"
+   ]
+  },
+  {
+   "name": "卫扬威",
+   "rating": 1525,
+   "rd": 250,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1647
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M616"
+   ]
+  },
+  {
+   "name": "范中柱",
+   "rating": 1525,
+   "rd": 250,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M475"
+   ]
+  },
+  {
+   "name": "谷中莲",
+   "rating": 1524,
+   "rd": 121,
+   "tier": "一流",
+   "matches_n": 8,
+   "w/d/l": [
+    4,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M377",
+    "M378",
+    "M380"
+   ]
+  },
+  {
+   "name": "风从龙",
+   "rating": 1524,
+   "rd": 156,
+   "tier": "一流",
+   "matches_n": 5,
+   "w/d/l": [
+    3,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M967",
+    "M968",
+    "M1026"
+   ]
+  },
+  {
+   "name": "天蒙",
+   "rating": 1524,
+   "rd": 209,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1585
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M076",
+    "M077"
+   ]
+  },
+  {
+   "name": "青袍怪客",
+   "rating": 1524,
+   "rd": 248,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M291"
+   ]
+  },
+  {
+   "name": "宛兰星",
+   "rating": 1524,
+   "rd": 248,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "冰魄寒光剑": 1622
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M421"
+   ]
+  },
+  {
+   "name": "颜洛",
+   "rating": 1524,
+   "rd": 248,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M346"
+   ]
+  },
+  {
+   "name": "多锋",
+   "rating": 1524,
+   "rd": 248,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M002"
+   ]
+  },
+  {
+   "name": "雷海音",
+   "rating": 1524,
+   "rd": 207,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1579
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M566",
+    "M690"
+   ]
+  },
+  {
+   "name": "清兵",
+   "rating": 1523,
+   "rd": 248,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "塞外奇侠传": 1639
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M434"
+   ]
+  },
+  {
+   "name": "桑弧",
+   "rating": 1523,
+   "rd": 216,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1577
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M093",
+    "M096"
+   ]
+  },
+  {
+   "name": "太上皇",
+   "rating": 1523,
+   "rd": 205,
+   "tier": "一流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M407",
+    "M410"
+   ]
+  },
+  {
+   "name": "天山七剑",
+   "rating": 1522,
+   "rd": 247,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M613"
+   ]
+  },
+  {
+   "name": "白涛",
+   "rating": 1522,
+   "rd": 162,
+   "tier": "一流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M969",
+    "M970",
+    "M973"
+   ]
+  },
+  {
+   "name": "张承斌",
+   "rating": 1522,
+   "rd": 247,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1635
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M046"
+   ]
+  },
+  {
+   "name": "摘星上人",
+   "rating": 1521,
+   "rd": 149,
+   "tier": "一流",
+   "matches_n": 6,
+   "w/d/l": [
+    3,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M536",
+    "M559",
+    "M847"
+   ]
+  },
+  {
+   "name": "李大进",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M965"
+   ]
+  },
+  {
+   "name": "曲野樵",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M850"
+   ]
+  },
+  {
+   "name": "文廷壁",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "一流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M369"
+   ]
+  },
+  {
+   "name": "邝琏",
+   "rating": 1521,
+   "rd": 138,
+   "tier": "一流",
+   "matches_n": 7,
+   "w/d/l": [
+    3,
+    0,
+    4
+   ],
+   "per_book": {
+    "江湖三女侠": 1556
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M566",
+    "M569",
+    "M570"
+   ]
+  },
+  {
+   "name": "雷蒙法师",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M769"
+   ]
+  },
+  {
+   "name": "张四",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M765"
+   ]
+  },
+  {
+   "name": "云靖",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M878"
+   ]
+  },
+  {
+   "name": "达赖活佛",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M091"
+   ]
+  },
+  {
+   "name": "赵铁汉",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M101"
+   ]
+  },
+  {
+   "name": "吴蒙",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M116"
+   ]
+  },
+  {
+   "name": "方君雄",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M133"
+   ]
+  },
+  {
+   "name": "释道安",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M175"
+   ]
+  },
+  {
+   "name": "何彩凤",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M260"
+   ]
+  },
+  {
+   "name": "龙三",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M303"
+   ]
+  },
+  {
+   "name": "白教喇嘛",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M309"
+   ]
+  },
+  {
+   "name": "基里星",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M333"
+   ]
+  },
+  {
+   "name": "藩王",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M343"
+   ]
+  },
+  {
+   "name": "青松道人",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M354"
+   ]
+  },
+  {
+   "name": "华天风",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M362"
+   ]
+  },
+  {
+   "name": "云璧",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M393"
+   ]
+  },
+  {
+   "name": "云琼",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M398"
+   ]
+  },
+  {
+   "name": "泰清王",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M400"
+   ]
+  },
+  {
+   "name": "尼泊尔废王",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M401"
+   ]
+  },
+  {
+   "name": "余峻峰",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M453"
+   ]
+  },
+  {
+   "name": "王元振",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M478"
+   ]
+  },
+  {
+   "name": "杜素素",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M480"
+   ]
+  },
+  {
+   "name": "闻铁声",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M489"
+   ]
+  },
+  {
+   "name": "凌岳",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M611"
+   ]
+  },
+  {
+   "name": "陈德泰",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M640"
+   ]
+  },
+  {
+   "name": "卓家",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M715"
+   ]
+  },
+  {
+   "name": "何萼华",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M735"
+   ]
+  },
+  {
+   "name": "朱由检",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M768"
+   ]
+  },
+  {
+   "name": "瓦剌国",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M880"
+   ]
+  },
+  {
+   "name": "澹台镜明",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M924"
+   ]
+  },
+  {
+   "name": "七修道人",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M937"
+   ]
+  },
+  {
+   "name": "云素素",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M941"
+   ]
+  },
+  {
+   "name": "甘人龙",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M982"
+   ]
+  },
+  {
+   "name": "归古愚",
+   "rating": 1521,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1023"
+   ]
+  },
+  {
+   "name": "白登",
+   "rating": 1521,
+   "rd": 213,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M481",
+    "M482"
+   ]
+  },
+  {
+   "name": "七阴教",
+   "rating": 1520,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M387"
+   ]
+  },
+  {
+   "name": "太玄道人",
+   "rating": 1520,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M946"
+   ]
+  },
+  {
+   "name": "柳三春",
+   "rating": 1520,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M184"
+   ]
+  },
+  {
+   "name": "王振",
+   "rating": 1520,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M916",
+    "M923"
+   ]
+  },
+  {
+   "name": "沙千峰",
+   "rating": 1520,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M267"
+   ]
+  },
+  {
+   "name": "板田荣男",
+   "rating": 1520,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M507"
+   ]
+  },
+  {
+   "name": "石英",
+   "rating": 1519,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M929"
+   ]
+  },
+  {
+   "name": "神一元",
+   "rating": 1519,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1615
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M745"
+   ]
+  },
+  {
+   "name": "上官纨",
+   "rating": 1519,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1016"
+   ]
+  },
+  {
+   "name": "冷禅",
+   "rating": 1519,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1610
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M637"
+   ]
+  },
+  {
+   "name": "李明珠",
+   "rating": 1519,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1612
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M680"
+   ]
+  },
+  {
+   "name": "翼牟仲",
+   "rating": 1519,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M212"
+   ]
+  },
+  {
+   "name": "翦长春",
+   "rating": 1519,
+   "rd": 176,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M796",
+    "M797",
+    "M820"
+   ]
+  },
+  {
+   "name": "冯瑛",
+   "rating": 1518,
+   "rd": 158,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    1,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M175",
+    "M176",
+    "M210"
+   ]
+  },
+  {
+   "name": "朝廷",
+   "rating": 1518,
+   "rd": 184,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M490",
+    "M998",
+    "M1020"
+   ]
+  },
+  {
+   "name": "郝宝椿",
+   "rating": 1518,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M903"
+   ]
+  },
+  {
+   "name": "江口",
+   "rating": 1518,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M505"
+   ]
+  },
+  {
+   "name": "叶凌风",
+   "rating": 1518,
+   "rd": 141,
+   "tier": "二流",
+   "matches_n": 6,
+   "w/d/l": [
+    3,
+    1,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M951",
+    "M964",
+    "M985"
+   ]
+  },
+  {
+   "name": "柳大雄",
+   "rating": 1518,
+   "rd": 145,
+   "tier": "二流",
+   "matches_n": 5,
+   "w/d/l": [
+    0,
+    5,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1537
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M031",
+    "M032",
+    "M033"
+   ]
+  },
+  {
+   "name": "无非大师",
+   "rating": 1518,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M185"
+   ]
+  },
+  {
+   "name": "芥川龙木",
+   "rating": 1518,
+   "rd": 203,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M511",
+    "M514"
+   ]
+  },
+  {
+   "name": "屠刚",
+   "rating": 1518,
+   "rd": 219,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M784",
+    "M788"
+   ]
+  },
+  {
+   "name": "竺法休",
+   "rating": 1518,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M356"
+   ]
+  },
+  {
+   "name": "李光夏",
+   "rating": 1517,
+   "rd": 103,
+   "tier": "二流",
+   "matches_n": 14,
+   "w/d/l": [
+    5,
+    1,
+    8
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M274",
+    "M960",
+    "M988"
+   ]
+  },
+  {
+   "name": "唐赛花",
+   "rating": 1517,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1603
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M709"
+   ]
+  },
+  {
+   "name": "董巨川",
+   "rating": 1517,
+   "rd": 164,
+   "tier": "二流",
+   "matches_n": 5,
+   "w/d/l": [
+    3,
+    0,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1518
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M598",
+    "M621",
+    "M627"
+   ]
+  },
+  {
+   "name": "陆亮",
+   "rating": 1517,
+   "rd": 161,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    3,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1540
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M033",
+    "M037",
+    "M038"
+   ]
+  },
+  {
+   "name": "谷竹均",
+   "rating": 1517,
+   "rd": 249,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M860"
+   ]
+  },
+  {
+   "name": "玄风道长",
+   "rating": 1517,
+   "rd": 188,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1545
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M571",
+    "M576",
+    "M579"
+   ]
+  },
+  {
+   "name": "尚和阳",
+   "rating": 1517,
+   "rd": 249,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M477"
+   ]
+  },
+  {
+   "name": "邙山派",
+   "rating": 1516,
+   "rd": 250,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M126"
+   ]
+  },
+  {
+   "name": "大卫门",
+   "rating": 1516,
+   "rd": 250,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M508"
+   ]
+  },
+  {
+   "name": "哈凡提",
+   "rating": 1516,
+   "rd": 250,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M371"
+   ]
+  },
+  {
+   "name": "孟武威",
+   "rating": 1516,
+   "rd": 250,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1607
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M043"
+   ]
+  },
+  {
+   "name": "纽祜卢",
+   "rating": 1516,
+   "rd": 250,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1623
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M020"
+   ]
+  },
+  {
+   "name": "路亮",
+   "rating": 1516,
+   "rd": 220,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M910",
+    "M911"
+   ]
+  },
+  {
+   "name": "周健",
+   "rating": 1516,
+   "rd": 251,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M882"
+   ]
+  },
+  {
+   "name": "昆甸上人",
+   "rating": 1515,
+   "rd": 209,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1550
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M700",
+    "M701"
+   ]
+  },
+  {
+   "name": "沐璘",
+   "rating": 1515,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M825"
+   ]
+  },
+  {
+   "name": "齐天乐",
+   "rating": 1515,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M169"
+   ]
+  },
+  {
+   "name": "葛三娘",
+   "rating": 1515,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M980"
+   ]
+  },
+  {
+   "name": "铁飞龙",
+   "rating": 1515,
+   "rd": 104,
+   "tier": "二流",
+   "matches_n": 11,
+   "w/d/l": [
+    3,
+    4,
+    4
+   ],
+   "per_book": {
+    "白发魔女传": 1521
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M722",
+    "M723",
+    "M725"
+   ]
+  },
+  {
+   "name": "李卫",
+   "rating": 1515,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1586
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M600"
+   ]
+  },
+  {
+   "name": "侯三变",
+   "rating": 1515,
+   "rd": 226,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    2,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1544
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M685",
+    "M688"
+   ]
+  },
+  {
+   "name": "孟家庄",
+   "rating": 1515,
+   "rd": 253,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M120"
+   ]
+  },
+  {
+   "name": "周骥",
+   "rating": 1515,
+   "rd": 253,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M161"
+   ]
+  },
+  {
+   "name": "江南七侠",
+   "rating": 1515,
+   "rd": 253,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M331"
+   ]
+  },
+  {
+   "name": "林道安",
+   "rating": 1514,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M912"
+   ]
+  },
+  {
+   "name": "焦春雷",
+   "rating": 1514,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M304"
+   ]
+  },
+  {
+   "name": "四大弟子",
+   "rating": 1514,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M334"
+   ]
+  },
+  {
+   "name": "南宫鼎",
+   "rating": 1514,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M479"
+   ]
+  },
+  {
+   "name": "樊英",
+   "rating": 1514,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M491"
+   ]
+  },
+  {
+   "name": "镖行",
+   "rating": 1514,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M544"
+   ]
+  },
+  {
+   "name": "太极派",
+   "rating": 1514,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1584
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M612"
+   ]
+  },
+  {
+   "name": "李天扬",
+   "rating": 1514,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1584
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M737"
+   ]
+  },
+  {
+   "name": "桑乾",
+   "rating": 1514,
+   "rd": 255,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1581
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M095"
+   ]
+  },
+  {
+   "name": "疯丐",
+   "rating": 1514,
+   "rd": 255,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M313"
+   ]
+  },
+  {
+   "name": "路府",
+   "rating": 1514,
+   "rd": 255,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1572
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M604"
+   ]
+  },
+  {
+   "name": "甘天龙",
+   "rating": 1514,
+   "rd": 157,
+   "tier": "二流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    0,
+    3
+   ],
+   "per_book": {
+    "江湖三女侠": 1516
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M599",
+    "M600",
+    "M601"
+   ]
+  },
+  {
+   "name": "屠昭明",
+   "rating": 1513,
+   "rd": 255,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M163"
+   ]
+  },
+  {
+   "name": "金光大师",
+   "rating": 1513,
+   "rd": 256,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M171"
+   ]
+  },
+  {
+   "name": "痛禅上人",
+   "rating": 1513,
+   "rd": 256,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M166"
+   ]
+  },
+  {
+   "name": "邱东洛",
+   "rating": 1513,
+   "rd": 165,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    0,
+    2
+   ],
+   "per_book": {
+    "塞外奇侠传": 1592,
+    "七剑下天山": 1488
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M018",
+    "M061",
+    "M071"
+   ]
+  },
+  {
+   "name": "阳宗海",
+   "rating": 1513,
+   "rd": 94,
+   "tier": "二流",
+   "matches_n": 15,
+   "w/d/l": [
+    6,
+    2,
+    7
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M495",
+    "M498",
+    "M502"
+   ]
+  },
+  {
+   "name": "钟万堂",
+   "rating": 1512,
+   "rd": 179,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1527
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M569",
+    "M593",
+    "M641"
+   ]
+  },
+  {
+   "name": "尼泊尔",
+   "rating": 1512,
+   "rd": 259,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M405"
+   ]
+  },
+  {
+   "name": "一柱擎天",
+   "rating": 1512,
+   "rd": 259,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M462"
+   ]
+  },
+  {
+   "name": "池梁",
+   "rating": 1512,
+   "rd": 268,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M474"
+   ]
+  },
+  {
+   "name": "叶横波",
+   "rating": 1512,
+   "rd": 170,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    1,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1523
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M622",
+    "M659",
+    "M662"
+   ]
+  },
+  {
+   "name": "厉盼归",
+   "rating": 1512,
+   "rd": 207,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M157",
+    "M159"
+   ]
+  },
+  {
+   "name": "呼延蛟",
+   "rating": 1512,
+   "rd": 260,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M468"
+   ]
+  },
+  {
+   "name": "晦明禅师",
+   "rating": 1512,
+   "rd": 260,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1560
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M022"
+   ]
+  },
+  {
+   "name": "丘元甲",
+   "rating": 1511,
+   "rd": 262,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M128"
+   ]
+  },
+  {
+   "name": "李源",
+   "rating": 1511,
+   "rd": 206,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1535
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M653",
+    "M656"
+   ]
+  },
+  {
+   "name": "耿秀凤",
+   "rating": 1511,
+   "rd": 179,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1022",
+    "M1028",
+    "M1030"
+   ]
+  },
+  {
+   "name": "卢道璘",
+   "rating": 1510,
+   "rd": 266,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M131"
+   ]
+  },
+  {
+   "name": "崆峒派",
+   "rating": 1510,
+   "rd": 267,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M301"
+   ]
+  },
+  {
+   "name": "孟武功",
+   "rating": 1510,
+   "rd": 267,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1539
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M590"
+   ]
+  },
+  {
+   "name": "少林派",
+   "rating": 1510,
+   "rd": 262,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1560
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M666"
+   ]
+  },
+  {
+   "name": "红衣番僧",
+   "rating": 1510,
+   "rd": 268,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M297"
+   ]
+  },
+  {
+   "name": "郭洪",
+   "rating": 1510,
+   "rd": 269,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M920"
+   ]
+  },
+  {
+   "name": "朱虎臣",
+   "rating": 1509,
+   "rd": 183,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M220",
+    "M223",
+    "M224"
+   ]
+  },
+  {
+   "name": "允禩",
+   "rating": 1509,
+   "rd": 259,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "江湖三女侠": 1551
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M687"
+   ]
+  },
+  {
+   "name": "娄人杰",
+   "rating": 1509,
+   "rd": 273,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1025"
+   ]
+  },
+  {
+   "name": "红云",
+   "rating": 1509,
+   "rd": 258,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1553
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M724"
+   ]
+  },
+  {
+   "name": "欧阳婉",
+   "rating": 1509,
+   "rd": 274,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M381"
+   ]
+  },
+  {
+   "name": "云澄",
+   "rating": 1509,
+   "rd": 274,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M936"
+   ]
+  },
+  {
+   "name": "文道庄",
+   "rating": 1508,
+   "rd": 129,
+   "tier": "二流",
+   "matches_n": 9,
+   "w/d/l": [
+    6,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M218",
+    "M225",
+    "M229"
+   ]
+  },
+  {
+   "name": "曹家",
+   "rating": 1508,
+   "rd": 279,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M250"
+   ]
+  },
+  {
+   "name": "秦冲",
+   "rating": 1508,
+   "rd": 281,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M279"
+   ]
+  },
+  {
+   "name": "天子",
+   "rating": 1507,
+   "rd": 282,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M921"
+   ]
+  },
+  {
+   "name": "魏琦",
+   "rating": 1507,
+   "rd": 283,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M251"
+   ]
+  },
+  {
+   "name": "陈元霸",
+   "rating": 1507,
+   "rd": 208,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1519
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M573",
+    "M634"
+   ]
+  },
+  {
+   "name": "玄真",
+   "rating": 1507,
+   "rd": 187,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1513
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M094",
+    "M096",
+    "M097"
+   ]
+  },
+  {
+   "name": "天蒙禅师",
+   "rating": 1506,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1537
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M080"
+   ]
+  },
+  {
+   "name": "令狐雍",
+   "rating": 1506,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M469"
+   ]
+  },
+  {
+   "name": "也先",
+   "rating": 1506,
+   "rd": 206,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M924",
+    "M932"
+   ]
+  },
+  {
+   "name": "蓝天石",
+   "rating": 1505,
+   "rd": 300,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    1,
+    0,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M897"
+   ]
+  },
+  {
+   "name": "云燕平",
+   "rating": 1505,
+   "rd": 250,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1530
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M721"
+   ]
+  },
+  {
+   "name": "小虎子",
+   "rating": 1505,
+   "rd": 166,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    1,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M494",
+    "M517",
+    "M518"
+   ]
+  },
+  {
+   "name": "通明",
+   "rating": 1505,
+   "rd": 250,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1500
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M001"
+   ]
+  },
+  {
+   "name": "缪夫人",
+   "rating": 1504,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M358",
+    "M359"
+   ]
+  },
+  {
+   "name": "蒲坚",
+   "rating": 1504,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M937",
+    "M949"
+   ]
+  },
+  {
+   "name": "阿萨玛兄弟",
+   "rating": 1504,
+   "rd": 177,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    3,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M523",
+    "M524",
+    "M549"
+   ]
+  },
+  {
+   "name": "仲长统",
+   "rating": 1504,
+   "rd": 194,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M385",
+    "M966",
+    "M1031"
+   ]
+  },
+  {
+   "name": "孟哈赤",
+   "rating": 1504,
+   "rd": 207,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M399",
+    "M403"
+   ]
+  },
+  {
+   "name": "楚昭南",
+   "rating": 1503,
+   "rd": 93,
+   "tier": "二流",
+   "matches_n": 17,
+   "w/d/l": [
+    6,
+    1,
+    10
+   ],
+   "per_book": {
+    "塞外奇侠传": 1377,
+    "七剑下天山": 1509
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M006",
+    "M011",
+    "M013"
+   ]
+  },
+  {
+   "name": "贺大娘",
+   "rating": 1503,
+   "rd": 184,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M257",
+    "M261",
+    "M263"
+   ]
+  },
+  {
+   "name": "辛隐农",
+   "rating": 1503,
+   "rd": 189,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    1,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M165",
+    "M168",
+    "M214"
+   ]
+  },
+  {
+   "name": "林清",
+   "rating": 1503,
+   "rd": 217,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1000",
+    "M1003"
+   ]
+  },
+  {
+   "name": "海云和尚",
+   "rating": 1503,
+   "rd": 130,
+   "tier": "二流",
+   "matches_n": 8,
+   "w/d/l": [
+    2,
+    3,
+    3
+   ],
+   "per_book": {
+    "江湖三女侠": 1492
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M588",
+    "M658",
+    "M668"
+   ]
+  },
+  {
+   "name": "卫涣",
+   "rating": 1503,
+   "rd": 162,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M971",
+    "M973",
+    "M977"
+   ]
+  },
+  {
+   "name": "萧志远",
+   "rating": 1502,
+   "rd": 187,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1041",
+    "M1051",
+    "M1052"
+   ]
+  },
+  {
+   "name": "邓南遮",
+   "rating": 1502,
+   "rd": 206,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "冰魄寒光剑": 1494
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M422",
+    "M423"
+   ]
+  },
+  {
+   "name": "唐经天",
+   "rating": 1502,
+   "rd": 88,
+   "tier": "二流",
+   "matches_n": 18,
+   "w/d/l": [
+    9,
+    0,
+    9
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M143",
+    "M177",
+    "M309"
+   ]
+  },
+  {
+   "name": "唐加源",
+   "rating": 1502,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M409"
+   ]
+  },
+  {
+   "name": "沙无定",
+   "rating": 1501,
+   "rd": 156,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    4,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1502
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M034",
+    "M035",
+    "M037"
+   ]
+  },
+  {
+   "name": "孟坚",
+   "rating": 1501,
+   "rd": 174,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    3,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1502
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M032",
+    "M034",
+    "M036"
+   ]
+  },
+  {
+   "name": "叶成林",
+   "rating": 1500,
+   "rd": 203,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M532",
+    "M867"
+   ]
+  },
+  {
+   "name": "玄机逸士",
+   "rating": 1500,
+   "rd": 203,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M778",
+    "M933"
+   ]
+  },
+  {
+   "name": "陆明",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "七剑下天山": 1501
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M039"
+   ]
+  },
+  {
+   "name": "庞家",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M831"
+   ]
+  },
+  {
+   "name": "霍六奇",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M456"
+   ]
+  },
+  {
+   "name": "石广元",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M457"
+   ]
+  },
+  {
+   "name": "呼延四兄弟",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M464"
+   ]
+  },
+  {
+   "name": "近卫",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M509"
+   ]
+  },
+  {
+   "name": "近卫三郎",
+   "rating": 1500,
+   "rd": 201,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    2,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M509",
+    "M512"
+   ]
+  },
+  {
+   "name": "邓茂七",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M512"
+   ]
+  },
+  {
+   "name": "孟秋霞",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1500
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M728"
+   ]
+  },
+  {
+   "name": "朱祁镇",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M916"
+   ]
+  },
+  {
+   "name": "智弘",
+   "rating": 1500,
+   "rd": 174,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    3,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M938",
+    "M939",
+    "M940"
+   ]
+  },
+  {
+   "name": "周桐",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M939"
+   ]
+  },
+  {
+   "name": "智圆文",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M940"
+   ]
+  },
+  {
+   "name": "黑木",
+   "rating": 1500,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M952"
+   ]
+  },
+  {
+   "name": "宝象法师",
+   "rating": 1500,
+   "rd": 218,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M388",
+    "M389"
+   ]
+  },
+  {
+   "name": "李涵真",
+   "rating": 1500,
+   "rd": 204,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M527",
+    "M528"
+   ]
+  },
+  {
+   "name": "东方赫",
+   "rating": 1499,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M851"
+   ]
+  },
+  {
+   "name": "玄灵子",
+   "rating": 1499,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M915"
+   ]
+  },
+  {
+   "name": "辛龙子",
+   "rating": 1498,
+   "rd": 140,
+   "tier": "二流",
+   "matches_n": 6,
+   "w/d/l": [
+    2,
+    3,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1497
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M065",
+    "M069",
+    "M075"
+   ]
+  },
+  {
+   "name": "路民瞻",
+   "rating": 1497,
+   "rd": 152,
+   "tier": "二流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    0,
+    3
+   ],
+   "per_book": {
+    "江湖三女侠": 1468
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M602",
+    "M603",
+    "M604"
+   ]
+  },
+  {
+   "name": "阴圣姑",
+   "rating": 1496,
+   "rd": 232,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M361",
+    "M385"
+   ]
+  },
+  {
+   "name": "常英",
+   "rating": 1496,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1486
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M004",
+    "M005"
+   ]
+  },
+  {
+   "name": "白英杰",
+   "rating": 1496,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M195",
+    "M360"
+   ]
+  },
+  {
+   "name": "贯仲",
+   "rating": 1496,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M488",
+    "M899"
+   ]
+  },
+  {
+   "name": "毕愿穷",
+   "rating": 1496,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M492",
+    "M555"
+   ]
+  },
+  {
+   "name": "韩振羽",
+   "rating": 1496,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M543",
+    "M545"
+   ]
+  },
+  {
+   "name": "郑洪台",
+   "rating": 1496,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1486
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M716",
+    "M719"
+   ]
+  },
+  {
+   "name": "桑木姥",
+   "rating": 1496,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    2,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M147",
+    "M148"
+   ]
+  },
+  {
+   "name": "贞乾道人",
+   "rating": 1496,
+   "rd": 249,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {
+    "白发魔女传": 1475
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M725"
+   ]
+  },
+  {
+   "name": "右贤王",
+   "rating": 1496,
+   "rd": 213,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M485",
+    "M487"
+   ]
+  },
+  {
+   "name": "寇方皋",
+   "rating": 1496,
+   "rd": 164,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M186",
+    "M190",
+    "M209"
+   ]
+  },
+  {
+   "name": "白石",
+   "rating": 1495,
+   "rd": 158,
+   "tier": "二流",
+   "matches_n": 5,
+   "w/d/l": [
+    3,
+    0,
+    2
+   ],
+   "per_book": {
+    "白发魔女传": 1490
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M753",
+    "M756",
+    "M774"
+   ]
+  },
+  {
+   "name": "神家兄弟",
+   "rating": 1494,
+   "rd": 206,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1480
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M747",
+    "M748"
+   ]
+  },
+  {
+   "name": "三花剑",
+   "rating": 1494,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M905"
+   ]
+  },
+  {
+   "name": "小昭",
+   "rating": 1494,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M510"
+   ]
+  },
+  {
+   "name": "青符道人",
+   "rating": 1493,
+   "rd": 208,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M236",
+    "M241"
+   ]
+  },
+  {
+   "name": "郝中浩",
+   "rating": 1493,
+   "rd": 253,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    1,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M317"
+   ]
+  },
+  {
+   "name": "金日磾",
+   "rating": 1493,
+   "rd": 207,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M162",
+    "M397"
+   ]
+  },
+  {
+   "name": "厉复生",
+   "rating": 1492,
+   "rd": 209,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M374",
+    "M376"
+   ]
+  },
+  {
+   "name": "翼仲牟",
+   "rating": 1492,
+   "rd": 149,
+   "tier": "二流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    1,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M115",
+    "M123",
+    "M204"
+   ]
+  },
+  {
+   "name": "赤神子",
+   "rating": 1492,
+   "rd": 162,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M307",
+    "M308",
+    "M312"
+   ]
+  },
+  {
+   "name": "齐真君",
+   "rating": 1491,
+   "rd": 139,
+   "tier": "二流",
+   "matches_n": 7,
+   "w/d/l": [
+    2,
+    1,
+    4
+   ],
+   "per_book": {
+    "七剑下天山": 1485
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M059",
+    "M060",
+    "M063"
+   ]
+  },
+  {
+   "name": "叶冲霄",
+   "rating": 1491,
+   "rd": 191,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M393",
+    "M394",
+    "M396"
+   ]
+  },
+  {
+   "name": "紫阳道长",
+   "rating": 1490,
+   "rd": 267,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1439
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M742"
+   ]
+  },
+  {
+   "name": "白摩诃",
+   "rating": 1489,
+   "rd": 164,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    3,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M885",
+    "M886",
+    "M889"
+   ]
+  },
+  {
+   "name": "林签",
+   "rating": 1489,
+   "rd": 226,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M129",
+    "M130"
+   ]
+  },
+  {
+   "name": "乐隐夫",
+   "rating": 1489,
+   "rd": 264,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M472"
+   ]
+  },
+  {
+   "name": "宇文雄",
+   "rating": 1489,
+   "rd": 123,
+   "tier": "二流",
+   "matches_n": 9,
+   "w/d/l": [
+    5,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M275",
+    "M957",
+    "M1009"
+   ]
+  },
+  {
+   "name": "景月上人",
+   "rating": 1489,
+   "rd": 206,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M404",
+    "M407"
+   ]
+  },
+  {
+   "name": "蒙永平",
+   "rating": 1489,
+   "rd": 263,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1033"
+   ]
+  },
+  {
+   "name": "云召",
+   "rating": 1488,
+   "rd": 205,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    2,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M364",
+    "M396",
+    "M958"
+   ]
+  },
+  {
+   "name": "桑令狐",
+   "rating": 1488,
+   "rd": 261,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M950"
+   ]
+  },
+  {
+   "name": "凌未风",
+   "rating": 1488,
+   "rd": 80,
+   "tier": "二流",
+   "matches_n": 23,
+   "w/d/l": [
+    12,
+    1,
+    10
+   ],
+   "per_book": {
+    "七剑下天山": 1520,
+    "江湖三女侠": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M012",
+    "M013",
+    "M014"
+   ]
+  },
+  {
+   "name": "韩夫人",
+   "rating": 1488,
+   "rd": 259,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M205"
+   ]
+  },
+  {
+   "name": "乾隆",
+   "rating": 1488,
+   "rd": 259,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M208"
+   ]
+  },
+  {
+   "name": "邓乾元",
+   "rating": 1488,
+   "rd": 259,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M104"
+   ]
+  },
+  {
+   "name": "袁奎",
+   "rating": 1487,
+   "rd": 258,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M483"
+   ]
+  },
+  {
+   "name": "濮阳昆吾",
+   "rating": 1487,
+   "rd": 258,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M486"
+   ]
+  },
+  {
+   "name": "褚玄",
+   "rating": 1487,
+   "rd": 256,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M554"
+   ]
+  },
+  {
+   "name": "帅孟雄",
+   "rating": 1487,
+   "rd": 153,
+   "tier": "二流",
+   "matches_n": 5,
+   "w/d/l": [
+    3,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M242",
+    "M244",
+    "M271"
+   ]
+  },
+  {
+   "name": "周志侠",
+   "rating": 1487,
+   "rd": 172,
+   "tier": "二流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M795",
+    "M837",
+    "M863"
+   ]
+  },
+  {
+   "name": "孟长生",
+   "rating": 1487,
+   "rd": 255,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M499"
+   ]
+  },
+  {
+   "name": "五龙",
+   "rating": 1486,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1416
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M026"
+   ]
+  },
+  {
+   "name": "白马杜平",
+   "rating": 1486,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M103"
+   ]
+  },
+  {
+   "name": "阿盖",
+   "rating": 1486,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "塞外奇侠传": 1416
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M427"
+   ]
+  },
+  {
+   "name": "麻大哈",
+   "rating": 1486,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M471"
+   ]
+  },
+  {
+   "name": "车鼎丰",
+   "rating": 1486,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1416
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M617"
+   ]
+  },
+  {
+   "name": "龙啸云",
+   "rating": 1486,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1416
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M736"
+   ]
+  },
+  {
+   "name": "殷梅阁",
+   "rating": 1486,
+   "rd": 254,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M800"
+   ]
+  },
+  {
+   "name": "项鸿",
+   "rating": 1486,
+   "rd": 195,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M114",
+    "M132",
+    "M138"
+   ]
+  },
+  {
+   "name": "昆仑散人",
+   "rating": 1486,
+   "rd": 134,
+   "tier": "二流",
+   "matches_n": 7,
+   "w/d/l": [
+    1,
+    4,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M108",
+    "M109",
+    "M110"
+   ]
+  },
+  {
+   "name": "韩志邦",
+   "rating": 1485,
+   "rd": 145,
+   "tier": "二流",
+   "matches_n": 6,
+   "w/d/l": [
+    3,
+    0,
+    3
+   ],
+   "per_book": {
+    "七剑下天山": 1487
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M011",
+    "M014",
+    "M015"
+   ]
+  },
+  {
+   "name": "大龙头",
+   "rating": 1485,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M553"
+   ]
+  },
+  {
+   "name": "陶宏",
+   "rating": 1485,
+   "rd": 252,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1409
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M029"
+   ]
+  },
+  {
+   "name": "王照希",
+   "rating": 1485,
+   "rd": 177,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    1,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1460
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M729",
+    "M765",
+    "M767"
+   ]
+  },
+  {
+   "name": "竺法兰",
+   "rating": 1485,
+   "rd": 206,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M355",
+    "M357"
+   ]
+  },
+  {
+   "name": "邹家",
+   "rating": 1485,
+   "rd": 251,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M318"
+   ]
+  },
+  {
+   "name": "乔家父子",
+   "rating": 1485,
+   "rd": 251,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M819"
+   ]
+  },
+  {
+   "name": "云夫人",
+   "rating": 1485,
+   "rd": 251,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M948"
+   ]
+  },
+  {
+   "name": "杜焜",
+   "rating": 1484,
+   "rd": 251,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M530"
+   ]
+  },
+  {
+   "name": "白良骥",
+   "rating": 1484,
+   "rd": 211,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M173",
+    "M174"
+   ]
+  },
+  {
+   "name": "郝飞凤",
+   "rating": 1484,
+   "rd": 180,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    2,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1457
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M036",
+    "M038",
+    "M073"
+   ]
+  },
+  {
+   "name": "欧阳二娘",
+   "rating": 1484,
+   "rd": 217,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M366",
+    "M370"
+   ]
+  },
+  {
+   "name": "成章五",
+   "rating": 1484,
+   "rd": 212,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1443
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M771",
+    "M773"
+   ]
+  },
+  {
+   "name": "七星子",
+   "rating": 1484,
+   "rd": 249,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M826"
+   ]
+  },
+  {
+   "name": "龙剑虹",
+   "rating": 1483,
+   "rd": 111,
+   "tier": "二流",
+   "matches_n": 10,
+   "w/d/l": [
+    5,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M801",
+    "M802",
+    "M809"
+   ]
+  },
+  {
+   "name": "史红英",
+   "rating": 1483,
+   "rd": 111,
+   "tier": "二流",
+   "matches_n": 11,
+   "w/d/l": [
+    5,
+    1,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M243",
+    "M247",
+    "M265"
+   ]
+  },
+  {
+   "name": "冒川生",
+   "rating": 1483,
+   "rd": 224,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M316",
+    "M325"
+   ]
+  },
+  {
+   "name": "杜大业",
+   "rating": 1483,
+   "rd": 249,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M228"
+   ]
+  },
+  {
+   "name": "萨力雄",
+   "rating": 1483,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M865"
+   ]
+  },
+  {
+   "name": "阎中天",
+   "rating": 1483,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1397
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M009"
+   ]
+  },
+  {
+   "name": "戴均",
+   "rating": 1482,
+   "rd": 214,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1005",
+    "M1006"
+   ]
+  },
+  {
+   "name": "保柱",
+   "rating": 1482,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1393
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M024"
+   ]
+  },
+  {
+   "name": "宗神龙",
+   "rating": 1482,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M295"
+   ]
+  },
+  {
+   "name": "群犬",
+   "rating": 1482,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M311"
+   ]
+  },
+  {
+   "name": "公主",
+   "rating": 1482,
+   "rd": 248,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "冰魄寒光剑": 1379
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M424"
+   ]
+  },
+  {
+   "name": "韩二嫂",
+   "rating": 1482,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M529"
+   ]
+  },
+  {
+   "name": "多铎",
+   "rating": 1482,
+   "rd": 147,
+   "tier": "二流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    1,
+    2
+   ],
+   "per_book": {
+    "塞外奇侠传": 1580,
+    "七剑下天山": 1432
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M001",
+    "M002",
+    "M021"
+   ]
+  },
+  {
+   "name": "路家兄弟",
+   "rating": 1482,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M925"
+   ]
+  },
+  {
+   "name": "韩芷",
+   "rating": 1481,
+   "rd": 212,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M467",
+    "M482"
+   ]
+  },
+  {
+   "name": "符离渐",
+   "rating": 1481,
+   "rd": 197,
+   "tier": "二流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M200",
+    "M201",
+    "M392"
+   ]
+  },
+  {
+   "name": "厉抗天",
+   "rating": 1481,
+   "rd": 99,
+   "tier": "二流",
+   "matches_n": 13,
+   "w/d/l": [
+    6,
+    1,
+    6
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M450",
+    "M459",
+    "M794"
+   ]
+  },
+  {
+   "name": "武成化",
+   "rating": 1481,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1381
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M644"
+   ]
+  },
+  {
+   "name": "龙木公",
+   "rating": 1481,
+   "rd": 212,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1473
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M567",
+    "M694"
+   ]
+  },
+  {
+   "name": "云家",
+   "rating": 1481,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M395"
+   ]
+  },
+  {
+   "name": "韩隐樵",
+   "rating": 1480,
+   "rd": 216,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M168",
+    "M214"
+   ]
+  },
+  {
+   "name": "允禵",
+   "rating": 1480,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1376
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M630"
+   ]
+  },
+  {
+   "name": "阿萨玛",
+   "rating": 1479,
+   "rd": 209,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    2,
+    0
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M520",
+    "M521"
+   ]
+  },
+  {
+   "name": "程通",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M004"
+   ]
+  },
+  {
+   "name": "古元亮",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M012"
+   ]
+  },
+  {
+   "name": "张青原",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M025"
+   ]
+  },
+  {
+   "name": "李思永",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M066"
+   ]
+  },
+  {
+   "name": "宗达完真",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M091"
+   ]
+  },
+  {
+   "name": "许大猷",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M102"
+   ]
+  },
+  {
+   "name": "蒋鹿樵",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M133"
+   ]
+  },
+  {
+   "name": "何老大",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M232"
+   ]
+  },
+  {
+   "name": "桑壁伊",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M343"
+   ]
+  },
+  {
+   "name": "宇文朗",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M365"
+   ]
+  },
+  {
+   "name": "于少鲲",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M366"
+   ]
+  },
+  {
+   "name": "鲁兀",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M382"
+   ]
+  },
+  {
+   "name": "苏湛",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M398"
+   ]
+  },
+  {
+   "name": "国王",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M400"
+   ]
+  },
+  {
+   "name": "昆布兰王",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M401"
+   ]
+  },
+  {
+   "name": "押不庐",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "塞外奇侠传": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M426"
+   ]
+  },
+  {
+   "name": "塔山族",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "塞外奇侠传": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M429"
+   ]
+  },
+  {
+   "name": "尚宝山",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M453"
+   ]
+  },
+  {
+   "name": "大休",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M470"
+   ]
+  },
+  {
+   "name": "柳摇风",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M480"
+   ]
+  },
+  {
+   "name": "钱通海",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M492"
+   ]
+  },
+  {
+   "name": "陈美娘",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "江湖三女侠": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M606"
+   ]
+  },
+  {
+   "name": "耿绍南",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M715"
+   ]
+  },
+  {
+   "name": "魏忠贤",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M768"
+   ]
+  },
+  {
+   "name": "魏大猷",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M798"
+   ]
+  },
+  {
+   "name": "冬梅",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M805"
+   ]
+  },
+  {
+   "name": "瓦剌",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M880"
+   ]
+  },
+  {
+   "name": "石天铎",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M941"
+   ]
+  },
+  {
+   "name": "祈家",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M954"
+   ]
+  },
+  {
+   "name": "陈琴翁",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M452"
+   ]
+  },
+  {
+   "name": "丘迟",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M463"
+   ]
+  },
+  {
+   "name": "潮音和尚",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M879"
+   ]
+  },
+  {
+   "name": "长孙兆",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M484"
+   ]
+  },
+  {
+   "name": "刁四福",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "二流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1372
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M057"
+   ]
+  },
+  {
+   "name": "李文成",
+   "rating": 1479,
+   "rd": 204,
+   "tier": "二流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    1,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M952",
+    "M972"
+   ]
+  },
+  {
+   "name": "万应常",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M181"
+   ]
+  },
+  {
+   "name": "范铮",
+   "rating": 1479,
+   "rd": 247,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1371
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M023"
+   ]
+  },
+  {
+   "name": "胖和尚",
+   "rating": 1478,
+   "rd": 247,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M502"
+   ]
+  },
+  {
+   "name": "沙无忌",
+   "rating": 1478,
+   "rd": 247,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M927"
+   ]
+  },
+  {
+   "name": "潘力宏",
+   "rating": 1478,
+   "rd": 247,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M461"
+   ]
+  },
+  {
+   "name": "黄叶三哥",
+   "rating": 1478,
+   "rd": 135,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    1,
+    3,
+    2
+   ],
+   "per_book": {
+    "白发魔女传": 1437,
+    "塞外奇侠传": 1516
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M444",
+    "M723",
+    "M726"
+   ]
+  },
+  {
+   "name": "雷震子",
+   "rating": 1478,
+   "rd": 141,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    2,
+    1,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M298",
+    "M299",
+    "M301"
+   ]
+  },
+  {
+   "name": "封子超",
+   "rating": 1478,
+   "rd": 247,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M259"
+   ]
+  },
+  {
+   "name": "凌云风",
+   "rating": 1478,
+   "rd": 247,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M856"
+   ]
+  },
+  {
+   "name": "陈石星",
+   "rating": 1477,
+   "rd": 127,
+   "tier": "三流",
+   "matches_n": 7,
+   "w/d/l": [
+    2,
+    2,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M454",
+    "M463",
+    "M469"
+   ]
+  },
+  {
+   "name": "萧青峰",
+   "rating": 1477,
+   "rd": 248,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M337"
+   ]
+  },
+  {
+   "name": "石镜涵",
+   "rating": 1477,
+   "rd": 248,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M829"
+   ]
+  },
+  {
+   "name": "厉家",
+   "rating": 1477,
+   "rd": 248,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M140"
+   ]
+  },
+  {
+   "name": "班栋",
+   "rating": 1477,
+   "rd": 248,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M386"
+   ]
+  },
+  {
+   "name": "桑青娘",
+   "rating": 1476,
+   "rd": 248,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M142"
+   ]
+  },
+  {
+   "name": "黑白摩诃",
+   "rating": 1476,
+   "rd": 96,
+   "tier": "三流",
+   "matches_n": 14,
+   "w/d/l": [
+    1,
+    10,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M494",
+    "M519",
+    "M520"
+   ]
+  },
+  {
+   "name": "蒙元子",
+   "rating": 1476,
+   "rd": 248,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M518"
+   ]
+  },
+  {
+   "name": "何绿华",
+   "rating": 1476,
+   "rd": 203,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    1,
+    1
+   ],
+   "per_book": {
+    "塞外奇侠传": 1520,
+    "七剑下天山": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M094",
+    "M443"
+   ]
+  },
+  {
+   "name": "察克图",
+   "rating": 1475,
+   "rd": 249,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1352
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M750"
+   ]
+  },
+  {
+   "name": "谷中豪",
+   "rating": 1475,
+   "rd": 249,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M531"
+   ]
+  },
+  {
+   "name": "朱翊钧",
+   "rating": 1475,
+   "rd": 249,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1352
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M008"
+   ]
+  },
+  {
+   "name": "商浩",
+   "rating": 1475,
+   "rd": 250,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M202"
+   ]
+  },
+  {
+   "name": "神大元",
+   "rating": 1474,
+   "rd": 251,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1344
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M746"
+   ]
+  },
+  {
+   "name": "大雄",
+   "rating": 1474,
+   "rd": 251,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M866"
+   ]
+  },
+  {
+   "name": "唐努珠穆",
+   "rating": 1474,
+   "rd": 180,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M382",
+    "M388",
+    "M391"
+   ]
+  },
+  {
+   "name": "郝继明",
+   "rating": 1473,
+   "rd": 251,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1349
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M017"
+   ]
+  },
+  {
+   "name": "云灵子",
+   "rating": 1473,
+   "rd": 118,
+   "tier": "三流",
+   "matches_n": 9,
+   "w/d/l": [
+    3,
+    3,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M142",
+    "M144",
+    "M150"
+   ]
+  },
+  {
+   "name": "胡天柱",
+   "rating": 1473,
+   "rd": 174,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {
+    "七剑下天山": 1437
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M042",
+    "M045",
+    "M046"
+   ]
+  },
+  {
+   "name": "封妙嫦",
+   "rating": 1473,
+   "rd": 180,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    2,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M220",
+    "M221",
+    "M222"
+   ]
+  },
+  {
+   "name": "冒浣莲",
+   "rating": 1472,
+   "rd": 136,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    2,
+    1,
+    3
+   ],
+   "per_book": {
+    "七剑下天山": 1447
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M007",
+    "M008",
+    "M009"
+   ]
+  },
+  {
+   "name": "林仙韵",
+   "rating": 1472,
+   "rd": 170,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    3,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M535",
+    "M538",
+    "M540"
+   ]
+  },
+  {
+   "name": "欧阳大娘",
+   "rating": 1472,
+   "rd": 254,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1031"
+   ]
+  },
+  {
+   "name": "马方",
+   "rating": 1472,
+   "rd": 254,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1327
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M088"
+   ]
+  },
+  {
+   "name": "石井太郎",
+   "rating": 1472,
+   "rd": 254,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M513"
+   ]
+  },
+  {
+   "name": "路英豪",
+   "rating": 1472,
+   "rd": 254,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M359"
+   ]
+  },
+  {
+   "name": "克雷斯",
+   "rating": 1471,
+   "rd": 255,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "冰魄寒光剑": 1317
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M423"
+   ]
+  },
+  {
+   "name": "钱四麒",
+   "rating": 1470,
+   "rd": 230,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {
+    "七剑下天山": 1400
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M027",
+    "M028"
+   ]
+  },
+  {
+   "name": "金世遗",
+   "rating": 1470,
+   "rd": 69,
+   "tier": "三流",
+   "matches_n": 40,
+   "w/d/l": [
+    16,
+    5,
+    19
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M110",
+    "M111",
+    "M112"
+   ]
+  },
+  {
+   "name": "濑越",
+   "rating": 1470,
+   "rd": 258,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M504"
+   ]
+  },
+  {
+   "name": "屠龙尊者",
+   "rating": 1469,
+   "rd": 159,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    3,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M537",
+    "M538",
+    "M541"
+   ]
+  },
+  {
+   "name": "张丹枫",
+   "rating": 1469,
+   "rd": 76,
+   "tier": "三流",
+   "matches_n": 31,
+   "w/d/l": [
+    10,
+    2,
+    19
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M451",
+    "M459",
+    "M488"
+   ]
+  },
+  {
+   "name": "韩荆",
+   "rating": 1469,
+   "rd": 260,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "七剑下天山": 1313
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M064"
+   ]
+  },
+  {
+   "name": "阿璞将军",
+   "rating": 1468,
+   "rd": 261,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M487"
+   ]
+  },
+  {
+   "name": "秦柱尊",
+   "rating": 1468,
+   "rd": 178,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1021",
+    "M1022",
+    "M1024"
+   ]
+  },
+  {
+   "name": "纽祜庐",
+   "rating": 1468,
+   "rd": 261,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {
+    "塞外奇侠传": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M435"
+   ]
+  },
+  {
+   "name": "上官泰",
+   "rating": 1468,
+   "rd": 225,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1014",
+    "M1049"
+   ]
+  },
+  {
+   "name": "郝达三",
+   "rating": 1467,
+   "rd": 264,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M106"
+   ]
+  },
+  {
+   "name": "崆峒",
+   "rating": 1467,
+   "rd": 181,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M100",
+    "M300",
+    "M315"
+   ]
+  },
+  {
+   "name": "谷正朋",
+   "rating": 1467,
+   "rd": 265,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M201"
+   ]
+  },
+  {
+   "name": "周山民",
+   "rating": 1465,
+   "rd": 151,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    1,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M496",
+    "M497",
+    "M842"
+   ]
+  },
+  {
+   "name": "义军",
+   "rating": 1463,
+   "rd": 273,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1043"
+   ]
+  },
+  {
+   "name": "白孟川",
+   "rating": 1463,
+   "rd": 170,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M543",
+    "M544",
+    "M546"
+   ]
+  },
+  {
+   "name": "张士诚",
+   "rating": 1463,
+   "rd": 211,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    1,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M521",
+    "M949"
+   ]
+  },
+  {
+   "name": "云重",
+   "rating": 1461,
+   "rd": 126,
+   "tier": "三流",
+   "matches_n": 10,
+   "w/d/l": [
+    3,
+    1,
+    6
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M561",
+    "M871",
+    "M906"
+   ]
+  },
+  {
+   "name": "韩铁樵",
+   "rating": 1461,
+   "rd": 220,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M870",
+    "M872"
+   ]
+  },
+  {
+   "name": "江海天",
+   "rating": 1461,
+   "rd": 80,
+   "tier": "三流",
+   "matches_n": 24,
+   "w/d/l": [
+    9,
+    2,
+    13
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M218",
+    "M291",
+    "M361"
+   ]
+  },
+  {
+   "name": "董十三娘",
+   "rating": 1461,
+   "rd": 281,
+   "tier": "三流",
+   "matches_n": 1,
+   "w/d/l": [
+    0,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M230"
+   ]
+  },
+  {
+   "name": "武当五老",
+   "rating": 1460,
+   "rd": 175,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    2,
+    1
+   ],
+   "per_book": {
+    "白发魔女传": 1475
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M726",
+    "M727",
+    "M942"
+   ]
+  },
+  {
+   "name": "文胜中",
+   "rating": 1459,
+   "rd": 183,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M258",
+    "M273",
+    "M275"
+   ]
+  },
+  {
+   "name": "林道轩",
+   "rating": 1458,
+   "rd": 174,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M272",
+    "M983",
+    "M986"
+   ]
+  },
+  {
+   "name": "武定球",
+   "rating": 1458,
+   "rd": 170,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M116",
+    "M117",
+    "M128"
+   ]
+  },
+  {
+   "name": "钟秀",
+   "rating": 1457,
+   "rd": 211,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1036",
+    "M1051"
+   ]
+  },
+  {
+   "name": "司空化",
+   "rating": 1456,
+   "rd": 241,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    1,
+    0,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M192",
+    "M207"
+   ]
+  },
+  {
+   "name": "李治",
+   "rating": 1453,
+   "rd": 111,
+   "tier": "三流",
+   "matches_n": 11,
+   "w/d/l": [
+    4,
+    0,
+    7
+   ],
+   "per_book": {
+    "江湖三女侠": 1424
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M618",
+    "M619",
+    "M633"
+   ]
+  },
+  {
+   "name": "六阳真君",
+   "rating": 1453,
+   "rd": 216,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M532",
+    "M533"
+   ]
+  },
+  {
+   "name": "西门牧野",
+   "rating": 1452,
+   "rd": 160,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    2,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M183",
+    "M187",
+    "M188"
+   ]
+  },
+  {
+   "name": "柳西岩",
+   "rating": 1451,
+   "rd": 206,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {
+    "塞外奇侠传": 1329
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M431",
+    "M432"
+   ]
+  },
+  {
+   "name": "孟神通",
+   "rating": 1449,
+   "rd": 77,
+   "tier": "三流",
+   "matches_n": 26,
+   "w/d/l": [
+    7,
+    6,
+    13
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M112",
+    "M113",
+    "M115"
+   ]
+  },
+  {
+   "name": "孤云",
+   "rating": 1448,
+   "rd": 205,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M781",
+    "M783"
+   ]
+  },
+  {
+   "name": "摩兰法师",
+   "rating": 1448,
+   "rd": 221,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {
+    "冰魄寒光剑": 1262
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M418",
+    "M419"
+   ]
+  },
+  {
+   "name": "唐晓澜",
+   "rating": 1447,
+   "rd": 81,
+   "tier": "三流",
+   "matches_n": 24,
+   "w/d/l": [
+    12,
+    1,
+    11
+   ],
+   "per_book": {
+    "江湖三女侠": 1419
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M174",
+    "M194",
+    "M211"
+   ]
+  },
+  {
+   "name": "龙成斌",
+   "rating": 1447,
+   "rd": 145,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    0,
+    4,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M454",
+    "M455",
+    "M456"
+   ]
+  },
+  {
+   "name": "赤霞道人",
+   "rating": 1446,
+   "rd": 205,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M534",
+    "M539"
+   ]
+  },
+  {
+   "name": "欧阳坚",
+   "rating": 1446,
+   "rd": 217,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    1,
+    1
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M292",
+    "M293"
+   ]
+  },
+  {
+   "name": "阴蕴玉",
+   "rating": 1446,
+   "rd": 205,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M791",
+    "M792"
+   ]
+  },
+  {
+   "name": "房豪",
+   "rating": 1445,
+   "rd": 205,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M478",
+    "M479"
+   ]
+  },
+  {
+   "name": "曹元朗",
+   "rating": 1445,
+   "rd": 205,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1309
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M611",
+    "M612"
+   ]
+  },
+  {
+   "name": "李敦",
+   "rating": 1445,
+   "rd": 203,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M262",
+    "M271"
+   ]
+  },
+  {
+   "name": "武琼瑶",
+   "rating": 1444,
+   "rd": 132,
+   "tier": "三流",
+   "matches_n": 7,
+   "w/d/l": [
+    3,
+    0,
+    4
+   ],
+   "per_book": {
+    "七剑下天山": 1487
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M066",
+    "M070",
+    "M073"
+   ]
+  },
+  {
+   "name": "南宫乙",
+   "rating": 1444,
+   "rd": 220,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M179",
+    "M180"
+   ]
+  },
+  {
+   "name": "麦盖提",
+   "rating": 1443,
+   "rd": 206,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {
+    "塞外奇侠传": 1300
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M436",
+    "M437"
+   ]
+  },
+  {
+   "name": "江晓芙",
+   "rating": 1442,
+   "rd": 141,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    2,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M953",
+    "M957",
+    "M984"
+   ]
+  },
+  {
+   "name": "车辟邪",
+   "rating": 1441,
+   "rd": 202,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1292
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M640",
+    "M642"
+   ]
+  },
+  {
+   "name": "安俊庭",
+   "rating": 1440,
+   "rd": 202,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M260",
+    "M263"
+   ]
+  },
+  {
+   "name": "史白都",
+   "rating": 1438,
+   "rd": 128,
+   "tier": "三流",
+   "matches_n": 9,
+   "w/d/l": [
+    4,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M246",
+    "M252",
+    "M254"
+   ]
+  },
+  {
+   "name": "章铁夫",
+   "rating": 1438,
+   "rd": 210,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M460",
+    "M462"
+   ]
+  },
+  {
+   "name": "尉迟炯",
+   "rating": 1437,
+   "rd": 110,
+   "tier": "三流",
+   "matches_n": 10,
+   "w/d/l": [
+    4,
+    0,
+    6
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M240",
+    "M294",
+    "M956"
+   ]
+  },
+  {
+   "name": "杜赶驴",
+   "rating": 1437,
+   "rd": 201,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M795",
+    "M797"
+   ]
+  },
+  {
+   "name": "上官天野",
+   "rating": 1435,
+   "rd": 182,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    1,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M934",
+    "M935",
+    "M943"
+   ]
+  },
+  {
+   "name": "玄瑛道人",
+   "rating": 1435,
+   "rd": 177,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M545",
+    "M546",
+    "M547"
+   ]
+  },
+  {
+   "name": "铁镜心",
+   "rating": 1435,
+   "rd": 97,
+   "tier": "三流",
+   "matches_n": 14,
+   "w/d/l": [
+    5,
+    0,
+    9
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M504",
+    "M505",
+    "M506"
+   ]
+  },
+  {
+   "name": "额吉多",
+   "rating": 1434,
+   "rd": 164,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M926",
+    "M928",
+    "M929"
+   ]
+  },
+  {
+   "name": "石翠凤",
+   "rating": 1432,
+   "rd": 178,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    1,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M497",
+    "M893",
+    "M912"
+   ]
+  },
+  {
+   "name": "樊忠",
+   "rating": 1431,
+   "rd": 195,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M895",
+    "M896",
+    "M923"
+   ]
+  },
+  {
+   "name": "乌天朗",
+   "rating": 1430,
+   "rd": 218,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M167",
+    "M170"
+   ]
+  },
+  {
+   "name": "云舞阳",
+   "rating": 1430,
+   "rd": 144,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    1,
+    1,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M938",
+    "M942",
+    "M945"
+   ]
+  },
+  {
+   "name": "钟展",
+   "rating": 1430,
+   "rd": 138,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    2,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M111",
+    "M114",
+    "M117"
+   ]
+  },
+  {
+   "name": "班禅",
+   "rating": 1429,
+   "rd": 190,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M340",
+    "M341",
+    "M342"
+   ]
+  },
+  {
+   "name": "童姥姥",
+   "rating": 1428,
+   "rd": 157,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    1,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M408",
+    "M411",
+    "M412"
+   ]
+  },
+  {
+   "name": "欧阳伯和",
+   "rating": 1428,
+   "rd": 204,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M367",
+    "M368"
+   ]
+  },
+  {
+   "name": "冯广潮",
+   "rating": 1427,
+   "rd": 185,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    1,
+    0,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1315
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M568",
+    "M570",
+    "M696"
+   ]
+  },
+  {
+   "name": "连城虎",
+   "rating": 1427,
+   "rd": 161,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    0,
+    3
+   ],
+   "per_book": {
+    "白发魔女传": 1225
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M231",
+    "M763",
+    "M764"
+   ]
+  },
+  {
+   "name": "秦中越",
+   "rating": 1426,
+   "rd": 176,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    0,
+    3
+   ],
+   "per_book": {
+    "江湖三女侠": 1325
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M597",
+    "M601",
+    "M660"
+   ]
+  },
+  {
+   "name": "林笙",
+   "rating": 1426,
+   "rd": 224,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M130",
+    "M131"
+   ]
+  },
+  {
+   "name": "杨钲",
+   "rating": 1426,
+   "rd": 105,
+   "tier": "三流",
+   "matches_n": 14,
+   "w/d/l": [
+    4,
+    0,
+    10
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M982",
+    "M1006",
+    "M1007"
+   ]
+  },
+  {
+   "name": "楚大齐",
+   "rating": 1426,
+   "rd": 249,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M561",
+    "M562"
+   ]
+  },
+  {
+   "name": "柳先开",
+   "rating": 1425,
+   "rd": 203,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {
+    "江湖三女侠": 1236
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M579",
+    "M633"
+   ]
+  },
+  {
+   "name": "铁拐仙",
+   "rating": 1424,
+   "rd": 227,
+   "tier": "三流",
+   "matches_n": 2,
+   "w/d/l": [
+    0,
+    0,
+    2
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M296",
+    "M297"
+   ]
+  },
+  {
+   "name": "双魔",
+   "rating": 1423,
+   "rd": 186,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {
+    "江湖三女侠": 1292
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M578",
+    "M638",
+    "M641"
+   ]
+  },
+  {
+   "name": "周青",
+   "rating": 1423,
+   "rd": 167,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    0,
+    3
+   ],
+   "per_book": {
+    "七剑下天山": 1349,
+    "江湖三女侠": 1380
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M089",
+    "M567",
+    "M691"
+   ]
+  },
+  {
+   "name": "杨柳青",
+   "rating": 1422,
+   "rd": 146,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    1,
+    0,
+    5
+   ],
+   "per_book": {
+    "江湖三女侠": 1424
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M344",
+    "M345",
+    "M580"
+   ]
+  },
+  {
+   "name": "李申时",
+   "rating": 1421,
+   "rd": 194,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {
+    "白发魔女传": 1290
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M735",
+    "M737",
+    "M738"
+   ]
+  },
+  {
+   "name": "欧阳仲和",
+   "rating": 1420,
+   "rd": 156,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    1,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M362",
+    "M363",
+    "M380"
+   ]
+  },
+  {
+   "name": "王大须子",
+   "rating": 1419,
+   "rd": 189,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {
+    "塞外奇侠传": 1283
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M445",
+    "M447",
+    "M448"
+   ]
+  },
+  {
+   "name": "龙灵矫",
+   "rating": 1417,
+   "rd": 188,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M303",
+    "M304",
+    "M305"
+   ]
+  },
+  {
+   "name": "岳鸣珂",
+   "rating": 1413,
+   "rd": 185,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {
+    "白发魔女传": 1268
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M731",
+    "M749",
+    "M766"
+   ]
+  },
+  {
+   "name": "车锐",
+   "rating": 1412,
+   "rd": 183,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M219",
+    "M222",
+    "M224"
+   ]
+  },
+  {
+   "name": "法王",
+   "rating": 1411,
+   "rd": 183,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M333",
+    "M334",
+    "M335"
+   ]
+  },
+  {
+   "name": "谷石君",
+   "rating": 1411,
+   "rd": 184,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M312",
+    "M313",
+    "M314"
+   ]
+  },
+  {
+   "name": "韩重山",
+   "rating": 1410,
+   "rd": 143,
+   "tier": "三流",
+   "matches_n": 7,
+   "w/d/l": [
+    1,
+    0,
+    6
+   ],
+   "per_book": {
+    "江湖三女侠": 1334
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M620",
+    "M621",
+    "M626"
+   ]
+  },
+  {
+   "name": "卓一航",
+   "rating": 1410,
+   "rd": 102,
+   "tier": "三流",
+   "matches_n": 13,
+   "w/d/l": [
+    4,
+    1,
+    8
+   ],
+   "per_book": {
+    "白发魔女传": 1325,
+    "塞外奇侠传": 1623,
+    "七剑下天山": 1377
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M062",
+    "M435",
+    "M717"
+   ]
+  },
+  {
+   "name": "杨云骢",
+   "rating": 1408,
+   "rd": 98,
+   "tier": "三流",
+   "matches_n": 13,
+   "w/d/l": [
+    5,
+    0,
+    8
+   ],
+   "per_book": {
+    "塞外奇侠传": 1418,
+    "七剑下天山": 1373
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M020",
+    "M021",
+    "M022"
+   ]
+  },
+  {
+   "name": "桑仁",
+   "rating": 1408,
+   "rd": 182,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {
+    "七剑下天山": 1250
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M092",
+    "M095",
+    "M097"
+   ]
+  },
+  {
+   "name": "沙通海",
+   "rating": 1407,
+   "rd": 160,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    1,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M455",
+    "M466",
+    "M467"
+   ]
+  },
+  {
+   "name": "杨仲英",
+   "rating": 1407,
+   "rd": 151,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    1,
+    0,
+    4
+   ],
+   "per_book": {
+    "江湖三女侠": 1307
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M574",
+    "M583",
+    "M609"
+   ]
+  },
+  {
+   "name": "张华昭",
+   "rating": 1405,
+   "rd": 182,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {
+    "七剑下天山": 1259
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M010",
+    "M041",
+    "M044"
+   ]
+  },
+  {
+   "name": "七阴教主",
+   "rating": 1402,
+   "rd": 177,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M804",
+    "M832",
+    "M836"
+   ]
+  },
+  {
+   "name": "张玉虎",
+   "rating": 1401,
+   "rd": 87,
+   "tier": "三流",
+   "matches_n": 20,
+   "w/d/l": [
+    10,
+    0,
+    10
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M780",
+    "M781",
+    "M782"
+   ]
+  },
+  {
+   "name": "邹鸣皋",
+   "rating": 1396,
+   "rd": 190,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {
+    "江湖三女侠": 1222
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M581",
+    "M582",
+    "M583"
+   ]
+  },
+  {
+   "name": "天魔教主",
+   "rating": 1393,
+   "rd": 193,
+   "tier": "三流",
+   "matches_n": 3,
+   "w/d/l": [
+    0,
+    0,
+    3
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M378",
+    "M379",
+    "M381"
+   ]
+  },
+  {
+   "name": "孔雀明伦王",
+   "rating": 1392,
+   "rd": 142,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    2,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M372",
+    "M373",
+    "M402"
+   ]
+  },
+  {
+   "name": "石天成",
+   "rating": 1391,
+   "rd": 175,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    0,
+    4
+   ],
+   "per_book": {
+    "七剑下天山": 1260
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M065",
+    "M067",
+    "M076"
+   ]
+  },
+  {
+   "name": "范筑",
+   "rating": 1388,
+   "rd": 176,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    0,
+    4
+   ],
+   "per_book": {
+    "白发魔女传": 1248
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M716",
+    "M717",
+    "M718"
+   ]
+  },
+  {
+   "name": "甘凤池",
+   "rating": 1385,
+   "rd": 118,
+   "tier": "三流",
+   "matches_n": 9,
+   "w/d/l": [
+    3,
+    0,
+    6
+   ],
+   "per_book": {
+    "江湖三女侠": 1318
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M606",
+    "M617",
+    "M648"
+   ]
+  },
+  {
+   "name": "江南",
+   "rating": 1384,
+   "rd": 111,
+   "tier": "三流",
+   "matches_n": 11,
+   "w/d/l": [
+    3,
+    0,
+    8
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M101",
+    "M105",
+    "M106"
+   ]
+  },
+  {
+   "name": "叶慕华",
+   "rating": 1383,
+   "rd": 149,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    1,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M1023",
+    "M1024",
+    "M1025"
+   ]
+  },
+  {
+   "name": "额音和布",
+   "rating": 1381,
+   "rd": 136,
+   "tier": "三流",
+   "matches_n": 7,
+   "w/d/l": [
+    0,
+    2,
+    5
+   ],
+   "per_book": {
+    "江湖三女侠": 1291
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M684",
+    "M703",
+    "M706"
+   ]
+  },
+  {
+   "name": "黑摩诃",
+   "rating": 1380,
+   "rd": 125,
+   "tier": "三流",
+   "matches_n": 8,
+   "w/d/l": [
+    1,
+    3,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M495",
+    "M820",
+    "M822"
+   ]
+  },
+  {
+   "name": "周浔",
+   "rating": 1378,
+   "rd": 166,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    0,
+    4
+   ],
+   "per_book": {
+    "江湖三女侠": 1215
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M648",
+    "M649",
+    "M650"
+   ]
+  },
+  {
+   "name": "万天鹏",
+   "rating": 1370,
+   "rd": 185,
+   "tier": "三流",
+   "matches_n": 4,
+   "w/d/l": [
+    0,
+    0,
+    4
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M840",
+    "M841",
+    "M843"
+   ]
+  },
+  {
+   "name": "了因",
+   "rating": 1369,
+   "rd": 86,
+   "tier": "三流",
+   "matches_n": 19,
+   "w/d/l": [
+    7,
+    1,
+    11
+   ],
+   "per_book": {
+    "江湖三女侠": 1440
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M125",
+    "M126",
+    "M331"
+   ]
+  },
+  {
+   "name": "贺兰明",
+   "rating": 1365,
+   "rd": 120,
+   "tier": "三流",
+   "matches_n": 9,
+   "w/d/l": [
+    1,
+    3,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M968",
+    "M996",
+    "M1000"
+   ]
+  },
+  {
+   "name": "洞冥子",
+   "rating": 1364,
+   "rd": 143,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    1,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M321",
+    "M323",
+    "M324"
+   ]
+  },
+  {
+   "name": "王敖",
+   "rating": 1362,
+   "rd": 171,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    0,
+    0,
+    5
+   ],
+   "per_book": {
+    "江湖三女侠": 1219
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M655",
+    "M662",
+    "M663"
+   ]
+  },
+  {
+   "name": "李南星",
+   "rating": 1357,
+   "rd": 162,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    0,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M242",
+    "M243",
+    "M245"
+   ]
+  },
+  {
+   "name": "姬晓风",
+   "rating": 1351,
+   "rd": 117,
+   "tier": "三流",
+   "matches_n": 10,
+   "w/d/l": [
+    2,
+    0,
+    8
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M194",
+    "M196",
+    "M198"
+   ]
+  },
+  {
+   "name": "凌云凤",
+   "rating": 1347,
+   "rd": 88,
+   "tier": "三流",
+   "matches_n": 18,
+   "w/d/l": [
+    5,
+    2,
+    11
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M547",
+    "M549",
+    "M550"
+   ]
+  },
+  {
+   "name": "于谦",
+   "rating": 1345,
+   "rd": 157,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    0,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M490",
+    "M491",
+    "M493"
+   ]
+  },
+  {
+   "name": "曹锦儿",
+   "rating": 1342,
+   "rd": 154,
+   "tier": "三流",
+   "matches_n": 5,
+   "w/d/l": [
+    0,
+    0,
+    5
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M121",
+    "M124",
+    "M183"
+   ]
+  },
+  {
+   "name": "金逐流",
+   "rating": 1332,
+   "rd": 92,
+   "tier": "三流",
+   "matches_n": 26,
+   "w/d/l": [
+    5,
+    0,
+    21
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M225",
+    "M226",
+    "M227"
+   ]
+  },
+  {
+   "name": "阳浩",
+   "rating": 1309,
+   "rd": 193,
+   "tier": "三流",
+   "matches_n": 6,
+   "w/d/l": [
+    0,
+    0,
+    6
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M280",
+    "M283",
+    "M285"
+   ]
+  },
+  {
+   "name": "羊吞虎",
+   "rating": 1303,
+   "rd": 126,
+   "tier": "三流",
+   "matches_n": 8,
+   "w/d/l": [
+    1,
+    0,
+    7
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M959",
+    "M961",
+    "M997"
+   ]
+  },
+  {
+   "name": "易兰珠",
+   "rating": 1290,
+   "rd": 98,
+   "tier": "三流",
+   "matches_n": 17,
+   "w/d/l": [
+    4,
+    1,
+    12
+   ],
+   "per_book": {
+    "七剑下天山": 1618,
+    "江湖三女侠": 1099
+   },
+   "prior_applied": [],
+   "top_evidence": [
+    "M010",
+    "M051",
+    "M061"
+   ]
+  },
+  {
+   "name": "张风府",
+   "rating": 1271,
+   "rd": 124,
+   "tier": "三流",
+   "matches_n": 10,
+   "w/d/l": [
+    1,
+    0,
+    9
+   ],
+   "per_book": {},
+   "prior_applied": [],
+   "top_evidence": [
+    "M489",
+    "M501",
+    "M900"
+   ]
+  }
+ ],
+ "conflicts": [
+  {
+   "type": "明文×数据",
+   "claim": "胜词命中（事件层 outcome，句证见定位符）",
+   "claim_loc": "江湖三女侠·023:003",
+   "data": {
+    "winner": "唐晓澜",
+    "loser": "吕四娘",
+    "delta": 198,
+    "match": "M631"
+   },
+   "note": "剧情保护候选：可能是主角光环/旁白夸张/抽取误差——冲突≠穿帮；（claim 为口径标签，原文/摘录不发布）"
+  },
+  {
+   "type": "明文×数据",
+   "claim": "胜词命中（事件层 outcome，句证见定位符）",
+   "claim_loc": "白发魔女传·020:002",
+   "data": {
+    "winner": "卓一航",
+    "loser": "练霓裳",
+    "delta": 170,
+    "match": "M744"
+   },
+   "note": "剧情保护候选：可能是主角光环/旁白夸张/抽取误差——冲突≠穿帮；（claim 为口径标签，原文/摘录不发布）"
+  },
+  {
+   "type": "明文×数据",
+   "claim": "胜词命中（事件层 outcome，句证见定位符）",
+   "claim_loc": "联剑风云录·014:001",
+   "data": {
+    "winner": "厉抗天",
+    "loser": "霍天都",
+    "delta": 161,
+    "match": "M803"
+   },
+   "note": "剧情保护候选：可能是主角光环/旁白夸张/抽取误差——冲突≠穿帮；（claim 为口径标签，原文/摘录不发布）"
+  },
+  {
+   "type": "明文×数据",
+   "claim": "胜词命中（事件层 outcome，句证见定位符）",
+   "claim_loc": "江湖三女侠·023:003",
+   "data": {
+    "winner": "甘天龙",
+    "loser": "吕四娘",
+    "delta": 132,
+    "match": "M635"
+   },
+   "note": "剧情保护候选：可能是主角光环/旁白夸张/抽取误差——冲突≠穿帮；（claim 为口径标签，原文/摘录不发布）"
+  },
+  {
+   "type": "明文×数据",
+   "claim": "胜词命中（事件层 outcome，句证见定位符）",
+   "claim_loc": "萍踪侠影录·003:001",
+   "data": {
+    "winner": "周健",
+    "loser": "云蕾",
+    "delta": 127,
+    "match": "M882"
+   },
+   "note": "剧情保护候选：可能是主角光环/旁白夸张/抽取误差——冲突≠穿帮；（claim 为口径标签，原文/摘录不发布）"
+  },
+  {
+   "type": "明文×数据",
+   "claim": "胜词命中（事件层 outcome，句证见定位符）",
+   "claim_loc": "塞外奇侠传·010:001",
+   "data": {
+    "winner": "巴拉",
+    "loser": "哈玛雅",
+    "delta": 126,
+    "match": "M430"
+   },
+   "note": "剧情保护候选：可能是主角光环/旁白夸张/抽取误差——冲突≠穿帮；（claim 为口径标签，原文/摘录不发布）"
+  }
+ ]
+}

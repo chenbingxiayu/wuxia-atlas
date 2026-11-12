@@ -1,0 +1,643 @@
+{
+ "meta": {
+  "generated": "2026-11-13",
+  "schema": "story-v2",
+  "script": "scripts/build_stories.py",
+  "copyright": "L0：计数+定位符；摘录仅本地使用，不入切片",
+  "scope": "tianshan-demo",
+  "books": [
+   "散花女侠",
+   "联剑风云录",
+   "白发魔女传",
+   "塞外奇侠传",
+   "七剑下天山",
+   "冰魄寒光剑",
+   "江湖三女侠"
+  ]
+ },
+ "story_id": "lv-siniang",
+ "template": "growth",
+ "title": "刺雍正：吕四娘复仇线密度",
+ "tag": "成长",
+ "book": "江湖三女侠",
+ "order": 5,
+ "subject": "吕四娘",
+ "person": "吕四娘",
+ "per_chapter": [
+  {
+   "c": 1,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 2,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 3,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 4,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 5,
+   "active": 1,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [
+    "萨天剌"
+   ],
+   "opp_weight": 360,
+   "total": 1
+  },
+  {
+   "c": 6,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 7,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 8,
+   "active": 12,
+   "passive": 8,
+   "kills": 0,
+   "opponents": [
+    "了因",
+    "海云和尚",
+    "天叶散人"
+   ],
+   "opp_weight": 476,
+   "total": 20
+  },
+  {
+   "c": 9,
+   "active": 11,
+   "passive": 6,
+   "kills": 0,
+   "opponents": [
+    "王尊一",
+    "萨天都",
+    "了因",
+    "彭云应"
+   ],
+   "opp_weight": 431,
+   "total": 17
+  },
+  {
+   "c": 10,
+   "active": 0,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "彭云应"
+   ],
+   "opp_weight": 0,
+   "total": 1
+  },
+  {
+   "c": 11,
+   "active": 1,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "天叶散人"
+   ],
+   "opp_weight": 288,
+   "total": 2
+  },
+  {
+   "c": 12,
+   "active": 11,
+   "passive": 3,
+   "kills": 2,
+   "opponents": [
+    "秦中越",
+    "御林军",
+    "甘天龙",
+    "董巨川"
+   ],
+   "opp_weight": 114,
+   "total": 14
+  },
+  {
+   "c": 13,
+   "active": 1,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 1
+  },
+  {
+   "c": 14,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 15,
+   "active": 1,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [
+    "尚庄主"
+   ],
+   "opp_weight": 0,
+   "total": 1
+  },
+  {
+   "c": 16,
+   "active": 4,
+   "passive": 3,
+   "kills": 1,
+   "opponents": [
+    "韩重山",
+    "董巨川"
+   ],
+   "opp_weight": 275,
+   "total": 7
+  },
+  {
+   "c": 17,
+   "active": 6,
+   "passive": 3,
+   "kills": 0,
+   "opponents": [
+    "了因",
+    "冯琳",
+    "车鼎丰"
+   ],
+   "opp_weight": 825,
+   "total": 9
+  },
+  {
+   "c": 18,
+   "active": 2,
+   "passive": 5,
+   "kills": 0,
+   "opponents": [
+    "李治",
+    "了因"
+   ],
+   "opp_weight": 832,
+   "total": 7
+  },
+  {
+   "c": 19,
+   "active": 3,
+   "passive": 2,
+   "kills": 0,
+   "opponents": [
+    "董巨川",
+    "韩重山"
+   ],
+   "opp_weight": 275,
+   "total": 5
+  },
+  {
+   "c": 20,
+   "active": 10,
+   "passive": 16,
+   "kills": 0,
+   "opponents": [
+    "韩重山",
+    "天叶散人",
+    "叶横波",
+    "董巨川"
+   ],
+   "opp_weight": 240,
+   "total": 26
+  },
+  {
+   "c": 21,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 22,
+   "active": 2,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "允禵",
+    "唐晓澜",
+    "允祯"
+   ],
+   "opp_weight": 1166,
+   "total": 3
+  },
+  {
+   "c": 23,
+   "active": 6,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "了因",
+    "允祯",
+    "甘天龙",
+    "董巨川"
+   ],
+   "opp_weight": 418,
+   "total": 7
+  },
+  {
+   "c": 24,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 25,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 26,
+   "active": 8,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [
+    "了因",
+    "李源"
+   ],
+   "opp_weight": 534,
+   "total": 8
+  },
+  {
+   "c": 27,
+   "active": 2,
+   "passive": 2,
+   "kills": 0,
+   "opponents": [
+    "车辟邪",
+    "天叶散人"
+   ],
+   "opp_weight": 208,
+   "total": 4
+  },
+  {
+   "c": 28,
+   "active": 0,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 1
+  },
+  {
+   "c": 29,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 30,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 31,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 32,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 33,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 34,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 35,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 36,
+   "active": 8,
+   "passive": 5,
+   "kills": 0,
+   "opponents": [
+    "毒龙尊者",
+    "冯瑛"
+   ],
+   "opp_weight": 805,
+   "total": 13
+  },
+  {
+   "c": 37,
+   "active": 6,
+   "passive": 1,
+   "kills": 0,
+   "opponents": [
+    "额音和布"
+   ],
+   "opp_weight": 230,
+   "total": 7
+  },
+  {
+   "c": 38,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 39,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 40,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 41,
+   "active": 8,
+   "passive": 3,
+   "kills": 0,
+   "opponents": [
+    "昆甸上人",
+    "韩重山",
+    "额音和布"
+   ],
+   "opp_weight": 215,
+   "total": 11
+  },
+  {
+   "c": 42,
+   "active": 1,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [
+    "额音和布"
+   ],
+   "opp_weight": 230,
+   "total": 1
+  },
+  {
+   "c": 43,
+   "active": 6,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 6
+  },
+  {
+   "c": 44,
+   "active": 1,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 1
+  },
+  {
+   "c": 45,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 46,
+   "active": 0,
+   "passive": 0,
+   "kills": 0,
+   "opponents": [],
+   "opp_weight": 0,
+   "total": 0
+  },
+  {
+   "c": 47,
+   "active": 6,
+   "passive": 1,
+   "kills": 2,
+   "opponents": [
+    "韩重山",
+    "额音和布"
+   ],
+   "opp_weight": 274,
+   "total": 7
+  },
+  {
+   "c": 48,
+   "active": 4,
+   "passive": 1,
+   "kills": 1,
+   "opponents": [
+    "允祯",
+    "哈布陀"
+   ],
+   "opp_weight": 284,
+   "total": 5
+  }
+ ],
+ "milestones": {
+  "first_dominant_chapter": 8,
+  "first_kill_chapter": 12,
+  "known_end": "048 回 · 终局对手：允祯、哈布陀"
+ },
+ "markers": [
+  {
+   "c": 5,
+   "label": "独臂门下",
+   "loc": "005:029"
+  },
+  {
+   "c": 8,
+   "label": "闯席认亲",
+   "loc": "008:010"
+  },
+  {
+   "c": 8,
+   "label": "让三招",
+   "loc": "008:034"
+  },
+  {
+   "c": 8,
+   "label": "玄女剑初试",
+   "loc": "008:036"
+  },
+  {
+   "c": 8,
+   "label": "师门对决",
+   "loc": "008:051"
+  },
+  {
+   "c": 26,
+   "label": "仙霞苦修",
+   "loc": "026:047"
+  },
+  {
+   "c": 26,
+   "label": "坟前诛叛",
+   "loc": "026:051"
+  },
+  {
+   "c": 47,
+   "label": "两探大内",
+   "loc": "047:036"
+  },
+  {
+   "c": 48,
+   "label": "内苑屠龙",
+   "loc": "048:041"
+  },
+  {
+   "c": 48,
+   "label": "三女侠名成",
+   "loc": "048:043"
+  }
+ ],
+ "editorial": {
+  "thesis": "吕四娘的复仇线密度峰值在第 20 回（单回 26 起对抗事件），而刺雍正的终章只有 5 起——复仇是长线积累，最后一击只是收束。",
+  "reads": [
+   {
+    "q": "密度峰值为什么不在终章？",
+    "a": "复仇线的形状是长线积累：08 回师门对决 20 起、20 回大混战 26 起才是高峰；刺雍正那一夜只有 5 起对抗事件——积累越厚，最后一击越干净。"
+   },
+   {
+    "q": "20 回的 26 起是什么？",
+    "a": "毒手害禅师那一回的大混战：她一人卷入全书最高的对抗密度——对手是血滴子与大内高手的群战，不是雍正本人。"
+   },
+   {
+    "q": "刺雍正的确日是怎么回事？",
+    "a": "原著把宫中喋血写在元宵（E-1735：雍正十三年 01-15）；史实里雍正死于八月二十三。两个日期并列陈列、不作断言，联动事件年谱（小说中的今天）。"
+   }
+  ],
+  "evidence": [
+   {
+    "loc": "008:051",
+    "text": "师门对决：与师兄了因斗到酣处——复仇线中段高峰（本回 20 起）"
+   },
+   {
+    "loc": "026:047",
+    "text": "仙霞苦修：五年潜修，复仇线进入低密度积累段"
+   },
+   {
+    "loc": "047:001",
+    "text": "E-1735 元宵确日：宫中喋血·吕四娘刺雍正——小说纪年雍正十三年 01-15（元宵）；史实雍正死于 1735-08-23，并列陈列不作断言",
+    "annals": true
+   },
+   {
+    "loc": "048:041",
+    "text": "内苑屠龙：传音入密历数罪状，内苑剑光终结暴君（本回 5 起）"
+   }
+  ],
+  "method_note": "口径：qa-events 江湖三女侠事件切片（1–48 回），吕四娘参与的 ◈◉▲ 对抗事件逐回计数（密度 = 主+客）；不做胜负 NLP 判定。确日联动：史实锚年谱 E-1735（元宵宫中喋血 01-15 / 雍正之死 08-23）并列陈列，不作断言。markers 自剧情锚点表（吕四娘锚点）取数。 复跑：python scripts/build_stories.py --scope tianshan-demo --apply · 图表为构建期 SVG，可整体复现。",
+  "teaser": "刺雍正那一天，原著写明了日期（雍正十三年 01-15 元宵）——复仇线的密度峰值却在第 20 回的 26 起，终章只有 5 起。"
+ },
+ "chart": {
+  "kind": "density",
+  "series": [
+   {
+    "key": "total",
+    "label": "复仇线密度（主+客对抗事件）",
+    "color": "#a63a2b"
+   }
+  ],
+  "dots": {
+   "key": "kills",
+   "label": "杀伤",
+   "color": "#a23527"
+  },
+  "title": "吕四娘逐回复仇线密度（《江湖三女侠》）"
+ }
+}

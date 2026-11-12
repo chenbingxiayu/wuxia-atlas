@@ -1,18 +1,188 @@
-<!DOCTYPE html><html lang="zh-CN" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="全站全文检索（Pagefind）。"><title>搜索 · 江湖图志</title><link rel="llms" href="/wuxia-atlas/llms.txt"><script src="/wuxia-atlas/atlas-api.js"></script><style>:root{--paper: #f5efe4;--paper-deep: #ece2cf;--ink: #2b2b2b;--ink-light: #5a544a;--ink-faint: #8c8477;--seal: #a63a2b;--seal-deep: #7f2c21;--azure: #34546e;--gold: #b8860b;--jade: #5e7d5a;--ghost: #b9b1a2;--line: #d8cdb8;--line-strong: #b9ab90;--shadow: 0 1px 3px rgba(43, 43, 43, .08);--tier-绝顶: var(--gold);--tier-超一流: var(--seal);--tier-一流: var(--azure);--tier-二流: var(--ink-light);--tier-三流: var(--ghost);--font-body: "LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;--font-title: "Noto Serif SC", "Source Han Serif SC", "LXGW WenKai", serif;--font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;--measure: 72ch;--radius: 6px;--space-1: .25rem;--space-2: .5rem;--space-3: 1rem;--space-4: 1.5rem;--space-5: 2.5rem;--space-6: 4rem}html{background:var(--paper)}body{margin:0;font-family:var(--font-body);color:var(--ink);line-height:1.85;background:radial-gradient(ellipse at top,rgba(255,255,255,.5),transparent 60%),var(--paper)}h1,h2,h3{font-family:var(--font-title);line-height:1.4}a{color:var(--azure);text-decoration:none}a:hover{color:var(--seal)}code,.loc{font-family:var(--font-mono);font-size:.92em}.loc{color:var(--ink-faint);border-bottom:1px dotted var(--ghost);cursor:help}.card{background:#ffffff8c;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--space-4)}.badge{display:inline-block;padding:.1em .45em;border:1.5px solid currentColor;border-radius:3px;font-size:.82em;line-height:1.5;transform:rotate(-1.2deg)}.badge-todo{color:var(--ghost)}.badge-lit{color:var(--jade)}.badge-cross{color:var(--seal)}.site-header[data-astro-cid-5hce7sga]{display:flex;align-items:baseline;justify-content:space-between;padding:var(--space-3) var(--space-5);border-bottom:2px solid var(--line-strong)}.brand[data-astro-cid-5hce7sga]{font-family:var(--font-title);font-size:1.35rem;font-weight:700;color:var(--seal)}nav[data-astro-cid-5hce7sga]{display:flex;gap:var(--space-4)}nav[data-astro-cid-5hce7sga] a[data-astro-cid-5hce7sga]{color:var(--ink-light)}main[data-astro-cid-5hce7sga]{max-width:960px;margin:0 auto;padding:var(--space-5) var(--space-4) var(--space-6)}.site-footer[data-astro-cid-5hce7sga]{border-top:1px solid var(--line);padding:var(--space-4) var(--space-5);color:var(--ink-faint);font-size:.88rem}.fine[data-astro-cid-5hce7sga]{font-size:.8rem}
-.dim[data-astro-cid-ipsxrsrh]{color:var(--ink-faint)}.pagefind-ui__search-input{font-family:var(--font-body);border-color:var(--line-strong);border-radius:var(--radius)}.pagefind-ui__search-clear{color:var(--ink-faint)}.pagefind-ui__result-link{color:var(--azure);font-weight:700}.pagefind-ui__result-excerpt mark{background:#a63a2b29;color:var(--seal)}
-</style></head> <body data-astro-cid-5hce7sga> <header class="site-header" data-astro-cid-5hce7sga> <a class="brand" href="/wuxia-atlas/" data-astro-cid-5hce7sga>江湖图志</a> <nav data-astro-cid-5hce7sga> <a href="/wuxia-atlas/books" data-astro-cid-5hce7sga>作品</a><a href="/wuxia-atlas/universe" data-astro-cid-5hce7sga>宇宙</a><a href="/wuxia-atlas/characters" data-astro-cid-5hce7sga>人物</a><a href="/wuxia-atlas/arts" data-astro-cid-5hce7sga>武功</a><a href="/wuxia-atlas/weapons" data-astro-cid-5hce7sga>名物</a><a href="/wuxia-atlas/atlas" data-astro-cid-5hce7sga>地图</a><a href="/wuxia-atlas/ratings" data-astro-cid-5hce7sga>侠谱</a><a href="/wuxia-atlas/games" data-astro-cid-5hce7sga>游戏</a><a href="/wuxia-atlas/search" data-astro-cid-5hce7sga>搜索</a><a href="/wuxia-atlas/about" data-astro-cid-5hce7sga>关于</a> </nav> </header> <main data-astro-cid-5hce7sga>  <h1 data-astro-cid-ipsxrsrh>搜索</h1> <link rel="stylesheet" href="/wuxia-atlaspagefind/pagefind-ui.css"> <div id="search" data-astro-cid-ipsxrsrh></div> <noscript>搜索需要启用 JavaScript。</noscript> <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const el = document.getElementById('search');
-      if (window.PagefindUI) {
-        new window.PagefindUI({ element: '#search', showSubResults: true, translations: {
-          placeholder: '搜索人物、武功、书目、回目……',
-          search: '搜索',
-        }});
-      } else {
-        el.innerHTML = '<p class="dim">搜索索引未构建：本地请先 <code>npm run build && npm run pagefind</code>。</p>';
+<!DOCTYPE html><html lang="zh-CN" data-astro-cid-5hce7sga> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="全站检索：人物、作品、武功、门派、回目……支持展示名（康熙/飞红巾）与规范名（玄烨/哈玛雅）双匹配。"><title>搜索 · 江湖图志</title><link rel="icon" type="image/svg+xml" href="/wuxia-atlas/favicon.svg"><link rel="llms" href="/wuxia-atlas/llms.txt"><script src="/wuxia-atlas/atlas-api.js"></script><style>:root{--paper: #f5efe4;--paper-deep: #ece2cf;--ink: #2b2b2b;--ink-light: #5a544a;--ink-faint: #8c8477;--seal: #a63a2b;--seal-deep: #7f2c21;--azure: #34546e;--gold: #b8860b;--jade: #5e7d5a;--ghost: #b9b1a2;--line: #d8cdb8;--line-strong: #b9ab90;--shadow: 0 1px 3px rgba(43, 43, 43, .08);--tier-绝顶: var(--gold);--tier-超一流: var(--seal);--tier-一流: var(--azure);--tier-二流: var(--ink-light);--tier-三流: var(--ghost);--font-body: "LXGW WenKai", "LXGW WenKai Screen", "Noto Serif SC", "Source Han Serif SC", "SimSun", serif;--font-title: "Noto Serif SC", "Source Han Serif SC", "LXGW WenKai", serif;--font-mono: "JetBrains Mono", "Cascadia Code", Consolas, monospace;--measure: 72ch;--radius: 6px;--space-1: .25rem;--space-2: .5rem;--space-3: 1rem;--space-4: 1.5rem;--space-5: 2.5rem;--space-6: 4rem}html{background:var(--paper)}body{margin:0;font-family:var(--font-body);color:var(--ink);line-height:1.85;background:radial-gradient(ellipse at top,rgba(255,255,255,.5),transparent 60%),var(--paper)}html,body{max-width:100%;overflow-x:hidden}h1,h2,h3{font-family:var(--font-title);line-height:1.4}a{color:var(--azure);text-decoration:none}a:hover{color:var(--seal)}code,.loc{font-family:var(--font-mono);font-size:.92em}code{overflow-wrap:anywhere}.loc{color:var(--ink-faint);border-bottom:1px dotted var(--ghost);cursor:help}.card{background:#ffffff8c;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:var(--space-4)}.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}.badge{display:inline-block;padding:.1em .45em;border:1.5px solid currentColor;border-radius:3px;font-size:.82em;line-height:1.5;transform:rotate(-1.2deg)}.badge-todo{color:var(--ghost)}.badge-lit{color:var(--jade)}.badge-cross{color:var(--seal)}
+.search-hero[data-astro-cid-ipsxrsrh]{margin-bottom:var(--space-5)}.lead[data-astro-cid-ipsxrsrh]{color:var(--ink-light);max-width:var(--measure)}.lead[data-astro-cid-ipsxrsrh] code[data-astro-cid-ipsxrsrh]{font-family:var(--font-mono);font-size:.88em;background:var(--paper-deep);padding:0 .25em;border-radius:3px}.search-form[data-astro-cid-ipsxrsrh]{display:flex;gap:var(--space-2);margin:var(--space-4) 0 var(--space-2)}.search-form[data-astro-cid-ipsxrsrh] input[data-astro-cid-ipsxrsrh]{flex:1;min-width:0;padding:.6em .8em;font-family:var(--font-body);font-size:1.05rem;color:var(--ink);background:#fffdf8;border:1px solid var(--line-strong);border-radius:var(--radius)}.search-form[data-astro-cid-ipsxrsrh] input[data-astro-cid-ipsxrsrh]:focus{outline:2px solid var(--azure);outline-offset:1px}.search-form[data-astro-cid-ipsxrsrh] button[data-astro-cid-ipsxrsrh]{padding:.6em 1.1em;font-family:var(--font-title);font-size:1rem;color:#fffdf8;background:var(--seal);border:0;border-radius:var(--radius);cursor:pointer}.search-form[data-astro-cid-ipsxrsrh] button[data-astro-cid-ipsxrsrh]:hover{background:var(--seal-deep)}.status[data-astro-cid-ipsxrsrh]{margin:var(--space-2) 0 0;font-size:.9rem}.results[data-astro-cid-ipsxrsrh]{list-style:none;padding:0;margin:var(--space-3) 0 0}.result[data-astro-cid-ipsxrsrh]{border-top:1px solid var(--line);padding:var(--space-3) 0}.result-head[data-astro-cid-ipsxrsrh]{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--space-2)}.result-head[data-astro-cid-ipsxrsrh] a[data-astro-cid-ipsxrsrh]{font-family:var(--font-title);font-size:1.12rem;font-weight:700;color:var(--azure)}.kind[data-astro-cid-ipsxrsrh]{font-size:.78rem;color:var(--ink-faint);border:1px solid var(--line);border-radius:999px;padding:0 .5em}.canon[data-astro-cid-ipsxrsrh]{font-size:.82rem;color:var(--ink-faint)}.result-summary[data-astro-cid-ipsxrsrh]{margin:.2em 0 0;color:var(--ink-light);font-size:.95rem}.result[data-astro-cid-ipsxrsrh] mark[data-astro-cid-ipsxrsrh],.pagefind-ui__result-excerpt mark{background:#a63a2b29;color:var(--seal);padding:0 .1em}.empty[data-astro-cid-ipsxrsrh]{color:var(--ink-faint)}.sr-only[data-astro-cid-ipsxrsrh]{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}#pagefind-section[data-astro-cid-ipsxrsrh]{margin-top:var(--space-6)}.pagefind-ui__search-input{font-family:var(--font-body);border-color:var(--line-strong);border-radius:var(--radius)}.pagefind-ui__search-clear{color:var(--ink-faint)}.pagefind-ui__result-link{color:var(--azure);font-weight:700}
+.site-header[data-astro-cid-5hce7sga]{display:flex;align-items:baseline;justify-content:space-between;padding:var(--space-3) var(--space-5);border-bottom:2px solid var(--line-strong)}.brand[data-astro-cid-5hce7sga]{font-family:var(--font-title);font-size:1.35rem;font-weight:700;color:var(--seal)}nav[data-astro-cid-5hce7sga]{display:flex;gap:var(--space-4)}nav[data-astro-cid-5hce7sga] a[data-astro-cid-5hce7sga]{color:var(--ink-light)}nav[data-astro-cid-5hce7sga] a[data-astro-cid-5hce7sga].on,nav[data-astro-cid-5hce7sga] a[data-astro-cid-5hce7sga][aria-current=page]{color:var(--seal);font-weight:700}main[data-astro-cid-5hce7sga]{max-width:960px;margin:0 auto;padding:var(--space-5) var(--space-4) var(--space-6)}.site-footer[data-astro-cid-5hce7sga]{border-top:1px solid var(--line);padding:var(--space-4) var(--space-5);color:var(--ink-faint);font-size:.88rem}.fine[data-astro-cid-5hce7sga]{font-size:.8rem}@media(max-width:768px){.site-header[data-astro-cid-5hce7sga]{flex-wrap:wrap;align-items:center;gap:4px 16px;padding:var(--space-3) var(--space-4)}.brand[data-astro-cid-5hce7sga]{flex:0 0 auto;white-space:nowrap}nav[data-astro-cid-5hce7sga]{flex:1 0 100%;display:flex;gap:18px;overflow-x:auto;padding:2px var(--space-4) 8px;margin:0 calc(-1 * var(--space-4));-webkit-overflow-scrolling:touch;scrollbar-width:none}nav[data-astro-cid-5hce7sga]::-webkit-scrollbar{display:none}nav[data-astro-cid-5hce7sga] a[data-astro-cid-5hce7sga]{flex:0 0 auto;white-space:nowrap;font-size:.95rem;min-height:40px;display:inline-flex;align-items:center;padding:0 2px}main[data-astro-cid-5hce7sga]{padding-left:var(--space-3);padding-right:var(--space-3)}.site-footer[data-astro-cid-5hce7sga]{padding-left:var(--space-4);padding-right:var(--space-4)}}
+</style></head> <body data-astro-cid-5hce7sga> <header class="site-header" data-astro-cid-5hce7sga> <a class="brand" href="/wuxia-atlas/" data-astro-cid-5hce7sga>江湖图志</a> <nav aria-label="主导航" data-astro-cid-5hce7sga> <a href="/wuxia-atlas/books" data-astro-cid-5hce7sga> 作品 </a><a href="/wuxia-atlas/universe" data-astro-cid-5hce7sga> 宇宙 </a><a href="/wuxia-atlas/characters" data-astro-cid-5hce7sga> 人物 </a><a href="/wuxia-atlas/arts" data-astro-cid-5hce7sga> 武功 </a><a href="/wuxia-atlas/weapons" data-astro-cid-5hce7sga> 名物 </a><a href="/wuxia-atlas/sects" data-astro-cid-5hce7sga> 门派 </a><a href="/wuxia-atlas/atlas" data-astro-cid-5hce7sga> 地图 </a><a href="/wuxia-atlas/ratings" data-astro-cid-5hce7sga> 武评 </a><a href="/wuxia-atlas/games" data-astro-cid-5hce7sga> 游戏 </a><a href="/wuxia-atlas/search" class="on" aria-current="page" data-astro-cid-5hce7sga> 搜索 </a><a href="/wuxia-atlas/about" data-astro-cid-5hce7sga> 关于 </a> </nav> </header> <main data-astro-cid-5hce7sga>  <section class="search-hero" data-astro-cid-ipsxrsrh> <h1 data-astro-cid-ipsxrsrh>搜索</h1> <p class="lead" data-astro-cid-ipsxrsrh>
+输入人物、作品、武功、门派、回目或地名。人物支持<b data-astro-cid-ipsxrsrh>展示名与规范名双匹配</b>：
+      「康熙」与「玄烨」、「飞红巾」与「哈玛雅」都会命中同一页。数据来自
+<code data-astro-cid-ipsxrsrh>data/search-index.json</code>（构建时由 <code data-astro-cid-ipsxrsrh>build_search_index.py</code> 从站点 HTML 生成）。
+</p> <form id="search-form" class="search-form" role="search" autocomplete="off" data-astro-cid-ipsxrsrh> <label class="sr-only" for="q" data-astro-cid-ipsxrsrh>搜索关键词</label> <input id="q" type="search" name="q" placeholder="搜索人物、武功、门派、回目……" enterkeyhint="search" data-astro-cid-ipsxrsrh> <button type="submit" data-astro-cid-ipsxrsrh>搜索</button> </form> <p id="search-status" class="status dim" role="status" aria-live="polite" data-astro-cid-ipsxrsrh>正在加载索引……</p> </section> <section id="results-section" hidden data-astro-cid-ipsxrsrh> <h2 data-astro-cid-ipsxrsrh>结果</h2> <ol id="results" class="results" data-astro-cid-ipsxrsrh></ol> </section> <section id="pagefind-section" hidden data-astro-cid-ipsxrsrh> <h2 data-astro-cid-ipsxrsrh>全文检索（Pagefind，可选）</h2> <p class="dim" data-astro-cid-ipsxrsrh>
+本站在构建时若额外生成了 Pagefind 索引（<code data-astro-cid-ipsxrsrh>npm run pagefind</code> 或
+<code data-astro-cid-ipsxrsrh>python scripts/build_search_index.py --pagefind</code>），可用下方全文检索检索正文段落；
+      未生成时上方 JSON 搜索已覆盖全部页面。
+</p> <div id="pagefind-search" data-astro-cid-ipsxrsrh></div> </section> <script>(function(){const B = "/wuxia-atlas/";
+
+    (function () {
+      'use strict';
+      // base 由 define:vars 注入（构建期 BASE_URL）；不要再在此声明 var B（会提升遮蔽参数）。
+      var form = document.getElementById('search-form');
+      var input = document.getElementById('q');
+      var statusEl = document.getElementById('search-status');
+      var listEl = document.getElementById('results');
+      var resultsSection = document.getElementById('results-section');
+      var pfSection = document.getElementById('pagefind-section');
+      if (!form || !input || !listEl) return;
+
+      var ENTRIES = null;
+      var TYPE_LABEL = {
+        characters: '人物', books: '作品', arts: '武功', weapons: '名物', sects: '门派',
+        chapters: '回目', ratings: '武评', universe: '宇宙', atlas: '地图', games: '游戏',
+        qa: '问答', about: '关于', stories: '故事', page: '页面', places: '地名'
+      };
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
       }
-    });
-  </script>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <p data-astro-cid-5hce7sga>
+      function tokens(q) {
+        return String(q || '').trim().split(/\s+/).filter(Boolean);
+      }
+      function fields(e) {
+        return [e.display, e.canonical, e.title].concat(e.aliases || []);
+      }
+      function scoreOne(e, tok) {
+        var fs = fields(e), best = 0;
+        for (var i = 0; i < fs.length; i++) {
+          var f = String(fs[i] == null ? '' : fs[i]);
+          if (!f) continue;
+          if (f === tok) best = Math.max(best, 120);
+          else if (f.indexOf(tok) === 0) best = Math.max(best, 90);
+          else if (f.indexOf(tok) >= 0) best = Math.max(best, 60);
+        }
+        var sum = String(e.summary || '');
+        if (sum.indexOf(tok) >= 0) best = Math.max(best, 25);
+        return best;
+      }
+      function score(e, toks) {
+        var total = 0;
+        for (var i = 0; i < toks.length; i++) {
+          var s = scoreOne(e, toks[i]);
+          if (!s) return 0;
+          total += s;
+        }
+        return total;
+      }
+      function search(q, limit) {
+        if (!ENTRIES) return [];
+        var toks = tokens(q);
+        if (!toks.length) return [];
+        var hit = [];
+        for (var i = 0; i < ENTRIES.length; i++) {
+          var e = ENTRIES[i];
+          var s = score(e, toks);
+          if (s > 0) hit.push([s, e]);
+        }
+        if (!hit.length) { // AND 无结果 → 单词 OR 兜底
+          for (var j = 0; j < ENTRIES.length; j++) {
+            var e2 = ENTRIES[j], best = 0;
+            for (var k = 0; k < toks.length; k++) best = Math.max(best, scoreOne(e2, toks[k]));
+            if (best > 0) hit.push([best, e2]);
+          }
+        }
+        hit.sort(function (a, b) {
+          if (b[0] !== a[0]) return b[0] - a[0];
+          if (a[1].type !== b[1].type) return a[1].type < b[1].type ? -1 : 1;
+          return a[1].url < b[1].url ? -1 : 1;
+        });
+        return hit.slice(0, limit || 40).map(function (x) { return x[1]; });
+      }
+      function highlight(text, toks) {
+        var out = esc(text);
+        toks.forEach(function (t) {
+          var re = new RegExp(esc(t).replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi');
+          out = out.replace(re, function (m) { return '<mark>' + m + '</mark>'; });
+        });
+        return out;
+      }
+      function renderHit(e, toks) {
+        var href = B + e.url;
+        var kind = TYPE_LABEL[e.type] || e.type;
+        var canon = (e.canonical && e.canonical !== e.display)
+          ? '<span class="canon">规范名：' + esc(e.canonical) + '</span>' : '';
+        return '<li class="result">' +
+          '<div class="result-head"><a href="' + esc(href) + '">' + highlight(e.display || e.title, toks) + '</a>' +
+          '<span class="kind">' + esc(kind) + '</span>' + canon + '</div>' +
+          '<p class="result-summary">' + highlight(e.summary || '', toks) + '</p>' +
+          '</li>';
+      }
+      function render() {
+        if (!ENTRIES) return;
+        var q = input.value;
+        var url = new URL(location.href);
+        if (q) url.searchParams.set('q', q); else url.searchParams.delete('q');
+        history.replaceState(null, '', url);
+        resultsSection.hidden = false;
+        if (!tokens(q).length) {
+          listEl.innerHTML = '';
+          statusEl.textContent = '索引 ' + ENTRIES.length + ' 条 · 可搜索人物 / 作品 / 武功 / 门派 / 回目';
+          return;
+        }
+        var hits = search(q, 40);
+        var toks = tokens(q);
+        statusEl.textContent = hits.length + ' 条结果';
+        if (!hits.length) {
+          listEl.innerHTML = '<li class="empty">没有匹配项，试试缩短关键词或换用规范名/展示名。</li>';
+          return;
+        }
+        listEl.innerHTML = hits.map(function (e) { return renderHit(e, toks); }).join('');
+      }
+
+      async function loadIndex() {
+        try {
+          var r = await fetch(B + 'data/search-index.json', { cache: 'no-cache' });
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          var data = await r.json();
+          ENTRIES = data.entries || [];
+          var gen = (data.meta && data.meta.generated) || '';
+          var pf = (data.meta && data.meta.pagefind) || {};
+          var pfOn = !!(pf && (pf.ok || pf.available));
+          window.__wuxiaIndex = { entries: ENTRIES.length, generated: gen, pagefind: pfOn };
+          window.__wuxiaSearch = function (q) {
+            return search(q, 40).map(function (e) { return { url: e.url, display: e.display, canonical: e.canonical, type: e.type }; });
+          };
+          statusEl.textContent = '索引 ' + ENTRIES.length + ' 条' + (gen ? ' · ' + gen : '');
+          var initQ = new URLSearchParams(location.search).get('q') || '';
+          if (initQ) { input.value = initQ; }
+          render();
+          if (pfOn) enhancePagefind();
+        } catch (err) {
+          statusEl.textContent = '搜索索引加载失败：请先运行 python scripts/build_search_index.py（' + err.message + '）';
+          window.__wuxiaIndex = { error: String(err) };
+        }
+      }
+
+      async function enhancePagefind() {
+        try {
+          // Pagefind 1.5+ 采用 Component UI：<pagefind-config base-url> 可正确支持 /wuxia-atlas/ 子路径。
+          var probe = await fetch(B + 'pagefind/pagefind-component-ui.js', { cache: 'force-cache' });
+          if (!probe.ok) return;
+          var css = document.createElement('link');
+          css.rel = 'stylesheet';
+          css.href = B + 'pagefind/pagefind-component-ui.css';
+          document.head.appendChild(css);
+          var holder = document.getElementById('pagefind-search');
+          if (!holder) return;
+          holder.innerHTML =
+            '<pagefind-config base-url="' + B + '" bundle-path="' + B + 'pagefind/"></pagefind-config>' +
+            '<pagefind-input placeholder="全文检索（含正文段落）……"></pagefind-input>' +
+            '<pagefind-results></pagefind-results>';
+          var js = document.createElement('script');
+          js.src = B + 'pagefind/pagefind-component-ui.js';
+          js.onload = function () { pfSection.hidden = false; };
+          js.onerror = function () { pfSection.hidden = true; };
+          document.head.appendChild(js);
+        } catch (e) { /* 无 Pagefind 索引：JSON 搜索兜底 */ }
+      }
+
+      form.addEventListener('submit', function (ev) { ev.preventDefault(); render(); });
+      var timer = null;
+      input.addEventListener('input', function () {
+        clearTimeout(timer);
+        timer = setTimeout(render, 120);
+      });
+      loadIndex();
+    })();
+  })();</script>  </main> <footer class="site-footer" data-astro-cid-5hce7sga> <p data-astro-cid-5hce7sga>
 本站为基于原著图谱数据的原创研究站点，严格限于小说文本、不做史料考证；
         引用内容（定位符与短引文）版权归原作权利人所有。数据版本见 <a href="/wuxia-atlas/about" data-astro-cid-5hce7sga>关于页</a>。
 </p> <p class="fine" data-astro-cid-5hce7sga>© 2026 江湖图志 · 图谱层内容以 CC BY-NC-SA 授权转载，语料层仅限本地。</p> </footer> </body></html> 

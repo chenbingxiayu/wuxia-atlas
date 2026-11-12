@@ -1,0 +1,1704 @@
+{
+ "meta": {
+  "schema": "audit-r1-v1",
+  "generated": "2026-11-06",
+  "caliber": "宽松核验（verb∈{杀,诛,毙}；首死为准）——严格断言版见 audit.json C4",
+  "books": [
+   "白发魔女传",
+   "塞外奇侠传",
+   "七剑下天山",
+   "江湖三女侠"
+  ],
+  "groups_filtered": 105,
+  "consumers": [
+   "games killer 过滤（仅 passes）",
+   "qa killer 存疑标注",
+   "武评败方归属辅助"
+  ]
+ },
+ "totals": {
+  "deaths_persons": 51,
+  "ambiguous": 44,
+  "passes": 7,
+  "events_scanned_books": 4
+ },
+ "ambiguous": [
+  {
+   "name": "练霓裳",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "004:33",
+    "by": "郑洪台等七人"
+   },
+   "after_n": 435,
+   "deaths_n": 4,
+   "live_n": 410,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "004:35",
+     "v": "刺伤",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "004:35",
+     "v": "扑",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "004:37",
+     "v": "刺",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "004:39",
+     "v": "削",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "004:39",
+     "v": "抛",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "岳鸣珂",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "011:35",
+    "by": null
+   },
+   "after_n": 127,
+   "deaths_n": 2,
+   "live_n": 121,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "011:37",
+     "v": "削",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "011:37",
+     "v": "点",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "011:37",
+     "v": "刺",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "011:39",
+     "v": "刺",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "011:39",
+     "v": "割",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "了因",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "010:5",
+    "by": "易兰珠"
+   },
+   "after_n": 119,
+   "deaths_n": 1,
+   "live_n": 117,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "010:13",
+     "v": "打",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "010:13",
+     "v": "缠",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "011:93",
+     "v": "擒",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "011:93",
+     "v": "点",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "014:89",
+     "v": "抓",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "卓一航",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "014:69",
+    "by": null
+   },
+   "after_n": 77,
+   "deaths_n": 1,
+   "live_n": 72,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "015:35",
+     "v": "扯",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "015:37",
+     "v": "斗",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "015:37",
+     "v": "斗",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "015:49",
+     "v": "发",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "016:9",
+     "v": "指定",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "年羹尧",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "021:9",
+    "by": "本无大师"
+   },
+   "after_n": 55,
+   "deaths_n": 3,
+   "live_n": 45,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "021:11",
+     "v": "掷",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "021:13",
+     "v": "打",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "023:135",
+     "v": "歼",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "023:135",
+     "v": "杀",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "023:135",
+     "v": "擒",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "易兰珠",
+   "death": {
+    "book": "七剑下天山",
+    "loc": "029:71",
+    "by": null
+   },
+   "after_n": 43,
+   "deaths_n": 3,
+   "live_n": 41,
+   "samples": [
+    {
+     "book": "七剑下天山",
+     "loc": "029:75",
+     "v": "斗",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "009:7",
+     "v": "传",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "009:13",
+     "v": "刺",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "009:23",
+     "v": "扫断",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "009:31",
+     "v": "拜师",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "毒龙尊者",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "036:47",
+    "by": null
+   },
+   "after_n": 36,
+   "deaths_n": 1,
+   "live_n": 36,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "036:55",
+     "v": "点",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "036:55",
+     "v": "刺",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "036:57",
+     "v": "拍",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "036:57",
+     "v": "点",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "036:57",
+     "v": "崩砸",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "海云和尚",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "028:81",
+    "by": "李治"
+   },
+   "after_n": 32,
+   "deaths_n": 1,
+   "live_n": 32,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "028:83",
+     "v": "刺",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "028:83",
+     "v": "点",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "028:95",
+     "v": "挑断",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "029:27",
+     "v": "厮杀",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "029:31",
+     "v": "厮杀",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "周青",
+   "death": {
+    "book": "七剑下天山",
+    "loc": "029:59",
+    "by": "成天挺"
+   },
+   "after_n": 32,
+   "deaths_n": 1,
+   "live_n": 30,
+   "samples": [
+    {
+     "book": "七剑下天山",
+     "loc": "029:87",
+     "v": "了结",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "001:109",
+     "v": "抛",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "001:123",
+     "v": "刺",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "001:123",
+     "v": "射",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "001:125",
+     "v": "杀",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "多铎",
+   "death": {
+    "book": "七剑下天山",
+    "loc": "001:87",
+    "by": "通明和尚"
+   },
+   "after_n": 31,
+   "deaths_n": 2,
+   "live_n": 27,
+   "samples": [
+    {
+     "book": "七剑下天山",
+     "loc": "001:89",
+     "v": "打",
+     "role": "object"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "001:91",
+     "v": "劈",
+     "role": "object"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "001:91",
+     "v": "斩",
+     "role": "object"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "001:101",
+     "v": "射",
+     "role": "object"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "001:105",
+     "v": "灭",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "本无大师",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "020:111",
+    "by": "董巨川"
+   },
+   "after_n": 26,
+   "deaths_n": 2,
+   "live_n": 23,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "020:113",
+     "v": "拂",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "020:113",
+     "v": "震",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "020:113",
+     "v": "拂",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "020:113",
+     "v": "射",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "020:113",
+     "v": "进击",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "纳兰明慧",
+   "death": {
+    "book": "塞外奇侠传",
+    "loc": "015:21",
+    "by": null
+   },
+   "after_n": 25,
+   "deaths_n": 2,
+   "live_n": 21,
+   "samples": [
+    {
+     "book": "塞外奇侠传",
+     "loc": "024:5",
+     "v": "削",
+     "role": "subject"
+    },
+    {
+     "book": "塞外奇侠传",
+     "loc": "024:5",
+     "v": "斩",
+     "role": "object"
+    },
+    {
+     "book": "塞外奇侠传",
+     "loc": "024:5",
+     "v": "击",
+     "role": "subject"
+    },
+    {
+     "book": "塞外奇侠传",
+     "loc": "024:7",
+     "v": "抓",
+     "role": "object"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "000:47",
+     "v": "打",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "唐金峰",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "032:9",
+    "by": null
+   },
+   "after_n": 23,
+   "deaths_n": 2,
+   "live_n": 21,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "032:35",
+     "v": "斗",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:41",
+     "v": "劈",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:73",
+     "v": "打",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:77",
+     "v": "射",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:79",
+     "v": "伤",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "白石道人",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "014:67",
+    "by": "公孙大娘"
+   },
+   "after_n": 19,
+   "deaths_n": 2,
+   "live_n": 18,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "014:69",
+     "v": "挑",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "014:69",
+     "v": "戮",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "014:69",
+     "v": "掷",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "015:57",
+     "v": "打",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "015:83",
+     "v": "打",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "邝琏",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "038:35",
+    "by": "冯瑛"
+   },
+   "after_n": 17,
+   "deaths_n": 1,
+   "live_n": 16,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "038:83",
+     "v": "追捕",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "038:89",
+     "v": "点",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "038:91",
+     "v": "点打",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "038:91",
+     "v": "震",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "038:93",
+     "v": "刺",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "应修阳",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "010:91",
+    "by": "岳鸣珂"
+   },
+   "after_n": 15,
+   "deaths_n": 1,
+   "live_n": 15,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "011:33",
+     "v": "跳",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "011:33",
+     "v": "卷",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "011:33",
+     "v": "削",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "011:35",
+     "v": "刺",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "011:35",
+     "v": "卷",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "铁珊瑚",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "013:73",
+    "by": "练霓裳"
+   },
+   "after_n": 15,
+   "deaths_n": 1,
+   "live_n": 15,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "013:77",
+     "v": "跑",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "013:87",
+     "v": "冲",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "013:89",
+     "v": "飞",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "019:27",
+     "v": "杀",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "019:47",
+     "v": "点",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "慕容冲",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "020:83",
+    "by": "岳鸣珂"
+   },
+   "after_n": 14,
+   "deaths_n": 3,
+   "live_n": 14,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "020:139",
+     "v": "杀",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "020:151",
+     "v": "杀",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "023:139",
+     "v": "掷",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "024:25",
+     "v": "抓",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "024:25",
+     "v": "打",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "玄真",
+   "death": {
+    "book": "七剑下天山",
+    "loc": "027:67",
+    "by": "桂仲明"
+   },
+   "after_n": 13,
+   "deaths_n": 2,
+   "live_n": 13,
+   "samples": [
+    {
+     "book": "七剑下天山",
+     "loc": "027:69",
+     "v": "斗",
+     "role": "object"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "027:87",
+     "v": "撞",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "027:91",
+     "v": "刺伤",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "027:91",
+     "v": "战",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "027:103",
+     "v": "撩",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "神大元",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "027:119",
+    "by": "王照希"
+   },
+   "after_n": 11,
+   "deaths_n": 1,
+   "live_n": 11,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "027:127",
+     "v": "杀",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:143",
+     "v": "勾撕",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:143",
+     "v": "击",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:153",
+     "v": "抓",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:153",
+     "v": "抓",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "李思永",
+   "death": {
+    "book": "七剑下天山",
+    "loc": "022:61",
+    "by": "成天挺"
+   },
+   "after_n": 11,
+   "deaths_n": 2,
+   "live_n": 11,
+   "samples": [
+    {
+     "book": "七剑下天山",
+     "loc": "023:17",
+     "v": "扫去",
+     "role": "object"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "023:17",
+     "v": "摔上半空",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "023:21",
+     "v": "推",
+     "role": "object"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "023:53",
+     "v": "打",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "023:57",
+     "v": "夹断",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "甘天龙",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "012:31",
+    "by": "吕四娘"
+   },
+   "after_n": 10,
+   "deaths_n": 1,
+   "live_n": 10,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "012:83",
+     "v": "刺",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "012:83",
+     "v": "击落",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "013:17",
+     "v": "袭",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "013:17",
+     "v": "插",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "023:11",
+     "v": "打",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "武琼瑶",
+   "death": {
+    "book": "七剑下天山",
+    "loc": "025:133",
+    "by": "刘郁芳"
+   },
+   "after_n": 9,
+   "deaths_n": 1,
+   "live_n": 9,
+   "samples": [
+    {
+     "book": "七剑下天山",
+     "loc": "026:41",
+     "v": "斗",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "026:45",
+     "v": "动起手",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "027:101",
+     "v": "打下",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "027:103",
+     "v": "撩",
+     "role": "subject"
+    },
+    {
+     "book": "七剑下天山",
+     "loc": "027:107",
+     "v": "扎",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "方今明",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "023:147",
+    "by": "车辟邪"
+   },
+   "after_n": 8,
+   "deaths_n": 1,
+   "live_n": 8,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "023:151",
+     "v": "中",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "023:171",
+     "v": "踢",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "045:105",
+     "v": "掴",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "045:111",
+     "v": "恶斗",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "045:113",
+     "v": "戳",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "叶横波",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "028:37",
+    "by": "李治"
+   },
+   "after_n": 8,
+   "deaths_n": 1,
+   "live_n": 8,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "028:45",
+     "v": "拚斗",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:93",
+     "v": "刺",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:111",
+     "v": "传",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "033:109",
+     "v": "劈",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "033:111",
+     "v": "刺",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "额音和布",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "047:191",
+    "by": "吕四娘"
+   },
+   "after_n": 8,
+   "deaths_n": 1,
+   "live_n": 7,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "048:11",
+     "v": "中",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "048:57",
+     "v": "迫",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "048:59",
+     "v": "刺",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "048:67",
+     "v": "擒",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "048:67",
+     "v": "点",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "王照希",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "027:127",
+    "by": "神大元"
+   },
+   "after_n": 5,
+   "deaths_n": 1,
+   "live_n": 5,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "027:135",
+     "v": "捉拿",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:143",
+     "v": "刺",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:153",
+     "v": "抓",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:153",
+     "v": "抓",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:163",
+     "v": "剪",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "魏忠贤",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "011:105",
+    "by": null
+   },
+   "after_n": 6,
+   "deaths_n": 1,
+   "live_n": 4,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "012:101",
+     "v": "迫",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "013:81",
+     "v": "抢",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "028:39",
+     "v": "凌迟处死",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "028:51",
+     "v": "凌迟处死",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "钟万堂",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "024:13",
+    "by": "神魔双老"
+   },
+   "after_n": 11,
+   "deaths_n": 1,
+   "live_n": 4,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "025:25",
+     "v": "害",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "025:57",
+     "v": "传授",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "028:103",
+     "v": "惨死",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "030:25",
+     "v": "抢",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "王敖",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "028:43",
+    "by": "冯琳"
+   },
+   "after_n": 6,
+   "deaths_n": 3,
+   "live_n": 4,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "032:7",
+     "v": "杀",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:109",
+     "v": "斗",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:109",
+     "v": "中",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "032:109",
+     "v": "杀",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "公孙大娘",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "020:101",
+    "by": null
+   },
+   "after_n": 3,
+   "deaths_n": 1,
+   "live_n": 3,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "020:103",
+     "v": "撞",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "020:107",
+     "v": "自杀",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "025:31",
+     "v": "杀",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "秦中越",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "028:89",
+    "by": "冯琳"
+   },
+   "after_n": 4,
+   "deaths_n": 2,
+   "live_n": 3,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "028:91",
+     "v": "绞",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "028:91",
+     "v": "削断",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "028:93",
+     "v": "丧命",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "张天池",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "038:173",
+    "by": "冯瑛"
+   },
+   "after_n": 4,
+   "deaths_n": 1,
+   "live_n": 3,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "038:175",
+     "v": "刺穿",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "039:3",
+     "v": "刺",
+     "role": "object"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "039:83",
+     "v": "刺穿",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "吕四娘",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "048:79",
+    "by": "哈布陀"
+   },
+   "after_n": 3,
+   "deaths_n": 1,
+   "live_n": 3,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "048:83",
+     "v": "割",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "048:85",
+     "v": "杀",
+     "role": "subject"
+    },
+    {
+     "book": "江湖三女侠",
+     "loc": "048:111",
+     "v": "结婚",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "杨涟",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "014:33",
+    "by": null
+   },
+   "after_n": 2,
+   "deaths_n": 1,
+   "live_n": 2,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "022:191",
+     "v": "气绝",
+     "role": "subject"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "028:43",
+     "v": "斗",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "金独异",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "020:127",
+    "by": null
+   },
+   "after_n": 2,
+   "deaths_n": 3,
+   "live_n": 2,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "022:127",
+     "v": "杀",
+     "role": "object"
+    },
+    {
+     "book": "白发魔女传",
+     "loc": "027:133",
+     "v": "杀",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "李天扬",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "016:35",
+    "by": "李申时"
+   },
+   "after_n": 1,
+   "deaths_n": 1,
+   "live_n": 1,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "016:43",
+     "v": "打",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "客氏",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "027:41",
+    "by": null
+   },
+   "after_n": 1,
+   "deaths_n": 1,
+   "live_n": 1,
+   "samples": [
+    {
+     "book": "白发魔女传",
+     "loc": "028:39",
+     "v": "处死",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "天龙派",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "031:167",
+    "by": null
+   },
+   "after_n": 2,
+   "deaths_n": 1,
+   "live_n": 1,
+   "samples": [
+    {
+     "book": "塞外奇侠传",
+     "loc": "026:3",
+     "v": "夺",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "孟禄",
+   "death": {
+    "book": "塞外奇侠传",
+    "loc": "019:21",
+    "by": null
+   },
+   "after_n": 1,
+   "deaths_n": 1,
+   "live_n": 1,
+   "samples": [
+    {
+     "book": "七剑下天山",
+     "loc": "025:41",
+     "v": "擒住",
+     "role": "object"
+    }
+   ]
+  },
+  {
+   "name": "纽祜庐",
+   "death": {
+    "book": "七剑下天山",
+    "loc": "006:29",
+    "by": "杨云骢"
+   },
+   "after_n": 1,
+   "deaths_n": 1,
+   "live_n": 1,
+   "samples": [
+    {
+     "book": "七剑下天山",
+     "loc": "019:13",
+     "v": "刀伤",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "朗月禅师",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "004:45",
+    "by": "萨天剌"
+   },
+   "after_n": 1,
+   "deaths_n": 1,
+   "live_n": 1,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "046:57",
+     "v": "喷瞎",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "神魔双老",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "036:49",
+    "by": null
+   },
+   "after_n": 4,
+   "deaths_n": 1,
+   "live_n": 1,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "036:109",
+     "v": "杀害",
+     "role": "subject"
+    }
+   ]
+  },
+  {
+   "name": "富山",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "045:61",
+    "by": "年羹尧"
+   },
+   "after_n": 1,
+   "deaths_n": 2,
+   "live_n": 1,
+   "samples": [
+    {
+     "book": "江湖三女侠",
+     "loc": "045:83",
+     "v": "杀",
+     "role": "object"
+    }
+   ]
+  }
+ ],
+ "passes": [
+  {
+   "name": "卓继贤",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "005:3",
+    "by": "朱翊钧"
+   },
+   "after_n": 0,
+   "deaths_n": 1,
+   "note": "死后无提及"
+  },
+  {
+   "name": "熊廷弼",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "020:17",
+    "by": null
+   },
+   "after_n": 0,
+   "deaths_n": 1,
+   "note": "死后无提及"
+  },
+  {
+   "name": "穆九娘",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "025:45",
+    "by": null
+   },
+   "after_n": 0,
+   "deaths_n": 1,
+   "note": "死后无提及"
+  },
+  {
+   "name": "雷蒙法师",
+   "death": {
+    "book": "白发魔女传",
+    "loc": "029:155",
+    "by": "卓一航"
+   },
+   "after_n": 0,
+   "deaths_n": 1,
+   "note": "死后无提及"
+  },
+  {
+   "name": "纳兰秀吉",
+   "death": {
+    "book": "塞外奇侠传",
+    "loc": "019:19",
+    "by": null
+   },
+   "after_n": 1,
+   "deaths_n": 1,
+   "note": "死后提及全部为引述"
+  },
+  {
+   "name": "楚昭南",
+   "death": {
+    "book": "七剑下天山",
+    "loc": "029:75",
+    "by": null
+   },
+   "after_n": 2,
+   "deaths_n": 1,
+   "note": "死后提及全部为引述"
+  },
+  {
+   "name": "冯广潮",
+   "death": {
+    "book": "江湖三女侠",
+    "loc": "002:67",
+    "by": null
+   },
+   "after_n": 2,
+   "deaths_n": 1,
+   "note": "死后提及全部为引述"
+  }
+ ]
+}

@@ -1,0 +1,4105 @@
+{
+ "meta": {
+  "generated": "2026-11-12",
+  "schema": "atlas-slice-v1",
+  "book": "冰魄寒光剑",
+  "copyright": "L0 图谱层：仅定位符与结构化事实，不含摘录",
+  "source": "KB 标注层/struct + registry/concordance + registry/gazetteer + kb/作品元数据表（旧 site/data/atlas 只读兜底）",
+  "events_source": "empty",
+  "field_gaps": [
+   "events：新管线事件层（D03/EX-5）未上线，本表 events={}（冰魄寒光剑无历史事件表与事件产物；D03 未上线，不伪造）。",
+   "era/era_conf 来自 kb/作品元数据表（只读）；kb_status=待建/标注中的书其年代置信见 era_conf。",
+   "persons：registry/concordance @ 实体（新口径，n=出现次数、chaps=出现回号）；旧站人物键保留兜底（契约不丢键）。",
+   "places：registry/gazetteer N7 坐标层（loc_mode=coord）；冰魄寒光剑无历史坐标层，places 取自 concordance = 实体（无经纬度，lat/lng=null）。",
+   "bychap：tagged 实体令牌逐回生成（p=@人物、l=其余实体规范名）；旧站章节键保留兜底。",
+   "scope 口径（tianshan-demo）：本切片属 scope 书目（atlas 仅产 scope 书）；切片内容按本书圈定，无需再裁。"
+  ],
+  "scope": "tianshan-demo"
+ },
+ "title": "冰魄寒光剑",
+ "era": "清·康熙—雍正间（待考）",
+ "era_conf": "todo",
+ "chapters": 12,
+ "persons": {
+  "桂华生": {
+   "n": 1240,
+   "chaps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "桂仲明": {
+   "n": 3,
+   "chaps": [
+    1,
+    2,
+    3
+   ]
+  },
+  "晦明禅师": {
+   "n": 4,
+   "chaps": [
+    1,
+    11
+   ]
+  },
+  "唐晓澜": {
+   "n": 2,
+   "chaps": [
+    1,
+    6
+   ]
+  },
+  "冯瑛": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "唐赛花": {
+   "n": 8,
+   "chaps": [
+    1
+   ]
+  },
+  "唐灵": {
+   "n": 31,
+   "chaps": [
+    1
+   ]
+  },
+  "唐二先生": {
+   "n": 3,
+   "chaps": [
+    1
+   ]
+  },
+  "王敖": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "冯琳": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "年羹尧": {
+   "n": 29,
+   "chaps": [
+    1,
+    6
+   ]
+  },
+  "葛腾龙": {
+   "n": 41,
+   "chaps": [
+    1
+   ]
+  },
+  "雍正": {
+   "n": 18,
+   "chaps": [
+    1,
+    6
+   ]
+  },
+  "吕四娘": {
+   "n": 3,
+   "chaps": [
+    1,
+    6
+   ]
+  },
+  "曹操": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "唐公公": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "明太祖": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "崇祯皇帝": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "达赖五世": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "班禅四世": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "固始汗": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "和腾汗": {
+   "n": 1,
+   "chaps": [
+    1
+   ]
+  },
+  "麦士迦南": {
+   "n": 115,
+   "chaps": [
+    2,
+    3,
+    5,
+    8,
+    9
+   ]
+  },
+  "达摩祖师": {
+   "n": 4,
+   "chaps": [
+    2,
+    4,
+    9
+   ]
+  },
+  "达赖活佛": {
+   "n": 34,
+   "chaps": [
+    2,
+    3,
+    5,
+    8
+   ]
+  },
+  "达赖": {
+   "n": 1,
+   "chaps": [
+    2
+   ]
+  },
+  "班禅": {
+   "n": 2,
+   "chaps": [
+    2,
+    5
+   ]
+  },
+  "尼泊尔王子": {
+   "n": 55,
+   "chaps": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "藏灵上人": {
+   "n": 47,
+   "chaps": [
+    3,
+    4
+   ]
+  },
+  "易兰珠": {
+   "n": 4,
+   "chaps": [
+    3,
+    4
+   ]
+  },
+  "提摩达多": {
+   "n": 124,
+   "chaps": [
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "龙叶大师": {
+   "n": 33,
+   "chaps": [
+    3,
+    4,
+    6,
+    8,
+    9,
+    10
+   ]
+  },
+  "易老乞婆": {
+   "n": 1,
+   "chaps": [
+    3
+   ]
+  },
+  "梁武帝": {
+   "n": 1,
+   "chaps": [
+    3
+   ]
+  },
+  "龙叶上人": {
+   "n": 6,
+   "chaps": [
+    3,
+    6,
+    10
+   ]
+  },
+  "法显": {
+   "n": 1,
+   "chaps": [
+    3
+   ]
+  },
+  "玄奘": {
+   "n": 3,
+   "chaps": [
+    3,
+    6,
+    9
+   ]
+  },
+  "阿尼哥": {
+   "n": 2,
+   "chaps": [
+    3,
+    9
+   ]
+  },
+  "道圣国师": {
+   "n": 1,
+   "chaps": [
+    3
+   ]
+  },
+  "额尔都王子": {
+   "n": 2,
+   "chaps": [
+    3,
+    4
+   ]
+  },
+  "华玉": {
+   "n": 11,
+   "chaps": [
+    3,
+    4,
+    5,
+    6,
+    8,
+    11
+   ]
+  },
+  "白衣少女": {
+   "n": 82,
+   "chaps": [
+    4,
+    5,
+    8
+   ]
+  },
+  "冒浣莲": {
+   "n": 1,
+   "chaps": [
+    4
+   ]
+  },
+  "陶渊明": {
+   "n": 1,
+   "chaps": [
+    4
+   ]
+  },
+  "苏东坡": {
+   "n": 1,
+   "chaps": [
+    4
+   ]
+  },
+  "尼泊尔": {
+   "n": 4,
+   "chaps": [
+    4,
+    10,
+    11
+   ]
+  },
+  "赤神子": {
+   "n": 24,
+   "chaps": [
+    4
+   ]
+  },
+  "武琼瑶": {
+   "n": 5,
+   "chaps": [
+    4
+   ]
+  },
+  "白发魔女": {
+   "n": 1,
+   "chaps": [
+    4
+   ]
+  },
+  "松赞干布": {
+   "n": 1,
+   "chaps": [
+    5
+   ]
+  },
+  "唐太宗": {
+   "n": 1,
+   "chaps": [
+    5
+   ]
+  },
+  "李世民": {
+   "n": 1,
+   "chaps": [
+    5
+   ]
+  },
+  "文成公主": {
+   "n": 2,
+   "chaps": [
+    5
+   ]
+  },
+  "迦叶": {
+   "n": 1,
+   "chaps": [
+    5
+   ]
+  },
+  "尼泊尔国王": {
+   "n": 7,
+   "chaps": [
+    5,
+    8,
+    9,
+    10
+   ]
+  },
+  "白教法王": {
+   "n": 2,
+   "chaps": [
+    5
+   ]
+  },
+  "方今明": {
+   "n": 52,
+   "chaps": [
+    6
+   ]
+  },
+  "康熙": {
+   "n": 1,
+   "chaps": [
+    6
+   ]
+  },
+  "允禵": {
+   "n": 2,
+   "chaps": [
+    6
+   ]
+  },
+  "允禛": {
+   "n": 1,
+   "chaps": [
+    6
+   ]
+  },
+  "凌未风": {
+   "n": 2,
+   "chaps": [
+    6,
+    10
+   ]
+  },
+  "达摩禅师": {
+   "n": 1,
+   "chaps": [
+    6
+   ]
+  },
+  "雅德星": {
+   "n": 114,
+   "chaps": [
+    6,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "唐三藏": {
+   "n": 1,
+   "chaps": [
+    6
+   ]
+  },
+  "释迦牟尼": {
+   "n": 1,
+   "chaps": [
+    7
+   ]
+  },
+  "巴勃": {
+   "n": 142,
+   "chaps": [
+    7,
+    8,
+    9,
+    10,
+    11
+   ]
+  },
+  "李时珍": {
+   "n": 3,
+   "chaps": [
+    7,
+    9
+   ]
+  },
+  "傅青主": {
+   "n": 2,
+   "chaps": [
+    7
+   ]
+  },
+  "文殊菩萨": {
+   "n": 2,
+   "chaps": [
+    7
+   ]
+  },
+  "法持": {
+   "n": 1,
+   "chaps": [
+    7
+   ]
+  },
+  "赵朴初": {
+   "n": 1,
+   "chaps": [
+    7
+   ]
+  },
+  "皇上": {
+   "n": 1,
+   "chaps": [
+    7
+   ]
+  },
+  "红衣番僧": {
+   "n": 2,
+   "chaps": [
+    7
+   ]
+  },
+  "御林军总管": {
+   "n": 5,
+   "chaps": [
+    7
+   ]
+  },
+  "尼泊尔王": {
+   "n": 4,
+   "chaps": [
+    8,
+    9
+   ]
+  },
+  "雅得星": {
+   "n": 2,
+   "chaps": [
+    8
+   ]
+  },
+  "国王": {
+   "n": 47,
+   "chaps": [
+    8,
+    9,
+    10,
+    12
+   ]
+  },
+  "陛下": {
+   "n": 2,
+   "chaps": [
+    8
+   ]
+  },
+  "活佛": {
+   "n": 1,
+   "chaps": [
+    8
+   ]
+  },
+  "王子": {
+   "n": 5,
+   "chaps": [
+    8
+   ]
+  },
+  "印度王子": {
+   "n": 2,
+   "chaps": [
+    8
+   ]
+  },
+  "桂先生": {
+   "n": 2,
+   "chaps": [
+    8,
+    11
+   ]
+  },
+  "雅德星王子": {
+   "n": 14,
+   "chaps": [
+    8,
+    9
+   ]
+  },
+  "尼白尔": {
+   "n": 1,
+   "chaps": [
+    8
+   ]
+  },
+  "宛兰星": {
+   "n": 10,
+   "chaps": [
+    8,
+    11,
+    12
+   ]
+  },
+  "龙叶高僧": {
+   "n": 1,
+   "chaps": [
+    8
+   ]
+  },
+  "摩兰法师": {
+   "n": 24,
+   "chaps": [
+    8,
+    9
+   ]
+  },
+  "摩兰": {
+   "n": 3,
+   "chaps": [
+    8,
+    9
+   ]
+  },
+  "桂": {
+   "n": 1,
+   "chaps": [
+    8
+   ]
+  },
+  "雅": {
+   "n": 1,
+   "chaps": [
+    8
+   ]
+  },
+  "尼泊尔公主": {
+   "n": 2,
+   "chaps": [
+    9,
+    12
+   ]
+  },
+  "公主": {
+   "n": 56,
+   "chaps": [
+    9,
+    12
+   ]
+  },
+  "华玉公主": {
+   "n": 2,
+   "chaps": [
+    9
+   ]
+  },
+  "摩尔法师": {
+   "n": 1,
+   "chaps": [
+    9
+   ]
+  },
+  "法王": {
+   "n": 1,
+   "chaps": [
+    9
+   ]
+  },
+  "龙叶恩师": {
+   "n": 1,
+   "chaps": [
+    9
+   ]
+  },
+  "慧超法师": {
+   "n": 1,
+   "chaps": [
+    9
+   ]
+  },
+  "慧超": {
+   "n": 1,
+   "chaps": [
+    9
+   ]
+  },
+  "玄奘法师": {
+   "n": 1,
+   "chaps": [
+    9
+   ]
+  },
+  "玛清勒": {
+   "n": 3,
+   "chaps": [
+    9
+   ]
+  },
+  "哥拉拿": {
+   "n": 3,
+   "chaps": [
+    9
+   ]
+  },
+  "阿迦罗": {
+   "n": 20,
+   "chaps": [
+    10,
+    11
+   ]
+  },
+  "龙叶": {
+   "n": 2,
+   "chaps": [
+    10
+   ]
+  },
+  "阿迦罗大师": {
+   "n": 1,
+   "chaps": [
+    10
+   ]
+  },
+  "邓南遮": {
+   "n": 59,
+   "chaps": [
+    10,
+    11,
+    12
+   ]
+  },
+  "克雷斯": {
+   "n": 45,
+   "chaps": [
+    11,
+    12
+   ]
+  },
+  "拉汗图": {
+   "n": 27,
+   "chaps": [
+    11,
+    12
+   ]
+  },
+  "摩农": {
+   "n": 11,
+   "chaps": [
+    11
+   ]
+  },
+  "朗纳": {
+   "n": 10,
+   "chaps": [
+    11
+   ]
+  },
+  "哈巴德": {
+   "n": 11,
+   "chaps": [
+    11
+   ]
+  },
+  "柏拉图": {
+   "n": 2,
+   "chaps": [
+    11
+   ]
+  },
+  "海伦": {
+   "n": 1,
+   "chaps": [
+    11
+   ]
+  },
+  "阿波罗": {
+   "n": 2,
+   "chaps": [
+    11
+   ]
+  },
+  "尼泊尔武士拉汗图": {
+   "n": 1,
+   "chaps": [
+    12
+   ]
+  },
+  "丘比特": {
+   "n": 2,
+   "chaps": [
+    12
+   ]
+  },
+  "驸马": {
+   "n": 1,
+   "chaps": [
+    12
+   ]
+  }
+ },
+ "places": {
+  "昆仑": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    6
+   ]
+  },
+  "灵山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "天门": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "昆仑山脉": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "新疆": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "西藏": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "中国内陆": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "昆仑山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "念青唐古拉山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    4,
+    7,
+    12
+   ]
+  },
+  "天山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    3,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "尼泊尔": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    12
+   ]
+  },
+  "喜马拉雅山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    4,
+    6,
+    7,
+    8,
+    12
+   ]
+  },
+  "中国": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "四川": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "杭州": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    6
+   ]
+  },
+  "沙漠": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "魔鬼城": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+   ]
+  },
+  "青海": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    8
+   ]
+  },
+  "山峰": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "山谷": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    2,
+    9,
+    12
+   ]
+  },
+  "谷口": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    9
+   ]
+  },
+  "天山山脉": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1
+   ]
+  },
+  "拉萨": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    1,
+    2,
+    5
+   ]
+  },
+  "白塔": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2,
+    5
+   ]
+  },
+  "庙宇": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2
+   ]
+  },
+  "高塔": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2
+   ]
+  },
+  "圣庙": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2,
+    3
+   ]
+  },
+  "天竺": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2
+   ]
+  },
+  "印度": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2,
+    3,
+    4,
+    5,
+    7,
+    9,
+    11
+   ]
+  },
+  "雪峰": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2,
+    6
+   ]
+  },
+  "山腰": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2
+   ]
+  },
+  "盆地": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2
+   ]
+  },
+  "冰岩": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2
+   ]
+  },
+  "阿拉伯": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2,
+    3,
+    6
+   ]
+  },
+  "欧洲": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2,
+    6,
+    11
+   ]
+  },
+  "布达拉宫": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    2,
+    5,
+    6,
+    8
+   ]
+  },
+  "江南": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    3,
+    4,
+    6
+   ]
+  },
+  "边疆": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    3
+   ]
+  },
+  "麦加": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    3,
+    9
+   ]
+  },
+  "加德满都": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    3,
+    7,
+    10,
+    11,
+    12
+   ]
+  },
+  "德里": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    3
+   ]
+  },
+  "同泰寺": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    3
+   ]
+  },
+  "大殿": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    3,
+    5
+   ]
+  },
+  "庙门": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    3
+   ]
+  },
+  "冰窟": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4,
+    7,
+    9
+   ]
+  },
+  "珠穆朗玛峰": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4,
+    6,
+    8
+   ]
+  },
+  "天湖": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4,
+    6
+   ]
+  },
+  "腾格里海": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "纳木错": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "冰湖": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "玉女峰": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4,
+    6
+   ]
+  },
+  "冰坡": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4,
+    6
+   ]
+  },
+  "冰窖": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "寒玉岩": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "西天竺": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "雪山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "青藏": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "大雪山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "冰川": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "冰峰": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "北天山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "玉峰": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "冰崖": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    4
+   ]
+  },
+  "葡萄山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "布达拉山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "回廊": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5,
+    8
+   ]
+  },
+  "西藏高原": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "中国内地": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "不丹": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "锡金": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "帐篷": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "白寨": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "红寨": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "寝宫": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "静室": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5,
+    10
+   ]
+  },
+  "那烂陀寺": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "菩提树": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "宫顶": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "屋顶花园": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "喜马拉雅山脉": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    5
+   ]
+  },
+  "中尼边境": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    6
+   ]
+  },
+  "峨嵋": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    6
+   ]
+  },
+  "冰宫": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    6
+   ]
+  },
+  "中原": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    6
+   ]
+  },
+  "花圃": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    6
+   ]
+  },
+  "珠峰": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    6
+   ]
+  },
+  "王舍城": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    6,
+    9
+   ]
+  },
+  "塔拉伊地山区": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "兰毗尼园": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "酒楼": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "瑞扬布山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7,
+    9,
+    11,
+    12
+   ]
+  },
+  "宝塔": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "五台山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "巴马提河": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "城西": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "别墅": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "御花园": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7,
+    11
+   ]
+  },
+  "大厅": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7,
+    11
+   ]
+  },
+  "石阶": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "尼泊尔京城": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    7
+   ]
+  },
+  "瑞扬布拉山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8
+   ]
+  },
+  "皇城": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8
+   ]
+  },
+  "皇宫": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8,
+    12
+   ]
+  },
+  "宫门": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8,
+    9
+   ]
+  },
+  "王宫": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8,
+    9,
+    12
+   ]
+  },
+  "北京": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8,
+    12
+   ]
+  },
+  "庙塔": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8
+   ]
+  },
+  "后宫": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8
+   ]
+  },
+  "宫殿": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8
+   ]
+  },
+  "京城": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8,
+    9,
+    12
+   ]
+  },
+  "神庙": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    8
+   ]
+  },
+  "何德瓦峡口": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "瑞芝那山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "青海草原": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "古堡": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "峡谷": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "山泉": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "灵鹫山": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "恒河": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "宫中": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "深宫": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "家门": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "厅堂": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "莲花宝塔": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "勃提岗城": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9,
+    10
+   ]
+  },
+  "玛清勒寺": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9,
+    10
+   ]
+  },
+  "勃城": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    9
+   ]
+  },
+  "幽谷": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    10
+   ]
+  },
+  "深谷": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    10
+   ]
+  },
+  "洞穴": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    10
+   ]
+  },
+  "水洞口": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    10
+   ]
+  },
+  "清泉": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    10
+   ]
+  },
+  "勃提树城": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    10
+   ]
+  },
+  "铁索桥": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    10
+   ]
+  },
+  "幽谷寒泉": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    10
+   ]
+  },
+  "贵宾馆": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    11
+   ]
+  },
+  "夏何德河": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    11
+   ]
+  },
+  "房门": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    11
+   ]
+  },
+  "撒马尔罕": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    11
+   ]
+  },
+  "阿富汗": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    11
+   ]
+  },
+  "波斯": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    11
+   ]
+  },
+  "希腊": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    11
+   ]
+  },
+  "爱琴海": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    11
+   ]
+  },
+  "夏宫": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    12
+   ]
+  },
+  "佛寺": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    12
+   ]
+  },
+  "凉台": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    12
+   ]
+  },
+  "洞房": {
+   "real": null,
+   "lat": null,
+   "lng": null,
+   "precision": null,
+   "aliases": [],
+   "chaps": [
+    12
+   ]
+  }
+ },
+ "bychap": {
+  "1": {
+   "p": [
+    "桂华生",
+    "桂仲明",
+    "晦明禅师",
+    "唐晓澜",
+    "冯瑛",
+    "唐赛花",
+    "唐灵",
+    "唐二先生",
+    "王敖",
+    "冯琳",
+    "年羹尧",
+    "葛腾龙",
+    "雍正",
+    "吕四娘",
+    "曹操",
+    "唐公公",
+    "明太祖",
+    "崇祯皇帝",
+    "达赖五世",
+    "班禅四世",
+    "固始汗",
+    "和腾汗"
+   ],
+   "l": [
+    "昆仑",
+    "黑纹藤竹枝",
+    "灵山",
+    "天门",
+    "昆仑山脉",
+    "新疆",
+    "西藏",
+    "中国内陆",
+    "昆仑山",
+    "二十多岁",
+    "武当派",
+    "掌门人",
+    "天山七剑",
+    "天山派",
+    "前几年",
+    "念青唐古拉山",
+    "天山",
+    "尼泊尔",
+    "喜马拉雅山",
+    "天山剑法",
+    "剑法",
+    "天山剑术",
+    "中国",
+    "天近黄昏",
+    "藏人",
+    "藏民",
+    "书籍",
+    "香客",
+    "酒器",
+    "两个",
+    "水囊",
+    "四十来岁",
+    "十三四岁",
+    "四川",
+    "河南巡抚",
+    "总捕头",
+    "唐家",
+    "几手",
+    "征西大将军",
+    "武士",
+    "兵书",
+    "杭州",
+    "朝廷",
+    "沙漠",
+    "高手",
+    "天山雪莲",
+    "三朵",
+    "魔鬼城",
+    "剑",
+    "青海",
+    "几名",
+    "剑柄",
+    "清廷",
+    "爱新觉罗氏",
+    "一块",
+    "羊皮",
+    "剑尖",
+    "几行",
+    "书信",
+    "羊皮书",
+    "汗衣袋",
+    "山峰",
+    "一两次",
+    "炊烟",
+    "昨晚",
+    "山谷",
+    "穴道",
+    "几年",
+    "月亮东升",
+    "午夜时分",
+    "谷口",
+    "天山山脉",
+    "几个",
+    "十丈",
+    "两排",
+    "两幢",
+    "两瓣",
+    "雪莲花瓣",
+    "三派",
+    "清朝以前",
+    "清代",
+    "明朝时候",
+    "明末",
+    "蒙古族",
+    "一百余年",
+    "几位",
+    "拉萨",
+    "一阵",
+    "解药",
+    "内功",
+    "片刻"
+   ]
+  },
+  "2": {
+   "p": [
+    "桂华生",
+    "麦士迦南",
+    "达摩祖师",
+    "桂仲明",
+    "达赖活佛",
+    "达赖",
+    "班禅",
+    "尼泊尔王子"
+   ],
+   "l": [
+    "阿修罗花",
+    "天山雪莲",
+    "佛国记",
+    "魔鬼城",
+    "白塔",
+    "庙宇",
+    "高塔",
+    "两个",
+    "武士",
+    "轻功",
+    "白鹤冲天",
+    "琉璃瓦",
+    "佛像",
+    "明珠",
+    "大红袍",
+    "僧侣",
+    "三个",
+    "官吏",
+    "藩王",
+    "王子",
+    "三家",
+    "骷髅头",
+    "骷髅头酒器",
+    "中国",
+    "法王",
+    "喇嘛",
+    "两人",
+    "这些年来",
+    "百余年来",
+    "骷髅酒器",
+    "酒器",
+    "九环锡杖",
+    "两串",
+    "金珠",
+    "金色佛像",
+    "西藏",
+    "圣庙",
+    "月牙弯刀",
+    "锡杖",
+    "刀锋",
+    "杖法",
+    "伏魔杖法",
+    "中宫",
+    "天竺",
+    "少林派",
+    "印度",
+    "尼泊尔",
+    "内家掌法",
+    "太极手法",
+    "内功",
+    "功力",
+    "掌力",
+    "半个时辰",
+    "武当派",
+    "怀中抱月",
+    "几点",
+    "暗器",
+    "一颗",
+    "数十颗",
+    "高手",
+    "两刀",
+    "法杖",
+    "两朵",
+    "碎瓦",
+    "内家真力",
+    "腾蛟宝剑",
+    "天山七剑",
+    "雪峰",
+    "山腰",
+    "内伤",
+    "穴道",
+    "盆地",
+    "喷泉",
+    "花朵",
+    "山谷",
+    "真力",
+    "天枢穴",
+    "经脉",
+    "达摩真经",
+    "解穴功夫",
+    "点穴手法",
+    "点穴功夫",
+    "子午流闭血法",
+    "闭气诀",
+    "点穴法",
+    "一粒",
+    "石子",
+    "冰岩",
+    "王位",
+    "阿拉伯",
+    "欧洲",
+    "婆罗教",
+    "几年",
+    "满清",
+    "驻藏大臣",
+    "白教",
+    "秘籍",
+    "密宗",
+    "梵文",
+    "黄教",
+    "前任法王派出了那两个使者的第二天",
+    "拉萨",
+    "金佛",
+    "信物",
+    "布达拉宫",
+    "黑衣人"
+   ]
+  },
+  "3": {
+   "p": [
+    "桂华生",
+    "麦士迦南",
+    "达赖活佛",
+    "藏灵上人",
+    "桂仲明",
+    "易兰珠",
+    "提摩达多",
+    "尼泊尔王子",
+    "龙叶大师",
+    "易老乞婆",
+    "梁武帝",
+    "龙叶上人",
+    "法显",
+    "玄奘",
+    "阿尼哥",
+    "道圣国师",
+    "额尔都王子",
+    "华玉"
+   ],
+   "l": [
+    "西藏",
+    "轻功",
+    "内功",
+    "江南",
+    "这几年来",
+    "边疆",
+    "魔鬼城",
+    "片刻",
+    "一次",
+    "白教",
+    "圣庙",
+    "三声",
+    "三下",
+    "六十多岁",
+    "三个",
+    "麦加",
+    "印度",
+    "前年",
+    "加德满都",
+    "明年",
+    "阿拉伯",
+    "高手",
+    "十多年前",
+    "德里",
+    "两人",
+    "天山",
+    "七八年",
+    "尼泊尔",
+    "武士",
+    "中国",
+    "同泰寺",
+    "四次",
+    "南史",
+    "几十年",
+    "今晚",
+    "八名",
+    "戈克利刀",
+    "缅刀",
+    "倭刀",
+    "面具",
+    "晋朝",
+    "唐代",
+    "唐朝",
+    "元朝",
+    "八十多人",
+    "光禄大夫",
+    "大司徒",
+    "玉笛",
+    "剑术",
+    "佩刀",
+    "功力",
+    "十几把",
+    "飞刀",
+    "屋瓦",
+    "暗器功夫",
+    "倒洒金钱",
+    "五六把",
+    "袈裟",
+    "皮革面具",
+    "大殿",
+    "一根",
+    "护法",
+    "庙门",
+    "好几个",
+    "一支",
+    "响箭",
+    "几个",
+    "月牙弯刀",
+    "五六个",
+    "皮罩面具",
+    "琉璃灯"
+   ]
+  },
+  "4": {
+   "p": [
+    "桂华生",
+    "白衣少女",
+    "华玉",
+    "额尔都王子",
+    "藏灵上人",
+    "冒浣莲",
+    "陶渊明",
+    "尼泊尔王子",
+    "苏东坡",
+    "龙叶大师",
+    "提摩达多",
+    "尼泊尔",
+    "易兰珠",
+    "达摩祖师",
+    "赤神子",
+    "武琼瑶",
+    "白发魔女"
+   ],
+   "l": [
+    "中国",
+    "千丈",
+    "冰窟",
+    "轻功",
+    "天明时分",
+    "喜马拉雅山",
+    "珠穆朗玛峰",
+    "朝阳初出",
+    "西藏",
+    "江南",
+    "七剑下天山",
+    "念青唐古拉山",
+    "天湖",
+    "腾格里海",
+    "纳木错",
+    "魔鬼城",
+    "玉笛",
+    "水调歌头",
+    "冰湖",
+    "一个时辰",
+    "正午时分",
+    "玉女峰",
+    "三年前",
+    "内功心法",
+    "梵文秘典",
+    "亿万年",
+    "冰雪精灵",
+    "寒冰",
+    "刀剑",
+    "玉石",
+    "大玉石",
+    "冰块精灵",
+    "美玉",
+    "宝剑",
+    "奇寒之气",
+    "寒玉",
+    "冰魄寒光剑",
+    "奇药",
+    "丹丸",
+    "几十年",
+    "寒潮",
+    "时辰",
+    "今天",
+    "阴阳掌力",
+    "八名",
+    "武士",
+    "百钢刀",
+    "冰坡",
+    "四个",
+    "月牙弯刀",
+    "四只",
+    "吊篮",
+    "袈裟",
+    "冰屑",
+    "一鹤冲天",
+    "内功",
+    "八个",
+    "冰魄神弹",
+    "冰岩",
+    "冰块",
+    "少林派",
+    "大力金刚掌",
+    "三掌",
+    "砂石",
+    "达摩秘笈",
+    "五禽掌法",
+    "一时三刻",
+    "功力",
+    "二十左右",
+    "双推掌",
+    "十多廿招",
+    "三股",
+    "三剑",
+    "铜钹",
+    "腾蛟宝剑",
+    "飞鸟投林",
+    "七处",
+    "白衣少女",
+    "剑法",
+    "双钹",
+    "达摩剑法",
+    "剑术",
+    "昨晚",
+    "午时",
+    "冰窖",
+    "梵文秘笈",
+    "七粒",
+    "阳和丸",
+    "灵丹",
+    "一块",
+    "石头",
+    "剑掌交替",
+    "壁虎游墙功",
+    "尼泊尔",
+    "半个时辰",
+    "彩绳",
+    "十丈",
+    "内力",
+    "鹞子翻身",
+    "一苇渡江",
+    "万载玄冰",
+    "一顿饭的功夫",
+    "寒玉岩",
+    "岩石",
+    "暗器",
+    "戈克利刀",
+    "几年",
+    "一盏茶时刻",
+    "大力鹰爪功",
+    "真气",
+    "三尺",
+    "碧玉",
+    "万年寒玉",
+    "锦囊",
+    "西天竺",
+    "天蚕丝",
+    "冰魄精英",
+    "梵文",
+    "秘笈",
+    "印度",
+    "经文",
+    "吐纳妙法",
+    "傍晚",
+    "高手",
+    "十余丈",
+    "腾蛟剑",
+    "直指天南",
+    "雪山",
+    "青藏",
+    "十余年前",
+    "天山七剑",
+    "大雪山",
+    "十余年",
+    "赤神魔掌",
+    "真阳之气",
+    "身法",
+    "冰弹",
+    "神龙掉尾",
+    "三处",
+    "大穴",
+    "穴道",
+    "魔掌神功",
+    "真力",
+    "十多年",
+    "三枚",
+    "七弹",
+    "银瓶",
+    "一粒",
+    "一百余招",
+    "秘典",
+    "冰弹打穴",
+    "第二天的正午时分",
+    "冰川",
+    "冰峰",
+    "三天",
+    "这一日",
+    "北天山",
+    "玉峰",
+    "三年",
+    "冰川剑法",
+    "几片",
+    "浮冰",
+    "一朵",
+    "花瓣",
+    "冰崖",
+    "霓裳中序第一",
+    "霓裳羽衣曲",
+    "玉镜",
+    "新月初升",
+    "几日来"
+   ]
+  },
+  "5": {
+   "p": [
+    "桂华生",
+    "尼泊尔王子",
+    "麦士迦南",
+    "白衣少女",
+    "达赖活佛",
+    "华玉",
+    "松赞干布",
+    "唐太宗",
+    "李世民",
+    "文成公主",
+    "班禅",
+    "迦叶",
+    "尼泊尔国王",
+    "白教法王"
+   ],
+   "l": [
+    "魔鬼城",
+    "白塔",
+    "尼泊尔武士",
+    "西藏",
+    "拉萨",
+    "白教",
+    "初春时节",
+    "一月",
+    "天色已晚",
+    "藏人",
+    "玉镜",
+    "布达拉宫",
+    "三座",
+    "大殿",
+    "黄昏落日",
+    "一夜",
+    "第二天天亮",
+    "一套",
+    "葡萄山",
+    "布达拉山",
+    "一十三层",
+    "公元六四一年",
+    "一尺见方",
+    "石头",
+    "金顶",
+    "八座",
+    "金塔",
+    "金叶",
+    "珠宝",
+    "中午时分",
+    "两队",
+    "喇嘛",
+    "内功",
+    "数千级",
+    "一个多时辰",
+    "回廊",
+    "四个",
+    "金像",
+    "铎铃",
+    "一个多月",
+    "西藏高原",
+    "壁画",
+    "白绸",
+    "酥油",
+    "数百年来",
+    "中国内地",
+    "印度",
+    "尼泊尔",
+    "不丹",
+    "内劲",
+    "两个",
+    "四十岁左右",
+    "锡金",
+    "袈裟",
+    "一枝香的时刻",
+    "黄昏",
+    "帐篷",
+    "十三层",
+    "琉璃灯饰",
+    "白寨",
+    "红寨",
+    "僧侣",
+    "月亮渐渐移近天心",
+    "喇嘛服饰",
+    "几颗",
+    "石子",
+    "三盏",
+    "琉璃灯",
+    "梯子",
+    "轻功",
+    "长梯",
+    "宫灯",
+    "玉器",
+    "桌椅",
+    "香案",
+    "香炉",
+    "彩绣",
+    "三更",
+    "寝宫",
+    "佛像",
+    "贝叶灵符",
+    "护法",
+    "两位",
+    "大穴",
+    "劈空掌",
+    "一支",
+    "竹杖",
+    "七处",
+    "紫金盂钵",
+    "高手",
+    "金盂钵",
+    "腾蛟宝剑",
+    "宝剑",
+    "钵",
+    "盂钵",
+    "杖",
+    "璇玑穴",
+    "章门穴",
+    "风府穴",
+    "三处",
+    "穴道",
+    "天山七剑",
+    "达摩剑法",
+    "杖头",
+    "狮子吼功",
+    "功力",
+    "两步",
+    "盘龙绕步",
+    "三个",
+    "金佛",
+    "七件",
+    "法器",
+    "国师",
+    "兵器",
+    "暗器",
+    "金钵",
+    "膻中穴",
+    "中国",
+    "静室",
+    "那烂陀寺",
+    "菩提树",
+    "第二日",
+    "两个多月",
+    "这日一早",
+    "执事",
+    "宫顶",
+    "屋顶花园",
+    "喜马拉雅山脉",
+    "一封",
+    "书信",
+    "法杖"
+   ]
+  },
+  "6": {
+   "p": [
+    "桂华生",
+    "提摩达多",
+    "方今明",
+    "康熙",
+    "允禵",
+    "允禛",
+    "雍正",
+    "唐晓澜",
+    "年羹尧",
+    "吕四娘",
+    "凌未风",
+    "达摩禅师",
+    "龙叶大师",
+    "龙叶上人",
+    "雅德星",
+    "玄奘",
+    "唐三藏",
+    "华玉"
+   ],
+   "l": [
+    "一个多月",
+    "中尼边境",
+    "喜马拉雅山",
+    "天山",
+    "昆仑",
+    "峨嵋",
+    "几日",
+    "江南",
+    "三四天",
+    "小熊猫",
+    "山鸦",
+    "牦牛",
+    "小黄羊",
+    "第四日的黄昏",
+    "布达拉宫",
+    "西藏",
+    "四五岁",
+    "尼泊尔",
+    "阿拉伯",
+    "欧洲",
+    "阿拉伯人",
+    "四只",
+    "轻功",
+    "达摩秘笈",
+    "五禽掌法",
+    "双龙出海",
+    "潜力",
+    "掌力",
+    "千斤坠",
+    "划分阴阳",
+    "铁指玄功",
+    "铁指功夫",
+    "武当派",
+    "一指禅功",
+    "五丁开山",
+    "大力金刚掌法",
+    "阴阳掌力",
+    "功力",
+    "太极推手",
+    "点穴法",
+    "半个时辰",
+    "树叶",
+    "一盏茶的时刻",
+    "五十多岁",
+    "康熙年间",
+    "十几个",
+    "清廷",
+    "十多岁",
+    "几十年",
+    "四个字",
+    "大力金刚掌",
+    "金刚掌力",
+    "大摔碑手",
+    "第十个年头",
+    "十年来",
+    "五六天之前",
+    "五六天来",
+    "几天",
+    "几件",
+    "两件",
+    "一支",
+    "几张",
+    "十多年",
+    "二十年之后",
+    "一面",
+    "数里",
+    "三间",
+    "玉女峰",
+    "天湖",
+    "雪峰",
+    "冰宫",
+    "何年何月",
+    "一座",
+    "中原",
+    "几里",
+    "乾隆",
+    "杭州",
+    "花圃",
+    "藏族",
+    "红教",
+    "武功",
+    "一大盘",
+    "虎肉",
+    "一桶",
+    "干粮",
+    "满汉筵席",
+    "十年",
+    "珠穆朗玛峰",
+    "内功",
+    "天山派",
+    "第二日",
+    "一天",
+    "两座",
+    "昨日",
+    "两个",
+    "珠峰",
+    "百步神拳",
+    "瑜伽术",
+    "七日",
+    "中国",
+    "瑜伽功夫",
+    "真力",
+    "野马分鬃",
+    "一棵",
+    "花树",
+    "望远镜",
+    "野鹿",
+    "内家",
+    "少林",
+    "少林派",
+    "二成",
+    "王舍城",
+    "雪莲",
+    "三朵",
+    "一朵",
+    "珠宝",
+    "天山雪莲",
+    "魔鬼城",
+    "一两天",
+    "两天",
+    "肉脯",
+    "果干",
+    "两处",
+    "冰坡"
+   ]
+  },
+  "7": {
+   "p": [
+    "桂华生",
+    "尼泊尔王子",
+    "释迦牟尼",
+    "巴勃",
+    "李时珍",
+    "傅青主",
+    "文殊菩萨",
+    "法持",
+    "赵朴初",
+    "皇上",
+    "红衣番僧",
+    "提摩达多",
+    "御林军总管"
+   ],
+   "l": [
+    "尼泊尔",
+    "仲夏时节",
+    "塔拉伊地山区",
+    "兰毗尼园",
+    "印度",
+    "香客",
+    "明年",
+    "四对",
+    "魔鬼城",
+    "十多天",
+    "加德满都",
+    "喜马拉雅山",
+    "中国",
+    "几条",
+    "酒楼",
+    "一壶",
+    "几样",
+    "半斤",
+    "夕阳西落",
+    "瑞扬布山",
+    "七层",
+    "宝塔",
+    "金箔",
+    "一只只",
+    "一小块",
+    "五十多岁",
+    "布囊",
+    "一双",
+    "本草纲目",
+    "奇经八脉考",
+    "濒湖脉学",
+    "天山",
+    "西藏",
+    "一支",
+    "五台山",
+    "宝剑",
+    "巴马提河",
+    "一年前",
+    "三个月",
+    "武士",
+    "银盒",
+    "三日之后",
+    "华灯初上",
+    "好几条",
+    "城西",
+    "一座",
+    "轻功",
+    "一件一件",
+    "珍珠",
+    "翡翠",
+    "几块",
+    "金锭",
+    "一张",
+    "请帖",
+    "御林军",
+    "总督",
+    "今晚三更",
+    "别墅",
+    "三月之后",
+    "御林军总管",
+    "御林军总督",
+    "七次",
+    "总管",
+    "半夜三更",
+    "三日后",
+    "今晚",
+    "医案",
+    "药囊",
+    "一辆",
+    "马车",
+    "一个",
+    "御花园",
+    "半个时辰",
+    "六七道",
+    "大厅",
+    "圆桌",
+    "两个",
+    "两名",
+    "数十年来",
+    "金银珠宝",
+    "珠宝",
+    "红衣番僧",
+    "石阶",
+    "月牙弯刀",
+    "短剑",
+    "铁琵琶指",
+    "袈裟",
+    "三寸来长",
+    "铜钉",
+    "十只",
+    "尼泊尔京城",
+    "天枢穴",
+    "劈空掌",
+    "七八个",
+    "功力",
+    "高手",
+    "腾蛟宝剑",
+    "三十年来",
+    "四根",
+    "牛油巨烛",
+    "千斤坠",
+    "大力金刚手",
+    "真力",
+    "细胸巧翻云",
+    "倒卷天河",
+    "后羿射日",
+    "星汉浮槎",
+    "达摩剑法",
+    "冰川剑法",
+    "阴阳掌力",
+    "达摩掌法",
+    "烛光",
+    "八卦游身掌法",
+    "数百个",
+    "阴阳掌",
+    "内功",
+    "一颗颗",
+    "十年",
+    "十八道",
+    "点穴法",
+    "千百道",
+    "银针",
+    "毒药",
+    "七天",
+    "铁门",
+    "圣旨",
+    "诏书",
+    "天山雪莲",
+    "贞白穴",
+    "桌布",
+    "煤灰",
+    "四只",
+    "四匹",
+    "白马",
+    "一日一夜",
+    "马鞭",
+    "十六只",
+    "车辕",
+    "健马",
+    "李广射石",
+    "凤点头",
+    "宫女",
+    "车轮",
+    "横木",
+    "念青唐古拉山",
+    "冰窟"
+   ]
+  },
+  "8": {
+   "p": [
+    "桂华生",
+    "白衣少女",
+    "巴勃",
+    "尼泊尔王",
+    "雅得星",
+    "尼泊尔国王",
+    "尼泊尔王子",
+    "达赖活佛",
+    "国王",
+    "陛下",
+    "活佛",
+    "雅德星",
+    "王子",
+    "印度王子",
+    "桂先生",
+    "雅德星王子",
+    "龙叶大师",
+    "尼白尔",
+    "华玉",
+    "宛兰星",
+    "龙叶高僧",
+    "麦士迦南",
+    "摩兰法师",
+    "摩兰",
+    "提摩达多",
+    "桂",
+    "雅"
+   ],
+   "l": [
+    "马车",
+    "半个时辰",
+    "瑞扬布拉山",
+    "皇城",
+    "两个",
+    "宫女",
+    "冰窟寒冰",
+    "尼泊尔",
+    "公主",
+    "皇宫",
+    "天山雪莲",
+    "一朵",
+    "西藏",
+    "一本",
+    "药典",
+    "孔雀胆",
+    "鹤顶红",
+    "宫门",
+    "王宫",
+    "北京",
+    "布达拉宫",
+    "庙塔",
+    "青铜塔顶",
+    "风铃",
+    "三丈",
+    "如来佛像",
+    "铜铸龙头",
+    "中国",
+    "御林军总管",
+    "回廊",
+    "后宫",
+    "宫殿",
+    "锦幔",
+    "老者",
+    "御医",
+    "青年",
+    "喜马拉雅山",
+    "魔鬼城",
+    "一刀",
+    "两月有余",
+    "书信",
+    "京城",
+    "金塔",
+    "八个",
+    "酒杯",
+    "三件",
+    "三杯",
+    "仙花灵药",
+    "三大杯",
+    "几日",
+    "雪莲",
+    "珍宝",
+    "纸团",
+    "医师",
+    "灵药",
+    "天山",
+    "神庙",
+    "五更天亮",
+    "三更夜半",
+    "三更时分",
+    "高手",
+    "两朵",
+    "冰魄寒光剑",
+    "武士",
+    "喇嘛",
+    "法杖",
+    "九环法杖",
+    "御林军",
+    "青海",
+    "阿修罗花",
+    "一月",
+    "连夜",
+    "珠穆朗玛峰"
+   ]
+  },
+  "9": {
+   "p": [
+    "摩兰法师",
+    "雅德星王子",
+    "麦士迦南",
+    "桂华生",
+    "提摩达多",
+    "龙叶大师",
+    "尼泊尔王",
+    "尼泊尔王子",
+    "雅德星",
+    "尼泊尔公主",
+    "摩兰",
+    "达摩祖师",
+    "公主",
+    "华玉公主",
+    "摩尔法师",
+    "法王",
+    "国王",
+    "龙叶恩师",
+    "尼泊尔国王",
+    "巴勃",
+    "李时珍",
+    "慧超法师",
+    "慧超",
+    "玄奘法师",
+    "玄奘",
+    "阿尼哥",
+    "玛清勒",
+    "哥拉拿"
+   ],
+   "l": [
+    "三匹",
+    "何德瓦峡口",
+    "瑞扬布山",
+    "十里",
+    "瑞芝那山",
+    "御林军",
+    "三骑",
+    "半个时辰",
+    "连夜",
+    "青海草原",
+    "一刻",
+    "禅杖",
+    "金银珠宝",
+    "马鞍",
+    "马车",
+    "车轭",
+    "车篷",
+    "法师",
+    "马背",
+    "马",
+    "十余丈",
+    "铁锤",
+    "车盖",
+    "三年之前",
+    "印度",
+    "珠宝堆",
+    "谷口",
+    "一两个时辰",
+    "瑜伽功夫",
+    "擒拿手",
+    "一柄",
+    "短剑",
+    "腾蛟宝剑",
+    "冰魄神弹",
+    "昨晚",
+    "冰窟",
+    "玄冰",
+    "武学大师",
+    "天河倒挂",
+    "五十招",
+    "昨夜",
+    "古堡",
+    "百招",
+    "身法",
+    "功力",
+    "魔鬼城",
+    "追风三剑",
+    "骏马",
+    "麦加",
+    "名马",
+    "峡谷",
+    "尼泊尔",
+    "阿拉伯",
+    "宝剑",
+    "内功",
+    "冰魄寒光剑",
+    "长剑",
+    "冰川剑法",
+    "寒玉",
+    "真气",
+    "真力",
+    "朝阳初上",
+    "天山雪莲",
+    "一朵",
+    "山泉",
+    "一鞠",
+    "清泉",
+    "雪莲花瓣",
+    "整朵",
+    "雪莲",
+    "瘀血",
+    "数日",
+    "一桩",
+    "推血过宫",
+    "几天",
+    "十二重关",
+    "一盏茶的时刻",
+    "天枢穴",
+    "一大口一大口",
+    "人参",
+    "鹿茸",
+    "补药",
+    "半月",
+    "药品",
+    "一骑",
+    "一点点",
+    "九环锡杖",
+    "法杖",
+    "山谷",
+    "一处",
+    "一个",
+    "一匹",
+    "京城",
+    "一程",
+    "灵鹫山",
+    "王舍城",
+    "恒河",
+    "吐纳",
+    "天山",
+    "王宫",
+    "三朵",
+    "宫门",
+    "宫中",
+    "侍卫",
+    "一张",
+    "担架",
+    "御林军总管",
+    "珠宝",
+    "高官",
+    "王子",
+    "医生",
+    "深宫",
+    "本草纲目",
+    "奇经八脉考",
+    "中国",
+    "驸马",
+    "医书",
+    "蜜蜂",
+    "家门",
+    "大门",
+    "厅堂",
+    "茶几",
+    "一叠",
+    "书籍",
+    "一纸",
+    "花笺",
+    "一首",
+    "小词",
+    "点绛唇",
+    "词笺",
+    "书",
+    "一晚",
+    "往五天竺国传",
+    "百日",
+    "明年",
+    "今后这几个月",
+    "一个多月",
+    "一日",
+    "莲花宝塔",
+    "勃提岗城",
+    "玛清勒寺",
+    "一个月",
+    "勃城",
+    "每年",
+    "十天",
+    "五十天",
+    "第二日"
+   ]
+  },
+  "10": {
+   "p": [
+    "巴勃",
+    "桂华生",
+    "雅德星",
+    "提摩达多",
+    "阿迦罗",
+    "龙叶上人",
+    "龙叶",
+    "龙叶大师",
+    "阿迦罗大师",
+    "尼泊尔王子",
+    "尼泊尔",
+    "尼泊尔国王",
+    "国王",
+    "凌未风",
+    "邓南遮"
+   ],
+   "l": [
+    "加德满都",
+    "勃提岗城",
+    "五百多里",
+    "十日",
+    "每日",
+    "五六十里",
+    "年纪",
+    "每天",
+    "日出",
+    "日落",
+    "第七天",
+    "铁索桥",
+    "铁索",
+    "幽谷",
+    "大瀑布",
+    "十几二十倍",
+    "轻功",
+    "蜻蜓点水",
+    "掌力",
+    "深谷",
+    "瀑布",
+    "洞穴",
+    "水帘",
+    "两只",
+    "功力",
+    "腾蛟宝剑",
+    "宝剑",
+    "怪刀",
+    "雪花盖顶",
+    "剑法",
+    "宝刀",
+    "七十二斤",
+    "猛虎夺路",
+    "拂尘",
+    "刀",
+    "潜力",
+    "铁拂尘",
+    "穴道",
+    "大穴",
+    "风刮落花",
+    "尘尾",
+    "七处",
+    "宝物",
+    "暮色沉沉",
+    "水洞口",
+    "暮霭苍茫",
+    "清泉",
+    "今日",
+    "干粮",
+    "泉水",
+    "一晚",
+    "一夜",
+    "第二日一早",
+    "昨天",
+    "达摩剑法",
+    "七十二式伏魔剑",
+    "半个时辰",
+    "今天",
+    "日影西斜",
+    "鱼",
+    "几尾",
+    "小鱼",
+    "一年半载",
+    "两日",
+    "第三日一早",
+    "三个时辰",
+    "半天",
+    "上乘内功",
+    "第十天",
+    "一个时辰",
+    "大须弥十七式",
+    "鹰击长空",
+    "多日来",
+    "数日",
+    "内功",
+    "真气",
+    "一天早晨",
+    "若干日子",
+    "剑柄",
+    "岩石",
+    "好多天",
+    "木叉",
+    "玛清勒寺",
+    "行脚僧人",
+    "木筏",
+    "两天两夜",
+    "寒泉",
+    "药物学家",
+    "一批",
+    "鱼苗",
+    "无骨鱼",
+    "信",
+    "太医",
+    "三天",
+    "人参",
+    "两三天",
+    "真力",
+    "金刚掌",
+    "中国",
+    "天山七剑",
+    "三十岁",
+    "几十年",
+    "勃提树城",
+    "幽谷寒泉",
+    "静室",
+    "数日之内",
+    "雪莲",
+    "几百里",
+    "毗罗通关大法",
+    "内力",
+    "推血过宫",
+    "瑜伽功夫",
+    "吐纳法",
+    "半月",
+    "瑜伽气功",
+    "托玉泉",
+    "涌泉穴",
+    "玉泉穴",
+    "石头",
+    "十余日",
+    "月余"
+   ]
+  },
+  "11": {
+   "p": [
+    "桂华生",
+    "巴勃",
+    "尼泊尔王子",
+    "阿迦罗",
+    "宛兰星",
+    "邓南遮",
+    "克雷斯",
+    "拉汗图",
+    "摩农",
+    "朗纳",
+    "哈巴德",
+    "桂先生",
+    "柏拉图",
+    "华玉",
+    "海伦",
+    "提摩达多",
+    "晦明禅师",
+    "雅德星",
+    "阿波罗",
+    "尼泊尔"
+   ],
+   "l": [
+    "第二天",
+    "一百二十四人",
+    "三道",
+    "千斤",
+    "十节",
+    "三周",
+    "一支香",
+    "三关",
+    "一百二十三人",
+    "四十七人",
+    "第三天",
+    "一个",
+    "四个",
+    "剑术",
+    "冰魄神弹",
+    "二十七人",
+    "十三人",
+    "御林军",
+    "金刚指",
+    "四颗",
+    "第十二招",
+    "六个",
+    "七人",
+    "贵宾馆",
+    "瑞扬布山",
+    "夏何德河",
+    "大厅",
+    "七个人",
+    "六个人",
+    "经脉",
+    "内功",
+    "几个",
+    "昨日",
+    "酒杯",
+    "小纸团",
+    "天山雪莲",
+    "雪莲",
+    "瑜伽气功",
+    "真气",
+    "半个时辰",
+    "酒壶",
+    "百日醉",
+    "数日",
+    "房门",
+    "七弦琴",
+    "十年",
+    "中国",
+    "玻璃杯",
+    "琴弦",
+    "一根",
+    "满天花雨",
+    "两枚",
+    "大红苹果",
+    "鱼叉",
+    "刀叉",
+    "一把",
+    "餐刀",
+    "瑜伽功夫",
+    "大花瓶",
+    "七八拳",
+    "鹰爪门",
+    "大擒拿手",
+    "两颗",
+    "印度内功",
+    "真力",
+    "两个",
+    "撒马尔罕",
+    "阿富汗",
+    "波斯",
+    "武士",
+    "一支",
+    "红烛",
+    "宝剑",
+    "几道",
+    "银盘",
+    "一柄",
+    "三下",
+    "斜挂单鞭",
+    "印度",
+    "功力",
+    "大力金刚手",
+    "轻功",
+    "八卦游身掌法",
+    "身法",
+    "掌法",
+    "一刻钟",
+    "几掌",
+    "游身掌法",
+    "掌力",
+    "达摩秘笈",
+    "天枢",
+    "地阙",
+    "归藏",
+    "风府",
+    "玉枕",
+    "五处",
+    "欧洲",
+    "子午流闭血法",
+    "点穴",
+    "点穴法",
+    "几秒钟",
+    "闭穴功夫",
+    "分牛掌",
+    "内力",
+    "内劲",
+    "银叉",
+    "内伤",
+    "三阳经脉",
+    "一粒",
+    "药丸",
+    "三天",
+    "天山派",
+    "七种",
+    "药料",
+    "碧灵丹",
+    "五粒",
+    "一盏茶的时刻",
+    "十二重关",
+    "玉泉穴",
+    "瑜珈气功",
+    "托玉泉",
+    "两天",
+    "加德满都",
+    "明天一早",
+    "明天",
+    "希腊人",
+    "希腊",
+    "游艇",
+    "爱琴海",
+    "御花园",
+    "一早",
+    "昨晚",
+    "尼泊尔",
+    "高台"
+   ]
+  },
+  "12": {
+   "p": [
+    "桂华生",
+    "邓南遮",
+    "拉汗图",
+    "尼泊尔公主",
+    "克雷斯",
+    "尼泊尔武士拉汗图",
+    "公主",
+    "宛兰星",
+    "丘比特",
+    "国王",
+    "尼泊尔王子",
+    "驸马"
+   ],
+   "l": [
+    "武士",
+    "三个",
+    "帷幕",
+    "面纱",
+    "千百道",
+    "剑术",
+    "剑",
+    "一根",
+    "玉笛",
+    "笛",
+    "衣袖",
+    "长剑",
+    "一支香",
+    "三下",
+    "三处",
+    "御林军总管",
+    "中国",
+    "虎头钩",
+    "五行剑",
+    "冰川剑法",
+    "半个时辰",
+    "一盏茶时刻",
+    "真力",
+    "三丈",
+    "三颗",
+    "冰魄神弹",
+    "功力",
+    "冰弹",
+    "穴道",
+    "冰魄寒光剑",
+    "宫女",
+    "寒玉剑匣",
+    "宝剑",
+    "云横秦岭",
+    "雪拥蓝关",
+    "星汉浮槎",
+    "念青唐古拉山",
+    "满天花雨",
+    "十几颗",
+    "剑尖",
+    "七弦琴",
+    "弓",
+    "箭",
+    "长裙",
+    "司仪官",
+    "内功",
+    "冰川天女传",
+    "瑞扬布山",
+    "夏宫",
+    "三日之后",
+    "尼泊尔",
+    "一年一度",
+    "燃灯佳节",
+    "三日",
+    "三年",
+    "大婚之礼",
+    "佛寺",
+    "婚书",
+    "晚上",
+    "王宫",
+    "黄昏",
+    "凉台",
+    "风灯",
+    "加德满都",
+    "燃灯节",
+    "黄昏过后不久",
+    "一辆",
+    "马车",
+    "四匹",
+    "白马",
+    "御林军",
+    "军官",
+    "山谷",
+    "长枪",
+    "枪尖",
+    "数十支",
+    "长矛",
+    "短剑",
+    "兵器",
+    "腾蛟宝剑",
+    "十几条",
+    "黑衣武士",
+    "尼泊尔人",
+    "黑衣骑兵",
+    "绊马索",
+    "骑兵",
+    "一百个",
+    "九十九个",
+    "几骑",
+    "几个",
+    "军士",
+    "总管",
+    "京城",
+    "皇宫",
+    "一队",
+    "琴弦",
+    "喇叭",
+    "锣鼓",
+    "喜马拉雅山",
+    "北京",
+    "一盏",
+    "纱灯",
+    "洞房",
+    "红烛",
+    "红纸对联",
+    "对联",
+    "碧玉屏风",
+    "屏风",
+    "点绛唇"
+   ]
+  }
+ },
+ "events": {}
+}
