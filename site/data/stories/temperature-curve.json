@@ -1,0 +1,526 @@
+{
+ "meta": {
+  "generated": "2026-11-13",
+  "schema": "story-v2",
+  "script": "scripts/build_stories.py",
+  "copyright": "L0：计数+定位符；摘录仅本地使用，不入切片",
+  "scope": "tianshan-demo",
+  "books": [
+   "散花女侠",
+   "联剑风云录",
+   "白发魔女传",
+   "塞外奇侠传",
+   "七剑下天山",
+   "冰魄寒光剑",
+   "江湖三女侠"
+  ]
+ },
+ "story_id": "temperature-curve",
+ "template": "relation",
+ "title": "一夜白头：卓练温度曲线",
+ "tag": "关系",
+ "book": "白发魔女传",
+ "order": 1,
+ "subject": "卓一航",
+ "a": "卓一航",
+ "b": "练霓裳",
+ "shared_chapters": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31,
+  32
+ ],
+ "per_chapter": [
+  {
+   "c": 1,
+   "co_events": 10,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 2,
+   "co_events": 9,
+   "pos": 0,
+   "neg": 1,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 3,
+   "co_events": 3,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": [
+    {
+     "l": "003:81",
+     "v": "捉",
+     "a": "练霓裳",
+     "b": "卓一航"
+    }
+   ]
+  },
+  {
+   "c": 4,
+   "co_events": 38,
+   "pos": 0,
+   "neg": 13,
+   "allies": 3,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": [
+    {
+     "l": "004:29",
+     "v": "冲",
+     "a": "练霓裳",
+     "b": "卓一航"
+    },
+    {
+     "l": "004:29",
+     "v": "射",
+     "a": "练霓裳",
+     "b": "卓一航"
+    },
+    {
+     "l": "004:31",
+     "v": "刺",
+     "a": "练霓裳",
+     "b": "卓一航"
+    }
+   ]
+  },
+  {
+   "c": 5,
+   "co_events": 49,
+   "pos": 0,
+   "neg": 4,
+   "allies": 2,
+   "kw_pos": 0,
+   "kw_neg": 3,
+   "key": []
+  },
+  {
+   "c": 6,
+   "co_events": 59,
+   "pos": 0,
+   "neg": 12,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 7,
+   "co_events": 21,
+   "pos": 0,
+   "neg": 5,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 8,
+   "co_events": 15,
+   "pos": 0,
+   "neg": 3,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 0,
+   "key": [
+    {
+     "l": "008:11",
+     "v": "刺",
+     "a": "卓一航",
+     "b": "练霓裳"
+    }
+   ]
+  },
+  {
+   "c": 9,
+   "co_events": 0,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 2,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 10,
+   "co_events": 0,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 3,
+   "key": []
+  },
+  {
+   "c": 11,
+   "co_events": 0,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 12,
+   "co_events": 16,
+   "pos": 0,
+   "neg": 6,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 13,
+   "co_events": 42,
+   "pos": 0,
+   "neg": 13,
+   "allies": 1,
+   "kw_pos": 2,
+   "kw_neg": 3,
+   "key": []
+  },
+  {
+   "c": 14,
+   "co_events": 11,
+   "pos": 0,
+   "neg": 2,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 15,
+   "co_events": 48,
+   "pos": 0,
+   "neg": 3,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 1,
+   "key": []
+  },
+  {
+   "c": 16,
+   "co_events": 31,
+   "pos": 0,
+   "neg": 5,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 17,
+   "co_events": 8,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 18,
+   "co_events": 7,
+   "pos": 0,
+   "neg": 3,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": [
+    {
+     "l": "018:95",
+     "v": "扣",
+     "a": "练霓裳",
+     "b": "卓一航"
+    }
+   ]
+  },
+  {
+   "c": 19,
+   "co_events": 4,
+   "pos": 0,
+   "neg": 1,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 20,
+   "co_events": 12,
+   "pos": 0,
+   "neg": 10,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 21,
+   "co_events": 10,
+   "pos": 0,
+   "neg": 6,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 22,
+   "co_events": 0,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 23,
+   "co_events": 5,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 24,
+   "co_events": 1,
+   "pos": 0,
+   "neg": 0,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 25,
+   "co_events": 7,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 26,
+   "co_events": 21,
+   "pos": 0,
+   "neg": 10,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 27,
+   "co_events": 6,
+   "pos": 0,
+   "neg": 2,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": []
+  },
+  {
+   "c": 28,
+   "co_events": 15,
+   "pos": 0,
+   "neg": 3,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 29,
+   "co_events": 17,
+   "pos": 0,
+   "neg": 7,
+   "allies": 0,
+   "kw_pos": 1,
+   "kw_neg": 2,
+   "key": []
+  },
+  {
+   "c": 30,
+   "co_events": 4,
+   "pos": 0,
+   "neg": 1,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 1,
+   "key": []
+  },
+  {
+   "c": 31,
+   "co_events": 11,
+   "pos": 0,
+   "neg": 4,
+   "allies": 0,
+   "kw_pos": 0,
+   "kw_neg": 0,
+   "key": [
+    {
+     "l": "031:203",
+     "v": "刺",
+     "a": "练霓裳",
+     "b": "卓一航"
+    }
+   ]
+  },
+  {
+   "c": 32,
+   "co_events": 26,
+   "pos": 0,
+   "neg": 7,
+   "allies": 1,
+   "kw_pos": 0,
+   "kw_neg": 1,
+   "key": []
+  }
+ ],
+ "markers": [
+  {
+   "c": 1,
+   "label": "劫镖初会",
+   "loc": "001:103"
+  },
+  {
+   "c": 3,
+   "label": "黄龙洞缴械",
+   "loc": "003:081"
+  },
+  {
+   "c": 8,
+   "label": "白刃相见",
+   "loc": "008:011"
+  },
+  {
+   "c": 18,
+   "label": "明月峡扣卓",
+   "loc": "018:095"
+  },
+  {
+   "c": 26,
+   "label": "一夜白头",
+   "loc": "026:053"
+  },
+  {
+   "c": 31,
+   "label": "塞外一刺",
+   "loc": "031:203"
+  }
+ ],
+ "editorial": {
+  "thesis": "卓练之间正面互动事件为 0 起——全书 32 回、506 起同场事件、131 起冲突中，温情从未进入事件量级。",
+  "reads": [
+   {
+    "q": "为什么正面事件是 0？",
+    "a": "事件层收录的是人物—动词—人物的叙事动作（救/赠/护也未出现于二人之间）；卓练之间发生的只有 捉、扣、刺、避。温情发生在动词够不着的地方：029 回银针杀雷蒙救卓，事件登记为杀，温度藏在宾语之外。"
+   },
+   {
+    "q": "峰值在 004–006 与 013？",
+    "a": "前者是玉罗刹 domination 期（黄龙洞缴械、武当对峙），后者是重逢与弹弓误会——两段高冲突都不是感情破裂，而是感情的存在证明。冲突密度 = 关系强度，这是曲线最反直觉的读法。"
+   },
+   {
+    "q": "026 之后呢？",
+    "a": "一夜白头后冲突骤降（028–032 均值不到前期一半）——不是和好，是退出彼此的事件。只剩关键词：029 一粒温情词，031 一记刺。"
+   }
+  ],
+  "evidence": [
+   {
+    "loc": "003:081",
+    "text": "练霓裳 捉 卓一航（黄龙洞段）"
+   },
+   {
+    "loc": "008:011",
+    "text": "卓一航 刺 练霓裳"
+   },
+   {
+    "loc": "018:095",
+    "text": "练霓裳 扣 卓一航（明月峡）"
+   },
+   {
+    "loc": "026:053",
+    "text": "秘魔崖一夜白头（全书转折）"
+   },
+   {
+    "loc": "031:203",
+    "text": "练霓裳 刺 卓一航（塞外）"
+   }
+  ],
+  "method_note": "口径：同章在场 = 登记表 chapters 交集（30 回）；互动动词极性词表（正 13 词/负 14 词）与摘录情感词表（正 11 词/负 9 词）见脚本头注释；考订锚点 001/003/008/018/026/031 全部挂定位符（markers 自剧情锚点表取数）。摘录仅在本地扫描，切片只含计数与定位符（L0）。 复跑：python scripts/build_stories.py --scope tianshan-demo --apply · 图表为构建期 SVG，可整体复现。",
+  "teaser": "事件层里的卓练：全书 32 回、30 回同场、131 起冲突——而温情事件是 0 起。嘴上说放下的那个人，温情只藏在关键词与并肩的对手里。"
+ },
+ "chart": {
+  "kind": "relation",
+  "series": [
+   {
+    "key": "co_events",
+    "label": "同场事件（二人共同参与，506 起）",
+    "color": "#31536c",
+    "area": true
+   },
+   {
+    "key": "neg",
+    "label": "负面/对抗事件（131 起）",
+    "color": "#a23527",
+    "width": 2.2
+   }
+  ],
+  "bands": [
+   {
+    "pos": "kw_pos",
+    "neg": "kw_neg",
+    "label": "下带：温情/悲情关键词密度（本地词频）"
+   }
+  ],
+  "title": "卓练逐回共现与冲突曲线"
+ }
+}

@@ -1,0 +1,9436 @@
+{
+ "meta": {
+  "generated": "2026-11-09",
+  "schema": "matches-v1",
+  "wordlist_version": "event-v1/胜负词v0.1(移植)",
+  "scene_splitter_version": "pn-gap15/v1",
+  "totals": {
+   "matches": 520,
+   "fighters": 302,
+   "excluded_narrative": 11974
+  },
+  "excluded_detail": {
+   "dropped": 47,
+   "in_quote": 186,
+   "no_participants": 11741
+  },
+  "note": "对局=场景内 T01/T02 事件对手对；裁决=旧 build_matches v0.1 胜负词表投影到场景文本；D03 outcome 五值→win/loss/draw（未决/未知不进榜）；原文/词表命中词不发布（L0）。",
+  "source": "D03 事件层 registry/events（EX-5 event_extractor）+ tagged 场景胜负词证据",
+  "notes": [
+   "输入事件层：34958 事件（其中 T01/T02 对抗事件 15029 条）；场景切分=同回 PN 距 ≤15",
+   "canonical 归并与事件层/registry 同口径；fighters/top_evidence 可回溯事件 loc",
+   "与旧站 matches（2026-11-02：484 场/206 人，旧事件表 + ◈◉▲ 三码）口径不同：新数据为 D03 13 类候选层的 T01/T02 子集，数量不可直接相减"
+  ],
+  "coverage": {
+   "matches": 520,
+   "evidence_source": {
+    "scene_word": 161,
+    "event_outcome": 359
+   },
+   "dedupe": "同回同场景同对手对只出一场；事件层回退按 (书,回,对手对) 去重",
+   "scene_gap_pn": 15
+  },
+  "field_gaps": [
+   "旧契约 outcome 仅 win/loss/draw：D03『未决/未知』不映射为契约值，未分胜负或证据不足的对局不入 matches（避免虚增战绩）",
+   "旧站 modifiers/weight 词表为 build_matches v0.1；本导出以同词表移植+事件层condition_tags 合成，词表命中词与摘录按 L0 不发布",
+   "围攻 v0 整场一对（与旧口径一致）；连续交锋合并/子事件留 v1",
+   "scope 口径（tianshan-demo）：matches/fighters 仅收 scope 内书目的对局（books=散花女侠、联剑风云录、白发魔女传、塞外奇侠传、七剑下天山、冰魄寒光剑、江湖三女侠）；fighters 为过滤后对局重算值。"
+  ],
+  "scope": "tianshan-demo"
+ },
+ "matches": [
+  {
+   "id": "M001",
+   "a": "多铎",
+   "b": "通明",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:012",
+   "scene": "S001-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M002",
+   "a": "多铎",
+   "b": "多锋",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:012",
+   "scene": "S001-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M003",
+   "a": "傅青主",
+   "b": "刘郁芳",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:012",
+   "scene": "S001-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M004",
+   "a": "常英",
+   "b": "程通",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:012",
+   "scene": "S001-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M005",
+   "a": "常英",
+   "b": "长白山派",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:012",
+   "scene": "S001-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M006",
+   "a": "傅青主",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "001:012",
+   "scene": "S001-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M007",
+   "a": "傅青主",
+   "b": "冒浣莲",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "002:003",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M008",
+   "a": "冒浣莲",
+   "b": "朱翊钧",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "002:003",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M009",
+   "a": "冒浣莲",
+   "b": "阎中天",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "002:003",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M010",
+   "a": "张华昭",
+   "b": "易兰珠",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "七剑下天山",
+   "loc": "002:079",
+   "scene": "S002-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M011",
+   "a": "楚昭南",
+   "b": "韩志邦",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "004:038",
+   "scene": "S004-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M012",
+   "a": "凌未风",
+   "b": "古元亮",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "004:038",
+   "scene": "S004-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M013",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "004:038",
+   "scene": "S004-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M014",
+   "a": "凌未风",
+   "b": "韩志邦",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "004:038",
+   "scene": "S004-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M015",
+   "a": "张天蒙",
+   "b": "韩志邦",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "005:001",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M016",
+   "a": "凌未风",
+   "b": "韩志邦",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "005:001",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M017",
+   "a": "凌未风",
+   "b": "郝继明",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:008",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M018",
+   "a": "凌未风",
+   "b": "邱东洛",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:008",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M019",
+   "a": "凌未风",
+   "b": "刘郁芳",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:008",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M020",
+   "a": "杨云骢",
+   "b": "纽祜卢",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:008",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M021",
+   "a": "多铎",
+   "b": "杨云骢",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:008",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M022",
+   "a": "晦明禅师",
+   "b": "杨云骢",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "006:008",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M023",
+   "a": "凌未风",
+   "b": "范铮",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "七剑下天山",
+   "loc": "006:067",
+   "scene": "S006-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M024",
+   "a": "保柱",
+   "b": "凌未风",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "007:010",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M025",
+   "a": "张青原",
+   "b": "李二豹",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "008:030",
+   "scene": "S008-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M026",
+   "a": "五龙",
+   "b": "李二豹",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "008:030",
+   "scene": "S008-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M027",
+   "a": "傅青主",
+   "b": "钱四麒",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M028",
+   "a": "李二豹",
+   "b": "钱四麒",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M029",
+   "a": "凌未风",
+   "b": "陶宏",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "010:001",
+   "scene": "S010-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M030",
+   "a": "冒浣莲",
+   "b": "桂仲明",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "011:004",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M031",
+   "a": "冒浣莲",
+   "b": "柳大雄",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M032",
+   "a": "孟坚",
+   "b": "柳大雄",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M033",
+   "a": "柳大雄",
+   "b": "陆亮",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M034",
+   "a": "孟坚",
+   "b": "沙无定",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M035",
+   "a": "柳大雄",
+   "b": "沙无定",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M036",
+   "a": "孟坚",
+   "b": "郝飞凤",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M037",
+   "a": "沙无定",
+   "b": "陆亮",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M038",
+   "a": "郝飞凤",
+   "b": "陆亮",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M039",
+   "a": "沙无定",
+   "b": "陆明",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M040",
+   "a": "柳大雄",
+   "b": "桂仲明",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "013:019",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M041",
+   "a": "张华昭",
+   "b": "楚昭南",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:005",
+   "scene": "S015-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M042",
+   "a": "楚昭南",
+   "b": "胡天柱",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:005",
+   "scene": "S015-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M043",
+   "a": "孟武威",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:005",
+   "scene": "S015-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M044",
+   "a": "张华昭",
+   "b": "陆亮",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:005",
+   "scene": "S015-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M045",
+   "a": "桂仲明",
+   "b": "胡天柱",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:005",
+   "scene": "S015-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M046",
+   "a": "张承斌",
+   "b": "胡天柱",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "015:005",
+   "scene": "S015-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M047",
+   "a": "凌未风",
+   "b": "成天挺",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:022",
+   "scene": "S017-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M048",
+   "a": "凌未风",
+   "b": "哈玛雅",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:022",
+   "scene": "S017-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M049",
+   "a": "冒浣莲",
+   "b": "凌未风",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:022",
+   "scene": "S017-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M050",
+   "a": "哈玛雅",
+   "b": "成天挺",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:022",
+   "scene": "S017-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M051",
+   "a": "多铎",
+   "b": "易兰珠",
+   "outcome": "loss",
+   "weight": 0.27,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "017:022",
+   "scene": "S017-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M052",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "018:002",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M053",
+   "a": "哈玛雅",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "018:002",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M054",
+   "a": "杨云骢",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "018:002",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M055",
+   "a": "成天挺",
+   "b": "桂仲明",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:003",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M056",
+   "a": "楚昭南",
+   "b": "韩志邦",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:003",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M057",
+   "a": "凌未风",
+   "b": "刁四福",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:003",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M058",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:003",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M059",
+   "a": "楚昭南",
+   "b": "齐真君",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:003",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M060",
+   "a": "御林军",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "019:003",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M061",
+   "a": "易兰珠",
+   "b": "邱东洛",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "022:003",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M062",
+   "a": "卓一航",
+   "b": "武当派",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "022:003",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M063",
+   "a": "石大娘",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M064",
+   "a": "楚昭南",
+   "b": "韩荆",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M065",
+   "a": "石天成",
+   "b": "辛龙子",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M066",
+   "a": "李思永",
+   "b": "武琼瑶",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M067",
+   "a": "石大娘",
+   "b": "石天成",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M068",
+   "a": "傅青主",
+   "b": "齐真君",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M069",
+   "a": "楚昭南",
+   "b": "辛龙子",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M070",
+   "a": "武琼瑶",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M071",
+   "a": "凌未风",
+   "b": "邱东洛",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M072",
+   "a": "易兰珠",
+   "b": "齐真君",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "023:001",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M073",
+   "a": "武琼瑶",
+   "b": "郝飞凤",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "024:002",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M074",
+   "a": "凌未风",
+   "b": "楚昭南",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M075",
+   "a": "辛龙子",
+   "b": "齐真君",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M076",
+   "a": "天蒙",
+   "b": "石天成",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M077",
+   "a": "天蒙",
+   "b": "辛龙子",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M078",
+   "a": "成天挺",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M079",
+   "a": "武琼瑶",
+   "b": "练霓裳",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M080",
+   "a": "天蒙禅师",
+   "b": "辛龙子",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M081",
+   "a": "成天挺",
+   "b": "武琼瑶",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M082",
+   "a": "天雄禅师",
+   "b": "辛龙子",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M083",
+   "a": "凌未风",
+   "b": "刘郁芳",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M084",
+   "a": "刘郁芳",
+   "b": "武琼瑶",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M085",
+   "a": "石天成",
+   "b": "练霓裳",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M086",
+   "a": "张天蒙",
+   "b": "成天挺",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "025:006",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M087",
+   "a": "易兰珠",
+   "b": "纳兰容若",
+   "outcome": "loss",
+   "weight": 0.6,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M088",
+   "a": "凌未风",
+   "b": "马方",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "028:004",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M089",
+   "a": "凌未风",
+   "b": "周青",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "028:004",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M090",
+   "a": "楚昭南",
+   "b": "韩志邦",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:001",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M091",
+   "a": "宗达完真",
+   "b": "达赖活佛",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "029:001",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M092",
+   "a": "凌未风",
+   "b": "桑仁",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:015",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M093",
+   "a": "桂仲明",
+   "b": "桑弧",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:015",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M094",
+   "a": "何绿华",
+   "b": "玄真",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:015",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M095",
+   "a": "桑乾",
+   "b": "桑仁",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:015",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M096",
+   "a": "桑弧",
+   "b": "玄真",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:015",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M097",
+   "a": "桑仁",
+   "b": "玄真",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "七剑下天山",
+   "loc": "030:015",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M098",
+   "a": "桂华生",
+   "b": "藏灵上人",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "冰魄寒光剑",
+   "loc": "004:028",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M099",
+   "a": "提摩达多",
+   "b": "桂华生",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒"
+   ],
+   "kind": "围攻",
+   "book": "冰魄寒光剑",
+   "loc": "007:028",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M100",
+   "a": "御林军",
+   "b": "摩兰法师",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "冰魄寒光剑",
+   "loc": "008:029",
+   "scene": "S008-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M101",
+   "a": "提摩达多",
+   "b": "摩兰法师",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "冰魄寒光剑",
+   "loc": "008:029",
+   "scene": "S008-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M102",
+   "a": "提摩达多",
+   "b": "桂华生",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "冰魄寒光剑",
+   "loc": "009:006",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M103",
+   "a": "宛兰星",
+   "b": "桂华生",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "冰魄寒光剑",
+   "loc": "011:001",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M104",
+   "a": "桂华生",
+   "b": "邓南遮",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "冰魄寒光剑",
+   "loc": "011:020",
+   "scene": "S011-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M105",
+   "a": "克雷斯",
+   "b": "邓南遮",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "冰魄寒光剑",
+   "loc": "011:020",
+   "scene": "S011-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M106",
+   "a": "公主",
+   "b": "桂华生",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "单挑",
+   "book": "冰魄寒光剑",
+   "loc": "012:004",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M107",
+   "a": "杨云骢",
+   "b": "楚昭南",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "002:002",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M108",
+   "a": "哈玛雅",
+   "b": "押不庐",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "005:003",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M109",
+   "a": "杨云骢",
+   "b": "阿盖",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:016",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M110",
+   "a": "哈玛雅",
+   "b": "杨云骢",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:016",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M111",
+   "a": "塔山族",
+   "b": "飞红巾",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "009:016",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M112",
+   "a": "哈玛雅",
+   "b": "巴拉",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "塞外奇侠传",
+   "loc": "010:001",
+   "scene": "S010-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M113",
+   "a": "杨云骢",
+   "b": "柳西岩",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "011:001",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M114",
+   "a": "柳西岩",
+   "b": "邱东洛",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "011:001",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M115",
+   "a": "伊士达",
+   "b": "杨云骢",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "012:001",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M116",
+   "a": "杨云骢",
+   "b": "清兵",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "016:001",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M117",
+   "a": "卓一航",
+   "b": "纽祜庐",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "塞外奇侠传",
+   "loc": "017:010",
+   "scene": "S017-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M118",
+   "a": "杨云骢",
+   "b": "麦盖提",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "018:001",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M119",
+   "a": "多铎",
+   "b": "麦盖提",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "018:001",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M120",
+   "a": "杨云骢",
+   "b": "练霓裳",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "018:001",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M121",
+   "a": "练霓裳",
+   "b": "青蓑道人",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M122",
+   "a": "武当派",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M123",
+   "a": "红云道人",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M124",
+   "a": "红云道人",
+   "b": "青蓑道人",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M125",
+   "a": "何绿华",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M126",
+   "a": "练霓裳",
+   "b": "黄叶三哥",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M127",
+   "a": "王大须子",
+   "b": "纳兰明慧",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "024:001",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M128",
+   "a": "纳兰明慧",
+   "b": "飞红巾",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "024:001",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M129",
+   "a": "王大须子",
+   "b": "飞红巾",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "024:001",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M130",
+   "a": "哈玛雅",
+   "b": "王大须子",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "024:001",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M131",
+   "a": "杨云骢",
+   "b": "清军",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "塞外奇侠传",
+   "loc": "026:001",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M132",
+   "a": "张丹枫",
+   "b": "贯仲",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "001:011",
+   "scene": "S001-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M133",
+   "a": "张风府",
+   "b": "闻铁声",
+   "outcome": "loss",
+   "weight": 0.25,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "诈败"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "002:001",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M134",
+   "a": "于谦",
+   "b": "朝廷",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "003:002",
+   "scene": "S003-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M135",
+   "a": "于谦",
+   "b": "樊英",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "003:002",
+   "scene": "S003-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M136",
+   "a": "毕愿穷",
+   "b": "钱通海",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "005:005",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M137",
+   "a": "于谦",
+   "b": "祈镇",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "005:005",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M138",
+   "a": "小虎子",
+   "b": "黑白摩诃",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "007:026",
+   "scene": "S007-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M139",
+   "a": "阳宗海",
+   "b": "黑摩诃",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "007:026",
+   "scene": "S007-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M140",
+   "a": "周山民",
+   "b": "娄桐荪",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M141",
+   "a": "周山民",
+   "b": "石翠凤",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M142",
+   "a": "于承珠",
+   "b": "阳宗海",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M143",
+   "a": "娄桐荪",
+   "b": "孟长生",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M144",
+   "a": "张丹枫",
+   "b": "战三山",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M145",
+   "a": "张风府",
+   "b": "战三山",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M146",
+   "a": "胖和尚",
+   "b": "阳宗海",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "009:001",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M147",
+   "a": "于承珠",
+   "b": "张黑",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "单挑",
+   "book": "散花女侠",
+   "loc": "010:041",
+   "scene": "S010-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M148",
+   "a": "濑越",
+   "b": "铁镜心",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "012:005",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M149",
+   "a": "江口",
+   "b": "铁镜心",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "012:005",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M150",
+   "a": "于承珠",
+   "b": "铁镜心",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "013:003",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M151",
+   "a": "板田荣男",
+   "b": "铁镜心",
+   "outcome": "win",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "013:003",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M152",
+   "a": "大卫门",
+   "b": "铁镜心",
+   "outcome": "win",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "013:003",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M153",
+   "a": "近卫",
+   "b": "近卫三郎",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "013:029",
+   "scene": "S013-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M154",
+   "a": "于承珠",
+   "b": "小昭",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "013:029",
+   "scene": "S013-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M155",
+   "a": "于承珠",
+   "b": "芥川龙木",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "013:029",
+   "scene": "S013-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M156",
+   "a": "近卫三郎",
+   "b": "邓茂七",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "013:029",
+   "scene": "S013-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M157",
+   "a": "石井太郎",
+   "b": "铁镜心",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "014:001",
+   "scene": "S014-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M158",
+   "a": "于承珠",
+   "b": "芥川龙木",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "014:001",
+   "scene": "S014-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M159",
+   "a": "娄桐荪",
+   "b": "铁镜心",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "单挑",
+   "book": "散花女侠",
+   "loc": "015:050",
+   "scene": "S015-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M160",
+   "a": "乌蒙夫",
+   "b": "娄桐荪",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "016:005",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M161",
+   "a": "于承珠",
+   "b": "小虎子",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "017:002",
+   "scene": "S017-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M162",
+   "a": "小虎子",
+   "b": "蒙元子",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "017:002",
+   "scene": "S017-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M163",
+   "a": "小虎子",
+   "b": "黑白摩诃",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "018:007",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M164",
+   "a": "阿萨玛",
+   "b": "黑白摩诃",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "018:007",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M165",
+   "a": "张士诚",
+   "b": "阿萨玛",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "018:007",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M166",
+   "a": "盘天罗",
+   "b": "黑白摩诃",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "018:007",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M167",
+   "a": "阿萨玛兄弟",
+   "b": "黑白摩诃",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "018:007",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M168",
+   "a": "于承珠",
+   "b": "阿萨玛兄弟",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "018:007",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M169",
+   "a": "张丹枫",
+   "b": "阳宗海",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "021:002",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M170",
+   "a": "于谦",
+   "b": "祈镇",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "021:002",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M171",
+   "a": "于承珠",
+   "b": "李涵真",
+   "outcome": "win",
+   "weight": 0.45,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M172",
+   "a": "李涵真",
+   "b": "黑白摩诃",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M173",
+   "a": "于承珠",
+   "b": "韩二嫂",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M174",
+   "a": "于承珠",
+   "b": "杜焜",
+   "outcome": "win",
+   "weight": 0.45,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "022:001",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M175",
+   "a": "谷中豪",
+   "b": "铁镜心",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "散花女侠",
+   "loc": "023:002",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M176",
+   "a": "六阳真君",
+   "b": "叶成林",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "024:014",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M177",
+   "a": "六阳真君",
+   "b": "盘天罗",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "024:014",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M178",
+   "a": "谢天华",
+   "b": "赤霞道人",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M179",
+   "a": "乌蒙夫",
+   "b": "林仙韵",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M180",
+   "a": "云蕾",
+   "b": "摘星上人",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M181",
+   "a": "屠龙尊者",
+   "b": "鸠盘婆",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M182",
+   "a": "屠龙尊者",
+   "b": "林仙韵",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M183",
+   "a": "赤霞道人",
+   "b": "鸠盘婆",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M184",
+   "a": "林仙韵",
+   "b": "黑白摩诃",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M185",
+   "a": "乌蒙夫",
+   "b": "屠龙尊者",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M186",
+   "a": "铁镜心",
+   "b": "鸠盘婆",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "025:001",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M187",
+   "a": "白孟川",
+   "b": "韩振羽",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "026:015",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M188",
+   "a": "白孟川",
+   "b": "镖行",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "026:015",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M189",
+   "a": "玄瑛道人",
+   "b": "韩振羽",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "026:015",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M190",
+   "a": "玄瑛道人",
+   "b": "白孟川",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "027:001",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M191",
+   "a": "凌云凤",
+   "b": "玄瑛道人",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "027:001",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M192",
+   "a": "于承珠",
+   "b": "玄瑛道人",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "027:001",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M193",
+   "a": "凌云凤",
+   "b": "阿萨玛兄弟",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "027:041",
+   "scene": "S027-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M194",
+   "a": "于承珠",
+   "b": "凌云凤",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "027:041",
+   "scene": "S027-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M195",
+   "a": "于承珠",
+   "b": "胡宏",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "028:010",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M196",
+   "a": "于承珠",
+   "b": "白孟川",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "029:012",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M197",
+   "a": "于承珠",
+   "b": "大龙头",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "030:001",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M198",
+   "a": "于承珠",
+   "b": "褚玄",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "031:005",
+   "scene": "S031-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M199",
+   "a": "毕愿穷",
+   "b": "顾孟章",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "032:030",
+   "scene": "S032-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M200",
+   "a": "石鸿博",
+   "b": "阳宗海",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "033:001",
+   "scene": "S033-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M201",
+   "a": "屠龙尊者",
+   "b": "石鸿博",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "033:001",
+   "scene": "S033-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M202",
+   "a": "张丹枫",
+   "b": "石鸿博",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "033:001",
+   "scene": "S033-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M203",
+   "a": "张丹枫",
+   "b": "摘星上人",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "033:022",
+   "scene": "S033-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M204",
+   "a": "张丹枫",
+   "b": "石鸿博",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "033:022",
+   "scene": "S033-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M205",
+   "a": "云重",
+   "b": "楚大齐",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "033:022",
+   "scene": "S033-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M206",
+   "a": "楚大齐",
+   "b": "石鸿博",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "033:022",
+   "scene": "S033-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M207",
+   "a": "于承珠",
+   "b": "霍天都",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "散花女侠",
+   "loc": "034:021",
+   "scene": "S034-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M208",
+   "a": "阳宗海",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "036:001",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M209",
+   "a": "娄桐荪",
+   "b": "铁镜心",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "散花女侠",
+   "loc": "036:001",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M210",
+   "a": "邝琏",
+   "b": "雷海音",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "002:006",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M211",
+   "a": "周青",
+   "b": "龙木公",
+   "outcome": "loss",
+   "weight": 0.45,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "002:006",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M212",
+   "a": "冯广潮",
+   "b": "邝练霞",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "002:006",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M213",
+   "a": "邝琏",
+   "b": "钟万堂",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "002:006",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M214",
+   "a": "冯广潮",
+   "b": "邝琏",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "002:006",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M215",
+   "a": "玄风道长",
+   "b": "萨天刺",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "003:016",
+   "scene": "S003-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M216",
+   "a": "唐晓澜",
+   "b": "萨天刺",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "003:016",
+   "scene": "S003-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M217",
+   "a": "萨天都",
+   "b": "陈元霸",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "003:016",
+   "scene": "S003-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M218",
+   "a": "杨仲英",
+   "b": "董太清",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "003:016",
+   "scene": "S003-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M219",
+   "a": "朗月禅师",
+   "b": "萨天都",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:001",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M220",
+   "a": "玄风道长",
+   "b": "萨天刺",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:001",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M221",
+   "a": "唐晓澜",
+   "b": "萨天刺",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:001",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M222",
+   "a": "双魔",
+   "b": "萨天刺",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:001",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M223",
+   "a": "柳先开",
+   "b": "玄风道长",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "004:001",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M224",
+   "a": "杨柳青",
+   "b": "邹锡九",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "006:004",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M225",
+   "a": "杨柳青",
+   "b": "邹鸣皋",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "006:004",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M226",
+   "a": "邹锡九",
+   "b": "邹鸣皋",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "006:004",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M227",
+   "a": "杨仲英",
+   "b": "邹鸣皋",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "006:004",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M228",
+   "a": "了因",
+   "b": "易兰珠",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M229",
+   "a": "天叶散人",
+   "b": "易兰珠",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M230",
+   "a": "吕四娘",
+   "b": "易兰珠",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M231",
+   "a": "易兰珠",
+   "b": "萨天都",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M232",
+   "a": "易兰珠",
+   "b": "海云和尚",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M233",
+   "a": "易兰珠",
+   "b": "鱼壳",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M234",
+   "a": "孟武功",
+   "b": "易兰珠",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M235",
+   "a": "唐晓澜",
+   "b": "易兰珠",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M236",
+   "a": "哈布陀",
+   "b": "易兰珠",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "009:004",
+   "scene": "S009-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M237",
+   "a": "萨天都",
+   "b": "钟万堂",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "011:006",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M238",
+   "a": "易兰珠",
+   "b": "白泰官",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "011:006",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M239",
+   "a": "天叶散人",
+   "b": "易兰珠",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "011:006",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M240",
+   "a": "了因",
+   "b": "唐晓澜",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "011:006",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M241",
+   "a": "吕四娘",
+   "b": "秦中越",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M242",
+   "a": "吕四娘",
+   "b": "董巨川",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M243",
+   "a": "吕四娘",
+   "b": "甘天龙",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M244",
+   "a": "李卫",
+   "b": "甘天龙",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M245",
+   "a": "甘天龙",
+   "b": "秦中越",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M246",
+   "a": "吕四娘",
+   "b": "路民瞻",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M247",
+   "a": "御林军",
+   "b": "路民瞻",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M248",
+   "a": "路府",
+   "b": "路民瞻",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M249",
+   "a": "吕四娘",
+   "b": "御林军",
+   "outcome": "loss",
+   "weight": 0.45,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M250",
+   "a": "甘凤池",
+   "b": "陈美娘",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "013:001",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M251",
+   "a": "唐晓澜",
+   "b": "萨天都",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "013:024",
+   "scene": "S013-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M252",
+   "a": "唐晓澜",
+   "b": "祝家澍",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "014:007",
+   "scene": "S014-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M253",
+   "a": "唐晓澜",
+   "b": "杨仲英",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "014:007",
+   "scene": "S014-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M254",
+   "a": "哈布陀",
+   "b": "杨仲英",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "014:007",
+   "scene": "S014-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M255",
+   "a": "凌岳",
+   "b": "曹元朗",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:002",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M256",
+   "a": "太极派",
+   "b": "曹元朗",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:002",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M257",
+   "a": "凌未风",
+   "b": "天山七剑",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:002",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M258",
+   "a": "唐晓澜",
+   "b": "尚复初",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:036",
+   "scene": "S016-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M259",
+   "a": "唐晓澜",
+   "b": "杨仲英",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:036",
+   "scene": "S016-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M260",
+   "a": "卫扬威",
+   "b": "唐晓澜",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "016:036",
+   "scene": "S016-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M261",
+   "a": "甘凤池",
+   "b": "车鼎丰",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "017:036",
+   "scene": "S017-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M262",
+   "a": "了因",
+   "b": "李治",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "019:001",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M263",
+   "a": "冯琳",
+   "b": "李治",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "019:001",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M264",
+   "a": "吕四娘",
+   "b": "韩重山",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "019:001",
+   "scene": "S019-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M265",
+   "a": "董巨川",
+   "b": "韩重山",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "020:003",
+   "scene": "S020-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M266",
+   "a": "叶横波",
+   "b": "吕四娘",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "020:003",
+   "scene": "S020-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M267",
+   "a": "了因",
+   "b": "天叶散人",
+   "outcome": "win",
+   "weight": 0.12,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "020:054",
+   "scene": "S020-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M268",
+   "a": "了因",
+   "b": "印宏",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "021:001",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M269",
+   "a": "了因",
+   "b": "本无大师",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "021:001",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M270",
+   "a": "本无大师",
+   "b": "韩重山",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "021:001",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M271",
+   "a": "天叶散人",
+   "b": "董巨川",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "021:001",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M272",
+   "a": "了因",
+   "b": "韩重山",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "021:001",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M273",
+   "a": "董巨川",
+   "b": "韩重山",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "021:001",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M274",
+   "a": "允禵",
+   "b": "唐晓澜",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "江湖三女侠",
+   "loc": "022:003",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M275",
+   "a": "吕四娘",
+   "b": "唐晓澜",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:003",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M276",
+   "a": "唐晓澜",
+   "b": "甘天龙",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:003",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M277",
+   "a": "李治",
+   "b": "柳先开",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:003",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M278",
+   "a": "了因",
+   "b": "陈元霸",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:003",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M279",
+   "a": "吕四娘",
+   "b": "甘天龙",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:003",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M280",
+   "a": "唐晓澜",
+   "b": "董巨川",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:003",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M281",
+   "a": "冷禅",
+   "b": "唐晓澜",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:003",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M282",
+   "a": "双魔",
+   "b": "邝练霞",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "023:003",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M283",
+   "a": "了因",
+   "b": "冯琳",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "024:001",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M284",
+   "a": "车辟邪",
+   "b": "陈德泰",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "024:001",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M285",
+   "a": "双魔",
+   "b": "钟万堂",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "024:001",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M286",
+   "a": "冯琳",
+   "b": "车辟邪",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "024:001",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M287",
+   "a": "冯琳",
+   "b": "年羹尧",
+   "outcome": "win",
+   "weight": 0.04,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:005",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M288",
+   "a": "了因",
+   "b": "武成化",
+   "outcome": "win",
+   "weight": 0.07,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:005",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M289",
+   "a": "了因",
+   "b": "萨天刺",
+   "outcome": "draw",
+   "weight": 0.06,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:005",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M290",
+   "a": "年羹尧",
+   "b": "李治",
+   "outcome": "win",
+   "weight": 0.09,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:005",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M291",
+   "a": "了因",
+   "b": "胤禛",
+   "outcome": "loss",
+   "weight": 0.08,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒",
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "025:005",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M292",
+   "a": "周浔",
+   "b": "甘凤池",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "026:001",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M293",
+   "a": "了因",
+   "b": "周浔",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "026:001",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M294",
+   "a": "周浔",
+   "b": "白泰官",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "026:001",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M295",
+   "a": "周浔",
+   "b": "路民瞻",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "026:001",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M296",
+   "a": "了因",
+   "b": "吕四娘",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "026:001",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M297",
+   "a": "冯琳",
+   "b": "李源",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M298",
+   "a": "冯琳",
+   "b": "杨柳青",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M299",
+   "a": "冯琳",
+   "b": "王敖",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M300",
+   "a": "了因",
+   "b": "李源",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M301",
+   "a": "年羹尧",
+   "b": "本无大师",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M302",
+   "a": "李治",
+   "b": "海云和尚",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M303",
+   "a": "冯琳",
+   "b": "叶横波",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M304",
+   "a": "李治",
+   "b": "秦中越",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M305",
+   "a": "冯琳",
+   "b": "秦中越",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M306",
+   "a": "叶横波",
+   "b": "王敖",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M307",
+   "a": "李治",
+   "b": "王敖",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M308",
+   "a": "王敖",
+   "b": "胤禛",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M309",
+   "a": "冯琳",
+   "b": "王敖",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M310",
+   "a": "少林派",
+   "b": "胤禛",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M311",
+   "a": "叶横波",
+   "b": "胤禛",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "028:001",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M312",
+   "a": "冯琳",
+   "b": "海云和尚",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "中毒"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "029:011",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M313",
+   "a": "冯琳",
+   "b": "李治",
+   "outcome": "win",
+   "weight": 0.3,
+   "confidence": "high",
+   "modifiers": [
+    "中毒"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "029:011",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M314",
+   "a": "哈布陀",
+   "b": "李治",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "029:048",
+   "scene": "S029-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M315",
+   "a": "李治",
+   "b": "胤禛",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "029:048",
+   "scene": "S029-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M316",
+   "a": "冯琳",
+   "b": "年羹尧",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "030:027",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M317",
+   "a": "冯琳",
+   "b": "杨柳青",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "032:011",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M318",
+   "a": "冯琳",
+   "b": "海云和尚",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "033:002",
+   "scene": "S033-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M319",
+   "a": "海云和尚",
+   "b": "路民瞻",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "033:002",
+   "scene": "S033-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M320",
+   "a": "唐晓澜",
+   "b": "毒龙尊者",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:001",
+   "scene": "S034-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M321",
+   "a": "毒龙尊者",
+   "b": "甘凤池",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:001",
+   "scene": "S034-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M322",
+   "a": "冯琳",
+   "b": "甘凤池",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:001",
+   "scene": "S034-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M323",
+   "a": "唐晓澜",
+   "b": "甘凤池",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:001",
+   "scene": "S034-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M324",
+   "a": "李明珠",
+   "b": "甘凤池",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "034:001",
+   "scene": "S034-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M325",
+   "a": "冯琳",
+   "b": "毒龙尊者",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:003",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M326",
+   "a": "毒龙尊者",
+   "b": "鱼壳",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:003",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M327",
+   "a": "吕四娘",
+   "b": "毒龙尊者",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "036:003",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M328",
+   "a": "冯琳",
+   "b": "额音和布",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:007",
+   "scene": "S037-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M329",
+   "a": "侯三变",
+   "b": "海云和尚",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:007",
+   "scene": "S037-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M330",
+   "a": "吕四娘",
+   "b": "哈布陀",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:007",
+   "scene": "S037-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M331",
+   "a": "允禩",
+   "b": "哈布陀",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:007",
+   "scene": "S037-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M332",
+   "a": "侯三变",
+   "b": "冯琳",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:007",
+   "scene": "S037-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M333",
+   "a": "冯琳",
+   "b": "海云和尚",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:007",
+   "scene": "S037-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M334",
+   "a": "海云和尚",
+   "b": "雷海音",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "037:007",
+   "scene": "S037-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M335",
+   "a": "周青",
+   "b": "邝琏",
+   "outcome": "loss",
+   "weight": 0.27,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "038:009",
+   "scene": "S038-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M336",
+   "a": "吕四娘",
+   "b": "邝琏",
+   "outcome": "win",
+   "weight": 0.3,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "038:009",
+   "scene": "S038-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M337",
+   "a": "冯琳",
+   "b": "邝琏",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "038:009",
+   "scene": "S038-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M338",
+   "a": "邝琏",
+   "b": "龙木公",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "038:039",
+   "scene": "S038-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M339",
+   "a": "冯琳",
+   "b": "张天池",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "038:039",
+   "scene": "S038-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M340",
+   "a": "冯广潮",
+   "b": "周青",
+   "outcome": "loss",
+   "weight": 0.45,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "038:039",
+   "scene": "S038-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M341",
+   "a": "胤禛",
+   "b": "韩重山",
+   "outcome": "win",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "039:069",
+   "scene": "S039-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M342",
+   "a": "唐晓澜",
+   "b": "甘凤池",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:014",
+   "scene": "S041-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M343",
+   "a": "冯琳",
+   "b": "哈布陀",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:014",
+   "scene": "S041-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M344",
+   "a": "昆甸上人",
+   "b": "甘凤池",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "041:014",
+   "scene": "S041-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M345",
+   "a": "昆甸上人",
+   "b": "毒龙尊者",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "042:001",
+   "scene": "S042-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M346",
+   "a": "毒龙尊者",
+   "b": "韩重山",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "042:001",
+   "scene": "S042-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M347",
+   "a": "毒龙尊者",
+   "b": "额音和布",
+   "outcome": "draw",
+   "weight": 0.35,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "042:001",
+   "scene": "S042-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M348",
+   "a": "唐晓澜",
+   "b": "桂华生",
+   "outcome": "loss",
+   "weight": 0.6,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "044:019",
+   "scene": "S044-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M349",
+   "a": "少林寺",
+   "b": "胤禛",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "045:041",
+   "scene": "S045-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M350",
+   "a": "白泰官",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:001",
+   "scene": "S047-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M351",
+   "a": "冯琳",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:001",
+   "scene": "S047-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M352",
+   "a": "唐晓澜",
+   "b": "胤禛",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:001",
+   "scene": "S047-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M353",
+   "a": "唐赛花",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:001",
+   "scene": "S047-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M354",
+   "a": "吕四娘",
+   "b": "胤禛",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:001",
+   "scene": "S047-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M355",
+   "a": "李治",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:001",
+   "scene": "S047-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M356",
+   "a": "吕四娘",
+   "b": "额音和布",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "047:001",
+   "scene": "S047-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M357",
+   "a": "冯琳",
+   "b": "胤禛",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:001",
+   "scene": "S048-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M358",
+   "a": "吕四娘",
+   "b": "哈布陀",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "江湖三女侠",
+   "loc": "048:001",
+   "scene": "S048-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M359",
+   "a": "卓家",
+   "b": "耿绍南",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "001:005",
+   "scene": "S001-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M360",
+   "a": "范筑",
+   "b": "郑洪台",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:006",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M361",
+   "a": "卓一航",
+   "b": "范筑",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:006",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M362",
+   "a": "练霓裳",
+   "b": "范筑",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:006",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M363",
+   "a": "应修阳",
+   "b": "郑洪台",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:006",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M364",
+   "a": "应修阳",
+   "b": "范筑",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "004:006",
+   "scene": "S004-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M365",
+   "a": "云燕平",
+   "b": "卓一航",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "005:001",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M366",
+   "a": "练霓裳",
+   "b": "铁飞龙",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "006:001",
+   "scene": "S006-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M367",
+   "a": "铁飞龙",
+   "b": "黄叶三哥",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:004",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M368",
+   "a": "红云",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:004",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M369",
+   "a": "贞乾道人",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:004",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M370",
+   "a": "武当五老",
+   "b": "黄叶三哥",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:004",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M371",
+   "a": "武当五老",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:004",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M372",
+   "a": "孟秋霞",
+   "b": "铁珊瑚",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:004",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M373",
+   "a": "王照希",
+   "b": "铁珊瑚",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:004",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M374",
+   "a": "武当派",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "007:004",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M375",
+   "a": "岳鸣珂",
+   "b": "慕容冲",
+   "outcome": "loss",
+   "weight": 0.3,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "012:010",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M376",
+   "a": "练霓裳",
+   "b": "金独异",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "013:001",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M377",
+   "a": "公孙大娘",
+   "b": "练霓裳",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "015:001",
+   "scene": "S015-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M378",
+   "a": "公孙大娘",
+   "b": "铁飞龙",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "015:001",
+   "scene": "S015-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M379",
+   "a": "何萼华",
+   "b": "李申时",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:011",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M380",
+   "a": "慕容冲",
+   "b": "龙啸云",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:011",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M381",
+   "a": "李天扬",
+   "b": "李申时",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:011",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M382",
+   "a": "慕容冲",
+   "b": "李申时",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:011",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M383",
+   "a": "公孙大娘",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:011",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M384",
+   "a": "练霓裳",
+   "b": "金独异",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "状态不佳"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "016:011",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M385",
+   "a": "卓一航",
+   "b": "金独异",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "018:003",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M386",
+   "a": "慕容冲",
+   "b": "紫阳道长",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "020:002",
+   "scene": "S020-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M387",
+   "a": "慕容冲",
+   "b": "铁珊瑚",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "020:002",
+   "scene": "S020-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M388",
+   "a": "卓一航",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "020:002",
+   "scene": "S020-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M389",
+   "a": "神一元",
+   "b": "铁飞龙",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "022:039",
+   "scene": "S022-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M390",
+   "a": "神大元",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "022:039",
+   "scene": "S022-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M391",
+   "a": "神家兄弟",
+   "b": "铁飞龙",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "022:039",
+   "scene": "S022-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M392",
+   "a": "神家兄弟",
+   "b": "练霓裳",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "022:039",
+   "scene": "S022-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M393",
+   "a": "岳鸣珂",
+   "b": "金独异",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "022:039",
+   "scene": "S022-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M394",
+   "a": "察克图",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "023:016",
+   "scene": "S023-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M395",
+   "a": "慕容冲",
+   "b": "铁飞龙",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "白发魔女传",
+   "loc": "024:012",
+   "scene": "S024-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M396",
+   "a": "红云道人",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:049",
+   "scene": "S026-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M397",
+   "a": "白石",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:049",
+   "scene": "S026-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M398",
+   "a": "练霓裳",
+   "b": "黄叶三哥",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:049",
+   "scene": "S026-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M399",
+   "a": "练霓裳",
+   "b": "青蓑道人",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:049",
+   "scene": "S026-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M400",
+   "a": "白石",
+   "b": "红云道人",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:049",
+   "scene": "S026-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M401",
+   "a": "武当派",
+   "b": "练霓裳",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:049",
+   "scene": "S026-02",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M402",
+   "a": "慕容冲",
+   "b": "黄叶三哥",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:095",
+   "scene": "S026-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M403",
+   "a": "红云道人",
+   "b": "黄叶三哥",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:095",
+   "scene": "S026-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M404",
+   "a": "慕容冲",
+   "b": "红云道人",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:095",
+   "scene": "S026-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M405",
+   "a": "卓一航",
+   "b": "红云道人",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:095",
+   "scene": "S026-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M406",
+   "a": "卓一航",
+   "b": "慕容冲",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "high",
+   "modifiers": [
+    "放水"
+   ],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "026:095",
+   "scene": "S026-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M407",
+   "a": "连城虎",
+   "b": "铁飞龙",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:045",
+   "scene": "S027-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M408",
+   "a": "卓一航",
+   "b": "连城虎",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:045",
+   "scene": "S027-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M409",
+   "a": "张四",
+   "b": "王照希",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:045",
+   "scene": "S027-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M410",
+   "a": "岳鸣珂",
+   "b": "金独异",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:045",
+   "scene": "S027-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M411",
+   "a": "王照希",
+   "b": "连城虎",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "027:045",
+   "scene": "S027-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M412",
+   "a": "朱由检",
+   "b": "魏忠贤",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "028:004",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M413",
+   "a": "卓一航",
+   "b": "雷蒙法师",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "029:051",
+   "scene": "S029-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M414",
+   "a": "练霓裳",
+   "b": "霍元仲",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "单挑",
+   "book": "白发魔女传",
+   "loc": "031:047",
+   "scene": "S031-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M415",
+   "a": "卓一航",
+   "b": "成章五",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "032:003",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M416",
+   "a": "卓一航",
+   "b": "天龙上人",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "032:003",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M417",
+   "a": "成章五",
+   "b": "练霓裳",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "032:003",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M418",
+   "a": "白石",
+   "b": "霍元仲",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "032:003",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M419",
+   "a": "卓一航",
+   "b": "白石",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "032:003",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M420",
+   "a": "天龙上人",
+   "b": "霍元仲",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "032:003",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M421",
+   "a": "天龙上人",
+   "b": "白石",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "白发魔女传",
+   "loc": "032:003",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M422",
+   "a": "玄机逸士",
+   "b": "盘天罗",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "002:010",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M423",
+   "a": "盘天罗",
+   "b": "霍天都",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "002:010",
+   "scene": "S002-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M424",
+   "a": "张玉虎",
+   "b": "铁镜心",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "003:013",
+   "scene": "S003-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M425",
+   "a": "孤云",
+   "b": "张玉虎",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "005:022",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M426",
+   "a": "屈九疑",
+   "b": "张玉虎",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "005:022",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M427",
+   "a": "孤云",
+   "b": "屈九疑",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "005:022",
+   "scene": "S005-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M428",
+   "a": "屠刚",
+   "b": "褚霸",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "007:001",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M429",
+   "a": "张玉虎",
+   "b": "褚霸",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "007:001",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M430",
+   "a": "于谦",
+   "b": "铁镜心",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "007:001",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M431",
+   "a": "张玉虎",
+   "b": "铁镜心",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "007:001",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M432",
+   "a": "屠刚",
+   "b": "张玉虎",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "007:001",
+   "scene": "S007-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M433",
+   "a": "张玉虎",
+   "b": "铁镜心",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "007:051",
+   "scene": "S007-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M434",
+   "a": "张玉虎",
+   "b": "毕擎天",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "010:002",
+   "scene": "S010-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M435",
+   "a": "张玉虎",
+   "b": "阴蕴玉",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "010:002",
+   "scene": "S010-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M436",
+   "a": "丐帮",
+   "b": "阴蕴玉",
+   "outcome": "win",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "010:002",
+   "scene": "S010-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M437",
+   "a": "张玉虎",
+   "b": "阴秀兰",
+   "outcome": "loss",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "010:002",
+   "scene": "S010-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M438",
+   "a": "厉抗天",
+   "b": "张玉虎",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "011:003",
+   "scene": "S011-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M439",
+   "a": "周志侠",
+   "b": "杜赶驴",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "012:002",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M440",
+   "a": "屈九疑",
+   "b": "翦长春",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "012:002",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M441",
+   "a": "杜赶驴",
+   "b": "翦长春",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "012:002",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M442",
+   "a": "卜云鹏",
+   "b": "魏大猷",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "012:002",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M443",
+   "a": "张玉虎",
+   "b": "承珠",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "012:002",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M444",
+   "a": "卜云鹏",
+   "b": "殷梅阁",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "012:002",
+   "scene": "S012-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M445",
+   "a": "张玉虎",
+   "b": "龙剑虹",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "013:001",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M446",
+   "a": "厉抗天",
+   "b": "龙剑虹",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "013:001",
+   "scene": "S013-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M447",
+   "a": "厉抗天",
+   "b": "霍天都",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "014:001",
+   "scene": "S014-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M448",
+   "a": "七阴教主",
+   "b": "张玉虎",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "014:001",
+   "scene": "S014-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M449",
+   "a": "乔少少",
+   "b": "冬梅",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "014:001",
+   "scene": "S014-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M450",
+   "a": "张玉虎",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M451",
+   "a": "凌云凤",
+   "b": "厉抗天",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M452",
+   "a": "乔少少",
+   "b": "张玉虎",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M453",
+   "a": "厉抗天",
+   "b": "龙剑虹",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M454",
+   "a": "乔北溟",
+   "b": "承珠",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M455",
+   "a": "张玉虎",
+   "b": "龙剑虹",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M456",
+   "a": "厉抗天",
+   "b": "张玉虎",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M457",
+   "a": "张玉虎",
+   "b": "阴秀兰",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M458",
+   "a": "乔少少",
+   "b": "承珠",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M459",
+   "a": "乔北溟",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M460",
+   "a": "乔北溟",
+   "b": "凌云凤",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M461",
+   "a": "乔北溟",
+   "b": "厉抗天",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M462",
+   "a": "凌云凤",
+   "b": "龙剑虹",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "015:039",
+   "scene": "S015-03",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M463",
+   "a": "乔家父子",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "016:005",
+   "scene": "S016-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M464",
+   "a": "翦长春",
+   "b": "黑摩诃",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "018:003",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M465",
+   "a": "乔北溟",
+   "b": "张丹枫",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "018:003",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M466",
+   "a": "符君集",
+   "b": "黑摩诃",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "018:003",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M467",
+   "a": "乔北溟",
+   "b": "黑白摩诃",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "018:003",
+   "scene": "S018-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M468",
+   "a": "承珠",
+   "b": "阳宗海",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "019:063",
+   "scene": "S019-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M469",
+   "a": "张丹枫",
+   "b": "沐璘",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "019:063",
+   "scene": "S019-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M470",
+   "a": "七星子",
+   "b": "符君集",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "020:001",
+   "scene": "S020-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M471",
+   "a": "凌云凤",
+   "b": "楚天遥",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "021:004",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M472",
+   "a": "张玉虎",
+   "b": "楚天遥",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "021:004",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M473",
+   "a": "凌云凤",
+   "b": "石镜涵",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "021:004",
+   "scene": "S021-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M474",
+   "a": "阳宗海",
+   "b": "龙剑虹",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "022:013",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M475",
+   "a": "庞家",
+   "b": "阳宗海",
+   "outcome": "draw",
+   "weight": 0.7,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "022:013",
+   "scene": "S022-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M476",
+   "a": "七阴教主",
+   "b": "百毒神君",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "单挑",
+   "book": "联剑风云录",
+   "loc": "024:066",
+   "scene": "S024-03",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M477",
+   "a": "阳宗海",
+   "b": "龙剑虹",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "025:013",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M478",
+   "a": "刘完达",
+   "b": "龙剑虹",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "025:013",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M479",
+   "a": "刘完达",
+   "b": "阳宗海",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "025:013",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M480",
+   "a": "七阴教主",
+   "b": "百毒神君",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "025:013",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M481",
+   "a": "七阴教主",
+   "b": "周志侠",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "025:013",
+   "scene": "S025-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M482",
+   "a": "厉抗天",
+   "b": "阳宗海",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "026:009",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M483",
+   "a": "厉抗天",
+   "b": "龙剑虹",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "026:009",
+   "scene": "S026-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M484",
+   "a": "万天鹏",
+   "b": "阳宗海",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M485",
+   "a": "万天鹏",
+   "b": "阴秀兰",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M486",
+   "a": "周山民",
+   "b": "阳宗海",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M487",
+   "a": "万天鹏",
+   "b": "厉抗天",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "high",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "027:005",
+   "scene": "S027-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M488",
+   "a": "乔少少",
+   "b": "凌云凤",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "028:017",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M489",
+   "a": "娄桐荪",
+   "b": "张丹枫",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "028:017",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M490",
+   "a": "万天鹏",
+   "b": "管神龙",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "028:017",
+   "scene": "S028-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M491",
+   "a": "摘星上人",
+   "b": "霍天都",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "029:001",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M492",
+   "a": "乌蒙夫",
+   "b": "凌云凤",
+   "outcome": "win",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "029:001",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M493",
+   "a": "凌云凤",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "029:001",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M494",
+   "a": "凌云凤",
+   "b": "曲野樵",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "029:001",
+   "scene": "S029-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M495",
+   "a": "东方赫",
+   "b": "娄桐荪",
+   "outcome": "draw",
+   "weight": 0.21,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "030:003",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M496",
+   "a": "摘星上人",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 0.24,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "030:003",
+   "scene": "S030-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M497",
+   "a": "阴秀兰",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "031:006",
+   "scene": "S031-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M498",
+   "a": "摘星上人",
+   "b": "霍天都",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "031:006",
+   "scene": "S031-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M499",
+   "a": "厉抗天",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 0.27,
+   "confidence": "medium",
+   "modifiers": [
+    "切磋"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "032:001",
+   "scene": "S032-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M500",
+   "a": "乔少少",
+   "b": "凌云风",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "033:002",
+   "scene": "S033-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M501",
+   "a": "乌蒙夫",
+   "b": "乔北溟",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "033:002",
+   "scene": "S033-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M502",
+   "a": "张丹枫",
+   "b": "承珠",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "034:028",
+   "scene": "S034-02",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M503",
+   "a": "凌云凤",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "035:001",
+   "scene": "S035-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M504",
+   "a": "凌云凤",
+   "b": "谷竹均",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "035:001",
+   "scene": "S035-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M505",
+   "a": "凌云凤",
+   "b": "承珠",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "035:001",
+   "scene": "S035-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M506",
+   "a": "凌云凤",
+   "b": "龙剑虹",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "035:001",
+   "scene": "S035-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M507",
+   "a": "周志侠",
+   "b": "姬尤",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "036:004",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M508",
+   "a": "周志侠",
+   "b": "楚天遥",
+   "outcome": "loss",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "036:004",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M509",
+   "a": "承珠",
+   "b": "萨力雄",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "036:004",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M510",
+   "a": "大雄",
+   "b": "黑白摩诃",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "036:004",
+   "scene": "S036-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M511",
+   "a": "乔少少",
+   "b": "叶成林",
+   "outcome": "win",
+   "weight": 0.45,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "037:001",
+   "scene": "S037-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M512",
+   "a": "乔少少",
+   "b": "凌云凤",
+   "outcome": "win",
+   "weight": 1.0,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "038:001",
+   "scene": "S038-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M513",
+   "a": "乔北溟",
+   "b": "承珠",
+   "outcome": "loss",
+   "weight": 0.9,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "038:001",
+   "scene": "S038-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M514",
+   "a": "乔北溟",
+   "b": "韩铁樵",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "039:008",
+   "scene": "S039-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M515",
+   "a": "云重",
+   "b": "摘星上人",
+   "outcome": "win",
+   "weight": 0.45,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "039:008",
+   "scene": "S039-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M516",
+   "a": "承珠",
+   "b": "韩铁樵",
+   "outcome": "win",
+   "weight": 0.5,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "039:008",
+   "scene": "S039-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M517",
+   "a": "承珠",
+   "b": "管神龙",
+   "outcome": "loss",
+   "weight": 0.2,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "039:008",
+   "scene": "S039-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M518",
+   "a": "凌云凤",
+   "b": "霍天都",
+   "outcome": "loss",
+   "weight": 0.4,
+   "confidence": "medium",
+   "modifiers": [
+    "偷袭"
+   ],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "039:008",
+   "scene": "S039-01",
+   "evidence": {
+    "source": "event_outcome",
+    "rule": "事件层 outcome 回退"
+   }
+  },
+  {
+   "id": "M519",
+   "a": "乔北溟",
+   "b": "张丹枫",
+   "outcome": "win",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "040:003",
+   "scene": "S040-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  },
+  {
+   "id": "M520",
+   "a": "张丹枫",
+   "b": "阳宗海",
+   "outcome": "loss",
+   "weight": 0.8,
+   "confidence": "medium",
+   "modifiers": [],
+   "kind": "围攻",
+   "book": "联剑风云录",
+   "loc": "040:003",
+   "scene": "S040-01",
+   "evidence": {
+    "source": "scene_word",
+    "rule": "胜负词表（场景）"
+   }
+  }
+ ],
+ "fighters": [
+  "七星子",
+  "七阴教主",
+  "万天鹏",
+  "丐帮",
+  "东方赫",
+  "乌蒙夫",
+  "乔北溟",
+  "乔家父子",
+  "乔少少",
+  "了因",
+  "于承珠",
+  "于谦",
+  "云燕平",
+  "云蕾",
+  "云重",
+  "五龙",
+  "伊士达",
+  "何绿华",
+  "何萼华",
+  "侯三变",
+  "保柱",
+  "傅青主",
+  "允禩",
+  "允禵",
+  "克雷斯",
+  "公主",
+  "公孙大娘",
+  "六阳真君",
+  "冒浣莲",
+  "冬梅",
+  "冯广潮",
+  "冯琳",
+  "冷禅",
+  "凌云凤",
+  "凌云风",
+  "凌岳",
+  "凌未风",
+  "刁四福",
+  "刘完达",
+  "刘郁芳",
+  "卓一航",
+  "卓家",
+  "卜云鹏",
+  "卫扬威",
+  "印宏",
+  "厉抗天",
+  "双魔",
+  "古元亮",
+  "叶成林",
+  "叶横波",
+  "吕四娘",
+  "周山民",
+  "周志侠",
+  "周浔",
+  "周青",
+  "哈布陀",
+  "哈玛雅",
+  "唐晓澜",
+  "唐赛花",
+  "塔山族",
+  "多铎",
+  "多锋",
+  "大卫门",
+  "大雄",
+  "大龙头",
+  "天叶散人",
+  "天山七剑",
+  "天蒙",
+  "天蒙禅师",
+  "天雄禅师",
+  "天龙上人",
+  "太极派",
+  "姬尤",
+  "娄桐荪",
+  "孟坚",
+  "孟武功",
+  "孟武威",
+  "孟秋霞",
+  "孟长生",
+  "孤云",
+  "宗达完真",
+  "宛兰星",
+  "察克图",
+  "小昭",
+  "小虎子",
+  "少林寺",
+  "少林派",
+  "尚复初",
+  "屈九疑",
+  "屠刚",
+  "屠龙尊者",
+  "岳鸣珂",
+  "巴拉",
+  "常英",
+  "年羹尧",
+  "应修阳",
+  "庞家",
+  "张丹枫",
+  "张华昭",
+  "张四",
+  "张士诚",
+  "张天池",
+  "张天蒙",
+  "张承斌",
+  "张玉虎",
+  "张青原",
+  "张风府",
+  "张黑",
+  "御林军",
+  "慕容冲",
+  "成天挺",
+  "成章五",
+  "战三山",
+  "承珠",
+  "押不庐",
+  "提摩达多",
+  "摘星上人",
+  "摩兰法师",
+  "昆甸上人",
+  "易兰珠",
+  "晦明禅师",
+  "曲野樵",
+  "曹元朗",
+  "朗月禅师",
+  "朝廷",
+  "本无大师",
+  "朱由检",
+  "朱翊钧",
+  "李二豹",
+  "李卫",
+  "李天扬",
+  "李思永",
+  "李明珠",
+  "李治",
+  "李涵真",
+  "李源",
+  "李申时",
+  "杜焜",
+  "杜赶驴",
+  "杨云骢",
+  "杨仲英",
+  "杨柳青",
+  "板田荣男",
+  "林仙韵",
+  "柳先开",
+  "柳大雄",
+  "柳西岩",
+  "桂仲明",
+  "桂华生",
+  "桑乾",
+  "桑仁",
+  "桑弧",
+  "楚大齐",
+  "楚天遥",
+  "楚昭南",
+  "樊英",
+  "武当五老",
+  "武当派",
+  "武成化",
+  "武琼瑶",
+  "殷梅阁",
+  "毒龙尊者",
+  "毕愿穷",
+  "毕擎天",
+  "江口",
+  "沐璘",
+  "沙无定",
+  "海云和尚",
+  "清兵",
+  "清军",
+  "濑越",
+  "玄机逸士",
+  "玄瑛道人",
+  "玄真",
+  "玄风道长",
+  "王大须子",
+  "王敖",
+  "王照希",
+  "甘凤池",
+  "甘天龙",
+  "白孟川",
+  "白泰官",
+  "白石",
+  "百毒神君",
+  "盘天罗",
+  "石井太郎",
+  "石大娘",
+  "石天成",
+  "石翠凤",
+  "石镜涵",
+  "石鸿博",
+  "祈镇",
+  "祝家澍",
+  "神一元",
+  "神大元",
+  "神家兄弟",
+  "秦中越",
+  "程通",
+  "符君集",
+  "管神龙",
+  "紫阳道长",
+  "红云",
+  "红云道人",
+  "纳兰容若",
+  "纳兰明慧",
+  "纽祜卢",
+  "纽祜庐",
+  "练霓裳",
+  "翦长春",
+  "耿绍南",
+  "胖和尚",
+  "胡天柱",
+  "胡宏",
+  "胤禛",
+  "芥川龙木",
+  "范筑",
+  "范铮",
+  "萨力雄",
+  "萨天刺",
+  "萨天都",
+  "董太清",
+  "董巨川",
+  "蒙元子",
+  "藏灵上人",
+  "褚玄",
+  "褚霸",
+  "谢天华",
+  "谷中豪",
+  "谷竹均",
+  "贞乾道人",
+  "贯仲",
+  "赤霞道人",
+  "路府",
+  "路民瞻",
+  "车辟邪",
+  "车鼎丰",
+  "辛龙子",
+  "达赖活佛",
+  "近卫",
+  "近卫三郎",
+  "连城虎",
+  "通明",
+  "邓南遮",
+  "邓茂七",
+  "邝琏",
+  "邝练霞",
+  "邱东洛",
+  "邹锡九",
+  "邹鸣皋",
+  "郑洪台",
+  "郝继明",
+  "郝飞凤",
+  "金独异",
+  "钟万堂",
+  "钱四麒",
+  "钱通海",
+  "铁珊瑚",
+  "铁镜心",
+  "铁飞龙",
+  "镖行",
+  "长白山派",
+  "闻铁声",
+  "阎中天",
+  "阳宗海",
+  "阴秀兰",
+  "阴蕴玉",
+  "阿盖",
+  "阿萨玛",
+  "阿萨玛兄弟",
+  "陆亮",
+  "陆明",
+  "陈元霸",
+  "陈德泰",
+  "陈美娘",
+  "陶宏",
+  "雷海音",
+  "雷蒙法师",
+  "霍元仲",
+  "霍天都",
+  "青蓑道人",
+  "韩二嫂",
+  "韩志邦",
+  "韩振羽",
+  "韩荆",
+  "韩重山",
+  "韩铁樵",
+  "顾孟章",
+  "额音和布",
+  "飞红巾",
+  "马方",
+  "魏大猷",
+  "魏忠贤",
+  "鱼壳",
+  "鸠盘婆",
+  "麦盖提",
+  "黄叶三哥",
+  "黑摩诃",
+  "黑白摩诃",
+  "齐真君",
+  "龙剑虹",
+  "龙啸云",
+  "龙木公"
+ ]
+}

@@ -1,0 +1,9457 @@
+{
+ "meta": {
+  "generated": "2026-11-08",
+  "schema": "g1-v1",
+  "note": "岛端信息增益选问，≤20 问；候选=人物谱全集",
+  "scope": "tianshan-demo",
+  "books": [
+   "散花女侠",
+   "联剑风云录",
+   "白发魔女传",
+   "塞外奇侠传",
+   "七剑下天山",
+   "冰魄寒光剑",
+   "江湖三女侠"
+  ]
+ },
+ "chars": [
+  {
+   "name": "于承珠",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "于承珠",
+   "total": 3528
+  },
+  {
+   "name": "练霓裳",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": true,
+    "kills": true,
+    "slain": true,
+    "n": true,
+    "top": true
+   },
+   "href": "练霓裳",
+   "total": 2846
+  },
+  {
+   "name": "唐晓澜",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "唐晓澜",
+   "total": 2186
+  },
+  {
+   "name": "卓一航",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "武当派",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": true,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "卓一航",
+   "total": 2138
+  },
+  {
+   "name": "凌未风",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "天山派",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": true,
+    "kills": true,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "凌未风",
+   "total": 2074
+  },
+  {
+   "name": "铁镜心",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "铁镜心",
+   "total": 1869
+  },
+  {
+   "name": "吕四娘",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "吕四娘",
+   "total": 1843
+  },
+  {
+   "name": "张玉虎",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "张玉虎",
+   "total": 1708
+  },
+  {
+   "name": "冯琳",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "冯琳",
+   "total": 1451
+  },
+  {
+   "name": "张丹枫",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "张丹枫",
+   "total": 1412
+  },
+  {
+   "name": "凌云凤",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "凌云凤",
+   "total": 1399
+  },
+  {
+   "name": "冯瑛",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "冯瑛",
+   "total": 1335
+  },
+  {
+   "name": "桂华生",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "桂华生",
+   "total": 1292
+  },
+  {
+   "name": "岳鸣珂",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "散花女侠",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "sect": "天山派",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": true,
+    "kills": true,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "岳鸣珂",
+   "total": 1244
+  },
+  {
+   "name": "杨云骢",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "天山派",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": true,
+    "disciple": true,
+    "kills": true,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "杨云骢",
+   "total": 1136
+  },
+  {
+   "name": "年羹尧",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "年羹尧",
+   "total": 1085
+  },
+  {
+   "name": "甘凤池",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "甘凤池",
+   "total": 1084
+  },
+  {
+   "name": "楚昭南",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "sect": "天山派",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": true,
+    "kills": true,
+    "slain": true,
+    "n": true,
+    "top": true
+   },
+   "href": "楚昭南",
+   "total": 1042
+  },
+  {
+   "name": "胤禛",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "胤禛",
+   "total": 1007
+  },
+  {
+   "name": "霍天都",
+   "books": [
+    "散花女侠",
+    "白发魔女传",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "霍天都",
+   "total": 1006
+  },
+  {
+   "name": "铁飞龙",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": true,
+    "kills": true,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "铁飞龙",
+   "total": 992
+  },
+  {
+   "name": "阳宗海",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "阳宗海",
+   "total": 989
+  },
+  {
+   "name": "哈玛雅",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "哈玛雅",
+   "total": 972
+  },
+  {
+   "name": "了因",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "了因",
+   "total": 963
+  },
+  {
+   "name": "冒浣莲",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "冒浣莲",
+   "total": 951
+  },
+  {
+   "name": "毕擎天",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "毕擎天",
+   "total": 949
+  },
+  {
+   "name": "龙剑虹",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "龙剑虹",
+   "total": 939
+  },
+  {
+   "name": "易兰珠",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "江湖三女侠",
+    "联剑风云录"
+   ],
+   "sect": "天山派",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "易兰珠",
+   "total": 915
+  },
+  {
+   "name": "叶成林",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "叶成林",
+   "total": 815
+  },
+  {
+   "name": "傅青主",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "无极派",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": true,
+    "kills": true,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "傅青主",
+   "total": 748
+  },
+  {
+   "name": "桂仲明",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": true,
+    "top": true
+   },
+   "href": "桂仲明",
+   "total": 709
+  },
+  {
+   "name": "李治",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "李治",
+   "total": 693
+  },
+  {
+   "name": "小虎子",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "小虎子",
+   "total": 689
+  },
+  {
+   "name": "乔北溟",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "乔北溟",
+   "total": 680
+  },
+  {
+   "name": "阴秀兰",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "阴秀兰",
+   "total": 613
+  },
+  {
+   "name": "七阴教主",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "七阴教主",
+   "total": 578
+  },
+  {
+   "name": "白石道人",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": true,
+    "kills": false,
+    "slain": true,
+    "n": true,
+    "top": true
+   },
+   "href": "白石道人",
+   "total": 537
+  },
+  {
+   "name": "樊英",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "樊英",
+   "total": 534
+  },
+  {
+   "name": "杨仲英",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": true,
+    "top": true
+   },
+   "href": "杨仲英",
+   "total": 526
+  },
+  {
+   "name": "沐璘",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "沐璘",
+   "total": 486
+  },
+  {
+   "name": "慕容冲",
+   "books": [
+    "白发魔女传",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "慕容冲",
+   "total": 471
+  },
+  {
+   "name": "纳兰明慧",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": true,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "纳兰明慧",
+   "total": 452
+  },
+  {
+   "name": "刘郁芳",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "无极派",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "刘郁芳",
+   "total": 439
+  },
+  {
+   "name": "杨柳青",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "杨柳青",
+   "total": 438
+  },
+  {
+   "name": "厉抗天",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "厉抗天",
+   "total": 436
+  },
+  {
+   "name": "玄烨",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "玄烨",
+   "total": 431
+  },
+  {
+   "name": "乔少少",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "乔少少",
+   "total": 421
+  },
+  {
+   "name": "韩志邦",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "武当派",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": true,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "韩志邦",
+   "total": 420
+  },
+  {
+   "name": "王照希",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "王照希",
+   "total": 414
+  },
+  {
+   "name": "公孙大娘",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": true,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "公孙大娘",
+   "total": 395
+  },
+  {
+   "name": "娄桐荪",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "娄桐荪",
+   "total": 380
+  },
+  {
+   "name": "辛龙子",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "武当派",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": true,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "辛龙子",
+   "total": 368
+  },
+  {
+   "name": "铁珊瑚",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "铁珊瑚",
+   "total": 366
+  },
+  {
+   "name": "白泰官",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "白泰官",
+   "total": 359
+  },
+  {
+   "name": "萨天剌",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "萨天剌",
+   "total": 358
+  },
+  {
+   "name": "熊廷弼",
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "熊廷弼",
+   "total": 353
+  },
+  {
+   "name": "周山民",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "周山民",
+   "total": 342
+  },
+  {
+   "name": "韩重山",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "韩重山",
+   "total": 319
+  },
+  {
+   "name": "张华昭",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "张华昭",
+   "total": 307
+  },
+  {
+   "name": "纳兰容若",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "纳兰容若",
+   "total": 298
+  },
+  {
+   "name": "魏忠贤",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "魏忠贤",
+   "total": 298
+  },
+  {
+   "name": "鱼壳",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "鱼壳",
+   "total": 296
+  },
+  {
+   "name": "钟万堂",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "钟万堂",
+   "total": 295
+  },
+  {
+   "name": "天叶散人",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "天叶散人",
+   "total": 288
+  },
+  {
+   "name": "多铎",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "长白山派",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "多铎",
+   "total": 286
+  },
+  {
+   "name": "哈布陀",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "哈布陀",
+   "total": 284
+  },
+  {
+   "name": "李思永",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "李思永",
+   "total": 283
+  },
+  {
+   "name": "武琼瑶",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "武琼瑶",
+   "total": 282
+  },
+  {
+   "name": "龙小姐",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "龙小姐",
+   "total": 279
+  },
+  {
+   "name": "毒龙尊者",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "毒龙尊者",
+   "total": 274
+  },
+  {
+   "name": "周志侠",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "周志侠",
+   "total": 271
+  },
+  {
+   "name": "黄叶道人",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "黄叶道人",
+   "total": 268
+  },
+  {
+   "name": "叶宗留",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "叶宗留",
+   "total": 264
+  },
+  {
+   "name": "周青",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "周青",
+   "total": 263
+  },
+  {
+   "name": "张风府",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "张风府",
+   "total": 260
+  },
+  {
+   "name": "金独异",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "金独异",
+   "total": 256
+  },
+  {
+   "name": "客娉婷",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": true,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "客娉婷",
+   "total": 246
+  },
+  {
+   "name": "乌蒙夫",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "乌蒙夫",
+   "total": 239
+  },
+  {
+   "name": "管神龙",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "管神龙",
+   "total": 238
+  },
+  {
+   "name": "董巨川",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "董巨川",
+   "total": 231
+  },
+  {
+   "name": "额音和布",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "额音和布",
+   "total": 230
+  },
+  {
+   "name": "黑白摩诃",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "黑白摩诃",
+   "total": 229
+  },
+  {
+   "name": "沐燕",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "沐燕",
+   "total": 222
+  },
+  {
+   "name": "石惊涛",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "石惊涛",
+   "total": 215
+  },
+  {
+   "name": "萨天都",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "萨天都",
+   "total": 213
+  },
+  {
+   "name": "齐真君",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "齐真君",
+   "total": 212
+  },
+  {
+   "name": "沈在宽",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "沈在宽",
+   "total": 204
+  },
+  {
+   "name": "本无大师",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "本无大师",
+   "total": 197
+  },
+  {
+   "name": "方今明",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "方今明",
+   "total": 190
+  },
+  {
+   "name": "毕愿穷",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "毕愿穷",
+   "total": 190
+  },
+  {
+   "name": "云重",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "云重",
+   "total": 189
+  },
+  {
+   "name": "潮音和尚",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "潮音和尚",
+   "total": 189
+  },
+  {
+   "name": "唐金峰",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "唐金峰",
+   "total": 186
+  },
+  {
+   "name": "李天扬",
+   "books": [
+    "白发魔女传",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "李天扬",
+   "total": 180
+  },
+  {
+   "name": "耿绍南",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "耿绍南",
+   "total": 178
+  },
+  {
+   "name": "赤霞道人",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "赤霞道人",
+   "total": 176
+  },
+  {
+   "name": "于谦",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "于谦",
+   "total": 173
+  },
+  {
+   "name": "应修阳",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "应修阳",
+   "total": 172
+  },
+  {
+   "name": "海云和尚",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "海云和尚",
+   "total": 168
+  },
+  {
+   "name": "楚天遥",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "楚天遥",
+   "total": 165
+  },
+  {
+   "name": "成天挺",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "成天挺",
+   "total": 164
+  },
+  {
+   "name": "何绿华",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "何绿华",
+   "total": 163
+  },
+  {
+   "name": "邝琏",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "邝琏",
+   "total": 163
+  },
+  {
+   "name": "柳先开",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "柳先开",
+   "total": 160
+  },
+  {
+   "name": "曾静",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "曾静",
+   "total": 156
+  },
+  {
+   "name": "路民瞻",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "路民瞻",
+   "total": 156
+  },
+  {
+   "name": "祈镇",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "祈镇",
+   "total": 155
+  },
+  {
+   "name": "玄风道长",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "玄风道长",
+   "total": 153
+  },
+  {
+   "name": "七星子",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "七星子",
+   "total": 148
+  },
+  {
+   "name": "桂天澜",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "少林派",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "桂天澜",
+   "total": 148
+  },
+  {
+   "name": "吴三桂",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "吴三桂",
+   "total": 145
+  },
+  {
+   "name": "允禵",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "允禵",
+   "total": 143
+  },
+  {
+   "name": "巴勃",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "巴勃",
+   "total": 142
+  },
+  {
+   "name": "摘星上人",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "摘星上人",
+   "total": 142
+  },
+  {
+   "name": "石浩",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "石浩",
+   "total": 138
+  },
+  {
+   "name": "云蕾",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "云蕾",
+   "total": 136
+  },
+  {
+   "name": "翦长春",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "翦长春",
+   "total": 136
+  },
+  {
+   "name": "韩荆",
+   "books": [
+    "七剑下天山",
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "韩荆",
+   "total": 135
+  },
+  {
+   "name": "张天蒙",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "张天蒙",
+   "total": 133
+  },
+  {
+   "name": "盘天罗",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "盘天罗",
+   "total": 133
+  },
+  {
+   "name": "杨涟",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "杨涟",
+   "total": 132
+  },
+  {
+   "name": "百毒神君",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "百毒神君",
+   "total": 131
+  },
+  {
+   "name": "云燕平",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "云燕平",
+   "total": 128
+  },
+  {
+   "name": "王陵",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "王陵",
+   "total": 128
+  },
+  {
+   "name": "皇帝",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "散花女侠",
+    "江湖三女侠",
+    "白发魔女传",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "皇帝",
+   "total": 128
+  },
+  {
+   "name": "车辟邪",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "车辟邪",
+   "total": 128
+  },
+  {
+   "name": "邝练霞",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "邝练霞",
+   "total": 128
+  },
+  {
+   "name": "谷竹均",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "谷竹均",
+   "total": 126
+  },
+  {
+   "name": "侯三变",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "侯三变",
+   "total": 125
+  },
+  {
+   "name": "萨力雄",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "萨力雄",
+   "total": 125
+  },
+  {
+   "name": "常洛",
+   "books": [
+    "散花女侠",
+    "白发魔女传",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "常洛",
+   "total": 124
+  },
+  {
+   "name": "提摩达多",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "提摩达多",
+   "total": 124
+  },
+  {
+   "name": "叶横波",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "叶横波",
+   "total": 123
+  },
+  {
+   "name": "沐国公",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "沐国公",
+   "total": 123
+  },
+  {
+   "name": "黑摩诃",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "黑摩诃",
+   "total": 123
+  },
+  {
+   "name": "穆九娘",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "穆九娘",
+   "total": 121
+  },
+  {
+   "name": "朱见深",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "朱见深",
+   "total": 115
+  },
+  {
+   "name": "麦士迦南",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "麦士迦南",
+   "total": 115
+  },
+  {
+   "name": "玄瑛道人",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "玄瑛道人",
+   "total": 114
+  },
+  {
+   "name": "雅德星",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "雅德星",
+   "total": 114
+  },
+  {
+   "name": "冯广潮",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "冯广潮",
+   "total": 112
+  },
+  {
+   "name": "成海山",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "成海山",
+   "total": 112
+  },
+  {
+   "name": "朱翊钧",
+   "books": [
+    "七剑下天山",
+    "散花女侠",
+    "白发魔女传",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "朱翊钧",
+   "total": 112
+  },
+  {
+   "name": "石天成",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "武当派",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": true,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "石天成",
+   "total": 112
+  },
+  {
+   "name": "客氏",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "客氏",
+   "total": 111
+  },
+  {
+   "name": "连城虎",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "连城虎",
+   "total": 110
+  },
+  {
+   "name": "唐努",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "唐努",
+   "total": 109
+  },
+  {
+   "name": "成坤",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "成坤",
+   "total": 107
+  },
+  {
+   "name": "王尊一",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "王尊一",
+   "total": 107
+  },
+  {
+   "name": "石翠凤",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "石翠凤",
+   "total": 107
+  },
+  {
+   "name": "皇上",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "塞外奇侠传",
+    "散花女侠",
+    "江湖三女侠",
+    "白发魔女传",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "皇上",
+   "total": 106
+  },
+  {
+   "name": "武成化",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "武成化",
+   "total": 103
+  },
+  {
+   "name": "郑洪台",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": true
+   },
+   "href": "郑洪台",
+   "total": 101
+  },
+  {
+   "name": "韩老镖头",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": true
+   },
+   "href": "韩老镖头",
+   "total": 100
+  },
+  {
+   "name": "红云道人",
+   "books": [
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "红云道人",
+   "total": 98
+  },
+  {
+   "name": "邱东洛",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "长白山派",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "邱东洛",
+   "total": 98
+  },
+  {
+   "name": "刘完达",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "刘完达",
+   "total": 97
+  },
+  {
+   "name": "李源",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李源",
+   "total": 97
+  },
+  {
+   "name": "孟禄",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孟禄",
+   "total": 95
+  },
+  {
+   "name": "昆甸上人",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "昆甸上人",
+   "total": 95
+  },
+  {
+   "name": "金千岩",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "金千岩",
+   "total": 95
+  },
+  {
+   "name": "鱼娘",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "鱼娘",
+   "total": 95
+  },
+  {
+   "name": "符君集",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "符君集",
+   "total": 94
+  },
+  {
+   "name": "万天鹏",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "万天鹏",
+   "total": 92
+  },
+  {
+   "name": "伊士达",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "伊士达",
+   "total": 91
+  },
+  {
+   "name": "尚复初",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "尚复初",
+   "total": 91
+  },
+  {
+   "name": "白敏",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "白敏",
+   "total": 90
+  },
+  {
+   "name": "李自成",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李自成",
+   "total": 89
+  },
+  {
+   "name": "玄真",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "玄真",
+   "total": 87
+  },
+  {
+   "name": "纳兰秀吉",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "纳兰秀吉",
+   "total": 87
+  },
+  {
+   "name": "邹锡九",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "邹锡九",
+   "total": 87
+  },
+  {
+   "name": "镜明长老",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "镜明长老",
+   "total": 87
+  },
+  {
+   "name": "石鸿博",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "石鸿博",
+   "total": 86
+  },
+  {
+   "name": "阎中天",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "阎中天",
+   "total": 86
+  },
+  {
+   "name": "龙木公",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "龙木公",
+   "total": 86
+  },
+  {
+   "name": "卓仲廉",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "卓仲廉",
+   "total": 85
+  },
+  {
+   "name": "屈九疑",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "屈九疑",
+   "total": 85
+  },
+  {
+   "name": "慕容华",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "慕容华",
+   "total": 85
+  },
+  {
+   "name": "石文纨",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "石文纨",
+   "total": 85
+  },
+  {
+   "name": "由校",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "由校",
+   "total": 84
+  },
+  {
+   "name": "李申时",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": true,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李申时",
+   "total": 83
+  },
+  {
+   "name": "冷禅",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "冷禅",
+   "total": 82
+  },
+  {
+   "name": "无住禅师",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "无住禅师",
+   "total": 82
+  },
+  {
+   "name": "白衣少女",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "白衣少女",
+   "total": 82
+  },
+  {
+   "name": "蔡福昌",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "蔡福昌",
+   "total": 82
+  },
+  {
+   "name": "陈元霸",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "陈元霸",
+   "total": 82
+  },
+  {
+   "name": "陈德泰",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "陈德泰",
+   "total": 82
+  },
+  {
+   "name": "武元英",
+   "books": [
+    "七剑下天山",
+    "散花女侠",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": true,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "武元英",
+   "total": 81
+  },
+  {
+   "name": "罗铁臂",
+   "books": [
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "罗铁臂",
+   "total": 81
+  },
+  {
+   "name": "李明珠",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李明珠",
+   "total": 80
+  },
+  {
+   "name": "东方赫",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "东方赫",
+   "total": 79
+  },
+  {
+   "name": "龙达三",
+   "books": [
+    "散花女侠",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "龙达三",
+   "total": 79
+  },
+  {
+   "name": "何萼华",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "何萼华",
+   "total": 78
+  },
+  {
+   "name": "达三公",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "达三公",
+   "total": 78
+  },
+  {
+   "name": "石振飞",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "石振飞",
+   "total": 77
+  },
+  {
+   "name": "蒙元子",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "蒙元子",
+   "total": 77
+  },
+  {
+   "name": "岳钟琪",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "岳钟琪",
+   "total": 76
+  },
+  {
+   "name": "陆展鹏",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "陆展鹏",
+   "total": 76
+  },
+  {
+   "name": "龙啸云",
+   "books": [
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "龙啸云",
+   "total": 76
+  },
+  {
+   "name": "孤云道人",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孤云道人",
+   "total": 75
+  },
+  {
+   "name": "押不庐",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "押不庐",
+   "total": 74
+  },
+  {
+   "name": "邹鸣皋",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "邹鸣皋",
+   "total": 73
+  },
+  {
+   "name": "保柱",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "保柱",
+   "total": 72
+  },
+  {
+   "name": "李定国",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李定国",
+   "total": 72
+  },
+  {
+   "name": "柳泽苍",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "柳泽苍",
+   "total": 72
+  },
+  {
+   "name": "神大元",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "神大元",
+   "total": 72
+  },
+  {
+   "name": "阿萨玛",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "阿萨玛",
+   "total": 72
+  },
+  {
+   "name": "允禔",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "允禔",
+   "total": 71
+  },
+  {
+   "name": "孟秋霞",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孟秋霞",
+   "total": 71
+  },
+  {
+   "name": "成章五",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "成章五",
+   "total": 71
+  },
+  {
+   "name": "段澄苍",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "段澄苍",
+   "total": 71
+  },
+  {
+   "name": "石镜涵",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "石镜涵",
+   "total": 71
+  },
+  {
+   "name": "通明和尚",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "通明和尚",
+   "total": 71
+  },
+  {
+   "name": "霍元仲",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "霍元仲",
+   "total": 70
+  },
+  {
+   "name": "吕留良",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "吕留良",
+   "total": 69
+  },
+  {
+   "name": "张天池",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张天池",
+   "total": 69
+  },
+  {
+   "name": "沐琮",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "沐琮",
+   "total": 69
+  },
+  {
+   "name": "李卫",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李卫",
+   "total": 68
+  },
+  {
+   "name": "玄机逸士",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "玄机逸士",
+   "total": 68
+  },
+  {
+   "name": "王刚",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王刚",
+   "total": 68
+  },
+  {
+   "name": "长谷川",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "长谷川",
+   "total": 68
+  },
+  {
+   "name": "李双双",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李双双",
+   "total": 67
+  },
+  {
+   "name": "张承斌",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "张承斌",
+   "total": 66
+  },
+  {
+   "name": "天德上人",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "天德上人",
+   "total": 65
+  },
+  {
+   "name": "白摩诃",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "白摩诃",
+   "total": 65
+  },
+  {
+   "name": "袁崇焕",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "袁崇焕",
+   "total": 65
+  },
+  {
+   "name": "麦盖提",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "麦盖提",
+   "total": 65
+  },
+  {
+   "name": "唐赛花",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "唐赛花",
+   "total": 64
+  },
+  {
+   "name": "贞乾道人",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "贞乾道人",
+   "total": 64
+  },
+  {
+   "name": "武振东",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "武振东",
+   "total": 63
+  },
+  {
+   "name": "贯居",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "贯居",
+   "total": 63
+  },
+  {
+   "name": "东方洛",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "东方洛",
+   "total": 62
+  },
+  {
+   "name": "弘法大师",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "弘法大师",
+   "total": 61
+  },
+  {
+   "name": "独臂老尼",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "独臂老尼",
+   "total": 61
+  },
+  {
+   "name": "紫阳道长",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "紫阳道长",
+   "total": 61
+  },
+  {
+   "name": "秦中越",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "秦中越",
+   "total": 59
+  },
+  {
+   "name": "邓南遮",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "邓南遮",
+   "total": 59
+  },
+  {
+   "name": "公主",
+   "books": [
+    "冰魄寒光剑",
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "公主",
+   "total": 58
+  },
+  {
+   "name": "六阳真君",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "六阳真君",
+   "total": 58
+  },
+  {
+   "name": "柳西铭",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "柳西铭",
+   "total": 58
+  },
+  {
+   "name": "褚霸",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "褚霸",
+   "total": 58
+  },
+  {
+   "name": "一瓢和尚",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "一瓢和尚",
+   "total": 57
+  },
+  {
+   "name": "印宏",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "印宏",
+   "total": 57
+  },
+  {
+   "name": "白孟川",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "白孟川",
+   "total": 57
+  },
+  {
+   "name": "郝飞凤",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "郝飞凤",
+   "total": 57
+  },
+  {
+   "name": "朗月禅师",
+   "books": [
+    "散花女侠",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "朗月禅师",
+   "total": 56
+  },
+  {
+   "name": "孟坚",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孟坚",
+   "total": 55
+  },
+  {
+   "name": "孟灿",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孟灿",
+   "total": 55
+  },
+  {
+   "name": "尼泊尔王子",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "尼泊尔王子",
+   "total": 55
+  },
+  {
+   "name": "顾孟章",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "顾孟章",
+   "total": 55
+  },
+  {
+   "name": "姬尤",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "姬尤",
+   "total": 54
+  },
+  {
+   "name": "大漠神狼",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "大漠神狼",
+   "total": 53
+  },
+  {
+   "name": "尚云亭",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "尚云亭",
+   "total": 53
+  },
+  {
+   "name": "张黑",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张黑",
+   "total": 53
+  },
+  {
+   "name": "石大娘",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": true,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "石大娘",
+   "total": 53
+  },
+  {
+   "name": "车鼎丰",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "车鼎丰",
+   "total": 53
+  },
+  {
+   "name": "长孙玉",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "长孙玉",
+   "total": 53
+  },
+  {
+   "name": "张青原",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张青原",
+   "total": 52
+  },
+  {
+   "name": "达赖活佛",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "达赖活佛",
+   "total": 52
+  },
+  {
+   "name": "李来亨",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李来亨",
+   "total": 51
+  },
+  {
+   "name": "王敖",
+   "books": [
+    "冰魄寒光剑",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王敖",
+   "total": 51
+  },
+  {
+   "name": "甘天龙",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "甘天龙",
+   "total": 51
+  },
+  {
+   "name": "屠刚",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "屠刚",
+   "total": 50
+  },
+  {
+   "name": "卢大楞子",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "卢大楞子",
+   "total": 49
+  },
+  {
+   "name": "哈川",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "哈川",
+   "total": 49
+  },
+  {
+   "name": "孟武威",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孟武威",
+   "total": 49
+  },
+  {
+   "name": "屠龙尊者",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "屠龙尊者",
+   "total": 49
+  },
+  {
+   "name": "李岩",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李岩",
+   "total": 49
+  },
+  {
+   "name": "张廷玉",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张廷玉",
+   "total": 48
+  },
+  {
+   "name": "国王",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "国王",
+   "total": 47
+  },
+  {
+   "name": "澹台灭明",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "澹台灭明",
+   "total": 47
+  },
+  {
+   "name": "罗达",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "罗达",
+   "total": 47
+  },
+  {
+   "name": "藏灵上人",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "藏灵上人",
+   "total": 47
+  },
+  {
+   "name": "金刀寨主",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "金刀寨主",
+   "total": 47
+  },
+  {
+   "name": "鸠盘婆",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "鸠盘婆",
+   "total": 47
+  },
+  {
+   "name": "卫扬威",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "卫扬威",
+   "total": 46
+  },
+  {
+   "name": "李涵真",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李涵真",
+   "total": 46
+  },
+  {
+   "name": "雷海音",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "雷海音",
+   "total": 46
+  },
+  {
+   "name": "克雷斯",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "克雷斯",
+   "total": 45
+  },
+  {
+   "name": "天龙上人",
+   "books": [
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "天龙上人",
+   "total": 45
+  },
+  {
+   "name": "王嘉胤",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王嘉胤",
+   "total": 45
+  },
+  {
+   "name": "张献忠",
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张献忠",
+   "total": 44
+  },
+  {
+   "name": "朱宝椿",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "朱宝椿",
+   "total": 44
+  },
+  {
+   "name": "石井太郎",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "石井太郎",
+   "total": 44
+  },
+  {
+   "name": "钱通海",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "钱通海",
+   "total": 44
+  },
+  {
+   "name": "呼克济",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "呼克济",
+   "total": 43
+  },
+  {
+   "name": "归有章",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "归有章",
+   "total": 43
+  },
+  {
+   "name": "纽祜庐",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "纽祜庐",
+   "total": 43
+  },
+  {
+   "name": "楚大齐",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "楚大齐",
+   "total": 42
+  },
+  {
+   "name": "洪岩道人",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "洪岩道人",
+   "total": 42
+  },
+  {
+   "name": "郝云台",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "郝云台",
+   "total": 42
+  },
+  {
+   "name": "韦国清",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "韦国清",
+   "total": 42
+  },
+  {
+   "name": "尊胜",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "尊胜",
+   "total": 41
+  },
+  {
+   "name": "昌钦法师",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "昌钦法师",
+   "total": 41
+  },
+  {
+   "name": "曲野樵",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "曲野樵",
+   "total": 41
+  },
+  {
+   "name": "祝家澍",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "祝家澍",
+   "total": 41
+  },
+  {
+   "name": "葛腾龙",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "葛腾龙",
+   "total": 41
+  },
+  {
+   "name": "万家树",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "万家树",
+   "total": 40
+  },
+  {
+   "name": "红云",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "红云",
+   "total": 40
+  },
+  {
+   "name": "周掌柜",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "周掌柜",
+   "total": 39
+  },
+  {
+   "name": "巴龙",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "巴龙",
+   "total": 39
+  },
+  {
+   "name": "段澄平",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "段澄平",
+   "total": 39
+  },
+  {
+   "name": "红娘子",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "红娘子",
+   "total": 39
+  },
+  {
+   "name": "铁鈜",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "铁鈜",
+   "total": 39
+  },
+  {
+   "name": "韩铁樵",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "韩铁樵",
+   "total": 39
+  },
+  {
+   "name": "周浔",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "周浔",
+   "total": 38
+  },
+  {
+   "name": "张大侠",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张大侠",
+   "total": 38
+  },
+  {
+   "name": "朱宝",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "朱宝",
+   "total": 38
+  },
+  {
+   "name": "邵宣扬",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "邵宣扬",
+   "total": 38
+  },
+  {
+   "name": "郭成泰",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "郭成泰",
+   "total": 38
+  },
+  {
+   "name": "庞通",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "庞通",
+   "total": 37
+  },
+  {
+   "name": "神一元",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "神一元",
+   "total": 37
+  },
+  {
+   "name": "芥川龙木",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "芥川龙木",
+   "total": 37
+  },
+  {
+   "name": "郑长老",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "郑长老",
+   "total": 37
+  },
+  {
+   "name": "马方",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "马方",
+   "total": 37
+  },
+  {
+   "name": "孟武功",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孟武功",
+   "total": 36
+  },
+  {
+   "name": "谷中豪",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "谷中豪",
+   "total": 36
+  },
+  {
+   "name": "乔老怪",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "乔老怪",
+   "total": 35
+  },
+  {
+   "name": "杨千斤",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "杨千斤",
+   "total": 35
+  },
+  {
+   "name": "波斯公主",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "波斯公主",
+   "total": 35
+  },
+  {
+   "name": "战三山",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "战三山",
+   "total": 34
+  },
+  {
+   "name": "褚元",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "褚元",
+   "total": 34
+  },
+  {
+   "name": "隆科多",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "隆科多",
+   "total": 34
+  },
+  {
+   "name": "孟曼丽丝",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孟曼丽丝",
+   "total": 33
+  },
+  {
+   "name": "张骥",
+   "books": [
+    "散花女侠",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张骥",
+   "total": 33
+  },
+  {
+   "name": "童家骏",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "童家骏",
+   "total": 33
+  },
+  {
+   "name": "龙叶大师",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "龙叶大师",
+   "total": 33
+  },
+  {
+   "name": "容一东",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "容一东",
+   "total": 32
+  },
+  {
+   "name": "白衣少年",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "白衣少年",
+   "total": 32
+  },
+  {
+   "name": "虞新城",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "虞新城",
+   "total": 32
+  },
+  {
+   "name": "刘公公",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "刘公公",
+   "total": 31
+  },
+  {
+   "name": "唐灵",
+   "books": [
+    "冰魄寒光剑"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "唐灵",
+   "total": 31
+  },
+  {
+   "name": "尊胜禅师",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "尊胜禅师",
+   "total": 31
+  },
+  {
+   "name": "杜明忠",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "杜明忠",
+   "total": 31
+  },
+  {
+   "name": "杨焜",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "杨焜",
+   "total": 31
+  },
+  {
+   "name": "王安",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王安",
+   "total": 31
+  },
+  {
+   "name": "陆明",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "陆明",
+   "total": 31
+  },
+  {
+   "name": "允禩",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "允禩",
+   "total": 30
+  },
+  {
+   "name": "卢道隐",
+   "books": [
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "卢道隐",
+   "total": 30
+  },
+  {
+   "name": "叶寿常",
+   "books": [
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "叶寿常",
+   "total": 30
+  },
+  {
+   "name": "王成",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王成",
+   "total": 30
+  },
+  {
+   "name": "谢天华",
+   "books": [
+    "散花女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "谢天华",
+   "total": 30
+  },
+  {
+   "name": "陆亮",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "陆亮",
+   "total": 29
+  },
+  {
+   "name": "李可灼",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "李可灼",
+   "total": 28
+  },
+  {
+   "name": "唐家璧",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "唐家璧",
+   "total": 27
+  },
+  {
+   "name": "公孙雷",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "公孙雷",
+   "total": 26
+  },
+  {
+   "name": "柳大雄",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "柳大雄",
+   "total": 26
+  },
+  {
+   "name": "鲁王",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "鲁王",
+   "total": 26
+  },
+  {
+   "name": "范铮",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "范铮",
+   "total": 25
+  },
+  {
+   "name": "董方",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "董方",
+   "total": 25
+  },
+  {
+   "name": "金崖",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "金崖",
+   "total": 25
+  },
+  {
+   "name": "古元亮",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "古元亮",
+   "total": 24
+  },
+  {
+   "name": "常英",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "常英",
+   "total": 24
+  },
+  {
+   "name": "张元振",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张元振",
+   "total": 23
+  },
+  {
+   "name": "郝继明",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "郝继明",
+   "total": 23
+  },
+  {
+   "name": "孟飞",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "孟飞",
+   "total": 22
+  },
+  {
+   "name": "董小宛",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "董小宛",
+   "total": 22
+  },
+  {
+   "name": "青蓑道人",
+   "books": [
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "青蓑道人",
+   "total": 22
+  },
+  {
+   "name": "张一虎",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张一虎",
+   "total": 21
+  },
+  {
+   "name": "焦化",
+   "books": [
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "焦化",
+   "total": 21
+  },
+  {
+   "name": "程通",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "程通",
+   "total": 20
+  },
+  {
+   "name": "甘天立",
+   "books": [
+    "塞外奇侠传",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "甘天立",
+   "total": 19
+  },
+  {
+   "name": "桑仁",
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "桑仁",
+   "total": 18
+  },
+  {
+   "name": "王大须子",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王大须子",
+   "total": 18
+  },
+  {
+   "name": "王赞",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王赞",
+   "total": 18
+  },
+  {
+   "name": "胡国柱",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "胡国柱",
+   "total": 18
+  },
+  {
+   "name": "卓继贤",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "卓继贤",
+   "total": 17
+  },
+  {
+   "name": "桑乾",
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "桑乾",
+   "total": 17
+  },
+  {
+   "name": "王兵备",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王兵备",
+   "total": 17
+  },
+  {
+   "name": "阿盖",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "阿盖",
+   "total": 17
+  },
+  {
+   "name": "常洵",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "常洵",
+   "total": 16
+  },
+  {
+   "name": "朱由检",
+   "books": [
+    "七剑下天山",
+    "冰魄寒光剑",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "朱由检",
+   "total": 16
+  },
+  {
+   "name": "柳西岩",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "柳西岩",
+   "total": 16
+  },
+  {
+   "name": "洪涛",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "洪涛",
+   "total": 16
+  },
+  {
+   "name": "秦指挥",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "秦指挥",
+   "total": 16
+  },
+  {
+   "name": "胡天柱",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "胡天柱",
+   "total": 16
+  },
+  {
+   "name": "麻黑子",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "麻黑子",
+   "total": 16
+  },
+  {
+   "name": "凌霄",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "凌霄",
+   "total": 15
+  },
+  {
+   "name": "天龙禅师",
+   "books": [
+    "七剑下天山",
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "天龙禅师",
+   "total": 15
+  },
+  {
+   "name": "太后",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": true,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "太后",
+   "total": 15
+  },
+  {
+   "name": "拙道人",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "拙道人",
+   "total": 15
+  },
+  {
+   "name": "桑弧",
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "桑弧",
+   "total": 15
+  },
+  {
+   "name": "陶宏",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "陶宏",
+   "total": 15
+  },
+  {
+   "name": "巴拉",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "sect": "天龙派",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "巴拉",
+   "total": 14
+  },
+  {
+   "name": "沙无定",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "沙无定",
+   "total": 13
+  },
+  {
+   "name": "焦直",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "焦直",
+   "total": 13
+  },
+  {
+   "name": "玄通",
+   "books": [
+    "七剑下天山",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "玄通",
+   "total": 13
+  },
+  {
+   "name": "雷蒙法师",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "雷蒙法师",
+   "total": 13
+  },
+  {
+   "name": "郑大锟",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "郑大锟",
+   "total": 12
+  },
+  {
+   "name": "青松道人",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "青松道人",
+   "total": 12
+  },
+  {
+   "name": "高迎祥",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "高迎祥",
+   "total": 12
+  },
+  {
+   "name": "彭昆林",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "彭昆林",
+   "total": 11
+  },
+  {
+   "name": "王廷禄",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "王廷禄",
+   "total": 11
+  },
+  {
+   "name": "崔呈秀",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "崔呈秀",
+   "total": 10
+  },
+  {
+   "name": "智上人",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "智上人",
+   "total": 10
+  },
+  {
+   "name": "范筑",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "范筑",
+   "total": 10
+  },
+  {
+   "name": "乌头长老",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "乌头长老",
+   "total": 9
+  },
+  {
+   "name": "凌慕华",
+   "books": [
+    "散花女侠",
+    "白发魔女传",
+    "联剑风云录"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "凌慕华",
+   "total": 9
+  },
+  {
+   "name": "唐五熊",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "唐五熊",
+   "total": 9
+  },
+  {
+   "name": "德卡",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "德卡",
+   "total": 9
+  },
+  {
+   "name": "李二豹",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "李二豹",
+   "total": 9
+  },
+  {
+   "name": "竹君",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "竹君",
+   "total": 9
+  },
+  {
+   "name": "于中",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": true,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "于中",
+   "total": 8
+  },
+  {
+   "name": "叶云荪",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "叶云荪",
+   "total": 8
+  },
+  {
+   "name": "张魁",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张魁",
+   "total": 8
+  },
+  {
+   "name": "白广恩",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "白广恩",
+   "total": 8
+  },
+  {
+   "name": "哈合图",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "哈合图",
+   "total": 7
+  },
+  {
+   "name": "察克图",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "察克图",
+   "total": 7
+  },
+  {
+   "name": "杨青波",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "杨青波",
+   "total": 7
+  },
+  {
+   "name": "罗金峰",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "罗金峰",
+   "total": 7
+  },
+  {
+   "name": "隆呼雅图",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "隆呼雅图",
+   "total": 7
+  },
+  {
+   "name": "雷蒙",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "雷蒙",
+   "total": 7
+  },
+  {
+   "name": "努尔哈赤",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "努尔哈赤",
+   "total": 6
+  },
+  {
+   "name": "洪承畴",
+   "books": [
+    "七剑下天山",
+    "江湖三女侠",
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": true,
+    "b_baimo": true,
+    "b_qijian": true,
+    "b_sannvxia": true,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "洪承畴",
+   "total": 6
+  },
+  {
+   "name": "申天豹",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "申天豹",
+   "total": 6
+  },
+  {
+   "name": "罗大洪",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "罗大洪",
+   "total": 6
+  },
+  {
+   "name": "葛中龙",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "葛中龙",
+   "total": 6
+  },
+  {
+   "name": "连三虎",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "连三虎",
+   "total": 6
+  },
+  {
+   "name": "郑国泰",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "郑国泰",
+   "total": 6
+  },
+  {
+   "name": "申天虎",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "申天虎",
+   "total": 5
+  },
+  {
+   "name": "科图",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "科图",
+   "total": 5
+  },
+  {
+   "name": "刁四福",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "刁四福",
+   "total": 4
+  },
+  {
+   "name": "刘宗敏",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "刘宗敏",
+   "total": 4
+  },
+  {
+   "name": "天元",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "天元",
+   "total": 4
+  },
+  {
+   "name": "单思南",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "单思南",
+   "total": 3
+  },
+  {
+   "name": "永明王",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "永明王",
+   "total": 3
+  },
+  {
+   "name": "赵三麒",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "赵三麒",
+   "total": 3
+  },
+  {
+   "name": "郝大绶",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "郝大绶",
+   "total": 3
+  },
+  {
+   "name": "钱四麟",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "钱四麟",
+   "total": 3
+  },
+  {
+   "name": "蒋壮",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "蒋壮",
+   "total": 2
+  },
+  {
+   "name": "郑铁牌",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "郑铁牌",
+   "total": 2
+  },
+  {
+   "name": "陈圆圆",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "陈圆圆",
+   "total": 2
+  },
+  {
+   "name": "唐努老英雄",
+   "books": [
+    "塞外奇侠传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": true,
+    "n": false,
+    "top": false
+   },
+   "href": "唐努老英雄",
+   "total": 1
+  },
+  {
+   "name": "张三丰",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张三丰",
+   "total": 1
+  },
+  {
+   "name": "张名振",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "张名振",
+   "total": 1
+  },
+  {
+   "name": "玉面妖狐凌霄",
+   "books": [
+    "白发魔女传"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": true,
+    "b_qijian": false,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "玉面妖狐凌霄",
+   "total": 1
+  },
+  {
+   "name": "福王",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "福王",
+   "total": 1
+  },
+  {
+   "name": "陈锦",
+   "books": [
+    "七剑下天山"
+   ],
+   "sect": "",
+   "a": {
+    "cross": false,
+    "b_baimo": false,
+    "b_qijian": true,
+    "b_sannvxia": false,
+    "master": false,
+    "disciple": false,
+    "kills": false,
+    "slain": false,
+    "n": false,
+    "top": false
+   },
+   "href": "陈锦",
+   "total": 1
+  }
+ ],
+ "questions": [
+  {
+   "id": "cross",
+   "text": "这位人物跨过多部书出场吗？",
+   "key": "cross"
+  },
+  {
+   "id": "b_baimo",
+   "text": "主要故事发生在《白发魔女传》时期吗？",
+   "key": "b_baimo"
+  },
+  {
+   "id": "b_qijian",
+   "text": "（也）出现在《七剑下天山》吗？",
+   "key": "b_qijian"
+  },
+  {
+   "id": "b_sannvxia",
+   "text": "（也）出现在《江湖三女侠》吗？",
+   "key": "b_sannvxia"
+  },
+  {
+   "id": "master",
+   "text": "有明确的师承记载吗？",
+   "key": "master"
+  },
+  {
+   "id": "disciple",
+   "text": "有明确的传人吗？",
+   "key": "disciple"
+  },
+  {
+   "id": "kills",
+   "text": "事件层有他/她的杀伤记录吗？",
+   "key": "kills"
+  },
+  {
+   "id": "slain",
+   "text": "他/她被杀或败亡过吗？",
+   "key": "slain"
+  },
+  {
+   "id": "n",
+   "text": "出场量很大吗（≥500 次）？",
+   "key": "n"
+  },
+  {
+   "id": "top",
+   "text": "算得上全书主要人物吗（≥100 次）？",
+   "key": "top"
+  }
+ ]
+}

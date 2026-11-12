@@ -1,0 +1,29 @@
+{
+ "kept": {
+  "L1": 63,
+  "L2": 70,
+  "L3": 0
+ },
+ "dropped": {
+  "self_pair": 0,
+  "no_verdict": 1011,
+  "group_label": 0,
+  "in_quote": 655,
+  "dropped_events": 650
+ },
+ "transferred": {
+  "org": 57
+ },
+ "downgraded": {
+  "attribution_fallback": 0
+ },
+ "scenes": {
+  "count": 621,
+  "max_persons": 8
+ },
+ "wordlist_hit": {
+  "事件方向动词": 101,
+  "平词": 16,
+  "词表近名兜底": 16
+ }
+}
