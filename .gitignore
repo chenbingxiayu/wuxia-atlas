@@ -43,3 +43,6 @@ wuxia-kb/.token_cost_config.json
 wuxia-kb/design/.artifact-server.json
 wuxia-kb/design/.artifact-server.log
 wuxia-kb/design/_tools/__pycache__/
+
+# 管线备份目录不入库（可由管线再生/本地留存）
+site/data/backup/
